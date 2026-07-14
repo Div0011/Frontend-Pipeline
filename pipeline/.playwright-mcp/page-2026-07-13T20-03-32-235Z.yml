@@ -1,0 +1,750 @@
+- generic [ref=f13e2]:
+  - generic [ref=f13e4]:
+    - generic [ref=f13e9] [cursor=pointer]:
+      - generic [ref=f13e10]: ★
+      - paragraph [ref=f13e11]: Smash Guys
+      - paragraph [ref=f13e12]: Click to enter
+    - generic: SMASH!
+  - main [ref=f13e14]:
+    - generic [ref=f13e16]:
+      - link "S M A S H G U Y S" [ref=f13e17] [cursor=pointer]:
+        - /url: "#"
+        - generic [ref=f13e18]: S
+        - generic [ref=f13e19]: M
+        - generic [ref=f13e20]: A
+        - generic [ref=f13e21]: S
+        - generic [ref=f13e22]: H
+        - generic [ref=f13e23]: G
+        - generic [ref=f13e24]: U
+        - generic [ref=f13e25]: "Y"
+        - generic [ref=f13e26]: S
+      - navigation [ref=f13e27]:
+        - link "Menu" [ref=f13e29] [cursor=pointer]:
+          - /url: "#menu"
+        - link "Locations" [ref=f13e32] [cursor=pointer]:
+          - /url: "#locations"
+        - link "Order" [ref=f13e35] [cursor=pointer]:
+          - /url: "#order"
+      - link "Order Now" [ref=f13e38] [cursor=pointer]:
+        - /url: "#order"
+    - generic [ref=f13e39]:
+      - generic: 🍔
+      - generic [ref=f13e42]:
+        - generic [ref=f13e43]:
+          - paragraph [ref=f13e45]: Bangalore's Burger Kitchen
+          - heading "EVERY BITE TELLS A story" [level=1] [ref=f13e46]:
+            - generic [ref=f13e47]: EVERY BITE
+            - generic [ref=f13e48]: TELLS A
+            - generic [ref=f13e49]: story
+          - paragraph [ref=f13e51]: Premium smash burgers, creative sides, and handcrafted shakes — crafted with obsession in the heart of Bangalore.
+          - generic [ref=f13e52]:
+            - link "Explore Menu" [ref=f13e54] [cursor=pointer]:
+              - /url: "#menu"
+            - link "Order Now" [ref=f13e56] [cursor=pointer]:
+              - /url: "#order"
+        - generic [ref=f13e57]: 🍔
+      - generic [ref=f13e61]:
+        - generic [ref=f13e62]:
+          - generic [ref=f13e63]: ★
+          - text: Premium Smash Burgers
+          - generic [ref=f13e64]: ★
+          - text: Handcrafted Shakes
+          - generic [ref=f13e65]: ★
+          - text: Creative Sides
+          - generic [ref=f13e66]: ★
+          - text: Bangalore's Finest
+          - generic [ref=f13e67]: ★
+          - text: Open Kitchen
+          - generic [ref=f13e68]: ★
+          - text: Curated Vibes
+          - generic [ref=f13e69]: ★
+          - text: Must Try!
+        - generic [ref=f13e70]:
+          - generic [ref=f13e71]: ★
+          - text: Premium Smash Burgers
+          - generic [ref=f13e72]: ★
+          - text: Handcrafted Shakes
+          - generic [ref=f13e73]: ★
+          - text: Creative Sides
+          - generic [ref=f13e74]: ★
+          - text: Bangalore's Finest
+          - generic [ref=f13e75]: ★
+          - text: Open Kitchen
+          - generic [ref=f13e76]: ★
+          - text: Curated Vibes
+          - generic [ref=f13e77]: ★
+          - text: Must Try!
+    - generic [ref=f13e84]:
+      - generic [ref=f13e85]:
+        - paragraph [ref=f13e86]: The Philosophy
+        - heading "CRAFTED FOR the curious" [level=2] [ref=f13e87]
+      - paragraph [ref=f13e88]: "Smash Guys was born from a simple obsession: the perfect smash burger. We source high-quality ingredients, honour classic techniques, and serve every plate with the drama of a cinema premiere."
+    - generic [ref=f13e92]:
+      - generic [ref=f13e93]:
+        - paragraph [ref=f13e94]: The Ingredients
+        - heading "EXPLODED burger" [level=2] [ref=f13e95]
+        - paragraph [ref=f13e96]: Scroll to deconstruct our signature smash burger. Every layer tells a story of quality, technique, and obsession.
+        - generic [ref=f13e97]:
+          - generic [ref=f13e98]:
+            - generic [ref=f13e99]: 🍔
+            - paragraph [ref=f13e101]: Sesame Top Bun
+          - generic [ref=f13e102]:
+            - generic [ref=f13e103]: 🧀
+            - paragraph [ref=f13e105]: Aged Cheddar Melt
+          - generic [ref=f13e106]:
+            - generic [ref=f13e107]: 🥩
+            - paragraph [ref=f13e109]: Double Smash Patty
+          - generic [ref=f13e110]:
+            - generic [ref=f13e111]: 🥩
+            - paragraph [ref=f13e113]: Double Smash Patty
+          - generic [ref=f13e114]:
+            - generic [ref=f13e115]: 🥒
+            - paragraph [ref=f13e117]: Dill Pickles
+          - generic [ref=f13e118]:
+            - generic [ref=f13e119]: 🧅
+            - paragraph [ref=f13e121]: Grilled Onions
+          - generic [ref=f13e122]:
+            - generic [ref=f13e123]: 🟡
+            - paragraph [ref=f13e125]: Scribbled Mustard
+          - generic [ref=f13e126]:
+            - generic [ref=f13e127]: 🍞
+            - paragraph [ref=f13e129]: Buttered Bottom Bun
+      - generic [ref=f13e130]:
+        - generic [ref=f13e131]: 🍔
+        - generic [ref=f13e132]: 🧀
+        - generic [ref=f13e133]: 🥩
+        - generic [ref=f13e134]: 🥩
+        - generic [ref=f13e135]: 🥒
+        - generic [ref=f13e136]: 🧅
+        - generic [ref=f13e137]: 🟡
+        - generic [ref=f13e138]: 🍞
+    - generic [ref=f13e140]:
+      - generic [ref=f13e142]:
+        - paragraph [ref=f13e143]: crowd favorites
+        - heading "SIGNATURE smaash" [level=2] [ref=f13e144]
+      - generic [ref=f13e145]:
+        - generic [ref=f13e147]:
+          - generic [ref=f13e148]: 🍔
+          - heading "OG Smash" [level=3] [ref=f13e149]
+          - paragraph [ref=f13e150]: Double smash patties, double american cheese, pickles, white onions, mustard
+          - paragraph [ref=f13e151]: ₹470
+          - generic [ref=f13e152]: +
+        - generic [ref=f13e155]:
+          - generic [ref=f13e156]: 🍟
+          - heading "Truffle Fries" [level=3] [ref=f13e157]
+          - paragraph [ref=f13e158]: Truffle mayo, parmesan, parsley
+          - paragraph [ref=f13e159]: ₹338
+          - generic [ref=f13e160]: +
+        - generic [ref=f13e163]:
+          - generic [ref=f13e164]: 🍗
+          - heading "Nashville Chicken" [level=3] [ref=f13e165]
+          - paragraph [ref=f13e166]: Nashville spiced fried chicken dipped in hot oil, home-made chilli sofrito
+          - paragraph [ref=f13e167]: ₹370
+          - generic [ref=f13e168]: +
+        - generic [ref=f13e171]:
+          - generic [ref=f13e172]: 🥤
+          - heading "Salted Pistachio Shake" [level=3] [ref=f13e173]
+          - paragraph [ref=f13e174]: Rich, nutty, and creamy
+          - paragraph [ref=f13e175]: ₹320
+          - generic [ref=f13e176]: +
+        - generic [ref=f13e179]:
+          - generic [ref=f13e180]: 🍰
+          - heading "Old Monk Mousse" [level=3] [ref=f13e181]
+          - paragraph [ref=f13e182]: Whipped custard, cocoa dust
+          - paragraph [ref=f13e183]: ₹350
+          - generic [ref=f13e184]: +
+    - generic [ref=f13e190]:
+      - paragraph [ref=f13e191]: The Experience
+      - heading "MORE THAN A MEAL" [level=2] [ref=f13e192]
+      - paragraph [ref=f13e193]: Step into a space where flavour meets theatre. Our kitchen is open, our music is curated, and every detail is designed to make you feel something.
+    - generic [ref=f13e195]:
+      - generic [ref=f13e197]:
+        - paragraph [ref=f13e198]: The Menu
+        - heading "FULL MENU" [level=2] [ref=f13e199]
+      - generic [ref=f13e200]:
+        - generic [ref=f13e203]:
+          - generic [ref=f13e204]:
+            - generic [ref=f13e205]: 🥤
+            - heading "Fresh Juice, Iced Tea & Mocktails" [level=3] [ref=f13e206]
+          - generic [ref=f13e207]:
+            - generic [ref=f13e209]:
+              - heading "Fresh Watermelon & Mint Juice" [level=4] [ref=f13e212]
+              - generic [ref=f13e213]: ₹218
+            - generic [ref=f13e215]:
+              - heading "Fresh Iced Tea (Peach / Lemon)" [level=4] [ref=f13e218]
+              - generic [ref=f13e219]: ₹228
+            - generic [ref=f13e221]:
+              - heading "Homemade Ginger Ale" [level=4] [ref=f13e224]
+              - generic [ref=f13e225]: ₹228
+            - generic [ref=f13e227]:
+              - heading "Fresh Lime (Soda / Water)" [level=4] [ref=f13e230]
+              - generic [ref=f13e231]: ₹170
+            - generic [ref=f13e233]:
+              - generic [ref=f13e235]:
+                - heading "Sober Picante" [level=4] [ref=f13e236]
+                - generic [ref=f13e237]: New
+              - generic [ref=f13e238]: ₹248
+            - generic [ref=f13e240]:
+              - heading "Virgin Mojito" [level=4] [ref=f13e243]
+              - generic [ref=f13e244]: ₹228
+            - generic [ref=f13e246]:
+              - heading "Fresh Watermelon Mojito" [level=4] [ref=f13e249]
+              - generic [ref=f13e250]: ₹238
+            - generic [ref=f13e252]:
+              - heading "Virgin Piña Colada" [level=4] [ref=f13e255]
+              - generic [ref=f13e256]: ₹238
+        - generic [ref=f13e259]:
+          - generic [ref=f13e260]:
+            - generic [ref=f13e261]: 🥛
+            - heading "Shakes" [level=3] [ref=f13e262]
+          - generic [ref=f13e263]:
+            - generic [ref=f13e265]:
+              - heading "French Vanilla Biscuit Shake" [level=4] [ref=f13e268]
+              - generic [ref=f13e269]: ₹290
+            - generic [ref=f13e271]:
+              - heading "Strawberry Cheesecake Shake" [level=4] [ref=f13e274]
+              - generic [ref=f13e275]: ₹290
+            - generic [ref=f13e277]:
+              - generic [ref=f13e279]:
+                - heading "Salted Pistachio Shake" [level=4] [ref=f13e280]
+                - generic [ref=f13e281]: New
+                - generic [ref=f13e282]: NUTS
+              - generic [ref=f13e287]: ₹320
+            - generic [ref=f13e289]:
+              - heading "Oreo & Chocolate Shake" [level=4] [ref=f13e292]
+              - generic [ref=f13e293]: ₹290
+        - generic [ref=f13e296]:
+          - generic [ref=f13e297]:
+            - generic [ref=f13e298]: 🍹
+            - heading "Kombucha (by Mossant)" [level=3] [ref=f13e299]
+          - generic [ref=f13e300]:
+            - generic [ref=f13e302]:
+              - heading "Salted Lime" [level=4] [ref=f13e305]
+              - generic [ref=f13e306]: ₹260
+            - generic [ref=f13e308]:
+              - heading "Blueberry Lemonade" [level=4] [ref=f13e311]
+              - generic [ref=f13e312]: ₹260
+        - generic [ref=f13e315]:
+          - generic [ref=f13e316]:
+            - generic [ref=f13e317]: ☕
+            - heading "Cold & Hot Chocolate" [level=3] [ref=f13e318]
+          - generic [ref=f13e319]:
+            - generic [ref=f13e321]:
+              - generic [ref=f13e322]:
+                - heading "European Hot Chocolate" [level=4] [ref=f13e324]
+                - paragraph [ref=f13e325]: Dark & Delicious!
+              - generic [ref=f13e326]: ₹320
+            - generic [ref=f13e328]:
+              - generic [ref=f13e329]:
+                - heading "Cold Chocolate" [level=4] [ref=f13e331]
+                - paragraph [ref=f13e332]: Dark & Delicious!
+              - generic [ref=f13e333]: ₹290
+        - generic [ref=f13e336]:
+          - generic [ref=f13e337]:
+            - generic [ref=f13e338]: 🥤
+            - heading "Bottled & Canned" [level=3] [ref=f13e339]
+          - generic [ref=f13e340]:
+            - generic [ref=f13e342]:
+              - heading "Coke / Diet Coke / Sprite" [level=4] [ref=f13e345]
+              - generic [ref=f13e346]: ₹130
+            - generic [ref=f13e348]:
+              - heading "Mineral Water 1L" [level=4] [ref=f13e351]
+              - generic [ref=f13e352]: ₹125
+        - generic [ref=f13e355]:
+          - generic [ref=f13e356]:
+            - generic [ref=f13e357]: ☕
+            - heading "Speciality Coffee (By Mannheim)" [level=3] [ref=f13e358]
+          - generic [ref=f13e359]:
+            - generic [ref=f13e361]:
+              - heading "Americano (Hot / Iced)" [level=4] [ref=f13e364]
+              - generic [ref=f13e365]: ₹230
+            - generic [ref=f13e367]:
+              - heading "Cappuccino (Hot / Iced)" [level=4] [ref=f13e370]
+              - generic [ref=f13e371]: ₹255
+            - generic [ref=f13e373]:
+              - heading "Cafe Latte (Hot / Iced)" [level=4] [ref=f13e376]
+              - generic [ref=f13e377]: ₹255
+            - generic [ref=f13e379]:
+              - heading "Mocha" [level=4] [ref=f13e382]
+              - generic [ref=f13e383]: ₹280
+            - generic [ref=f13e385]:
+              - heading "Flat White" [level=4] [ref=f13e388]
+              - generic [ref=f13e389]: ₹255
+            - generic [ref=f13e391]:
+              - generic [ref=f13e392]:
+                - heading "Spanish Latte (Hot / Iced)" [level=4] [ref=f13e394]
+                - paragraph [ref=f13e395]: Espresso, milk, condensed milk
+              - generic [ref=f13e396]: ₹280
+        - generic [ref=f13e399]:
+          - generic [ref=f13e400]:
+            - generic [ref=f13e401]: 🧊
+            - heading "Cold Coffee" [level=3] [ref=f13e402]
+          - generic [ref=f13e403]:
+            - generic [ref=f13e405]:
+              - heading "Classic" [level=4] [ref=f13e408]
+              - generic [ref=f13e409]: ₹265
+            - generic [ref=f13e411]:
+              - heading "Roasted Hazelnut" [level=4] [ref=f13e414]
+              - generic [ref=f13e415]: ₹295
+            - generic [ref=f13e417]:
+              - heading "Vanilla" [level=4] [ref=f13e420]
+              - generic [ref=f13e421]: ₹295
+            - generic [ref=f13e423]:
+              - heading "Caramel" [level=4] [ref=f13e426]
+              - generic [ref=f13e427]: ₹295
+            - generic [ref=f13e429]:
+              - heading "Mocha" [level=4] [ref=f13e432]
+              - generic [ref=f13e433]: ₹295
+            - generic [ref=f13e435]:
+              - heading "Irish" [level=4] [ref=f13e438]
+              - generic [ref=f13e439]: ₹295
+        - generic [ref=f13e442]:
+          - generic [ref=f13e443]:
+            - generic [ref=f13e444]: 🍵
+            - heading "Matcha Specials" [level=3] [ref=f13e445]
+          - generic [ref=f13e446]:
+            - generic [ref=f13e448]:
+              - heading "Classic Matcha" [level=4] [ref=f13e451]
+              - generic [ref=f13e452]: ₹350
+            - generic [ref=f13e454]:
+              - heading "Roasted Hazelnut Matcha" [level=4] [ref=f13e457]
+              - generic [ref=f13e458]: ₹350
+            - generic [ref=f13e460]:
+              - heading "Vanilla Matcha Latte" [level=4] [ref=f13e463]
+              - generic [ref=f13e464]: ₹350
+            - generic [ref=f13e466]:
+              - heading "Iced Classic Matcha" [level=4] [ref=f13e469]
+              - generic [ref=f13e470]: ₹350
+            - generic [ref=f13e472]:
+              - heading "Iced Mango Matcha" [level=4] [ref=f13e475]
+              - generic [ref=f13e476]: ₹350
+            - generic [ref=f13e478]:
+              - heading "Iced Summer Berry Matcha" [level=4] [ref=f13e481]
+              - generic [ref=f13e482]: ₹350
+        - generic [ref=f13e485]:
+          - generic [ref=f13e486]:
+            - generic [ref=f13e487]: 🍟
+            - heading "Sides & Salad — Veg" [level=3] [ref=f13e488]
+          - generic [ref=f13e489]:
+            - generic [ref=f13e491]:
+              - generic [ref=f13e492]:
+                - heading "Fries (Classic / Cajun)" [level=4] [ref=f13e494]
+                - paragraph [ref=f13e495]: Served with home-made ketchup and spiced garlic dip
+              - generic [ref=f13e496]: ₹268 / ₹278
+            - generic [ref=f13e498]:
+              - generic [ref=f13e499]:
+                - generic [ref=f13e500]:
+                  - heading "Corn Ribs" [level=4] [ref=f13e501]
+                  - generic [ref=f13e502]: CHEF
+                - paragraph [ref=f13e506]: Served with spiced garlic dip, lemon wedge
+              - generic [ref=f13e507]: ₹328
+            - generic [ref=f13e509]:
+              - generic [ref=f13e510]:
+                - generic [ref=f13e511]:
+                  - heading "Oyster Mushroom Karaage" [level=4] [ref=f13e512]
+                  - generic [ref=f13e513]: New
+                - paragraph [ref=f13e514]: Crispy fried oyster mushroom dusted with togarashi spice, served with truffle mayo
+              - generic [ref=f13e515]: ₹348
+            - generic [ref=f13e517]:
+              - generic [ref=f13e518]:
+                - heading "Truffle Fries" [level=4] [ref=f13e520]
+                - paragraph [ref=f13e521]: Truffle mayo, parmesan, parsley
+              - generic [ref=f13e522]: ₹338
+            - generic [ref=f13e524]:
+              - generic [ref=f13e525]:
+                - heading "Onion Rings" [level=4] [ref=f13e527]
+                - paragraph [ref=f13e528]: Served with spiced garlic dip
+              - generic [ref=f13e529]: ₹298
+            - generic [ref=f13e531]:
+              - generic [ref=f13e532]:
+                - generic [ref=f13e533]:
+                  - heading "Caesar Salad" [level=4] [ref=f13e534]
+                  - generic [ref=f13e535]: EGG
+                - paragraph [ref=f13e539]: Romaine lettuce with homemade dressing (contains egg), croutons, marinated olives, sun-dried tomatoes
+              - generic [ref=f13e540]: ₹298
+        - generic [ref=f13e543]:
+          - generic [ref=f13e544]:
+            - generic [ref=f13e545]: 🍗
+            - heading "Sides & Salad — Non Veg" [level=3] [ref=f13e546]
+          - generic [ref=f13e547]:
+            - generic [ref=f13e549]:
+              - generic [ref=f13e550]:
+                - generic [ref=f13e551]:
+                  - heading "Gravy Fries" [level=4] [ref=f13e552]
+                  - generic [ref=f13e553]: New
+                - paragraph [ref=f13e554]: French gravy sauce poured on top of our crispy fries (sauce contains chicken stock)
+              - generic [ref=f13e555]: ₹338
+            - generic [ref=f13e557]:
+              - generic [ref=f13e558]:
+                - generic [ref=f13e559]:
+                  - heading "Buffalo Chicken Flings" [level=4] [ref=f13e560]
+                  - generic [ref=f13e561]: SPICY
+                - paragraph [ref=f13e566]: Buffalo sauce dunked fried chicken, crispy onions. Served with garlic aioli
+              - generic [ref=f13e567]: ₹348
+            - generic [ref=f13e569]:
+              - generic [ref=f13e570]:
+                - generic [ref=f13e571]:
+                  - heading "Dino Bone Marrow" [level=4] [ref=f13e572]
+                  - generic [ref=f13e573]: New
+                - paragraph [ref=f13e574]: Roasted bone marrow. Served with toasted bread, chimichurri, pickled onions
+              - generic [ref=f13e575]: ₹448
+            - generic [ref=f13e577]:
+              - generic [ref=f13e578]:
+                - heading "Chicken Wings" [level=4] [ref=f13e580]
+                - paragraph [ref=f13e581]: "Available flavors: Blackened BBQ, AOP (Aglio Olio Peperoncino), Chilli Honey"
+              - generic [ref=f13e582]: ₹398
+            - generic [ref=f13e584]:
+              - generic [ref=f13e585]:
+                - generic [ref=f13e586]:
+                  - heading "Caesar Salad (Grilled Chicken / Bacon)" [level=4] [ref=f13e587]
+                  - generic [ref=f13e588]: EGG
+                - paragraph [ref=f13e592]: Romaine lettuce with homemade dressing (contains egg), croutons, marinated olives, sun-dried tomatoes
+              - generic [ref=f13e593]: ₹368 / ₹418
+        - generic [ref=f13e596]:
+          - generic [ref=f13e597]:
+            - generic [ref=f13e598]: 🧀
+            - heading "Mac & Cheese" [level=3] [ref=f13e599]
+          - generic [ref=f13e600]:
+            - generic [ref=f13e602]:
+              - heading "The Classic" [level=4] [ref=f13e605]
+              - generic [ref=f13e606]: ₹390
+            - generic [ref=f13e608]:
+              - heading "Sundried Tomato" [level=4] [ref=f13e611]
+              - generic [ref=f13e612]: ₹410
+            - generic [ref=f13e614]:
+              - heading "Grilled Chicken Mac" [level=4] [ref=f13e617]
+              - generic [ref=f13e618]: ₹460
+            - generic [ref=f13e620]:
+              - heading "Bacon Crisp" [level=4] [ref=f13e623]
+              - generic [ref=f13e624]: ₹520
+            - generic [ref=f13e626]:
+              - generic [ref=f13e628]:
+                - heading "Brisket Mac" [level=4] [ref=f13e629]
+                - generic [ref=f13e630]: CHEF
+              - generic [ref=f13e634]: ₹595
+            - generic [ref=f13e636]:
+              - generic [ref=f13e637]:
+                - generic [ref=f13e638]:
+                  - heading "Mac with Braised Brisket" [level=4] [ref=f13e639]
+                  - generic [ref=f13e640]: MUST
+                - paragraph [ref=f13e643]: A must-try experience
+              - generic [ref=f13e644]: —
+        - generic [ref=f13e647]:
+          - generic [ref=f13e648]:
+            - generic [ref=f13e649]: 🥬
+            - heading "Veggie Burgers" [level=3] [ref=f13e650]
+          - generic [ref=f13e651]:
+            - generic [ref=f13e653]:
+              - generic [ref=f13e654]:
+                - generic [ref=f13e655]:
+                  - heading "Korean Fried Paneer" [level=4] [ref=f13e656]
+                  - generic [ref=f13e657]: CHEF
+                - paragraph [ref=f13e661]: Gochujang glazed fried paneer, chimichurri, slaw, lettuce, garlic mayo
+              - generic [ref=f13e662]: ₹360
+            - generic [ref=f13e664]:
+              - generic [ref=f13e665]:
+                - generic [ref=f13e666]:
+                  - heading "Magic Mushroom" [level=4] [ref=f13e667]
+                  - generic [ref=f13e668]: New
+                - paragraph [ref=f13e669]: Multigrain crusted wild mushroom patty, pickled onions, lettuce, smash sauce
+              - generic [ref=f13e670]: ₹360
+            - generic [ref=f13e672]:
+              - generic [ref=f13e673]:
+                - generic [ref=f13e674]:
+                  - heading "Louisiana" [level=4] [ref=f13e675]
+                  - generic [ref=f13e676]: New
+                  - generic [ref=f13e677]: NUTS
+                - paragraph [ref=f13e682]: Roasted mix vegetable patty, slaw, american cheese, jalapeños, lettuce, smoky chipotle mayo
+              - generic [ref=f13e683]: ₹360
+            - generic [ref=f13e685]:
+              - generic [ref=f13e686]:
+                - generic [ref=f13e687]:
+                  - heading "Cheesy Chilli Mac" [level=4] [ref=f13e688]
+                  - generic [ref=f13e689]: SPICY
+                - paragraph [ref=f13e694]: Mac and cheese patty, chilli sofrito, double cheese slices, grilled onions, jalapeños, smoky chipotle mayo
+              - generic [ref=f13e695]: ₹360
+            - generic [ref=f13e697]:
+              - generic [ref=f13e698]:
+                - generic [ref=f13e699]:
+                  - heading "Broccoli and Cheddar" [level=4] [ref=f13e700]
+                  - generic [ref=f13e701]: NUTS
+                - paragraph [ref=f13e706]: Crumbled broccoli, cheddar & walnut patty, american cheese, jalapeños, lettuce, smash sauce
+              - generic [ref=f13e707]: ₹360
+        - generic [ref=f13e710]:
+          - generic [ref=f13e711]:
+            - generic [ref=f13e712]: 🍔
+            - heading "Fried Chicken Burgers" [level=3] [ref=f13e713]
+          - generic [ref=f13e714]:
+            - generic [ref=f13e716]:
+              - generic [ref=f13e717]:
+                - generic [ref=f13e718]:
+                  - heading "Buffalo Chicken" [level=4] [ref=f13e719]
+                  - generic [ref=f13e720]: SPICY
+                - paragraph [ref=f13e725]: Buffalo-sauce-dunked fried chicken, garlic mayo, grilled onions, lettuce, smoky chipotle mayo
+              - generic [ref=f13e726]: ₹370
+            - generic [ref=f13e728]:
+              - generic [ref=f13e729]:
+                - generic [ref=f13e730]:
+                  - heading "Nashville Chicken" [level=4] [ref=f13e731]
+                  - generic [ref=f13e732]: SPICY
+                  - generic [ref=f13e737]: CHEF
+                - paragraph [ref=f13e741]: Nashville spiced fried chicken dipped in hot oil, home-made chilli sofrito, pickles, garlic aioli
+              - generic [ref=f13e742]: ₹370
+            - generic [ref=f13e744]:
+              - generic [ref=f13e745]:
+                - generic [ref=f13e746]:
+                  - heading "Crispy French Dip" [level=4] [ref=f13e747]
+                  - generic [ref=f13e748]: EGG
+                - paragraph [ref=f13e752]: French-dip-dunked fried chicken, white onions, pickles, lettuce, garlic aioli, served with a French gravy dip
+              - generic [ref=f13e753]: ₹390
+            - generic [ref=f13e755]:
+              - generic [ref=f13e756]:
+                - generic [ref=f13e757]:
+                  - heading "Chicken Caesar Burger" [level=4] [ref=f13e758]
+                  - generic [ref=f13e759]: EGG
+                - paragraph [ref=f13e763]: Fried chicken, jalapeños, romaine lettuce, parmesan, caesar dressing
+              - generic [ref=f13e764]: ₹390
+        - generic [ref=f13e767]:
+          - generic [ref=f13e768]:
+            - generic [ref=f13e769]: 🍗
+            - heading "Smash Chicken" [level=3] [ref=f13e770]
+          - generic [ref=f13e771]:
+            - generic [ref=f13e773]:
+              - generic [ref=f13e774]:
+                - generic [ref=f13e775]:
+                  - heading "Foster Chicken Smash" [level=4] [ref=f13e776]
+                  - generic [ref=f13e777]: CHEF
+                - paragraph [ref=f13e781]: Double smash chicken patties, american cheese, chimichurri, pickles, lettuce, smash sauce
+              - generic [ref=f13e782]: ₹420
+            - generic [ref=f13e784]:
+              - generic [ref=f13e785]:
+                - generic [ref=f13e786]:
+                  - heading "Chicken Chilli Cheese Smash" [level=4] [ref=f13e787]
+                  - generic [ref=f13e788]: SPICY
+                - paragraph [ref=f13e793]: Double smash patties, chilli cheese sauce, american cheese, home-made chilli sofrito, smash sauce
+              - generic [ref=f13e794]: ₹450
+        - generic [ref=f13e797]:
+          - generic [ref=f13e798]:
+            - generic [ref=f13e799]: 🥩
+            - heading "Beef (Buff) & Lamb — Classic Smash" [level=3] [ref=f13e800]
+          - generic [ref=f13e801]:
+            - generic [ref=f13e803]:
+              - generic [ref=f13e804]:
+                - heading "OG Smash" [level=4] [ref=f13e806]
+                - paragraph [ref=f13e807]: Double smash patties, double american cheese, pickles, white onions, mustard
+              - generic [ref=f13e808]: ₹470
+            - generic [ref=f13e810]:
+              - generic [ref=f13e811]:
+                - heading "Oklahoma Smash" [level=4] [ref=f13e813]
+                - paragraph [ref=f13e814]: Double white onion smash patties, american cheese, chimichurri, pickles, lettuce, smash sauce
+              - generic [ref=f13e815]: ₹520
+            - generic [ref=f13e817]:
+              - generic [ref=f13e818]:
+                - generic [ref=f13e819]:
+                  - heading "Chilli Cheese Smash" [level=4] [ref=f13e820]
+                  - generic [ref=f13e821]: SPICY
+                  - generic [ref=f13e826]: CHEF
+                - paragraph [ref=f13e830]: Double smash patties, chilli cheese sauce, american cheese, home-made chilli sofrito, smash sauce
+              - generic [ref=f13e831]: ₹550
+            - generic [ref=f13e833]:
+              - generic [ref=f13e834]:
+                - generic [ref=f13e835]:
+                  - heading "Bacon Chilli Cheese Smash" [level=4] [ref=f13e836]
+                  - generic [ref=f13e837]: SPICY
+                - paragraph [ref=f13e842]: Double smash patties, chilli cheese sauce, american cheese, bacon, home-made chilli sofrito, smash sauce
+              - generic [ref=f13e843]: ₹650
+        - generic [ref=f13e846]:
+          - generic [ref=f13e847]:
+            - generic [ref=f13e848]: 🌟
+            - heading "Beef (Buff) & Lamb — Exhibition Smash" [level=3] [ref=f13e849]
+          - generic [ref=f13e850]:
+            - generic [ref=f13e852]:
+              - generic [ref=f13e853]:
+                - generic [ref=f13e854]:
+                  - heading "8 Hr. Braised Brisket (Buff)" [level=4] [ref=f13e855]
+                  - generic [ref=f13e856]: CHEF
+                - paragraph [ref=f13e860]: Pickled-onion smash patty, bbq braised brisket, american cheese, smash sauce
+              - generic [ref=f13e861]: ₹650
+            - generic [ref=f13e863]:
+              - generic [ref=f13e864]:
+                - generic [ref=f13e865]:
+                  - heading "PB & Bacon Smash (Buff / Lamb)" [level=4] [ref=f13e866]
+                  - generic [ref=f13e867]: NUTS
+                - paragraph [ref=f13e872]: Smash patty, crunchy peanut butter, american cheese, streaky bacon, sliced red paprika, smash sauce
+              - generic [ref=f13e873]: ₹550
+            - generic [ref=f13e875]:
+              - generic [ref=f13e876]:
+                - heading "The Dalston Dip (Buff)" [level=4] [ref=f13e878]
+                - paragraph [ref=f13e879]: Double smash patties, double american cheese, grilled onions, smash sauce. Served with home-made jus
+              - generic [ref=f13e880]: ₹750
+            - generic [ref=f13e882]:
+              - generic [ref=f13e883]:
+                - heading "The Flintstone (Buff & Bacon)" [level=4] [ref=f13e885]
+                - paragraph [ref=f13e886]: Smash patty, american cheese, streaky bacon, smash sauce. Served with a dino bone marrow
+              - generic [ref=f13e887]: ₹750
+            - generic [ref=f13e889]:
+              - generic [ref=f13e890]:
+                - heading "The Wellington (Buff & Bacon)" [level=4] [ref=f13e892]
+                - paragraph [ref=f13e893]: Double mustard buff smash patties, streaky bacon, roasted mushroom, smash sauce. Served with home-made jus
+              - generic [ref=f13e894]: ₹790
+        - generic [ref=f13e897]:
+          - generic [ref=f13e898]:
+            - generic [ref=f13e899]: 🍰
+            - heading "Desserts" [level=3] [ref=f13e900]
+          - generic [ref=f13e901]:
+            - generic [ref=f13e903]:
+              - generic [ref=f13e904]:
+                - heading "Deep Fried Oreos (Eggless)" [level=4] [ref=f13e906]
+                - paragraph [ref=f13e907]: Whipped custard, dulce de leche
+              - generic [ref=f13e908]: ₹350
+            - generic [ref=f13e910]:
+              - generic [ref=f13e911]:
+                - generic [ref=f13e912]:
+                  - heading "Old Monk Chocolate Mousse (Eggless)" [level=4] [ref=f13e913]
+                  - generic [ref=f13e914]: CHEF
+                  - generic [ref=f13e918]: MUST
+                - paragraph [ref=f13e921]: Whipped custard, cocoa dust
+              - generic [ref=f13e922]: ₹350
+            - generic [ref=f13e924]:
+              - generic [ref=f13e925]:
+                - generic [ref=f13e926]:
+                  - heading "Apple Crumble Cake" [level=4] [ref=f13e927]
+                  - generic [ref=f13e928]: NUTS
+                - paragraph [ref=f13e933]: Whipped cream, vanilla ice cream
+              - generic [ref=f13e934]: ₹350
+      - generic [ref=f13e935]:
+        - generic [ref=f13e937]:
+          - heading "Add-Ons — Veg" [level=3] [ref=f13e938]
+          - generic [ref=f13e939]:
+            - generic [ref=f13e940]:
+              - generic [ref=f13e941]: Haystack onions / Grilled onions
+              - generic [ref=f13e942]: ₹40
+            - generic [ref=f13e943]:
+              - generic [ref=f13e944]: Chilli sofrito / Cheese slice / Slaw / Jalapeños
+              - generic [ref=f13e945]: ₹40
+            - generic [ref=f13e946]:
+              - generic [ref=f13e947]: Extra dip
+              - generic [ref=f13e948]: ₹40
+            - generic [ref=f13e949]:
+              - generic [ref=f13e950]: Chimichurri
+              - generic [ref=f13e951]: ₹40
+            - generic [ref=f13e952]:
+              - generic [ref=f13e953]: Extra veg patty
+              - generic [ref=f13e954]: ₹100
+            - generic [ref=f13e955]:
+              - generic [ref=f13e956]: Smashed Truffle Burrata
+              - generic [ref=f13e957]: ₹125
+        - generic [ref=f13e959]:
+          - heading "Add-Ons — Non Veg" [level=3] [ref=f13e960]
+          - generic [ref=f13e961]:
+            - generic [ref=f13e962]:
+              - generic [ref=f13e963]: Home-made jus (Buff)
+              - generic [ref=f13e964]: ₹120
+            - generic [ref=f13e965]:
+              - generic [ref=f13e966]: Fried egg
+              - generic [ref=f13e967]: ₹60
+            - generic [ref=f13e968]:
+              - generic [ref=f13e969]: Chicken smash patty
+              - generic [ref=f13e970]: ₹100
+            - generic [ref=f13e971]:
+              - generic [ref=f13e972]: Buff or Lamb patty
+              - generic [ref=f13e973]: ₹150
+            - generic [ref=f13e974]:
+              - generic [ref=f13e975]: Streaky bacon
+              - generic [ref=f13e976]: ₹120
+            - generic [ref=f13e977]:
+              - generic [ref=f13e978]: Dino Bone Marrow (Buff)
+              - generic [ref=f13e979]: ₹448
+            - generic [ref=f13e980]:
+              - generic [ref=f13e981]: BBQ Braised Brisket (Buff)
+              - generic [ref=f13e982]: ₹240
+    - generic [ref=f13e985]:
+      - generic [ref=f13e987]:
+        - paragraph [ref=f13e988]: Visit Us
+        - heading "FIND YOUR smash" [level=2] [ref=f13e989]
+      - generic [ref=f13e990]:
+        - generic [ref=f13e992]:
+          - generic [ref=f13e993]: 📍
+          - heading "Koramangala" [level=3] [ref=f13e994]
+          - paragraph [ref=f13e995]: 5th Block, Koramangala, Bangalore
+          - paragraph [ref=f13e996]: 11:00 AM — 11:00 PM
+        - generic [ref=f13e998]:
+          - generic [ref=f13e999]: 📍
+          - heading "Indiranagar" [level=3] [ref=f13e1000]
+          - paragraph [ref=f13e1001]: 100ft Road, Indiranagar, Bangalore
+          - paragraph [ref=f13e1002]: 11:00 AM — 11:00 PM
+        - generic [ref=f13e1004]:
+          - generic [ref=f13e1005]: 📍
+          - heading "HSR Layout" [level=3] [ref=f13e1006]
+          - paragraph [ref=f13e1007]: Sector 1, HSR Layout, Bangalore
+          - paragraph [ref=f13e1008]: 11:00 AM — 11:00 PM
+    - generic [ref=f13e1010]:
+      - generic [ref=f13e1012]:
+        - paragraph [ref=f13e1013]: Testimonials
+        - heading "WHAT THEY say" [level=2] [ref=f13e1014]
+      - generic [ref=f13e1015]:
+        - generic [ref=f13e1017]:
+          - generic [ref=f13e1018]: “
+          - paragraph [ref=f13e1019]: The best smash burger I&apos;ve had in Bangalore. The atmosphere is unmatched.
+          - paragraph [ref=f13e1020]: — Ananya R.
+        - generic [ref=f13e1022]:
+          - generic [ref=f13e1023]: “
+          - paragraph [ref=f13e1024]: Cinematic dining with real flavour. The mac and cheese is elite.
+          - paragraph [ref=f13e1025]: — Rahul S.
+        - generic [ref=f13e1027]:
+          - generic [ref=f13e1028]: “
+          - paragraph [ref=f13e1029]: Finally, a burger joint that takes the experience as seriously as the food.
+          - paragraph [ref=f13e1030]: — Priya M.
+    - generic [ref=f13e1035]:
+      - paragraph [ref=f13e1036]: Ready?
+      - heading "TASTE THE PREMIERE" [level=2] [ref=f13e1037]
+      - paragraph [ref=f13e1038]: Order online, book a table, or walk in. Every Smash Guys visit is designed to be unforgettable.
+      - generic [ref=f13e1039]:
+        - link "Order Now" [ref=f13e1041] [cursor=pointer]:
+          - /url: "#"
+        - link "Book a Table" [ref=f13e1043] [cursor=pointer]:
+          - /url: "#"
+    - generic [ref=f13e1046]:
+      - generic [ref=f13e1047]:
+        - generic [ref=f13e1048]:
+          - heading "SMASHGUYS" [level=3] [ref=f13e1049]
+          - paragraph [ref=f13e1050]: Bangalore's iconic smash burger kitchen. Premium burgers, creative sides, and handcrafted shakes — crafted with obsession.
+          - generic [ref=f13e1051]:
+            - link "Instagram" [ref=f13e1052] [cursor=pointer]:
+              - /url: "#"
+            - link "Zomato" [ref=f13e1053] [cursor=pointer]:
+              - /url: "#"
+            - link "Swiggy" [ref=f13e1054] [cursor=pointer]:
+              - /url: "#"
+        - generic [ref=f13e1055]:
+          - heading "Locations" [level=4] [ref=f13e1056]
+          - list [ref=f13e1057]:
+            - listitem [ref=f13e1058]:
+              - link "Koramangala" [ref=f13e1059] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f13e1060]:
+              - link "Indiranagar" [ref=f13e1061] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f13e1062]:
+              - link "HSR Layout" [ref=f13e1063] [cursor=pointer]:
+                - /url: "#"
+        - generic [ref=f13e1064]:
+          - heading "Hours" [level=4] [ref=f13e1065]
+          - list [ref=f13e1066]:
+            - listitem [ref=f13e1067]: "Mon — Thu: 11am — 11pm"
+            - listitem [ref=f13e1068]: "Fri — Sat: 11am — 12am"
+            - listitem [ref=f13e1069]: "Sun: 11am — 10pm"
+        - generic [ref=f13e1070]:
+          - heading "Contact" [level=4] [ref=f13e1071]
+          - list [ref=f13e1072]:
+            - listitem [ref=f13e1073]:
+              - link "founders@popoventures.com" [ref=f13e1074] [cursor=pointer]:
+                - /url: mailto:founders@popoventures.com
+            - listitem [ref=f13e1075]: +91 80 1234 5678
+      - generic [ref=f13e1076]:
+        - paragraph [ref=f13e1077]: © 2026 Smash Guys. All rights reserved.
+        - generic [ref=f13e1078]:
+          - link "Privacy" [ref=f13e1079] [cursor=pointer]:
+            - /url: "#"
+          - link "Terms" [ref=f13e1080] [cursor=pointer]:
+            - /url: "#"

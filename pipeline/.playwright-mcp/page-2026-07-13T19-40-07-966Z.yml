@@ -1,0 +1,129 @@
+- generic [active] [ref=f6e1]:
+  - banner [ref=f6e2]:
+    - link "button Il buco Ristorante Home" [ref=f6e4] [cursor=pointer]:
+      - /url: https://www.ilbucoristorante.it/en/home
+    - generic [ref=f6e20]:
+      - link "Ita" [ref=f6e22] [cursor=pointer]:
+        - /url: https://www.ilbucoristorante.it/
+      - link "Gift" [ref=f6e23] [cursor=pointer]:
+        - /url: https://www.ilbucoristorante.it/en/experience-gift/
+      - button "Reserve" [ref=f6e25] [cursor=pointer]
+  - link "Menu 2026" [ref=f6e27] [cursor=pointer]:
+    - /url: http://www.ilbucoristorantemenu.it/index.php?Lan=en&Eve=N
+  - main [ref=f6e31]:
+    - generic [ref=f6e33]:
+      - generic: A journey back to our roots
+      - generic [ref=f6e34]:
+        - generic [ref=f6e35]: A journey back to our roots
+        - paragraph [ref=f6e38]: Welcome home
+        - img "1 Michelin star" [ref=f6e40]
+        - paragraph [ref=f6e42]: Il Buco is a historic Michelin Star restaurant in the heart of Sorrento. A place where values are treasured and new flavours are experimented. A philosophy in which regional and international inspiration find original and surprising balances every time.
+    - generic [ref=f6e45]:
+      - paragraph [ref=f6e48]
+      - generic [ref=f6e49]:
+        - generic [ref=f6e51]:
+          - group "1 / 3" [ref=f6e52]:
+            - img "ilbuco_ambienti_il_salottino" [ref=f6e54]
+            - generic:
+              - generic:
+                - img "ilbuco_ambienti_il_salottino_2"
+          - group "2 / 3" [ref=f6e55]:
+            - img "ilbuco_ambienti_la_sala" [ref=f6e57]
+            - generic:
+              - generic:
+                - img "ilbuco_ambienti_la_sala_2"
+          - group "3 / 3" [ref=f6e58]:
+            - img "ilbuco_ambienti_i_terrazzini" [ref=f6e60]
+            - generic:
+              - generic:
+                - img "ilbuco_ambienti_i_terrazzini_2"
+        - button "Previous slide" [ref=f6e61] [cursor=pointer]
+        - button "Next slide" [ref=f6e62] [cursor=pointer]
+      - link "Il Buco" [ref=f6e64] [cursor=pointer]:
+        - /url: https://www.ilbucoristorante.it/en/il-buco/
+        - generic [ref=f6e65]: discover more
+    - generic [ref=f6e67]:
+      - generic [ref=f6e68]:
+        - paragraph [ref=f6e70]
+        - paragraph [ref=f6e72]
+      - generic [ref=f6e73]:
+        - button "ilbuco_settembre2024_47 Food is the key to memory listen" [ref=f6e80] [cursor=pointer]:
+          - img "ilbuco_settembre2024_47" [ref=f6e82]
+          - paragraph [ref=f6e83]: Food is the key to memory
+          - generic [ref=f6e84]: listen
+        - generic [ref=f6e90]:
+          - generic [ref=f6e92]:
+            - group "1 / 4" [ref=f6e93] [cursor=pointer]:
+              - img "ilbuco_settembre2024_38" [ref=f6e95]
+              - paragraph [ref=f6e96]: The place where it all began
+            - group "2 / 4" [ref=f6e97] [cursor=pointer]:
+              - img "ilbuco_settembre2024_98-1" [ref=f6e99]
+              - paragraph [ref=f6e100]: Enthusiasm and bravery
+            - group "3 / 4" [ref=f6e101] [cursor=pointer]:
+              - img "ilbuco_settembre2024_57" [ref=f6e103]
+              - paragraph [ref=f6e104]: The creative process
+            - group "4 / 4" [ref=f6e105] [cursor=pointer]:
+              - img "ilbuco_settembre2024_82" [ref=f6e107]
+              - paragraph [ref=f6e108]: Our cellar
+          - button "Previous slide" [disabled]
+          - button "Next slide" [ref=f6e112] [cursor=pointer]
+    - button [ref=f6e115] [cursor=pointer]:
+      - heading "Book a table" [level=3] [ref=f6e117]
+      - img "ilbuco_settembre2024_93" [ref=f6e120]
+      - paragraph [ref=f6e123]: Lunch 12.30pm - 2.00pm | Dinner 7.30pm - 10.00pm Closed on Wednesday
+    - generic [ref=f6e124]:
+      - generic [ref=f6e125]:
+        - paragraph [ref=f6e128]
+        - img "pane" [ref=f6e131]
+        - generic [ref=f6e133]:
+          - img "ilbuco_settembre2024_100-1" [ref=f6e135]
+          - img "ilbuco_settembre2024_105-1" [ref=f6e137]
+          - img "ilbuco_settembre2024_113-1" [ref=f6e139]
+      - link "The Kitchen" [ref=f6e141] [cursor=pointer]:
+        - /url: https://www.ilbucoristorante.it/en/the-kitchen/
+    - generic [ref=f6e143]:
+      - generic [ref=f6e144]:
+        - img "ilbuco_settembre2024_83" [ref=f6e146]
+        - paragraph [ref=f6e148]
+        - link "The Cellar" [ref=f6e150] [cursor=pointer]:
+          - /url: https://www.ilbucoristorante.it/en/the-cellar/
+      - img "ilbuco_settembre2024_79" [ref=f6e154]
+    - generic [ref=f6e155]:
+      - generic [ref=f6e156]: THE PLEASURE OF REUNITING
+      - generic [ref=f6e158]:
+        - navigation [ref=f6e160]:
+          - list [ref=f6e161]:
+            - listitem [ref=f6e162]:
+              - link "Il Buco" [ref=f6e163] [cursor=pointer]:
+                - /url: https://www.ilbucoristorante.it/en/il-buco/
+            - listitem [ref=f6e164]:
+              - link "The Team" [ref=f6e165] [cursor=pointer]:
+                - /url: https://www.ilbucoristorante.it/en/the-team/
+            - listitem [ref=f6e166]:
+              - link "The Kitchen" [ref=f6e167] [cursor=pointer]:
+                - /url: https://www.ilbucoristorante.it/en/the-kitchen/
+            - listitem [ref=f6e168]:
+              - link "The Cellar" [ref=f6e169] [cursor=pointer]:
+                - /url: https://www.ilbucoristorante.it/en/the-cellar/
+            - listitem [ref=f6e170]:
+              - link "Visual Collection" [ref=f6e171] [cursor=pointer]:
+                - /url: https://www.ilbucoristorante.it/en/visual-collection/
+            - listitem [ref=f6e172]:
+              - link "Contacts" [ref=f6e173] [cursor=pointer]:
+                - /url: https://www.ilbucoristorante.it/en/contacts/
+            - listitem [ref=f6e174]:
+              - link "Experience Gift" [ref=f6e175] [cursor=pointer]:
+                - /url: https://www.ilbucoristorante.it/en/experience-gift/
+        - generic [ref=f6e176]:
+          - generic [ref=f6e177]:
+            - heading "RISTORANTE IL BUCO SORRENTO" [level=6] [ref=f6e178]
+            - paragraph [ref=f6e179]: 2ª rampa Marina Piccola, 5 Piazza S.Antonino 80067 Sorrento ITALY
+            - paragraph [ref=f6e180]: "Phone: +39 0818782354 Email: info@ilbucoristorante.it"
+          - generic [ref=f6e181]:
+            - link "facebook" [ref=f6e182] [cursor=pointer]:
+              - /url: https://www.facebook.com/ilbuco.sorrento/
+            - link "instagram" [ref=f6e185] [cursor=pointer]:
+              - /url: https://www.instagram.com/ilbucosorrento/
+        - generic [ref=f6e188]:
+          - img "collectionneurs" [ref=f6e190]
+          - paragraph [ref=f6e191]: © 2026 Il Buco - All Rights ReservedVAT 06059821212

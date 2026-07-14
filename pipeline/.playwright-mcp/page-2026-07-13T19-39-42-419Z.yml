@@ -1,0 +1,298 @@
+- generic [active] [ref=f3e1]:
+  - generic [ref=f3e2]:
+    - link "Skip to content" [ref=f3e3] [cursor=pointer]:
+      - /url: "#MainContent"
+    - generic [ref=f3e7]:
+      - link [ref=f3e10] [cursor=pointer]:
+        - /url: /
+        - img "Koox" [ref=f3e11]
+      - navigation [ref=f3e15]:
+        - list [ref=f3e16]:
+          - listitem [ref=f3e17]:
+            - link "Home" [ref=f3e18] [cursor=pointer]:
+              - /url: /
+          - listitem [ref=f3e19]:
+            - link "Juice Shop" [ref=f3e20] [cursor=pointer]:
+              - /url: /collections/koox-juice-shop
+          - listitem [ref=f3e21]:
+            - link "Cleanse" [ref=f3e22] [cursor=pointer]:
+              - /url: /collections/koox-cleanse
+          - listitem [ref=f3e23]:
+            - link "About Us" [ref=f3e24] [cursor=pointer]:
+              - /url: /pages/contact
+          - listitem [ref=f3e25]:
+            - link "Contact" [ref=f3e26] [cursor=pointer]:
+              - /url: /pages/contact
+          - listitem [ref=f3e27]:
+            - link "Become A Stockist" [ref=f3e28] [cursor=pointer]:
+              - /url: /pages/become-a-stockist
+      - link "Cart 0 items" [ref=f3e30] [cursor=pointer]:
+        - /url: /cart
+        - generic [ref=f3e35]: Cart
+        - generic [ref=f3e36]:
+          - generic [ref=f3e37]: "0"
+          - generic [ref=f3e38]: 0 items
+    - main [ref=f3e39]:
+      - generic [ref=f3e44]:
+        - generic [ref=f3e46]:
+          - link "Koox":
+            - /url: /collections/koox-cleanse
+        - generic [ref=f3e47]:
+          - heading "ORGANIC JUICES & CLEANSES MADE TO ORDER" [level=2] [ref=f3e48]
+          - paragraph [ref=f3e49]:
+            - generic [ref=f3e50]: 4.8 ★
+            - text: +10,000 reviews on food delivery platforms
+          - link "Get your Order from our Lab to your door in 24h" [ref=f3e52] [cursor=pointer]:
+            - /url: /collections/koox-cleanse
+      - generic [ref=f3e53]: 100% ORGANIC | 100% COLD-PRESSED | 100% RAW | 0% ADDITIVES | 0% PASTEURISATION | 0% HPP
+      - generic [ref=f3e62]:
+        - generic [ref=f3e64]:
+          - link "CLEANSES" [ref=f3e67] [cursor=pointer]:
+            - /url: /collections/koox-cleanse
+          - heading [level=3] [ref=f3e69]:
+            - link "CLEANSES" [ref=f3e70] [cursor=pointer]:
+              - /url: /collections/koox-cleanse
+        - generic [ref=f3e73]:
+          - link "JUICE BOX" [ref=f3e76] [cursor=pointer]:
+            - /url: /collections/koox-juice-shop
+          - heading [level=3] [ref=f3e78]:
+            - link "JUICE BOX" [ref=f3e79] [cursor=pointer]:
+              - /url: /collections/koox-juice-shop
+        - generic [ref=f3e82]:
+          - link "BECOME A STOCKIST" [ref=f3e85] [cursor=pointer]:
+            - /url: /pages/become-a-stockist
+          - heading [level=3] [ref=f3e87]:
+            - link "BECOME A STOCKIST" [ref=f3e88] [cursor=pointer]:
+              - /url: /pages/become-a-stockist
+      - generic [ref=f3e93]:
+        - heading "Koox cleanses" [level=3] [ref=f3e95]
+        - generic [ref=f3e98]:
+          - generic [ref=f3e106]:
+            - link "24h/48h/72h" [ref=f3e109] [cursor=pointer]:
+              - /url: /collections/vendors?q=24h%2F48h%2F72h
+            - link "The Signature Reset Cleanse" [ref=f3e110] [cursor=pointer]:
+              - /url: /products/the-signature-reset-cleanse
+            - definition [ref=f3e115]:
+              - generic [ref=f3e116]:
+                - generic [ref=f3e117]: From
+                - text: £65.00
+          - generic [ref=f3e125]:
+            - link "24h/48h/72h" [ref=f3e128] [cursor=pointer]:
+              - /url: /collections/vendors?q=24h%2F48h%2F72h
+            - link "The Green Curve Cleanse" [ref=f3e129] [cursor=pointer]:
+              - /url: /products/the-green-curve-cleanse
+            - definition [ref=f3e134]:
+              - generic [ref=f3e135]:
+                - generic [ref=f3e136]: From
+                - text: £65.00
+          - generic [ref=f3e144]:
+            - link "72h" [ref=f3e147] [cursor=pointer]:
+              - /url: /collections/vendors?q=72h
+            - link "3-Day Weight Loss Kick off Cleanse" [ref=f3e148] [cursor=pointer]:
+              - /url: /products/3-day-weight-loss-kick-off-cleanse
+            - definition [ref=f3e153]: £155.00
+          - generic [ref=f3e161]:
+            - link "5:2" [ref=f3e164] [cursor=pointer]:
+              - /url: /collections/vendors?q=5%3A2
+            - link "Five:Two Cleanse" [ref=f3e165] [cursor=pointer]:
+              - /url: /products/5-2-cleanse
+            - definition [ref=f3e170]: £60.00
+      - generic [ref=f3e171]:
+        - paragraph [ref=f3e172]:
+          - text: GET
+          - strong [ref=f3e173]: 15% OFF
+          - text: YOUR FIRST PURCHASE
+        - paragraph [ref=f3e174]:
+          - text: "CODE:"
+          - strong [ref=f3e175]: KOOXORGANIC
+      - generic [ref=f3e179]:
+        - heading "JUICE SHOP" [level=3] [ref=f3e181]
+        - generic [ref=f3e184]:
+          - generic [ref=f3e192]:
+            - link "cold-pressed 500ml" [ref=f3e195] [cursor=pointer]:
+              - /url: /collections/vendors?q=cold-pressed%20500ml
+            - link "Cold-pressed N°5" [ref=f3e196] [cursor=pointer]:
+              - /url: /products/drinkable-skincare
+            - definition [ref=f3e201]: £9.95
+          - generic [ref=f3e209]:
+            - link "cold-pressed 500ml" [ref=f3e212] [cursor=pointer]:
+              - /url: /collections/vendors?q=cold-pressed%20500ml
+            - link "Cold-Pressed N°3" [ref=f3e213] [cursor=pointer]:
+              - /url: /products/the-ultimate-detox
+            - definition [ref=f3e218]: £9.95
+          - generic [ref=f3e226]:
+            - link "cold-pressed 500ml" [ref=f3e229] [cursor=pointer]:
+              - /url: /collections/vendors?q=cold-pressed%20500ml
+            - link "Cold-pressed N°15" [ref=f3e230] [cursor=pointer]:
+              - /url: /products/dr-green
+            - definition [ref=f3e235]: £9.95
+          - generic [ref=f3e243]:
+            - link "cold-pressed 500ml" [ref=f3e246] [cursor=pointer]:
+              - /url: /collections/vendors?q=cold-pressed%20500ml
+            - link "Cold-pressed N°9" [ref=f3e247] [cursor=pointer]:
+              - /url: /products/happy-gut
+            - definition [ref=f3e252]: £9.95
+          - generic [ref=f3e260]:
+            - link "cold-pressed 500ml" [ref=f3e263] [cursor=pointer]:
+              - /url: /collections/vendors?q=cold-pressed%20500ml
+            - link "Cold-pressed N°7" [ref=f3e264] [cursor=pointer]:
+              - /url: /products/shield-immunity
+            - definition [ref=f3e269]: £9.95
+          - generic [ref=f3e277]:
+            - link "cold-pressed 500ml" [ref=f3e280] [cursor=pointer]:
+              - /url: /collections/vendors?q=cold-pressed%20500ml
+            - link "Cold-pressed N°11" [ref=f3e281] [cursor=pointer]:
+              - /url: /products/hydro-green
+            - definition [ref=f3e286]: £9.95
+          - generic [ref=f3e294]:
+            - link "Koox 500ml" [ref=f3e297] [cursor=pointer]:
+              - /url: /collections/vendors?q=Koox%20500ml
+            - link "Coco Water" [ref=f3e298] [cursor=pointer]:
+              - /url: /products/coco-water
+            - definition [ref=f3e303]: £9.95
+          - generic [ref=f3e311]:
+            - link "smoothie 500ml" [ref=f3e314] [cursor=pointer]:
+              - /url: /collections/vendors?q=smoothie%20500ml
+            - link "Smoothie N°21" [ref=f3e315] [cursor=pointer]:
+              - /url: /products/vit-c-immunity
+            - definition [ref=f3e320]: £9.95
+          - generic [ref=f3e328]:
+            - link "smoothie 500ml" [ref=f3e331] [cursor=pointer]:
+              - /url: /collections/vendors?q=smoothie%20500ml
+            - link "Smoothie N°23" [ref=f3e332] [cursor=pointer]:
+              - /url: /products/green-healer
+            - definition [ref=f3e337]: £9.95
+          - generic [ref=f3e345]:
+            - link "smoothie 500ml" [ref=f3e348] [cursor=pointer]:
+              - /url: /collections/vendors?q=smoothie%20500ml
+            - link "Smoothie N°27" [ref=f3e349] [cursor=pointer]:
+              - /url: /products/brain-power
+            - definition [ref=f3e354]: £9.95
+          - generic [ref=f3e362]:
+            - link "smoothie 500ml" [ref=f3e365] [cursor=pointer]:
+              - /url: /collections/vendors?q=smoothie%20500ml
+            - link "Smoothie N°25 (No Fruit)" [ref=f3e366] [cursor=pointer]:
+              - /url: /products/keto-greens-no-fruit
+            - definition [ref=f3e371]: £9.95
+          - generic [ref=f3e379]:
+            - link "cold-pressed 500ml" [ref=f3e382] [cursor=pointer]:
+              - /url: /collections/vendors?q=cold-pressed%20500ml
+            - link "Cold-Pressed N°19 (LESS SWEET)" [ref=f3e383] [cursor=pointer]:
+              - /url: /products/ultimate-detox-less-sweet
+            - definition [ref=f3e388]: £9.95
+          - generic [ref=f3e396]:
+            - link "Koox" [ref=f3e399] [cursor=pointer]:
+              - /url: /collections/vendors?q=Koox
+            - link "Ginger + Turmeric" [ref=f3e400] [cursor=pointer]:
+              - /url: /products/turmeric-immunity-shot
+            - definition [ref=f3e405]: £3.95
+      - generic [ref=f3e407]:
+        - heading "HIGHEST RATED JUICE BRAND IN LONDON" [level=2] [ref=f3e408]
+        - heading "4.8/5" [level=1] [ref=f3e409]
+        - paragraph [ref=f3e410]:
+          - img "Star Icon" [ref=f3e411]
+        - heading "+10,000 reviews" [level=4] [ref=f3e412]
+        - link "View All Reviews" [ref=f3e413] [cursor=pointer]:
+          - /url: https://deliveroo.co.uk/menu/london/clerkenwell/koox
+        - paragraph [ref=f3e414]:
+          - emphasis [ref=f3e415]: based on customers’ ratings on Deliveroo & Uber Eats from 2022 to 2024
+      - generic [ref=f3e422]:
+        - link [disabled] [ref=f3e424] [cursor=pointer]:
+          - paragraph [ref=f3e426]: These juices are the most delicious! very filling and perfect when I'm juicing. I will definitely order again, thank you!
+        - link [disabled] [ref=f3e428] [cursor=pointer]:
+          - paragraph [ref=f3e430]: The best in London. Finally produce that is properly juiced, properly filtered, and bottled in glass. Divine and speedy delivery too!
+        - link [disabled] [ref=f3e432] [cursor=pointer]:
+          - paragraph [ref=f3e434]: Exactly what I needed to feel better from the cold I have. The vit-c immunity one is DELICIOUS
+      - generic [ref=f3e438]:
+        - generic [ref=f3e439]:
+          - heading "WHY KOOX" [level=3] [ref=f3e440]
+          - generic [ref=f3e442]: KOOX Juices are designed to keep vitamins and nutrients at the highest level
+        - generic [ref=f3e443]:
+          - link "ORGANIC" [disabled] [ref=f3e445] [cursor=pointer]
+          - link "UNPROCESSED" [disabled] [ref=f3e449] [cursor=pointer]
+          - link "RAW" [disabled] [ref=f3e453] [cursor=pointer]
+      - generic [ref=f3e460]:
+        - link "GLASS BOTTLES" [disabled] [ref=f3e462] [cursor=pointer]
+        - link "MADE-TO-ORDER" [disabled] [ref=f3e466] [cursor=pointer]
+    - generic [ref=f3e470]:
+      - img "Logo" [ref=f3e472]
+      - contentinfo [ref=f3e473]:
+        - generic [ref=f3e476]:
+          - generic [ref=f3e480]:
+            - paragraph [ref=f3e481]: Arch 13 Almond Road, Bermondsey, London, SE16 3LR
+            - paragraph [ref=f3e484]:
+              - text: "Email:"
+              - link "contact@koox.co.uk" [ref=f3e485] [cursor=pointer]:
+                - /url: mailto:contact@koox.co.uk
+          - generic [ref=f3e487]:
+            - heading "Categories" [level=2] [ref=f3e488]
+            - list [ref=f3e490]:
+              - listitem [ref=f3e491]:
+                - link "Koox Cleanse" [ref=f3e492] [cursor=pointer]:
+                  - /url: /collections/koox-cleanse
+              - listitem [ref=f3e493]:
+                - link "Koox Juice Shop" [ref=f3e494] [cursor=pointer]:
+                  - /url: /collections/koox-juice-shop
+          - generic [ref=f3e496]:
+            - heading "Further Info." [level=2] [ref=f3e497]
+            - list [ref=f3e499]:
+              - listitem [ref=f3e500]:
+                - link "Home" [ref=f3e501] [cursor=pointer]:
+                  - /url: /
+              - listitem [ref=f3e502]:
+                - link "Juice Shop" [ref=f3e503] [cursor=pointer]:
+                  - /url: /collections/koox-juice-shop
+              - listitem [ref=f3e504]:
+                - link "Cleanse" [ref=f3e505] [cursor=pointer]:
+                  - /url: /collections/koox-cleanse
+              - listitem [ref=f3e506]:
+                - link "About Us" [ref=f3e507] [cursor=pointer]:
+                  - /url: /pages/contact
+              - listitem [ref=f3e508]:
+                - link "Contact" [ref=f3e509] [cursor=pointer]:
+                  - /url: /pages/contact
+              - listitem [ref=f3e510]:
+                - link "Become A Stockist" [ref=f3e511] [cursor=pointer]:
+                  - /url: /pages/become-a-stockist
+          - generic [ref=f3e513]:
+            - heading "GET THE LATEST DEALS" [level=2] [ref=f3e514]
+            - generic [ref=f3e515]:
+              - paragraph [ref=f3e517]: Sign up for new arrivals, offers & more!
+              - generic [ref=f3e520]:
+                - textbox "Your email" [ref=f3e522]:
+                  - /placeholder: enter your email address
+                - button "Submit" [ref=f3e523] [cursor=pointer]
+        - generic [ref=f3e526]:
+          - paragraph [ref=f3e529]: COPYRIGHT KOOX 2024. POWERED BY SHOPIFY.
+          - generic [ref=f3e531]:
+            - generic [ref=f3e532]: Payment methods
+            - list [ref=f3e533]:
+              - listitem [ref=f3e534]:
+                - img "Visa" [ref=f3e535]
+              - listitem [ref=f3e540]:
+                - img "Mastercard" [ref=f3e541]
+              - listitem [ref=f3e548]:
+                - img "Apple Pay" [ref=f3e549]
+              - listitem [ref=f3e560]:
+                - img "Google Pay" [ref=f3e561]
+              - listitem [ref=f3e569]:
+                - img "Shop Pay" [ref=f3e570]
+  - generic [ref=f3e575]:
+    - generic [ref=f3e576]:
+      - generic [ref=f3e577]:
+        - generic [ref=f3e578]: Menu
+        - button "Close" [ref=f3e579] [cursor=pointer]
+      - list [ref=f3e582]:
+        - listitem [ref=f3e583]
+        - listitem [ref=f3e584]
+        - listitem [ref=f3e585]
+        - listitem [ref=f3e586]
+        - listitem [ref=f3e587]
+        - listitem [ref=f3e588]
+        - listitem [ref=f3e589]
+        - listitem [ref=f3e590]
+    - generic [ref=f3e592]:
+      - link [ref=f3e593] [cursor=pointer]:
+        - /url: https://koox.co.uk/customer_authentication/redirect?locale=en&region_country=GB
+      - link [ref=f3e597] [cursor=pointer]:
+        - /url: https://shopify.com/81305796946/account?locale=en&buyer_flags=eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJiMjFkMWUtMi5teXNob3BpZnkuY29tIiwiZmxhZ3MiOltdLCJleHAiOjE3ODQ1NzYzNzYsIm5iZiI6MTc4Mzk3MTU3Nn0.ujiJ-y3DIvGQtip_uxFkZEhM6IqMSLgUgLv4xGNRoBE

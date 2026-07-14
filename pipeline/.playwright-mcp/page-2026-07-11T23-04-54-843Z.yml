@@ -1,0 +1,111 @@
+- generic [active] [ref=f3e1]:
+  - generic [ref=f3e2]:
+    - banner [ref=f3e3]:
+      - generic [ref=f3e4]:
+        - link "Mowglai.AI" [ref=f3e5] [cursor=pointer]:
+          - /url: "#"
+        - navigation [ref=f3e6]:
+          - link "Platform" [ref=f3e7] [cursor=pointer]:
+            - /url: "#platform"
+          - link "Solutions" [ref=f3e8] [cursor=pointer]:
+            - /url: "#solutions"
+          - link "Pricing" [ref=f3e9] [cursor=pointer]:
+            - /url: "#pricing"
+          - link "Resources" [ref=f3e10] [cursor=pointer]:
+            - /url: "#resources"
+        - button "Request Demo" [ref=f3e12] [cursor=pointer]
+    - main [ref=f3e13]:
+      - generic [ref=f3e15]:
+        - heading "The Gap Between Imagination and Execution." [level=2] [ref=f3e16]
+        - paragraph [ref=f3e17]: The modern creative workflow is plagued by siloed tools and technical overhead. Artists spend time managing pipelines instead of creating worlds. This fragmentation limits the scale and ambition of your vision.
+        - paragraph [ref=f3e20]: "[ Abstract Data Visualization: Chaotic Inputs $\\rightarrow$ Resolved Signal ]"
+        - generic [ref=f3e21]:
+          - heading "Mowglai is the bridge." [level=3] [ref=f3e22]
+          - paragraph [ref=f3e23]: We eliminate the friction points, providing a single, intelligent platform where every creative element—from script to pixel—is managed by integrated AI.
+      - generic [ref=f3e25]:
+        - heading "Integrated Workflows for Limitless Worlds." [level=2] [ref=f3e26]
+        - paragraph [ref=f3e27]: Mowglai is not a collection of tools; it is the central nervous system for modern creative production.
+        - generic [ref=f3e28]:
+          - generic [ref=f3e30]:
+            - generic [ref=f3e31]:
+              - heading "Cinematic Storyboarding" [level=3] [ref=f3e41]
+              - paragraph [ref=f3e42]: Maintain absolute visual consistency across entire projects. Generate mood boards, character sheets, and scene breakdowns that adhere to a unified aesthetic DNA.
+            - button "Learn More $\\rightarrow$" [ref=f3e43] [cursor=pointer]
+          - generic [ref=f3e45]:
+            - generic [ref=f3e46]:
+              - heading "Multimodal Asset Generation" [level=3] [ref=f3e53]
+              - paragraph [ref=f3e54]: Seamlessly generate text, image, video, and audio from single prompts. Break down the technical barrier between different media types in one intelligent flow.
+            - button "Learn More $\\rightarrow$" [ref=f3e55] [cursor=pointer]
+          - generic [ref=f3e57]:
+            - generic [ref=f3e58]:
+              - heading "IP & World Building" [level=3] [ref=f3e63]
+              - paragraph [ref=f3e64]: Build deep, consistent universes. Define lore, character arcs, and physical laws that remain stable and coherent across thousands of generated assets.
+            - button "Learn More $\\rightarrow$" [ref=f3e65] [cursor=pointer]
+      - generic [ref=f3e67]:
+        - heading "The Engine Behind Industry Leaders." [level=2] [ref=f3e68]
+        - paragraph [ref=f3e69]: We power the most ambitious creative visions, from major film studios to global advertising agencies.
+        - generic [ref=f3e70]:
+          - generic [ref=f3e71] [cursor=pointer]: Studio Alpha
+          - generic [ref=f3e72] [cursor=pointer]: Global Agency Beta
+          - generic [ref=f3e73] [cursor=pointer]: Film Corp Gamma
+          - generic [ref=f3e74] [cursor=pointer]: Tech Vision Delta
+        - generic [ref=f3e75]:
+          - blockquote [ref=f3e76]: "\"We cut our pre-production time by 60% while elevating the artistic quality to cinematic perfection. Mowglai is a game changer.\""
+          - paragraph [ref=f3e77]: — Head of Creative, Global Agency Beta
+        - button "View Deep Dive Case Studies $\\rightarrow$" [ref=f3e79] [cursor=pointer]
+      - generic [ref=f3e81]:
+        - heading "AI-Generated Vision." [level=2] [ref=f3e82]
+        - paragraph [ref=f3e83]: Every pixel is born from intelligent synthesis. Watch the model breathe life into abstract concepts in real-time.
+        - generic [ref=f3e84]:
+          - paragraph [ref=f3e93]: Character Concept
+          - paragraph [ref=f3e102]: Environment Render
+          - paragraph [ref=f3e111]: Abstract Texture
+          - paragraph [ref=f3e120]: Scene Composition
+      - generic [ref=f3e122]:
+        - heading "Don't just generate content. Build worlds." [level=2] [ref=f3e123]
+        - paragraph [ref=f3e124]: Mowglai is not a tool for the masses; it is an integrated creative partner designed to scale human potential into limitless digital possibility.
+        - button "Request a Private Demo / Consult with an Expert" [ref=f3e126] [cursor=pointer]
+    - contentinfo [ref=f3e127]:
+      - generic [ref=f3e128]:
+        - generic [ref=f3e129]:
+          - generic [ref=f3e130]:
+            - heading "Mowglai.AI" [level=3] [ref=f3e131]
+            - paragraph [ref=f3e132]: Pioneering the next generation of creative intelligence. Building worlds, one prompt at a time.
+          - generic [ref=f3e133]:
+            - heading "Platform" [level=4] [ref=f3e134]
+            - list [ref=f3e135]:
+              - listitem [ref=f3e136]:
+                - link "Storyboarding" [ref=f3e137] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=f3e138]:
+                - link "Asset Generation" [ref=f3e139] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=f3e140]:
+                - link "World Engine" [ref=f3e141] [cursor=pointer]:
+                  - /url: "#"
+          - generic [ref=f3e142]:
+            - heading "Resources" [level=4] [ref=f3e143]
+            - list [ref=f3e144]:
+              - listitem [ref=f3e145]:
+                - link "Case Studies" [ref=f3e146] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=f3e147]:
+                - link "Blog / Thought Leadership" [ref=f3e148] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=f3e149]:
+                - link "API Docs" [ref=f3e150] [cursor=pointer]:
+                  - /url: "#"
+          - generic [ref=f3e151]:
+            - heading "Company" [level=4] [ref=f3e152]
+            - list [ref=f3e153]:
+              - listitem [ref=f3e154]:
+                - link "About Us" [ref=f3e155] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=f3e156]:
+                - link "Careers" [ref=f3e157] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=f3e158]:
+                - link "Contact" [ref=f3e159] [cursor=pointer]:
+                  - /url: "#"
+        - generic [ref=f3e160]: © 2026 Mowglai AI Systems. All rights reserved.
+  - alert [ref=f3e161]

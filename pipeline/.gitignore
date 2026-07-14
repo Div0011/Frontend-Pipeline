@@ -1,0 +1,10 @@
+# Secrets & local state — never commit
+.env
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# Generated pipeline output
+artifacts/
+*.zip
