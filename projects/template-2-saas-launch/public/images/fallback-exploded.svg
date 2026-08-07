@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <rect width="800" height="600" fill="#080711"/>
+  <rect x="100" y="80" width="60" height="60" rx="6" fill="#6366f1" opacity="0.9"/>
+  <rect x="540" y="100" width="60" height="60" rx="6" fill="#8b5cf6" opacity="0.9"/>
+  <rect x="580" y="350" width="60" height="60" rx="6" fill="#a855f7" opacity="0.9"/>
+  <rect x="150" y="380" width="60" height="60" rx="6" fill="#6366f1" opacity="0.9"/>
+  <rect x="320" y="50" width="60" height="60" rx="6" fill="#a855f7" opacity="0.9"/>
+  <rect x="350" y="420" width="60" height="60" rx="6" fill="#8b5cf6" opacity="0.9"/>
+  <rect x="490" y="180" width="60" height="60" rx="6" fill="#6366f1" opacity="0.9"/>
+  <rect x="200" y="220" width="60" height="60" rx="6" fill="#8b5cf6" opacity="0.9"/>
+  <text x="400" y="520" text-anchor="middle" font-family="monospace" font-size="14" fill="#6366f1" opacity="0.6">[ Architecture Exploded View ]</text>
+  <text x="400" y="540" text-anchor="middle" font-family="monospace" font-size="10" fill="#ffffff" opacity="0.2">NexaFlow — Disassembled</text>
+</svg>
+
