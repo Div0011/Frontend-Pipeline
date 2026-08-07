@@ -1,0 +1,482 @@
+- generic [active] [ref=f6e1]:
+  - banner [ref=f6e2]:
+    - generic [ref=f6e3]:
+      - link "superfan BLDC" [ref=f6e4]:
+        - /url: "#"
+        - generic [ref=f6e5]:
+          - generic [ref=f6e6]: superfan
+          - generic [ref=f6e7]: BLDC
+      - navigation [ref=f6e8]:
+        - link "SuperQ Lux Architectural" [ref=f6e9]:
+          - /url: "#showcase"
+        - link "Savings Calculator" [ref=f6e10]:
+          - /url: "#calculator"
+        - link "myQ Voice Technology" [ref=f6e11]:
+          - /url: "#smart-tech"
+        - link "All Collections" [ref=f6e12]:
+          - /url: "#collection"
+        - link "3D CAD Engine" [ref=f6e13]:
+          - /url: "#technology"
+        - link "Hazard Defense" [ref=f6e14]:
+          - /url: "#smoke-defense"
+      - generic [ref=f6e15]:
+        - button "Compare" [ref=f6e16]
+        - button [ref=f6e18]
+        - button [ref=f6e23]
+        - button "MENU" [ref=f6e27]
+  - main [ref=f6e30]:
+    - region "Scroll-driven penthouse hero introduction" [ref=f6e31]:
+      - generic [ref=f6e34]:
+        - generic [ref=f6e35]: CHAPTER I — PENTHOUSE HERO INTRO
+        - heading "Ceiling Fan Turns in Penthouse" [level=2] [ref=f6e36]
+        - generic [ref=f6e37]:
+          - generic [ref=f6e38]:
+            - generic [ref=f6e39]: CINEMATIC REDesign
+            - heading "Air Refined." [level=3] [ref=f6e40]
+            - paragraph [ref=f6e41]: A ceiling fan reimagined as architectural light — sculptural blades turning in a penthouse at dusk, each rotation a study in quiet precision.
+          - generic:
+            - generic: CHAPTER I
+            - heading "Light As Material." [level=3]
+            - paragraph: The penthouse ceiling becomes a canvas. Superfan BLDC motor — 35W peak — drives silent airflow that moves without the hum.
+          - generic:
+            - generic: CHAPTER II
+            - heading "Energy Reimagined." [level=3]
+            - paragraph: Slashing power from 75W to 35W. Over 500,000 tons of CO2 prevented. India's first sensorless BLDC pioneered in Coimbatore, 2012.
+          - generic:
+            - generic: CHAPTER III
+            - heading "Offline Voice." [level=3]
+            - paragraph: Speak directly in Hindi or English. 100% offline with zero internet dependency. The myQ onboard speech engine responds instantly.
+          - generic:
+            - generic: CHAPTER IV
+            - heading "Silent Precision." [level=3]
+            - paragraph: <32dB whisper operation. Neodymium permanent magnets eliminate electrical hum. Engineered to outlast generations.
+    - generic [ref=f6e42]: Scroll continued
+    - generic [ref=f6e47]:
+      - generic [ref=f6e48]:
+        - generic [ref=f6e49]: CHAPTER I — THE PARADIGM SHIFT
+        - heading "Why waste 75 Watts to move peaceful air?" [level=2] [ref=f6e50]
+        - paragraph [ref=f6e51]: For nearly a century, ceiling fans relied on crude AC induction motors that lost over half their energy as heat and motor hum. Superfan replaced old copper windings with permanent magnet sensorless BLDC architecture — slashing power consumption to just 35 Watts while quadrupling motor lifespan.
+        - generic [ref=f6e52]:
+          - generic [ref=f6e53]:
+            - generic [ref=f6e54]: 69%
+            - generic [ref=f6e55]: Electricity Bill Reduction
+          - generic [ref=f6e56]:
+            - generic [ref=f6e57]: 35W
+            - generic [ref=f6e58]: Peak Speed Consumption
+          - generic [ref=f6e59]:
+            - generic [ref=f6e60]: 5 Years
+            - generic [ref=f6e61]: On-Site Motor Replacement
+      - generic [ref=f6e62]:
+        - generic [ref=f6e64]:
+          - img "Superfan Architectural Ceiling Fan Isolated" [ref=f6e65]
+          - generic [ref=f6e67]:
+            - generic [ref=f6e68]: ARCHITECTURAL LUXURY
+            - heading "Zero-Turbulence Laminar Circulation" [level=4] [ref=f6e69]
+        - generic [ref=f6e71]:
+          - img "Superfan with Blue Accents" [ref=f6e72]
+          - generic [ref=f6e74]:
+            - generic [ref=f6e75]: OFFLINE VOICE CONTROL
+            - heading "myQ Direct Voice Technology" [level=4] [ref=f6e76]
+    - generic [ref=f6e78]:
+      - generic [ref=f6e79]:
+        - text: CHAPTER II — ARCHITECTURAL CROWN
+        - heading "SuperQ Lux" [level=2] [ref=f6e80]
+        - paragraph [ref=f6e81]: Designed as a sculptural centerpiece. Seamless aerodynamic blades, electric blue motor accents, and silent 35W BLDC airflow.
+      - generic [ref=f6e82]:
+        - generic [ref=f6e83]:
+          - img "SuperQ Lux Isolated Revolving Asset" [ref=f6e85]
+          - generic [ref=f6e86]:
+            - generic [ref=f6e87]: "AIRFLOW MOTION:"
+            - button "whisper" [ref=f6e88]
+            - button "breeze" [ref=f6e89]
+            - button "turbo" [ref=f6e90]
+        - generic [ref=f6e91]:
+          - generic [ref=f6e92]: INTERACTIVE CONFIGURATOR
+          - heading "SuperQ Lux Architectural" [level=3] [ref=f6e93]
+          - paragraph [ref=f6e94]: Designed as a centerpiece for modern residences, SuperQ Lux consumes only 35W at peak speed while delivering an extraordinary 230 CMM airflow with near-zero acoustic footprint.
+          - generic [ref=f6e95]:
+            - generic [ref=f6e96]:
+              - text: "SELECTED ARCHITECTURAL FINISH:"
+              - strong [ref=f6e97]: Midnight Royal Blue
+            - generic [ref=f6e98]:
+              - button "Midnight Royal Blue" [ref=f6e99]
+              - button "Arctic Pearl White" [ref=f6e101]
+              - button "Graphite Platinum" [ref=f6e103]
+              - button "Electric Cyan Accent" [ref=f6e105]
+          - generic [ref=f6e107]:
+            - generic [ref=f6e108]:
+              - generic [ref=f6e109]: PRICE INCL. TAXES
+              - generic [ref=f6e110]: ₹6,850
+            - generic [ref=f6e111]:
+              - button "Specs" [ref=f6e112]
+              - button "Add SuperQ Lux" [ref=f6e116]
+    - generic [ref=f6e121]:
+      - generic [ref=f6e122]:
+        - text: CHAPTER III — FINANCIAL LOGIC
+        - heading "Interactive Electricity Savings Calculator" [level=2] [ref=f6e123]
+        - paragraph [ref=f6e124]: Adjust your home parameters below to calculate exact financial returns and carbon reduction when upgrading to Superfan.
+      - generic [ref=f6e125]:
+        - generic [ref=f6e126]:
+          - generic [ref=f6e127]:
+            - generic [ref=f6e128]:
+              - generic [ref=f6e129]: "Number of Ceiling Fans in House:"
+              - generic [ref=f6e133]: 4 Fans
+            - slider [ref=f6e134]: "4"
+          - generic [ref=f6e135]:
+            - generic [ref=f6e136]:
+              - generic [ref=f6e137]: "Average Running Hours Per Day:"
+              - generic [ref=f6e141]: 14 Hours/Day
+            - slider [ref=f6e142]: "14"
+          - generic [ref=f6e143]:
+            - generic [ref=f6e144]:
+              - generic [ref=f6e145]: "Electricity Tariff Rate (₹ per Unit/kWh):"
+              - generic [ref=f6e149]: ₹8/kWh
+            - slider [ref=f6e150]: "8"
+        - generic [ref=f6e153]:
+          - text: ANNUAL SAVINGS BREAKDOWN
+          - generic [ref=f6e154]:
+            - generic [ref=f6e155]: "Yearly Electricity Bill Saved:"
+            - generic [ref=f6e156]: ₹7,358
+          - generic [ref=f6e157]:
+            - generic [ref=f6e158]:
+              - generic [ref=f6e159]: 5-YEAR CUMULATIVE SAVINGS
+              - generic [ref=f6e160]: ₹36,790
+            - generic [ref=f6e161]:
+              - generic [ref=f6e162]: ANNUAL CO2 REDUCTION
+              - generic [ref=f6e163]: 754 kg CO2
+    - generic [ref=f6e165]:
+      - generic [ref=f6e166]:
+        - text: CHAPTER IV — INTELLIGENCE WITHOUT DEPENDENCY
+        - heading "Super myQ Direct Voice Technology" [level=2] [ref=f6e167]
+        - paragraph [ref=f6e168]: Zero internet needed. Zero app setups required. Speak directly to your fan in English or Hindi — powered by an onboard neural microprocessor.
+      - generic [ref=f6e169]:
+        - button "Direct Voice Control" [ref=f6e170]
+        - button "Duocool Dual Airflow" [ref=f6e174]
+      - generic [ref=f6e177]:
+        - generic [ref=f6e178]:
+          - generic [ref=f6e179]: 100% OFFLINE ON-DEVICE SPEECH CHIP
+          - heading "Test On-Device Voice Recognition" [level=3] [ref=f6e187]
+          - paragraph [ref=f6e188]: "Click any voice trigger phrase below to simulate how the embedded speech microcontroller responds in real-time:"
+          - generic [ref=f6e189]:
+            - button "\"Superfan, Speed 5\" Fan increases speed instantly to Level 5" [ref=f6e190]:
+              - generic [ref=f6e195]:
+                - generic [ref=f6e196]: "\"Superfan, Speed 5\""
+                - generic [ref=f6e197]: Fan increases speed instantly to Level 5
+            - button "\"Superfan, Breeze Mode\" Activates gentle, natural air pulse simulation" [ref=f6e198]:
+              - generic [ref=f6e203]:
+                - generic [ref=f6e204]: "\"Superfan, Breeze Mode\""
+                - generic [ref=f6e205]: Activates gentle, natural air pulse simulation
+            - button "\"Superfan, Turn Off\" Smoothly decelerates BLDC motor to zero" [ref=f6e206]:
+              - generic [ref=f6e211]:
+                - generic [ref=f6e212]: "\"Superfan, Turn Off\""
+                - generic [ref=f6e213]: Smoothly decelerates BLDC motor to zero
+            - button "\"Superfan, Timer 2 Hours\" Sets automatic sleep shutdown after 120 mins" [ref=f6e214]:
+              - generic [ref=f6e219]:
+                - generic [ref=f6e220]: "\"Superfan, Timer 2 Hours\""
+                - generic [ref=f6e221]: Sets automatic sleep shutdown after 120 mins
+        - img "Super myQ Direct Voice" [ref=f6e223]
+    - generic [ref=f6e225]:
+      - generic [ref=f6e226]:
+        - generic [ref=f6e227]:
+          - text: CHAPTER V — THE ARCHITECTURAL STOREFRONT
+          - heading "Explore All Superfan Series" [level=2] [ref=f6e228]
+        - textbox "Search by model or feature..." [ref=f6e233]
+      - generic [ref=f6e234]:
+        - button "All" [ref=f6e235]
+        - button "Luxury Decorative" [ref=f6e236]
+        - button "High Speed" [ref=f6e237]
+        - button "High Flow" [ref=f6e238]
+        - button "Smart IoT" [ref=f6e239]
+      - generic [ref=f6e240]:
+        - generic [ref=f6e241]:
+          - generic [ref=f6e242]:
+            - generic [ref=f6e243]:
+              - generic [ref=f6e244]: Bestseller
+              - generic [ref=f6e245]: 35W BLDC
+            - generic [ref=f6e248]: "4.9"
+          - img "SuperQ Lux" [ref=f6e254]
+          - generic [ref=f6e255]:
+            - generic [ref=f6e256]: Luxury Decorative
+            - heading "SuperQ Lux" [level=3] [ref=f6e257]
+            - paragraph [ref=f6e258]: Flagship Architectural BLDC Ceiling Fan
+            - generic [ref=f6e259]:
+              - generic [ref=f6e260]: "FINISH: Midnight Royal Blue"
+              - generic [ref=f6e262]:
+                - button "Midnight Royal Blue" [ref=f6e263]
+                - button "Arctic Pearl White" [ref=f6e264]
+                - button "Graphite Platinum" [ref=f6e265]
+                - button "Electric Cyan Accent" [ref=f6e266]
+            - generic [ref=f6e267]:
+              - generic [ref=f6e268]:
+                - generic [ref=f6e269]:
+                  - generic [ref=f6e270]: ₹6,850
+                  - generic [ref=f6e271]: ₹9,499
+                - generic [ref=f6e272]: 5-Yr On-Site Warranty
+              - generic [ref=f6e276]:
+                - button "Quick Specs" [ref=f6e277]
+                - button "Add" [ref=f6e281]
+        - generic [ref=f6e285]:
+          - generic [ref=f6e286]:
+            - generic [ref=f6e287]:
+              - generic [ref=f6e288]: Bestseller
+              - generic [ref=f6e289]: 35W BLDC
+            - generic [ref=f6e292]: "4.9"
+          - img "Super myQ Direct Voice" [ref=f6e298]
+          - generic [ref=f6e299]:
+            - generic [ref=f6e300]: Smart IoT
+            - heading "Super myQ Direct Voice" [level=3] [ref=f6e301]
+            - paragraph [ref=f6e302]: Voice-Activated Smart Fan
+            - generic [ref=f6e303]:
+              - generic [ref=f6e304]: "FINISH: Sapphire Blue Ring"
+              - generic [ref=f6e306]:
+                - button "Sapphire Blue Ring" [ref=f6e307]
+                - button "Midnight Black" [ref=f6e308]
+            - generic [ref=f6e309]:
+              - generic [ref=f6e310]:
+                - generic [ref=f6e311]:
+                  - generic [ref=f6e312]: ₹7,299
+                  - generic [ref=f6e313]: ₹9,999
+                - generic [ref=f6e314]: 5-Yr On-Site Warranty
+              - generic [ref=f6e318]:
+                - button "Quick Specs" [ref=f6e319]
+                - button "Add" [ref=f6e323]
+        - generic [ref=f6e327]:
+          - generic [ref=f6e328]:
+            - generic [ref=f6e329]:
+              - generic [ref=f6e330]: Bestseller
+              - generic [ref=f6e331]: 28W BLDC
+            - generic [ref=f6e334]: "4.8"
+          - img "Super Sevak" [ref=f6e340]
+          - generic [ref=f6e341]:
+            - generic [ref=f6e342]: High Speed
+            - heading "Super Sevak" [level=3] [ref=f6e343]
+            - paragraph [ref=f6e344]: High-Performance Utility BLDC Fan
+            - generic [ref=f6e345]:
+              - generic [ref=f6e346]: "FINISH: Arctic White"
+              - generic [ref=f6e348]:
+                - button "Arctic White" [ref=f6e349]
+                - button "Royal Blue Trim" [ref=f6e350]
+            - generic [ref=f6e351]:
+              - generic [ref=f6e352]:
+                - generic [ref=f6e353]:
+                  - generic [ref=f6e354]: ₹3,550
+                  - generic [ref=f6e355]: ₹4,999
+                - generic [ref=f6e356]: 5-Yr On-Site Warranty
+              - generic [ref=f6e360]:
+                - button "Quick Specs" [ref=f6e361]
+                - button "Add" [ref=f6e365]
+        - generic [ref=f6e369]:
+          - generic [ref=f6e370]:
+            - generic [ref=f6e371]: 32W BLDC
+            - generic [ref=f6e375]: "4.9"
+          - img "Super X1 Natura" [ref=f6e381]
+          - generic [ref=f6e382]:
+            - generic [ref=f6e383]: Luxury Decorative
+            - heading "Super X1 Natura" [level=3] [ref=f6e384]
+            - paragraph [ref=f6e385]: Biophilic Studio Design Series
+            - generic [ref=f6e386]:
+              - generic [ref=f6e387]: "FINISH: Minimalist Studio Grey"
+              - generic [ref=f6e389]:
+                - button "Minimalist Studio Grey" [ref=f6e390]
+                - button "Royal Blue Core" [ref=f6e391]
+            - generic [ref=f6e392]:
+              - generic [ref=f6e393]:
+                - generic [ref=f6e394]:
+                  - generic [ref=f6e395]: ₹5,499
+                  - generic [ref=f6e396]: ₹7,499
+                - generic [ref=f6e397]: 5-Yr On-Site Warranty
+              - generic [ref=f6e401]:
+                - button "Quick Specs" [ref=f6e402]
+                - button "Add" [ref=f6e406]
+    - region "Scroll to explore 3D CAD motor exploded view" [ref=f6e410]:
+      - generic [ref=f6e413]:
+        - generic [ref=f6e414]: CHAPTER V — SCROLL-DRIVEN 3D CAD EXPLORATION
+        - heading "The Architecture of Superfan BLDC" [level=2] [ref=f6e415]
+        - generic [ref=f6e416]:
+          - generic [ref=f6e417]:
+            - generic [ref=f6e418]: LAYER 01
+            - heading "Aerodynamic Winglet Blades" [level=3] [ref=f6e419]
+            - paragraph [ref=f6e420]: Seamless contoured aluminum alloy blades engineered with aeronautical winglets. Eliminates tip vortices and turbulence noise — the first layer to separate in the explosion.
+          - generic:
+            - generic: LAYER 02
+            - heading "Sensorless Microcontroller PCB" [level=3]
+            - paragraph: Patented vector drive calculating back-EMF flux electro-magnetically without fragile Hall effect sensors. Surge-proof from 90V to 300V.
+          - generic:
+            - generic: LAYER 03
+            - heading "Neodymium Permanent Magnet Rotor" [level=3]
+            - paragraph: N45 rare-earth permanent magnets replace traditional AC copper windings. Zero electrical resistance, zero rotor thermal radiation.
+          - generic:
+            - generic: LAYER 04
+            - heading "Offline Neural Speech Chip" [level=3]
+            - paragraph: Onboard speech-processing microcontroller interpreting English & Hindi voice commands 100% offline. Zero internet, zero cloud dependency.
+          - generic:
+            - generic: LAYER 05
+            - heading "BEE 5-Star 35W Stator Core" [level=3]
+            - paragraph: Ultra-dense stator winding geometry delivering maximum electromagnetic torque while drawing just 35W at peak speed. 69% energy reduction.
+          - generic:
+            - generic: CONVERGENCE
+            - heading "Integrated Precision." [level=3]
+            - paragraph: "Every layer reassembles into a single purpose: silent, efficient, intelligent airflow. 5-year warranty. Patented sensorless BLDC control."
+    - region "Scroll to explore hazard management and smoke defense systems" [ref=f6e421]:
+      - generic [ref=f6e424]:
+        - generic [ref=f6e425]: CHAPTER VIII — HAZARD MANAGEMENT & ENVIRONMENTAL DEFENSE
+        - heading "Pure Laminar Circulation" [level=2] [ref=f6e426]
+        - generic [ref=f6e427]:
+          - generic [ref=f6e428]:
+            - generic [ref=f6e429]: ZERO-TURBULENCE INTAKE
+            - heading "Laminar Air Circulation" [level=3] [ref=f6e430]
+            - paragraph [ref=f6e431]: Unlike old induction fans that create chaotic turbulent eddies, Superfan precision blades pull intake air smoothly into a non-turbulent vortex. No dust whipping, no acoustic chaos.
+          - generic:
+            - generic: DUST SUPPRESSION TECH
+            - heading "Anti-Static Shield Blades" [level=3]
+            - paragraph: Precision anti-static surface coating repels microscopic airborne particulates. Blades stay pristine with minimal maintenance even in smoky or dusty environments.
+          - generic:
+            - generic: ACOUSTIC SILENCE
+            - heading "Whisper Under 32dB" [level=3]
+            - paragraph: Permanent neodymium magnets produce zero 50Hz electrical hum. The fan spins silently even as smoke swirls around it — operation that respects focus and sleep.
+          - generic:
+            - generic: ENVIRONMENTAL SEAL
+            - heading "Hazard Defense Rating" [level=3]
+            - paragraph: 100% recyclable aluminum alloy construction resists corrosion, moisture, and airborne contaminants. IPX4-rated motor housing for safety in all conditions.
+          - generic:
+            - generic: SUSTAINABLE DESIGN
+            - heading "Clean Air, Clean Planet" [level=3]
+            - paragraph: 35W motor = 69% less heat emission and CO2 compared to 75W induction fans. Every rotation supports a cleaner environment.
+    - generic [ref=f6e433]:
+      - generic [ref=f6e434]:
+        - text: CHAPTER VII — VERIFIED TESTIMONY
+        - heading "Trusted in Over 150,000 Homes" [level=2] [ref=f6e435]
+        - paragraph [ref=f6e436]: Real reviews from homeowners, architects, and engineers across India who transformed their living spaces.
+      - generic [ref=f6e437]:
+        - generic [ref=f6e438]:
+          - generic [ref=f6e439]:
+            - heading "\"Reduced electricity bill by ₹1,400 per month!\"" [level=4] [ref=f6e451]
+            - paragraph [ref=f6e452]: Replaced 6 old 75W ceiling fans across our villa with SuperQ Lux and Super X1. Our monthly power bill dropped drastically. Beyond savings, the silence and smooth air circulation are astonishing.
+          - generic [ref=f6e453]:
+            - generic [ref=f6e454]:
+              - generic [ref=f6e455]: Vikramaditya S.
+              - generic [ref=f6e456]: Bengaluru, India
+            - generic [ref=f6e457]: Verified Owner
+        - generic [ref=f6e461]:
+          - generic [ref=f6e462]:
+            - heading "\"The Offline Voice Command is pure magic.\"" [level=4] [ref=f6e474]
+            - paragraph [ref=f6e475]: My parents love the Super myQ Direct Voice fan. They don’t need to look for a remote or open any smartphone app — they just speak to the fan in Hindi and it adjusts speed immediately.
+          - generic [ref=f6e476]:
+            - generic [ref=f6e477]:
+              - generic [ref=f6e478]: Dr. Ananya Roy
+              - generic [ref=f6e479]: Mumbai, India
+            - generic [ref=f6e480]: Verified Owner
+        - generic [ref=f6e484]:
+          - generic [ref=f6e485]:
+            - heading "\"Architectural masterpiece for modern living rooms.\"" [level=4] [ref=f6e497]
+            - paragraph [ref=f6e498]: As an interior architect, I recommend SuperQ Lux for all high-end residential projects. The electric blue accents and seamless blade curvature elevate the ceiling aesthetic completely.
+          - generic [ref=f6e499]:
+            - generic [ref=f6e500]:
+              - generic [ref=f6e501]: Karan Mehra
+              - generic [ref=f6e502]: New Delhi, India
+            - generic [ref=f6e503]: Verified Owner
+    - generic [ref=f6e509]:
+      - generic [ref=f6e510]:
+        - text: NATIONAL ACCOLADES & CERTIFICATIONS
+        - heading "India’s Most Awarded BLDC Fan Brand" [level=2] [ref=f6e511]
+        - paragraph [ref=f6e512]: Superfan was recognized by the Bureau of Energy Efficiency (BEE) and the Ministry of Power for breakthrough innovation in energy reduction.
+        - generic [ref=f6e513]:
+          - generic [ref=f6e514]: National Energy Conservation Award Winner
+          - generic [ref=f6e519]: BEE 5-Star Highest Energy Rating Certified
+          - generic [ref=f6e524]: Patented Sensorless Control Technology (Govt of India Patent)
+          - generic [ref=f6e529]: Make in India — 100% Domestic Manufacturing in Tamil Nadu
+      - img "Superfan Most Awarded BLDC Fan" [ref=f6e535]
+    - generic [ref=f6e537]:
+      - generic [ref=f6e538]:
+        - text: FREQUENTLY ASKED QUESTIONS
+        - heading "Everything You Need to Know" [level=2] [ref=f6e539]
+        - paragraph [ref=f6e540]: Got questions about BLDC motors, power savings, remote operation, or installation? Find answers below.
+      - textbox "Search questions..." [ref=f6e545]
+      - generic [ref=f6e546]:
+        - generic [ref=f6e547]:
+          - button [ref=f6e548]
+          - generic [ref=f6e555]: Traditional ceiling fans use old Induction Motors (AC) that consume 75W to 80W of power, losing over 40% of energy as heat. Superfan uses a patented sensorless Brushless DC (BLDC) motor with permanent neodymium magnets, consuming just 28W to 35W at top speed while delivering superior air volume.
+        - button [ref=f6e557]
+        - button [ref=f6e565]
+        - button [ref=f6e573]
+        - button [ref=f6e581]
+    - generic [ref=f6e592]:
+      - text: READY TO REFINING YOUR AIR?
+      - heading "Elevate Your Ceiling Atmosphere Today" [level=2] [ref=f6e593]
+      - paragraph [ref=f6e594]: Every Superfan comes with complimentary insured pan-India delivery, 5-Year On-Site Replacement Warranty, and 69% guaranteed power bill savings.
+      - generic [ref=f6e595]:
+        - generic [ref=f6e596]: Free Insured Pan-India Express Delivery
+        - generic [ref=f6e602]: 5-Year Doorstep Motor Warranty
+        - generic [ref=f6e606]: 30-Day Money-Back Satisfaction Guarantee
+      - button "Order Flagship SuperQ Lux" [ref=f6e612]
+    - generic [ref=f6e616]:
+      - generic [ref=f6e617]: VERSA DRIVES COIMBATORE
+      - blockquote [ref=f6e618]: "\"True engineering luxury is quiet, efficient, and built to outlast generations.\""
+  - contentinfo [ref=f6e619]:
+    - generic [ref=f6e621]:
+      - generic [ref=f6e622]:
+        - generic [ref=f6e623]:
+          - generic [ref=f6e624]: SUSTAINABLE CEILING ARCHITECTURE
+          - heading "Engineering a Cleaner Earth, One Ceiling Fan at a Time." [level=3] [ref=f6e625]
+          - paragraph [ref=f6e626]: Superfan pioneered India's first sensorless BLDC motor ceiling fan in 2012. Over the decade, our fans have prevented over 500,000 metric tons of CO2 emissions across Indian households.
+        - generic [ref=f6e627]:
+          - generic [ref=f6e628]:
+            - generic [ref=f6e632]: 69%
+            - generic [ref=f6e633]: Energy Saved vs 75W Standard
+          - generic [ref=f6e634]:
+            - generic [ref=f6e638]: 5 Years
+            - generic [ref=f6e639]: On-Site Motor Warranty
+      - generic [ref=f6e640]:
+        - generic [ref=f6e641]:
+          - generic [ref=f6e642]:
+            - generic [ref=f6e643]:
+              - generic [ref=f6e644]: superfan
+              - generic [ref=f6e645]: BLDC
+            - generic [ref=f6e646]: BLDC
+          - paragraph [ref=f6e647]: India's First BLDC Ceiling Fan Brand. Designed & Manufactured in Coimbatore, Tamil Nadu, India.
+          - generic [ref=f6e648]: Patented Sensorless BLDC Motor Technology
+        - generic [ref=f6e652]:
+          - heading "CEILING FANS" [level=4] [ref=f6e653]
+          - list [ref=f6e654]:
+            - listitem [ref=f6e655]:
+              - link "SuperQ Lux Architectural" [ref=f6e656]:
+                - /url: "#showcase"
+            - listitem [ref=f6e657]:
+              - link "Super Sevak High-Speed" [ref=f6e658]:
+                - /url: "#collection"
+            - listitem [ref=f6e659]:
+              - link "Super X1 Natura Wood" [ref=f6e660]:
+                - /url: "#collection"
+            - listitem [ref=f6e661]:
+              - link "Super myQ Direct Voice" [ref=f6e662]:
+                - /url: "#smart-tech"
+            - listitem [ref=f6e663]:
+              - link "Super Q Duocool IoT" [ref=f6e664]:
+                - /url: "#collection"
+        - generic [ref=f6e665]:
+          - heading "INNOVATION & MEDIA" [level=4] [ref=f6e666]
+          - list [ref=f6e667]:
+            - listitem [ref=f6e668]:
+              - link "Electricity Savings Calculator" [ref=f6e669]:
+                - /url: "#calculator"
+            - listitem [ref=f6e670]:
+              - link "3D CAD Motor Anatomy" [ref=f6e671]:
+                - /url: "#technology"
+            - listitem [ref=f6e672]:
+              - link "Hazard Management Defense" [ref=f6e673]:
+                - /url: "#smoke-defense"
+            - listitem [ref=f6e674]:
+              - link "BEE 5-Star Certifications" [ref=f6e675]:
+                - /url: "#faq"
+        - generic [ref=f6e676]:
+          - heading "SUPPORT & CONTACT" [level=4] [ref=f6e677]
+          - paragraph [ref=f6e678]: "Toll Free: 1800 425 7873"
+          - paragraph [ref=f6e679]: "Email: info@superfan.in"
+          - paragraph [ref=f6e680]: Versa Drives Private Limited, Coimbatore, TN 641032, India.
+      - generic [ref=f6e681]:
+        - generic [ref=f6e682]: © 2026 Superfan (Versa Drives Pvt. Ltd.). All rights reserved. Cinematic Blue & White Storefront.
+        - generic [ref=f6e683]:
+          - generic [ref=f6e684]: Privacy Policy
+          - generic [ref=f6e685]: Terms of Service
+          - generic [ref=f6e686]: Warranty Terms
+          - generic [ref=f6e687]: Shipping Policy

@@ -1,0 +1,243 @@
+- generic [active] [ref=f17e1]:
+  - generic [ref=f17e8]:
+    - banner [ref=f17e9]:
+      - navigation [ref=f17e10]:
+        - link "Fabroar" [ref=f17e11]:
+          - /url: /
+        - generic [ref=f17e12]:
+          - link "Home" [ref=f17e13]:
+            - /url: /
+          - link "Men" [ref=f17e14]:
+            - /url: /men/
+          - link "Women" [ref=f17e15]:
+            - /url: /women/
+          - link "Custom Studio" [ref=f17e16]:
+            - /url: /customize/
+          - link "Contact" [ref=f17e17]:
+            - /url: /contact/
+        - generic [ref=f17e18]:
+          - button "Search" [ref=f17e19]
+          - button "Open cart" [ref=f17e23]
+    - generic [ref=f17e27]:
+      - generic [ref=f17e28]:
+        - heading "F A B R O A R" [level=1] [ref=f17e29]:
+          - generic [ref=f17e30]: F
+          - generic [ref=f17e31]: A
+          - generic [ref=f17e32]: B
+          - generic [ref=f17e33]: R
+          - generic [ref=f17e34]: O
+          - generic [ref=f17e35]: A
+          - generic [ref=f17e36]: R
+        - paragraph [ref=f17e37]: Wear Your Story
+        - generic [ref=f17e38]:
+          - link "Explore Collection" [ref=f17e39]:
+            - /url: /men/
+          - link "Design Your Own" [ref=f17e42]:
+            - /url: /customize/
+      - generic [ref=f17e45]: Scroll
+    - generic [ref=f17e50]:
+      - generic [ref=f17e51]:
+        - heading "Featured" [level=2] [ref=f17e52]
+        - paragraph [ref=f17e53]: A curated selection from our latest collection. Pure cotton, graphic prints, designed to speak.
+      - generic [ref=f17e54]:
+        - article [ref=f17e56]:
+          - link [ref=f17e57]:
+            - /url: /product/animal-graphic-round-neck-regular-fit-printed-t-shirt/
+            - img "Animal Round Neck Regular Fit Printed T-Shirt" [ref=f17e59]
+            - generic [ref=f17e61]:
+              - heading "Animal Round Neck Regular Fit Printed T-Shirt" [level=3] [ref=f17e62]
+              - paragraph [ref=f17e64]: ₹449
+          - button "Quick Add" [ref=f17e65]
+        - article [ref=f17e67]:
+          - link "Graphic Printed Pure Cotton Women T-shirt Graphic Printed Pure Cotton Women T-shirt ₹449 ★ 4" [ref=f17e68]:
+            - /url: /product/graphic-printed-pure-cotton-women-t-shirt/
+            - img "Graphic Printed Pure Cotton Women T-shirt" [ref=f17e70]
+            - generic [ref=f17e72]:
+              - heading "Graphic Printed Pure Cotton Women T-shirt" [level=3] [ref=f17e73]
+              - generic [ref=f17e74]:
+                - paragraph [ref=f17e75]: ₹449
+                - generic [ref=f17e76]: ★ 4
+          - button "Quick Add" [ref=f17e77]
+        - article [ref=f17e79]:
+          - link "Graphic Printed Round Neck Pure Cotton T-shirt Graphic Printed Round Neck Pure Cotton T-shirt ₹399 ★ 5" [ref=f17e80]:
+            - /url: /product/graphic-printed-round-neck-pure-cotton-t-shirt-2/
+            - img "Graphic Printed Round Neck Pure Cotton T-shirt" [ref=f17e82]
+            - generic [ref=f17e84]:
+              - heading "Graphic Printed Round Neck Pure Cotton T-shirt" [level=3] [ref=f17e85]
+              - generic [ref=f17e86]:
+                - paragraph [ref=f17e87]: ₹399
+                - generic [ref=f17e88]: ★ 5
+          - button "Quick Add" [ref=f17e89]
+        - article [ref=f17e91]:
+          - link [ref=f17e92]:
+            - /url: /product/labubu-round-neck-short-sleeves-oversized-pure-cotton-t-shirt/
+            - img "Labubu Round Neck Short Sleeves Oversized Pure Cotton T-Shirt" [ref=f17e94]
+            - generic [ref=f17e96]:
+              - heading "Labubu Round Neck Short Sleeves Oversized Pure Cotton T-Shirt" [level=3] [ref=f17e97]
+              - paragraph [ref=f17e99]: ₹549
+          - button "Quick Add" [ref=f17e100]
+        - article [ref=f17e102]:
+          - link "Hips Don't Lie Printed Round Neck Pure Cotton Women T-shirt Hips Don't Lie Printed Round Neck Pure Cotton Women T-shirt ₹449 ★ 5" [ref=f17e103]:
+            - /url: /product/hips-dont-lie-printed-round-neck-pure-cotton-women-t-shirt/
+            - img "Hips Don't Lie Printed Round Neck Pure Cotton Women T-shirt" [ref=f17e105]
+            - generic [ref=f17e107]:
+              - heading "Hips Don't Lie Printed Round Neck Pure Cotton Women T-shirt" [level=3] [ref=f17e108]
+              - generic [ref=f17e109]:
+                - paragraph [ref=f17e110]: ₹449
+                - generic [ref=f17e111]: ★ 5
+          - button "Quick Add" [ref=f17e112]
+        - article [ref=f17e114]:
+          - link [ref=f17e115]:
+            - /url: /product/kaleshi-aurat-printed-regular-fit-pure-cotton-t-shirt/
+            - img "Kaleshi Aurat Printed Regular Fit Pure Cotton T-shirt" [ref=f17e117]
+            - generic [ref=f17e119]:
+              - heading "Kaleshi Aurat Printed Regular Fit Pure Cotton T-shirt" [level=3] [ref=f17e120]
+              - paragraph [ref=f17e122]: ₹399
+          - button "Quick Add" [ref=f17e123]
+      - link "View All Products" [ref=f17e125]:
+        - /url: /men/
+    - blockquote [ref=f17e130]: Clothing is the canvas of identity.
+    - generic [ref=f17e132]:
+      - heading "New Arrivals" [level=2] [ref=f17e134]
+      - generic [ref=f17e135]:
+        - article [ref=f17e137]:
+          - link [ref=f17e138]:
+            - /url: /product/animal-graphic-round-neck-regular-fit-printed-t-shirt/
+            - img "Animal Round Neck Regular Fit Printed T-Shirt" [ref=f17e140]
+            - generic [ref=f17e142]:
+              - heading "Animal Round Neck Regular Fit Printed T-Shirt" [level=3] [ref=f17e143]
+              - paragraph [ref=f17e145]: ₹449
+          - button "Quick Add" [ref=f17e146]
+        - article [ref=f17e148]:
+          - link [ref=f17e149]:
+            - /url: /product/men-birds-printed-round-neck-pure-cotton-t-shirt/
+            - img "Men Freedom Printed Round Neck Cotton T-shirt" [ref=f17e151]
+            - generic [ref=f17e153]:
+              - heading "Men Freedom Printed Round Neck Cotton T-shirt" [level=3] [ref=f17e154]
+              - paragraph [ref=f17e156]: ₹399
+          - button "Quick Add" [ref=f17e157]
+        - article [ref=f17e159]:
+          - link [ref=f17e160]:
+            - /url: /product/men-graphic-print-regular-fit-t-shirt/
+            - img "Men Graphic Print Regular Fit T-Shirt" [ref=f17e162]
+            - generic [ref=f17e164]:
+              - heading "Men Graphic Print Regular Fit T-Shirt" [level=3] [ref=f17e165]
+              - paragraph [ref=f17e167]: ₹399
+          - button "Quick Add" [ref=f17e168]
+        - article [ref=f17e170]:
+          - link [ref=f17e171]:
+            - /url: /product/men-graphic-printed-round-neck-cotton-t-shirt/
+            - img "Men Graphic Printed Round Neck Cotton T-shirt" [ref=f17e173]
+            - generic [ref=f17e175]:
+              - heading "Men Graphic Printed Round Neck Cotton T-shirt" [level=3] [ref=f17e176]
+              - paragraph [ref=f17e178]: ₹349
+          - button "Quick Add" [ref=f17e179]
+        - article [ref=f17e181]:
+          - link "Graphic Printed Pure Cotton Women T-shirt Graphic Printed Pure Cotton Women T-shirt ₹449 ★ 4" [ref=f17e182]:
+            - /url: /product/graphic-printed-pure-cotton-women-t-shirt/
+            - img "Graphic Printed Pure Cotton Women T-shirt" [ref=f17e184]
+            - generic [ref=f17e186]:
+              - heading "Graphic Printed Pure Cotton Women T-shirt" [level=3] [ref=f17e187]
+              - generic [ref=f17e188]:
+                - paragraph [ref=f17e189]: ₹449
+                - generic [ref=f17e190]: ★ 4
+          - button "Quick Add" [ref=f17e191]
+        - article [ref=f17e193]:
+          - link "Graphic Printed Round Neck Pure Cotton T-shirt Graphic Printed Round Neck Pure Cotton T-shirt ₹399 ★ 5" [ref=f17e194]:
+            - /url: /product/graphic-printed-round-neck-pure-cotton-t-shirt-2/
+            - img "Graphic Printed Round Neck Pure Cotton T-shirt" [ref=f17e196]
+            - generic [ref=f17e198]:
+              - heading "Graphic Printed Round Neck Pure Cotton T-shirt" [level=3] [ref=f17e199]
+              - generic [ref=f17e200]:
+                - paragraph [ref=f17e201]: ₹399
+                - generic [ref=f17e202]: ★ 5
+          - button "Quick Add" [ref=f17e203]
+        - article [ref=f17e205]:
+          - link [ref=f17e206]:
+            - /url: /product/labubu-round-neck-short-sleeves-oversized-pure-cotton-t-shirt/
+            - img "Labubu Round Neck Short Sleeves Oversized Pure Cotton T-Shirt" [ref=f17e208]
+            - generic [ref=f17e210]:
+              - heading "Labubu Round Neck Short Sleeves Oversized Pure Cotton T-Shirt" [level=3] [ref=f17e211]
+              - paragraph [ref=f17e213]: ₹549
+          - button "Quick Add" [ref=f17e214]
+        - article [ref=f17e216]:
+          - link "Hips Don't Lie Printed Round Neck Pure Cotton Women T-shirt Hips Don't Lie Printed Round Neck Pure Cotton Women T-shirt ₹449 ★ 5" [ref=f17e217]:
+            - /url: /product/hips-dont-lie-printed-round-neck-pure-cotton-women-t-shirt/
+            - img "Hips Don't Lie Printed Round Neck Pure Cotton Women T-shirt" [ref=f17e219]
+            - generic [ref=f17e221]:
+              - heading "Hips Don't Lie Printed Round Neck Pure Cotton Women T-shirt" [level=3] [ref=f17e222]
+              - generic [ref=f17e223]:
+                - paragraph [ref=f17e224]: ₹449
+                - generic [ref=f17e225]: ★ 5
+          - button "Quick Add" [ref=f17e226]
+    - generic [ref=f17e229]:
+      - link [ref=f17e230]:
+        - /url: /men/
+        - generic [ref=f17e233]:
+          - text: Men
+          - paragraph [ref=f17e234]: 12 styles
+      - link [ref=f17e235]:
+        - /url: /women/
+        - generic [ref=f17e238]:
+          - text: Women
+          - paragraph [ref=f17e239]: 10 styles
+      - link [ref=f17e240]:
+        - /url: /customize/
+        - generic [ref=f17e243]:
+          - text: Custom
+          - paragraph [ref=f17e244]: Your design
+    - generic [ref=f17e246]:
+      - heading "Stay in the story" [level=2] [ref=f17e247]
+      - paragraph [ref=f17e248]: Get early access to new collections and 10% off your first order.
+      - generic [ref=f17e249]:
+        - textbox "your@email.com" [ref=f17e250]
+        - button "Subscribe" [ref=f17e251]
+    - contentinfo [ref=f17e252]:
+      - generic [ref=f17e253]:
+        - generic [ref=f17e254]:
+          - generic [ref=f17e255]:
+            - link "Fabroar" [ref=f17e256]:
+              - /url: /
+            - paragraph [ref=f17e257]: Graphic printed pure cotton T-shirts for men and women. Designed for those who have something to say.
+            - generic [ref=f17e258]:
+              - link "Instagram" [ref=f17e259]:
+                - /url: https://www.instagram.com/fabroarstore/
+              - link "Facebook" [ref=f17e263]:
+                - /url: https://www.facebook.com/profile.php?id=61566816764337
+          - generic [ref=f17e266]:
+            - heading "Shop" [level=4] [ref=f17e267]
+            - list [ref=f17e268]:
+              - listitem [ref=f17e269]:
+                - link "Men" [ref=f17e270]:
+                  - /url: /men/
+              - listitem [ref=f17e271]:
+                - link "Women" [ref=f17e272]:
+                  - /url: /women/
+              - listitem [ref=f17e273]:
+                - link "Custom Studio" [ref=f17e274]:
+                  - /url: /customize/
+          - generic [ref=f17e275]:
+            - heading "Support" [level=4] [ref=f17e276]
+            - list [ref=f17e277]:
+              - listitem [ref=f17e278]:
+                - link "Contact" [ref=f17e279]:
+                  - /url: /contact/
+              - listitem [ref=f17e280]:
+                - link "About" [ref=f17e281]:
+                  - /url: /about/
+              - listitem [ref=f17e282]:
+                - link "Privacy Policy" [ref=f17e283]:
+                  - /url: /legal/privacy/
+              - listitem [ref=f17e284]:
+                - link "Returns" [ref=f17e285]:
+                  - /url: /legal/returns/
+        - generic [ref=f17e286]:
+          - paragraph [ref=f17e287]: © 2026 Fabroar. All rights reserved.
+          - generic [ref=f17e288]:
+            - link "Privacy" [ref=f17e289]:
+              - /url: /legal/privacy/
+            - link "Returns" [ref=f17e290]:
+              - /url: /legal/returns/
+            - link "Terms" [ref=f17e291]:
+              - /url: /legal/terms/
+  - alert [ref=f17e292]

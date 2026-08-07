@@ -1,72 +1,369 @@
-# Cinematic Website
+# Frontend Pipeline
 
-This repository contains two things:
-
-1. **`/`** — The live **SmashGuys** website (Next.js 15 + Tailwind CSS 4 + GSAP + Lenis)
-2. **`/pipeline`** — The **Frontend Pipeline** that built it (multi-agent LangGraph orchestration)
+> **Cinematic AI-Driven Web Application Redesign Engine**
+> An end-to-end, multi-agent platform that transforms any website into a high-end, cinematic, ultra-modern digital storefront — from a single natural-language prompt.
 
 ---
 
-## Live Site
+## What It Does
 
-The `main` branch contains the SmashGuys website. GitHub Pages automatically deploys it via the workflow in `.github/workflows/deploy.yml`.
+Frontend Pipeline is a production-grade **LangGraph orchestration platform** that behaves like a premium digital agency. You provide a single sentence — for example, *"Redesign the homepage of https://example.com into a cinematic, award-winning website"* — and the platform autonomously plans, executes, reviews, and assembles the redesign:
 
-**Local development:**
+1. **Crawls** the target site and captures screenshots
+2. **Researches** brand DNA, competitors, and SEO landscape
+3. **Directs** the art direction, typography, color system, and cinematic mechanic
+4. **Designs** the UX sitemap, wireframes, UI components, and motion choreography
+5. **Engineers** the full production Next.js codebase
+6. **QA's** the output across 10 dimensions (including genericness, mobile performance, and scroll reversibility)
+7. **Delivers** a zipped, build-verified project with reports
 
-```bash
-npm install
-npm run dev
-# → http://localhost:3000
+Every step is checkpointed for crash-resilience, streamed live to the client, and routed to the specific specialist agent trained for that function.
+
+---
+
+## Architecture
+
+### High-Level Topology
+
+```
+Client (web / CLI)
+    │
+    ▼
+API Layer (FastAPI + WebSocket)
+    │
+    ▼
+Orchestration Layer (LangGraph StateGraph)
+    │
+    ├── planner → supervisor ⇄ (agents → post_agent → supervisor)
+    │                    └─► [approval] ─► synthesizer ─► END
+    │
+    ├── Parallel fan-out (Send)
+    ├── Dependency-enforced scheduling
+    ├── QA retry loop (auto-rework weakest agent)
+    ├── Human-in-the-loop approval gate
+    └── Durable checkpointing (pause / resume / crash-recovery)
+    │
+    ▼
+Tool Layer
+    ├── crawl (httpx + BeautifulSoup)
+    ├── screenshot (Playwright)
+    ├── vision (VLM screenshot analysis)
+    ├── lighthouse (performance audit)
+    └── web_search (brand / competitive research)
+    │
+    ▼
+Persistence Layer
+    ├── PostgreSQL (checkpoints, long-term store, job registry)
+    ├── Redis (pub/sub live progress, job queue)
+    └── Object store (generated code, screenshots, zips)
 ```
 
-**Production build:**
+### Agent System
 
-```bash
-npm run build
-npm run start
+Ten specialist agents, each a single-responsibility LangGraph node. Every agent shares the same shape: *gather context → (optional) run tools → call structured LLM → write owned state channel + bookkeeping*.
+
+| # | Agent | Owns (State Channel) | Key Inputs | Tools |
+|---|-------|----------------------|------------|-------|
+| 1 | **Master Orchestrator** (planner + supervisor) | `plan`, scheduling | request | — |
+| 2 | Website Analysis | `analysis` | url | crawl, screenshot, vision |
+| 3 | SEO | `seo` | url, analysis | crawl, lighthouse |
+| 4 | Brand Research | `brand` | url, intent | web_search |
+| 5 | Lead Discovery | `lead` | brand, analysis | web_search |
+| 6 | Creative Director | `creative` | brand, analysis, seo | — |
+| 7 | UX | `ux` | brand, creative, analysis | — |
+| 8 | UI Design | `ui` | creative, ux, brand | — |
+| 9 | Motion Design | `motion` | creative, ui, ux | — |
+| 10 | Frontend Engineering | `engineering` | ui, motion, ux, seo, creative | — |
+| 11 | QA | `qa` | engineering, ui, motion, seo, creative | — |
+
+**Dependency DAG:**
+- **Analysis phase** (Website Analysis, SEO, Brand Research) runs in parallel
+- Lead Discovery waits for Brand Research + Website Analysis
+- Creative Director waits for all analysis
+- UX waits for Brand Research + Creative Director
+- UI Design waits for Creative Director + UX
+- Motion Design waits for Creative Director + UI Design
+- Engineering waits for UI + Motion + UX
+- QA waits for Engineering
+- On QA failure, the weakest agent is automatically routed back for targeted rework
+
+---
+
+## Repository Structure
+
+```
+Frontend Pipeline/
+├── pipeline/                       # Core orchestration engine
+│   ├── __init__.py
+│   ├── config.py                   # Central settings (pydantic-settings)
+│   ├── state.py                    # LangGraph shared state (RedesignState)
+│   ├── schemas.py                  # Pydantic contracts for all agents
+│   ├── orchestrator.py             # LangGraph StateGraph construction + routing
+│   ├── runner.py                   # Async execution helpers (stream / run / resume)
+│   ├── llm.py                      # LLM abstraction (simulation + production providers)
+│   ├── context.py                  # Context assembly — per-agent prompt rendering
+│   ├── memory.py                   # Checkpointer + long-term Store
+│   ├── reporting.py                # Report generation from final state
+│   ├── storage.py                  # ArtifactStore (code, screenshots, zips)
+│   ├── agents/
+│   │   ├── __init__.py
+│   │   ├── base.py                 # Shared agent helpers (emit, finalize, call_agent_model)
+│   │   └── nodes.py                # Ten specialist agent node functions
+│   ├── tools/
+│   │   ├── __init__.py
+│   │   ├── crawl.py                # Whole-site crawler (httpx + BeautifulSoup)
+│   │   ├── screenshot.py           # Playwright screenshot capture
+│   │   ├── vision.py               # VLM-powered screenshot analysis
+│   │   ├── lighthouse.py           # Lighthouse performance audit
+│   │   ├── search.py               # Web search (Tavily / Serper / mock)
+│   │   └── media.py                # Media processing (WebP frame extraction)
+│   ├── prompts/
+│   │   ├── __init__.py
+│   │   ├── MASTER_PROMPT.md
+│   │   ├── planner.md
+│   │   ├── website_analysis.md
+│   │   ├── seo.md
+│   │   ├── brand_research.md
+│   │   ├── lead_discovery.md
+│   │   ├── creative_director.md
+│   │   ├── ux.md
+│   │   ├── ui.md
+│   │   ├── motion.md
+│   │   ├── engineering.md
+│   │   ├── qa.md
+│   │   └── cinematic_templates.py
+│   ├── api/
+│   │   ├── __init__.py
+│   │   └── main.py                 # FastAPI + WebSocket service
+│   ├── scripts/
+│   │   ├── run_pipeline.py         # CLI runner
+│   │   ├── fix_template3.py        # Template-specific fix scripts
+│   │   └── generate_pdf.py         # PDF report generation
+│   ├── reference/                  # Pattern archives
+│   ├── migrations/                 # Database migrations
+│   └── fabroar/                    # Reference redesign plans
+├── projects/                        # Generated / active web applications
+│   ├── superfan-redesign/           # Superfan BLDC Ceiling Fans
+│   ├── fabroar/                     # Fabroar Luxury Apparel
+│   ├── aetheria-cinematic/          # Aetheria Architecture
+│   ├── arch-studio/                 # Arch Studio Portfolio
+│   ├── smashguys/                   # Smash Guys Culinary
+│   ├── ocean-resort/                # Ocean Resort Hospitality
+│   ├── template-1-film-portfolio/   # Template 1: Film Portfolio
+│   ├── template-2-ss/               # Template 2: SaaS Product
+│   ├── template-3-editorial/        # Template 3: Editorial Minimal
+│   ├── template-4-corporate/        # Template 4: Corporate
+│   ├── template-5-product/          # Template 5: Product Launch
+│   └── ...                         # Additional generated projects
+├── artifacts/                       # Reference assets, design tokens, skills
+│   ├── projects/                    # Pipeline test artifacts
+│   └── skills/                      # Curated agent skill libraries
+├── docs/                            # Technical documentation
+│   ├── ARCHITECTURE.md              # Deep system architecture
+│   ├── PIPELINE_GUIDE.md            # Operational runbook
+│   ├── FIVE_TEMPLATE_PROMPTS_SPEC.md
+│   ├── CINEMATIC_REFERENCE_ANALYSIS.md
+│   ├── TOKEN_AND_CREDIT_BREAKDOWN.md
+│   └── reference/                   # Pattern archives & QA guardrails
+├── tests/                           # Unit tests & diagnostic suites
+│   ├── test_orchestrator.py
+│   └── test_cinematic_templates.py
+├── websites/                        # Legacy website outputs
+├── requirements.txt                 # Python dependencies
+├── package.json                     # Node.js motion libraries
+├── Dockerfile                       # Container build
+├── docker-compose.yml               # Local infra (Postgres + Redis + API)
+├── pytest.ini                       # Test configuration
+├── .env                             # Environment variables
+└── README.md                        # This file
 ```
 
 ---
 
-## Frontend Pipeline
+## Quick Start
 
-The `pipeline/` directory contains the autonomous multi-agent website redesign platform.
+### Prerequisites
 
-**Quick start:**
+- **Python** 3.11+ (with `uv` or `pip`)
+- **Node.js** 18+ (for generated projects)
+- **PostgreSQL** 16+ (with pgvector) — optional, for persistent checkpointing
+- **Redis** 7+ — optional, for live progress streaming
+
+### Installation
 
 ```bash
-cd pipeline
-python -m venv .venv && source .venv/bin/activate
+# Clone the repository
+git clone <repository-url>
+cd "Frontend Pipeline"
+
+# Install Python dependencies
+python -m venv .venv
+source .venv/bin/activate  # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
-playwright install chromium
 
-# Simulation mode (no API keys)
-python scripts/run_pipeline.py "Redesign https://example.com into a cinematic site"
-
-# Production mode
-export LLM_PROVIDER=anthropic
-export ANTHROPIC_API_KEY=sk-ant-...
-python scripts/run_pipeline.py "Redesign https://example.com into a cinematic site"
+# Install Node.js motion libraries (used by generated projects)
+npm install
 ```
 
-See `pipeline/docs/PROPOSAL.md` for the full business proposal, cost margins, and architecture.
+### Environment Configuration
+
+Copy `.env` and configure at minimum:
+
+```bash
+# LLM provider: openai | anthropic | google | groq | ollama | huggingface | simulation
+LLM_PROVIDER=simulation
+
+# For production runs, set a real provider + API key:
+# LLM_PROVIDER=openai
+# OPENAI_API_KEY=sk-...
+
+# Search provider: tavily | serper | mock
+SEARCH_PROVIDER=mock
+```
+
+### Run the Pipeline
+
+**CLI (single redesign):**
+```bash
+python -m pipeline.scripts.run_pipeline "Redesign https://example.com into a cinematic luxury storefront"
+```
+
+**API server (FastAPI + WebSocket):**
+```bash
+uvicorn pipeline.api.main:app --host 0.0.0.0 --port 8000
+```
+
+**Submit a redesign via API:**
+```bash
+curl -X POST http://localhost:8000/api/redesign \
+  -H "Content-Type: application/json" \
+  -d '{"request": "Redesign https://example.com into a cinematic luxury storefront"}'
+```
+
+**Stream progress via WebSocket:**
+```bash
+ws://localhost:8000/api/redesign/{project_id}/ws?request=Redesign+https://example.com
+```
+
+### Run Tests
+
+```bash
+pytest tests/ -v
+```
+
+---
+
+## Design System & Cinematic Genres
+
+The pipeline supports four cinematic genres, automatically classified from the brief:
+
+| Genre | Name | When to Use | Key Mechanic |
+|-------|------|-------------|--------------|
+| **0** | Cinematic Without Generated Media | No 3D/video assets available; restraint-focused | Typography, pacing, grading, film grain |
+| **1** | Full Scroll-Camera | Spatial product with narrative chronology | Scroll-driven 3D camera path (5+ chapters) |
+| **2** | Restrained Centerpiece | Physical product without narrative journey | Single hero 3D object + mouse-reveal |
+| **2b** | Kinetic-Type-Led | Editorial / agency / information-first | Kinetic typography as the motion system |
+
+**Genre 0 anti-patterns (AI-slop signals to reject):**
+- Centered hero with a single gradient blob
+- Three identical feature cards
+- Wall of logos
+- "AI-powered" buzzwords
+- Stock-photo testimonials
+- System-font everything
+- Safe blue/indigo palette
+- Rounded-everything SaaS conventions
+
+---
+
+## Configuration Reference
+
+All runtime behavior is driven by environment variables and `pipeline/config.py`.
+
+| Variable | Default | Description |
+|----------|---------|-------------|
+| `LLM_PROVIDER` | `simulation` | LLM backend: `openai`, `anthropic`, `google`, `groq`, `ollama`, `huggingface`, `simulation` |
+| `LLM_MODEL` | `gpt-4o` | Model identifier |
+| `LLM_TEMPERATURE` | `0.4` | Generation temperature |
+| `OPENAI_API_KEY` | — | API key for OpenAI |
+| `ANTHROPIC_API_KEY` | — | API key for Anthropic |
+| `GOOGLE_API_KEY` | — | API key for Google |
+| `GROQ_API_KEY` | — | API key for Groq |
+| `OLLAMA_BASE_URL` | — | Base URL for Ollama |
+| `VISION_PROVIDER` | `none` | Vision model provider |
+| `SEARCH_PROVIDER` | `mock` | Search backend: `tavily`, `serper`, `mock` |
+| `POSTGRES_DSN` | `postgresql://...` | PostgreSQL connection string |
+| `REDIS_URL` | `redis://...` | Redis connection string |
+| `ARTIFACTS_ROOT` | `./artifacts` | Output directory for generated code |
+| `HUMAN_APPROVAL_ENABLED` | `false` | Enable human-in-the-loop approval gate |
+| `MAX_QA_RETRIES` | `3` | Maximum QA rework cycles |
+| `MAX_AGENT_RETRIES` | `2` | Maximum per-agent retry attempts |
+| `PARALLEL_EXECUTION` | `true` | Enable parallel agent fan-out |
+| `ENABLE_PLAYWRIGHT` | `true` | Enable Playwright screenshot / crawling |
+
+---
+
+## Agent Optimization & Performance
+
+The pipeline implements several performance and reliability patterns:
+
+- **Per-agent retry wrapper**: Every agent is wrapped with exponential backoff + rate-limit awareness (429 / resource_exhausted detection).
+- **Parallel fan-out**: Independent agents run concurrently via LangGraph's `Send` primitive.
+- **Dependency enforcement**: Readiness is computed from `task_status` + `depends_on`, preventing race conditions.
+- **QA retry loop**: On failure, QA routes the weakest agent back with specific, structured failure detail — not blind regeneration.
+- **Deadlock guard**: If no progress is possible, the supervisor synthesizes what it has rather than looping forever.
+- **Checkpointing**: Every step is persisted; crashed or paused runs resume exactly where they left off.
+
+---
+
+## Extending the Pipeline
+
+### Adding a New Agent
+
+1. Define the output schema in `pipeline/schemas.py`
+2. Add the agent node function in `pipeline/agents/nodes.py`
+3. Register the node in `pipeline/orchestrator.py` (`AGENT_NODES`)
+4. Add the prompt template in `pipeline/prompts/<agent_name>.md`
+5. Add the task to the planner's `tasks` list with correct `depends_on`
+
+### Adding a New Tool
+
+1. Implement the tool function in `pipeline/tools/<tool_name>.py`
+2. Export it from `pipeline/tools/__init__.py`
+3. Import and invoke it from the relevant agent node
 
 ---
 
 ## Tech Stack
 
-| Layer | Choice |
-|-------|--------|
-| Framework | Next.js 15 (App Router) |
-| Language | TypeScript |
-| Styling | Tailwind CSS 4 |
-| Animation | GSAP ScrollTrigger, Framer Motion, Lenis |
-| 3D | Three.js + @react-three/fiber + @react-three/drei |
-| Fonts | Playfair Display, Inter, Caveat |
-| Orchestration | LangGraph + LangChain |
+| Layer | Technology |
+|-------|-----------|
+| Orchestration | LangGraph, LangChain |
+| API | FastAPI, WebSocket, SSE |
+| LLM Providers | OpenAI, Anthropic, Google, Groq, Ollama, HuggingFace |
+| Structured Output | Pydantic v2, LangChain `with_structured_output` |
+| Persistence | PostgreSQL + pgvector, Redis |
+| Crawling / Scraping | httpx, BeautifulSoup4, Playwright |
+| Vision | OpenAI GPT-4o, Anthropic Claude, Google Gemini |
+| Generated Frontend | Next.js 14, React 18, TypeScript, Tailwind CSS, GSAP, Framer Motion, Lenis, Three.js, React Three Fiber |
+| Testing | pytest, pytest-asyncio |
+
+---
+
+## Generated Projects Showcase
+
+| Project | Description | Stack |
+|---------|-------------|-------|
+| **Superfan** | India's first BLDC ceiling fan — cinematic storefront with 360° visualizer | Next.js, React, TypeScript, Lenis, Lucide |
+| **Fabroar** | Premium graphic apparel — customizer + luxury editorial | Next.js, Tailwind, Lenis |
+| **Aetheria** | Luxury architectural platform | Next.js, React, TypeScript |
+| **Arch Studio** | Architecture portfolio | Next.js, React, TypeScript |
+| **Smash Guys** | Culinary brand identity | Next.js, React, TypeScript |
+| **Ocean Resort** | Luxury hospitality storefront | Next.js, React, TypeScript |
+| **Templates 1–5** | Industry starter kits (Film, SaaS, Editorial, Corporate, Product) | Next.js, React, TypeScript |
 
 ---
 
 ## License
 
-See `pipeline/LICENSE` for details.
+Built with Advanced Agentic Coding architecture for high-end web application development.

@@ -1,0 +1,72 @@
+- generic [active] [ref=e1]:
+  - button "Toggle Ocean Ambient Audio" [ref=e2] [cursor=pointer]:
+    - generic [ref=e8]: OCEAN SOUND
+  - generic [ref=e9]:
+    - banner [ref=e10]:
+      - button "AZURE SHORE LUXURY OCEANFRONT RESORT" [ref=e11] [cursor=pointer]:
+        - generic [ref=e12]:
+          - generic [ref=e13]: AZURE SHORE
+          - generic [ref=e14]: LUXURY OCEANFRONT RESORT
+      - navigation [ref=e15]:
+        - button "Sanctuary" [ref=e16] [cursor=pointer]
+        - button "Heritage" [ref=e17] [cursor=pointer]
+        - button "Experience" [ref=e18] [cursor=pointer]
+      - button "Reserve" [ref=e19] [cursor=pointer]
+    - main [ref=e21]:
+      - generic [ref=e22]:
+        - generic [ref=e26]: A LUXURY OCEANFRONT SANCTUARY
+        - generic [ref=e30]:
+          - heading "AZURE SHORE" [level=1] [ref=e31]
+          - paragraph [ref=e32]: Where the rhythm of the waves meets the pinnacle of luxury. An exclusive oceanfront retreat designed for the discerning traveler.
+          - generic [ref=e33]:
+            - button "Book Your Escape" [ref=e34] [cursor=pointer]
+            - link "Discover More ↓" [ref=e35] [cursor=pointer]:
+              - /url: "#history-section"
+        - generic [ref=e36]:
+          - generic [ref=e37]: MALDIVES · INDIAN OCEAN
+          - generic [ref=e38]: SCROLL TO DIVE IN
+          - generic [ref=e40]: EST. 2024
+      - generic [ref=e42]:
+        - generic [ref=e43]:
+          - generic [ref=e44]: OUR HERITAGE
+          - heading "A LEGACY BORN FROM THE SEA" [level=2] [ref=e45]
+        - generic [ref=e46]:
+          - generic [ref=e47]:
+            - paragraph [ref=e48]: Azure Shore was born from a vision to create a sanctuary where the raw beauty of the ocean meets uncompromising luxury. Our story begins in 1987, when oceanographer Dr. Elena Vance discovered this pristine stretch of coastline and knew it was destined for something extraordinary.
+            - paragraph [ref=e49]: What was once a secluded marine research station has been transformed into an award-winning resort, blending sustainable architecture with the natural contours of the beach. Every structure was designed to honor the ecosystem while providing world-class comfort.
+            - paragraph [ref=e50]: Today, Azure Shore stands as a testament to harmonious luxury—where overwater villas, pristine coral reefs, and golden sunsets create an experience that transcends the ordinary.
+          - generic [ref=e51]:
+            - generic [ref=e52]:
+              - paragraph [ref=e53]: "37"
+              - paragraph [ref=e54]: Years of Excellence
+            - generic [ref=e55]:
+              - paragraph [ref=e56]: 24/7
+              - paragraph [ref=e57]: Private Butler
+            - generic [ref=e58]:
+              - paragraph [ref=e59]: ∞
+              - paragraph [ref=e60]: Ocean Views
+            - generic [ref=e61]:
+              - paragraph [ref=e62]: "1"
+              - paragraph [ref=e63]: Unforgettable Experience
+      - generic [ref=e69]:
+        - generic [ref=e70]: THE GRAND REVEAL
+        - heading "YOUR PARADISE AWAITS" [level=2] [ref=e71]
+        - paragraph [ref=e72]: From the crystal-clear waters to the golden shores, every moment at Azure Shore is crafted to perfection. Your journey into luxury begins here.
+    - contentinfo [ref=e73]:
+      - generic [ref=e74]:
+        - generic [ref=e75]:
+          - generic [ref=e76]:
+            - heading "AZURE SHORE" [level=3] [ref=e77]
+            - paragraph [ref=e78]: Where luxury meets the ocean. An exclusive retreat for those who seek the extraordinary.
+          - generic [ref=e79]:
+            - heading "Contact" [level=4] [ref=e80]
+            - paragraph [ref=e81]: reservations@azureshore.com
+            - paragraph [ref=e82]: +960 668 0000
+          - generic [ref=e83]:
+            - heading "Location" [level=4] [ref=e84]
+            - paragraph [ref=e85]: North Male AtollMaldivesIndian Ocean
+        - generic [ref=e86]:
+          - paragraph [ref=e87]: © 2024 Azure Shore Resort. All rights reserved.
+          - paragraph [ref=e88]: Designed with the rhythm of the waves
+  - button "Open Next.js Dev Tools" [ref=e94] [cursor=pointer]
+  - alert [ref=e98]

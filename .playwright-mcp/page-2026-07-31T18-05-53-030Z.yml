@@ -1,0 +1,24 @@
+- dialog [ref=f8e3]:
+  - generic [ref=f8e4]:
+    - generic [ref=f8e5]:
+      - generic [ref=f8e6]:
+        - navigation [ref=f8e7]:
+          - button "previous" [disabled] [ref=f8e8]:
+            - img "previous" [ref=f8e9]
+          - button "next" [disabled] [ref=f8e11]:
+            - img "next" [ref=f8e12]
+          - generic [ref=f8e14]: 1 of 1 error
+          - generic [ref=f8e15]:
+            - text: Next.js (14.2.35) is outdated
+            - link "(learn more)" [ref=f8e17] [cursor=pointer]:
+              - /url: https://nextjs.org/docs/messages/version-staleness
+        - button "Close" [ref=f8e18] [cursor=pointer]
+      - heading "Unhandled Runtime Error" [level=1] [ref=f8e23]
+      - paragraph [ref=f8e24]: "Error: Cannot read properties of undefined (reading 'toLowerCase')"
+    - generic [ref=f8e25]:
+      - heading "Source" [level=2] [ref=f8e26]
+      - generic [ref=f8e27]:
+        - link "lib/data.ts (434:73) @ toLowerCase" [ref=f8e29] [cursor=pointer]
+        - generic [ref=f8e35]: "432 | 433 | export function getCompaniesByCity(citySlug: string): Company[] { > 434 | return companies.filter((c) => c.cityName?.toLowerCase() === citySlug.toLowerCase() && c.status === 'approved'); | ^ 435 | } 436 | 437 | export function getCompanyBySlug(slug: string): Company | undefined {"
+      - heading "Call Stack" [level=2] [ref=f8e36]
+      - button "Show collapsed frames" [ref=f8e37] [cursor=pointer]

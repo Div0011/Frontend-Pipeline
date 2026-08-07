@@ -1,0 +1,24 @@
+- dialog [ref=f14e3]:
+  - generic [ref=f14e4]:
+    - generic [ref=f14e5]:
+      - generic [ref=f14e6]:
+        - navigation [ref=f14e7]:
+          - button "previous" [disabled] [ref=f14e8]:
+            - img "previous" [ref=f14e9]
+          - button "next" [disabled] [ref=f14e11]:
+            - img "next" [ref=f14e12]
+          - generic [ref=f14e14]: 1 of 1 error
+          - generic [ref=f14e15]:
+            - text: Next.js (14.2.35) is outdated
+            - link "(learn more)" [ref=f14e17] [cursor=pointer]:
+              - /url: https://nextjs.org/docs/messages/version-staleness
+        - button "Close" [ref=f14e18] [cursor=pointer]
+      - heading "Unhandled Runtime Error" [level=1] [ref=f14e23]
+      - paragraph [ref=f14e24]: "ReferenceError: ViewTransitionLink is not defined"
+    - generic [ref=f14e25]:
+      - heading "Source" [level=2] [ref=f14e26]
+      - generic [ref=f14e27]:
+        - link "components/shared/ProductCard.tsx (108:8) @ ViewTransitionLink" [ref=f14e29] [cursor=pointer]
+        - generic [ref=f14e35]: "106 | )} 107 | {/* ── Video Container (always video, no static images) ── */} > 108 | <ViewTransitionLink | ^ 109 | href={`/products/${product.id}`} 110 | className=\"view-transition-hero\" 111 | style={{ textDecoration: 'none', color: 'inherit' }}"
+      - heading "Call Stack" [level=2] [ref=f14e36]
+      - button "Show collapsed frames" [ref=f14e37] [cursor=pointer]

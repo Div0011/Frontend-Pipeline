@@ -1,0 +1,133 @@
+- generic [active] [ref=e1]:
+  - main [ref=e2]:
+    - navigation [ref=e5]:
+      - link "Aetheria" [ref=e6] [cursor=pointer]:
+        - /url: "#"
+      - list [ref=e7]:
+        - listitem [ref=e8]:
+          - link "Exhibitions" [ref=e9] [cursor=pointer]:
+            - /url: "#exhibition"
+        - listitem [ref=e10]:
+          - link "Collection" [ref=e11] [cursor=pointer]:
+            - /url: "#collection"
+        - listitem [ref=e12]:
+          - link "Visit" [ref=e13] [cursor=pointer]:
+            - /url: "#visit"
+        - listitem [ref=e14]:
+          - link "About" [ref=e15] [cursor=pointer]:
+            - /url: "#about"
+      - button "Menu" [ref=e16]
+    - generic [ref=e17]:
+      - generic [ref=e18]:
+        - paragraph [ref=e19]: Est. 1924 — New York
+        - heading "Where Light Becomes Art" [level=1] [ref=e20]: Where LightBecomes Art
+        - paragraph [ref=e21]: A curated journey through contemporary and classical masterworks.Scroll to enter the gallery.
+      - generic [ref=e22]: Scroll
+    - generic [ref=e24]:
+      - img "The Geometry of Silence" [ref=e27]
+      - generic [ref=e30]:
+        - paragraph [ref=e31]: Current Exhibition
+        - heading "The Geometry of Silence" [level=2] [ref=e32]
+        - generic [ref=e33]:
+          - paragraph [ref=e34]: Elena Voss
+          - paragraph [ref=e35]: 2024 · Oil on linen, 180 × 240 cm
+    - generic [ref=e36]:
+      - generic [ref=e37]:
+        - paragraph [ref=e38]: The Collection
+        - heading "Curated highlights from the permanent collection" [level=2] [ref=e39]
+      - generic [ref=e40]:
+        - button "View Echoes of Silence by Elena Voss" [ref=e41]:
+          - generic [ref=e42]:
+            - img "Echoes of Silence" [ref=e43]
+            - generic [ref=e45]:
+              - heading "Echoes of Silence" [level=3] [ref=e46]
+              - paragraph [ref=e47]: Elena Voss
+              - paragraph [ref=e48]: 2024 · Oil on linen, 180 × 240 cm
+        - button "View Chromatic Drift by Marcus Chen" [ref=e49]:
+          - generic [ref=e50]:
+            - img "Chromatic Drift" [ref=e51]
+            - generic [ref=e53]:
+              - heading "Chromatic Drift" [level=3] [ref=e54]
+              - paragraph [ref=e55]: Marcus Chen
+              - paragraph [ref=e56]: 2023 · Acrylic on canvas, 120 × 160 cm
+        - button "View The Weight of Light by Sofia Andersson" [ref=e57]:
+          - generic [ref=e58]:
+            - img "The Weight of Light" [ref=e59]
+            - generic [ref=e61]:
+              - heading "The Weight of Light" [level=3] [ref=e62]
+              - paragraph [ref=e63]: Sofia Andersson
+              - paragraph [ref=e64]: 2024 · Mixed media on panel, 90 × 120 cm
+        - button "View Nocturne in Amber by James Okonkwo" [ref=e65]:
+          - generic [ref=e66]:
+            - img "Nocturne in Amber" [ref=e67]
+            - generic [ref=e69]:
+              - heading "Nocturne in Amber" [level=3] [ref=e70]
+              - paragraph [ref=e71]: James Okonkwo
+              - paragraph [ref=e72]: 2023 · Photography, archival pigment print
+    - generic [ref=e75]:
+      - generic [ref=e76]:
+        - paragraph [ref=e77]: Plan Your Visit
+        - heading "Experience the gallery in person" [level=2] [ref=e78]
+        - generic [ref=e79]:
+          - generic [ref=e80]:
+            - heading "Hours" [level=3] [ref=e81]
+            - paragraph [ref=e82]: "Tuesday – Sunday: 10:00 – 18:00"
+            - paragraph [ref=e83]: "Thursday: 10:00 – 21:00"
+            - paragraph [ref=e84]: "Monday: Closed"
+          - generic [ref=e85]:
+            - heading "Location" [level=3] [ref=e86]
+            - paragraph [ref=e87]: 1247 Fifth Avenue
+            - paragraph [ref=e88]: New York, NY 10128
+          - generic [ref=e89]:
+            - heading "Admission" [level=3] [ref=e90]
+            - paragraph [ref=e91]: "General: $25"
+            - paragraph [ref=e92]: "Members & Students: Free"
+      - generic [ref=e93]:
+        - blockquote [ref=e94]: "\"A museum should be a place where you lose yourself and find everything.\""
+        - generic [ref=e95]:
+          - link "Reserve Tickets" [ref=e96] [cursor=pointer]:
+            - /url: "#tickets"
+          - link "Become a Member" [ref=e97] [cursor=pointer]:
+            - /url: "#membership"
+    - generic [ref=e99]:
+      - generic [ref=e100]:
+        - generic [ref=e101]:
+          - heading "Aetheria" [level=3] [ref=e102]
+          - paragraph [ref=e103]: A private institution dedicated to the preservation and presentation of contemporary and classical masterworks.
+        - generic [ref=e104]:
+          - heading "Visit" [level=4] [ref=e105]
+          - generic [ref=e106]:
+            - paragraph [ref=e107]: 1247 Fifth Avenue
+            - paragraph [ref=e108]: New York, NY 10128
+            - paragraph [ref=e109]:
+              - link "+1 (212) 555-1247" [ref=e110] [cursor=pointer]:
+                - /url: tel:+12125551247
+            - paragraph [ref=e111]:
+              - link "visit@aetheria.museum" [ref=e112] [cursor=pointer]:
+                - /url: mailto:visit@aetheria.museum
+        - generic [ref=e113]:
+          - heading "Connect" [level=4] [ref=e114]
+          - list [ref=e115]:
+            - listitem [ref=e116]:
+              - link "Instagram" [ref=e117] [cursor=pointer]:
+                - /url: "#instagram"
+            - listitem [ref=e118]:
+              - link "Newsletter" [ref=e119] [cursor=pointer]:
+                - /url: "#newsletter"
+            - listitem [ref=e120]:
+              - link "Careers" [ref=e121] [cursor=pointer]:
+                - /url: "#careers"
+            - listitem [ref=e122]:
+              - link "Press" [ref=e123] [cursor=pointer]:
+                - /url: "#press"
+      - generic [ref=e124]:
+        - paragraph [ref=e125]: © 2024 Aetheria Museum. All rights reserved.
+        - generic [ref=e126]:
+          - link "Privacy" [ref=e127] [cursor=pointer]:
+            - /url: "#privacy"
+          - link "Terms" [ref=e128] [cursor=pointer]:
+            - /url: "#terms"
+          - link "Accessibility" [ref=e129] [cursor=pointer]:
+            - /url: "#accessibility"
+  - button "Open Next.js Dev Tools" [ref=e135] [cursor=pointer]
+  - alert [ref=e139]

@@ -1,0 +1,525 @@
+- generic [active] [ref=e1]:
+  - link "Skip to main content" [ref=e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - link "Superfan Home" [ref=e5] [cursor=pointer]:
+        - /url: "#"
+        - generic [ref=e6]:
+          - generic [ref=e7]: superfan
+          - generic [ref=e8]: BLDC
+        - generic [ref=e9]: 35W BLDCINDIA
+      - generic [ref=e10]: JOURNEY 0%
+      - generic [ref=e13]:
+        - link "Configure Your Fan" [ref=e14] [cursor=pointer]:
+          - /url: "#collection"
+        - button "Open cart" [ref=e16]
+        - button "Open navigation menu" [ref=e20]:
+          - generic [ref=e21]: MENU
+  - main [ref=e25]:
+    - region "Hero presentation of Superfan BLDC Ceiling Fan" [ref=e26]:
+      - generic [ref=e27]:
+        - generic [ref=e29]:
+          - generic [ref=e30]: ●
+          - text: CHAPTER I — THE HERO HOOK
+        - generic:
+          - generic:
+            - link "Explore SuperQ Lux":
+              - /url: "#showcase"
+            - link "3D CAD Explosion":
+              - /url: "#technology"
+            - link "Calculate Savings":
+              - /url: "#calculator"
+            - link "Configure Fan":
+              - /url: "#collection"
+        - generic [ref=e31]: 35W Sensorless BLDC Peak
+        - generic [ref=e35]: < 32dB Whisper Silence
+        - generic [ref=e41]:
+          - heading "Superfan" [level=2] [ref=e42]
+          - generic [ref=e43]: CHAPTER I — THE HERO HOOK
+    - region "SuperQ Lux Product Showcase" [ref=e51]:
+      - generic [ref=e52]:
+        - generic [ref=e53]:
+          - generic [ref=e54]: CHAPTER II — ARCHITECTURAL CROWN
+          - heading "SuperQ Lux" [level=2] [ref=e55]
+          - paragraph [ref=e56]: Designed as a centerpiece for modern interior architecture. Aerodynamic contoured blades, cyan motor accents, and silent 35W BLDC air circulation.
+        - generic [ref=e57]:
+          - generic [ref=e59]:
+            - generic "3D SuperQ Lux spinning fan presentation" [ref=e60]
+            - generic [ref=e61]: Live 3D Motion Render
+          - generic [ref=e64]:
+            - generic [ref=e65]: INTERACTIVE CONFIGURATOR
+            - heading "SuperQ Lux Architectural" [level=3] [ref=e66]
+            - paragraph [ref=e67]: Designed as a centerpiece for modern residences, SuperQ Lux consumes only 35W at peak speed while delivering an extraordinary 230 CMM airflow with near-zero acoustic footprint.
+            - generic [ref=e68]:
+              - generic [ref=e69]:
+                - text: "SELECTED FINISH:"
+                - strong [ref=e70]: Midnight Royal Blue
+              - 'radiogroup "SELECTED FINISH: Midnight Royal Blue" [ref=e71]':
+                - radio "Midnight Royal Blue" [checked] [ref=e72]
+                - radio "Arctic Pearl White" [ref=e74]
+                - radio "Graphite Platinum" [ref=e76]
+                - radio "Electric Cyan Accent" [ref=e78]
+            - generic [ref=e80]:
+              - generic [ref=e81]:
+                - generic [ref=e82]: PRICE INCL. TAXES
+                - generic [ref=e83]: ₹6,850
+              - generic [ref=e84]:
+                - button "View technical specifications for SuperQ Lux" [ref=e85]: Specs
+                - button "Add SuperQ Lux to cart" [ref=e89]: Add SuperQ Lux
+    - region "Scroll to explore 3D CAD motor exploded view" [ref=e93]:
+      - generic [ref=e94]:
+        - generic [ref=e96]:
+          - generic [ref=e97]: ●
+          - text: CHAPTER III — SCROLL-DRIVEN 3D CAD EXPLORATION
+        - generic [ref=e98]: 35W Sensorless BLDC Peak
+        - generic [ref=e102]: < 32dB Whisper Silence
+        - generic [ref=e108]:
+          - heading "The Architecture of Superfan BLDC" [level=2] [ref=e109]
+          - generic [ref=e110]: CHAPTER III — SCROLL-DRIVEN 3D CAD EXPLORATION
+    - generic [ref=e120]:
+      - generic [ref=e121]:
+        - generic [ref=e122]: CHAPTER III — FINANCIAL LOGIC
+        - heading "Interactive Electricity Savings Calculator" [level=2] [ref=e123]
+        - paragraph [ref=e124]: Adjust your household parameters below to compute real financial returns, payback timeline, and carbon reduction when upgrading to Superfan.
+      - generic [ref=e125]:
+        - generic [ref=e126]:
+          - generic [ref=e127]:
+            - generic [ref=e128]:
+              - generic [ref=e129]: "Number of Ceiling Fans in House:"
+              - generic [ref=e133]: 4 Fans
+            - slider [ref=e134] [cursor=pointer]: "4"
+          - generic [ref=e135]:
+            - generic [ref=e136]:
+              - generic [ref=e137]: "Average Running Hours Per Day:"
+              - generic [ref=e141]: 14 Hours/Day
+            - slider [ref=e142] [cursor=pointer]: "14"
+          - generic [ref=e143]:
+            - generic [ref=e144]:
+              - generic [ref=e145]: "Electricity Tariff Rate (₹ per Unit/kWh):"
+              - generic [ref=e149]: ₹8/kWh
+            - slider [ref=e150] [cursor=pointer]: "8"
+          - generic [ref=e151]:
+            - generic [ref=e152]:
+              - generic [ref=e153]: INVESTMENT RECOVERY TIMELINE
+              - generic [ref=e154]: 48 Months
+            - generic [ref=e155]:
+              - text: Your Superfans completely pay for themselves in
+              - strong [ref=e156]: 48 months
+              - text: . 100% net financial profit thereafter!
+        - generic [ref=e159]:
+          - text: ANNUAL FINANCIAL SAVINGS BREAKDOWN
+          - generic [ref=e160]:
+            - generic [ref=e161]: "Yearly Electricity Bill Saved:"
+            - generic [ref=e162]: ₹7,358
+          - generic [ref=e163]:
+            - generic [ref=e164]:
+              - generic [ref=e165]: 5-YEAR CUMULATIVE SAVINGS
+              - generic [ref=e166]: ₹36,790
+            - generic [ref=e167]:
+              - generic [ref=e168]: ANNUAL CO2 REDUCTION
+              - generic [ref=e169]: 754 kg CO2
+    - generic [ref=e171]:
+      - generic [ref=e172]:
+        - text: CHAPTER V — VERIFIED TESTIMONY
+        - heading "Trusted in Over 150,000 Indian Homes" [level=2] [ref=e173]
+        - paragraph [ref=e174]: Real voices from homeowners, architects, and engineers across India who transformed their living spaces with Superfan.
+      - generic [ref=e175]:
+        - generic [ref=e176]:
+          - heading "\"Reduced electricity bill by ₹1,400 per month!\"" [level=3] [ref=e191]
+          - paragraph [ref=e192]: Replaced 6 old 75W ceiling fans across our villa with SuperQ Lux and Super X1. Our monthly power bill dropped drastically. Beyond savings, the silence and smooth air circulation are astonishing.
+          - generic [ref=e193]:
+            - generic [ref=e194]:
+              - generic [ref=e195]: Vikramaditya S.
+              - generic [ref=e196]: Bengaluru, India
+            - generic [ref=e197]: VERIFIED OWNER
+        - generic [ref=e201]:
+          - button "Vikramaditya S. Bengaluru, India" [ref=e202]:
+            - generic [ref=e214]: Vikramaditya S.
+            - generic [ref=e215]: Bengaluru, India
+          - button "Dr. Ananya Roy Mumbai, India" [ref=e216]:
+            - generic [ref=e228]: Dr. Ananya Roy
+            - generic [ref=e229]: Mumbai, India
+          - button "Karan Mehra New Delhi, India" [ref=e230]:
+            - generic [ref=e242]: Karan Mehra
+            - generic [ref=e243]: New Delhi, India
+          - generic [ref=e244]:
+            - button [ref=e245]
+            - button [ref=e248]
+      - generic [ref=e251]:
+        - generic [ref=e252]:
+          - generic [ref=e253]: 150,000+
+          - generic [ref=e254]: Homes Upgraded
+        - generic [ref=e255]:
+          - generic [ref=e256]: 4.8 / 5
+          - generic [ref=e257]: Average Star Rating
+        - generic [ref=e258]:
+          - generic [ref=e259]: 94%
+          - generic [ref=e260]: Recommend to Family
+        - generic [ref=e261]:
+          - generic [ref=e262]: ₹820 Cr
+          - generic [ref=e263]: Customer Savings Generated
+    - generic [ref=e266]:
+      - generic [ref=e267]:
+        - text: NATIONAL ACCOLADES & CERTIFICATIONS — CHAPTER VI
+        - heading "India’s Most Awarded BLDC Brand" [level=2] [ref=e268]
+        - paragraph [ref=e269]: Superfan was recognized by the Bureau of Energy Efficiency (BEE) and the Ministry of Power for pioneering India's first sensorless BLDC motor ceiling fan.
+        - generic [ref=e270]:
+          - generic [ref=e271]: National Energy Conservation Award Winner (Ministry of Power)
+          - generic [ref=e276]: BEE 5-Star Highest Energy Efficiency Rating Certified
+          - generic [ref=e281]: Patented Sensorless Vector Control Technology (Govt of India Patent)
+          - generic [ref=e286]: 100% Domestic Manufacturing & R&D in Coimbatore, Tamil Nadu
+      - generic [ref=e294]:
+        - generic [ref=e295]: COIMBATORE R&D FACILITY
+        - generic [ref=e296]: Pioneered in India, Built for the World
+    - generic [ref=e298]:
+      - generic [ref=e299]:
+        - generic [ref=e300]: Chapter V — The Architectural Storefront
+        - generic [ref=e301]:
+          - heading "All Series" [level=2] [ref=e302]
+          - generic [ref=e303]:
+            - textbox "Search model..." [ref=e305]
+            - generic [ref=e306]:
+              - button [ref=e307]
+              - button [ref=e313]
+      - generic [ref=e315]:
+        - button "All 4" [ref=e316]:
+          - text: All
+          - generic [ref=e317]: "4"
+        - button "Luxury Decorative 2" [ref=e318]:
+          - text: Luxury Decorative
+          - generic [ref=e319]: "2"
+        - button "High Speed 1" [ref=e320]:
+          - text: High Speed
+          - generic [ref=e321]: "1"
+        - button "High Flow 0" [ref=e322]:
+          - text: High Flow
+          - generic [ref=e323]: "0"
+        - button "Smart IoT 1" [ref=e324]:
+          - text: Smart IoT
+          - generic [ref=e325]: "1"
+      - paragraph [ref=e326]: 4 fans available
+      - generic [ref=e327]:
+        - generic [ref=e328]:
+          - generic [ref=e331]:
+            - generic [ref=e332]:
+              - generic [ref=e333]: Bestseller
+              - generic [ref=e334]: Save 28%
+            - generic [ref=e335]: "4.9"
+          - generic [ref=e339]:
+            - generic [ref=e340]:
+              - generic [ref=e341]: Luxury Decorative
+              - generic [ref=e342]: 35W BLDC
+            - generic [ref=e345]:
+              - heading "SuperQ Lux" [level=3] [ref=e346]
+              - paragraph [ref=e347]: Flagship Architectural BLDC Ceiling Fan
+            - generic [ref=e348]:
+              - generic [ref=e349]: "Finish: Midnight Royal Blue"
+              - generic [ref=e350]:
+                - button "Midnight Royal Blue" [ref=e351]
+                - button "Arctic Pearl White" [ref=e352]
+                - button "Graphite Platinum" [ref=e353]
+                - button "Electric Cyan Accent" [ref=e354]
+            - generic [ref=e355]:
+              - generic [ref=e356]:
+                - generic [ref=e357]:
+                  - generic [ref=e358]: ₹6,850
+                  - generic [ref=e359]: ₹9,499
+                - generic [ref=e360]: 5-Yr Warranty
+              - generic [ref=e364]:
+                - button "Quick View" [ref=e365]
+                - button "Add" [ref=e369]
+        - generic [ref=e373]:
+          - generic [ref=e376]:
+            - generic [ref=e377]:
+              - generic [ref=e378]: Bestseller
+              - generic [ref=e379]: Save 27%
+            - generic [ref=e380]: "4.9"
+          - generic [ref=e384]:
+            - generic [ref=e385]:
+              - generic [ref=e386]: Smart IoT
+              - generic [ref=e387]: 35W BLDC
+            - generic [ref=e390]:
+              - heading "Super myQ Direct Voice" [level=3] [ref=e391]
+              - paragraph [ref=e392]: Voice-Activated Smart Fan
+            - generic [ref=e393]:
+              - generic [ref=e394]: "Finish: Sapphire Blue Ring"
+              - generic [ref=e395]:
+                - button "Sapphire Blue Ring" [ref=e396]
+                - button "Midnight Black" [ref=e397]
+            - generic [ref=e398]:
+              - generic [ref=e399]:
+                - generic [ref=e400]:
+                  - generic [ref=e401]: ₹7,299
+                  - generic [ref=e402]: ₹9,999
+                - generic [ref=e403]: 5-Yr Warranty
+              - generic [ref=e407]:
+                - button "Quick View" [ref=e408]
+                - button "Add" [ref=e412]
+        - generic [ref=e416]:
+          - generic [ref=e419]:
+            - generic [ref=e420]:
+              - generic [ref=e421]: Bestseller
+              - generic [ref=e422]: Save 29%
+            - generic [ref=e423]: "4.8"
+          - generic [ref=e427]:
+            - generic [ref=e428]:
+              - generic [ref=e429]: High Speed
+              - generic [ref=e430]: 28W BLDC
+            - generic [ref=e433]:
+              - heading "Super Sevak" [level=3] [ref=e434]
+              - paragraph [ref=e435]: High-Performance Utility BLDC Fan
+            - generic [ref=e436]:
+              - generic [ref=e437]: "Finish: Arctic White"
+              - generic [ref=e438]:
+                - button "Arctic White" [ref=e439]
+                - button "Royal Blue Trim" [ref=e440]
+            - generic [ref=e441]:
+              - generic [ref=e442]:
+                - generic [ref=e443]:
+                  - generic [ref=e444]: ₹3,550
+                  - generic [ref=e445]: ₹4,999
+                - generic [ref=e446]: 5-Yr Warranty
+              - generic [ref=e450]:
+                - button "Quick View" [ref=e451]
+                - button "Add" [ref=e455]
+        - generic [ref=e459]:
+          - generic [ref=e462]:
+            - generic [ref=e463]: Save 27%
+            - generic [ref=e465]: "4.9"
+          - generic [ref=e469]:
+            - generic [ref=e470]:
+              - generic [ref=e471]: Luxury Decorative
+              - generic [ref=e472]: 32W BLDC
+            - generic [ref=e475]:
+              - heading "Super X1 Natura" [level=3] [ref=e476]
+              - paragraph [ref=e477]: Biophilic Studio Design Series
+            - generic [ref=e478]:
+              - generic [ref=e479]: "Finish: Minimalist Studio Grey"
+              - generic [ref=e480]:
+                - button "Minimalist Studio Grey" [ref=e481]
+                - button "Royal Blue Core" [ref=e482]
+            - generic [ref=e483]:
+              - generic [ref=e484]:
+                - generic [ref=e485]:
+                  - generic [ref=e486]: ₹5,499
+                  - generic [ref=e487]: ₹7,499
+                - generic [ref=e488]: 5-Yr Warranty
+              - generic [ref=e492]:
+                - button "Quick View" [ref=e493]
+                - button "Add" [ref=e497]
+    - region "Scroll to explore hazard management and smoke defense systems" [ref=e501]:
+      - generic [ref=e502]:
+        - generic [ref=e504]:
+          - generic [ref=e505]: ●
+          - text: CHAPTER V — HAZARD MANAGEMENT & ENVIRONMENTAL DEFENSE
+        - generic [ref=e506]: 35W Sensorless BLDC Peak
+        - generic [ref=e510]: < 32dB Whisper Silence
+        - generic [ref=e516]:
+          - heading "Pure Laminar Circulation" [level=2] [ref=e517]
+          - generic [ref=e518]: CHAPTER V — HAZARD MANAGEMENT & ENVIRONMENTAL DEFENSE
+    - generic [ref=e527]:
+      - generic [ref=e528]:
+        - generic [ref=e529]: FREQUENTLY ASKED QUESTIONS
+        - heading "Everything You Need to Know" [level=2] [ref=e530]
+        - paragraph [ref=e531]: Got questions about BLDC motors, power savings, remote operation, or installation? Find answers below.
+      - textbox "Search questions..." [ref=e536]
+      - generic [ref=e537]:
+        - generic [ref=e538]:
+          - button "How does a Superfan BLDC Motor save over 69% electricity?" [ref=e539]
+          - generic [ref=e546]: Traditional ceiling fans use old Induction Motors (AC) that consume 75W to 80W of power, losing over 40% of energy as heat. Superfan uses a patented sensorless Brushless DC (BLDC) motor with permanent neodymium magnets, consuming just 28W to 35W at top speed while delivering superior air volume.
+        - button "What is the estimated payback period for purchasing a Superfan?" [ref=e548]
+        - button "Does Super myQ Direct Voice require an active WiFi internet connection?" [ref=e556]
+        - button "Can I replace my existing ceiling fan without altering standard switchboard wiring?" [ref=e564]
+        - button "What is covered under Superfan’s 5-Year Warranty?" [ref=e572]
+    - generic [ref=e583]:
+      - text: READY TO REFINE YOUR AIR?
+      - heading "Elevate Your Ceiling Atmosphere Today" [level=2] [ref=e584]
+      - paragraph [ref=e585]: Every Superfan comes with complimentary insured pan-India delivery, 5-Year On-Site Replacement Warranty, and 69% guaranteed power bill savings.
+      - generic [ref=e586]:
+        - generic [ref=e587]: Free Insured Pan-India Express Delivery
+        - generic [ref=e593]: 5-Year Doorstep Motor Warranty
+        - generic [ref=e597]: 30-Day Money-Back Satisfaction Guarantee
+      - button "Order Flagship SuperQ Lux" [ref=e603]
+    - generic [ref=e608]:
+      - generic [ref=e609]: VERSA DRIVES PRIVATE LIMITED — COIMBATORE, INDIA — EST. 2012
+      - blockquote [ref=e610]: "\"True engineering luxury is quiet, efficient, and built to outlast generations.\""
+      - paragraph [ref=e611]: Superfan — a decade of BLDC engineering innovation, 150,000+ homes upgraded, and 500,000+ metric tons of CO2 prevented. Your ceiling fan is a statement.
+      - generic [ref=e612]:
+        - link "Order Superfan Today" [ref=e613] [cursor=pointer]:
+          - /url: "#showcase"
+        - link "Explore 3D Motor Anatomy" [ref=e616] [cursor=pointer]:
+          - /url: "#technology"
+      - generic [ref=e617]: © 2026 Superfan (Versa Drives Pvt. Ltd.) · India's First BLDC Ceiling Fan · BEE 5-Star Certified · 5-Year Warranty
+  - contentinfo [ref=e618]:
+    - generic [ref=e620]:
+      - generic [ref=e621]:
+        - paragraph [ref=e622]: Engineered Silence.™India's Finest BLDC.
+        - generic [ref=e623]:
+          - generic [ref=e624]: © 2026 Versa Drives Private Limited
+          - link "ABOUT ↗" [ref=e625] [cursor=pointer]:
+            - /url: "#"
+      - generic [ref=e627]:
+        - generic [ref=e628]:
+          - generic [ref=e629]:
+            - generic [ref=e630]: COIMBATORE
+            - generic [ref=e631]: ──:──:──
+            - generic [ref=e632]: OPEN
+          - generic [ref=e634]:
+            - generic [ref=e635]: NEW DELHI
+            - generic [ref=e636]: ──:──:──
+            - generic [ref=e637]: OPEN
+        - generic [ref=e639]:
+          - link "COLLECTIONS ↗" [ref=e640] [cursor=pointer]:
+            - /url: "#collection"
+          - link "INSTAGRAM ↗" [ref=e641] [cursor=pointer]:
+            - /url: https://instagram.com
+          - link "1800 425 7873" [ref=e642] [cursor=pointer]:
+            - /url: tel:18004257873
+          - link "SUPERFAN.IN ↗" [ref=e643] [cursor=pointer]:
+            - /url: "#"
+        - link "INFO@SUPERFAN.IN ↗" [ref=e644] [cursor=pointer]:
+          - /url: mailto:info@superfan.in
+    - generic: SUPERFAN
+    - generic [ref=e646]:
+      - generic [ref=e647]:
+        - generic [ref=e648]:
+          - generic [ref=e649]: ◆
+          - generic [ref=e650]: India's First BLDC Ceiling Fan
+          - generic [ref=e651]: ◆
+          - generic [ref=e652]: Patented Sensorless Motor
+          - generic [ref=e653]: ◆
+          - generic [ref=e654]: 35 Watts · 230 CMM Airflow
+          - generic [ref=e655]: ◆
+          - generic [ref=e656]: 500,000+ Tons CO₂ Prevented
+          - generic [ref=e657]: ◆
+          - generic [ref=e658]: BEE 5-Star Certified
+          - generic [ref=e659]: ◆
+          - generic [ref=e660]: myQ Offline Voice Control
+          - generic [ref=e661]: ◆
+          - generic [ref=e662]: Coimbatore, Tamil Nadu · Est. 2012
+          - generic [ref=e663]: ◆
+          - generic [ref=e664]: 5-Year On-Site Motor Warranty
+        - generic [ref=e665]:
+          - generic [ref=e666]: ◆
+          - generic [ref=e667]: India's First BLDC Ceiling Fan
+          - generic [ref=e668]: ◆
+          - generic [ref=e669]: Patented Sensorless Motor
+          - generic [ref=e670]: ◆
+          - generic [ref=e671]: 35 Watts · 230 CMM Airflow
+          - generic [ref=e672]: ◆
+          - generic [ref=e673]: 500,000+ Tons CO₂ Prevented
+          - generic [ref=e674]: ◆
+          - generic [ref=e675]: BEE 5-Star Certified
+          - generic [ref=e676]: ◆
+          - generic [ref=e677]: myQ Offline Voice Control
+          - generic [ref=e678]: ◆
+          - generic [ref=e679]: Coimbatore, Tamil Nadu · Est. 2012
+          - generic [ref=e680]: ◆
+          - generic [ref=e681]: 5-Year On-Site Motor Warranty
+        - generic [ref=e682]:
+          - generic [ref=e683]: ◆
+          - generic [ref=e684]: India's First BLDC Ceiling Fan
+          - generic [ref=e685]: ◆
+          - generic [ref=e686]: Patented Sensorless Motor
+          - generic [ref=e687]: ◆
+          - generic [ref=e688]: 35 Watts · 230 CMM Airflow
+          - generic [ref=e689]: ◆
+          - generic [ref=e690]: 500,000+ Tons CO₂ Prevented
+          - generic [ref=e691]: ◆
+          - generic [ref=e692]: BEE 5-Star Certified
+          - generic [ref=e693]: ◆
+          - generic [ref=e694]: myQ Offline Voice Control
+          - generic [ref=e695]: ◆
+          - generic [ref=e696]: Coimbatore, Tamil Nadu · Est. 2012
+          - generic [ref=e697]: ◆
+          - generic [ref=e698]: 5-Year On-Site Motor Warranty
+        - generic [ref=e699]:
+          - generic [ref=e700]: ◆
+          - generic [ref=e701]: India's First BLDC Ceiling Fan
+          - generic [ref=e702]: ◆
+          - generic [ref=e703]: Patented Sensorless Motor
+          - generic [ref=e704]: ◆
+          - generic [ref=e705]: 35 Watts · 230 CMM Airflow
+          - generic [ref=e706]: ◆
+          - generic [ref=e707]: 500,000+ Tons CO₂ Prevented
+          - generic [ref=e708]: ◆
+          - generic [ref=e709]: BEE 5-Star Certified
+          - generic [ref=e710]: ◆
+          - generic [ref=e711]: myQ Offline Voice Control
+          - generic [ref=e712]: ◆
+          - generic [ref=e713]: Coimbatore, Tamil Nadu · Est. 2012
+          - generic [ref=e714]: ◆
+          - generic [ref=e715]: 5-Year On-Site Motor Warranty
+      - generic [ref=e716]:
+        - generic [ref=e717]:
+          - generic [ref=e718]: ◆
+          - generic [ref=e719]: India's First BLDC Ceiling Fan
+          - generic [ref=e720]: ◆
+          - generic [ref=e721]: Patented Sensorless Motor
+          - generic [ref=e722]: ◆
+          - generic [ref=e723]: 35 Watts · 230 CMM Airflow
+          - generic [ref=e724]: ◆
+          - generic [ref=e725]: 500,000+ Tons CO₂ Prevented
+          - generic [ref=e726]: ◆
+          - generic [ref=e727]: BEE 5-Star Certified
+          - generic [ref=e728]: ◆
+          - generic [ref=e729]: myQ Offline Voice Control
+          - generic [ref=e730]: ◆
+          - generic [ref=e731]: Coimbatore, Tamil Nadu · Est. 2012
+          - generic [ref=e732]: ◆
+          - generic [ref=e733]: 5-Year On-Site Motor Warranty
+        - generic [ref=e734]:
+          - generic [ref=e735]: ◆
+          - generic [ref=e736]: India's First BLDC Ceiling Fan
+          - generic [ref=e737]: ◆
+          - generic [ref=e738]: Patented Sensorless Motor
+          - generic [ref=e739]: ◆
+          - generic [ref=e740]: 35 Watts · 230 CMM Airflow
+          - generic [ref=e741]: ◆
+          - generic [ref=e742]: 500,000+ Tons CO₂ Prevented
+          - generic [ref=e743]: ◆
+          - generic [ref=e744]: BEE 5-Star Certified
+          - generic [ref=e745]: ◆
+          - generic [ref=e746]: myQ Offline Voice Control
+          - generic [ref=e747]: ◆
+          - generic [ref=e748]: Coimbatore, Tamil Nadu · Est. 2012
+          - generic [ref=e749]: ◆
+          - generic [ref=e750]: 5-Year On-Site Motor Warranty
+        - generic [ref=e751]:
+          - generic [ref=e752]: ◆
+          - generic [ref=e753]: India's First BLDC Ceiling Fan
+          - generic [ref=e754]: ◆
+          - generic [ref=e755]: Patented Sensorless Motor
+          - generic [ref=e756]: ◆
+          - generic [ref=e757]: 35 Watts · 230 CMM Airflow
+          - generic [ref=e758]: ◆
+          - generic [ref=e759]: 500,000+ Tons CO₂ Prevented
+          - generic [ref=e760]: ◆
+          - generic [ref=e761]: BEE 5-Star Certified
+          - generic [ref=e762]: ◆
+          - generic [ref=e763]: myQ Offline Voice Control
+          - generic [ref=e764]: ◆
+          - generic [ref=e765]: Coimbatore, Tamil Nadu · Est. 2012
+          - generic [ref=e766]: ◆
+          - generic [ref=e767]: 5-Year On-Site Motor Warranty
+        - generic [ref=e768]:
+          - generic [ref=e769]: ◆
+          - generic [ref=e770]: India's First BLDC Ceiling Fan
+          - generic [ref=e771]: ◆
+          - generic [ref=e772]: Patented Sensorless Motor
+          - generic [ref=e773]: ◆
+          - generic [ref=e774]: 35 Watts · 230 CMM Airflow
+          - generic [ref=e775]: ◆
+          - generic [ref=e776]: 500,000+ Tons CO₂ Prevented
+          - generic [ref=e777]: ◆
+          - generic [ref=e778]: BEE 5-Star Certified
+          - generic [ref=e779]: ◆
+          - generic [ref=e780]: myQ Offline Voice Control
+          - generic [ref=e781]: ◆
+          - generic [ref=e782]: Coimbatore, Tamil Nadu · Est. 2012
+          - generic [ref=e783]: ◆
+          - generic [ref=e784]: 5-Year On-Site Motor Warranty
+    - generic [ref=e785]:
+      - generic [ref=e786]: Cinematic experience crafted with Next.js, GSAP, Lenis, and custom WebGL shaders
+      - generic [ref=e787]: "Typography: Cormorant Garamond · DM Mono · Outfit"

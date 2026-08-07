@@ -1,0 +1,137 @@
+- generic [active] [ref=f4e1]:
+  - button "Toggle Royal Ambient Audio" [ref=f4e2] [cursor=pointer]:
+    - generic [ref=f4e8]: ROYAL SOUND
+  - generic [ref=f4e9]:
+    - banner [ref=f4e10]:
+      - button "RAAJMAHAL PALACE & RESORT · JAIPUR" [ref=f4e11] [cursor=pointer]:
+        - generic [ref=f4e41]:
+          - generic [ref=f4e42]: RAAJMAHAL
+          - generic [ref=f4e43]: PALACE & RESORT · JAIPUR
+      - button "Reserve Suite" [ref=f4e44] [cursor=pointer]
+    - main [ref=f4e46]:
+      - generic [ref=f4e47]:
+        - generic [ref=f4e52]: AN EXTRAORDINARY INDIAN HERITAGE SANCTUARY
+        - generic [ref=f4e56]:
+          - heading "WHERE ROYALTY" [level=1] [ref=f4e86]
+          - heading "MEETS THE" [level=1] [ref=f4e88]
+          - heading "MODERN AGE." [level=1] [ref=f4e90]
+          - paragraph [ref=f4e92]: Step into a 16th-century royal palace reimagined for the contemporary connoisseur. Hand-carved marble courtyards, private infinity pools, and bespoke concierge experiences.
+          - generic [ref=f4e93]:
+            - button "Explore Royal Suites" [ref=f4e94] [cursor=pointer]
+            - link "Begin Journey ↓" [ref=f4e95] [cursor=pointer]:
+              - /url: "#entrance-section"
+        - generic [ref=f4e96]:
+          - generic [ref=f4e97]: JAIPUR · RAJASTHAN
+          - generic [ref=f4e98]: SCROLL TO ENTER THE PALACE
+          - generic [ref=f4e100]: EST. 1592
+      - generic [ref=f4e107]:
+        - generic [ref=f4e137]: CHAPTER II — THE GRAND THRESHOLD
+        - heading "STEP INSIDE THE ROYAL HALLWAYS" [level=2] [ref=f4e138]
+        - paragraph [ref=f4e139]: Beyond these double mahogany doors lies a realm of unmatched splendor. High vaulted arches, intricate gold leaf ceilings, and scent of fresh jasmine and sandalwood welcoming you home.
+        - generic [ref=f4e140]:
+          - generic [ref=f4e141]:
+            - paragraph [ref=f4e142]: "108"
+            - paragraph [ref=f4e143]: Royal Suites
+          - generic [ref=f4e144]:
+            - paragraph [ref=f4e145]: 24/7
+            - paragraph [ref=f4e146]: Butler Service
+          - generic [ref=f4e147]:
+            - paragraph [ref=f4e148]: 45 Acres
+            - paragraph [ref=f4e149]: Private Gardens
+      - generic [ref=f4e151]:
+        - generic [ref=f4e152]: PALACE SANCTUARY
+        - generic [ref=f4e215]:
+          - generic [ref=f4e216]: CHAPTER IV — THE PALACE EXPERIENCE
+          - heading "CURATED HERITAGE MOMENTS" [level=2] [ref=f4e217]
+          - paragraph [ref=f4e218]: Immersion into centuries of royal grandeur, modern wellness, and Michelin-inspired Indian gastronomy.
+        - generic [ref=f4e219]:
+          - generic [ref=f4e220]:
+            - generic [ref=f4e221]:
+              - img "ROYAL INFINITY OASIS" [ref=f4e223]
+              - generic [ref=f4e225]: POOL & COURTYARD
+              - generic [ref=f4e227]:
+                - paragraph [ref=f4e228]: ROYAL INFINITY OASIS
+                - paragraph [ref=f4e229]: Overlooking the Aravalli Hills at Sunset
+            - generic [ref=f4e230]:
+              - heading "ROYAL INFINITY OASIS" [level=3] [ref=f4e231]
+              - paragraph [ref=f4e232]: Overlooking the Aravalli Hills at Sunset
+              - paragraph [ref=f4e233]: Swim along heated emerald waters framed by hand-carved marble jaali screens. Signature cocktails served on submerged daybeds.
+          - generic [ref=f4e234]:
+            - generic [ref=f4e235]:
+              - img "THE MAHARAJA SUITE" [ref=f4e237]
+              - generic [ref=f4e239]: ROYAL SANCTUARY
+              - generic [ref=f4e241]:
+                - paragraph [ref=f4e242]: THE MAHARAJA SUITE
+                - paragraph [ref=f4e243]: Palace Gardens & City Skyline Views
+            - generic [ref=f4e244]:
+              - heading "THE MAHARAJA SUITE" [level=3] [ref=f4e245]
+              - paragraph [ref=f4e246]: Palace Gardens & City Skyline Views
+              - paragraph [ref=f4e247]: 3,800 sq.ft of pure indulgence. Private marble plunge pool, 24k gold embroidered silks, and dedicated royal butler service.
+          - generic [ref=f4e248]:
+            - generic [ref=f4e249]:
+              - img "TWILIGHT ILLUMINATIONS" [ref=f4e251]
+              - generic [ref=f4e253]: HERITAGE ARCHITECTURE
+              - generic [ref=f4e255]:
+                - paragraph [ref=f4e256]: TWILIGHT ILLUMINATIONS
+                - paragraph [ref=f4e257]: 1,000 Oil Lamps Lit at Dusk
+            - generic [ref=f4e258]:
+              - heading "TWILIGHT ILLUMINATIONS" [level=3] [ref=f4e259]
+              - paragraph [ref=f4e260]: 1,000 Oil Lamps Lit at Dusk
+              - paragraph [ref=f4e261]: As night falls over Rajasthan, the palace glows under warm torchlights, accompanied by live sitar recitals in the central courtyard.
+          - generic [ref=f4e262]:
+            - generic [ref=f4e263]:
+              - img "THE GRAND MARBLE LOBBY" [ref=f4e265]
+              - generic [ref=f4e267]: ARRIVAL
+              - generic [ref=f4e269]:
+                - paragraph [ref=f4e270]: THE GRAND MARBLE LOBBY
+                - paragraph [ref=f4e271]: High Vaulted Arches & Chandelier Grandeur
+            - generic [ref=f4e272]:
+              - heading "THE GRAND MARBLE LOBBY" [level=3] [ref=f4e273]
+              - paragraph [ref=f4e274]: High Vaulted Arches & Chandelier Grandeur
+              - paragraph [ref=f4e275]: A breathtaking welcome under 40-foot vaulted ceilings, hand-painted frescoes, and crystal chandeliers brought from Venice in 1890.
+        - generic [ref=f4e276]:
+          - generic [ref=f4e277]:
+            - generic [ref=f4e278]: GASTRONOMY & WELLNESS
+            - heading "ROYAL THALI & AYURVEDIC SPA" [level=3] [ref=f4e281]
+            - paragraph [ref=f4e282]: Indulge in 24-course royal Thali feasts prepared by hereditary royal chefs, followed by 5,000-year-old Ayurvedic herbal therapies at Jharokha Spa.
+          - generic [ref=f4e283]:
+            - generic [ref=f4e284]:
+              - paragraph [ref=f4e285]: SURYA DINING
+              - paragraph [ref=f4e286]: Michelin Heritage
+            - generic [ref=f4e287]:
+              - paragraph [ref=f4e288]: AMRIT SPA
+              - paragraph [ref=f4e289]: Ayurveda Wellness
+      - generic [ref=f4e290]:
+        - generic [ref=f4e295]: THE FINAL SANCTUARY
+        - generic [ref=f4e325]:
+          - heading "YOUR ROYAL JOURNEY" [level=2] [ref=f4e326]
+          - heading "BEGINS IN JAIPUR." [level=2] [ref=f4e327]
+          - paragraph [ref=f4e328]: Private palace reservations available strictly by prior appointment. Chauffeur transfers, private helipad landing, and 24-hour royal butler included with every suite.
+          - button "Reserve Your Royal Experience" [ref=f4e330] [cursor=pointer]
+        - generic [ref=f4e331]:
+          - generic [ref=f4e332]:
+            - paragraph [ref=f4e333]: SANCTUARY LOCATION
+            - paragraph [ref=f4e334]: Raajmahal Palace Road, Amber Fort Estate, Jaipur, Rajasthan 302001
+          - generic [ref=f4e335]:
+            - paragraph [ref=f4e336]: ROYAL CONCIERGE
+            - paragraph [ref=f4e337]: +91 141 238 9000
+            - paragraph [ref=f4e338]: concierge@raajmahalpalace.com
+          - generic [ref=f4e339]:
+            - paragraph [ref=f4e340]: PRIVATE AVIATION
+            - paragraph [ref=f4e341]: Jaipur Int. Airport (JAI) — 25 min
+            - paragraph [ref=f4e342]: On-site Palace Helipad
+          - generic [ref=f4e343]:
+            - paragraph [ref=f4e344]: ACCOLADES
+            - paragraph [ref=f4e345]: "#1 Heritage Hotel in Asia 2026"
+            - paragraph [ref=f4e346]: Condé Nast Gold List
+        - generic [ref=f4e347]:
+          - generic [ref=f4e348]: © 2026 RAAJMAHAL PALACE & RESORT · ALL RIGHTS RESERVED
+          - generic [ref=f4e349]: ROYAL HERITAGE SANCTUARY · JAIPUR
+  - button "Open Next.js Dev Tools" [ref=f4e355] [cursor=pointer]:
+    - generic [ref=f4e358]:
+      - text: Compiling
+      - generic [ref=f4e359]:
+        - generic [ref=f4e360]: .
+        - generic [ref=f4e361]: .
+        - generic [ref=f4e362]: .
+  - alert [ref=f4e363]

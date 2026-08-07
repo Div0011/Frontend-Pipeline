@@ -1,0 +1,230 @@
+- generic [active] [ref=f6e1]:
+  - banner [ref=f6e2]:
+    - generic [ref=f6e4]:
+      - link "S ShiftEase by Sheetal" [ref=f6e5] [cursor=pointer]:
+        - /url: /
+        - generic [ref=f6e6]: S
+        - generic [ref=f6e8]:
+          - text: ShiftEase
+          - generic [ref=f6e9]: by Sheetal
+      - navigation [ref=f6e10]:
+        - link "Home" [ref=f6e11] [cursor=pointer]:
+          - /url: /
+        - link "Directory" [ref=f6e12] [cursor=pointer]:
+          - /url: /directory
+        - link "Get Quote" [ref=f6e13] [cursor=pointer]:
+          - /url: /quote
+        - link "Cities" [ref=f6e14] [cursor=pointer]:
+          - /url: /cities/delhi
+        - link "Blog" [ref=f6e15] [cursor=pointer]:
+          - /url: /blog
+        - link "About" [ref=f6e16] [cursor=pointer]:
+          - /url: /about
+        - link "Contact" [ref=f6e17] [cursor=pointer]:
+          - /url: /contact
+      - link "Get Started" [ref=f6e19] [cursor=pointer]:
+        - /url: /contact
+  - main [ref=f6e20]:
+    - generic [ref=f6e24]:
+      - generic [ref=f6e25]:
+        - paragraph [ref=f6e26]: Trusted by 10,000+ Families
+        - heading "Your Move, Made Effortless" [level=1] [ref=f6e27]
+        - paragraph [ref=f6e28]: Find verified packers and movers in your city. Get instant quotes, compare services, and book with confidence.
+        - generic [ref=f6e29]:
+          - link "Get Instant Quote" [ref=f6e30] [cursor=pointer]:
+            - /url: /quote
+          - link "Browse Directory" [ref=f6e33] [cursor=pointer]:
+            - /url: /directory
+      - generic [ref=f6e35]:
+        - textbox "Search for movers by city" [ref=f6e39]:
+          - /placeholder: Enter your city to find movers...
+        - link "Search" [ref=f6e40] [cursor=pointer]:
+          - /url: /directory
+    - generic [ref=f6e47]:
+      - generic [ref=f6e48]:
+        - generic [ref=f6e49]: 10,000+
+        - generic [ref=f6e50]: Happy Customers
+      - generic [ref=f6e51]:
+        - generic [ref=f6e52]: 500+
+        - generic [ref=f6e53]: Verified Vendors
+      - generic [ref=f6e54]:
+        - generic [ref=f6e55]: 50,000+
+        - generic [ref=f6e56]: Moves Completed
+      - generic [ref=f6e57]:
+        - generic [ref=f6e58]: "4.8"
+        - generic [ref=f6e59]: Average Rating
+    - generic [ref=f6e61]:
+      - generic [ref=f6e62]:
+        - heading "How It Works" [level=2] [ref=f6e63]
+        - paragraph [ref=f6e64]: Three simple steps to find your perfect moving partner and get a transparent price estimate.
+      - generic [ref=f6e65]:
+        - generic [ref=f6e66]:
+          - generic [ref=f6e67]: "01"
+          - heading "Tell Us About Your Move" [level=3] [ref=f6e69]
+          - paragraph [ref=f6e70]: Enter your origin, destination, and move details in our simple quote form.
+        - generic [ref=f6e72]:
+          - generic [ref=f6e73]: "02"
+          - heading "Get Instant Estimates" [level=3] [ref=f6e75]
+          - paragraph [ref=f6e76]: Receive price ranges from verified packers and movers in your area.
+        - generic [ref=f6e78]:
+          - generic [ref=f6e79]: "03"
+          - heading "Compare and Book" [level=3] [ref=f6e81]
+          - paragraph [ref=f6e82]: Compare services, read verified reviews, and book the best fit for you.
+    - generic [ref=f6e84]:
+      - generic [ref=f6e85]:
+        - heading "Explore Cities" [level=2] [ref=f6e86]
+        - paragraph [ref=f6e87]: Browse verified packers and movers across India\'s major cities.
+      - generic [ref=f6e88]:
+        - link [ref=f6e89] [cursor=pointer]:
+          - /url: /cities/delhi
+          - generic [ref=f6e90]:
+            - generic [ref=f6e91]:
+              - img "Delhi" [ref=f6e92]
+              - heading "Delhi" [level=3] [ref=f6e95]
+            - paragraph [ref=f6e97]: Professional packers across the capital region
+        - link [ref=f6e98] [cursor=pointer]:
+          - /url: /cities/mumbai
+          - generic [ref=f6e99]:
+            - generic [ref=f6e100]:
+              - img "Mumbai" [ref=f6e101]
+              - heading "Mumbai" [level=3] [ref=f6e104]
+            - paragraph [ref=f6e106]: Trusted moving services in the financial hub
+        - link [ref=f6e107] [cursor=pointer]:
+          - /url: /cities/bangalore
+          - generic [ref=f6e108]:
+            - generic [ref=f6e109]:
+              - img "Bangalore" [ref=f6e110]
+              - heading "Bangalore" [level=3] [ref=f6e113]
+            - paragraph [ref=f6e115]: Reliable relocation partners in India's tech capital
+    - generic [ref=f6e117]:
+      - generic [ref=f6e118]:
+        - heading "Why Choose ShiftEase" [level=2] [ref=f6e119]
+        - paragraph [ref=f6e120]: We make your relocation simple, transparent, and stress-free.
+      - generic [ref=f6e121]:
+        - generic [ref=f6e122]:
+          - generic [ref=f6e123]: ✓
+          - generic [ref=f6e124]:
+            - heading "Verified Vendors" [level=3] [ref=f6e125]
+            - paragraph [ref=f6e126]: Every business in our directory is verified with GSTIN and customer reviews.
+        - generic [ref=f6e127]:
+          - generic [ref=f6e128]: 💰
+          - generic [ref=f6e129]:
+            - heading "Transparent Pricing" [level=3] [ref=f6e130]
+            - paragraph [ref=f6e131]: Get instant price estimates with no hidden fees or surprise charges.
+        - generic [ref=f6e132]:
+          - generic [ref=f6e133]: 🛡️
+          - generic [ref=f6e134]:
+            - heading "Book with Confidence" [level=3] [ref=f6e135]
+            - paragraph [ref=f6e136]: Our verified review system ensures you only see genuine customer feedback.
+        - generic [ref=f6e137]:
+          - generic [ref=f6e138]: 📞
+          - generic [ref=f6e139]:
+            - heading "Dedicated Support" [level=3] [ref=f6e140]
+            - paragraph [ref=f6e141]: Our team is available to help you with any questions or concerns.
+    - generic [ref=f6e143]:
+      - generic [ref=f6e144]:
+        - heading "Verified Reviews" [level=2] [ref=f6e145]
+        - paragraph [ref=f6e146]: Hear from families who have used our platform for their relocations.
+      - generic [ref=f6e147]:
+        - generic [ref=f6e148]:
+          - generic [ref=f6e149]:
+            - generic [ref=f6e150]: ★
+            - generic [ref=f6e151]: ★
+            - generic [ref=f6e152]: ★
+            - generic [ref=f6e153]: ★
+            - generic [ref=f6e154]: ★
+          - paragraph [ref=f6e155]: "\"ShiftEase made finding a reliable mover so easy. The process was seamless and the vendor was professional throughout.\""
+          - generic [ref=f6e156]:
+            - generic [ref=f6e157]: A
+            - generic [ref=f6e158]:
+              - generic [ref=f6e159]: Amit Sharma
+              - generic [ref=f6e160]: Delhi
+        - generic [ref=f6e161]:
+          - generic [ref=f6e162]:
+            - generic [ref=f6e163]: ★
+            - generic [ref=f6e164]: ★
+            - generic [ref=f6e165]: ★
+            - generic [ref=f6e166]: ★
+            - generic [ref=f6e167]: ★
+          - paragraph [ref=f6e168]: "\"I was able to compare three vendors and choose the best one. The transparent pricing was a game changer for our family move.\""
+          - generic [ref=f6e169]:
+            - generic [ref=f6e170]: P
+            - generic [ref=f6e171]:
+              - generic [ref=f6e172]: Priya Patel
+              - generic [ref=f6e173]: Mumbai
+        - generic [ref=f6e174]:
+          - generic [ref=f6e175]:
+            - generic [ref=f6e176]: ★
+            - generic [ref=f6e177]: ★
+            - generic [ref=f6e178]: ★
+            - generic [ref=f6e179]: ★
+            - generic [ref=f6e180]: ★
+          - paragraph [ref=f6e181]: "\"Great directory with verified businesses. The quote system saved me hours of calling different companies.\""
+          - generic [ref=f6e182]:
+            - generic [ref=f6e183]: R
+            - generic [ref=f6e184]:
+              - generic [ref=f6e185]: Rahul Kumar
+              - generic [ref=f6e186]: Bangalore
+    - generic [ref=f6e188]:
+      - heading "Ready to Move?" [level=2] [ref=f6e189]
+      - paragraph [ref=f6e190]: Get started today with a free, no-obligation quote from verified packers and movers.
+      - generic [ref=f6e191]:
+        - link "Get Instant Quote" [ref=f6e192] [cursor=pointer]:
+          - /url: /quote
+        - link "List Your Business" [ref=f6e193] [cursor=pointer]:
+          - /url: /list-your-business
+  - contentinfo [ref=f6e194]:
+    - generic [ref=f6e195]:
+      - generic [ref=f6e196]:
+        - generic [ref=f6e197]:
+          - generic [ref=f6e198]:
+            - generic [ref=f6e199]: S
+            - generic [ref=f6e201]: ShiftEase
+          - paragraph [ref=f6e202]: Professional packers and movers directory. Find verified vendors and book with confidence.
+        - generic [ref=f6e203]:
+          - heading "Quick Links" [level=4] [ref=f6e204]
+          - list [ref=f6e205]:
+            - listitem [ref=f6e206]:
+              - link "Home" [ref=f6e207] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=f6e208]:
+              - link "Directory" [ref=f6e209] [cursor=pointer]:
+                - /url: /directory
+            - listitem [ref=f6e210]:
+              - link "Get Quote" [ref=f6e211] [cursor=pointer]:
+                - /url: /quote
+            - listitem [ref=f6e212]:
+              - link "Blog" [ref=f6e213] [cursor=pointer]:
+                - /url: /blog
+        - generic [ref=f6e214]:
+          - heading "Services" [level=4] [ref=f6e215]
+          - list [ref=f6e216]:
+            - listitem [ref=f6e217]:
+              - link "Delhi" [ref=f6e218] [cursor=pointer]:
+                - /url: /cities/delhi
+            - listitem [ref=f6e219]:
+              - link "Mumbai" [ref=f6e220] [cursor=pointer]:
+                - /url: /cities/mumbai
+            - listitem [ref=f6e221]:
+              - link "Bangalore" [ref=f6e222] [cursor=pointer]:
+                - /url: /cities/bangalore
+            - listitem [ref=f6e223]:
+              - link "List Your Business" [ref=f6e224] [cursor=pointer]:
+                - /url: /list-your-business
+        - generic [ref=f6e225]:
+          - heading "Legal" [level=4] [ref=f6e226]
+          - list [ref=f6e227]:
+            - listitem [ref=f6e228]:
+              - link "Privacy Policy" [ref=f6e229] [cursor=pointer]:
+                - /url: /privacy-policy
+            - listitem [ref=f6e230]:
+              - link "Terms of Service" [ref=f6e231] [cursor=pointer]:
+                - /url: /terms-of-service
+            - listitem [ref=f6e232]:
+              - link "Contact Us" [ref=f6e233] [cursor=pointer]:
+                - /url: /contact
+      - generic [ref=f6e234]:
+        - paragraph [ref=f6e235]: 2026 ShiftEase by Sheetal. All rights reserved.
+        - paragraph [ref=f6e236]: Designed with care for a seamless moving experience.
+  - region "Notifications (F8)":
+    - list

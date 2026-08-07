@@ -1,0 +1,52 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - link "FORGE" [ref=e3] [cursor=pointer]:
+      - /url: "#"
+    - button "Toggle menu" [ref=e4]
+  - main [ref=e6]:
+    - generic [ref=e7]:
+      - heading "FORGE" [level=1] [ref=e8]
+      - paragraph [ref=e9]: THE FUTURE OF FITNESS
+      - paragraph [ref=e10]: Where technology meets strength. Experience next-generation training.
+      - generic [ref=e11]: SCROLL
+    - generic [ref=e17]:
+      - generic:
+        - paragraph: PRECISION
+        - paragraph: ENGINEERED
+        - paragraph: PERFORMANCE
+    - generic [ref=e21]:
+      - generic:
+        - paragraph: POWER
+        - paragraph: ENDURANCE
+        - paragraph: TRANSFORMATION
+    - generic [ref=e24]:
+      - generic [ref=e25]:
+        - heading "WE DON'T JUST BUILD BODIES. WE FORGE LEGACIES." [level=2] [ref=e26]
+        - paragraph [ref=e28]: We are not a gym. We are a sanctuary for those who refuse to accept average. Every rep is a declaration. Every session is a step toward becoming the strongest version of yourself. At FORGE, we combine cutting-edge technology with raw, unfiltered intensity to build not just bodies — but legacies that outlast trends.
+      - generic [ref=e29]:
+        - generic [ref=e30]:
+          - paragraph [ref=e31]: 24/7
+          - paragraph [ref=e32]: ACCESS
+        - generic [ref=e33]:
+          - paragraph [ref=e34]: ELITE
+          - paragraph [ref=e35]: COACHES
+        - generic [ref=e36]:
+          - paragraph [ref=e37]: ZERO
+          - paragraph [ref=e38]: LIMITS
+    - generic [ref=e39]:
+      - generic [ref=e40]:
+        - heading "FORGE" [level=1] [ref=e42]
+        - generic [ref=e43]:
+          - link "HELLO@FORGE.FITNESS" [ref=e44] [cursor=pointer]:
+            - /url: mailto:HELLO@FORGE.FITNESS
+          - link "+1 (555) 000-0000" [ref=e45] [cursor=pointer]:
+            - /url: tel:+15550000000
+          - generic [ref=e46]: LOS ANGELES, CA
+        - generic [ref=e47]:
+          - link "INSTAGRAM" [ref=e48] [cursor=pointer]:
+            - /url: "#"
+          - link "TWITTER" [ref=e49] [cursor=pointer]:
+            - /url: "#"
+          - link "YOUTUBE" [ref=e50] [cursor=pointer]:
+            - /url: "#"
+      - paragraph [ref=e52]: © 2026 FORGE FITNESS. ALL RIGHTS RESERVED.

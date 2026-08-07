@@ -1,0 +1,133 @@
+- generic [active] [ref=f8e1]:
+  - main [ref=f8e2]:
+    - navigation [ref=f8e5]:
+      - link "Aetheria" [ref=f8e6] [cursor=pointer]:
+        - /url: "#"
+      - list [ref=f8e7]:
+        - listitem [ref=f8e8]:
+          - link "Exhibitions" [ref=f8e9] [cursor=pointer]:
+            - /url: "#exhibition"
+        - listitem [ref=f8e10]:
+          - link "Collection" [ref=f8e11] [cursor=pointer]:
+            - /url: "#collection"
+        - listitem [ref=f8e12]:
+          - link "Visit" [ref=f8e13] [cursor=pointer]:
+            - /url: "#visit"
+        - listitem [ref=f8e14]:
+          - link "About" [ref=f8e15] [cursor=pointer]:
+            - /url: "#about"
+      - button "Menu" [ref=f8e16]
+    - generic [ref=f8e17]:
+      - generic [ref=f8e18]:
+        - paragraph [ref=f8e19]: Est. 1924 — New York
+        - heading "Where Light Becomes Art" [level=1] [ref=f8e20]: Where LightBecomes Art
+        - paragraph [ref=f8e21]: A curated journey through contemporary and classical masterworks.Scroll to enter the gallery.
+      - generic [ref=f8e22]: Scroll
+    - generic [ref=f8e24]:
+      - img "The Geometry of Silence" [ref=f8e27]
+      - generic [ref=f8e30]:
+        - paragraph [ref=f8e31]: Current Exhibition
+        - heading "The Geometry of Silence" [level=2] [ref=f8e32]
+        - generic [ref=f8e33]:
+          - paragraph [ref=f8e34]: Elena Voss
+          - paragraph [ref=f8e35]: 2024 · Oil on linen, 180 × 240 cm
+    - generic [ref=f8e36]:
+      - generic [ref=f8e37]:
+        - paragraph [ref=f8e38]: The Collection
+        - heading "Curated highlights from the permanent collection" [level=2] [ref=f8e39]
+      - generic [ref=f8e40]:
+        - button "View Echoes of Silence by Elena Voss" [ref=f8e41]:
+          - generic [ref=f8e42]:
+            - img "Echoes of Silence" [ref=f8e43]
+            - generic [ref=f8e45]:
+              - heading "Echoes of Silence" [level=3] [ref=f8e46]
+              - paragraph [ref=f8e47]: Elena Voss
+              - paragraph [ref=f8e48]: 2024 · Oil on linen, 180 × 240 cm
+        - button "View Chromatic Drift by Marcus Chen" [ref=f8e49]:
+          - generic [ref=f8e50]:
+            - img "Chromatic Drift" [ref=f8e51]
+            - generic [ref=f8e53]:
+              - heading "Chromatic Drift" [level=3] [ref=f8e54]
+              - paragraph [ref=f8e55]: Marcus Chen
+              - paragraph [ref=f8e56]: 2023 · Acrylic on canvas, 120 × 160 cm
+        - button "View The Weight of Light by Sofia Andersson" [ref=f8e57]:
+          - generic [ref=f8e58]:
+            - img "The Weight of Light" [ref=f8e59]
+            - generic [ref=f8e61]:
+              - heading "The Weight of Light" [level=3] [ref=f8e62]
+              - paragraph [ref=f8e63]: Sofia Andersson
+              - paragraph [ref=f8e64]: 2024 · Mixed media on panel, 90 × 120 cm
+        - button "View Nocturne in Amber by James Okonkwo" [ref=f8e65]:
+          - generic [ref=f8e66]:
+            - img "Nocturne in Amber" [ref=f8e67]
+            - generic [ref=f8e69]:
+              - heading "Nocturne in Amber" [level=3] [ref=f8e70]
+              - paragraph [ref=f8e71]: James Okonkwo
+              - paragraph [ref=f8e72]: 2023 · Photography, archival pigment print
+    - generic [ref=f8e75]:
+      - generic [ref=f8e76]:
+        - paragraph [ref=f8e77]: Plan Your Visit
+        - heading "Experience the gallery in person" [level=2] [ref=f8e78]
+        - generic [ref=f8e79]:
+          - generic [ref=f8e80]:
+            - heading "Hours" [level=3] [ref=f8e81]
+            - paragraph [ref=f8e82]: "Tuesday – Sunday: 10:00 – 18:00"
+            - paragraph [ref=f8e83]: "Thursday: 10:00 – 21:00"
+            - paragraph [ref=f8e84]: "Monday: Closed"
+          - generic [ref=f8e85]:
+            - heading "Location" [level=3] [ref=f8e86]
+            - paragraph [ref=f8e87]: 1247 Fifth Avenue
+            - paragraph [ref=f8e88]: New York, NY 10128
+          - generic [ref=f8e89]:
+            - heading "Admission" [level=3] [ref=f8e90]
+            - paragraph [ref=f8e91]: "General: $25"
+            - paragraph [ref=f8e92]: "Members & Students: Free"
+      - generic [ref=f8e93]:
+        - blockquote [ref=f8e94]: "\"A museum should be a place where you lose yourself and find everything.\""
+        - generic [ref=f8e95]:
+          - link "Reserve Tickets" [ref=f8e96] [cursor=pointer]:
+            - /url: "#tickets"
+          - link "Become a Member" [ref=f8e97] [cursor=pointer]:
+            - /url: "#membership"
+    - generic [ref=f8e99]:
+      - generic [ref=f8e100]:
+        - generic [ref=f8e101]:
+          - heading "Aetheria" [level=3] [ref=f8e102]
+          - paragraph [ref=f8e103]: A private institution dedicated to the preservation and presentation of contemporary and classical masterworks.
+        - generic [ref=f8e104]:
+          - heading "Visit" [level=4] [ref=f8e105]
+          - generic [ref=f8e106]:
+            - paragraph [ref=f8e107]: 1247 Fifth Avenue
+            - paragraph [ref=f8e108]: New York, NY 10128
+            - paragraph [ref=f8e109]:
+              - link "+1 (212) 555-1247" [ref=f8e110] [cursor=pointer]:
+                - /url: tel:+12125551247
+            - paragraph [ref=f8e111]:
+              - link "visit@aetheria.museum" [ref=f8e112] [cursor=pointer]:
+                - /url: mailto:visit@aetheria.museum
+        - generic [ref=f8e113]:
+          - heading "Connect" [level=4] [ref=f8e114]
+          - list [ref=f8e115]:
+            - listitem [ref=f8e116]:
+              - link "Instagram" [ref=f8e117] [cursor=pointer]:
+                - /url: "#instagram"
+            - listitem [ref=f8e118]:
+              - link "Newsletter" [ref=f8e119] [cursor=pointer]:
+                - /url: "#newsletter"
+            - listitem [ref=f8e120]:
+              - link "Careers" [ref=f8e121] [cursor=pointer]:
+                - /url: "#careers"
+            - listitem [ref=f8e122]:
+              - link "Press" [ref=f8e123] [cursor=pointer]:
+                - /url: "#press"
+      - generic [ref=f8e124]:
+        - paragraph [ref=f8e125]: © 2024 Aetheria Museum. All rights reserved.
+        - generic [ref=f8e126]:
+          - link "Privacy" [ref=f8e127] [cursor=pointer]:
+            - /url: "#privacy"
+          - link "Terms" [ref=f8e128] [cursor=pointer]:
+            - /url: "#terms"
+          - link "Accessibility" [ref=f8e129] [cursor=pointer]:
+            - /url: "#accessibility"
+  - button "Open Next.js Dev Tools" [ref=f8e135] [cursor=pointer]
+  - alert [ref=f8e139]

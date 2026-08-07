@@ -1,0 +1,58 @@
+- generic [active] [ref=f9e1]:
+  - generic [ref=f9e4]:
+    - heading "FORGE" [level=1] [ref=f9e5]
+    - paragraph [ref=f9e6]: LOADING EXPERIENCE
+  - banner [ref=f9e7]:
+    - link "FORGE" [ref=f9e8] [cursor=pointer]:
+      - /url: "#"
+    - button "Toggle menu" [ref=f9e9]
+  - main [ref=f9e11]:
+    - generic [ref=f9e12]:
+      - heading "FORGE" [level=1] [ref=f9e13]
+      - paragraph [ref=f9e14]: THE FUTURE OF FITNESS
+      - paragraph [ref=f9e15]: Where technology meets strength. Experience next-generation training.
+      - generic [ref=f9e16]: SCROLL
+    - generic [ref=f9e24]:
+      - generic:
+        - generic:
+          - heading "PRECISION" [level=2]
+          - heading "ENGINEERED" [level=2]
+          - heading "PERFORMANCE" [level=2]
+    - generic [ref=f9e29]:
+      - generic:
+        - generic:
+          - heading "POWER" [level=2]
+          - heading "ENDURANCE" [level=2]
+          - heading "TRANSFORMATION" [level=2]
+    - generic [ref=f9e31]:
+      - generic [ref=f9e32]:
+        - heading "WE DON'T JUST BUILD BODIES. WE FORGE LEGACIES." [level=2] [ref=f9e33]
+        - paragraph [ref=f9e35]: We are not a gym. We are a sanctuary for those who refuse to accept average. Every rep is a declaration. Every session is a step toward becoming the strongest version of yourself. At FORGE, we combine cutting-edge technology with raw, unfiltered intensity to build not just bodies — but legacies that outlast trends.
+      - generic [ref=f9e36]:
+        - generic [ref=f9e37]:
+          - paragraph [ref=f9e38]: 24/7
+          - paragraph [ref=f9e39]: ACCESS
+        - generic [ref=f9e40]:
+          - paragraph [ref=f9e41]: ELITE
+          - paragraph [ref=f9e42]: COACHES
+        - generic [ref=f9e43]:
+          - paragraph [ref=f9e44]: ZERO
+          - paragraph [ref=f9e45]: LIMITS
+    - generic [ref=f9e46]:
+      - generic [ref=f9e47]:
+        - heading "FORGE" [level=1] [ref=f9e49]
+        - generic [ref=f9e50]:
+          - link "HELLO@FORGE.FITNESS" [ref=f9e51] [cursor=pointer]:
+            - /url: mailto:HELLO@FORGE.FITNESS
+          - link "+1 (555) 000-0000" [ref=f9e52] [cursor=pointer]:
+            - /url: tel:+15550000000
+          - generic [ref=f9e53]: LOS ANGELES, CA
+        - generic [ref=f9e54]:
+          - link "INSTAGRAM" [ref=f9e55] [cursor=pointer]:
+            - /url: "#"
+          - link "TWITTER" [ref=f9e56] [cursor=pointer]:
+            - /url: "#"
+          - link "YOUTUBE" [ref=f9e57] [cursor=pointer]:
+            - /url: "#"
+      - paragraph [ref=f9e59]: © 2026 FORGE FITNESS. ALL RIGHTS RESERVED.
+  - alert [ref=f9e60]

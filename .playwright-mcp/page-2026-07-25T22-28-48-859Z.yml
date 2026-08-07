@@ -1,0 +1,32 @@
+- generic [active] [ref=e1]:
+  - main [ref=e2]:
+    - generic [ref=e4]:
+      - heading "FORMA" [level=1] [ref=e5]
+      - paragraph [ref=e6]: Architecture Studio
+    - link "Chapter 01 LIGHT AND VOID" [ref=e13] [cursor=pointer]:
+      - /url: /chapter-1
+      - generic [ref=e14]: Chapter 01
+      - generic [ref=e15]: LIGHT AND VOID
+    - generic [ref=e19]:
+      - generic [ref=e20]: "01"
+      - heading "Spatial Poetry" [level=3] [ref=e21]
+      - paragraph [ref=e22]: Every void is as intentional as every volume. We sculpt emptiness to give presence to the essential.
+    - link "Chapter 02 VERTICAL LIVING" [ref=e29] [cursor=pointer]:
+      - /url: /chapter-2
+      - generic [ref=e30]: Chapter 02
+      - generic [ref=e31]: VERTICAL LIVING
+    - generic [ref=e35]:
+      - generic [ref=e36]: "02"
+      - heading "Material Truth" [level=3] [ref=e37]
+      - paragraph [ref=e38]: Concrete, glass, timber — materials age with grace, accumulating stories rather than losing value.
+    - generic [ref=e42]:
+      - link "Chapter 03 INTO THE BASEMENT" [ref=e45] [cursor=pointer]:
+        - /url: /chapter-3
+        - generic [ref=e46]: Chapter 03
+        - generic [ref=e47]: INTO THE BASEMENT
+      - generic:
+        - generic:
+          - heading "FORMA" [level=2]
+          - paragraph: Architecture Studio
+  - button "Open Next.js Dev Tools" [ref=e55] [cursor=pointer]
+  - alert [ref=e59]

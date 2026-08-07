@@ -1,0 +1,72 @@
+- generic [active] [ref=f3e1]:
+  - button "Toggle Ocean Ambient Audio" [ref=f3e2] [cursor=pointer]:
+    - generic [ref=f3e8]: OCEAN SOUND
+  - generic [ref=f3e9]:
+    - banner [ref=f3e10]:
+      - button "AZURE SHORE LUXURY OCEANFRONT RESORT" [ref=f3e11] [cursor=pointer]:
+        - generic [ref=f3e12]:
+          - generic [ref=f3e13]: AZURE SHORE
+          - generic [ref=f3e14]: LUXURY OCEANFRONT RESORT
+      - navigation [ref=f3e15]:
+        - button "Sanctuary" [ref=f3e16] [cursor=pointer]
+        - button "Heritage" [ref=f3e17] [cursor=pointer]
+        - button "Experience" [ref=f3e18] [cursor=pointer]
+      - button "Reserve" [ref=f3e19] [cursor=pointer]
+    - main [ref=f3e21]:
+      - generic [ref=f3e22]:
+        - generic [ref=f3e26]: A LUXURY OCEANFRONT SANCTUARY
+        - generic [ref=f3e30]:
+          - heading "AZURE SHORE" [level=1] [ref=f3e31]
+          - paragraph [ref=f3e32]: Where the rhythm of the waves meets the pinnacle of luxury. An exclusive oceanfront retreat designed for the discerning traveler.
+          - generic [ref=f3e33]:
+            - button "Book Your Escape" [ref=f3e34] [cursor=pointer]
+            - link "Discover More ↓" [ref=f3e35] [cursor=pointer]:
+              - /url: "#history-section"
+        - generic [ref=f3e36]:
+          - generic [ref=f3e37]: MALDIVES · INDIAN OCEAN
+          - generic [ref=f3e38]: SCROLL TO DIVE IN
+          - generic [ref=f3e40]: EST. 2024
+      - generic [ref=f3e42]:
+        - generic [ref=f3e43]:
+          - generic [ref=f3e44]: OUR HERITAGE
+          - heading "A LEGACY BORN FROM THE SEA" [level=2] [ref=f3e45]
+        - generic [ref=f3e46]:
+          - generic [ref=f3e47]:
+            - paragraph [ref=f3e48]: Azure Shore was born from a vision to create a sanctuary where the raw beauty of the ocean meets uncompromising luxury. Our story begins in 1987, when oceanographer Dr. Elena Vance discovered this pristine stretch of coastline and knew it was destined for something extraordinary.
+            - paragraph [ref=f3e49]: What was once a secluded marine research station has been transformed into an award-winning resort, blending sustainable architecture with the natural contours of the beach. Every structure was designed to honor the ecosystem while providing world-class comfort.
+            - paragraph [ref=f3e50]: Today, Azure Shore stands as a testament to harmonious luxury—where overwater villas, pristine coral reefs, and golden sunsets create an experience that transcends the ordinary.
+          - generic [ref=f3e51]:
+            - generic [ref=f3e52]:
+              - paragraph [ref=f3e53]: "37"
+              - paragraph [ref=f3e54]: Years of Excellence
+            - generic [ref=f3e55]:
+              - paragraph [ref=f3e56]: 24/7
+              - paragraph [ref=f3e57]: Private Butler
+            - generic [ref=f3e58]:
+              - paragraph [ref=f3e59]: ∞
+              - paragraph [ref=f3e60]: Ocean Views
+            - generic [ref=f3e61]:
+              - paragraph [ref=f3e62]: "1"
+              - paragraph [ref=f3e63]: Unforgettable Experience
+      - generic [ref=f3e69]:
+        - generic [ref=f3e70]: THE GRAND REVEAL
+        - heading "YOUR PARADISE AWAITS" [level=2] [ref=f3e71]
+        - paragraph [ref=f3e72]: From the crystal-clear waters to the golden shores, every moment at Azure Shore is crafted to perfection. Your journey into luxury begins here.
+    - contentinfo [ref=f3e73]:
+      - generic [ref=f3e74]:
+        - generic [ref=f3e75]:
+          - generic [ref=f3e76]:
+            - heading "AZURE SHORE" [level=3] [ref=f3e77]
+            - paragraph [ref=f3e78]: Where luxury meets the ocean. An exclusive retreat for those who seek the extraordinary.
+          - generic [ref=f3e79]:
+            - heading "Contact" [level=4] [ref=f3e80]
+            - paragraph [ref=f3e81]: reservations@azureshore.com
+            - paragraph [ref=f3e82]: +960 668 0000
+          - generic [ref=f3e83]:
+            - heading "Location" [level=4] [ref=f3e84]
+            - paragraph [ref=f3e85]: North Male AtollMaldivesIndian Ocean
+        - generic [ref=f3e86]:
+          - paragraph [ref=f3e87]: © 2024 Azure Shore Resort. All rights reserved.
+          - paragraph [ref=f3e88]: Designed with the rhythm of the waves
+  - button "Open Next.js Dev Tools" [ref=f3e94] [cursor=pointer]
+  - alert [ref=f3e98]
