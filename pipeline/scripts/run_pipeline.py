@@ -21,7 +21,7 @@ from pathlib import Path
 # Allow running as `python scripts/run_pipeline.py` from the repo root.
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from redesign.runner import run_redesign
+from pipeline.runner import run_redesign
 
 
 async def main() -> None:
