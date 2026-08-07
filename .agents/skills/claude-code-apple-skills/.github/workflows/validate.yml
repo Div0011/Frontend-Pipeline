@@ -1,0 +1,88 @@
+name: validate
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Documented counts match the tree
+        run: |
+          chmod +x scripts/check-counts.sh
+          ./scripts/check-counts.sh
+
+      - name: Every SKILL.md has valid frontmatter
+        run: |
+          chmod +x scripts/check-frontmatter.sh
+          ./scripts/check-frontmatter.sh
+
+      # The plugin-validate job runs the latest CLI, which accepts these
+      # keys — only this grep protects clients a few versions behind.
+      - name: Marketplace — no plugin keys old Claude Code clients reject
+        run: |
+          chmod +x scripts/check-marketplace-compat.sh
+          ./scripts/check-marketplace-compat.sh --self-test
+          ./scripts/check-marketplace-compat.sh
+
+      - name: Freshness — no recency claims against stale OS versions
+        run: |
+          chmod +x scripts/check-freshness.sh
+          ./scripts/check-freshness.sh --self-test
+          ./scripts/check-freshness.sh
+
+      # Reads the committed scripts/api-symbols.txt — no Xcode needed, which is
+      # why the manifest is generated on a Mac (refresh-api-symbols.sh) rather
+      # than extracted here.
+      - name: API symbols — no invented or silently-deprecated Apple APIs
+        run: |
+          chmod +x scripts/check-api-symbols.sh
+          ./scripts/check-api-symbols.sh --self-test
+          ./scripts/check-api-symbols.sh
+
+  swift-templates:
+    runs-on: ubuntu-latest
+    # Official image, pinned minor — no third-party action in the supply
+    # chain. Templates adopting newer-Swift-only syntax need a tag bump.
+    container: swift:6.1
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Generator template .swift files parse
+        run: |
+          chmod +x scripts/check-swift-templates.sh
+          ./scripts/check-swift-templates.sh
+
+  lint-fragments:
+    runs-on: ubuntu-latest
+    # Official SwiftLint image, pinned — same supply-chain rule as
+    # swift-templates (no third-party actions).
+    container: ghcr.io/realm/swiftlint:0.57.0
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Skill lint fragments fire on violations, stay quiet on clean
+        run: |
+          chmod +x scripts/check-lint-fragments.sh
+          ./scripts/check-lint-fragments.sh
+
+  plugin-validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+
+      - name: Install Claude Code CLI
+        run: npm install -g @anthropic-ai/claude-code
+
+      # Not --strict: the plugin.json no-version warning is deliberate
+      # (git-SHA versioning — every commit to main is a release). Errors fail.
+      - name: Validate plugin + marketplace
+        run: claude plugin validate .
