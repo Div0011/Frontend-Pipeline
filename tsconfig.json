@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "forceConsistentCasingInFileNames": true,
     "target": "ES2017",
     "lib": [
       "dom",
@@ -37,6 +38,10 @@
   ],
   "exclude": [
     "node_modules",
-    "pipeline"
+    "pipeline",
+    "projects",
+    "artifacts",
+    ".agents",
+    "skills"
   ]
 }
