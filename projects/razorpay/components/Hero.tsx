@@ -1,0 +1,1 @@
+import type { FC } from "react"; import Hero3D from "components/three/Hero3D"; const Hero: FC = () => {return (<div><Hero3D /></div>)} export default Hero

@@ -1,0 +1,1 @@
+import type { FC } from "react"; const CustomEmoji: FC = () => {return (<div></div>)} export default CustomEmoji

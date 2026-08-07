@@ -1,0 +1,1 @@
+import Lenis from "lenis"; const lenis = new Lenis({duration: 1.5}); export default lenis

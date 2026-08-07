@@ -1,0 +1,1 @@
+import type { FC } from "react"; import { useAnimation } from "framer-motion"; const GSAP: FC = () => {const animation = useAnimation();return (<div></div>)} export default GSAP

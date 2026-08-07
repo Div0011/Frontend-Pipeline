@@ -1,0 +1,1 @@
+import { NextSeo } from "next-seo"; const Seo = () => {return (<NextSeo title="Razorpay Website" description="Razorpay Website" />)} export default Seo

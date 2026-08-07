@@ -1,0 +1,1 @@
+import type { FC } from "react"; const Introduction: FC = () => {return (<section></section>)} export default Introduction

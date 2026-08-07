@@ -1,0 +1,1 @@
+import type { FC } from "react"; const Benefits: FC = () => {return (<section></section>)} export default Benefits

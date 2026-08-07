@@ -1,0 +1,1 @@
+import type { FC } from "react"; const CallToAction: FC = () => {return (<section></section>)} export default CallToAction

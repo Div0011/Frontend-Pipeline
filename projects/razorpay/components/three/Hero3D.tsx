@@ -1,0 +1,1 @@
+import type { FC } from "react"; import { Canvas } from "@react-three/fiber"; import { OrbitControls } from "@react-three/drei"; const Hero3D: FC = () => {return (<Canvas><OrbitControls /></Canvas>)} export default Hero3D

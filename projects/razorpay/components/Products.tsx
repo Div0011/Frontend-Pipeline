@@ -1,0 +1,1 @@
+import type { FC } from "react"; const Products: FC = () => {return (<section></section>)} export default Products

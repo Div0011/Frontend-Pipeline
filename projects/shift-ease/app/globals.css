@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-navy: #0F172A;
+  --color-teal: #14B8A6;
+  --color-slate: #64748B;
+  --color-white: #FFFFFF;
+  --color-light-gray: #F8FAFC;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  color: #0F172A;
+  background-color: #FFFFFF;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-teal text-white px-6 py-3 rounded-xl font-semibold hover:bg-teal/90 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-teal/50 focus:ring-offset-2 active:scale-95;
+  }
+
+  .btn-secondary {
+    @apply bg-navy text-white px-6 py-3 rounded-xl font-semibold hover:bg-navy/90 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-navy/50 focus:ring-offset-2 active:scale-95;
+  }
+
+  .btn-outline {
+    @apply border-2 border-teal text-teal px-6 py-3 rounded-xl font-semibold hover:bg-teal hover:text-white transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-teal/50 focus:ring-offset-2 active:scale-95;
+  }
+
+  .section-padding {
+    @apply py-12 md:py-20;
+  }
+
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .heading-xl {
+    @apply text-3xl md:text-5xl lg:text-6xl font-display font-bold leading-tight;
+  }
+
+  .heading-lg {
+    @apply text-2xl md:text-3xl lg:text-4xl font-display font-bold leading-tight;
+  }
+
+  .heading-md {
+    @apply text-xl md:text-2xl font-display font-semibold leading-tight;
+  }
+
+  .text-body {
+    @apply text-base md:text-lg text-slate leading-relaxed;
+  }
+
+  .text-small {
+    @apply text-sm text-slate;
+  }
+
+  .card {
+    @apply bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-all duration-300;
+  }
+
+  .badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
