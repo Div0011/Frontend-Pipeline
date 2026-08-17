@@ -56,7 +56,8 @@ coverage/
 .cache/
 .parcel-cache/
 *.tsbuildinfo
-
+.playwright-mcp/
+.kilo/
 
 # Secrets & credentials
 *.secret

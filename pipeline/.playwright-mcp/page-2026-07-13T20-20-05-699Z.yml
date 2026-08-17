@@ -1,6 +1,0 @@
-- generic [active] [ref=f14e1]:
-  - generic [ref=f14e4]:
-    - heading "500" [level=1] [ref=f14e5]
-    - heading "Internal Server Error." [level=2] [ref=f14e7]
-  - alert [ref=f14e8]
-  - button "Open Next.js Dev Tools" [ref=f14e14] [cursor=pointer]

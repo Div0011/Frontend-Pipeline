@@ -80,8 +80,14 @@ class Settings(BaseSettings):
     max_qa_retries: int = 3
     max_agent_retries: int = 2
     enable_playwright: bool = True
-    # Run independent agents truly concurrently (thread pool inside LangGraph).
     parallel_execution: bool = True
+
+    # ── Cost guard ──────────────────────────────────────────────────
+    daily_llm_budget_usd: float = 50.0
+    enable_cost_guard: bool = True
+
+    # ── Observability ───────────────────────────────────────────────
+    otel_exporter_endpoint: str | None = None
 
     # ── Stitch MCP Integration ──────────────────────────────────────────
     enable_stitch: bool = False

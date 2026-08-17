@@ -25,7 +25,7 @@ Every step is checkpointed for crash-resilience, streamed live to the client, an
 
 ### High-Level Topology
 
-```
+```text
 Client (web / CLI)
     │
     ▼
@@ -91,25 +91,38 @@ Ten specialist agents, each a single-responsibility LangGraph node. Every agent 
 
 ## Repository Structure
 
-```
+```text
 Frontend Pipeline/
-├── pipeline/                       # Core orchestration engine
+├── pipeline/                       # Core orchestration engine (LangGraph + FastAPI)
 │   ├── __init__.py
 │   ├── config.py                   # Central settings (pydantic-settings)
 │   ├── state.py                    # LangGraph shared state (RedesignState)
-│   ├── schemas.py                  # Pydantic contracts for all agents
+│   ├── schemas.py                  # Pydantic contracts for all agents & state channels
 │   ├── orchestrator.py             # LangGraph StateGraph construction + routing
-│   ├── runner.py                   # Async execution helpers (stream / run / resume)
-│   ├── llm.py                      # LLM abstraction (simulation + production providers)
-│   ├── context.py                  # Context assembly — per-agent prompt rendering
+│   ├── runner.py                   # Async execution engine (stream / run / resume)
+│   ├── llm.py                      # Multi-provider LLM abstraction
+│   ├── context.py                  # Context assembly & per-agent prompt rendering
+│   ├── cost_guard.py               # Token & credit budget guardrails
+│   ├── observability.py            # Telemetry, LangSmith tracing & structured logs
 │   ├── memory.py                   # Checkpointer + long-term Store
-│   ├── reporting.py                # Report generation from final state
-│   ├── storage.py                  # ArtifactStore (code, screenshots, zips)
-│   ├── agents/
+│   ├── reporting.py                # Redesign summary report generator
+│   ├── storage.py                  # ArtifactStore (code, media buffers, zips)
+│   ├── agents/                     # Specialist agent nodes
 │   │   ├── __init__.py
 │   │   ├── base.py                 # Shared agent helpers (emit, finalize, call_agent_model)
-│   │   └── nodes.py                # Ten specialist agent node functions
-│   ├── tools/
+│   │   ├── planner.py              # Master Orchestrator
+│   │   ├── website_analysis.py     # Site crawler + vision analyzer
+│   │   ├── seo.py                  # SEO & metadata strategist
+│   │   ├── brand_research.py       # Brand DNA & competitive research
+│   │   ├── lead_discovery.py       # Conversion & intent intelligence
+│   │   ├── creative_director.py    # Art direction & aesthetic mechanics
+│   │   ├── ux.py                   # Sitemap & information architecture
+│   │   ├── ui.py                   # Design system & component tokens
+│   │   ├── motion.py               # Physics choreography & scroll timelines
+│   │   ├── engineering.py          # Next.js code assembly & generation
+│   │   ├── qa.py                   # 10-dimension automated quality gate
+│   │   └── classification.py       # Brand archetype & style classifier
+│   ├── tools/                      # Execution tools
 │   │   ├── __init__.py
 │   │   ├── crawl.py                # Whole-site crawler (httpx + BeautifulSoup)
 │   │   ├── screenshot.py           # Playwright screenshot capture
@@ -117,65 +130,79 @@ Frontend Pipeline/
 │   │   ├── lighthouse.py           # Lighthouse performance audit
 │   │   ├── search.py               # Web search (Tavily / Serper / mock)
 │   │   └── media.py                # Media processing (WebP frame extraction)
-│   ├── prompts/
-│   │   ├── __init__.py
-│   │   ├── MASTER_PROMPT.md
-│   │   ├── planner.md
-│   │   ├── website_analysis.md
-│   │   ├── seo.md
-│   │   ├── brand_research.md
-│   │   ├── lead_discovery.md
-│   │   ├── creative_director.md
-│   │   ├── ux.md
-│   │   ├── ui.md
-│   │   ├── motion.md
-│   │   ├── engineering.md
-│   │   ├── qa.md
-│   │   └── cinematic_templates.py
-│   ├── api/
-│   │   ├── __init__.py
-│   │   └── main.py                 # FastAPI + WebSocket service
-│   ├── scripts/
-│   │   ├── run_pipeline.py         # CLI runner
-│   │   ├── fix_template3.py        # Template-specific fix scripts
-│   │   └── generate_pdf.py         # PDF report generation
-│   ├── reference/                  # Pattern archives
-│   ├── migrations/                 # Database migrations
-│   └── fabroar/                    # Reference redesign plans
-├── projects/                        # Generated / active web applications
-│   ├── superfan-redesign/           # Superfan BLDC Ceiling Fans
-│   ├── fabroar/                     # Fabroar Luxury Apparel
-│   ├── aetheria-cinematic/          # Aetheria Architecture
-│   ├── arch-studio/                 # Arch Studio Portfolio
-│   ├── smashguys/                   # Smash Guys Culinary
-│   ├── ocean-resort/                # Ocean Resort Hospitality
-│   ├── template-1-film-portfolio/   # Template 1: Film Portfolio
-│   ├── template-2-ss/               # Template 2: SaaS Product
-│   ├── template-3-editorial/        # Template 3: Editorial Minimal
-│   ├── template-4-corporate/        # Template 4: Corporate
-│   ├── template-5-product/          # Template 5: Product Launch
-│   └── ...                         # Additional generated projects
-├── artifacts/                       # Reference assets, design tokens, skills
-│   ├── projects/                    # Pipeline test artifacts
-│   └── skills/                      # Curated agent skill libraries
-├── docs/                            # Technical documentation
-│   ├── ARCHITECTURE.md              # Deep system architecture
-│   ├── PIPELINE_GUIDE.md            # Operational runbook
-│   ├── FIVE_TEMPLATE_PROMPTS_SPEC.md
-│   ├── CINEMATIC_REFERENCE_ANALYSIS.md
-│   ├── TOKEN_AND_CREDIT_BREAKDOWN.md
-│   └── reference/                   # Pattern archives & QA guardrails
-├── tests/                           # Unit tests & diagnostic suites
-│   ├── test_orchestrator.py
-│   └── test_cinematic_templates.py
-├── websites/                        # Legacy website outputs
-├── requirements.txt                 # Python dependencies
-├── package.json                     # Node.js motion libraries
-├── Dockerfile                       # Container build
-├── docker-compose.yml               # Local infra (Postgres + Redis + API)
-├── pytest.ini                       # Test configuration
-├── .env                             # Environment variables
-└── README.md                        # This file
+│   ├── prompts/                    # System prompt templates & cinematic mechanics
+│   ├── api/                        # FastAPI + WebSocket service
+│   ├── scripts/                    # CLI execution entry points & helper utilities
+│   ├── reference/                  # Design pattern archives & component tokens
+│   └── migrations/                 # PostgreSQL database migrations
+│
+├── projects/                       # Generated & active web applications (Self-contained)
+│   ├── salon-website/              # LUMIÈRE Haute Coiffure Paris (Live Production)
+│   ├── smashguys/                  # Smash Guys Culinary (3D / Motion)
+│   ├── smashguys-prototype/        # Interactive sticker & physics prototype
+│   ├── soda-company/               # Craft Soda Brand & Experience
+│   ├── superfan-redesign/          # Superfan BLDC Ceiling Fans
+│   ├── fabroar/                    # Fabroar Luxury Apparel
+│   ├── aetheria-cinematic/         # Aetheria Architecture
+│   ├── arch-studio/                # Arch Studio Portfolio
+│   ├── hotel-cinematic/            # Luxury Hospitality
+│   ├── ocean-resort/               # Ocean Resort Hospitality
+│   ├── rajmahal-palace/            # Heritage Hospitality
+│   ├── razorpay/                   # Razorpay Fintech Redesign
+│   ├── shift-ease/                 # Logistics & Relocation
+│   ├── kinoatwork/                 # Kino At Work Film Agency
+│   ├── zerzurastudio/              # Zerzura Creative Studio
+│   ├── gym-futuristic/             # Futuristic Fitness
+│   ├── template-1-film-portfolio/  # Template 1: Film Portfolio
+│   ├── template-2-saas-launch/     # Template 2: SaaS Launch
+│   ├── template-3-corporate/       # Template 3: Corporate
+│   ├── template-4-agency/          # Template 4: Agency Editorial
+│   └── template-5-product/         # Template 5: Product Launch
+│
+├── docs/                           # Central documentation hub
+│   ├── ARCHITECTURE.md             # Deep system architecture & DAG specification
+│   ├── PIPELINE_GUIDE.md           # Operational runbook & CLI commands
+│   ├── FIVE_TEMPLATE_PROMPTS_SPEC.md # Standard prompt library
+│   ├── CINEMATIC_REFERENCE_ANALYSIS.md # Motion, physics & 3D reference guide
+│   ├── TOKEN_AND_CREDIT_BREAKDOWN.md # Cost breakdown & LLM model routing
+│   ├── PROPOSAL.md                 # System architecture proposal
+│   ├── GENERATION_LIST.md          # Generated site catalog
+│   └── reference/                  # Pattern archives & QA guardrails
+│
+├── tests/                          # Automated test suites
+│   ├── test_orchestrator.py        # Graph compilation & DAG routing
+│   └── test_cinematic_templates.py # Template schema & prompt verification
+│
+├── reports/                        # Pipeline execution outputs & deliverables
+│   ├── brand.md
+│   ├── creative.md
+│   ├── engineering.md
+│   ├── lead.md
+│   ├── motion.md
+│   ├── qa.md
+│   ├── seo.md
+│   ├── ui.md
+│   ├── ux.md
+│   └── website_analysis.md
+│
+├── artifacts/                      # Assets, reference copies & benchmarks
+│   ├── designs/                    # UI/UX design deliverables
+│   ├── projects/                   # Pipeline test artifacts & build zips
+│   ├── screenshots/                # Visual benchmarks & crawl captures
+│   ├── skills/                     # Skill asset backups
+│   ├── vendor_references/          # Vendor reference libraries (LangGraph, Scrapling)
+│   └── REFERENCE_COPIES/           # Template reference copies (1-9)
+│
+├── .agents/                        # Agent system skills & capabilities
+│   └── skills/                     # 114 specialized agent skills
+│
+├── Dockerfile                      # Container build definition
+├── docker-compose.yml              # Local infrastructure (Postgres + Redis + API)
+├── requirements.txt                # Python environment dependencies
+├── pytest.ini                      # Pytest test runner configuration
+├── .env                            # Environment secrets & API keys
+└── README.md                       # Comprehensive documentation
+
 ```
 
 ---

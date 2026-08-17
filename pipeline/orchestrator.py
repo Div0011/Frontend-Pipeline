@@ -54,7 +54,9 @@ from pipeline.agents import (
 )
 from pipeline.agents.base import emit
 from pipeline.config import get_settings
+from pipeline.cost_guard import CostGuard
 from pipeline.memory import get_checkpointer, get_store
+from pipeline.observability import trace_agent
 from pipeline.reporting import render_design_brief, reports_for_state
 from pipeline.schemas import FinalArtifact, TaskStatus
 from pipeline.state import RedesignState
@@ -106,7 +108,18 @@ def wrap_agent(agent_id: str, fn):
         last_exc: Exception | None = None
         for attempt in range(attempts):
             try:
-                return fn(state)
+                result = fn(state)
+                if settings.enable_cost_guard:
+                    try:
+                        guard = CostGuard.get_instance()
+                        guard.record(
+                            model=settings.llm_model,
+                            tokens_in=getattr(state, "tokens_in", 0),
+                            tokens_out=getattr(state, "tokens_out", 0),
+                        )
+                    except Exception:
+                        pass
+                return result
             except Exception as exc:  # transient LLM/tool errors
                 last_exc = exc
                 logger.error("agent %s attempt %d failed: %s", agent_id, attempt, exc)
@@ -289,7 +302,7 @@ def synthesizer(state: RedesignState) -> dict:
                 cwd=str(store.root),
                 capture_output=True,
                 text=True,
-                timeout=60,
+                 timeout=300,
             )
             build_log = res.stdout + "\n" + res.stderr
     except Exception as exc:
@@ -326,7 +339,7 @@ def build_graph(checkpointer=None, store=None):
     g.add_node("synthesizer", synthesizer)
 
     for agent_id, fn in AGENT_NODES.items():
-        g.add_node(agent_id, wrap_agent(agent_id, fn))
+        g.add_node(agent_id, trace_agent(agent_id, wrap_agent(agent_id, fn)))
         g.add_edge(agent_id, "post_agent")
 
     g.add_edge(START, "planner")
