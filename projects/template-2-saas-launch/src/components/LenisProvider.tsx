@@ -11,6 +11,9 @@ export default function LenisProvider({ children }: { children: React.ReactNode 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduced) return;
+
     const lenis = new Lenis({
       duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -18,7 +21,6 @@ export default function LenisProvider({ children }: { children: React.ReactNode 
     });
     lenisRef.current = lenis;
 
-    // Connect Lenis to GSAP ScrollTrigger ticker
     lenis.on("scroll", ScrollTrigger.update);
 
     const updateTicker = (time: number) => {

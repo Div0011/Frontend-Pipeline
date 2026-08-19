@@ -16,6 +16,7 @@ export default function TransitionOverlay() {
 
     let width = (canvas.width = window.innerWidth);
     let height = (canvas.height = window.innerHeight);
+    let animId = 0;
 
     const handleResize = () => {
       width = canvas.width = window.innerWidth;
@@ -23,7 +24,6 @@ export default function TransitionOverlay() {
     };
     window.addEventListener("resize", handleResize);
 
-    // Track scroll progress to compute transition intensity
     let scrollProgress = 0;
     const numPanels = 5;
     const step = 1 / (numPanels - 1);
@@ -39,117 +39,112 @@ export default function TransitionOverlay() {
     });
 
     let angle = 0;
+    let time = 0;
 
     const render = () => {
-      // Compute distance to nearest snap point
+      time += 0.016;
       const relativePos = scrollProgress / step;
       const currentSlideIndex = Math.round(relativePos);
       const distFromSnap = Math.abs(relativePos - currentSlideIndex);
-      
-      // Calculate intensity (0 at snaps, 1 at midpoints)
-      const intensity = Math.pow(Math.sin(distFromSnap * Math.PI), 1.5);
+      const intensity = Math.pow(Math.sin(distFromSnap * Math.PI), 1.65);
 
-      if (intensity < 0.01) {
+      if (intensity < 0.015) {
         ctx.clearRect(0, 0, width, height);
       } else {
-        // Clear with alpha trail to create cinematic motion blur
-        ctx.fillStyle = `rgba(6, 6, 9, ${0.1 + intensity * 0.25})`;
+        ctx.clearRect(0, 0, width, height);
+
+        // Soft cinematic veil
+        const veil = ctx.createRadialGradient(
+          width / 2,
+          height / 2,
+          0,
+          width / 2,
+          height / 2,
+          Math.max(width, height) * 0.7
+        );
+        veil.addColorStop(0, `rgba(6, 6, 9, ${0.15 + intensity * 0.35})`);
+        veil.addColorStop(1, `rgba(6, 6, 9, ${0.55 + intensity * 0.35})`);
+        ctx.fillStyle = veil;
         ctx.fillRect(0, 0, width, height);
+
+        // Horizontal light streak / film wipe
+        const wipeY = height * (0.35 + 0.3 * Math.sin(time * 0.4 + scrollProgress * 6));
+        const streak = ctx.createLinearGradient(0, wipeY - 80, 0, wipeY + 80);
+        streak.addColorStop(0, "rgba(212, 255, 0, 0)");
+        streak.addColorStop(0.45, `rgba(212, 255, 0, ${intensity * 0.12})`);
+        streak.addColorStop(0.5, `rgba(255, 255, 255, ${intensity * 0.28})`);
+        streak.addColorStop(0.55, `rgba(212, 255, 0, ${intensity * 0.12})`);
+        streak.addColorStop(1, "rgba(212, 255, 0, 0)");
+        ctx.fillStyle = streak;
+        ctx.fillRect(0, wipeY - 80, width, 160);
 
         ctx.save();
         ctx.translate(width / 2, height / 2);
-        
-        // Spin speed increases with transition speed
-        angle += 0.04 + intensity * 0.08;
+        angle += 0.018 + intensity * 0.05;
 
-        // Circular motion orbital lines (White & Parrot Green)
-        const maxRadius = Math.min(width, height) * 0.4;
-        const numCircles = 6;
+        const maxRadius = Math.min(width, height) * 0.38;
+        const rings = 5;
 
-        for (let i = 0; i < numCircles; i++) {
-          const radius = (i + 1.5) * (maxRadius / numCircles);
+        for (let i = 0; i < rings; i++) {
+          const radius = (i + 1.2) * (maxRadius / rings);
           const dir = i % 2 === 0 ? 1 : -1;
-          const currentAngle = angle * dir * (0.8 + i * 0.2);
+          const currentAngle = angle * dir * (0.55 + i * 0.12);
+          const alpha = intensity * (0.15 + (i / rings) * 0.4);
+          const isAccent = i % 2 === 1;
 
-          // Alternating colors between pure white and parrot green (#d4ff00)
-          const colorPrefix = i % 2 === 0 ? "rgba(255, 255, 255, " : "rgba(212, 255, 0, ";
-          const alpha = intensity * (0.2 + (i / numCircles) * 0.5);
-
-          ctx.strokeStyle = colorPrefix + alpha + ")";
-          ctx.lineWidth = 1.5 + (i % 2) * 1.5;
-          ctx.shadowBlur = 12 * intensity;
-          ctx.shadowColor = i % 2 === 0 ? "#ffffff" : "#d4ff00";
+          ctx.strokeStyle = isAccent
+            ? `rgba(212, 255, 0, ${alpha})`
+            : `rgba(255, 255, 255, ${alpha * 0.85})`;
+          ctx.lineWidth = isAccent ? 1.5 : 1;
+          ctx.shadowBlur = 18 * intensity;
+          ctx.shadowColor = isAccent ? "#d4ff00" : "#ffffff";
 
           ctx.beginPath();
-          // Animated dash segments
-          const arcLength = Math.PI * (0.25 + 0.45 * Math.sin(angle * 0.6 + i));
+          const arcLength = Math.PI * (0.2 + 0.35 * Math.sin(angle * 0.5 + i));
           ctx.arc(0, 0, radius, currentAngle, currentAngle + arcLength);
           ctx.stroke();
         }
 
-        // Swirling light particles
-        const numOrbiters = 20;
-        for (let i = 0; i < numOrbiters; i++) {
-          const orbitAngle = angle * (i % 2 === 0 ? 1 : -1) * 0.6 + (i * (Math.PI * 2) / numOrbiters);
-          const orbitRadius = (maxRadius * 0.5) * (1 + 0.25 * Math.sin(angle * 1.2 + i));
+        // Soft orbit sparks
+        for (let i = 0; i < 12; i++) {
+          const orbitAngle =
+            angle * (i % 2 === 0 ? 0.7 : -0.55) + (i * Math.PI * 2) / 12;
+          const orbitRadius = maxRadius * 0.55 * (1 + 0.2 * Math.sin(angle + i));
           const ox = Math.cos(orbitAngle) * orbitRadius;
           const oy = Math.sin(orbitAngle) * orbitRadius;
+          const sparkAlpha = intensity * (0.35 + 0.45 * Math.sin(time * 2 + i));
 
-          ctx.fillStyle = i % 2 === 0 ? "rgba(255, 255, 255, " + intensity * 0.9 + ")" : "rgba(212, 255, 0, " + intensity * 0.9 + ")";
+          ctx.fillStyle =
+            i % 2 === 0
+              ? `rgba(255, 255, 255, ${sparkAlpha})`
+              : `rgba(212, 255, 0, ${sparkAlpha})`;
           ctx.beginPath();
-          ctx.arc(ox, oy, 2 + (i % 3), 0, Math.PI * 2);
+          ctx.arc(ox, oy, 1.2 + (i % 2), 0, Math.PI * 2);
           ctx.fill();
         }
 
-        // Center HUD digital crosshair
-        ctx.strokeStyle = "rgba(212, 255, 0, " + intensity * 0.4 + ")";
-        ctx.lineWidth = 1;
-        ctx.beginPath();
-        // Inner reticle circle
-        ctx.arc(0, 0, 15, 0, Math.PI * 2);
-        // Crosshair ticks
-        ctx.moveTo(-25, 0); ctx.lineTo(-10, 0);
-        ctx.moveTo(10, 0); ctx.lineTo(25, 0);
-        ctx.moveTo(0, -25); ctx.lineTo(0, -10);
-        ctx.moveTo(0, 10); ctx.lineTo(0, 25);
-        ctx.stroke();
-
         ctx.restore();
 
-        // Digital Scanlines / Texture overlay
-        ctx.strokeStyle = "rgba(212, 255, 0, " + intensity * 0.04 + ")";
-        ctx.lineWidth = 1;
-        for (let y = 0; y < height; y += 6) {
-          ctx.beginPath();
-          ctx.moveTo(0, y);
-          ctx.lineTo(width, y);
-          ctx.stroke();
-        }
+        // Edge film bars
+        ctx.fillStyle = `rgba(212, 255, 0, ${intensity * 0.08})`;
+        ctx.fillRect(0, 0, width, 2);
+        ctx.fillRect(0, height - 2, width, 2);
 
-        // HUD diagnostics text layout (Premium technical texture feel)
-        ctx.fillStyle = "rgba(212, 255, 0, " + intensity * 0.85 + ")";
-        ctx.font = "bold 9px monospace";
+        // Minimal slide index
+        ctx.fillStyle = `rgba(212, 255, 0, ${intensity * 0.7})`;
+        ctx.font = "500 11px 'JetBrains Mono', monospace";
         ctx.textAlign = "center";
-        
-        // Center text
-        ctx.fillText("SYNCING SYSTEM ASSETS", width / 2, height / 2 + 65);
-
-        // Sidebar stats
-        ctx.textAlign = "left";
-        ctx.fillText("SYS: VOID_CORE_v1.0.4", 40, height - 80);
-        ctx.fillText("TRANSITION_LOCKED: ACTIVE", 40, height - 60);
-        ctx.fillText(`BUFFER_INTEGRITY: ${Math.round(intensity * 100)}%`, 40, height - 40);
-
-        ctx.textAlign = "right";
-        ctx.fillText("RENDER_MODE: HORIZONTAL_SCRUB", width - 40, height - 80);
-        ctx.fillText(`CURRENT_TARGET_SLIDE: 0${currentSlideIndex + 1}`, width - 40, height - 60);
-        ctx.fillText(`DAMPING_DELAY: 12ms`, width - 40, height - 40);
+        ctx.fillText(
+          `0${currentSlideIndex + 1}  —  0${numPanels}`,
+          width / 2,
+          height - 36
+        );
       }
 
-      requestAnimationFrame(render);
+      animId = requestAnimationFrame(render);
     };
 
-    const animId = requestAnimationFrame(render);
+    animId = requestAnimationFrame(render);
 
     return () => {
       st.kill();
@@ -162,6 +157,7 @@ export default function TransitionOverlay() {
     <canvas
       ref={canvasRef}
       className="pointer-events-none fixed inset-0 z-40 h-full w-full mix-blend-screen"
+      aria-hidden
     />
   );
 }

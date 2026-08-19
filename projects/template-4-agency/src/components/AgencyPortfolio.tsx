@@ -10,6 +10,7 @@ import ProjectGrid from "./project-grid";
 import ClientsMarquee from "./clients-marquee";
 import ContactCTA from "./contact-cta";
 import Footer from "./footer";
+import { DURATION, EASE } from "@/lib/motion";
 
 export default function AgencyPortfolio() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -21,11 +22,9 @@ export default function AgencyPortfolio() {
       const container = containerRef.current;
       if (!container) return;
 
-      const panels = gsap.utils.toArray(".panel-slide");
+      const panels = gsap.utils.toArray<HTMLElement>(".panel-slide");
       const numPanels = panels.length;
 
-      // Translate the container horizontally based on the document vertical scroll.
-      // snap: 1 / (numPanels - 1) snaps cleanly panel-by-panel.
       gsap.to(container, {
         x: () => -(container.scrollWidth - window.innerWidth),
         ease: "none",
@@ -33,39 +32,41 @@ export default function AgencyPortfolio() {
           trigger: document.body,
           start: "top top",
           end: "bottom bottom",
-          scrub: 0.5,
+          scrub: 0.65,
           invalidateOnRefresh: true,
           snap: {
             snapTo: 1 / (numPanels - 1),
-            duration: { min: 0.2, max: 0.6 },
-            delay: 0.05,
-            ease: "power2.inOut",
+            duration: { min: DURATION.snapMin, max: DURATION.snapMax },
+            delay: 0.04,
+            ease: EASE.inOut,
           },
         },
       });
 
-      // Implement subtle fade-in / stagger triggers for content within each panel on arrival.
-      panels.forEach((panel: any, index) => {
+      panels.forEach((panel, index) => {
+        const items = panel.querySelectorAll(".stagger-item");
+        if (!items.length) return;
+
         gsap.fromTo(
-          panel.querySelectorAll(".stagger-item"),
-          { opacity: 0, y: 30 },
+          items,
+          { opacity: 0, y: 40 },
           {
             opacity: 1,
             y: 0,
-            duration: 0.8,
-            stagger: 0.1,
-            ease: "power3.out",
+            duration: 0.95,
+            stagger: 0.09,
+            ease: EASE.cinematic,
             scrollTrigger: {
               trigger: document.body,
               start: () => {
                 const totalScroll = ScrollTrigger.maxScroll(window);
                 const step = totalScroll / (numPanels - 1);
-                return `${step * index - step * 0.4}px`;
+                return `${step * index - step * 0.35}px`;
               },
               end: () => {
                 const totalScroll = ScrollTrigger.maxScroll(window);
                 const step = totalScroll / (numPanels - 1);
-                return `${step * index + step * 0.4}px`;
+                return `${step * index + step * 0.35}px`;
               },
               toggleActions: "play none none reverse",
             },
@@ -74,32 +75,33 @@ export default function AgencyPortfolio() {
       });
     });
 
-    setTimeout(() => {
-      ScrollTrigger.refresh();
-    }, 200);
+    const refreshTimer = window.setTimeout(() => ScrollTrigger.refresh(), 240);
 
-    return () => ctx.revert();
+    return () => {
+      window.clearTimeout(refreshTimer);
+      ctx.revert();
+    };
   }, []);
 
   return (
     <div
       ref={containerRef}
-      className="fixed top-0 left-0 flex flex-row w-max h-screen items-center overflow-hidden z-10"
+      className="fixed top-0 left-0 z-10 flex h-screen w-max flex-row items-center overflow-hidden"
     >
-      <div className="panel-slide w-screen h-screen shrink-0 bg-transparent">
+      <div className="panel-slide h-screen w-screen shrink-0 bg-transparent">
         <Hero />
       </div>
-      <div className="panel-slide w-screen h-screen shrink-0 border-l border-white/5 bg-transparent">
+      <div className="panel-slide h-screen w-screen shrink-0 bg-transparent">
         <About />
       </div>
-      <div className="panel-slide w-screen h-screen shrink-0 border-l border-white/5 bg-transparent">
+      <div className="panel-slide h-screen w-screen shrink-0 bg-transparent">
         <Services />
       </div>
-      <div className="panel-slide w-screen h-screen shrink-0 border-l border-white/5 bg-transparent">
+      <div className="panel-slide h-screen w-screen shrink-0 bg-transparent">
         <ProjectGrid />
       </div>
-      <div className="panel-slide w-screen h-screen shrink-0 border-l border-white/5 bg-transparent flex flex-col justify-between py-12">
-        <div className="flex-1 flex flex-col justify-center bg-transparent">
+      <div className="panel-slide flex h-screen w-screen shrink-0 flex-col justify-between bg-transparent py-10 md:py-14">
+        <div className="flex flex-1 flex-col justify-center bg-transparent">
           <ClientsMarquee />
           <ContactCTA />
         </div>

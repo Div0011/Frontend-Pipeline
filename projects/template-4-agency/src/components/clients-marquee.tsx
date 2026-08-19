@@ -1,26 +1,26 @@
 "use client";
 
 const CLIENTS = [
-  "SYNTHETIX LABS",
-  "APEX HARDWARE",
-  "KINO AT WORK",
-  "ZERZURA LUXURY",
-  "NEXAFLOW SAAS",
-  "LUSION ATELIER",
-  "HYPERION AI",
+  "Synthetix Labs",
+  "Apex Hardware",
+  "Kino At Work",
+  "Zerzura Luxury",
+  "Nexaflow",
+  "Lusion Atelier",
+  "Hyperion AI",
 ];
 
 export default function ClientsMarquee() {
   return (
-    <section className="relative overflow-hidden border-y border-white/10 bg-black/80 py-10 backdrop-blur-md">
-      <div className="flex w-max animate-marquee space-x-12">
+    <section className="relative overflow-hidden border-y border-white/10 py-8 md:py-10">
+      <div className="flex w-max animate-marquee items-center">
         {[...CLIENTS, ...CLIENTS, ...CLIENTS].map((client, i) => (
           <div
-            key={i}
-            className="flex items-center space-x-12 font-mono text-xl font-black uppercase tracking-widest text-white/40 transition-colors hover:text-[#d4ff00] md:text-3xl"
+            key={`${client}-${i}`}
+            className="flex items-center gap-10 px-5 font-display text-2xl font-bold tracking-tight text-white/25 transition-colors duration-300 hover:text-[#d4ff00] md:gap-14 md:text-4xl"
           >
             <span>{client}</span>
-            <span className="text-xs text-[#d4ff00]">✦</span>
+            <span className="h-px w-8 bg-[#d4ff00]/40 md:w-12" aria-hidden />
           </div>
         ))}
       </div>

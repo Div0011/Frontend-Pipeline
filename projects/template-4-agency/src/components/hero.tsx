@@ -1,83 +1,99 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { gsap } from "gsap";
 
 export default function Hero() {
+  const rootRef = useRef<HTMLDivElement>(null);
   const [isMuted, setIsMuted] = useState(true);
-  const [isPlaying, setIsPlaying] = useState(true);
+
+  useEffect(() => {
+    const root = rootRef.current;
+    if (!root) return;
+
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline({ defaults: { ease: "power4.out" } });
+      tl.from(".hero-brand", { opacity: 0, y: 48, duration: 1.2 })
+        .from(".hero-line", { scaleX: 0, duration: 0.9, ease: "power3.inOut" }, "-=0.55")
+        .from(".hero-headline", { opacity: 0, y: 36, duration: 1 }, "-=0.55")
+        .from(".hero-support", { opacity: 0, y: 20, duration: 0.85 }, "-=0.55")
+        .from(".hero-cta", { opacity: 0, y: 16, duration: 0.75 }, "-=0.45");
+    }, root);
+
+    return () => ctx.revert();
+  }, []);
 
   const toggleMute = () => {
-    const bgVideo = document.getElementById("bg-showreel-video") as HTMLVideoElement;
-    if (bgVideo) {
-      bgVideo.muted = !isMuted;
-      setIsMuted(!isMuted);
-    }
+    const bgVideo = document.getElementById("bg-showreel-video") as HTMLVideoElement | null;
+    if (!bgVideo) return;
+    bgVideo.muted = !isMuted;
+    setIsMuted(!isMuted);
   };
 
-  const togglePlay = () => {
-    const bgVideo = document.getElementById("bg-showreel-video") as HTMLVideoElement;
-    if (bgVideo) {
-      if (isPlaying) {
-        bgVideo.pause();
-      } else {
-        bgVideo.play();
-      }
-      setIsPlaying(!isPlaying);
-    }
+  const scrollToWork = () => {
+    const total = document.documentElement.scrollHeight - window.innerHeight;
+    window.scrollTo({ top: total * 0.75, behavior: "smooth" });
   };
 
   return (
-    <div className="relative h-full w-full overflow-hidden bg-transparent">
-      <div className="relative z-10 flex h-full flex-col justify-end px-12 pb-24 md:px-20 md:pb-28">
-        <div className="max-w-4xl">
-          <div
-            className="mb-4 inline-flex items-center gap-3 rounded-full border border-[#d4ff00]/40 bg-[#d4ff00]/10 px-4 py-1.5 backdrop-blur-md"
-          >
-            <span className="h-2 w-2 rounded-full bg-[#d4ff00] animate-pulse" />
-            <span className="font-mono text-xs font-bold tracking-widest text-[#d4ff00] uppercase">
-              SHOWREEL // HORIZONTAL EDITION
-            </span>
-          </div>
-
-          <h1
-            className="font-mono text-5xl font-black leading-[0.92] tracking-tighter uppercase text-white md:text-8xl lg:text-9xl"
-          >
-            WE MAKE BRANDS <br />
-            <span className="text-[#d4ff00]">
-              MOVE FASTER.
-            </span>
-          </h1>
-
-          <p
-            className="mt-6 max-w-xl font-mono text-sm text-white/70 md:text-base font-light"
-          >
-            An award-winning digital design & motion studio engineering high-velocity scrollytelling websites, WebGL 3D worlds, and iconic brand systems.
+    <div ref={rootRef} className="relative h-full w-full overflow-hidden bg-transparent">
+      <div className="relative z-10 flex h-full flex-col justify-end px-[var(--gutter)] pb-20 md:pb-28 lg:pb-32">
+        <div className="max-w-5xl">
+          <p className="hero-brand font-display text-[clamp(3.5rem,12vw,9.5rem)] font-extrabold leading-[0.82] tracking-[-0.05em] text-white uppercase">
+            VOID
+            <span className="text-[#d4ff00]">.</span>
           </p>
 
-          <div
-            className="mt-8 flex flex-wrap items-center gap-4"
-          >
+          <div className="hero-line mt-5 h-px w-24 origin-left bg-[#d4ff00] md:w-32" />
+
+          <h1 className="hero-headline mt-6 max-w-3xl font-display text-[clamp(1.75rem,4.2vw,3.75rem)] font-semibold leading-[1.05] tracking-[-0.03em] text-white">
+            We make brands move faster.
+          </h1>
+
+          <p className="hero-support mt-5 max-w-md text-[15px] font-light leading-relaxed text-white/70 md:text-base">
+            Digital craft and motion direction for brands that refuse to look like everyone else.
+          </p>
+
+          <div className="hero-cta mt-10 flex flex-wrap items-center gap-3 md:gap-4">
             <button
-              onClick={toggleMute}
-              className="flex items-center gap-3 rounded-full border border-[#d4ff00]/40 bg-black/60 px-5 py-2.5 backdrop-blur-md transition-transform duration-300 hover:scale-105 active:scale-95"
-              data-cursor="AUDIO"
+              type="button"
+              onClick={scrollToWork}
+              className="group inline-flex items-center gap-3 bg-[#d4ff00] px-7 py-3.5 font-mono text-[11px] font-bold tracking-[0.22em] text-black uppercase transition-transform duration-500 hover:translate-x-1"
+              data-cursor="WORK"
             >
-              <div className="flex items-end gap-1 h-4">
-                <span className={`w-0.5 bg-[#d4ff00] transition-all duration-300 ${!isMuted ? "h-4 animate-bounce" : "h-1"}`} />
-                <span className={`w-0.5 bg-[#d4ff00] transition-all duration-300 ${!isMuted ? "h-3 animate-pulse" : "h-2"}`} />
-                <span className={`w-0.5 bg-[#d4ff00] transition-all duration-300 ${!isMuted ? "h-4 animate-bounce" : "h-1"}`} />
-              </div>
-              <span className="font-mono text-xs font-bold tracking-widest text-[#d4ff00]">
-                {isMuted ? "SOUND: OFF" : "SOUND: ON"}
+              View work
+              <span className="transition-transform duration-500 group-hover:translate-x-1" aria-hidden>
+                →
               </span>
             </button>
 
             <button
-              onClick={togglePlay}
-              className="flex items-center gap-2 rounded-full border border-white/20 bg-black/40 px-5 py-2.5 font-mono text-xs font-bold tracking-widest text-white/80 backdrop-blur-md transition hover:bg-white/10"
-              data-cursor="PLAY"
+              type="button"
+              onClick={toggleMute}
+              className="inline-flex items-center gap-3 border border-white/20 bg-black/30 px-6 py-3.5 backdrop-blur-md transition-colors duration-300 hover:border-[#d4ff00]/50"
+              data-cursor="AUDIO"
+              aria-pressed={!isMuted}
             >
-              {isPlaying ? "PAUSE REEL" : "PLAY REEL"}
+              <span className="flex h-3.5 items-end gap-[3px]" aria-hidden>
+                <span
+                  className={`w-[2px] bg-[#d4ff00] ${
+                    isMuted ? "h-1 opacity-40" : "reel-bar h-3.5"
+                  }`}
+                />
+                <span
+                  className={`w-[2px] bg-[#d4ff00] ${
+                    isMuted ? "h-2 opacity-40" : "reel-bar h-2.5"
+                  }`}
+                />
+                <span
+                  className={`w-[2px] bg-[#d4ff00] ${
+                    isMuted ? "h-1 opacity-40" : "reel-bar h-3.5"
+                  }`}
+                />
+              </span>
+              <span className="font-mono text-[11px] font-bold tracking-[0.2em] text-white/85 uppercase">
+                {isMuted ? "Sound off" : "Sound on"}
+              </span>
             </button>
           </div>
         </div>

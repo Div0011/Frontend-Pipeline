@@ -11,14 +11,19 @@ export default function LenisProvider({ children }: { children: React.ReactNode 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reducedMotion) {
+      return;
+    }
+
     const lenis = new Lenis({
-      duration: 1.2,
+      duration: 1.35,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       smoothWheel: true,
+      touchMultiplier: 1.4,
     });
     lenisRef.current = lenis;
 
-    // Single source of scroll truth: Lenis updates GSAP ScrollTrigger
     lenis.on("scroll", ScrollTrigger.update);
 
     const updateTicker = (time: number) => {
@@ -31,6 +36,7 @@ export default function LenisProvider({ children }: { children: React.ReactNode 
     return () => {
       gsap.ticker.remove(updateTicker);
       lenis.destroy();
+      lenisRef.current = null;
     };
   }, []);
 

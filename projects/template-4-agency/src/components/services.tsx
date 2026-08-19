@@ -1,8 +1,9 @@
 "use client";
 
-import { useRef, useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { EASE } from "@/lib/motion";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -19,51 +20,53 @@ const SERVICES: ServiceItem[] = [
   {
     id: "webgl-scrollytelling",
     num: "01",
-    title: "WEBGL & SCROLLYTELLING",
-    subtitle: "High-Performance 3D Universes",
-    description: "We engineer interactive 3D web experiences using R3F, custom GLSL shaders, and Lenis smooth scroll physics that convert passive readers into active explorers.",
-    deliverables: ["Custom 3D Shaders", "Camera Rig Choreography", "Canvas Scrubber Mechanics", "60 FPS Optimization"],
+    title: "WebGL & Scrollytelling",
+    subtitle: "High-performance 3D universes",
+    description:
+      "Interactive 3D experiences with custom GLSL, camera choreography, and Lenis-driven physics that turn readers into explorers.",
+    deliverables: ["Custom shaders", "Camera rigs", "Canvas scrubbers", "60fps optimization"],
   },
   {
     id: "brand-architecture",
     num: "02",
-    title: "KINETIC BRAND IDENTITY",
-    subtitle: "Living Visual Systems",
-    description: "Brand design engineered for digital movement. We build dynamic typography, kinetic logomarks, and modular design systems that adapt across every viewport.",
-    deliverables: ["Bespoke Typography", "Kinetic Wordmarks", "UI Design System", "Brand Playbooks"],
+    title: "Kinetic Brand Identity",
+    subtitle: "Living visual systems",
+    description:
+      "Brand design engineered for movement — dynamic type, kinetic marks, and modular systems that adapt across every viewport.",
+    deliverables: ["Bespoke type", "Kinetic wordmarks", "UI systems", "Brand playbooks"],
   },
   {
     id: "ai-motion-production",
     num: "03",
-    title: "AI MOTION PRODUCTION",
-    subtitle: "Cinematic Reel Generation",
-    description: "We harness AI generative video pipelines (Kling, Luma, Runway) combined with 3D compositing to create showreels and hero brand films at atelier craft speed.",
-    deliverables: ["3D Object Explode Renders", "Cinematic Reel Edits", "AI Video Generation", "WebP Sequence Slicing"],
+    title: "AI Motion Production",
+    subtitle: "Cinematic reel generation",
+    description:
+      "Generative video pipelines composited with 3D craft — showreels and hero films at atelier speed without losing precision.",
+    deliverables: ["Object explode", "Reel edits", "AI generation", "Sequence slicing"],
   },
 ];
 
 export default function Services() {
   const sectionRef = useRef<HTMLDivElement>(null);
+  const [active, setActive] = useState(0);
 
   useEffect(() => {
     if (!sectionRef.current) return;
 
     const ctx = gsap.context(() => {
-      const main = gsap.utils.toArray<HTMLElement>(".services-main > *");
-      gsap.from(main, {
+      gsap.from(".services-reveal", {
         opacity: 0,
-        yPercent: 14,
-        duration: 1.2,
-        ease: "expo.out",
+        y: 36,
+        duration: 1.1,
+        ease: EASE.cinematic,
         stagger: 0.08,
         scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top 70%",
+          trigger: document.body,
+          start: () => `${ScrollTrigger.maxScroll(window) * 0.35}px`,
           once: true,
         },
-        clearProps: "transform",
       });
-    });
+    }, sectionRef);
 
     return () => ctx.revert();
   }, []);
@@ -71,63 +74,86 @@ export default function Services() {
   return (
     <section
       ref={sectionRef}
-      className="relative h-full w-full flex flex-col justify-center px-12 md:px-20"
+      id="services"
+      className="relative flex h-full w-full flex-col justify-center px-[var(--gutter)]"
     >
-      <div className="w-full services-main">
-        <div className="border-b border-white/10 pb-6">
-          <span
-                        className="font-mono text-xs font-bold tracking-[0.3em] text-[#d4ff00] uppercase"
-          >
-            CAPABILITIES // OUR SERVICE ATELIER
-          </span>
-          <h2
-                        className="mt-2 font-mono text-3xl font-black uppercase text-white tracking-tight md:text-5xl"
-          >
-            ENGINEERED FOR IMPACT.
+      <div className="w-full max-w-6xl">
+        <div className="services-reveal stagger-item border-b border-white/10 pb-8">
+          <p className="font-mono text-[11px] font-medium tracking-[0.35em] text-[#d4ff00] uppercase">
+            Capabilities
+          </p>
+          <h2 className="mt-3 font-display text-[clamp(2rem,4.5vw,4rem)] font-extrabold tracking-[-0.035em] text-white">
+            Engineered for impact.
           </h2>
         </div>
 
-        <div className="mt-8 flex flex-col gap-4 lg:flex-row lg:h-[350px]">
-          {SERVICES.map((srv) => (
-            <div
-              key={srv.id}
-                            className="relative cursor-pointer overflow-hidden rounded-2xl border p-6 transition-all duration-700 lg:flex-1 border-white/10 bg-white/[0.02] hover:border-white/30"
-              style={{ transitionDelay: `${parseInt(srv.num) * 0.05}s` }}
-            >
-              <div className="flex h-full flex-col justify-between">
-                <div>
-                  <div className="flex items-center justify-between font-mono text-[10px] font-bold text-[#d4ff00]">
-                    <span>{srv.num}</span>
-                    <span className="uppercase tracking-widest text-white/40">{srv.subtitle}</span>
-                  </div>
-
-                  <h3 className="mt-4 font-mono text-xl font-black uppercase text-white">
-                    {srv.title}
-                  </h3>
-
-                  <p className="mt-3 font-mono text-xs leading-relaxed text-white/70">
-                    {srv.description}
-                  </p>
-                </div>
-
-                <div className="mt-4 border-t border-white/10 pt-4">
-                  <div className="font-mono text-[9px] uppercase tracking-widest text-[#d4ff00] mb-2">
-                    DELIVERABLES
-                  </div>
-                  <div className="flex flex-wrap gap-1.5">
-                    {srv.deliverables.map((del) => (
-                      <span
-                        key={del}
-                        className="rounded-md border border-[#d4ff00]/20 bg-[#d4ff00]/5 px-2 py-0.5 font-mono text-[10px] text-white"
+        <div className="mt-2">
+          {SERVICES.map((srv, index) => {
+            const isOpen = active === index;
+            return (
+              <div
+                key={srv.id}
+                className="services-reveal stagger-item border-b border-white/10"
+              >
+                <button
+                  type="button"
+                  onClick={() => setActive(index)}
+                  onMouseEnter={() => setActive(index)}
+                  className="group flex w-full items-baseline justify-between gap-6 py-6 text-left md:py-7"
+                  data-cursor="OPEN"
+                  aria-expanded={isOpen}
+                >
+                  <div className="flex min-w-0 flex-1 items-baseline gap-5 md:gap-8">
+                    <span className="font-mono text-xs text-[#d4ff00]/80">{srv.num}</span>
+                    <div className="min-w-0">
+                      <h3
+                        className={`font-display text-xl font-bold tracking-tight transition-colors duration-400 md:text-3xl ${
+                          isOpen ? "text-[#d4ff00]" : "text-white group-hover:text-white/90"
+                        }`}
                       >
-                        ✓ {del}
-                      </span>
-                    ))}
+                        {srv.title}
+                      </h3>
+                      <p className="mt-1 font-mono text-[10px] tracking-[0.22em] text-white/40 uppercase">
+                        {srv.subtitle}
+                      </p>
+                    </div>
+                  </div>
+                  <span
+                    className={`font-display text-2xl text-white/30 transition-transform duration-500 ${
+                      isOpen ? "rotate-45 text-[#d4ff00]" : ""
+                    }`}
+                    aria-hidden
+                  >
+                    +
+                  </span>
+                </button>
+
+                <div
+                  className={`grid transition-[grid-template-rows] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+                    isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+                  }`}
+                >
+                  <div className="overflow-hidden">
+                    <div className="flex flex-col gap-5 pb-8 pl-10 md:flex-row md:items-end md:justify-between md:pl-16">
+                      <p className="max-w-lg text-sm font-light leading-relaxed text-white/60 md:text-[15px]">
+                        {srv.description}
+                      </p>
+                      <ul className="flex flex-wrap gap-x-5 gap-y-2">
+                        {srv.deliverables.map((item) => (
+                          <li
+                            key={item}
+                            className="font-mono text-[10px] tracking-[0.18em] text-white/45 uppercase"
+                          >
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

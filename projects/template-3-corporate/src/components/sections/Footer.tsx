@@ -20,25 +20,19 @@ export default function Footer() {
     if (!el) return;
 
     const ctx = gsap.context(() => {
-      // ─── Large Marquee Text Entrance ──────────────────
       if (marqueeRef.current) {
         const chars = marqueeRef.current.querySelectorAll(".split-char");
         if (chars.length) {
-          gsap.set(chars, { y: 80, opacity: 0 });
+          gsap.set(chars, { y: 90, opacity: 0 });
           gsap.to(chars, {
             y: 0,
             opacity: 1,
-            duration: 1.4,
-            stagger: 0.02,
+            duration: 1.5,
+            stagger: 0.022,
             ease: "expo.out",
-            scrollTrigger: {
-              trigger: el,
-              start: "top 70%",
-              once: true,
-            },
+            scrollTrigger: { trigger: el, start: "top 68%", once: true },
           });
         } else {
-          // Fallback: simple fade-up
           gsap.from(marqueeRef.current, {
             y: 60,
             opacity: 0,
@@ -49,60 +43,38 @@ export default function Footer() {
         }
       }
 
-      // ─── Subtitle ──────────────────────────────────────
-      if (subtitleRef.current) {
-        gsap.from(subtitleRef.current, {
-          y: 30,
-          opacity: 0,
-          duration: 1.0,
-          ease: "power3.out",
-          delay: 0.3,
-          scrollTrigger: { trigger: el, start: "top 70%", once: true },
-        });
-      }
+      gsap.from(subtitleRef.current, {
+        y: 24,
+        opacity: 0,
+        duration: 1,
+        ease: "power3.out",
+        scrollTrigger: { trigger: el, start: "top 65%", once: true },
+      });
 
-      // ─── Links ─────────────────────────────────────────
       if (linksRef.current) {
         gsap.from(linksRef.current.querySelectorAll("a"), {
-          y: 20,
+          y: 18,
           opacity: 0,
-          duration: 0.8,
-          stagger: 0.08,
-          ease: "power3.out",
-          delay: 0.5,
-          scrollTrigger: { trigger: el, start: "top 65%", once: true },
-        });
-      }
-
-      // ─── Bottom Bar ────────────────────────────────────
-      if (bottomRef.current) {
-        gsap.from(bottomRef.current, {
-          opacity: 0,
-          duration: 0.8,
-          delay: 0.7,
-          ease: "power2.out",
-          scrollTrigger: { trigger: el, start: "top 60%", once: true },
-        });
-      }
-
-      // ─── Scroll Top ────────────────────────────────────
-      if (scrollTopRef.current) {
-        gsap.from(scrollTopRef.current, {
-          opacity: 0,
-          x: 20,
-          duration: 0.8,
-          delay: 0.9,
+          duration: 0.75,
+          stagger: 0.07,
           ease: "power3.out",
           scrollTrigger: { trigger: el, start: "top 60%", once: true },
         });
       }
 
-      // ─── Decorative Gradient Pulse ─────────────────────
+      gsap.from([bottomRef.current, scrollTopRef.current], {
+        opacity: 0,
+        duration: 0.9,
+        stagger: 0.1,
+        ease: "power2.out",
+        scrollTrigger: { trigger: el, start: "top 55%", once: true },
+      });
+
       if (decorRef.current) {
         gsap.to(decorRef.current, {
-          opacity: 0.15,
-          scale: 1.1,
-          duration: 2,
+          opacity: 0.18,
+          scale: 1.08,
+          duration: 3.2,
           repeat: -1,
           yoyo: true,
           ease: "sine.inOut",
@@ -113,87 +85,76 @@ export default function Footer() {
     return () => ctx.revert();
   }, []);
 
-  // Split the marquee text into characters
-  const marqueeText = "Apex Group";
+  const marqueeText = "Apex";
   const marqueeChars = marqueeText.split("").map((char, i) => (
     <span key={i} className="split-char inline-block">
-      {char === " " ? "\u00A0" : char}
+      {char}
     </span>
   ));
 
-  const handleScrollTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
   return (
-    <footer
-      ref={sectionRef}
-      className="footer-cinematic border-t border-white/5"
-    >
-      {/* ─── Decorative Background Gradient ──────────────── */}
+    <footer ref={sectionRef} className="footer-cinematic border-t border-border/40">
       <div
         ref={decorRef}
         className="absolute inset-0 opacity-10 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse at 50% 60%, rgba(201,169,110,0.2) 0%, transparent 60%)",
+            "radial-gradient(ellipse at 50% 55%, rgba(196,165,116,0.22) 0%, transparent 58%)",
         }}
       />
 
-      {/* ─── Magazine Grid Subtle Overlay ───────────────── */}
-      <div className="absolute inset-0 bg-magazine-grid opacity-20 pointer-events-none z-[1]" />
-
-      {/* ─── Main Cinematic Content ─────────────────────── */}
-      <div className="relative z-10 flex flex-col items-center justify-center px-6 py-20 min-h-screen w-full">
-        {/* Large Marquee Title */}
-        <h1
-          ref={marqueeRef}
-          className="footer-marquee"
-        >
+      <div className="relative z-10 flex flex-col items-center justify-center px-6 py-24 min-h-screen w-full">
+        <h1 ref={marqueeRef} className="footer-marquee tracking-[0.08em]">
           {marqueeChars}
-          <br />
-          <span className="accent">Est. 1987</span>
         </h1>
+        <p className="font-serif text-[clamp(1.5rem,4vw,2.75rem)] text-accent italic font-normal mt-2">
+          Est. 1987
+        </p>
 
-        {/* Subtitle */}
-        <div ref={subtitleRef} className="footer-subtitle">
+        <div ref={subtitleRef} className="footer-subtitle mt-8">
           Institutional Capital · Generational Stewardship
         </div>
 
-        {/* Separator Line */}
-        <div className="w-16 h-[1px] bg-accent/40 my-8" />
+        <div className="metal-line w-24 my-10" />
 
-        {/* Links */}
         <div ref={linksRef} className="footer-links">
-          <a href="#story">Our Story</a>
-          <a href="#expertise">Expertise</a>
-          <a href="#leadership">Leadership</a>
-          <a href="#contact">Inquiry</a>
-          <a href="#">FCA / SEC Disclosures</a>
-          <a href="#">Privacy Policy</a>
-          <a href="#">Fiduciary Code</a>
+          <a href="#chapter-02" data-cursor-hover>
+            Origins
+          </a>
+          <a href="#chapter-03" data-cursor-hover>
+            Practice
+          </a>
+          <a href="#chapter-04" data-cursor-hover>
+            Vision
+          </a>
+          <a href="#contact" data-cursor-hover>
+            Inquiry
+          </a>
+          <a href="#" data-cursor-hover>
+            Disclosures
+          </a>
+          <a href="#" data-cursor-hover>
+            Privacy
+          </a>
         </div>
 
-        {/* Office line */}
-        <div className="font-mono text-[10px] tracking-[0.3em] text-white/30 mt-8 uppercase text-center z-2">
+        <div className="font-mono text-[10px] tracking-[0.35em] text-foreground/25 mt-10 uppercase text-center">
           New York · London · Zurich · Singapore
         </div>
       </div>
 
-      {/* ─── Bottom Copyright ────────────────────────────── */}
       <div ref={bottomRef} className="footer-bottom">
-        © 2026 APEX GROUP HOLDINGS. ALL EDITORIAL & REGULATORY RIGHTS RESERVED.
+        © 2026 Apex Group Holdings. All rights reserved.
       </div>
 
-      {/* ─── Scroll to Top ───────────────────────────────── */}
       <div
         ref={scrollTopRef}
         className="footer-scroll-top"
-        onClick={handleScrollTop}
+        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        data-cursor-hover
       >
-        ↑ Back to Top
+        ↑ Top
       </div>
     </footer>
   );
 }
-

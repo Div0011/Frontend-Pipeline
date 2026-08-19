@@ -64,3 +64,12 @@ coverage/
 *.secrets
 service-account*.json
 firebase-adminsdk*.json
+
+# Media and large generated directories
+[Ff]rame/
+[Ff]rames/
+*.mp4
+*.mov
+*.webm
+*.avi
+*.mkv

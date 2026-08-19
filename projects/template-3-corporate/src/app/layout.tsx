@@ -1,18 +1,20 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display, JetBrains_Mono } from "next/font/google";
+import { Cormorant_Garamond, Outfit, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
+const outfit = Outfit({
   subsets: ["latin"],
   variable: "--font-sans",
   display: "swap",
+  weight: ["300", "400", "500", "600", "700"],
 });
 
-const playfair = Playfair_Display({
+const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
   variable: "--font-serif",
   display: "swap",
   weight: ["400", "500", "600", "700"],
+  style: ["normal", "italic"],
 });
 
 const jetbrains = JetBrains_Mono({
@@ -23,8 +25,9 @@ const jetbrains = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Apex Group — Corporate",
-  description: "Institutional-grade corporate platform with heritage and precision.",
+  title: "Apex Group — Institutional Capital",
+  description:
+    "Architectural stewardship of capital across generational horizons.",
 };
 
 export default function RootLayout({
@@ -33,7 +36,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${playfair.variable} ${jetbrains.variable}`}>
+    <html
+      lang="en"
+      className={`${outfit.variable} ${cormorant.variable} ${jetbrains.variable}`}
+    >
       <body className="min-h-screen bg-background text-foreground antialiased">
         {children}
       </body>

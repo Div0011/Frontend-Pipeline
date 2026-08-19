@@ -1,33 +1,27 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-background: #0A0A0F;
-  --color-foreground: #E8E8EC;
-  --color-card: #0e0e14;
-  --color-card-foreground: #E8E8EC;
-  --color-primary: #00ffb3;
-  --color-primary-foreground: #0A0A0F;
-  --color-secondary: #141420;
-  --color-border: rgba(255, 255, 255, 0.08);
-  --font-sans: "Inter", system-ui, sans-serif;
-  --font-display: "Space Grotesk", var(--font-sans);
-  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --color-background: #07080c;
+  --color-foreground: #e8e6e1;
+  --color-card: #0c0e14;
+  --color-card-foreground: #e8e6e1;
+  --color-primary: #6ee7c5;
+  --color-primary-foreground: #07080c;
+  --color-secondary: #12151d;
+  --color-muted: #9a9a96;
+  --color-border: rgba(232, 230, 225, 0.08);
+  --color-accent-dim: rgba(110, 231, 197, 0.12);
+  --font-sans: var(--font-sans), "IBM Plex Sans", system-ui, sans-serif;
+  --font-display: var(--font-display), "Syne", var(--font-sans);
+  --font-mono: var(--font-mono), "IBM Plex Mono", ui-monospace, monospace;
   --radius: 0rem;
   --step-0: clamp(0.938rem, 0.84rem + 0.5vw, 1.125rem);
   --step-1: clamp(1.125rem, 0.98rem + 0.75vw, 1.5rem);
   --step-2: clamp(1.5rem, 1.2rem + 1.5vw, 2.25rem);
   --step-3: clamp(2.25rem, 1.5rem + 3.75vw, 4rem);
-  --display: clamp(3.5rem, 1.5rem + 10vw, 7rem);
+  --display: clamp(3.25rem, 1.2rem + 9vw, 6.5rem);
   --gutter: clamp(1.25rem, 0.8rem + 2.2vw, 3rem);
-  --measure: 72ch;
-}
-
-@font-face {
-  font-family: "Space Grotesk";
-  font-style: normal;
-  font-weight: 400 700;
-  font-display: swap;
-  src: local("Space Grotesk"), url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap");
+  --measure: 68ch;
 }
 
 html {
@@ -37,26 +31,60 @@ html {
 }
 
 body {
-  background-color: var(--background);
-  color: var(--foreground);
+  background-color: var(--color-background);
+  color: var(--color-foreground);
   overflow-x: hidden;
   font-family: var(--font-sans);
 }
 
 @layer base {
   * {
-    border-color: var(--border);
+    border-color: var(--color-border);
   }
 }
 
-@keyframes spin-slow {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+@keyframes grain-shift {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  10% {
+    transform: translate(-2%, -3%);
+  }
+  20% {
+    transform: translate(3%, 1%);
+  }
+  30% {
+    transform: translate(-1%, 4%);
+  }
+  40% {
+    transform: translate(2%, -2%);
+  }
+  50% {
+    transform: translate(-3%, 1%);
+  }
+  60% {
+    transform: translate(1%, -4%);
+  }
+  70% {
+    transform: translate(-2%, 2%);
+  }
+  80% {
+    transform: translate(4%, 1%);
+  }
+  90% {
+    transform: translate(-1%, -1%);
+  }
 }
 
-@keyframes spin-slow-reverse {
-  from { transform: rotate(360deg); }
-  to { transform: rotate(0deg); }
+@keyframes pulse-line {
+  0%,
+  100% {
+    opacity: 0.35;
+  }
+  50% {
+    opacity: 0.85;
+  }
 }
 
 @layer utilities {
@@ -67,39 +95,82 @@ body {
     padding-left: var(--gutter);
     padding-right: var(--gutter);
   }
-  .animate-spin-slow {
-    animation: spin-slow 60s linear infinite;
+  .font-display {
+    font-family: var(--font-display);
   }
-  .animate-spin-slow-reverse {
-    animation: spin-slow-reverse 45s linear infinite;
+  .font-mono {
+    font-family: var(--font-mono);
   }
 }
 
 .glass-panel {
-  background: rgba(14, 14, 20, 0.6);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(12, 14, 20, 0.55);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(232, 230, 225, 0.06);
 }
 
 .grid-pattern {
-  background-size: 40px 40px;
+  background-size: 48px 48px;
   background-image:
-    linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+    linear-gradient(to right, rgba(232, 230, 225, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(232, 230, 225, 0.02) 1px, transparent 1px);
+}
+
+.atmosphere {
+  background:
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(110, 231, 197, 0.07), transparent 55%),
+    radial-gradient(ellipse 60% 40% at 90% 60%, rgba(40, 55, 70, 0.35), transparent 50%),
+    radial-gradient(ellipse 50% 40% at 10% 80%, rgba(20, 25, 35, 0.6), transparent 50%);
+}
+
+.vignette {
+  background: radial-gradient(ellipse at center, transparent 40%, rgba(7, 8, 12, 0.75) 100%);
+}
+
+.film-grain {
+  pointer-events: none;
+  position: fixed;
+  inset: -50%;
+  width: 200%;
+  height: 200%;
+  z-index: 9999;
+  opacity: 0.045;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation: grain-shift 0.5s steps(2) infinite;
+}
+
+.scan-line {
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(110, 231, 197, 0.03) 50%,
+    transparent 100%
+  );
+  background-size: 100% 4px;
+  animation: pulse-line 4s ease-in-out infinite;
+}
+
+.edge-hairline {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(110, 231, 197, 0.35),
+    transparent
+  );
 }
 
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 5px;
 }
 ::-webkit-scrollbar-track {
-  background: #0A0A0F;
+  background: #07080c;
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.12);
-  border-radius: 3px;
+  background: rgba(232, 230, 225, 0.12);
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--primary);
+  background: rgba(110, 231, 197, 0.45);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -110,5 +181,10 @@ body {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+
+  .film-grain {
+    animation: none;
+    opacity: 0.03;
   }
 }

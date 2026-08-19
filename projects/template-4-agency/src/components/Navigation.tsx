@@ -1,125 +1,132 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 
+const NAV_LINKS = [
+  { label: "Work", index: "01", progress: 0.75 },
+  { label: "Services", index: "02", progress: 0.5 },
+  { label: "About", index: "03", progress: 0.25 },
+  { label: "Contact", index: "04", progress: 1 },
+];
+
 export default function Navigation() {
-  const [timeStr, setTimeStr] = useState("");
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    const updateTime = () => {
-      const d = new Date();
-      setTimeStr(d.toLocaleTimeString("en-GB", { hour12: false, timeZone: "UTC" }) + " UTC");
+    document.body.style.overflow = menuOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
     };
-    updateTime();
-    const interval = setInterval(updateTime, 1000);
-    return () => clearInterval(interval);
-  }, []);
+  }, [menuOpen]);
 
-  const navLinks = [
-    { label: "01 // WORK", href: "#work" },
-    { label: "02 // SERVICES", href: "#services" },
-    { label: "03 // ABOUT", href: "#about" },
-    { label: "04 // CONTACT", href: "#contact" },
-  ];
+  const scrollToPanel = (progress: number) => {
+    const total = document.documentElement.scrollHeight - window.innerHeight;
+    window.scrollTo({ top: total * progress, behavior: "smooth" });
+    setMenuOpen(false);
+  };
 
   return (
     <>
-      <header className="fixed top-0 left-0 z-50 flex w-full items-center justify-between px-6 py-6 md:px-12">
-        {/* Brand Logo */}
+      <header className="fixed top-0 left-0 z-50 flex w-full items-center justify-between px-[var(--gutter)] py-6 md:py-8">
         <a
           href="#"
-          className="group flex items-center gap-3 font-mono text-sm font-black tracking-widest text-white uppercase"
+          onClick={(e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }}
+          className="group flex items-baseline gap-2"
           data-cursor="HOME"
         >
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#d4ff00] text-black font-black transition-transform duration-500 group-hover:rotate-180">
-            V
-          </div>
-          <span className="text-lg tracking-tight">VOID STUDIO</span>
+          <span className="font-display text-lg font-extrabold tracking-tight text-white uppercase md:text-xl">
+            VOID
+          </span>
+          <span className="font-mono text-[10px] tracking-[0.25em] text-[#d4ff00] uppercase opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+            Studio
+          </span>
         </a>
 
-        {/* Center Live Clock & Status */}
-        <div className="hidden items-center gap-3 rounded-full border border-white/10 bg-black/40 px-4 py-1.5 backdrop-blur-md md:flex">
-          <div className="h-2 w-2 rounded-full bg-[#d4ff00] animate-ping" />
-          <span className="font-mono text-xs text-white/70">{timeStr}</span>
-          <span className="font-mono text-[10px] text-[#d4ff00]">● AVAILABLE FOR Q3/Q4</span>
-        </div>
-
-        {/* Menu Toggle Trigger */}
         <button
-          onClick={() => setMenuOpen(!menuOpen)}
-          className="group flex items-center gap-3 rounded-full border border-white/15 bg-black/60 px-5 py-2.5 backdrop-blur-md transition-all duration-300 hover:border-[#d4ff00]/60 hover:bg-[#d4ff00]/10"
+          type="button"
+          onClick={() => setMenuOpen((open) => !open)}
+          className="group relative flex items-center gap-4 px-1 py-2"
           data-cursor="MENU"
+          aria-expanded={menuOpen}
+          aria-label={menuOpen ? "Close menu" : "Open menu"}
         >
-          <span className="font-mono text-xs font-bold tracking-widest text-white uppercase group-hover:text-[#d4ff00]">
-            {menuOpen ? "CLOSE" : "MENU"}
+          <span className="font-mono text-[11px] font-medium tracking-[0.28em] text-white/80 uppercase transition-colors group-hover:text-[#d4ff00]">
+            {menuOpen ? "Close" : "Menu"}
           </span>
-          <div className="flex flex-col gap-1">
+          <span className="relative flex h-4 w-6 flex-col justify-center gap-[5px]">
             <span
-              className={`h-0.5 w-4 bg-[#d4ff00] transition-transform ${
-                menuOpen ? "rotate-45 translate-y-1.5" : ""
+              className={`h-px w-full bg-white transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+                menuOpen ? "translate-y-[3px] rotate-45 bg-[#d4ff00]" : ""
               }`}
             />
             <span
-              className={`h-0.5 w-4 bg-white transition-opacity ${
-                menuOpen ? "opacity-0" : ""
+              className={`h-px w-full bg-white transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+                menuOpen ? "-translate-y-[3px] -rotate-45 bg-[#d4ff00]" : ""
               }`}
             />
-            <span
-              className={`h-0.5 w-4 bg-[#d4ff00] transition-transform ${
-                menuOpen ? "-rotate-45 -translate-y-1.5" : ""
-              }`}
-            />
-          </div>
+          </span>
         </button>
       </header>
 
-      {/* Full-Screen Menu Overlay */}
       <AnimatePresence>
         {menuOpen && (
           <motion.div
-            initial={{ opacity: 0, clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)" }}
-            animate={{ opacity: 1, clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}
-            exit={{ opacity: 0, clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)" }}
-            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="fixed inset-0 z-40 flex flex-col justify-between bg-[#060609]/95 px-8 pt-32 pb-16 backdrop-blur-2xl md:px-24"
+            initial={{ clipPath: "inset(0 0 100% 0)" }}
+            animate={{ clipPath: "inset(0 0 0% 0)" }}
+            exit={{ clipPath: "inset(0 0 100% 0)" }}
+            transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
+            className="fixed inset-0 z-40 flex flex-col justify-between bg-[#060609] px-[var(--gutter)] pt-28 pb-12 md:pt-36 md:pb-16"
           >
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-              <nav className="flex flex-col gap-6">
-                {navLinks.map((item, i) => (
-                  <motion.a
-                    key={item.href}
-                    href={item.href}
-                    onClick={() => setMenuOpen(false)}
-                    initial={{ opacity: 0, x: -40 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.1 * i + 0.2, duration: 0.5 }}
-                    className="font-mono text-3xl font-black uppercase text-white tracking-tight transition-all duration-300 hover:translate-x-4 hover:text-[#d4ff00] md:text-6xl"
-                    data-cursor="GO"
-                  >
+            <div className="pointer-events-none absolute inset-0 opacity-40">
+              <div className="absolute top-1/3 left-1/2 h-[50vh] w-[50vw] -translate-x-1/2 rounded-full bg-[#d4ff00]/8 blur-[120px]" />
+            </div>
+
+            <nav className="relative z-10 flex flex-col gap-2 md:gap-3">
+              {NAV_LINKS.map((item, i) => (
+                <motion.button
+                  key={item.label}
+                  type="button"
+                  onClick={() => scrollToPanel(item.progress)}
+                  initial={{ opacity: 0, y: 40 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.12 + i * 0.08, duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
+                  className="group flex items-baseline gap-4 text-left md:gap-8"
+                  data-cursor="GO"
+                >
+                  <span className="font-mono text-xs text-[#d4ff00]/70">{item.index}</span>
+                  <span className="font-display text-[clamp(2.5rem,8vw,6.5rem)] font-extrabold leading-[0.95] tracking-[-0.04em] text-white uppercase transition-colors duration-300 group-hover:text-[#d4ff00]">
                     {item.label}
-                  </motion.a>
-                ))}
-              </nav>
+                  </span>
+                </motion.button>
+              ))}
+            </nav>
 
-              <div className="flex flex-col justify-end gap-6 border-t border-white/10 pt-8 md:border-t-0 md:border-l md:pt-0 md:pl-16">
-                <span className="font-mono text-xs tracking-widest text-[#d4ff00] uppercase">
-                  DIRECTORY / INQUIRIES
-                </span>
-                <p className="font-mono text-xl font-light text-white/80">
-                  hello@voidstudio.agency
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.45, duration: 0.6 }}
+              className="relative z-10 flex flex-col gap-6 border-t border-white/10 pt-8 md:flex-row md:items-end md:justify-between"
+            >
+              <div>
+                <p className="font-mono text-[10px] tracking-[0.3em] text-[#d4ff00] uppercase">
+                  Inquiries
                 </p>
-                <div className="font-mono text-xs text-white/40">
-                  LONDON // TOKYO // NEW YORK
-                </div>
+                <a
+                  href="mailto:hello@voidstudio.agency"
+                  className="mt-2 block font-display text-xl font-medium text-white transition-colors hover:text-[#d4ff00] md:text-2xl"
+                  data-cursor="EMAIL"
+                >
+                  hello@voidstudio.agency
+                </a>
               </div>
-            </div>
-
-            <div className="flex items-center justify-between border-t border-white/10 pt-8 font-mono text-xs text-white/40">
-              <span>© 2026 VOID CREATIVE AGENCY</span>
-              <span>DIGITAL CRAFT & MOTION DIRECTORS</span>
-            </div>
+              <p className="font-mono text-[10px] tracking-[0.25em] text-white/35 uppercase">
+                London · Tokyo · New York
+              </p>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>

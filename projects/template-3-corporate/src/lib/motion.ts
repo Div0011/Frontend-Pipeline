@@ -5,12 +5,12 @@ gsap.registerPlugin(ScrollTrigger);
 
 // ─── Motion Tokens ──────────────────────────────────────────
 export const tokens = {
-  reveal: { duration: 1.2, ease: "power3.out", y: 30 },
+  reveal: { duration: 1.25, ease: "power3.out", y: 36 },
   scrub: { duration: 1.0, ease: "none" },
-  hero: { duration: 1.8, ease: "expo.out" },
-  morph: { duration: 1.2, ease: "power4.inOut" },
-  stagger: { char: 0.025, word: 0.08, grid: 0.1, section: 0.15 },
-  spring: { stiffness: 400, damping: 10 },
+  hero: { duration: 1.9, ease: "expo.out" },
+  morph: { duration: 1.35, ease: "power4.inOut" },
+  stagger: { char: 0.028, word: 0.09, grid: 0.12, section: 0.16 },
+  spring: { stiffness: 380, damping: 12 },
   frame: { total: 300, quality: 80 },
 };
 

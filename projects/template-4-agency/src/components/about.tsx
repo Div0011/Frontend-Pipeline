@@ -1,16 +1,17 @@
 "use client";
 
-import { useRef, useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { EASE } from "@/lib/motion";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const STATS = [
-  { value: "14+", label: "AWWWARDS & FWA HONORS" },
-  { value: "60 FPS", label: "WEBGL & CANVAS PERFORMANCE" },
-  { value: "$500M+", label: "CLIENT CAPITAL RAISED" },
-  { value: "100%", label: "BESPOKE ENGINEERING" },
+  { value: "14+", label: "Awwwards & FWA" },
+  { value: "60", label: "FPS WebGL targets" },
+  { value: "$500M+", label: "Client capital raised" },
+  { value: "100%", label: "Bespoke builds" },
 ];
 
 export default function About() {
@@ -20,36 +21,19 @@ export default function About() {
     if (!sectionRef.current) return;
 
     const ctx = gsap.context(() => {
-      const main = gsap.utils.toArray<HTMLElement>(".about-main > *");
-      gsap.from(main, {
+      gsap.from(".about-reveal", {
         opacity: 0,
-        yPercent: 14,
-        duration: 1.2,
-        ease: "expo.out",
-        stagger: 0.08,
+        y: 40,
+        duration: 1.15,
+        ease: EASE.cinematic,
+        stagger: 0.1,
         scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top 70%",
+          trigger: document.body,
+          start: () => `${ScrollTrigger.maxScroll(window) * 0.12}px`,
           once: true,
         },
-        clearProps: "transform",
       });
-
-      const stats = gsap.utils.toArray<HTMLElement>(".about-stat");
-      gsap.from(stats, {
-        opacity: 0,
-        yPercent: 14,
-        duration: 1.2,
-        ease: "expo.out",
-        stagger: 0.06,
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top 60%",
-          once: true,
-        },
-        clearProps: "transform",
-      });
-    });
+    }, sectionRef);
 
     return () => ctx.revert();
   }, []);
@@ -57,66 +41,55 @@ export default function About() {
   return (
     <div
       ref={sectionRef}
-      className="relative h-full w-full flex flex-col justify-center px-12 md:px-20"
+      id="about"
+      className="relative flex h-full w-full flex-col justify-center px-[var(--gutter)]"
     >
-      <div className="about-main max-w-6xl w-full">
-        <span className="font-mono text-xs font-bold tracking-[0.3em] text-[#d4ff00] uppercase">
-          MANIFESTO // WHO WE ARE
-        </span>
+      <div className="w-full max-w-6xl">
+        <p className="about-reveal stagger-item font-mono text-[11px] font-medium tracking-[0.35em] text-[#d4ff00] uppercase">
+          Manifesto
+        </p>
 
-        <div className="mt-8 grid grid-cols-1 gap-12 lg:grid-cols-12 items-center">
-          <div className="lg:col-span-7 space-y-6">
-            <h2 className="font-mono text-3xl font-black leading-tight uppercase text-white md:text-5xl lg:text-6xl">
-              WE REJECT TEMPLATES, BORING ANIMATION & STANDARD SAAS PALETTES.
+        <div className="mt-8 grid grid-cols-1 items-end gap-12 lg:grid-cols-12 lg:gap-16">
+          <div className="lg:col-span-8">
+            <h2 className="about-reveal stagger-item font-display text-[clamp(2rem,4.5vw,4.25rem)] font-extrabold leading-[1.02] tracking-[-0.035em] text-white">
+              We reject templates, dull motion, and default SaaS palettes.
             </h2>
-            <p className="font-mono text-sm font-light text-white/70 md:text-base leading-relaxed">
-              VOID is an elite digital craft & motion studio. We build websites for brands that refuse to look like everyone else. By pairing high-fps canvas scrollytelling with kinetic typography and bespoke color systems, we turn passive scrolling into an unforgettable cinematic journey.
+            <p className="about-reveal stagger-item mt-6 max-w-xl text-[15px] font-light leading-relaxed text-white/65 md:text-base">
+              VOID is a digital craft & motion studio. We pair high-fps scrollytelling with kinetic
+              typography and bespoke color systems — turning the scroll into a cinematic journey.
             </p>
+            <blockquote className="about-reveal stagger-item mt-10 max-w-md border-l border-[#d4ff00]/60 pl-5 font-display text-lg font-medium leading-snug tracking-tight text-white/90 md:text-xl">
+              Motion is direction, not decoration. Every pixel paces the story.
+            </blockquote>
           </div>
 
-          <div className="lg:col-span-5 flex flex-col gap-6">
-            <div className="relative aspect-[16/10] w-full rounded-2xl border border-[#d4ff00]/20 overflow-hidden shadow-2xl bg-black">
+          <div className="about-reveal stagger-item relative lg:col-span-4">
+            <div className="relative aspect-[4/5] w-full max-w-sm overflow-hidden lg:ml-auto">
               <video
                 src="/videos/hero.mp4"
                 autoPlay
                 loop
                 muted
                 playsInline
-                className="w-full h-full object-cover opacity-80 filter saturate-75 contrast-125"
+                className="h-full w-full object-cover opacity-90 saturate-[0.85] contrast-125"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#060609] to-transparent pointer-events-none" />
-              <div className="absolute bottom-4 left-4 right-4">
-                <span className="font-mono text-[9px] text-[#d4ff00] uppercase tracking-wider block mb-0.5">
-                  BG AMBIENCE // 35MM FOG
-                </span>
-                <span className="font-mono text-[11px] font-bold text-white uppercase">
-                  ATMOSPHERIC CINEMA SYSTEM
-                </span>
-              </div>
-            </div>
-
-            <div className="rounded-2xl border border-white/5 bg-white/[0.01] p-6 backdrop-blur-xl">
-              <div className="font-mono text-xs text-[#d4ff00] uppercase mb-2">FOUNDING PHILOSOPHY</div>
-              <p className="font-mono text-xs text-white/80 leading-relaxed">
-                "Motion is direction, not decoration. Every pixel must pace the story and reward user attention."
+              <div className="absolute inset-0 bg-gradient-to-t from-[#060609] via-transparent to-transparent" />
+              <p className="absolute bottom-5 left-5 font-mono text-[10px] tracking-[0.28em] text-[#d4ff00] uppercase">
+                Atmospheric cinema
               </p>
             </div>
           </div>
         </div>
 
-        <div className="mt-12 grid grid-cols-2 gap-4 border-t border-white/10 pt-8 md:grid-cols-4">
-          {STATS.map((st, i) => (
-            <div
-              key={st.label}
-                            className="about-stat p-2"
-              style={{ transitionDelay: `${i * 0.05}s` }}
-            >
-              <div className="font-mono text-3xl font-black text-[#d4ff00] md:text-5xl">
-                {st.value}
-              </div>
-              <div className="mt-1 font-mono text-[10px] font-bold uppercase tracking-wider text-white/50">
-                {st.label}
-              </div>
+        <div className="mt-14 grid grid-cols-2 gap-x-6 gap-y-8 border-t border-white/10 pt-10 md:grid-cols-4">
+          {STATS.map((stat) => (
+            <div key={stat.label} className="about-reveal stagger-item">
+              <p className="font-display text-3xl font-extrabold tracking-tight text-[#d4ff00] md:text-4xl lg:text-5xl">
+                {stat.value}
+              </p>
+              <p className="mt-2 font-mono text-[10px] tracking-[0.2em] text-white/45 uppercase">
+                {stat.label}
+              </p>
             </div>
           ))}
         </div>

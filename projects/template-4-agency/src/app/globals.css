@@ -2,25 +2,28 @@
 
 @theme inline {
   --color-background: #060609;
-  --color-foreground: #f5f5f5;
+  --color-foreground: #f2f2f0;
   --color-primary: #d4ff00;
-  --color-primary-foreground: #000000;
-  --color-secondary: #1a1a24;
-  --color-secondary-foreground: #e5e5e5;
-  --color-muted: #262636;
-  --color-muted-foreground: #a3a3a3;
+  --color-primary-foreground: #060609;
+  --color-secondary: #12121a;
+  --color-secondary-foreground: #e8e8e4;
+  --color-muted: #1c1c28;
+  --color-muted-foreground: #8a8a96;
   --color-accent: #d4ff00;
-  --color-accent-foreground: #000000;
-  --color-border: #262636;
-  --font-sans: var(--font-sans, system-ui, -apple-system, sans-serif);
-  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+  --color-accent-foreground: #060609;
+  --color-border: rgba(255, 255, 255, 0.08);
+  --font-sans: var(--font-sans), "DM Sans", ui-sans-serif, sans-serif;
+  --font-display: var(--font-display), Syne, ui-sans-serif, sans-serif;
+  --font-mono: var(--font-mono), "JetBrains Mono", ui-monospace, monospace;
   --radius: 0rem;
   --step-0: clamp(0.938rem, 0.84rem + 0.5vw, 1.125rem);
   --step-1: clamp(1.125rem, 0.98rem + 0.75vw, 1.5rem);
   --step-2: clamp(1.5rem, 1.2rem + 1.5vw, 2.25rem);
   --step-3: clamp(2.25rem, 1.5rem + 3.75vw, 4rem);
-  --display: clamp(3.5rem, 1.5rem + 10vw, 7rem);
-  --gutter: clamp(1.25rem, 0.8rem + 2.2vw, 3rem);
+  --display: clamp(3.5rem, 1.2rem + 12vw, 9rem);
+  --gutter: clamp(1.25rem, 0.8rem + 2.2vw, 4rem);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-cinematic: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 html {
@@ -30,44 +33,127 @@ html {
 }
 
 body {
-  background-color: var(--background);
-  color: var(--foreground);
+  background-color: #060609;
+  color: var(--color-foreground);
   overflow-x: hidden;
 }
 
 @layer base {
   * {
-    border-color: var(--border);
+    border-color: var(--color-border);
   }
 }
 
 @layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+  }
+
   .text-balance {
     text-wrap: balance;
   }
+
   .gutter-padding {
     padding-left: var(--gutter);
     padding-right: var(--gutter);
   }
+
+  .text-display {
+    font-family: var(--font-display);
+    font-size: var(--display);
+    line-height: 0.9;
+    letter-spacing: -0.04em;
+    font-weight: 800;
+  }
+
+  .film-grain::after {
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    inset: 0;
+    opacity: 0.045;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size: 180px 180px;
+  }
+
+  .cinematic-vignette {
+    background:
+      radial-gradient(ellipse 80% 70% at 50% 45%, transparent 20%, rgba(6, 6, 9, 0.55) 70%, rgba(6, 6, 9, 0.92) 100%),
+      linear-gradient(90deg, rgba(6, 6, 9, 0.75) 0%, transparent 35%, transparent 65%, rgba(6, 6, 9, 0.75) 100%),
+      linear-gradient(180deg, rgba(6, 6, 9, 0.45) 0%, transparent 30%, transparent 55%, rgba(6, 6, 9, 0.85) 100%);
+  }
 }
 
 @media (pointer: fine) {
-  *, *:hover, *:active, *:focus, a, button, select, input, label {
+  *,
+  *:hover,
+  *:active,
+  *:focus,
+  a,
+  button,
+  select,
+  input,
+  label {
     cursor: none !important;
   }
 }
 
 @keyframes marquee {
-  0% { transform: translateX(0%); }
-  100% { transform: translateX(-33.333%); }
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-33.333%);
+  }
+}
+
+@keyframes pulse-line {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: scaleX(0.85);
+  }
+  50% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+
+@keyframes reel-bars {
+  0%,
+  100% {
+    transform: scaleY(0.35);
+  }
+  50% {
+    transform: scaleY(1);
+  }
 }
 
 .animate-marquee {
-  animation: marquee 25s linear infinite;
+  animation: marquee 32s linear infinite;
 }
 
 .animate-marquee:hover {
   animation-play-state: paused;
+}
+
+.animate-pulse-line {
+  animation: pulse-line 2.4s var(--ease-cinematic) infinite;
+  transform-origin: left center;
+}
+
+.reel-bar {
+  animation: reel-bars 0.85s ease-in-out infinite;
+  transform-origin: bottom;
+}
+
+.reel-bar:nth-child(2) {
+  animation-delay: 0.12s;
+}
+
+.reel-bar:nth-child(3) {
+  animation-delay: 0.24s;
 }
 
 @media (prefers-reduced-motion: reduce) {

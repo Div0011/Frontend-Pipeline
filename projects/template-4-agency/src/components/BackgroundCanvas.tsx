@@ -11,97 +11,76 @@ export default function BackgroundCanvas() {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    let animationFrameId: number;
+    let animationFrameId = 0;
     let width = (canvas.width = window.innerWidth);
     let height = (canvas.height = window.innerHeight);
+    let time = 0;
 
     const handleResize = () => {
-      if (!canvas) return;
       width = canvas.width = window.innerWidth;
       height = canvas.height = window.innerHeight;
     };
     window.addEventListener("resize", handleResize);
 
-    // Mouse interactive target
-    let mouse = { x: width / 2, y: height / 2, radius: 180 };
-
+    const mouse = { x: width / 2, y: height / 2, tx: width / 2, ty: height / 2 };
     const handleMouseMove = (e: MouseEvent) => {
-      mouse.x = e.clientX;
-      mouse.y = e.clientY;
+      mouse.tx = e.clientX;
+      mouse.ty = e.clientY;
     };
     window.addEventListener("mousemove", handleMouseMove);
 
-    // Create particle network
-    const numParticles = Math.min(70, Math.floor((width * height) / 18000));
-    const particles = Array.from({ length: numParticles }, () => ({
+    const orbs = Array.from({ length: 5 }, (_, i) => ({
       x: Math.random() * width,
       y: Math.random() * height,
-      vx: (Math.random() - 0.5) * 0.4,
-      vy: (Math.random() - 0.5) * 0.4,
-      radius: Math.random() * 1.8 + 0.8,
-      alpha: Math.random() * 0.5 + 0.2,
+      r: 120 + Math.random() * 180,
+      speed: 0.15 + Math.random() * 0.2,
+      phase: Math.random() * Math.PI * 2,
+      accent: i % 2 === 0,
     }));
 
     const render = () => {
+      time += 0.004;
+      mouse.x += (mouse.tx - mouse.x) * 0.04;
+      mouse.y += (mouse.ty - mouse.y) * 0.04;
+
       ctx.clearRect(0, 0, width, height);
 
-      // Draw faint ambient background grid lines
-      ctx.strokeStyle = "rgba(212, 255, 0, 0.02)";
-      ctx.lineWidth = 1;
-      const gridSize = 80;
-      for (let x = 0; x < width; x += gridSize) {
-        ctx.beginPath();
-        ctx.moveTo(x, 0);
-        ctx.lineTo(x, height);
-        ctx.stroke();
-      }
-      for (let y = 0; y < height; y += gridSize) {
-        ctx.beginPath();
-        ctx.moveTo(0, y);
-        ctx.lineTo(width, y);
-        ctx.stroke();
-      }
+      // Soft drifting lime/white atmospheres — no particle-network dashboard
+      orbs.forEach((orb, i) => {
+        const ox =
+          orb.x +
+          Math.sin(time * orb.speed + orb.phase) * 80 +
+          (mouse.x - width / 2) * 0.015 * (i + 1);
+        const oy =
+          orb.y +
+          Math.cos(time * orb.speed * 0.8 + orb.phase) * 60 +
+          (mouse.y - height / 2) * 0.012 * (i + 1);
 
-      // Update and draw particles
-      particles.forEach((p, i) => {
-        p.x += p.vx;
-        p.y += p.vy;
-
-        if (p.x < 0 || p.x > width) p.vx *= -1;
-        if (p.y < 0 || p.y > height) p.vy *= -1;
-
-        // Mouse displacement
-        const dx = mouse.x - p.x;
-        const dy = mouse.y - p.y;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < mouse.radius) {
-          const angle = Math.atan2(dy, dx);
-          const force = (mouse.radius - dist) / mouse.radius;
-          p.x -= Math.cos(angle) * force * 2;
-          p.y -= Math.sin(angle) * force * 2;
+        const gradient = ctx.createRadialGradient(ox, oy, 0, ox, oy, orb.r);
+        if (orb.accent) {
+          gradient.addColorStop(0, "rgba(212, 255, 0, 0.045)");
+          gradient.addColorStop(0.45, "rgba(212, 255, 0, 0.015)");
+          gradient.addColorStop(1, "rgba(212, 255, 0, 0)");
+        } else {
+          gradient.addColorStop(0, "rgba(255, 255, 255, 0.03)");
+          gradient.addColorStop(0.5, "rgba(255, 255, 255, 0.01)");
+          gradient.addColorStop(1, "rgba(255, 255, 255, 0)");
         }
 
+        ctx.fillStyle = gradient;
         ctx.beginPath();
-        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(212, 255, 0, ${p.alpha})`;
+        ctx.arc(ox, oy, orb.r, 0, Math.PI * 2);
         ctx.fill();
-
-        // Connect nearby particles
-        for (let j = i + 1; j < particles.length; j++) {
-          const p2 = particles[j];
-          const pdx = p.x - p2.x;
-          const pdy = p.y - p2.y;
-          const pdist = Math.sqrt(pdx * pdx + pdy * pdy);
-
-          if (pdist < 130) {
-            ctx.beginPath();
-            ctx.moveTo(p.x, p.y);
-            ctx.lineTo(p2.x, p2.y);
-            ctx.strokeStyle = `rgba(212, 255, 0, ${0.12 * (1 - pdist / 130)})`;
-            ctx.stroke();
-          }
-        }
       });
+
+      // Subtle mouse glow
+      const glow = ctx.createRadialGradient(mouse.x, mouse.y, 0, mouse.x, mouse.y, 220);
+      glow.addColorStop(0, "rgba(212, 255, 0, 0.04)");
+      glow.addColorStop(1, "rgba(212, 255, 0, 0)");
+      ctx.fillStyle = glow;
+      ctx.beginPath();
+      ctx.arc(mouse.x, mouse.y, 220, 0, Math.PI * 2);
+      ctx.fill();
 
       animationFrameId = requestAnimationFrame(render);
     };
@@ -118,7 +97,8 @@ export default function BackgroundCanvas() {
   return (
     <canvas
       ref={canvasRef}
-      className="pointer-events-none fixed inset-0 z-0 h-full w-full opacity-60"
+      className="pointer-events-none fixed inset-0 z-[1] h-full w-full opacity-80"
+      aria-hidden
     />
   );
 }

@@ -3,13 +3,8 @@
 import { useEffect, useRef, useCallback } from "react";
 
 /**
- * Cursor-Reveal Fog Background
- *
- * Renders a high-end dark marble/abstract texture onto a canvas,
- * obscured by a thick fog layer. As the cursor moves, the fog
- * clears in a radial pattern, elegantly revealing the texture beneath.
- *
- * Uses Canvas2D for 60fps performance with minimal overhead.
+ * Atmospheric slate fog reveal — warm metal undertones.
+ * Cursor clears fog to reveal architectural texture beneath.
  */
 
 const TEXTURE_URL =
@@ -25,8 +20,8 @@ export default function BackgroundScene() {
   const dimsRef = useRef({ w: 0, h: 0 });
   const fogCanvasRef = useRef<HTMLCanvasElement | null>(null);
   const imageLoaded = useRef(false);
+  const timeRef = useRef(0);
 
-  // Generate procedural fog/noise texture (cached)
   const generateFogTexture = useCallback((w: number, h: number) => {
     const fogCanvas = document.createElement("canvas");
     fogCanvas.width = w;
@@ -38,21 +33,22 @@ export default function BackgroundScene() {
     const data = imageData.data;
 
     for (let i = 0; i < data.length; i += 4) {
-      // Layered noise for dense fog
       const x = (i / 4) % w;
-      const y = Math.floor((i / 4) / w);
+      const y = Math.floor(i / 4 / w);
 
-      const n1 = Math.sin(x * 0.01) * Math.cos(y * 0.01) * 0.5 + 0.5;
-      const n2 = Math.sin(x * 0.025 + 1.3) * Math.cos(y * 0.025 + 0.7) * 0.5 + 0.5;
-      const n3 = Math.sin(x * 0.05 + 2.1) * Math.cos(y * 0.05 + 1.4) * 0.5 + 0.5;
+      const n1 = Math.sin(x * 0.008) * Math.cos(y * 0.009) * 0.5 + 0.5;
+      const n2 =
+        Math.sin(x * 0.022 + 1.1) * Math.cos(y * 0.02 + 0.6) * 0.5 + 0.5;
+      const n3 =
+        Math.sin(x * 0.045 + 2.0) * Math.cos(y * 0.048 + 1.3) * 0.5 + 0.5;
 
-      const noise = (n1 * 0.5 + n2 * 0.3 + n3 * 0.2);
-      // Dense fog = high alpha (200-240 range)
-      const alpha = Math.floor(180 + noise * 60);
+      const noise = n1 * 0.5 + n2 * 0.3 + n3 * 0.2;
+      const alpha = Math.floor(175 + noise * 55);
 
-      data[i] = 10;     // R
-      data[i + 1] = 10; // G
-      data[i + 2] = 12; // B
+      // Deep slate with warm metal tint
+      data[i] = 10 + Math.floor(noise * 6);
+      data[i + 1] = 11 + Math.floor(noise * 4);
+      data[i + 2] = 14;
       data[i + 3] = alpha;
     }
 
@@ -64,11 +60,13 @@ export default function BackgroundScene() {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    const ctx = canvas.getContext("2d", { alpha: true, willReadFrequently: false });
+    const ctx = canvas.getContext("2d", {
+      alpha: true,
+      willReadFrequently: false,
+    });
     if (!ctx) return;
     ctxRef.current = ctx;
 
-    // Load the texture image
     const img = new Image();
     img.crossOrigin = "anonymous";
     img.src = TEXTURE_URL;
@@ -91,14 +89,15 @@ export default function BackgroundScene() {
       canvas.style.height = `${h}px`;
 
       dimsRef.current = { w: w * dpr, h: h * dpr };
+      fogCanvasRef.current = generateFogTexture(
+        w * dpr,
+        h * dpr
+      ) as HTMLCanvasElement;
 
-      // Generate fog at display resolution
-      fogCanvasRef.current = generateFogTexture(w * dpr, h * dpr) as HTMLCanvasElement;
-
-      // Scale mouse coords
       mouseRef.current = { x: w / 2, y: h / 2 };
       smoothMouseRef.current = { x: w / 2, y: h / 2 };
 
+      ctx.setTransform(1, 0, 0, 1, 0, 0);
       ctx.scale(dpr, dpr);
     };
 
@@ -119,68 +118,86 @@ export default function BackgroundScene() {
     window.addEventListener("mousemove", handleMouseMove);
     window.addEventListener("touchmove", handleTouchMove, { passive: true });
 
-    // Animation loop
     const animate = () => {
       if (!ctx || !canvas) return;
 
-      const { w, h } = dimsRef.current;
       const sw = window.innerWidth;
       const sh = window.innerHeight;
+      timeRef.current += 0.004;
 
-      // Smooth mouse with lerp for elegant easing
-      smoothMouseRef.current.x += (mouseRef.current.x - smoothMouseRef.current.x) * 0.08;
-      smoothMouseRef.current.y += (mouseRef.current.y - smoothMouseRef.current.y) * 0.08;
+      smoothMouseRef.current.x +=
+        (mouseRef.current.x - smoothMouseRef.current.x) * 0.07;
+      smoothMouseRef.current.y +=
+        (mouseRef.current.y - smoothMouseRef.current.y) * 0.07;
 
       ctx.clearRect(0, 0, sw, sh);
 
-      // 1. Draw the base texture image (dark marble)
       if (bgImageRef.current && imageLoaded.current) {
-        const img = bgImageRef.current;
-        const imgAspect = img.width / img.height;
+        const bg = bgImageRef.current;
+        const imgAspect = bg.width / bg.height;
         const canvasAspect = sw / sh;
 
-        let sx = 0, sy = 0, sWidth = img.width, sHeight = img.height;
+        let sx = 0;
+        let sy = 0;
+        let sWidth = bg.width;
+        let sHeight = bg.height;
         if (imgAspect > canvasAspect) {
-          sWidth = img.height * canvasAspect;
-          sx = (img.width - sWidth) / 2;
+          sWidth = bg.height * canvasAspect;
+          sx = (bg.width - sWidth) / 2;
         } else {
-          sHeight = img.width / canvasAspect;
-          sy = (img.height - sHeight) / 2;
+          sHeight = bg.width / canvasAspect;
+          sy = (bg.height - sHeight) / 2;
         }
 
-        ctx.drawImage(img, sx, sy, sWidth, sHeight, 0, 0, sw, sh);
+        ctx.drawImage(bg, sx, sy, sWidth, sHeight, 0, 0, sw, sh);
+        ctx.fillStyle = "rgba(8, 10, 13, 0.62)";
+        ctx.fillRect(0, 0, sw, sh);
 
-        // Darken and add contrast for mood
-        ctx.fillStyle = "rgba(5, 5, 8, 0.55)";
+        // Warm metal ambient wash
+        const warm = ctx.createRadialGradient(
+          sw * 0.35,
+          sh * 0.3,
+          0,
+          sw * 0.35,
+          sh * 0.3,
+          sw * 0.55
+        );
+        warm.addColorStop(0, "rgba(196, 165, 116, 0.06)");
+        warm.addColorStop(1, "rgba(0,0,0,0)");
+        ctx.fillStyle = warm;
         ctx.fillRect(0, 0, sw, sh);
       } else {
-        // Fallback gradient
-        const grad = ctx.createRadialGradient(sw / 2, sh / 2, 0, sw / 2, sh / 2, Math.max(sw, sh) * 0.7);
-        grad.addColorStop(0, "#1a1a2e");
-        grad.addColorStop(0.5, "#0f0f1a");
-        grad.addColorStop(1, "#050508");
+        const grad = ctx.createRadialGradient(
+          sw / 2,
+          sh / 2,
+          0,
+          sw / 2,
+          sh / 2,
+          Math.max(sw, sh) * 0.7
+        );
+        grad.addColorStop(0, "#141820");
+        grad.addColorStop(0.55, "#0a0e14");
+        grad.addColorStop(1, "#06080b");
         ctx.fillStyle = grad;
         ctx.fillRect(0, 0, sw, sh);
       }
 
-      // 2. Draw the fog layer, then erase where cursor reveals
       if (fogCanvasRef.current) {
         ctx.drawImage(fogCanvasRef.current, 0, 0, sw, sh);
 
-        // Erase fog in a radial gradient around cursor
         const mx = smoothMouseRef.current.x;
         const my = smoothMouseRef.current.y;
 
-        // Only erase if cursor is within canvas (not initial offscreen)
         if (mx > 0 && my > 0 && mx < sw && my < sh) {
           ctx.save();
           ctx.globalCompositeOperation = "destination-out";
 
-          const radius = Math.min(sw, sh) * 0.25;
+          const pulse = 1 + Math.sin(timeRef.current) * 0.04;
+          const radius = Math.min(sw, sh) * 0.28 * pulse;
           const gradient = ctx.createRadialGradient(mx, my, 0, mx, my, radius);
           gradient.addColorStop(0, "rgba(0,0,0,1)");
-          gradient.addColorStop(0.4, "rgba(0,0,0,0.85)");
-          gradient.addColorStop(0.7, "rgba(0,0,0,0.4)");
+          gradient.addColorStop(0.35, "rgba(0,0,0,0.8)");
+          gradient.addColorStop(0.7, "rgba(0,0,0,0.35)");
           gradient.addColorStop(1, "rgba(0,0,0,0)");
 
           ctx.fillStyle = gradient;
@@ -191,10 +208,16 @@ export default function BackgroundScene() {
         }
       }
 
-      // 3. Subtle vignette overlay for cinematic feel
-      const vignette = ctx.createRadialGradient(sw / 2, sh / 2, sw * 0.15, sw / 2, sh / 2, sw * 0.75);
+      const vignette = ctx.createRadialGradient(
+        sw / 2,
+        sh / 2,
+        sw * 0.12,
+        sw / 2,
+        sh / 2,
+        sw * 0.78
+      );
       vignette.addColorStop(0, "rgba(0,0,0,0)");
-      vignette.addColorStop(1, "rgba(0,0,0,0.5)");
+      vignette.addColorStop(1, "rgba(6, 8, 11, 0.55)");
       ctx.fillStyle = vignette;
       ctx.fillRect(0, 0, sw, sh);
 
@@ -217,4 +240,3 @@ export default function BackgroundScene() {
     </div>
   );
 }
-

@@ -11,30 +11,39 @@ import ChapterFour from "@/components/sections/ChapterFour";
 import Contact from "@/components/sections/Contact";
 import Footer from "@/components/sections/Footer";
 
-const LenisProvider = dynamic(() => import("@/components/providers/LenisProvider"), { ssr: false });
-const BackgroundScene = dynamic(() => import("@/components/three/BackgroundScene"), { ssr: false });
-const Preloader = dynamic(() => import("@/components/sections/Preloader"), { ssr: false });
+const LenisProvider = dynamic(
+  () => import("@/components/providers/LenisProvider"),
+  { ssr: false }
+);
+const BackgroundScene = dynamic(
+  () => import("@/components/three/BackgroundScene"),
+  { ssr: false }
+);
+const Preloader = dynamic(() => import("@/components/sections/Preloader"), {
+  ssr: false,
+});
 
 export default function Home() {
   const cursorRingRef = useRef<HTMLDivElement>(null);
   const cursorDotRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // ─── Custom Cursor ──────────────────────────────────
     const ring = cursorRingRef.current;
     const dot = cursorDotRef.current;
     if (!ring || !dot) return;
 
+    const isFine = window.matchMedia("(pointer: fine)").matches;
+    if (!isFine) return;
+
+    ring.style.display = "block";
+    dot.style.display = "block";
+
     const handleMouseMove = (e: MouseEvent) => {
-      gsap.to(dot, {
-        x: e.clientX,
-        y: e.clientY,
-        duration: 0,
-      });
+      gsap.to(dot, { x: e.clientX, y: e.clientY, duration: 0 });
       gsap.to(ring, {
         x: e.clientX,
         y: e.clientY,
-        duration: 0.3,
+        duration: 0.35,
         ease: "power2.out",
       });
     };
@@ -61,28 +70,13 @@ export default function Home() {
 
   return (
     <>
-      {/* ─── Preloader ─────────────────────────────────── */}
       <Preloader />
-
-      {/* ─── Film Grain Overlay ────────────────────────── */}
       <div className="film-grain" aria-hidden="true" />
-
-      {/* ─── Cursor-Reveal Background ──────────────────── */}
       <BackgroundScene />
 
-      {/* ─── Custom Cursor ─────────────────────────────── */}
-      <div
-        ref={cursorRingRef}
-        className="cursor-ring"
-        style={{ display: "none" }}
-      />
-      <div
-        ref={cursorDotRef}
-        className="cursor-dot"
-        style={{ display: "none" }}
-      />
+      <div ref={cursorRingRef} className="cursor-ring" style={{ display: "none" }} />
+      <div ref={cursorDotRef} className="cursor-dot" style={{ display: "none" }} />
 
-      {/* ─── Main Content ──────────────────────────────── */}
       <LenisProvider>
         <Navigation />
         <main className="relative">
@@ -97,4 +91,3 @@ export default function Home() {
     </>
   );
 }
-

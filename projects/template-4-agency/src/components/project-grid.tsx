@@ -1,157 +1,146 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import Image from "next/image";
+import { useState } from "react";
 
 interface Project {
   id: string;
   title: string;
   client: string;
   category: string;
-  stat: string;
   year: string;
   video: string;
-  image: string;
-  tags: string[];
   description: string;
 }
 
 const PROJECTS: Project[] = [
   {
     id: "lusion-redesign",
-    title: "NEURAL SCULPTURE",
-    client: "SYNTHETIX LABS",
-    category: "WEBGL 3D",
-    stat: "+420% ENGAGEMENT",
+    title: "Neural Sculpture",
+    client: "Synthetix Labs",
+    category: "WebGL 3D",
     year: "2026",
     video: "/videos/showreel.mp4",
-    image: "https://images.unsplash.com/photo-1634152962476-4b8a00e1915c?w=1200&q=80",
-    tags: ["Three.js", "GSAP ScrollTrigger", "Custom Shaders"],
-    description: "An interactive real-time 3D particle universe built for high-performance SaaS launches.",
+    description: "Real-time particle universe for a high-performance SaaS launch.",
   },
   {
     id: "kino-kinetic",
-    title: "KINETIC BRAND SYSTEM",
-    client: "KINO AT WORK",
-    category: "BRANDING",
-    stat: "AWWWARDS SITE OF THE DAY",
+    title: "Kinetic Brand",
+    client: "Kino At Work",
+    category: "Branding",
     year: "2026",
     video: "/videos/showreel.mp4",
-    image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=1200&q=80",
-    tags: ["Typography", "Motion Identity", "Next.js"],
-    description: "Dynamic kinetic typography led brand system built with liquid ease transitions.",
+    description: "Liquid-ease typography system with living motion identity.",
   },
   {
     id: "apex-disassembly",
-    title: "APEX MARK IV HARDWARE",
-    client: "APEX HARDWARE",
-    category: "AI MOTION",
-    stat: "$12M PRE-ORDERS",
+    title: "Apex Mark IV",
+    client: "Apex Hardware",
+    category: "AI Motion",
     year: "2025",
     video: "/videos/orbit.mp4",
-    image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=1200&q=80",
-    tags: ["Mechanical Explode", "WebP Scrubber", "Lenis Physics"],
-    description: "Interactive 3D product disassembly scrollytelling experience showcasing titanium hardware.",
+    description: "Interactive product disassembly for titanium hardware.",
   },
   {
     id: "zerzura-studio",
-    title: "ZERZURA ATELIER",
-    client: "ZERZURA LUXURY",
-    category: "WEBGL 3D",
-    stat: "FWA OF THE MONTH",
+    title: "Zerzura Atelier",
+    client: "Zerzura Luxury",
+    category: "WebGL 3D",
     year: "2025",
     video: "/videos/hero.mp4",
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&q=80",
-    tags: ["Full-Bleed Video", "Asymmetric Grid", "Tailwind CSS"],
-    description: "Luxury fashion editorial portfolio with video-morph centerpiece grid.",
+    description: "Editorial portfolio with video-morph centerpiece grid.",
   },
 ];
 
-const CATEGORIES = ["ALL", "WEBGL 3D", "BRANDING", "AI MOTION"];
+const CATEGORIES = ["All", "WebGL 3D", "Branding", "AI Motion"];
 
 export default function ProjectGrid() {
-  const [activeCategory, setActiveCategory] = useState("ALL");
+  const [activeCategory, setActiveCategory] = useState("All");
 
   const filteredProjects =
-    activeCategory === "ALL"
+    activeCategory === "All"
       ? PROJECTS
       : PROJECTS.filter((p) => p.category === activeCategory);
 
   return (
-    <div id="work" className="relative h-full w-full flex flex-col justify-center px-12 md:px-20">
-      <div className="flex flex-col justify-between gap-6 border-b border-white/10 pb-6 md:flex-row md:items-end">
+    <div
+      id="work"
+      className="relative flex h-full w-full flex-col justify-center px-[var(--gutter)]"
+    >
+      <div className="stagger-item flex flex-col justify-between gap-6 border-b border-white/10 pb-8 md:flex-row md:items-end">
         <div>
-          <span className="font-mono text-xs font-bold tracking-[0.3em] text-[#d4ff00] uppercase">
-            SELECTED WORKS // 2024–2026
-          </span>
-          <h2 className="mt-2 font-mono text-3xl font-black uppercase text-white tracking-tight md:text-5xl">
-            CRAFTED WITH INTENT.
+          <p className="font-mono text-[11px] font-medium tracking-[0.35em] text-[#d4ff00] uppercase">
+            Selected works
+          </p>
+          <h2 className="mt-3 font-display text-[clamp(2rem,4.5vw,4rem)] font-extrabold tracking-[-0.035em] text-white">
+            Crafted with intent.
           </h2>
         </div>
 
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-x-6 gap-y-2">
           {CATEGORIES.map((cat) => (
             <button
               key={cat}
+              type="button"
               onClick={() => setActiveCategory(cat)}
-              className={`border px-4 py-1.5 font-mono text-[10px] font-bold tracking-widest transition-all duration-300 ${
-                activeCategory === cat
-                  ? "bg-[#d4ff00] text-black border-[#d4ff00]"
-                  : "border-white/15 bg-white/5 text-white/70 hover:border-[#d4ff00]/40 hover:text-white"
+              className={`relative font-mono text-[11px] font-medium tracking-[0.22em] uppercase transition-colors duration-300 ${
+                activeCategory === cat ? "text-[#d4ff00]" : "text-white/40 hover:text-white/80"
               }`}
               data-cursor="FILTER"
             >
               {cat}
+              {activeCategory === cat && (
+                <span className="absolute -bottom-1 left-0 h-px w-full bg-[#d4ff00]" />
+              )}
             </button>
           ))}
         </div>
       </div>
 
-      <div className="mt-8 flex flex-row gap-8 overflow-visible">
-        {filteredProjects.map((project) => (
-          <div
+      <div className="stagger-item mt-8 flex gap-5 overflow-x-auto pb-2 md:gap-6 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+        {filteredProjects.map((project, index) => (
+          <article
             key={project.id}
-            className="group relative overflow-hidden border p-0 transition-all duration-500 hover:border-[#d4ff00]/60 w-[350px] md:w-[420px] shrink-0 border-white/10 bg-white/[0.02]"
+            className="group relative w-[min(78vw,380px)] shrink-0 md:w-[420px]"
             data-cursor="VIEW"
           >
-            <div className="relative aspect-[16/10] w-full overflow-hidden bg-black/60">
+            <div className="relative aspect-[16/10] w-full overflow-hidden bg-black">
               <video
                 src={project.video}
                 autoPlay
                 loop
                 muted
                 playsInline
-                className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                className="h-full w-full object-cover transition-transform duration-[900ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.06]"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-80 transition-opacity group-hover:opacity-40" />
-
-              <div className="absolute top-3 right-3 rounded-full border border-[#d4ff00]/40 bg-black/80 px-2.5 py-0.5 font-mono text-[9px] font-bold text-[#d4ff00] backdrop-blur-md">
-                {project.stat}
-              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-90 transition-opacity duration-500 group-hover:opacity-70" />
+              <span className="absolute top-4 left-4 font-mono text-[10px] tracking-[0.25em] text-white/50">
+                {String(index + 1).padStart(2, "0")}
+              </span>
+              <span className="absolute top-4 right-4 font-mono text-[10px] tracking-[0.2em] text-[#d4ff00]">
+                {project.year}
+              </span>
             </div>
 
-            <div className="p-5">
-              <div className="flex items-center justify-between font-mono text-[10px] text-white/40">
-                <span>{project.client}</span>
-                <span>{project.year}</span>
+            <div className="mt-4 flex items-start justify-between gap-4">
+              <div>
+                <p className="font-mono text-[10px] tracking-[0.22em] text-white/40 uppercase">
+                  {project.client} · {project.category}
+                </p>
+                <h3 className="mt-1.5 font-display text-xl font-bold tracking-tight text-white transition-colors duration-300 group-hover:text-[#d4ff00] md:text-2xl">
+                  {project.title}
+                </h3>
+                <p className="mt-2 max-w-sm text-sm font-light leading-relaxed text-white/50">
+                  {project.description}
+                </p>
               </div>
-              <h3 className="mt-1 font-mono text-lg font-bold uppercase text-white transition-colors group-hover:text-[#d4ff00]">
-                {project.title}
-              </h3>
-              <p className="mt-1 text-xs text-white/60 line-clamp-2">{project.description}</p>
-
-              <div className="mt-4 flex flex-wrap gap-1.5">
-                {project.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="border border-white/10 bg-white/5 px-2 py-0.5 font-mono text-[9px] uppercase text-white/50"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
+              <span
+                className="mt-1 font-display text-lg text-white/25 transition-all duration-500 group-hover:translate-x-1 group-hover:text-[#d4ff00]"
+                aria-hidden
+              >
+                →
+              </span>
             </div>
-          </div>
+          </article>
         ))}
       </div>
     </div>

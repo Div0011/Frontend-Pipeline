@@ -15,29 +15,29 @@ export default function LenisProvider({ children }: LenisProviderProps) {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
+    const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
     const lenis = new Lenis({
-      duration: 1.2,
+      duration: prefersReduced ? 0.4 : 1.35,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      smoothWheel: true,
+      smoothWheel: !prefersReduced,
+      touchMultiplier: 1.15,
+      wheelMultiplier: 0.92,
     });
 
     lenisRef.current = lenis;
-
-    // Connect Lenis to ScrollTrigger
     lenis.on("scroll", ScrollTrigger.update);
 
-    // Bind GSAP ticker to Lenis requestAnimationFrame
     const tickerUpdate = (time: number) => {
       lenis.raf(time * 1000);
     };
     gsap.ticker.add(tickerUpdate);
-
-    // Disable lag smoothing for instant scrubbing response
     gsap.ticker.lagSmoothing(0);
 
     return () => {
       gsap.ticker.remove(tickerUpdate);
       lenis.destroy();
+      lenisRef.current = null;
     };
   }, []);
 

@@ -8,7 +8,7 @@ import Footer from "@/components/sections/Footer";
 export default function Home() {
   return (
     <LenisProvider>
-      <main className="min-h-screen">
+      <main className="relative min-h-screen bg-transparent">
         <Hero />
         <ParallaxShowcase />
         <HotspotExplorer />

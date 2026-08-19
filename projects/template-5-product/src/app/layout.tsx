@@ -1,13 +1,32 @@
-import { Inter, Space_Grotesk } from "next/font/google";
+import { Syne, DM_Sans, JetBrains_Mono } from "next/font/google";
 import ClientLayout from "./ClientLayout";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-sans", display: "swap" });
-const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], variable: "--font-display", display: "swap", weight: ["400", "500", "600", "700"] });
+const syne = Syne({
+  subsets: ["latin"],
+  variable: "--font-display",
+  display: "swap",
+  weight: ["400", "500", "600", "700", "800"],
+});
+
+const dmSans = DM_Sans({
+  subsets: ["latin"],
+  variable: "--font-body",
+  display: "swap",
+  weight: ["300", "400", "500", "600", "700"],
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
+  display: "swap",
+  weight: ["400", "500", "600", "700"],
+});
 
 export const metadata = {
   title: "APEX ELEM-01 — The Anatomy of Silence",
-  description: "An elemental instrument forged from aerospace titanium and raw computational will.",
+  description:
+    "An elemental instrument forged from aerospace titanium and raw computational will.",
 };
 
 export default function RootLayout({
@@ -16,8 +35,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable}`}>
-      <body className="font-sans antialiased bg-[#f5f5f7] text-[#1d1d1f]">
+    <html
+      lang="en"
+      className={`${syne.variable} ${dmSans.variable} ${jetbrainsMono.variable}`}
+    >
+      <body className="font-sans antialiased bg-[#050506] text-[#f3f1ec]">
         <ClientLayout>{children}</ClientLayout>
       </body>
     </html>
