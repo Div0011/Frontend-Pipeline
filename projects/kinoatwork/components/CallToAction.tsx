@@ -1,0 +1,1 @@
+import type { ReactNode } from 'react'; export default function CallToAction() {return (<><h2>Call To Action</h2></>);}

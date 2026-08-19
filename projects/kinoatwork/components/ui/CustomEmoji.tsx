@@ -1,0 +1,1 @@
+import type { ReactNode } from 'react'; export default function CustomEmoji() {return (<><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="#ff9900"/></svg></>);}

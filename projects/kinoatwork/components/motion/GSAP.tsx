@@ -1,0 +1,1 @@
+import { gsap } from 'gsap'; export default function GSAP() {return (<><div ref={(div) => {if (div) {gsap.to(div, {duration: 1, x: 100});}}}/></>);}

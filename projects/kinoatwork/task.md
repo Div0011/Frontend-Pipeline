@@ -1,0 +1,21 @@
+# Deep Enhancement Tasks
+
+- [x] Layer 1: globals.css — tokens, grain keyframe, letterbox, vignette, clip-path reveal classes
+- [x] Layer 2: ChapterOverlay.tsx — full redesign of all 6 overlays (no cards, edge-anchored)
+- [x] Task 1: FrameScrubber Optimization & 3D Progress Bugs
+  - [x] Unbounded outward nearest-frame search
+  - [x] Scroll window preloading (5 frames window)
+  - [x] Global-to-local progress translation for `CinematicHero3D` and `WorkShowcase3D`
+- [x] Task 2: Intro Loader & Custom Cursor Integration in `page.tsx`
+  - [x] Mount `IntroLoader` on cold open
+  - [x] Pause scroll during intro
+  - [x] Delayed custom cursor mount
+- [x] Task 3: Dual-Stage Philosophy Overlay (manifesto + director profiles)
+- [x] Task 4: Interactive Showreel Playback Modal
+- [x] Task 5: Floating Editorial Mask Reveals in `CinematicImageShowcase.tsx`
+  - [x] Centered frame styling with custom masks (organic, polygon, circle, pill)
+- [x] Task 6: Rebranding to SFUMATO (Nav, Footer, overlays, emails)
+- [x] Task 7: Verification & Walkthrough
+  - [x] Typecheck
+  - [x] Production build verification)
+- [x] Cinematic Fog & Fullscreen Parallax Images (Work & Reel)

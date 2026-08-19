@@ -8,7 +8,7 @@ langchain-google-genai==2.0.0
 langchain-groq==0.3.0
 langchain-ollama==0.3.0
 langchain-huggingface==0.3.0
-langgraph-checkpoint-postgres==0.0.20
+langgraph-checkpoint-postgres==1.0.0
 langgraph-sdk==0.1.0
 
 # ── API & serving ────────────────────────────────────────────────────

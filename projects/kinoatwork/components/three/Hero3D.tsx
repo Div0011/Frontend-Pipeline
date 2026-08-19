@@ -1,0 +1,1 @@
+import * as THREE from 'three'; import { Canvas } from '@react-three/fiber'; import { OrbitControls } from '@react-three/drei'; export default function Hero3D() {return (<Canvas><OrbitControls/><mesh ref={(mesh) => {if (mesh) {mesh.position.x = 0;mesh.position.y = 0;mesh.position.z = 0;}}}/></Canvas>);}
