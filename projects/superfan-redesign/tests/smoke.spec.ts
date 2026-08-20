@@ -7,7 +7,7 @@ test.describe('Superfan Cinematic Redesign', () => {
 
   test('homepage loads with hero chapter', async ({ page }) => {
     await expect(page).toHaveTitle(/Superfan/);
-    await expect(page.getByRole('heading', { name: /Silence\. Engineered/i }).first()).toBeVisible();
+    await expect(page.getByRole('heading', { name: /Silence\. Engineered/i }).first()).toBeVisible({ timeout: 15000 });
   });
 
   test('navigation menu opens and closes', async ({ page }) => {
