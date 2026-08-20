@@ -21,9 +21,8 @@ jobs:
           cache-dependency-path: projects/superfan-redesign/package-lock.json
       - run: npm ci
       - run: npm run build
+      - run: npx playwright install --with-deps
       - run: npx playwright test --project=chromium-desktop
-        env:
-          PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: 1
 
   pipeline:
     runs-on: ubuntu-latest
