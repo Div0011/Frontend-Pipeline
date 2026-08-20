@@ -82,7 +82,7 @@ export default function HistoryPage() {
               <h3 className="font-display font-semibold text-2xl mb-4 leading-tight">Baking at 4 AM</h3>
               <p className="font-body font-light text-cafe-muted leading-relaxed" style={{ fontSize: '1.05rem' }}>
                 We took over the lease next door, knocking down the wall to install a stone hearth oven.
-                Élodie joined us from Paris, bringing her grandfather's croissant lamination technique.
+                 Élodie joined us from Paris, bringing her grandfather&rsquo;s croissant lamination technique.
                 We started baking fresh every single morning before dawn.
               </p>
             </div>

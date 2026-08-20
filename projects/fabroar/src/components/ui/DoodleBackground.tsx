@@ -76,6 +76,7 @@ export default function DoodleBackground() {
       }
     }
 
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setDoodles(items);
   }, []);
 

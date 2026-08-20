@@ -152,6 +152,7 @@ export default function TShirtMockup({
                   transform: `scale(${design.scale || 1}) rotate(${design.rotation || 0}deg)`,
                 }}
               >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={design.preview}
                   alt="Sticker artwork preview"

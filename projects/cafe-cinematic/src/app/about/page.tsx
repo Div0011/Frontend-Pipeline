@@ -200,7 +200,7 @@ export default function AboutPage() {
                 always tell the difference.
               </p>
               <p>
-                By 2020 we'd installed a stone hearth oven and brought in Élodie Marais, a
+                 By 2020 we&rsquo;d installed a stone hearth oven and brought in Élodie Marais, a
                 third-generation French pastry chef, to bake croissants at 4AM. The neighbourhood
                 started waking up to the scent before the sun rose.
               </p>

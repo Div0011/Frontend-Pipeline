@@ -311,7 +311,7 @@ export default function HomePage() {
               Featured
             </h2>
             <p className="font-body text-[var(--color-sand)] max-w-md leading-relaxed text-sm sm:text-base">
-              Pure cotton. Graphic prints. Designed to speak when words aren't enough.
+              Pure cotton. Graphic prints. Designed to speak when words aren&apos;t enough.
             </p>
           </div>
 

@@ -33,7 +33,7 @@ export default function ContactPage() {
                 Contact
               </h1>
               <p className="font-body text-xl text-ink-muted mb-8">
-                Have a question? We'd love to hear from you.
+                 Have a question? We&apos;d love to hear from you.
               </p>
 
               <div className="space-y-6 font-body text-ink-muted">
@@ -69,7 +69,7 @@ export default function ContactPage() {
                     Thank you
                   </p>
                   <p className="font-body text-ink-muted">
-                    Your message has been sent. We'll get back to you within 24 hours.
+                    Your message has been sent. We&apos;ll get back to you within 24 hours.
                   </p>
                 </div>
               ) : (
@@ -201,7 +201,7 @@ export default function ContactPage() {
                       htmlFor="newsletter"
                       className="font-body text-sm text-ink-muted"
                     >
-                      I'd also like to subscribe to the newsletter
+                      I&apos;d also like to subscribe to the newsletter
                     </label>
                   </div>
 

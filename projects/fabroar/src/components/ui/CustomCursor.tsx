@@ -15,6 +15,7 @@ export default function CustomCursor() {
   const [isPointerFine, setIsPointerFine] = useState(false);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setIsClient(true);
     const media = window.matchMedia("(pointer: fine)");
     setIsPointerFine(media.matches);

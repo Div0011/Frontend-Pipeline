@@ -24,6 +24,7 @@ export default function ProductCard({ product, dark = false }: ProductCardProps)
   const [quantity, setQuantity] = useState(1);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true);
   }, []);
 

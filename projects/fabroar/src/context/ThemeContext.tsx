@@ -17,6 +17,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     const savedTheme = (localStorage.getItem("fabroar-theme") as Theme) || "dark";
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setThemeState(savedTheme);
     document.documentElement.setAttribute("data-theme", savedTheme);
   }, []);

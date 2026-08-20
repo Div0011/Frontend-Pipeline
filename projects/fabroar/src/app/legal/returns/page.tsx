@@ -15,7 +15,7 @@ export default function ReturnsPage() {
           </h1>
           <div className="space-y-6 font-body text-ink-muted">
             <p>
-              We want you to love your Fabroar tee. If you're not satisfied, we're here to help.
+              We want you to love your Fabroar tee. If you&apos;re not satisfied, we&apos;re here to help.
             </p>
             <h2 className="font-ui text-sm tracking-widest uppercase text-ink pt-4">
               Return Window
@@ -27,7 +27,7 @@ export default function ReturnsPage() {
               Refunds
             </h2>
             <p>
-              Once we receive and inspect your return, we'll process a refund to your original payment method within 5-7 business days.
+              Once we receive and inspect your return, we&apos;ll process a refund to your original payment method within 5-7 business days.
             </p>
             <h2 className="font-ui text-sm tracking-widest uppercase text-ink pt-4">
               Exchanges

@@ -40,6 +40,7 @@ export default function CustomStudioPage() {
   const [uploadError, setUploadError] = useState<string | null>(null);
   const [addedToCart, setAddedToCart] = useState(false);
   const [showAdvisoryModal, setShowAdvisoryModal] = useState(false);
+  const idCounter = useRef(0);
 
   const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -61,19 +62,6 @@ export default function CustomStudioPage() {
 
   const totalPrice = calculateCustomPrice({ baseStyle, color, size, quantity, design });
 
-  const handleOpenAdvisoryModal = () => {
-    setUploadError(null);
-    setShowAdvisoryModal(true);
-  };
-
-  const handleConfirmAndChooseFile = () => {
-    setShowAdvisoryModal(false);
-    setStep(2);
-    setTimeout(() => {
-      fileInputRef.current?.click();
-    }, 100);
-  };
-
   const handleRemoveSticker = () => {
     setDesign({
       file: null,
@@ -81,6 +69,27 @@ export default function CustomStudioPage() {
     });
     setUploadError(null);
   };
+
+  const validateAndSetFile = useCallback((file: File) => {
+    if (!file.type.startsWith("image/") && !file.name.match(/\.(png|jpe?g|svg|webp|gif|bmp)$/i)) {
+      setUploadError("Please upload an image file (PNG, JPG, SVG, or WEBP)");
+      return;
+    }
+    if (file.size > 15 * 1024 * 1024) {
+      setUploadError("File size must be under 15MB");
+      return;
+    }
+
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      setDesign({
+        file,
+        preview: e.target?.result as string,
+      });
+      setStep(2);
+    };
+    reader.readAsDataURL(file);
+  }, [setDesign, setStep, setUploadError]);
 
   const handleDrag = useCallback((e: React.DragEvent) => {
     e.preventDefault();
@@ -102,7 +111,7 @@ export default function CustomStudioPage() {
       const file = e.dataTransfer.files[0];
       validateAndSetFile(file);
     }
-  }, []);
+  }, [setDragActive, setUploadError, validateAndSetFile]);
 
   const handleFileInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     setUploadError(null);
@@ -111,30 +120,23 @@ export default function CustomStudioPage() {
     }
   };
 
-  const validateAndSetFile = (file: File) => {
-    if (!file.type.startsWith("image/") && !file.name.match(/\.(png|jpe?g|svg|webp|gif|bmp)$/i)) {
-      setUploadError("Please upload an image file (PNG, JPG, SVG, or WEBP)");
-      return;
-    }
-    if (file.size > 15 * 1024 * 1024) {
-      setUploadError("File size must be under 15MB");
-      return;
-    }
+  const handleOpenAdvisoryModal = () => {
+    setUploadError(null);
+    setShowAdvisoryModal(true);
+  };
 
-    const reader = new FileReader();
-    reader.onload = (e) => {
-      setDesign({
-        file,
-        preview: e.target?.result as string,
-      });
-      setStep(2);
-    };
-    reader.readAsDataURL(file);
+  const handleConfirmAndChooseFile = () => {
+    setShowAdvisoryModal(false);
+    setStep(2);
+    setTimeout(() => {
+      fileInputRef.current?.click();
+    }, 100);
   };
 
   const handleAddToCart = () => {
+    idCounter.current += 1;
     addItem({
-      productId: `custom-${baseStyle}-${Date.now()}`,
+      productId: `custom-${baseStyle}-${idCounter.current}`,
       name: `Custom ${BASE_STYLES.find((s) => s.id === baseStyle)?.label}`,
       price: totalPrice,
       image: design.preview || "/images/animal-1.webp",
@@ -264,7 +266,7 @@ export default function CustomStudioPage() {
             Custom Design Studio
           </h1>
           <p className="font-body text-lg md:text-xl text-[#C4A77D] max-w-2xl leading-relaxed">
-            Upload your artwork or logo, choose your fit, and we'll print it on pure cotton.
+            Upload your artwork or logo, choose your fit, and we&apos;ll print it on pure cotton.
           </p>
 
           {/* Step Progress */}

@@ -149,7 +149,7 @@ export function BookingSection({ onOpenReservation }: BookingSectionProps) {
             {/* Minimal pull quote */}
             <blockquote className="pl-6 border-l-2 border-cafe-accent">
               <p className="font-display text-xl sm:text-2xl text-cafe-dark italic leading-snug">
-                "Every seat is made for staying."
+                &ldquo;Every seat is made for staying.&rdquo;
               </p>
             </blockquote>
           </div>

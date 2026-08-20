@@ -83,7 +83,7 @@ export default function MenPage() {
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
               <div>
                 <h1 className="font-display text-display-lg tracking-tight">
-                  Men's Collection
+                  Men&apos;s Collection
                 </h1>
                 <p className="font-body text-ink-light-muted mt-2">
                   {filteredProducts.length} styles — pure cotton, graphic prints
