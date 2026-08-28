@@ -1,0 +1,57 @@
+{
+  "business_name": "Casino El Camino",
+  "category": "Restaurants / Bar & Grill",
+  "search_date": "2026-08-23",
+  "geography": "Austin, TX",
+  "live_url": "https://casinoelcamino.net",
+  "contact": {
+    "phone": "(512) 469-9330",
+    "email": null,
+    "owner": "Paul Eighmey (co-founded 1994)",
+    "address": "517 E 6th St, Austin, TX 78701",
+    "social_links": [
+      "https://facebook.com/casinoelcamino"
+    ]
+  },
+  "audit_factors": {
+    "colour_palette": {
+      "score": "Weak",
+      "rating": 2,
+      "details": "WordPress default theme color tokens (--wp-admin-theme-color: #007cba). Dark background with standard gray and white; lacks the vivid, gritty dive-bar aesthetic."
+    },
+    "logo": {
+      "score": "Weak",
+      "rating": 2,
+      "details": "Logo is not rendered as an accessible modern web SVG and is missing from Open Graph social preview meta tags."
+    },
+    "typography": {
+      "score": "Weak",
+      "rating": 2,
+      "details": "Uses dns-prefetch for Google Fonts, but typography falls back to system fonts with flat styling on initial render."
+    },
+    "contact": {
+      "score": "Weak",
+      "rating": 2.5,
+      "details": "Public phone number and iconic 6th street location are known, but no public email or web inquiry contact form exists."
+    },
+    "online_presence": {
+      "score": "Weak",
+      "rating": 2,
+      "details": "Standard out-of-the-box WordPress installation without custom Open Graph preview images or structured Restaurant schema."
+    }
+  },
+  "verdict": {
+    "grade": "D+",
+    "outreach_priority": "High Priority",
+    "commercial_rationale": "World-famous half-pound Angus burgers featured on Food Network, operating on 6th Street since 1994. The website feels like a generic blog theme rather than a legendary rock-n-roll burger joint."
+  },
+  "sample_website": {
+    "status": "generated",
+    "sample_url": "https://preview.wishgranters.com/div0011/casino-el-camino",
+    "demo_url": "https://preview.wishgranters.com/div0011/casino-el-camino",
+    "project_id": "casino-el-camino",
+    "repo_path": "projects/casino-el-camino",
+    "generated_at": "2026-08-25T00:40:00.000000+00:00",
+    "notes": "Dark mode, neon-accented rock-n-roll burger bar digital experience."
+  }
+}

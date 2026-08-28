@@ -1,0 +1,58 @@
+{
+  "business_name": "Sour Duck Market",
+  "category": "Restaurants / Market & Cafe",
+  "search_date": "2026-08-23",
+  "geography": "Austin, TX",
+  "live_url": "https://sourduckmarket.com",
+  "contact": {
+    "phone": "(512) 394-5776",
+    "email": "info@sourduckmarket.com",
+    "owner": "Bryce Gilmore",
+    "address": "1814 E Martin Luther King Jr Blvd, Austin, TX 78702",
+    "social_links": [
+      "https://facebook.com/sourduckmarket",
+      "https://instagram.com/sourduckmarket"
+    ]
+  },
+  "audit_factors": {
+    "colour_palette": {
+      "score": "Weak",
+      "rating": 2.5,
+      "details": "Natural earthy tones (warm green, sand, off-white) reflecting their bakery patio garden. Color implementation lacks consistent design tokens across sections."
+    },
+    "logo": {
+      "score": "Good",
+      "rating": 3.5,
+      "details": "Charming custom hand-drawn duck illustration logo with organic character, though served as a raster graphic without SVG fallback."
+    },
+    "typography": {
+      "score": "Weak",
+      "rating": 2.5,
+      "details": "Mixed sans-serif body and casual serif headings with inconsistent line-heights and cramped letter-spacing on mobile."
+    },
+    "contact": {
+      "score": "Good",
+      "rating": 4.5,
+      "details": "Prominent phone number, physical address, and general inquiry channels are listed clearly."
+    },
+    "online_presence": {
+      "score": "Weak",
+      "rating": 2.5,
+      "details": "Legacy template architecture with disjointed Toast Tab iframe/redirect ordering handoffs and incomplete schema.org metadata."
+    }
+  },
+  "verdict": {
+    "grade": "C+",
+    "outreach_priority": "Medium Priority",
+    "commercial_rationale": "High-profile bakery, bar, and farm-to-table casual dining spot backed by the Odd Duck group. A unified web experience integrating their bakery pre-orders, daily specials, and market goods would streamline customer flow."
+  },
+  "sample_website": {
+    "status": "pending",
+    "sample_url": null,
+    "demo_url": null,
+    "project_id": null,
+    "repo_path": null,
+    "generated_at": null,
+    "notes": "Farm-to-table bakery & beer garden marketplace concept."
+  }
+}

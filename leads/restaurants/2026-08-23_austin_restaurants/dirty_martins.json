@@ -1,0 +1,58 @@
+{
+  "business_name": "Dirty Martin's Kum-Bak",
+  "category": "Restaurants / Burger & Diner",
+  "search_date": "2026-08-23",
+  "geography": "Austin, TX",
+  "live_url": "https://dirtymartins.com",
+  "contact": {
+    "phone": "(512) 477-3173",
+    "email": "dirtymartins1926@gmail.com",
+    "owner": "Mark Nemir",
+    "address": "2808 Guadalupe St, Austin, TX 78705",
+    "social_links": [
+      "https://facebook.com/dirtymartins",
+      "https://instagram.com/dirtymartins"
+    ]
+  },
+  "audit_factors": {
+    "colour_palette": {
+      "score": "Poor",
+      "rating": 1.5,
+      "details": "Uses generic Wix Thunderbolt default palette variables with stark black, white, and raw red. No custom retro-diner brand aesthetic."
+    },
+    "logo": {
+      "score": "Weak",
+      "rating": 2,
+      "details": "Embedded as a low-resolution raster JPEG on Wix CDN. The favicon is pixelated on mobile screens and Retina displays."
+    },
+    "typography": {
+      "score": "Poor",
+      "rating": 1,
+      "details": "Hardcoded to generic 'Arial, Helvetica, sans-serif' without typographic hierarchy or custom web fonts."
+    },
+    "contact": {
+      "score": "Good",
+      "rating": 5,
+      "details": "Verified phone, direct Gmail contact, physical address on 'The Drag', and active community ownership under Mark Nemir."
+    },
+    "online_presence": {
+      "score": "Weak",
+      "rating": 2,
+      "details": "Wix Thunderbolt renderer with high JavaScript payload and slow First Contentful Paint. Basic SEO is missing rich Open Graph tags and Schema.org markup."
+    }
+  },
+  "verdict": {
+    "grade": "D",
+    "outreach_priority": "Immediate (Top Pick)",
+    "commercial_rationale": "Operating since 1926 (approaching their 100-year centennial!). Incredible heritage and brand love with thousands of UT alumni and Austin locals, yet their website is a generic Wix site that does not reflect their iconic status."
+  },
+  "sample_website": {
+    "status": "generated",
+    "sample_url": "https://preview.wishgranters.com/div0011/dirty-martins",
+    "demo_url": "https://preview.wishgranters.com/div0011/dirty-martins",
+    "project_id": "dirty-martins",
+    "repo_path": "projects/dirty-martins",
+    "generated_at": "2026-08-25T00:40:00.000000+00:00",
+    "notes": "Centennial-edition retro diner redesign celebrating 100 years of Austin history."
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "business_name": "Burger Bar Austin",
+  "category": "Restaurants / Burger & Diner",
+  "search_date": "2026-08-23",
+  "geography": "Austin, TX",
+  "live_url": "https://burgerbaraustin.com",
+  "contact": {
+    "phone": null,
+    "email": null,
+    "owner": null,
+    "address": "Downtown Congress Ave, Austin, TX",
+    "social_links": [
+      "https://facebook.com/pages/Burger-Bar-ATX/1528266760766924",
+      "https://instagram.com/burgerbarcongress"
+    ]
+  },
+  "audit_factors": {
+    "colour_palette": {
+      "score": "Weak",
+      "rating": 2,
+      "details": "Standard unconfigured Squarespace template colors. High reliance on stock white background without rich food-industry accents."
+    },
+    "logo": {
+      "score": "Good",
+      "rating": 3.5,
+      "details": "White wordmark graphic ('BurgerBar_AustinCongress_WHITE.png') is configured cleanly as an Open Graph asset."
+    },
+    "typography": {
+      "score": "Weak",
+      "rating": 2,
+      "details": "Adobe Typekit script is referenced ('use.typekit.net') with FOIT workaround styles, but configuration shows empty custom typekitId."
+    },
+    "contact": {
+      "score": "Poor",
+      "rating": 1,
+      "details": "No phone number, email address, or online contact form is available on the site."
+    },
+    "online_presence": {
+      "score": "Weak",
+      "rating": 1.5,
+      "details": "Site displays an announcement bar: 'We are temporarily closed but look forward to opening again soon.' The store configuration is set to 'isLive: false' under internal identifier 'burgerbar-austin-demo'."
+    }
+  },
+  "verdict": {
+    "grade": "D (Dormant)",
+    "outreach_priority": "Verify First (Likely Dormant)",
+    "commercial_rationale": "Walk-up burger counter on Congress Ave. The live site renders an announcement bar ('We are temporarily closed but look forward to opening again soon.') and the store config is set to 'isLive: false'. The artifact grades as a D (generic unconfigured Squarespace template, no phone/email), but commercial value is currently near-zero until operational status is phone-verified. Hold all redesign outreach until the location reopens or is confirmed active."
+  },
+  "sample_website": {
+    "status": "pending_verification",
+    "sample_url": null,
+    "demo_url": null,
+    "project_id": null,
+    "repo_path": null,
+    "generated_at": null,
+    "notes": "Verify whether location is open or undergoing renovation."
+  }
+}

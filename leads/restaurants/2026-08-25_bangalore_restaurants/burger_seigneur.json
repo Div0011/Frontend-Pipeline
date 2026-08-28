@@ -1,0 +1,59 @@
+{
+  "business_name": "Burger Seigneur",
+  "category": "Restaurants / Gourmet Burger & Dining",
+  "search_date": "2026-08-25",
+  "geography": "Bangalore, India",
+  "live_url": "http://burgerseigneur.com",
+  "contact": {
+    "phone": "080 4965 2555",
+    "additional_phones": [],
+    "email": "info@burgerseigneur.com",
+    "owner": "Shameel & Vignesh",
+    "address": "470, 80 Feet Rd, Hal, HAL 3rd Stage, Indiranagar, Bengaluru, Karnataka 560075",
+    "social_links": [
+      "https://www.instagram.com/burgerseigneur",
+      "https://www.facebook.com/burgerseigneur"
+    ]
+  },
+  "audit_factors": {
+    "colour_palette": {
+      "score": "Weak",
+      "rating": 2,
+      "details": "Black and gold minimal palette on paper, but live website serves default unstyled HTML due to broken asset links and crawler blocking."
+    },
+    "logo": {
+      "score": "Weak",
+      "rating": 2,
+      "details": "Royal heraldic crest logo exists on Instagram, but is missing from the website markup and Open Graph metadata."
+    },
+    "typography": {
+      "score": "Poor",
+      "rating": 1,
+      "details": "Falls back to system serif/sans-serif defaults with no custom web typography hierarchy loaded."
+    },
+    "contact": {
+      "score": "Weak",
+      "rating": 2.5,
+      "details": "Phone number accessible via Google Maps and Zomato, but website lacks a working direct contact or table reservation form."
+    },
+    "online_presence": {
+      "score": "Poor",
+      "rating": 1,
+      "details": "Website responds with HTTP configuration errors / robots.txt blocks and lacks modern mobile responsiveness."
+    }
+  },
+  "verdict": {
+    "grade": "D",
+    "outreach_priority": "Immediate (Top Pick)",
+    "commercial_rationale": "High-end luxury burger boutique in Indiranagar serving French brioche Traiteur burgers, truffle parmesan fries, and premium mocktails. Their culinary offering is elite, making a luxury cinematic website an immense win."
+  },
+  "sample_website": {
+    "status": "generated",
+    "sample_url": "https://preview.wishgranters.com/bangalore/burger-seigneur",
+    "demo_url": "https://preview.wishgranters.com/bangalore/burger-seigneur",
+    "project_id": "burger-seigneur",
+    "repo_path": "projects/burger-seigneur",
+    "generated_at": "2026-08-26T10:30:00+00:00",
+    "notes": "Parisian luxury culinary atelier redesign highlighting brioche smash artistry (Lucien, Dynamit, Firestarter)."
+  }
+}

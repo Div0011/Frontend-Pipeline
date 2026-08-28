@@ -1,0 +1,63 @@
+{
+  "business_name": "Leon's Burgers & Wings",
+  "category": "Restaurants / Fast Casual Burgers & Wings",
+  "search_date": "2026-08-25",
+  "geography": "Bangalore, India",
+  "live_url": "https://leons.in",
+  "contact": {
+    "phone": "096069 89821",
+    "additional_phones": [
+      "096069 89818",
+      "072049 41928",
+      "090359 79994"
+    ],
+    "email": "support.crm@leongrill.net",
+    "owner": "Leon Grill Hospitality",
+    "address": "Indiranagar, Rajajinagar, Sarjapur, Kalyan Nagar, Banashankari, Bengaluru",
+    "social_links": [
+      "https://www.instagram.com/leonsindia",
+      "https://www.facebook.com/leonsindia"
+    ]
+  },
+  "audit_factors": {
+    "colour_palette": {
+      "score": "Weak",
+      "rating": 2,
+      "details": "Crimson red (#b12727) and dark charcoal (#303030) with flat gray cards."
+    },
+    "logo": {
+      "score": "Weak",
+      "rating": 2,
+      "details": "Logo loaded from GoDaddy CDN ('img1.wsimg.com') at 57x57px thumbnail resolution."
+    },
+    "typography": {
+      "score": "Weak",
+      "rating": 2,
+      "details": "Default system sans-serif font stack with minimal typographic contrast."
+    },
+    "contact": {
+      "score": "Good",
+      "rating": 4.5,
+      "details": "Direct store phone lines across 5+ Bangalore neighborhoods and central support email."
+    },
+    "online_presence": {
+      "score": "Weak",
+      "rating": 2,
+      "details": "GoDaddy Website Builder site with basic static product photos and external Swiggy/Zomato links."
+    }
+  },
+  "verdict": {
+    "grade": "D",
+    "outreach_priority": "Immediate (Top Pick)",
+    "commercial_rationale": "One of Bangalore's most beloved crispy chicken burger and peri peri wing brands. Their GoDaddy website builder site is completely outdated and lacks modern scrollytelling."
+  },
+  "sample_website": {
+    "status": "generated",
+    "sample_url": "https://preview.wishgranters.com/bangalore/leons-burgers",
+    "demo_url": "https://preview.wishgranters.com/bangalore/leons-burgers",
+    "project_id": "leons-burgers",
+    "repo_path": "projects/leons-burgers",
+    "generated_at": "2026-08-26T10:45:00+00:00",
+    "notes": "Spicy crispy buttermilk chicken & wings hub with live 5-outlet Bangalore locator."
+  }
+}

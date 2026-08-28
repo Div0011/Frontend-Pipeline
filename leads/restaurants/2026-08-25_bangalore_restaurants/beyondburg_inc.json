@@ -1,0 +1,61 @@
+{
+  "business_name": "Beyondburg Inc.",
+  "category": "Restaurants / Smash Burger & Diner",
+  "search_date": "2026-08-25",
+  "geography": "Bangalore, India",
+  "live_url": "https://beyondburginc.com",
+  "contact": {
+    "phone": "090729 64242",
+    "additional_phones": [
+      "090712 22263"
+    ],
+    "email": "contact@beyondburginc.com",
+    "owner": "Faazil & Founders",
+    "address": "16/1 House of Lords, St Mark's Rd / 100ft Rd Indiranagar, Bengaluru, Karnataka 560001",
+    "social_links": [
+      "https://www.instagram.com/beyondburginc",
+      "https://www.facebook.com/beyondburginc"
+    ]
+  },
+  "audit_factors": {
+    "colour_palette": {
+      "score": "Weak",
+      "rating": 2.5,
+      "details": "Standard WordPress theme with red (#cc1818) and olive accents, but lacks dynamic dark mode or appetizing contrast."
+    },
+    "logo": {
+      "score": "Good",
+      "rating": 3.5,
+      "details": "Custom 'BYND-GREEN-LOGO.png' is hosted via WordPress media uploads, though rendered as a raster PNG rather than crisp SVG."
+    },
+    "typography": {
+      "score": "Weak",
+      "rating": 2.5,
+      "details": "Uses standard sans-serif font stack with inconsistent line-heights on mobile viewports."
+    },
+    "contact": {
+      "score": "Good",
+      "rating": 4,
+      "details": "Direct phone lines for St. Marks Road and Indiranagar outlets, direct WhatsApp ordering, and active social channels."
+    },
+    "online_presence": {
+      "score": "Weak",
+      "rating": 2,
+      "details": "WordPress WooCommerce site with multiple render-blocking plugins and slow mobile Largest Contentful Paint (LCP)."
+    }
+  },
+  "verdict": {
+    "grade": "C-",
+    "outreach_priority": "High Priority",
+    "commercial_rationale": "One of Bangalore's top artisanal smashed burger joints with a massive youth following on St. Mark's Road and Indiranagar. Their website is a slow, clunky WordPress template."
+  },
+  "sample_website": {
+    "status": "generated",
+    "sample_url": "https://preview.wishgranters.com/bangalore/beyondburg-inc",
+    "demo_url": "https://preview.wishgranters.com/bangalore/beyondburg-inc",
+    "project_id": "beyondburg-inc",
+    "repo_path": "projects/beyondburg-inc",
+    "generated_at": "2026-08-26T10:30:00+00:00",
+    "notes": "Minimalist craft burger architecture showcasing smashed tenderloin and signature brioche melts."
+  }
+}

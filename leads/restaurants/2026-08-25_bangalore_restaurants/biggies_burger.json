@@ -1,0 +1,62 @@
+{
+  "business_name": "Biggies Burger",
+  "category": "Restaurants / Burger & Diner",
+  "search_date": "2026-08-25",
+  "geography": "Bangalore, India",
+  "live_url": "https://www.biggiesburger.com",
+  "contact": {
+    "phone": "073034 47342",
+    "additional_phones": [
+      "079087 39053"
+    ],
+    "email": "info@biggiesburger.com",
+    "owner": "Biraja Rout",
+    "address": "Church St / Cunningham Rd / AECS Layout, Bengaluru, Karnataka",
+    "social_links": [
+      "https://www.instagram.com/biggiesburger",
+      "https://www.facebook.com/biggiesburger",
+      "https://twitter.com/biggiesburger"
+    ]
+  },
+  "audit_factors": {
+    "colour_palette": {
+      "score": "Weak",
+      "rating": 2,
+      "details": "Muted beige and yellow (#fce46c) with generic blue (#0f2ccf) accents. Does not provide visual distinction or high-end fast-casual appeal."
+    },
+    "logo": {
+      "score": "Weak",
+      "rating": 2,
+      "details": "Logo is loaded as an uncompressed Wix raster PNG ('Final Logo Biggies Burger White 2.png')."
+    },
+    "typography": {
+      "score": "Weak",
+      "rating": 2,
+      "details": "Inconsistent font styles across franchise pages, franchise inquiry forms, and store locators."
+    },
+    "contact": {
+      "score": "Good",
+      "rating": 4.5,
+      "details": "Active corporate and store-level contact lines, investor relations email, and franchise enquiry portals."
+    },
+    "online_presence": {
+      "score": "Weak",
+      "rating": 2,
+      "details": "Wix-based franchise template with sluggish page loads and lack of engaging product story."
+    }
+  },
+  "verdict": {
+    "grade": "D+",
+    "outreach_priority": "High Priority",
+    "commercial_rationale": "High-volume grilled burger chain with outlets on Church Street and Cunningham Road. An upgraded digital experience will boost direct consumer orders and franchise conversion."
+  },
+  "sample_website": {
+    "status": "generated",
+    "sample_url": "https://preview.wishgranters.com/bangalore/biggies-burger",
+    "demo_url": "https://preview.wishgranters.com/bangalore/biggies-burger",
+    "project_id": "biggies-burger",
+    "repo_path": "projects/biggies-burger",
+    "generated_at": "2026-08-26T10:45:00+00:00",
+    "notes": "Flame and smoke aesthetic showcasing India's grilled burger legacy with interactive 3-outlet store locator."
+  }
+}

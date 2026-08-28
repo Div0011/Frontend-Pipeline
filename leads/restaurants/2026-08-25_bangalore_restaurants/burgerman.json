@@ -1,0 +1,56 @@
+{
+  "business_name": "BurgerMan",
+  "category": "Restaurants / Grilled Burger & Bistro",
+  "search_date": "2026-08-25",
+  "geography": "Bangalore, India",
+  "live_url": "https://stores.burgerman.in/burgerman-restaurants-indiranagar-bengaluru-397097/Home",
+  "contact": {
+    "phone": "081971 46681",
+    "additional_phones": [],
+    "email": "feedback@burgerman.in",
+    "owner": "Sunil Cherian",
+    "address": "No 3282, 1, 12th Main Rd, HAL 2nd Stage, Indiranagar, Bengaluru, Karnataka 560008",
+    "social_links": [
+      "https://www.instagram.com/burgerman.in",
+      "https://www.facebook.com/burgermanindia"
+    ]
+  },
+  "audit_factors": {
+    "colour_palette": {
+      "score": "Weak",
+      "rating": 2,
+      "details": "Standard orange and yellow directory theme."
+    },
+    "logo": {
+      "score": "Weak",
+      "rating": 2.5,
+      "details": "Raster logo embedded in store locator header."
+    },
+    "typography": {
+      "score": "Weak",
+      "rating": 2,
+      "details": "Generic store locator font without dynamic hierarchy."
+    },
+    "contact": {
+      "score": "Good",
+      "rating": 4,
+      "details": "12th Main Indiranagar phone line and feedback email."
+    },
+    "online_presence": {
+      "score": "Poor",
+      "rating": 1,
+      "details": "Subdomain URL with expired SSL certificate verification errors causing browser security warnings."
+    }
+  },
+  "verdict": {
+    "grade": "D- (SSL Issue)",
+    "outreach_priority": "High Priority",
+    "commercial_rationale": "Popular healthy/grilled burger brand in Indiranagar. Their store locator page throws SSL security warnings, which turns away potential diners."
+  },
+  "sample_website": {
+    "status": "generated",
+    "project_id": "burgerman",
+    "repo_path": "projects/burgerman",
+    "preview_url": "https://preview.wishgranters.com/bangalore/burgerman"
+  }
+}

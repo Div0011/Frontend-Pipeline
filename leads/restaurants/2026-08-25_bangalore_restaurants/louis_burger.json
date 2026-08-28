@@ -1,0 +1,58 @@
+{
+  "business_name": "Louis Burger",
+  "category": "Restaurants / Gourmet Truffle Burger & Craft Diner",
+  "search_date": "2026-08-25",
+  "geography": "Bangalore, India",
+  "live_url": null,
+  "contact": {
+    "phone": "063663 93732",
+    "additional_phones": [],
+    "email": "info@massiverestaurants.com",
+    "owner": "Zorawar Kalra (Massive Restaurants)",
+    "address": "212/A, 1st Main Rd, Stage 2, Indiranagar, Bengaluru, Karnataka 560071",
+    "social_links": [
+      "https://www.instagram.com/louisburgerofficial"
+    ]
+  },
+  "audit_factors": {
+    "colour_palette": {
+      "score": "Critical",
+      "rating": 1,
+      "details": "No dedicated website exists. While physical packaging uses gold foil and noir black (#D4AF37, #111111), there is zero digital design token infrastructure."
+    },
+    "logo": {
+      "score": "Critical",
+      "rating": 1,
+      "details": "No vector web logo or favicon deployed on an owned domain."
+    },
+    "typography": {
+      "score": "Critical",
+      "rating": 1,
+      "details": "Non-existent website typography. Trapped within standard Swiggy/Zomato third-party font templates."
+    },
+    "contact": {
+      "score": "Average",
+      "rating": 3,
+      "details": "Direct cloud kitchen phone number available on Google Maps, active social media handle."
+    },
+    "online_presence": {
+      "score": "Critical",
+      "rating": 1,
+      "details": "Completely reliant on third-party food delivery aggregators (Swiggy/Zomato) paying 25-30% platform commissions. Zero owned customer data or DTC ordering flow."
+    }
+  },
+  "verdict": {
+    "grade": "F (No Direct Website)",
+    "outreach_priority": "Immediate (Top Pick)",
+    "commercial_rationale": "High-end luxury burger brand with high average order values (\u20b9600\u2013\u20b91,200). A premium dark-mode cinematic direct ordering platform will recapture tens of thousands in aggregator commission fees and establish an elite digital presence."
+  },
+  "sample_website": {
+    "status": "generated",
+    "sample_url": "https://preview.wishgranters.com/bangalore/louis-burger",
+    "demo_url": "https://preview.wishgranters.com/bangalore/louis-burger",
+    "project_id": "louis-burger",
+    "repo_path": "projects/louis-burger",
+    "generated_at": "2026-08-26T10:50:00+00:00",
+    "notes": "Noir luxury aesthetic showcasing Truffle Takeover, Monster Cheese, and Gold Leaf Wagyu Smash burgers."
+  }
+}

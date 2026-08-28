@@ -1,0 +1,58 @@
+{
+  "business_name": "Little Deli & Pizzeria",
+  "category": "Restaurants / Pizzeria & Deli",
+  "search_date": "2026-08-23",
+  "geography": "Austin, TX",
+  "live_url": "https://littledeliandpizza.com",
+  "contact": {
+    "phone": "(512) 467-7402",
+    "additional_phones": ["(512) 220-8346"],
+    "email": "info@littledeliandpizza.com",
+    "owner": null,
+    "address": "7101-A Woodrow Ave (Crestview) & 1804 Briarcliff Blvd (Windsor Park), Austin, TX",
+    "social_links": [
+      "https://facebook.com/littledeliandpizzeria"
+    ]
+  },
+  "audit_factors": {
+    "colour_palette": {
+      "score": "Weak",
+      "rating": 2.5,
+      "details": "Dark forest green (#0f4b29, #1c5733) and charcoal (#1d1d23) with white. Feels like an uncustomized WordPress Astra theme starter palette rather than an artisan East Coast deli."
+    },
+    "logo": {
+      "score": "Weak",
+      "rating": 2,
+      "details": "Circular badge seal is loaded as a raster JPEG ('LittleDeli-Seal-Color.jpg', 500x257px), appearing soft on high-resolution Retina displays."
+    },
+    "typography": {
+      "score": "Weak",
+      "rating": 2.5,
+      "details": "Uses Roboto Condensed (400, 700) across body and headings. Clean and legible, but lacks rustic Italian-American warmth."
+    },
+    "contact": {
+      "score": "Good",
+      "rating": 5,
+      "details": "Both location phone numbers, full addresses, hours of operation, and direct email are clearly accessible."
+    },
+    "online_presence": {
+      "score": "Weak",
+      "rating": 2.5,
+      "details": "WordPress + Astra theme + Elementor page builder. Yoast SEO is active, but heavy inline CSS and nested Elementor wrapper divs slow down mobile Largest Contentful Paint."
+    }
+  },
+  "verdict": {
+    "grade": "C",
+    "outreach_priority": "High Priority",
+    "commercial_rationale": "Beloved neighborhood institution for nearly two decades across two Austin locations. Upgrading to a fast, modern digital menu with streamlined mobile ordering would generate significant revenue lift."
+  },
+  "sample_website": {
+    "status": "pending",
+    "sample_url": null,
+    "demo_url": null,
+    "project_id": null,
+    "repo_path": null,
+    "generated_at": null,
+    "notes": "Classic NYC-style deli & wood-fired pizza digital ordering showcase."
+  }
+}

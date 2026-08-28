@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;700&family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@500;700;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-char: #0D0D10;
+  --color-char-soft: #17171C;
+  --color-char-mute: #26262E;
+  --color-smoke: #9E9EA8;
+  --color-stone: #D1D1DB;
+  --color-bone: #F7F5F0;
+  --color-bone-warm: #EFECE4;
+  --color-bone-dark: #D8D4C7;
+  --color-ember: #E6A08D;
+  --color-ember-glow: #F3C2B4;
+  --color-yolk: #D4AF37;
+  --color-yolk-light: #E5C564;
+  
+  --font-display: 'Bebas Neue', 'Space Grotesk', Impact, sans-serif;
+  --font-body: 'DM Sans', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+:root {
+  --background: #0D0D10;
+  --foreground: #F7F5F0;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body), sans-serif;
+  overflow-x: hidden;
+}
+
+.type-display {
+  font-family: var(--font-display), serif;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  line-height: 1.0;
+}
+
+.clip-slanted {
+  clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%);
+}
+
+.text-stroke-gold {
+  -webkit-text-stroke: 1px #D4AF37;
+  color: transparent;
+}

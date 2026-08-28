@@ -1,0 +1,53 @@
+{
+  "business_name": "Simon Burgers",
+  "category": "Restaurants / Neighborhood Burger Joint",
+  "search_date": "2026-08-25",
+  "geography": "Bangalore, India",
+  "live_url": null,
+  "contact": {
+    "phone": "095911 84263",
+    "additional_phones": [],
+    "email": null,
+    "owner": "Local Independent Operator",
+    "address": "Unit 6, Vivekananda Swamy, 38, 3rd Cross Rd, Kammanahalli, Bengaluru, Karnataka 560084",
+    "social_links": []
+  },
+  "audit_factors": {
+    "colour_palette": {
+      "score": "Critical",
+      "rating": 1,
+      "details": "Zero digital presence or color system."
+    },
+    "logo": {
+      "score": "Critical",
+      "rating": 1,
+      "details": "No digital logo asset available."
+    },
+    "typography": {
+      "score": "Critical",
+      "rating": 1,
+      "details": "No web typography."
+    },
+    "contact": {
+      "score": "Average",
+      "rating": 3,
+      "details": "Direct phone number and verified Google Maps pin in Kammanahalli."
+    },
+    "online_presence": {
+      "score": "Critical",
+      "rating": 1,
+      "details": "No website or digital storefront. Missing out on local takeaway search traffic."
+    }
+  },
+  "verdict": {
+    "grade": "F (No Website)",
+    "outreach_priority": "Medium Priority",
+    "commercial_rationale": "Popular Kammanahalli neighborhood burger spot that needs a lightning-fast mobile landing page with click-to-WhatsApp direct ordering."
+  },
+  "sample_website": {
+    "status": "generated",
+    "project_id": "simon-burgers",
+    "repo_path": "projects/simon-burgers",
+    "preview_url": "https://preview.wishgranters.com/bangalore/simon-burgers"
+  }
+}

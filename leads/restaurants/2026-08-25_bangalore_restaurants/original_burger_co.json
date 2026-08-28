@@ -1,0 +1,61 @@
+{
+  "business_name": "Original Burger Co. (OBC)",
+  "category": "Restaurants / Smash Burger & Diner",
+  "search_date": "2026-08-25",
+  "geography": "Bangalore, India",
+  "live_url": "https://www.originalburger.co",
+  "contact": {
+    "phone": "096061 54669",
+    "additional_phones": [
+      "090080 73254",
+      "079789 48799"
+    ],
+    "email": "hello@originalburger.co",
+    "owner": "OBC Hospitality",
+    "address": "Koramangala / Kalyan Nagar / JP Nagar / Race Course Rd / Whitefield, Bengaluru",
+    "social_links": [
+      "https://www.instagram.com/originalburgerco"
+    ]
+  },
+  "audit_factors": {
+    "colour_palette": {
+      "score": "Weak",
+      "rating": 2.5,
+      "details": "Cobalt blue (#2424b4) with plain white background. Lacks warm food-grade appetite stimulation."
+    },
+    "logo": {
+      "score": "Weak",
+      "rating": 2.5,
+      "details": "Favicon exists, but header brand assets lack scalable vector SVG rendering."
+    },
+    "typography": {
+      "score": "Weak",
+      "rating": 2.5,
+      "details": "Basic sans-serif web font with limited headline hierarchy."
+    },
+    "contact": {
+      "score": "Good",
+      "rating": 4,
+      "details": "Active phone numbers across 4+ Bangalore outlets and social media channels."
+    },
+    "online_presence": {
+      "score": "Weak",
+      "rating": 2.5,
+      "details": "Simple React landing page with external food aggregator redirects; lacks custom interactive scrollytelling or rich product specimen views."
+    }
+  },
+  "verdict": {
+    "grade": "C",
+    "outreach_priority": "Medium Priority",
+    "commercial_rationale": "Rapidly expanding smashed burger chain in Bangalore with 4+ outlets. Upgrading to a cinematic, multi-location digital menu will supercharge direct pickup orders."
+  },
+  "sample_website": {
+    "status": "generated",
+    "sample_url": "https://preview.wishgranters.com/bangalore/original-burger-co",
+    "demo_url": "https://preview.wishgranters.com/bangalore/original-burger-co",
+    "project_id": "original-burger-co",
+    "repo_path": "projects/original-burger-co",
+    "generated_at": "2026-08-26T11:05:00+00:00",
+    "notes": "Cobalt blue and smash-amber modern diner redesign showcasing the OBC Classic Double, Bacon Jam Melt, and 5 Bangalore outlets."
+  }
+}

@@ -1,0 +1,1578 @@
+{
+  "count": 28,
+  "businesses": [
+    {
+      "name": "Truffles Koramangala",
+      "website": "https://www.truffles.co.in/",
+      "domain": "truffles.co.in",
+      "category": "burger",
+      "address": "Ground Floor, A Wing, Apex Building, 93/A, 4th B Cross Rd, 5th Block, Koramangala, Bengaluru, Karnataka 560095",
+      "city": "Bangalore",
+      "state": "",
+      "postcode": "",
+      "country": "",
+      "lat": null,
+      "lon": null,
+      "phone": "080 4153 6565",
+      "email": "info@truffles.net.in",
+      "emails": [
+        "info@truffles.net.in",
+        ".d@aset.mediaheightoverridetype",
+        "c@egorypagecontroller.bundle",
+        "c@egorypageviewerwidget.bundle",
+        "c@egorypageviewerwidgetnocss.bundle",
+        "com.wixpress.table-reserv@ions.experiences",
+        "createpl@formworker.inline",
+        "d@e.now"
+      ],
+      "email_source": "mailto @ https://www.truffles.co.in/",
+      "logo_url": "https://static.wixstatic.com/media/f90424_9367854a1d6f4ef98570d5dd3e3e1381~mv2.png/v1/fill/w_249,h_21,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Yellow%20Updated.png",
+      "logo_path": "output/logos/truffles.co.in.png",
+      "logo_source": "img-heuristic",
+      "colors": [
+        {
+          "hex": "#fcfc3c",
+          "source": "logo",
+          "weight": 83.71302706104468,
+          "role": "primary"
+        },
+        {
+          "hex": "#9c9c3c",
+          "source": "logo",
+          "weight": 67.3253618628068,
+          "role": "secondary"
+        },
+        {
+          "hex": "#cccc24",
+          "source": "logo",
+          "weight": 66.49465072372561,
+          "role": "accent"
+        },
+        {
+          "hex": "#e4e454",
+          "source": "logo",
+          "weight": 66.4191315292637,
+          "role": "supporting"
+        },
+        {
+          "hex": "#269195",
+          "source": "inline-style",
+          "weight": 62.0,
+          "role": "supporting"
+        }
+      ],
+      "socials": {
+        "instagram": "https://www.instagram.com/truffles.in",
+        "facebook": "https://www.facebook.com/trufflesblrofficial"
+      },
+      "source": "gmaps",
+      "source_id": "0x3bae1451d90b3e77:0x6297032c180f2bbd",
+      "query": "burger in Bangalore",
+      "scraped_at": "2026-08-24T12:36:47+00:00",
+      "status": "enriched",
+      "notes": []
+    },
+    {
+      "name": "Smash Guys - Burger Kitchen, Indiranagar",
+      "website": "https://www.smashguys.in/",
+      "domain": "smashguys.in",
+      "category": "burger",
+      "address": "948, 12th Main Rd, HAL 2nd Stage, Appareddipalya, Indiranagar, Bengaluru, Karnataka 560038",
+      "city": "Bangalore",
+      "state": "",
+      "postcode": "",
+      "country": "",
+      "lat": null,
+      "lon": null,
+      "phone": "080 4736 2227",
+      "email": "grievanceofficer@popoglobal.com",
+      "emails": [
+        "grievanceofficer@popoglobal.com",
+        ".d@aset.mediaheightoverridetype",
+        "c@egorypagecontroller.bundle",
+        "c@egorypageviewerwidget.bundle",
+        "c@egorypageviewerwidgetnocss.bundle",
+        "com.wixpress.table-reserv@ions.experiences",
+        "communic@ions.some",
+        "createpl@formworker.inline"
+      ],
+      "email_source": "mailto @ https://www.smashguys.in/privacy-policy",
+      "logo_url": "https://static.wixstatic.com/media/8bd22c_c1dd9d434bb74e989696a7983b3900e4%7Emv2.png/v1/fill/w_180%2Ch_180%2Clg_1%2Cusm_0.66_1.00_0.01/8bd22c_c1dd9d434bb74e989696a7983b3900e4%7Emv2.png",
+      "logo_path": "output/logos/smashguys.in.png",
+      "logo_source": "apple-touch-icon",
+      "colors": [
+        {
+          "hex": "#fccc24",
+          "source": "logo",
+          "weight": 94.0,
+          "role": "primary"
+        },
+        {
+          "hex": "#fce43c",
+          "source": "logo",
+          "weight": 64.72962962962963,
+          "role": "secondary"
+        },
+        {
+          "hex": "#fcfc54",
+          "source": "logo",
+          "weight": 61.62222222222222,
+          "role": "accent"
+        },
+        {
+          "hex": "#116dff",
+          "source": "inline-style",
+          "weight": 26.0,
+          "role": "supporting"
+        }
+      ],
+      "socials": {
+        "instagram": "https://www.instagram.com/smashguys.in",
+        "youtube": "https://www.youtube.com/abgupta"
+      },
+      "source": "gmaps",
+      "source_id": "0x3bae17007d96d779:0x92bd31b1c4b3a7ae",
+      "query": "burger in Bangalore",
+      "scraped_at": "2026-08-24T12:37:14+00:00",
+      "status": "enriched",
+      "notes": []
+    },
+    {
+      "name": "Burger Seigneur",
+      "website": "http://burgerseigneur.com/",
+      "domain": "burgerseigneur.com",
+      "category": "burger",
+      "address": "470, 80 Feet Rd, opposite BSNL office, Hal, HAL 3rd Stage, Indiranagar, Bengaluru, Karnataka 560075",
+      "city": "Bangalore",
+      "state": "",
+      "postcode": "",
+      "country": "",
+      "lat": null,
+      "lon": null,
+      "phone": "",
+      "email": "",
+      "emails": [],
+      "email_source": "",
+      "logo_url": "",
+      "logo_path": "",
+      "logo_source": "",
+      "colors": [],
+      "socials": {},
+      "source": "gmaps",
+      "source_id": "0x3bae175ac87ec44f:0x8e900c06f01d0eab",
+      "query": "burger in Bangalore",
+      "scraped_at": "2026-08-24T12:37:40+00:00",
+      "status": "failed",
+      "notes": [
+        "homepage fetch failed: blocked by robots.txt"
+      ]
+    },
+    {
+      "name": "Beyondburg Inc. St. Mark's Road",
+      "website": "https://beyondburginc.com/",
+      "domain": "beyondburginc.com",
+      "category": "burger",
+      "address": "16/1, House Of Lords, Ground floor, St Mark's Rd, Shanthala Nagar, Ashok Nagar, Bengaluru, Karnataka 560001",
+      "city": "Bangalore",
+      "state": "",
+      "postcode": "",
+      "country": "",
+      "lat": null,
+      "lon": null,
+      "phone": "090729 64242",
+      "email": "expect@ions.the",
+      "emails": [
+        "expect@ions.the",
+        "loc@ions.the",
+        "wp.d@a.plugins",
+        "wp.d@a.use",
+        "wp.d@e.setsettings",
+        "gre@burgers.what",
+        "w@er.reducing"
+      ],
+      "email_source": "obfuscated @ https://beyondburginc.com/about/",
+      "logo_url": "https://beyondburginc.com/wp-content/uploads/2026/01/BYND-GREEN-LOGO.png",
+      "logo_path": "output/logos/beyondburginc.com.webp",
+      "logo_source": "img-heuristic",
+      "colors": [
+        {
+          "hex": "#cc1818",
+          "source": "css-var:--wp-components-color-accent",
+          "weight": 100.0,
+          "role": "primary"
+        },
+        {
+          "hex": "#24543c",
+          "source": "logo",
+          "weight": 94.0,
+          "role": "secondary"
+        },
+        {
+          "hex": "#9e1313",
+          "source": "css-var:--wp-components-color-accent-darker-10",
+          "weight": 82.0,
+          "role": "accent"
+        },
+        {
+          "hex": "#710d0d",
+          "source": "css-var:--wp-components-color-accent-darker-20",
+          "weight": 82.0,
+          "role": "supporting"
+        },
+        {
+          "hex": "#dddddd",
+          "source": "stylesheet",
+          "weight": 80.0,
+          "role": "supporting"
+        }
+      ],
+      "socials": {},
+      "source": "gmaps",
+      "source_id": "0x3bae17571e00d023:0x741c195a522594e7",
+      "query": "burger in Bangalore",
+      "scraped_at": "2026-08-24T12:38:07+00:00",
+      "status": "enriched",
+      "notes": []
+    },
+    {
+      "name": "Sanky's Burger House",
+      "website": "",
+      "domain": "",
+      "category": "burger",
+      "address": "Bus Stop, 50, Hennur Main Rd, opp. Jyothi School, St Thomas Town, Kacharakanahalli, Bengaluru, Karnataka 560084",
+      "city": "Bangalore",
+      "state": "",
+      "postcode": "",
+      "country": "",
+      "lat": null,
+      "lon": null,
+      "phone": "098867 38143",
+      "email": "",
+      "emails": [],
+      "email_source": "",
+      "logo_url": "",
+      "logo_path": "",
+      "logo_source": "",
+      "colors": [],
+      "socials": {},
+      "source": "gmaps",
+      "source_id": "0x3bae171f9e9b401d:0x9fd9cfa7e6ca3009",
+      "query": "burger in Bangalore",
+      "scraped_at": "2026-08-24T12:38:33+00:00",
+      "status": "no_website",
+      "notes": [
+        "no website to enrich"
+      ]
+    },
+    {
+      "name": "Original Burger Co. : Kalyan Nagar",
+      "website": "https://originalburger.co/",
+      "domain": "originalburger.co",
+      "category": "burger",
+      "address": "No. 2116 (BBMP #12), 4th Cross, CMR Road, HRBR Layout 2nd Block Kalyan Nagar, B.B, M.P North, Hebbal, Bengaluru, Karnataka 560043",
+      "city": "Bangalore",
+      "state": "",
+      "postcode": "",
+      "country": "",
+      "lat": null,
+      "lon": null,
+      "phone": "",
+      "email": "",
+      "emails": [],
+      "email_source": "",
+      "logo_url": "https://originalburger.co/favicon.png",
+      "logo_path": "output/logos/originalburger.co.png",
+      "logo_source": "apple-touch-icon",
+      "colors": [
+        {
+          "hex": "#2424b4",
+          "source": "logo",
+          "weight": 94.0,
+          "role": "primary"
+        },
+        {
+          "hex": "#3c3cb4",
+          "source": "logo",
+          "weight": 65.40325784664283,
+          "role": "secondary"
+        },
+        {
+          "hex": "#e4e4fc",
+          "source": "logo",
+          "weight": 64.56098529996027,
+          "role": "accent"
+        },
+        {
+          "hex": "#5454cc",
+          "source": "logo",
+          "weight": 64.10011918951132,
+          "role": "supporting"
+        },
+        {
+          "hex": "#6c6ccc",
+          "source": "logo",
+          "weight": 63.146603098927294,
+          "role": "supporting"
+        }
+      ],
+      "socials": {},
+      "source": "gmaps",
+      "source_id": "0x3bae1716128bd7cb:0xbc8b35cbfcf23dc4",
+      "query": "burger in Bangalore",
+      "scraped_at": "2026-08-24T12:38:59+00:00",
+      "status": "enriched",
+      "notes": [
+        "no email found"
+      ]
+    },
+    {
+      "name": "Original Burger Co. : Koramangala Bangalore",
+      "website": "https://originalburger.co/",
+      "domain": "originalburger.co",
+      "category": "burger",
+      "address": "Ground Floor, opposite to Sri Krishna Temple, KHB Colony, 5th Block, Koramangala, Bengaluru, Karnataka 560095",
+      "city": "Bangalore",
+      "state": "",
+      "postcode": "",
+      "country": "",
+      "lat": null,
+      "lon": null,
+      "phone": "096061 54669",
+      "email": "",
+      "emails": [],
+      "email_source": "",
+      "logo_url": "https://originalburger.co/favicon.png",
+      "logo_path": "output/logos/originalburger.co.png",
+      "logo_source": "apple-touch-icon",
+      "colors": [
+        {
+          "hex": "#2424b4",
+          "source": "logo",
+          "weight": 94.0,
+          "role": "primary"
+        },
+        {
+          "hex": "#3c3cb4",
+          "source": "logo",
+          "weight": 65.40325784664283,
+          "role": "secondary"
+        },
+        {
+          "hex": "#e4e4fc",
+          "source": "logo",
+          "weight": 64.56098529996027,
+          "role": "accent"
+        },
+        {
+          "hex": "#5454cc",
+          "source": "logo",
+          "weight": 64.10011918951132,
+          "role": "supporting"
+        },
+        {
+          "hex": "#6c6ccc",
+          "source": "logo",
+          "weight": 63.146603098927294,
+          "role": "supporting"
+        }
+      ],
+      "socials": {},
+      "source": "gmaps",
+      "source_id": "0x3bae15ad5045f645:0x64b09e6e1f75a994",
+      "query": "burger in Bangalore",
+      "scraped_at": "2026-08-24T12:39:26+00:00",
+      "status": "enriched",
+      "notes": [
+        "no email found"
+      ]
+    },
+    {
+      "name": "Beyondburg Inc. Indiranagar",
+      "website": "https://beyondburginc.com/",
+      "domain": "beyondburginc.com",
+      "category": "burger",
+      "address": "267, Ground Floor, 1st Main, 2nd Stage, Indiranagar, Domlur, Bengaluru, Karnataka 560071",
+      "city": "Bangalore",
+      "state": "",
+      "postcode": "",
+      "country": "",
+      "lat": null,
+      "lon": null,
+      "phone": "090712 22263",
+      "email": "expect@ions.the",
+      "emails": [
+        "expect@ions.the",
+        "loc@ions.the",
+        "wp.d@a.plugins",
+        "wp.d@a.use",
+        "wp.d@e.setsettings",
+        "gre@burgers.what",
+        "w@er.reducing"
+      ],
+      "email_source": "obfuscated @ https://beyondburginc.com/about/",
+      "logo_url": "https://beyondburginc.com/wp-content/uploads/2026/01/BYND-GREEN-LOGO.png",
+      "logo_path": "output/logos/beyondburginc.com.webp",
+      "logo_source": "img-heuristic",
+      "colors": [
+        {
+          "hex": "#cc1818",
+          "source": "css-var:--wp-components-color-accent",
+          "weight": 100.0,
+          "role": "primary"
+        },
+        {
+          "hex": "#24543c",
+          "source": "logo",
+          "weight": 94.0,
+          "role": "secondary"
+        },
+        {
+          "hex": "#9e1313",
+          "source": "css-var:--wp-components-color-accent-darker-10",
+          "weight": 82.0,
+          "role": "accent"
+        },
+        {
+          "hex": "#710d0d",
+          "source": "css-var:--wp-components-color-accent-darker-20",
+          "weight": 82.0,
+          "role": "supporting"
+        },
+        {
+          "hex": "#dddddd",
+          "source": "stylesheet",
+          "weight": 80.0,
+          "role": "supporting"
+        }
+      ],
+      "socials": {},
+      "source": "gmaps",
+      "source_id": "0x3bae1542b98b791d:0xa4bdc0590805d3a4",
+      "query": "burger in Bangalore",
+      "scraped_at": "2026-08-24T12:39:52+00:00",
+      "status": "enriched",
+      "notes": []
+    },
+    {
+      "name": "Biggies Burger: Church Street",
+      "website": "https://www.biggiesburger.com/stores",
+      "domain": "biggiesburger.com",
+      "category": "burger",
+      "address": "Church St, Haridevpur, Shanthala Nagar, Ashok Nagar, Bengaluru, Karnataka 560001",
+      "city": "Bangalore",
+      "state": "",
+      "postcode": "",
+      "country": "",
+      "lat": null,
+      "lon": null,
+      "phone": "073034 47342",
+      "email": "info@biggiesburger.com",
+      "emails": [
+        "info@biggiesburger.com",
+        ".d@aset.mediaheightoverridetype",
+        "c@egorymenuviewerwidget.bundle",
+        "c@egorymenuviewerwidgetnocss.bundle",
+        "c@egorypagecontroller.bundle",
+        "c@egorypageviewerwidget.bundle",
+        "c@egorypageviewerwidgetnocss.bundle",
+        "com.wixpress.live.site.d@a.types"
+      ],
+      "email_source": "mailto @ https://www.biggiesburger.com/privacy-policy",
+      "logo_url": "https://static.wixstatic.com/media/7971e4_8da5ea0f338143c6ae0114313f33918c~mv2.png/v1/fill/w_133,h_72,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Final%20Logo%20Biggies%20Burger%20White%202.png",
+      "logo_path": "output/logos/biggiesburger.com.png",
+      "logo_source": "img-heuristic",
+      "colors": [
+        {
+          "hex": "#fcfce4",
+          "source": "logo",
+          "weight": 62.52232142857143,
+          "role": "primary"
+        },
+        {
+          "hex": "#fce46c",
+          "source": "logo",
+          "weight": 61.74107142857143,
+          "role": "secondary"
+        },
+        {
+          "hex": "#e4e4e4",
+          "source": "logo",
+          "weight": 61.71875,
+          "role": "accent"
+        },
+        {
+          "hex": "#cccccc",
+          "source": "logo",
+          "weight": 61.40625,
+          "role": "supporting"
+        },
+        {
+          "hex": "#0f2ccf",
+          "source": "css-var:--wbu-color-blue-0",
+          "weight": 38.0,
+          "role": "supporting"
+        }
+      ],
+      "socials": {
+        "instagram": "https://www.instagram.com/biggiesburger",
+        "facebook": "https://www.facebook.com/biggiesburger",
+        "linkedin": "https://www.linkedin.com/company/28724814/admin",
+        "twitter": "https://twitter.com/biggiesburger",
+        "youtube": "https://www.youtube.com/results"
+      },
+      "source": "gmaps",
+      "source_id": "0x3bae1789671674cf:0x55ab62b62e470e1e",
+      "query": "burger in Bangalore",
+      "scraped_at": "2026-08-24T12:40:18+00:00",
+      "status": "enriched",
+      "notes": []
+    },
+    {
+      "name": "Smash Guys - Burger Kitchen, Bellandur",
+      "website": "https://www.smashguys.in/",
+      "domain": "smashguys.in",
+      "category": "burger",
+      "address": "Ground Floor, Campus 6A, Unit 25, RMZ Ecoworld Rd, Bellandur, Bengaluru, Karnataka 560103",
+      "city": "Bangalore",
+      "state": "",
+      "postcode": "",
+      "country": "",
+      "lat": null,
+      "lon": null,
+      "phone": "080 4736 2227",
+      "email": "grievanceofficer@popoglobal.com",
+      "emails": [
+        "grievanceofficer@popoglobal.com",
+        ".d@aset.mediaheightoverridetype",
+        "c@egorypagecontroller.bundle",
+        "c@egorypageviewerwidget.bundle",
+        "c@egorypageviewerwidgetnocss.bundle",
+        "com.wixpress.table-reserv@ions.experiences",
+        "communic@ions.some",
+        "createpl@formworker.inline"
+      ],
+      "email_source": "mailto @ https://www.smashguys.in/privacy-policy",
+      "logo_url": "https://static.wixstatic.com/media/8bd22c_c1dd9d434bb74e989696a7983b3900e4%7Emv2.png/v1/fill/w_180%2Ch_180%2Clg_1%2Cusm_0.66_1.00_0.01/8bd22c_c1dd9d434bb74e989696a7983b3900e4%7Emv2.png",
+      "logo_path": "output/logos/smashguys.in.png",
+      "logo_source": "apple-touch-icon",
+      "colors": [
+        {
+          "hex": "#fccc24",
+          "source": "logo",
+          "weight": 94.0,
+          "role": "primary"
+        },
+        {
+          "hex": "#fce43c",
+          "source": "logo",
+          "weight": 64.72962962962963,
+          "role": "secondary"
+        },
+        {
+          "hex": "#fcfc54",
+          "source": "logo",
+          "weight": 61.62222222222222,
+          "role": "accent"
+        },
+        {
+          "hex": "#116dff",
+          "source": "inline-style",
+          "weight": 26.0,
+          "role": "supporting"
+        }
+      ],
+      "socials": {
+        "instagram": "https://www.instagram.com/smashguys.in",
+        "youtube": "https://www.youtube.com/abgupta"
+      },
+      "source": "gmaps",
+      "source_id": "0x3bae13bf09dac673:0x33d29c2c4c2df8e1",
+      "query": "burger in Bangalore",
+      "scraped_at": "2026-08-24T12:40:45+00:00",
+      "status": "enriched",
+      "notes": []
+    },
+    {
+      "name": "GOOD FLIPPIN' BURGERS® - Church Street",
+      "website": "https://stores.goodflippin.com/store-pages/good-flippin-burgers-church-street-bangalore/",
+      "domain": "goodflippin.com",
+      "category": "burger",
+      "address": "Church St, off Brigade Road, Shanthala Nagar, Ashok Nagar, Bengaluru, Karnataka 560001",
+      "city": "Bangalore",
+      "state": "",
+      "postcode": "",
+      "country": "",
+      "lat": null,
+      "lon": null,
+      "phone": "1800 202 3312",
+      "email": "info@goodflippin.com",
+      "emails": [
+        "info@goodflippin.com",
+        "churchstreet@goodflippin.com",
+        ".wp-block-post-templ@e.is",
+        "arrlivest@s.length",
+        "asl-storeloc@or.asl",
+        "m@h.min",
+        "m@h.random"
+      ],
+      "email_source": "mailto @ https://stores.goodflippin.com/store-pages/good-flippin-burgers-church-street-bangalore/",
+      "logo_url": "https://stores.goodflippin.com/wp-content/uploads/2025/05/cropped-GFB-New-Logo-12.2024.png",
+      "logo_path": "output/logos/goodflippin.com.png",
+      "logo_source": "img-heuristic",
+      "colors": [
+        {
+          "hex": "#007bff",
+          "source": "css-var:--primary",
+          "weight": 118.0,
+          "role": "primary"
+        },
+        {
+          "hex": "#2f5aae",
+          "source": "css-var:--nv-primary-accent",
+          "weight": 100.0,
+          "role": "secondary"
+        },
+        {
+          "hex": "#e42454",
+          "source": "logo",
+          "weight": 94.0,
+          "role": "accent"
+        },
+        {
+          "hex": "#6c757d",
+          "source": "css-var:--secondary",
+          "weight": 92.0,
+          "role": "supporting"
+        },
+        {
+          "hex": "#0cb4b4",
+          "source": "logo",
+          "weight": 84.0598690364827,
+          "role": "supporting"
+        }
+      ],
+      "socials": {
+        "instagram": "https://www.instagram.com/goodflippin",
+        "facebook": "https://www.facebook.com/Goodflippin",
+        "linkedin": "https://www.linkedin.com/company/good-flippin-food-pvt-ltd",
+        "youtube": "https://www.youtube.com/embed/euCqTDV6bbc"
+      },
+      "source": "gmaps",
+      "source_id": "0x3bae1772691f338b:0x15755afef92a17b6",
+      "query": "burger in Bangalore",
+      "scraped_at": "2026-08-24T12:41:11+00:00",
+      "status": "enriched",
+      "notes": []
+    },
+    {
+      "name": "Leon's Burgers & Wings Indiranagar",
+      "website": "https://leons.in/",
+      "domain": "leons.in",
+      "category": "burger",
+      "address": "No. 839/1 Binnamangala, BBMP South, First Stage, Indiranagar, Bengaluru, Karnataka 560038",
+      "city": "Bangalore",
+      "state": "",
+      "postcode": "",
+      "country": "",
+      "lat": null,
+      "lon": null,
+      "phone": "096069 89821",
+      "email": "milenabbrandao@gmail.com",
+      "emails": [
+        "milenabbrandao@gmail.com",
+        "ceo@leongrill.net",
+        "support.crm@leongrill.net",
+        "d@a.decline",
+        "email@support.crm",
+        "navig@or.serviceworker",
+        "registr@ion.send",
+        "th@information.leon"
+      ],
+      "email_source": "text @ https://leons.in/",
+      "logo_url": "https://img1.wsimg.com/isteam/ip/a3df0084-b888-4771-ae8e-96bba91ded74/blob.png/:/rs=w:57,h:57,m",
+      "logo_path": "output/logos/leons.in.webp",
+      "logo_source": "apple-touch-icon",
+      "colors": [
+        {
+          "hex": "#b12727",
+          "source": "theme-color",
+          "weight": 114.0,
+          "role": "primary"
+        },
+        {
+          "hex": "#fc3c3c",
+          "source": "logo",
+          "weight": 94.0,
+          "role": "secondary"
+        },
+        {
+          "hex": "#e45454",
+          "source": "logo",
+          "weight": 71.75718849840256,
+          "role": "accent"
+        },
+        {
+          "hex": "#e43c54",
+          "source": "logo",
+          "weight": 67.41214057507987,
+          "role": "supporting"
+        },
+        {
+          "hex": "#303030",
+          "source": "inline-style",
+          "weight": 29.0,
+          "role": "supporting"
+        }
+      ],
+      "socials": {
+        "instagram": "https://www.instagram.com/leonsindia",
+        "facebook": "https://www.facebook.com/leonsindia",
+        "linkedin": "https://www.linkedin.com/company/leonsindia"
+      },
+      "source": "gmaps",
+      "source_id": "0x3bae16a5156a37e1:0xb98180e08e9b6c7f",
+      "query": "burger in Bangalore",
+      "scraped_at": "2026-08-24T12:41:38+00:00",
+      "status": "enriched",
+      "notes": []
+    },
+    {
+      "name": "Biggies Burger: AECS Layout",
+      "website": "https://www.biggiesburger.com/stores",
+      "domain": "biggiesburger.com",
+      "category": "burger",
+      "address": "Avalon Arcade, #313/314 Aecs B Block Kundalahalli Mahadevpura, B.B, M.P East, Mahadevapura, Bengaluru, Karnataka 560037",
+      "city": "Bangalore",
+      "state": "",
+      "postcode": "",
+      "country": "",
+      "lat": null,
+      "lon": null,
+      "phone": "",
+      "email": "info@biggiesburger.com",
+      "emails": [
+        "info@biggiesburger.com",
+        ".d@aset.mediaheightoverridetype",
+        "c@egorymenuviewerwidget.bundle",
+        "c@egorymenuviewerwidgetnocss.bundle",
+        "c@egorypagecontroller.bundle",
+        "c@egorypageviewerwidget.bundle",
+        "c@egorypageviewerwidgetnocss.bundle",
+        "com.wixpress.live.site.d@a.types"
+      ],
+      "email_source": "mailto @ https://www.biggiesburger.com/privacy-policy",
+      "logo_url": "https://static.wixstatic.com/media/7971e4_8da5ea0f338143c6ae0114313f33918c~mv2.png/v1/fill/w_133,h_72,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Final%20Logo%20Biggies%20Burger%20White%202.png",
+      "logo_path": "output/logos/biggiesburger.com.png",
+      "logo_source": "img-heuristic",
+      "colors": [
+        {
+          "hex": "#fcfce4",
+          "source": "logo",
+          "weight": 62.52232142857143,
+          "role": "primary"
+        },
+        {
+          "hex": "#fce46c",
+          "source": "logo",
+          "weight": 61.74107142857143,
+          "role": "secondary"
+        },
+        {
+          "hex": "#e4e4e4",
+          "source": "logo",
+          "weight": 61.71875,
+          "role": "accent"
+        },
+        {
+          "hex": "#cccccc",
+          "source": "logo",
+          "weight": 61.40625,
+          "role": "supporting"
+        },
+        {
+          "hex": "#0f2ccf",
+          "source": "css-var:--wbu-color-blue-0",
+          "weight": 38.0,
+          "role": "supporting"
+        }
+      ],
+      "socials": {
+        "instagram": "https://www.instagram.com/biggiesburger",
+        "facebook": "https://www.facebook.com/biggiesburger",
+        "linkedin": "https://www.linkedin.com/company/28724814/admin",
+        "twitter": "https://twitter.com/biggiesburger",
+        "youtube": "https://www.youtube.com/results"
+      },
+      "source": "gmaps",
+      "source_id": "0x3bae13a767d4cb0f:0x12bb9951684964a7",
+      "query": "burger in Bangalore",
+      "scraped_at": "2026-08-24T12:42:04+00:00",
+      "status": "enriched",
+      "notes": []
+    },
+    {
+      "name": "Backyard Burgers And Grill",
+      "website": "https://backyardburgersgrill.petpooja.com/",
+      "domain": "petpooja.com",
+      "category": "burger",
+      "address": "Ground Floor, No. 57, 100 Feet Rd, beside Speedo, Defence Colony, Indiranagar, Bengaluru, Karnataka 560038",
+      "city": "Bangalore",
+      "state": "",
+      "postcode": "",
+      "country": "",
+      "lat": null,
+      "lon": null,
+      "phone": "088614 80534",
+      "email": "",
+      "emails": [],
+      "email_source": "",
+      "logo_url": "",
+      "logo_path": "",
+      "logo_source": "",
+      "colors": [],
+      "socials": {},
+      "source": "gmaps",
+      "source_id": "0x3bae17e37ff3027d:0xc8219a93491b7065",
+      "query": "burger in Bangalore",
+      "scraped_at": "2026-08-24T12:42:30+00:00",
+      "status": "failed",
+      "notes": [
+        "homepage fetch failed: HTTP 500"
+      ]
+    },
+    {
+      "name": "Leon's Burgers & Wings Rajajinagar",
+      "website": "https://leons.in/",
+      "domain": "leons.in",
+      "category": "burger",
+      "address": "722, Savitru elegance, Modi Hospital Rd, WCR, Stage 2, Bengaluru, Karnataka 560010",
+      "city": "Bangalore",
+      "state": "",
+      "postcode": "",
+      "country": "",
+      "lat": null,
+      "lon": null,
+      "phone": "096069 89818",
+      "email": "milenabbrandao@gmail.com",
+      "emails": [
+        "milenabbrandao@gmail.com",
+        "ceo@leongrill.net",
+        "support.crm@leongrill.net",
+        "d@a.decline",
+        "email@support.crm",
+        "navig@or.serviceworker",
+        "registr@ion.send",
+        "th@information.leon"
+      ],
+      "email_source": "text @ https://leons.in/",
+      "logo_url": "https://img1.wsimg.com/isteam/ip/a3df0084-b888-4771-ae8e-96bba91ded74/blob.png/:/rs=w:57,h:57,m",
+      "logo_path": "output/logos/leons.in.webp",
+      "logo_source": "apple-touch-icon",
+      "colors": [
+        {
+          "hex": "#b12727",
+          "source": "theme-color",
+          "weight": 114.0,
+          "role": "primary"
+        },
+        {
+          "hex": "#fc3c3c",
+          "source": "logo",
+          "weight": 94.0,
+          "role": "secondary"
+        },
+        {
+          "hex": "#e45454",
+          "source": "logo",
+          "weight": 71.75718849840256,
+          "role": "accent"
+        },
+        {
+          "hex": "#e43c54",
+          "source": "logo",
+          "weight": 67.41214057507987,
+          "role": "supporting"
+        },
+        {
+          "hex": "#303030",
+          "source": "inline-style",
+          "weight": 29.0,
+          "role": "supporting"
+        }
+      ],
+      "socials": {
+        "instagram": "https://www.instagram.com/leonsindia",
+        "facebook": "https://www.facebook.com/leonsindia",
+        "linkedin": "https://www.linkedin.com/company/leonsindia"
+      },
+      "source": "gmaps",
+      "source_id": "0x3bae3d581ac61935:0x418df467a4ec6a7e",
+      "query": "burger in Bangalore",
+      "scraped_at": "2026-08-24T12:42:57+00:00",
+      "status": "enriched",
+      "notes": []
+    },
+    {
+      "name": "Simon Burgers",
+      "website": "",
+      "domain": "",
+      "category": "burger",
+      "address": "Unit 6, Vivekananda swamy, 38, 3rd Cross Rd, near Sri Venkateswara Garments, Indra Nagar, Ramaiah Layout, Kammanahalli, Bengaluru, Karnataka 560084",
+      "city": "Bangalore",
+      "state": "",
+      "postcode": "",
+      "country": "",
+      "lat": null,
+      "lon": null,
+      "phone": "095911 84263",
+      "email": "",
+      "emails": [],
+      "email_source": "",
+      "logo_url": "",
+      "logo_path": "",
+      "logo_source": "",
+      "colors": [],
+      "socials": {},
+      "source": "gmaps",
+      "source_id": "0x3bae17f8b581acd3:0x17332e93acec5644",
+      "query": "burger in Bangalore",
+      "scraped_at": "2026-08-24T12:43:23+00:00",
+      "status": "no_website",
+      "notes": [
+        "no website to enrich"
+      ]
+    },
+    {
+      "name": "BurgerMan Indira Nagar",
+      "website": "https://stores.burgerman.in/burgerman-restaurants-indiranagar-bengaluru-397097/Home?utm_source=locator&utm_medium=googleplaces",
+      "domain": "burgerman.in",
+      "category": "burger",
+      "address": "No 3282, 1, 12th Main Rd, HAL 2nd Stage, Appareddipalya, Indiranagar, Bengaluru, Karnataka 560008",
+      "city": "Bangalore",
+      "state": "",
+      "postcode": "",
+      "country": "",
+      "lat": null,
+      "lon": null,
+      "phone": "081971 46681",
+      "email": "",
+      "emails": [],
+      "email_source": "",
+      "logo_url": "",
+      "logo_path": "",
+      "logo_source": "",
+      "colors": [],
+      "socials": {},
+      "source": "gmaps",
+      "source_id": "0x3bae17cfda235d41:0x9bd7ecb18bf61cce",
+      "query": "burger in Bangalore",
+      "scraped_at": "2026-08-24T12:43:50+00:00",
+      "status": "failed",
+      "notes": [
+        "homepage fetch failed: CertificateVerifyError: Failed to perform, curl: (60) SSL certificate OpenSSL verify result: certificate has expired (10). See https://curl.se/libcurl/c/libcurl-errors.html first for more details."
+      ]
+    },
+    {
+      "name": "Original Burger Co. : JP Nagar",
+      "website": "https://www.originalburger.co/",
+      "domain": "originalburger.co",
+      "category": "burger",
+      "address": "No. 293, Ground Floor, 15th Cross, Sarakki, 5th Phase, JP Nagar, Bangalore BTM Layout, B.B, M.P South, Bengaluru, Karnataka 560078",
+      "city": "Bangalore",
+      "state": "",
+      "postcode": "",
+      "country": "",
+      "lat": null,
+      "lon": null,
+      "phone": "090080 73254",
+      "email": "",
+      "emails": [],
+      "email_source": "",
+      "logo_url": "https://www.originalburger.co/favicon.png",
+      "logo_path": "output/logos/originalburger.co.png",
+      "logo_source": "apple-touch-icon",
+      "colors": [
+        {
+          "hex": "#2424b4",
+          "source": "logo",
+          "weight": 94.0,
+          "role": "primary"
+        },
+        {
+          "hex": "#3c3cb4",
+          "source": "logo",
+          "weight": 65.40325784664283,
+          "role": "secondary"
+        },
+        {
+          "hex": "#e4e4fc",
+          "source": "logo",
+          "weight": 64.56098529996027,
+          "role": "accent"
+        },
+        {
+          "hex": "#5454cc",
+          "source": "logo",
+          "weight": 64.10011918951132,
+          "role": "supporting"
+        },
+        {
+          "hex": "#6c6ccc",
+          "source": "logo",
+          "weight": 63.146603098927294,
+          "role": "supporting"
+        }
+      ],
+      "socials": {},
+      "source": "gmaps",
+      "source_id": "0x3bae150071e17b69:0x9e8b692b03714014",
+      "query": "burger in Bangalore",
+      "scraped_at": "2026-08-24T12:44:16+00:00",
+      "status": "enriched",
+      "notes": [
+        "no email found"
+      ]
+    },
+    {
+      "name": "Louis Burger, Indiranagar",
+      "website": "",
+      "domain": "",
+      "category": "burger",
+      "address": "212/A, 1st Main Rd, Stage 2, Indiranagar, Bengaluru, Karnataka 560071",
+      "city": "Bangalore",
+      "state": "",
+      "postcode": "",
+      "country": "",
+      "lat": null,
+      "lon": null,
+      "phone": "063663 93732",
+      "email": "",
+      "emails": [],
+      "email_source": "",
+      "logo_url": "",
+      "logo_path": "",
+      "logo_source": "",
+      "colors": [],
+      "socials": {},
+      "source": "gmaps",
+      "source_id": "0x3bae15246f7bb10d:0x4375eb4fd7ec8ae2",
+      "query": "burger in Bangalore",
+      "scraped_at": "2026-08-24T12:44:42+00:00",
+      "status": "no_website",
+      "notes": [
+        "no website to enrich"
+      ]
+    },
+    {
+      "name": "GOOD FLIPPIN' BURGERS® - Whitefield",
+      "website": "https://stores.goodflippin.com/store-pages/good-flippin-burgers-whitefield-bangalore/",
+      "domain": "goodflippin.com",
+      "category": "burger",
+      "address": "No.710, Kitchens@Whitefield, Varthur Main Rd, BEML Layout, Whitefield, Bengaluru, Karnataka 560066",
+      "city": "Bangalore",
+      "state": "",
+      "postcode": "",
+      "country": "",
+      "lat": null,
+      "lon": null,
+      "phone": "1800 202 3312",
+      "email": "info@goodflippin.com",
+      "emails": [
+        "info@goodflippin.com",
+        "whitefield@goodflippin.com",
+        ".wp-block-post-templ@e.is",
+        "arrlivest@s.length",
+        "asl-storeloc@or.asl",
+        "m@h.random"
+      ],
+      "email_source": "mailto @ https://stores.goodflippin.com/store-pages/good-flippin-burgers-whitefield-bangalore/",
+      "logo_url": "https://stores.goodflippin.com/wp-content/uploads/2025/05/cropped-GFB-New-Logo-12.2024.png",
+      "logo_path": "output/logos/goodflippin.com.png",
+      "logo_source": "img-heuristic",
+      "colors": [
+        {
+          "hex": "#007bff",
+          "source": "css-var:--primary",
+          "weight": 118.0,
+          "role": "primary"
+        },
+        {
+          "hex": "#2f5aae",
+          "source": "css-var:--nv-primary-accent",
+          "weight": 100.0,
+          "role": "secondary"
+        },
+        {
+          "hex": "#e42454",
+          "source": "logo",
+          "weight": 94.0,
+          "role": "accent"
+        },
+        {
+          "hex": "#6c757d",
+          "source": "css-var:--secondary",
+          "weight": 92.0,
+          "role": "supporting"
+        },
+        {
+          "hex": "#0cb4b4",
+          "source": "logo",
+          "weight": 84.0598690364827,
+          "role": "supporting"
+        }
+      ],
+      "socials": {
+        "instagram": "https://www.instagram.com/goodflippin",
+        "facebook": "https://www.facebook.com/Goodflippin",
+        "linkedin": "https://www.linkedin.com/company/good-flippin-food-pvt-ltd",
+        "youtube": "https://www.youtube.com/embed/euCqTDV6bbc"
+      },
+      "source": "gmaps",
+      "source_id": "0x3bae13f01dac9a91:0x7b3c4fac5e2d1bed",
+      "query": "burger in Bangalore",
+      "scraped_at": "2026-08-24T12:45:09+00:00",
+      "status": "enriched",
+      "notes": []
+    },
+    {
+      "name": "Original Burger Co. : Race Course Road",
+      "website": "https://www.originalburger.co/",
+      "domain": "originalburger.co",
+      "category": "burger",
+      "address": "Unit No. 02. 45/1, Palace Road, High Grounds, Shivajinagara B.B, M.P East, Sampangirama Nagar, Bengaluru, Karnataka 560001",
+      "city": "Bangalore",
+      "state": "",
+      "postcode": "",
+      "country": "",
+      "lat": null,
+      "lon": null,
+      "phone": "",
+      "email": "",
+      "emails": [],
+      "email_source": "",
+      "logo_url": "https://www.originalburger.co/favicon.png",
+      "logo_path": "output/logos/originalburger.co.png",
+      "logo_source": "apple-touch-icon",
+      "colors": [
+        {
+          "hex": "#2424b4",
+          "source": "logo",
+          "weight": 94.0,
+          "role": "primary"
+        },
+        {
+          "hex": "#3c3cb4",
+          "source": "logo",
+          "weight": 65.40325784664283,
+          "role": "secondary"
+        },
+        {
+          "hex": "#e4e4fc",
+          "source": "logo",
+          "weight": 64.56098529996027,
+          "role": "accent"
+        },
+        {
+          "hex": "#5454cc",
+          "source": "logo",
+          "weight": 64.10011918951132,
+          "role": "supporting"
+        },
+        {
+          "hex": "#6c6ccc",
+          "source": "logo",
+          "weight": 63.146603098927294,
+          "role": "supporting"
+        }
+      ],
+      "socials": {},
+      "source": "gmaps",
+      "source_id": "0x3bae1732b287d529:0x587e119583b93d37",
+      "query": "burger in Bangalore",
+      "scraped_at": "2026-08-24T12:45:35+00:00",
+      "status": "enriched",
+      "notes": [
+        "no email found"
+      ]
+    },
+    {
+      "name": "Leon's Burgers & Wings Kalyan Nagar",
+      "website": "",
+      "domain": "",
+      "category": "burger",
+      "address": "#527, Zebra Trade Center,4th Cross, CMR Road, 2nd Block, Kalyan Nagar HRBR Layout 560043, HRBR Layout 2nd Block, HRBR Layout, Kalyan Nagar, Bengaluru, Karnataka 560043",
+      "city": "Bangalore",
+      "state": "",
+      "postcode": "",
+      "country": "",
+      "lat": null,
+      "lon": null,
+      "phone": "08071 176 444",
+      "email": "",
+      "emails": [],
+      "email_source": "",
+      "logo_url": "",
+      "logo_path": "",
+      "logo_source": "",
+      "colors": [],
+      "socials": {},
+      "source": "gmaps",
+      "source_id": "0x3bae1725b8aa94fb:0xe9c3ba457a1fe3a3",
+      "query": "burger in Bangalore",
+      "scraped_at": "2026-08-24T12:46:01+00:00",
+      "status": "no_website",
+      "notes": [
+        "no website to enrich"
+      ]
+    },
+    {
+      "name": "Leon's Burgers & Wings Sarjapur Road",
+      "website": "https://leons.in/",
+      "domain": "leons.in",
+      "category": "burger",
+      "address": "Ambedkar Nagar, Chikkabellandur, Mullur, Karnataka 560035",
+      "city": "Bangalore",
+      "state": "",
+      "postcode": "",
+      "country": "",
+      "lat": null,
+      "lon": null,
+      "phone": "090359 79994",
+      "email": "milenabbrandao@gmail.com",
+      "emails": [
+        "milenabbrandao@gmail.com",
+        "ceo@leongrill.net",
+        "support.crm@leongrill.net",
+        "d@a.decline",
+        "email@support.crm",
+        "navig@or.serviceworker",
+        "registr@ion.send",
+        "th@information.leon"
+      ],
+      "email_source": "text @ https://leons.in/",
+      "logo_url": "https://img1.wsimg.com/isteam/ip/a3df0084-b888-4771-ae8e-96bba91ded74/blob.png/:/rs=w:57,h:57,m",
+      "logo_path": "output/logos/leons.in.webp",
+      "logo_source": "apple-touch-icon",
+      "colors": [
+        {
+          "hex": "#b12727",
+          "source": "theme-color",
+          "weight": 114.0,
+          "role": "primary"
+        },
+        {
+          "hex": "#fc3c3c",
+          "source": "logo",
+          "weight": 94.0,
+          "role": "secondary"
+        },
+        {
+          "hex": "#e45454",
+          "source": "logo",
+          "weight": 71.75718849840256,
+          "role": "accent"
+        },
+        {
+          "hex": "#e43c54",
+          "source": "logo",
+          "weight": 67.41214057507987,
+          "role": "supporting"
+        },
+        {
+          "hex": "#303030",
+          "source": "inline-style",
+          "weight": 29.0,
+          "role": "supporting"
+        }
+      ],
+      "socials": {
+        "instagram": "https://www.instagram.com/leonsindia",
+        "facebook": "https://www.facebook.com/leonsindia",
+        "linkedin": "https://www.linkedin.com/company/leonsindia"
+      },
+      "source": "gmaps",
+      "source_id": "0x3bae131bfa406bfd:0x84babd423866f0a8",
+      "query": "burger in Bangalore",
+      "scraped_at": "2026-08-24T12:46:28+00:00",
+      "status": "enriched",
+      "notes": []
+    },
+    {
+      "name": "BURGER ELITE",
+      "website": "",
+      "domain": "",
+      "category": "burger",
+      "address": "34, 9th B Cross Rd, West of Chord Road 2nd Stage, West of Chord Road, Stage 2, Mahalakshmi Layout, Bengaluru, Karnataka 560086",
+      "city": "Bangalore",
+      "state": "",
+      "postcode": "",
+      "country": "",
+      "lat": null,
+      "lon": null,
+      "phone": "099454 83345",
+      "email": "",
+      "emails": [],
+      "email_source": "",
+      "logo_url": "",
+      "logo_path": "",
+      "logo_source": "",
+      "colors": [],
+      "socials": {},
+      "source": "gmaps",
+      "source_id": "0x3bae3df336a4f551:0x3bed1697bff9e4a2",
+      "query": "burger in Bangalore",
+      "scraped_at": "2026-08-24T12:46:54+00:00",
+      "status": "no_website",
+      "notes": [
+        "no website to enrich"
+      ]
+    },
+    {
+      "name": "Truffles St. Marks",
+      "website": "https://www.truffles.co.in/",
+      "domain": "truffles.co.in",
+      "category": "burger",
+      "address": "XJC2+M9M, 22, St Mark's Rd, Shanthala Nagar, Ashok Nagar, Bengaluru, Karnataka 560001",
+      "city": "Bangalore",
+      "state": "",
+      "postcode": "",
+      "country": "",
+      "lat": null,
+      "lon": null,
+      "phone": "080 4112 1160",
+      "email": "info@truffles.net.in",
+      "emails": [
+        "info@truffles.net.in",
+        ".d@aset.mediaheightoverridetype",
+        "c@egorypagecontroller.bundle",
+        "c@egorypageviewerwidget.bundle",
+        "c@egorypageviewerwidgetnocss.bundle",
+        "com.wixpress.table-reserv@ions.experiences",
+        "createpl@formworker.inline",
+        "d@e.now"
+      ],
+      "email_source": "mailto @ https://www.truffles.co.in/",
+      "logo_url": "https://static.wixstatic.com/media/f90424_9367854a1d6f4ef98570d5dd3e3e1381~mv2.png/v1/fill/w_249,h_21,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Yellow%20Updated.png",
+      "logo_path": "output/logos/truffles.co.in.png",
+      "logo_source": "img-heuristic",
+      "colors": [
+        {
+          "hex": "#fcfc3c",
+          "source": "logo",
+          "weight": 83.71302706104468,
+          "role": "primary"
+        },
+        {
+          "hex": "#9c9c3c",
+          "source": "logo",
+          "weight": 67.3253618628068,
+          "role": "secondary"
+        },
+        {
+          "hex": "#cccc24",
+          "source": "logo",
+          "weight": 66.49465072372561,
+          "role": "accent"
+        },
+        {
+          "hex": "#e4e454",
+          "source": "logo",
+          "weight": 66.4191315292637,
+          "role": "supporting"
+        },
+        {
+          "hex": "#269195",
+          "source": "inline-style",
+          "weight": 62.0,
+          "role": "supporting"
+        }
+      ],
+      "socials": {
+        "instagram": "https://www.instagram.com/truffles.in",
+        "facebook": "https://www.facebook.com/trufflesblrofficial"
+      },
+      "source": "gmaps",
+      "source_id": "0x3bae167944a77259:0x98e639f6e9217987",
+      "query": "burger in Bangalore",
+      "scraped_at": "2026-08-24T12:47:20+00:00",
+      "status": "enriched",
+      "notes": []
+    },
+    {
+      "name": "Leon's Burgers & Wings Banashankari",
+      "website": "https://leons.in/",
+      "domain": "leons.in",
+      "category": "burger",
+      "address": "GMA Foods, 809, 100 FT Road, 5th Block, Tirumala Shrutalaya, 3rd Phase, Banashankari 3rd Stage, Bengaluru, Karnataka 560085",
+      "city": "Bangalore",
+      "state": "",
+      "postcode": "",
+      "country": "",
+      "lat": null,
+      "lon": null,
+      "phone": "072049 41928",
+      "email": "milenabbrandao@gmail.com",
+      "emails": [
+        "milenabbrandao@gmail.com",
+        "ceo@leongrill.net",
+        "support.crm@leongrill.net",
+        "d@a.decline",
+        "email@support.crm",
+        "navig@or.serviceworker",
+        "registr@ion.send",
+        "th@information.leon"
+      ],
+      "email_source": "text @ https://leons.in/",
+      "logo_url": "https://img1.wsimg.com/isteam/ip/a3df0084-b888-4771-ae8e-96bba91ded74/blob.png/:/rs=w:57,h:57,m",
+      "logo_path": "output/logos/leons.in.webp",
+      "logo_source": "apple-touch-icon",
+      "colors": [
+        {
+          "hex": "#b12727",
+          "source": "theme-color",
+          "weight": 114.0,
+          "role": "primary"
+        },
+        {
+          "hex": "#fc3c3c",
+          "source": "logo",
+          "weight": 94.0,
+          "role": "secondary"
+        },
+        {
+          "hex": "#e45454",
+          "source": "logo",
+          "weight": 71.75718849840256,
+          "role": "accent"
+        },
+        {
+          "hex": "#e43c54",
+          "source": "logo",
+          "weight": 67.41214057507987,
+          "role": "supporting"
+        },
+        {
+          "hex": "#303030",
+          "source": "inline-style",
+          "weight": 29.0,
+          "role": "supporting"
+        }
+      ],
+      "socials": {
+        "instagram": "https://www.instagram.com/leonsindia",
+        "facebook": "https://www.facebook.com/leonsindia",
+        "linkedin": "https://www.linkedin.com/company/leonsindia"
+      },
+      "source": "gmaps",
+      "source_id": "0x3bae3f4d2d25d021:0xf5e7386ca1b121d3",
+      "query": "burger in Bangalore",
+      "scraped_at": "2026-08-24T12:48:49+00:00",
+      "status": "enriched",
+      "notes": []
+    },
+    {
+      "name": "Original Burger Co. : Miraya Rose, Siddapura Village",
+      "website": "",
+      "domain": "",
+      "category": "burger",
+      "address": "Miraya Rose, 66/1, Hobli, Varthur, Palm Meadows, Siddapura, Whitefield, Bengaluru, Karnataka 560066",
+      "city": "Bangalore",
+      "state": "",
+      "postcode": "",
+      "country": "",
+      "lat": null,
+      "lon": null,
+      "phone": "079789 48799",
+      "email": "",
+      "emails": [],
+      "email_source": "",
+      "logo_url": "",
+      "logo_path": "",
+      "logo_source": "",
+      "colors": [],
+      "socials": {},
+      "source": "gmaps",
+      "source_id": "0x3bae133d41abb4c3:0x28c701169dc9f750",
+      "query": "burger in Bangalore",
+      "scraped_at": "2026-08-24T12:50:41+00:00",
+      "status": "no_website",
+      "notes": [
+        "no website to enrich"
+      ]
+    },
+    {
+      "name": "Biggies Burger: Cunningham Road",
+      "website": "https://www.biggiesburger.com/stores",
+      "domain": "biggiesburger.com",
+      "category": "burger",
+      "address": "Ground Floor, Chicago Avenue, No. Gf1, 37/2, Cunningham Rd, Bengaluru, Karnataka 560052",
+      "city": "Bangalore",
+      "state": "",
+      "postcode": "",
+      "country": "",
+      "lat": null,
+      "lon": null,
+      "phone": "079087 39053",
+      "email": "info@biggiesburger.com",
+      "emails": [
+        "info@biggiesburger.com",
+        ".d@aset.mediaheightoverridetype",
+        "c@egorymenuviewerwidget.bundle",
+        "c@egorymenuviewerwidgetnocss.bundle",
+        "c@egorypagecontroller.bundle",
+        "c@egorypageviewerwidget.bundle",
+        "c@egorypageviewerwidgetnocss.bundle",
+        "com.wixpress.live.site.d@a.types"
+      ],
+      "email_source": "mailto @ https://www.biggiesburger.com/privacy-policy",
+      "logo_url": "https://static.wixstatic.com/media/7971e4_8da5ea0f338143c6ae0114313f33918c~mv2.png/v1/fill/w_133,h_72,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Final%20Logo%20Biggies%20Burger%20White%202.png",
+      "logo_path": "output/logos/biggiesburger.com.png",
+      "logo_source": "img-heuristic",
+      "colors": [
+        {
+          "hex": "#fcfce4",
+          "source": "logo",
+          "weight": 62.52232142857143,
+          "role": "primary"
+        },
+        {
+          "hex": "#fce46c",
+          "source": "logo",
+          "weight": 61.74107142857143,
+          "role": "secondary"
+        },
+        {
+          "hex": "#e4e4e4",
+          "source": "logo",
+          "weight": 61.71875,
+          "role": "accent"
+        },
+        {
+          "hex": "#cccccc",
+          "source": "logo",
+          "weight": 61.40625,
+          "role": "supporting"
+        },
+        {
+          "hex": "#0f2ccf",
+          "source": "css-var:--wbu-color-blue-0",
+          "weight": 38.0,
+          "role": "supporting"
+        }
+      ],
+      "socials": {
+        "instagram": "https://www.instagram.com/biggiesburger",
+        "facebook": "https://www.facebook.com/biggiesburger",
+        "linkedin": "https://www.linkedin.com/company/28724814/admin",
+        "twitter": "https://twitter.com/biggiesburger",
+        "youtube": "https://www.youtube.com/results"
+      },
+      "source": "gmaps",
+      "source_id": "0x3bae17b543e21563:0xaf7a3042a442a1b0",
+      "query": "burger in Bangalore",
+      "scraped_at": "2026-08-24T12:57:26+00:00",
+      "status": "enriched",
+      "notes": []
+    }
+  ]
+}

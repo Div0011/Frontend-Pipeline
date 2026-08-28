@@ -1,0 +1,58 @@
+{
+  "business_name": "NADC Burger",
+  "category": "Restaurants / Burger & Diner",
+  "search_date": "2026-08-23",
+  "geography": "Austin, TX (Multi-city: Austin, Chicago, NYC, DFW, Denver, LA, Charlotte, Nashville)",
+  "live_url": "https://nadcburger.com",
+  "contact": {
+    "phone": null,
+    "email": null,
+    "owner": "Neen Williams & Michelin-starred Chef Phillip Frankland Lee",
+    "address": "Rainey Street / Downtown Austin, TX",
+    "social_links": [
+      "https://facebook.com/nadcburger",
+      "http://instagram.com/nadcburger"
+    ]
+  },
+  "audit_factors": {
+    "colour_palette": {
+      "score": "Good",
+      "rating": 4.5,
+      "details": "Intentional, high-fashion monochrome palette (stark white, deep black) with premium wagyu food photography."
+    },
+    "logo": {
+      "score": "Good",
+      "rating": 4.5,
+      "details": "Vector-quality wordmark logo served with Next.js responsive image srcset (16px to 3840px)."
+    },
+    "typography": {
+      "score": "Good",
+      "rating": 4.5,
+      "details": "Custom CSS variable font stack with smooth antialiasing and responsive typography clamps."
+    },
+    "contact": {
+      "score": "Poor",
+      "rating": 1.5,
+      "details": "Direct phone or email omitted; inquiries flow through their proprietary ordering and partner app systems."
+    },
+    "online_presence": {
+      "score": "Good",
+      "rating": 5,
+      "details": "Built on Next.js 13+ App Router, full Schema.org Restaurant structured data, complete Open Graph and Twitter summary_large_image cards."
+    }
+  },
+  "verdict": {
+    "grade": "A",
+    "outreach_priority": "Exclude (Modern Next.js Stack)",
+    "commercial_rationale": "Built by a venture-backed culinary group with a cutting-edge React/Next.js frontend. They do not require an agency redesign."
+  },
+  "sample_website": {
+    "status": "excluded",
+    "sample_url": null,
+    "demo_url": null,
+    "project_id": null,
+    "repo_path": null,
+    "generated_at": null,
+    "notes": "Excluded: Cutting-edge engineering and modern branding already in place."
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "business_name": "Backyard Burgers And Grill",
+  "category": "Restaurants / Burger & Grill",
+  "search_date": "2026-08-25",
+  "geography": "Bangalore, India",
+  "live_url": "https://backyardburgersgrill.petpooja.com",
+  "contact": {
+    "phone": "088614 80534",
+    "additional_phones": [],
+    "email": null,
+    "owner": null,
+    "address": "Ground Floor, No. 57, 100 Feet Rd, beside Speedo, Defence Colony, Indiranagar, Bengaluru 560038",
+    "social_links": [
+      "https://www.instagram.com/backyardburgersgrill"
+    ]
+  },
+  "audit_factors": {
+    "colour_palette": {
+      "score": "Poor",
+      "rating": 1,
+      "details": "Only raw Petpooja menu interface; unconfigured branding."
+    },
+    "logo": {
+      "score": "Poor",
+      "rating": 1,
+      "details": "Missing web SVG or custom open-graph branding."
+    },
+    "typography": {
+      "score": "Poor",
+      "rating": 1,
+      "details": "Default Petpooja system font."
+    },
+    "contact": {
+      "score": "Weak",
+      "rating": 2.5,
+      "details": "100 Feet Road Indiranagar location and direct phone number are available."
+    },
+    "online_presence": {
+      "score": "Poor",
+      "rating": 1,
+      "details": "Redirects to an unbranded Petpooja QR menu link that frequently yields HTTP 500 server errors."
+    }
+  },
+  "verdict": {
+    "grade": "F (Broken URL)",
+    "outreach_priority": "Immediate (Top Pick)",
+    "commercial_rationale": "Prime 100 Feet Road Indiranagar location with a broken, barebones POS menu link. A standalone digital storefront will capture direct customer traffic on one of Bangalore's busiest high streets."
+  },
+  "sample_website": {
+    "status": "generated",
+    "project_id": "backyard-burgers",
+    "repo_path": "projects/backyard-burgers",
+    "preview_url": "https://preview.wishgranters.com/bangalore/backyard-burgers"
+  }
+}

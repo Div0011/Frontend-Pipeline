@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;700&family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@500;700;900&display=swap');
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    /* JewBoy Burgers Border-Culture Palette */
+    --ink: #FAF8F2;              /* Warm Flour Tortilla Bone */
+    --ink-light: #F2EDE2;
+    --paper: #141416;            /* Cast Iron / Charcoal */
+    --char: #141416;
+    --char-soft: #1E1F24;
+    --char-mute: #333640;
+    --bone: #FAF8F2;
+    --bone-warm: #F2EDE2;
+    --bone-dark: #E3DC sample;
+    --cream: #FAF8F2;
+    --cream-warm: #F2EDE2;
+    --smoke: #707585;
+    --stone: #9499A8;
+    --mist: #C5CAD6;
+
+    /* Border Blue & Hatch Chile Gold */
+    --ember: #1B4994;            /* JewBoy Royal Border Blue */
+    --ember-light: #2563EB;
+    --ember-dark: #0E387A;
+    --yolk: #D4A017;             /* Hatch Chile Gold */
+    --yolk-light: #EAB308;
+    --gold: #D4A017;
+    --hatch-green: #2E7D32;      /* Hatch Green Chile */
+
+    --font-display: "Bebas Neue", "Impact", "Arial Black", sans-serif;
+    --font-serif: "Instrument Serif", "Georgia", "Times New Roman", serif;
+    --font-body: "DM Sans", "Helvetica Neue", "Arial", sans-serif;
+    --font-mono: "Space Mono", "Courier New", monospace;
+  }
+
+  body {
+    background-color: var(--bone);
+    color: var(--char);
+    font-family: var(--font-body);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background-color: var(--ember);
+    color: var(--bone);
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #141416;
+}
+::-webkit-scrollbar-thumb {
+  background: #1B4994;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #D4A017;
+}
+
+/* Kinetic Typography & Utility Tokens */
+.type-display {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 0.92;
+  text-transform: uppercase;
+}
+
+.type-serif {
+  font-family: var(--font-serif);
+  font-weight: 400;
+}
+
+.type-caption {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.type-label {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+}
+
+/* Custom Buttons */
+.btn-red {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: var(--ember);
+  color: var(--bone);
+  padding: 1rem 2rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-red:hover {
+  background-color: var(--ember-light);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(27, 73, 148, 0.4);
+}
+
+.btn-yolk {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: var(--yolk);
+  color: var(--char);
+  padding: 1rem 2rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-yolk:hover {
+  background-color: var(--yolk-light);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(212, 160, 23, 0.4);
+}
+
+.btn-char {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: var(--char);
+  color: var(--bone);
+  padding: 1rem 2rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-char:hover {
+  background-color: var(--char-soft);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  border: 1px solid currentColor;
+  padding: 1rem 2rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-outline:hover {
+  background-color: var(--ember);
+  border-color: var(--ember);
+  color: var(--bone);
+}

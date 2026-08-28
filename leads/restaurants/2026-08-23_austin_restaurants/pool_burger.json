@@ -1,0 +1,57 @@
+{
+  "business_name": "Pool Burger",
+  "category": "Restaurants / Burger & Diner",
+  "search_date": "2026-08-23",
+  "geography": "Austin, TX",
+  "live_url": "https://poolburger.com",
+  "contact": {
+    "phone": "(512) 334-9747",
+    "email": null,
+    "owner": "McGuire Moorman Lambert (MML Hospitality)",
+    "address": "2315 Lake Austin Blvd, Austin, TX 78703",
+    "social_links": [
+      "https://instagram.com/poolburgeraustin"
+    ]
+  },
+  "audit_factors": {
+    "colour_palette": {
+      "score": "Good",
+      "rating": 4.5,
+      "details": "Vibrant retro tiki poolside aesthetic with custom tropical tones and high-contrast styling."
+    },
+    "logo": {
+      "score": "Good",
+      "rating": 4.5,
+      "details": "Vectorized SVG palm tree logo asset ('PB_Palmtree logo.svg') with matching vector illustrations."
+    },
+    "typography": {
+      "score": "Good",
+      "rating": 4,
+      "details": "Configured with Google Fonts 'Belanosima' (weights 300 to 700) matching their vintage resort vibe."
+    },
+    "contact": {
+      "score": "Good",
+      "rating": 4,
+      "details": "Direct phone line, Google Maps routing link, and newsletter capture form."
+    },
+    "online_presence": {
+      "score": "Good",
+      "rating": 4.5,
+      "details": "Modern Webflow architecture with Finsweet CMS slider attributes, clean Open Graph metadata, and responsive media."
+    }
+  },
+  "verdict": {
+    "grade": "A-",
+    "outreach_priority": "Exclude (High Quality Site)",
+    "commercial_rationale": "Pool Burger already has a high-quality Webflow website with custom branding, vector assets, and typography. Not a qualified candidate for redesign outreach."
+  },
+  "sample_website": {
+    "status": "excluded",
+    "sample_url": null,
+    "demo_url": null,
+    "project_id": null,
+    "repo_path": null,
+    "generated_at": null,
+    "notes": "Excluded: Site is already well-designed and maintained."
+  }
+}

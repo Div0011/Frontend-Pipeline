@@ -1,0 +1,273 @@
+@import "tailwindcss";
+
+@theme {
+  /* ─── Dan's Hamburgers — Heritage Red & Mustard Palette (Austin, TX · Est. 1973) ─── */
+
+  /* Core brand colors */
+  --color-yolk:        #F5A623;   /* Mustard brand yellow */
+  --color-yolk-light:  #FFC043;   /* Lighter/hover mustard */
+  --color-yolk-dark:   #D48810;   /* Pressed/deep mustard  */
+  --color-ember:       #C42B1C;   /* Heritage Dan's Diner Red */
+  --color-ember-light: #E03828;   /* Bright retro red */
+  --color-ember-dark:  #9B1B10;   /* Deep crimson */
+
+  --color-char:        #181514;   /* Cast-iron deep charcoal */
+  --color-char-soft:   #241F1D;   /* Dark card background   */
+  --color-char-mute:   #362E2B;   /* Subtle border on dark   */
+  --color-bone:        #FAF7F0;   /* Vintage cream background*/
+  --color-bone-warm:   #F3EFE6;   /* Section warm off-white  */
+  --color-bone-dark:   #E8E2D5;   /* Divider / card border   */
+  --color-smoke:       #6B6661;   /* Mid-gray readable text  */
+  --color-ash:         #9C968F;   /* Subtitle / placeholder  */
+
+  /* Backward-compat aliases for components */
+  --color-cream:       #181514;
+  --color-cream-dark:  #241F1D;
+  --color-cream-warm:  #362E2B;
+  --color-ink:         #FAF7F0;
+  --color-ink-light:   #E8E2D5;
+  --color-charcoal:    #9C968F;
+  --color-stone:       #6B6661;
+  --color-mist:        #9C968F;
+  --color-fog:         #6B6661;
+  --color-pearl:       #362E2B;
+  --color-gold:        #F5A623;   /* maps to mustard */
+  --color-gold-light:  #FFC043;
+  --color-gold-dark:   #D48810;
+  --color-sage:        #5E7B53;
+  --color-terracotta:  #C42B1C;
+  --color-burgundy:    #6B1C16;
+
+  /* ─── Typography ─── */
+  --font-display: "Bebas Neue", sans-serif;    /* Impact display headings */
+  --font-serif:   "Lora", serif;               /* Warm body serif          */
+  --font-body:    "DM Sans", sans-serif;       /* Clean UI / body copy     */
+  --font-mono:    "JetBrains Mono", monospace;
+
+  /* Layout */
+  --section-padding:  8rem;
+  --container-width:  88rem;
+  --gutter:           2rem;
+
+  /* Motion easings */
+  --ease-out-expo:    cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out-quart: cubic-bezier(0.76, 0, 0.24, 1);
+  --ease-snap:        cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ─── Base ─── */
+html {
+  scroll-behavior: auto;
+  cursor: none;
+}
+
+body {
+  background-color: #FAF7F0;
+  color: #181514;
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  cursor: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (pointer: fine) {
+  *, *:hover, *:active, *:focus, a, button, select, input, label {
+    cursor: none !important;
+  }
+}
+
+::selection {
+  background-color: #C42B1C;
+  color: #FAF7F0;
+}
+
+/* ─── Typography tokens ─── */
+.type-display {
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+}
+
+.type-serif {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  line-height: 1.45;
+  letter-spacing: 0.01em;
+}
+
+.type-body {
+  font-family: var(--font-body);
+  font-weight: 300;
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+}
+
+.type-caption {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.type-label {
+  font-family: var(--font-mono);
+  font-weight: 400;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* ─── Section spacing ─── */
+.section-cinematic {
+  padding: var(--section-padding) 0;
+}
+
+.section-tight {
+  padding: 4rem 0;
+}
+
+/* ─── Glass primitives ─── */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.05);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.04);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.5s var(--ease-out-expo);
+}
+
+.glass-card:hover {
+  border-color: rgba(245, 166, 35, 0.35);
+}
+
+/* ─── Buttons ─── */
+.btn-yolk {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: #F5A623;
+  color: #181514;
+  padding: 1rem 2rem;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn-yolk:hover {
+  background: #FFC043;
+  transform: translateY(-1px);
+}
+
+.btn-red {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: #C42B1C;
+  color: #FAF7F0;
+  padding: 1rem 2rem;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn-red:hover {
+  background: #E03828;
+  transform: translateY(-1px);
+}
+
+.btn-char {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: #181514;
+  color: #FAF7F0;
+  padding: 1rem 2rem;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  transition: background 0.3s ease;
+}
+
+.btn-char:hover {
+  background: #362E2B;
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  border: 1.5px solid #181514;
+  color: #181514;
+  padding: 1rem 2rem;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+  background: #181514;
+  color: #FAF7F0;
+}
+
+/* ─── Menu card ─── */
+.menu-card {
+  background: #FAF7F0;
+  border: 1px solid #E8E2D5;
+  transition: all 0.4s var(--ease-out-expo);
+}
+
+.menu-card:hover {
+  border-color: #C42B1C;
+  box-shadow: 0 0 0 1px #C42B1C, 0 8px 30px rgba(0,0,0,0.06);
+}
+
+/* ─── Custom scrollbar ─── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: #FAF7F0; }
+::-webkit-scrollbar-thumb { background: rgba(196, 43, 28, 0.4); border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(196, 43, 28, 0.8); }
+
+/* ─── Noise grain overlay ─── */
+.grain-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 200px;
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 768px) {
+  :root {
+    --section-padding: 4rem;
+    --gutter: 1rem;
+  }
+}
+
+@media (pointer: coarse) {
+  html, body { cursor: auto; }
+}

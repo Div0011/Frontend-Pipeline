@@ -1,0 +1,59 @@
+{
+  "business_name": "Pedroso's Pizza",
+  "category": "Restaurants / Pizzeria & Deli",
+  "search_date": "2026-08-23",
+  "geography": "Austin, TX",
+  "live_url": "https://pedrosospizza.com",
+  "contact": {
+    "phone": "(737) 600-1107",
+    "additional_phones": ["(512) 676-7368"],
+    "email": "info@pedrosospizza.com",
+    "owner": "Pedroso Family",
+    "address": "2207 Justin Ln Suite D & 3850 Airport Blvd, Austin, TX",
+    "social_links": [
+      "https://facebook.com/pedrosospizza",
+      "https://instagram.com/pedrosospizza"
+    ]
+  },
+  "audit_factors": {
+    "colour_palette": {
+      "score": "Poor",
+      "rating": 1.5,
+      "details": "Default dark/gray Wix styling with uncalibrated red and yellow food card highlights. Lacks warmth and cohesive contrast."
+    },
+    "logo": {
+      "score": "Poor",
+      "rating": 1,
+      "details": "The site still ships the default Wix platform placeholder favicon ('https://static.parastorage.com/client/pfavico.ico')! Logo is an unoptimized raster file."
+    },
+    "typography": {
+      "score": "Poor",
+      "rating": 1.5,
+      "details": "Uncurated font weights and jarring size discrepancies across sections due to Wix visual builder drag-and-drop elements."
+    },
+    "contact": {
+      "score": "Good",
+      "rating": 4.5,
+      "details": "Both slice shop locations have verified phone numbers, direct ordering links, and active social profiles."
+    },
+    "online_presence": {
+      "score": "Poor",
+      "rating": 1.5,
+      "details": "Heavy Wix bundle with render-blocking polyfills, slow mobile interactivity, no custom Open Graph preview imagery, and lack of structured PizzaRestaurant schema."
+    }
+  },
+  "verdict": {
+    "grade": "D-",
+    "outreach_priority": "Immediate (Top Pick)",
+    "commercial_rationale": "Considered among the top NY/Sicilian slice shops in Texas (4.8+ stars), but the site is held back by amateur Wix defaults. Fixing the mobile ordering experience and digital branding will directly increase direct slice/pie orders."
+  },
+  "sample_website": {
+    "status": "pending",
+    "sample_url": null,
+    "demo_url": null,
+    "project_id": null,
+    "repo_path": null,
+    "generated_at": null,
+    "notes": "Target for artisanal NY/Sicilian slice shop interactive menu with crust-level visual polish."
+  }
+}

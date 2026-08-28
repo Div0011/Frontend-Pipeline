@@ -1,0 +1,53 @@
+{
+  "business_name": "BURGER ELITE",
+  "category": "Restaurants / Quick Casual Burgers",
+  "search_date": "2026-08-25",
+  "geography": "Bangalore, India",
+  "live_url": null,
+  "contact": {
+    "phone": "099454 83345",
+    "additional_phones": [],
+    "email": null,
+    "owner": "Independent Operator",
+    "address": "34, 9th B Cross Rd, West of Chord Road 2nd Stage, Mahalakshmi Layout, Bengaluru, Karnataka 560086",
+    "social_links": []
+  },
+  "audit_factors": {
+    "colour_palette": {
+      "score": "Critical",
+      "rating": 1,
+      "details": "Zero digital color system."
+    },
+    "logo": {
+      "score": "Critical",
+      "rating": 1,
+      "details": "No digital logo asset available."
+    },
+    "typography": {
+      "score": "Critical",
+      "rating": 1,
+      "details": "No web typography."
+    },
+    "contact": {
+      "score": "Average",
+      "rating": 3,
+      "details": "Direct phone number and verified Google Maps pin in Mahalakshmi Layout."
+    },
+    "online_presence": {
+      "score": "Critical",
+      "rating": 1,
+      "details": "No website or digital menu. Lacks basic local SEO discovery."
+    }
+  },
+  "verdict": {
+    "grade": "F (No Website)",
+    "outreach_priority": "Medium Priority",
+    "commercial_rationale": "Hyper-local quick casual burger joint needing a simple, attractive digital menu and direct ordering flow."
+  },
+  "sample_website": {
+    "status": "generated",
+    "project_id": "burger-elite",
+    "repo_path": "projects/burger-elite",
+    "preview_url": "https://preview.wishgranters.com/bangalore/burger-elite"
+  }
+}

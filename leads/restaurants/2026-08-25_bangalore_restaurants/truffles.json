@@ -1,0 +1,61 @@
+{
+  "business_name": "Truffles",
+  "category": "Restaurants / Burger & Diner",
+  "search_date": "2026-08-25",
+  "geography": "Bangalore, India",
+  "live_url": "https://www.truffles.co.in",
+  "contact": {
+    "phone": "080 4153 6565",
+    "additional_phones": [
+      "080 4112 1160"
+    ],
+    "email": "info@truffles.net.in",
+    "owner": "Avinash Bopanna",
+    "address": "Apex Building, 93/A, 4th B Cross Rd, 5th Block, Koramangala / St. Marks Rd / Indiranagar, Bengaluru 560095",
+    "social_links": [
+      "https://www.instagram.com/truffles.in",
+      "https://www.facebook.com/trufflesblrofficial"
+    ]
+  },
+  "audit_factors": {
+    "colour_palette": {
+      "score": "Weak",
+      "rating": 2,
+      "details": "Wix-based theme using uncurated yellow (#fcfc3c) and dull olive (#9c9c3c) with cyan inline styling. Lacks appetizing warmth and luxury contrast."
+    },
+    "logo": {
+      "score": "Poor",
+      "rating": 1.5,
+      "details": "Logo is served as a low-resolution Wix raster image ('Yellow Updated.png') without vector SVG rendering, appearing blurry on Retina screens."
+    },
+    "typography": {
+      "score": "Weak",
+      "rating": 2,
+      "details": "Relies on generic Wix web font bundles with awkward kerning and oversized text containers that clip on modern mobile viewports."
+    },
+    "contact": {
+      "score": "Good",
+      "rating": 4.5,
+      "details": "Prominent multi-outlet phone numbers, verified corporate email, and active Instagram and Facebook accounts."
+    },
+    "online_presence": {
+      "score": "Poor",
+      "rating": 1.5,
+      "details": "Heavy client-side Wix runtime with excessive JavaScript bundle size, slow First Contentful Paint, and no interactive digital menu scrollytelling."
+    }
+  },
+  "verdict": {
+    "grade": "D+",
+    "outreach_priority": "Immediate (Top Pick)",
+    "commercial_rationale": "The undisputed king of Bangalore burgers with lines around the block across Koramangala, St. Marks, and Indiranagar. Their website is a slow, generic Wix shell that does not reflect their iconic status (All American Cheese Burger, Sloppy Joe, Ferrero Rocher Shake)."
+  },
+  "sample_website": {
+    "status": "generated",
+    "sample_url": "https://preview.wishgranters.com/bangalore/truffles",
+    "demo_url": "https://preview.wishgranters.com/bangalore/truffles",
+    "project_id": "truffles-bangalore",
+    "repo_path": "projects/truffles-bangalore",
+    "generated_at": "2026-08-26T10:30:00+00:00",
+    "notes": "Iconic Bangalore college-town diner redesign featuring the All American Cheese Burger and Ferrero Rocher Shake."
+  }
+}

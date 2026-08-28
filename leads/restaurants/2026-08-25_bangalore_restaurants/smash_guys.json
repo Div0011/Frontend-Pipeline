@@ -1,0 +1,56 @@
+{
+  "business_name": "Smash Guys",
+  "category": "Restaurants / Smashed Burger & Shakes",
+  "search_date": "2026-08-25",
+  "geography": "Bangalore, India",
+  "live_url": "https://www.smashguys.in",
+  "contact": {
+    "phone": "080 4736 2227",
+    "additional_phones": [],
+    "email": "grievanceofficer@popoglobal.com",
+    "owner": "Popo Global Hospitality",
+    "address": "948, 12th Main Rd, HAL 2nd Stage, Indiranagar / Ground Floor, RMZ Ecoworld Rd, Bellandur, Bengaluru 560038",
+    "social_links": [
+      "https://www.instagram.com/smashguys.in",
+      "https://www.youtube.com/abgupta"
+    ]
+  },
+  "audit_factors": {
+    "colour_palette": {
+      "score": "Average",
+      "rating": 3,
+      "details": "Uses high-energy fast-casual yellow (#fccc24) and cobalt blue (#116dff). The contrast is lively, but lacks custom dark mode tokens and luxury warmth."
+    },
+    "logo": {
+      "score": "Weak",
+      "rating": 2,
+      "details": "Logo is served as a Wix-hosted 180x180 PNG asset without high-resolution SVG rendering, creating blurriness on 4K/Retina displays."
+    },
+    "typography": {
+      "score": "Average",
+      "rating": 3,
+      "details": "Standard Wix sans-serif font stack. Clean readability but misses the gritty, energetic comic-book typography of authentic smash burger joints."
+    },
+    "contact": {
+      "score": "Good",
+      "rating": 4.5,
+      "details": "Active phone line across both Indiranagar and Bellandur outlets, verified Instagram presence, and clear physical addresses."
+    },
+    "online_presence": {
+      "score": "Average",
+      "rating": 3,
+      "details": "Wix site with reservation widgets and online ordering redirects. High JavaScript bundle weight slows initial mobile rendering."
+    }
+  },
+  "verdict": {
+    "grade": "C",
+    "outreach_priority": "High Priority",
+    "commercial_rationale": "High-volume smash burger brand with two flagship tech-hub locations (Indiranagar & RMZ Ecoworld). An ultra-fast Next.js scrollytelling web app with instant click-to-order capability will elevate direct takeout conversions."
+  },
+  "sample_website": {
+    "status": "generated",
+    "project_id": "smash-guys",
+    "repo_path": "projects/smash-guys",
+    "preview_url": "https://preview.wishgranters.com/bangalore/smash-guys"
+  }
+}

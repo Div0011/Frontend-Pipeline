@@ -1,0 +1,58 @@
+{
+  "business_name": "Sanky's Burger House",
+  "category": "Restaurants / Cult Burger Joint",
+  "search_date": "2026-08-25",
+  "geography": "Bangalore, India",
+  "live_url": null,
+  "contact": {
+    "phone": "098867 38143",
+    "additional_phones": [],
+    "email": null,
+    "owner": "Sanky",
+    "address": "50, Hennur Main Rd, opp. Jyothi School, St Thomas Town, Bengaluru, Karnataka 560084",
+    "social_links": [
+      "https://www.instagram.com/sankysburgerhouse"
+    ]
+  },
+  "audit_factors": {
+    "colour_palette": {
+      "score": "None",
+      "rating": 0,
+      "details": "No website exists. Only raw Google Maps listing and food delivery listings."
+    },
+    "logo": {
+      "score": "None",
+      "rating": 0,
+      "details": "No digital web vector assets or favicon exist."
+    },
+    "typography": {
+      "score": "None",
+      "rating": 0,
+      "details": "No website typography configured."
+    },
+    "contact": {
+      "score": "Weak",
+      "rating": 2,
+      "details": "Direct phone number and iconic Hennur/Frazer Town location are verified."
+    },
+    "online_presence": {
+      "score": "None",
+      "rating": 0,
+      "details": "Zero website presence. Completely reliant on third-party aggregators."
+    }
+  },
+  "verdict": {
+    "grade": "F (No Website)",
+    "outreach_priority": "Immediate (Top Pick)",
+    "commercial_rationale": "Legendary cult garage burger institution in Hennur with massive local reputation for monstrous, juicy double-patty burgers. Building them their first bespoke digital home is an immense value proposition."
+  },
+  "sample_website": {
+    "status": "generated",
+    "sample_url": "https://preview.wishgranters.com/bangalore/sankys-burger-house",
+    "demo_url": "https://preview.wishgranters.com/bangalore/sankys-burger-house",
+    "project_id": "sankys-burger-house",
+    "repo_path": "projects/sankys-burger-house",
+    "generated_at": "2026-08-26T10:30:00+00:00",
+    "notes": "Raw underground garage diner aesthetic with real-time grill queue tracker."
+  }
+}

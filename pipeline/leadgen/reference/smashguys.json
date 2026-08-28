@@ -1,0 +1,49 @@
+{
+  "client_name": "SmashGuys",
+  "vertical": "independent burger restaurant",
+  "geography_type": "single-city urban",
+  "location_count": 1,
+  "rating": 4.7,
+  "review_count": 620,
+  "price_level": 2,
+  "years_in_business_approx": 3,
+  "has_physical_presence": true,
+  "website_quality_before": {
+    "overall": 3.8,
+    "visual_design": 3.5,
+    "ux": 4.0,
+    "mobile": 3.0,
+    "seo": 2.5,
+    "performance": 5.0,
+    "content": 4.0,
+    "branding": 3.5
+  },
+  "redesign_opportunity_before": 9.1,
+  "problems_identified": [
+    "Outdated homepage with low-quality hero image",
+    "No clear online ordering CTA above the fold",
+    "Poor mobile experience — menu required PDF download",
+    "Weak local SEO: no schema markup, thin meta description",
+    "Generic typography and no visual storytelling",
+    "No brand narrative or About section"
+  ],
+  "recommended_services": [
+    "Homepage redesign",
+    "Mobile UX overhaul",
+    "Online ordering CTA implementation",
+    "Local SEO (schema, GMB optimization)",
+    "Brand story section",
+    "Typography and color system upgrade"
+  ],
+  "outcome": "Full redesign delivered. New site features cinematic hero, clear ordering flow, mobile-first menu, and local SEO implementation.",
+  "why_selected": "Strong food brand with a loyal local following; website was a significant liability that undersold what the restaurant actually offers. High commercial potential: willing and able to pay for quality, 620+ engaged reviews, clear physical presence.",
+  "reference_features": {
+    "strong_brand_identity_offline": true,
+    "website_significantly_undersells_brand": true,
+    "clear_physical_presence": true,
+    "loyal_local_customer_base": true,
+    "active_social_media": true,
+    "reasonable_online_reviews": true,
+    "independent_not_chain": true
+  }
+}

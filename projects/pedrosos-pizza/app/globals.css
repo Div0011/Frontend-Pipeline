@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;700&family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@500;700;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  /* ─── Smash Guys 2.0 — Warm Yellow Edition ─── */
+
+  /* Core palette */
+  --color-yolk:        #E8A838;   /* Semolina gold */
+  --color-yolk-light:  #F7C25E;   /* Lighter gold  */
+  --color-yolk-dark:   #C78B1E;   /* Deep golden crust */
+  --color-char:        #1C1817;   /* Cast iron hearth */
+  --color-char-soft:   #25201E;   /* Dark card bg */
+  --color-char-mute:   #383230;   /* Hearth border */
+  --color-bone:        #FAF7F0;   /* Artisan flour bone */
+  --color-bone-warm:   #F3EEE3;   /* Warm dough tone */
+  --color-bone-dark:   #E8E1D2;   /* Stone divider */
+  --color-smoke:       #736B65;   /* Woodsmoke gray */
+  --color-ash:         #9E968F;   /* Ash gray */
+  --color-ember:       #C23B22;   /* San Marzano marinara red */
+
+  /* Backward-compat aliases (used by CanvasScrubber, VideoScrubber etc.) */
+  --color-cream:       #1C1817;
+  --color-cream-dark:  #25201E;
+  --color-cream-warm:  #383230;
+  --color-ink:         #FAF7F0;
+  --color-ink-light:   #E8E1D2;
+  --color-charcoal:    #9E968F;
+  --color-stone:       #736B65;
+  --color-mist:        #9E968F;
+  --color-fog:         #736B65;
+  --color-pearl:       #383230;
+  --color-gold:        #E8A838;
+  --color-gold-light:  #F7C25E;
+  --color-gold-dark:   #C78B1E;
+  --color-sage:        #5A7859;
+  --color-terracotta:  #C23B22;
+  --color-burgundy:    #5C1A14;
+
+  /* ─── Typography ─── */
+  --font-display: "Bebas Neue", sans-serif;    /* Impact display headings */
+  --font-serif:   "Lora", serif;               /* Warm body serif          */
+  --font-body:    "DM Sans", sans-serif;       /* Clean UI / body copy     */
+  --font-mono:    "JetBrains Mono", monospace;
+
+  /* Layout */
+  --section-padding:  8rem;
+  --container-width:  88rem;
+  --gutter:           2rem;
+
+  /* Motion easings */
+  --ease-out-expo:    cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out-quart: cubic-bezier(0.76, 0, 0.24, 1);
+  --ease-snap:        cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ─── Base ─── */
+html {
+  scroll-behavior: auto;
+  cursor: none;
+}
+
+body {
+  background-color: #FAF9F4;
+  color: #141413;
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  cursor: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (pointer: fine) {
+  *, *:hover, *:active, *:focus, a, button, select, input, label {
+    cursor: none !important;
+  }
+}
+
+::selection {
+  background-color: #F5C418;
+  color: #141413;
+}
+
+/* ─── Typography tokens ─── */
+.type-display {
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+}
+
+.type-serif {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  line-height: 1.45;
+  letter-spacing: 0.01em;
+  text-wrap: pretty;
+}
+
+.type-body {
+  font-family: var(--font-body);
+  font-weight: 300;
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+  text-wrap: pretty;
+}
+
+.type-caption {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.type-label {
+  font-family: var(--font-mono);
+  font-weight: 400;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* ─── Section spacing ─── */
+.section-cinematic {
+  padding: var(--section-padding) 0;
+}
+
+.section-tight {
+  padding: 4rem 0;
+}
+
+/* ─── Glass primitives ─── */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.05);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.04);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.5s var(--ease-out-expo);
+}
+
+.glass-card:hover {
+  border-color: rgba(245, 196, 24, 0.25);
+}
+
+/* ─── Yolk button ─── */
+.btn-yolk {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: #F5C418;
+  color: #141413;
+  padding: 1rem 2rem;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn-yolk:hover {
+  background: #FFD95A;
+  transform: translateY(-1px);
+}
+
+.btn-char {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: #141413;
+  color: #FAF9F4;
+  padding: 1rem 2rem;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  transition: background 0.3s ease;
+}
+
+.btn-char:hover {
+  background: #2C2C28;
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  border: 1.5px solid #141413;
+  color: #141413;
+  padding: 1rem 2rem;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+  background: #141413;
+  color: #FAF9F4;
+}
+
+/* ─── Menu card ─── */
+.menu-card {
+  background: #FAF9F4;
+  border: 1px solid #EDEAE0;
+  transition: all 0.4s var(--ease-out-expo);
+}
+
+.menu-card:hover {
+  border-color: #F5C418;
+  box-shadow: 0 0 0 1px #F5C418, 0 8px 30px rgba(0,0,0,0.06);
+}
+
+/* ─── Custom scrollbar ─── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: #FAF9F4; }
+::-webkit-scrollbar-thumb { background: rgba(245, 196, 24, 0.35); border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(245, 196, 24, 0.7); }
+
+/* ─── Noise grain overlay ─── */
+.grain-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 200px;
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 768px) {
+  :root {
+    --section-padding: 4rem;
+    --gutter: 1rem;
+  }
+}
+
+@media (pointer: coarse) {
+  html, body { cursor: auto; }
+}

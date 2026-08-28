@@ -15,15 +15,34 @@ CORE_PRINCIPLE = (
     "it's decoration, not direction. Synthesize the *principles* from references, never clone the execution."
 )
 
+TEMPLATE_REDESIGN_PROTOCOL = (
+    "1. Templates vs Projects Policy: templates/ holds pure, pristine base reusable templates. "
+    "NEVER edit files directly in templates/. All client customization happens in projects/<client-slug>/. "
+    "2. Overlay Methodology: Clone chosen template to projects/<client-slug>/ (excluding build artifacts). "
+    "Install dependencies with npm install. Overlay only the client's assets, branding, colors, typography, "
+    "menu/data, components, copy, images, contact info, and metadata. "
+    "3. Deep Personalization: Use personalized preloader/splash (never template leftovers), unboxed borderless "
+    "header branding, auto-hiding scroll navigation (-translate-y-full on scroll down, translate-y-0 on scroll up), "
+    "single cohesive accent color with strictly calculated text contrast, dynamic motion doodle canvas engine "
+    "(InteractiveBackground.tsx) with theme-coordinated dark base gradients, and seamless transparent section layering. "
+    "4. Mandatory Interactive Components: Interactive 3D menu cards with quick-view modal (SignatureMenu.tsx), "
+    "interactive flat-top temperature/pressure sear simulator (HowWeSmash.tsx), scroll-to-expand cross-fading locations "
+    "(RestaurantLocations.tsx), and multi-step digital VIP table booking pass builder (ReservationCTA.tsx)."
+)
+
 SHARED_TECH_STACK = {
-    "framework": "Next.js (App Router) + Tailwind CSS",
+    "framework": "Next.js 14+ (App Router) + TypeScript + Tailwind CSS",
     "scroll_physics": "Lenis (single source of scroll truth)",
     "scroll_animation": "GSAP + ScrollTrigger (scrub)",
-    "3d_full_scene": "React Three Fiber + drei",
-    "3d_hero_object": "Spline (@splinetool/react-spline)",
-    "micro_interactions": "Framer Motion",
+    "motion_doodles": "InteractiveBackground.tsx (HTML5 Canvas vector doodles + spring cursor spotlight + ambient embers)",
+    "interactive_menu": "SignatureMenu.tsx (3D tilt cards + quick-view modal + CartDrawer.tsx)",
+    "craft_simulator": "HowWeSmash.tsx (Interactive 250°F-500°F flat-top sear & Maillard simulator)",
+    "locations_expander": "RestaurantLocations.tsx (Scroll-to-expand cross-fading image gallery)",
+    "reservation_builder": "ReservationCTA.tsx (Step-by-step digital VIP booking pass builder)",
+    "fonts": "Google Fonts via resilient @import in globals.css with instant fallbacks",
+    "micro_interactions": "Framer Motion (spring damping: 25, stiffness: 200)",
     "video": "Native <video> + next/image poster frames (lazy-loaded, muted)",
-    "post_processing": "@react-three/postprocessing (Bloom, ChromaticAberration, Vignette)",
+    "deploy": "Static export (output: 'export')",
 }
 
 CINEMATIC_TEMPLATES: Dict[str, Dict[str, Any]] = {

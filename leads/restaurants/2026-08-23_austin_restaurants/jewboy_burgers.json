@@ -1,0 +1,59 @@
+{
+  "business_name": "JewBoy Burgers",
+  "category": "Restaurants / Burger & Diner",
+  "search_date": "2026-08-23",
+  "geography": "Austin, TX",
+  "live_url": "https://jewboyburgers.com",
+  "contact": {
+    "phone": "(512) 291-3358",
+    "email": null,
+    "owner": "Mo Pittle",
+    "address": "5111 Airport Blvd, Austin, TX 78751",
+    "social_links": [
+      "https://facebook.com/jewboyburgers",
+      "https://twitter.com/JewboyBurgers",
+      "https://instagram.com/JewboyBurgers"
+    ]
+  },
+  "audit_factors": {
+    "colour_palette": {
+      "score": "Weak",
+      "rating": 2,
+      "details": "Plain white background with minimal color accents. The vibrant cultural fusion (El Paso Border + Jewish culture) is not expressed through the visual palette."
+    },
+    "logo": {
+      "score": "Weak",
+      "rating": 2,
+      "details": "Logo is embedded in the nav without SVG scaling or proper og:image social share fallback."
+    },
+    "typography": {
+      "score": "Poor",
+      "rating": 1.5,
+      "details": "No dedicated web fonts configured; copy relies on browser default fonts without structured typographic hierarchy for headlines or subheadings."
+    },
+    "contact": {
+      "score": "Good",
+      "rating": 4,
+      "details": "Direct phone number, location, dedicated contact page with web form, and active social channels across Twitter, Facebook, and Instagram."
+    },
+    "online_presence": {
+      "score": "Weak",
+      "rating": 2,
+      "details": "Sparse WordPress layout with external Toast Tab ordering link. Missing structured Restaurant schema and open-graph images."
+    }
+  },
+  "verdict": {
+    "grade": "C-",
+    "outreach_priority": "High Priority",
+    "commercial_rationale": "One of the most charismatic, storytelling-rich restaurant concepts in Austin ('Shalom y'all, Mucho gusto!'). Their food and brand voice are phenomenal, but their site is a sterile, basic WordPress shell."
+  },
+  "sample_website": {
+    "status": "generated",
+    "sample_url": "https://preview.wishgranters.com/div0011/jewboy-burgers",
+    "demo_url": "https://preview.wishgranters.com/div0011/jewboy-burgers",
+    "project_id": "jewboy-burgers",
+    "repo_path": "projects/jewboy-burgers",
+    "generated_at": "2026-08-25T00:40:00.000000+00:00",
+    "notes": "Vibrant border-culture diner concept with animated latke burger visualizer."
+  }
+}

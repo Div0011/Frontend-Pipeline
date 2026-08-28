@@ -1,0 +1,56 @@
+{
+  "business_name": "Good Flippin' Burgers",
+  "category": "Restaurants / Smash Burger & Diner",
+  "search_date": "2026-08-25",
+  "geography": "Bangalore, India",
+  "live_url": "https://stores.goodflippin.com/store-pages/good-flippin-burgers-church-street-bangalore",
+  "contact": {
+    "phone": "1800 202 3312",
+    "additional_phones": [],
+    "email": "info@goodflippin.com",
+    "owner": "Viren Dsilva, Sridhar Thirunakara, Sid Marchant",
+    "address": "Church St, off Brigade Road, Shanthala Nagar, Ashok Nagar / Whitefield, Bengaluru 560001",
+    "social_links": [
+      "https://www.instagram.com/goodflippin",
+      "https://www.facebook.com/Goodflippin"
+    ]
+  },
+  "audit_factors": {
+    "colour_palette": {
+      "score": "Good",
+      "rating": 4,
+      "details": "Vibrant royal blue (#007bff) and hot pink (#e42454) with modern fast-casual energy."
+    },
+    "logo": {
+      "score": "Good",
+      "rating": 4,
+      "details": "Vector logo loaded through clean WordPress CDN asset pipelines."
+    },
+    "typography": {
+      "score": "Good",
+      "rating": 4,
+      "details": "Curated modern sans-serif typography stack with clear hierarchy."
+    },
+    "contact": {
+      "score": "Good",
+      "rating": 4.5,
+      "details": "Toll-free customer line (1800 202 3312) and active social profiles."
+    },
+    "online_presence": {
+      "score": "Good",
+      "rating": 4,
+      "details": "Modern WordPress store locator architecture with custom online ordering flows."
+    }
+  },
+  "verdict": {
+    "grade": "B+",
+    "outreach_priority": "Exclude (Modern Funded Stack)",
+    "commercial_rationale": "Venture-funded burger enterprise with a modern, active multi-store web application. Not a prime target for initial freelance/agency cold outreach."
+  },
+  "sample_website": {
+    "status": "generated",
+    "project_id": "good-flippin-burgers",
+    "repo_path": "projects/good-flippin-burgers",
+    "preview_url": "https://preview.wishgranters.com/bangalore/good-flippin-burgers"
+  }
+}
