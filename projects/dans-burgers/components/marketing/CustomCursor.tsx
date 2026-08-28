@@ -4,16 +4,31 @@ import { useEffect, useRef, useState } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
 
 type CursorState = "default" | "hover" | "drag";
-type BackgroundTone = "dark" | "light" | "primary";
+
+function getEffectiveBackgroundColor(el: Element | null): [number, number, number] {
+  let current: Element | null = el;
+  while (current && current !== document.documentElement) {
+    const style = window.getComputedStyle(current);
+    const bg = style.backgroundColor;
+    if (bg && bg !== "transparent" && bg !== "rgba(0, 0, 0, 0)") {
+      const match = bg.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)/);
+      if (match) {
+        return [parseInt(match[1], 10), parseInt(match[2], 10), parseInt(match[3], 10)];
+      }
+    }
+    current = current.parentElement;
+  }
+  return [10, 10, 10]; // Default dark
+}
 
 export default function CustomCursor() {
   const [state, setState]             = useState<CursorState>("default");
-  const [bgTone, setBgTone]           = useState<BackgroundTone>("dark");
+  const [cursorColor, setCursorColor] = useState<string>("var(--primary, #FFFFFF)");
   const [mounted, setMounted]         = useState(false);
   const [isTouch, setIsTouch]         = useState(true);
   
   const stateRef = useRef<CursorState>("default");
-  const bgToneRef = useRef<BackgroundTone>("dark");
+  const colorRef = useRef<string>("var(--primary, #FFFFFF)");
 
   // Raw mouse position
   const mx = useMotionValue(-300);
@@ -37,37 +52,42 @@ export default function CustomCursor() {
     const onMove = (e: MouseEvent) => {
       mx.set(e.clientX);
       my.set(e.clientY);
-    };
 
-    const onOver = (e: MouseEvent) => {
-      const el = e.target as Element;
+      const el = document.elementFromPoint(e.clientX, e.clientY) || (e.target as Element);
       if (!el) return;
 
-      // 1. Detect if hovering over a primary-colored background / button / ticker
-      const isOverPrimary = !!el.closest(
-        ".btn-primary, [data-on-mustard], [style*='backgroundColor: #C68A14'], [style*='background-color: #C68A14'], [style*='background-color: rgb(198, 138, 20)'], [style*='background-color: #D91C24'], [style*='background-color: rgb(217, 28, 36)'], .bg-\\[\\#C68A14\\], .bg-\\[\\#D91C24\\], .bg-primary"
-      );
+      const [r, g, b] = getEffectiveBackgroundColor(el);
+      const lum = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
 
-      // 2. Detect if hovering over a light / white surface
-      const isOverLight = !isOverPrimary && !!el.closest(
-        "html.light body, .bg-white, .bg-[#FAF8F2], .bg-[#FBF8F0], footer[style*='background-color: #FFFFFF']"
-      );
+      // Brand-specific & contrast detection rules:
+      // 1. Red background detection (Pedroso's Pizza footer #D91C24, red buttons)
+      const isRedBg = (r > 160 && g < 70 && b < 70) || !!el.closest("footer[style*='#D91C24'], footer[style*='rgb(217, 28, 36)'], .bg-\\[\\#D91C24\\], .bg-\\[\\#B91C1C\\]");
+      
+      // 2. Mustard / Gold / Amber background detection (Dirty Martin's #C68A14, Truffles, Burger Seigneur)
+      const isMustardBg = (r > 150 && g > 100 && g < 180 && b < 60) || !!el.closest("[data-on-mustard], [style*='#C68A14'], .bg-\\[\\#C68A14\\], footer[style*='#C68A14'], footer[style*='#F5A623'], footer[style*='#C8A96E']");
 
-      let nextTone: BackgroundTone = "dark";
-      if (isOverPrimary) {
-        nextTone = "primary";
-      } else if (isOverLight) {
-        nextTone = "light";
+      let nextColor = "var(--primary, #FFFFFF)";
+
+      if (isRedBg) {
+        // Red background -> Cursor becomes Deep Black for extreme contrast
+        nextColor = "#0A0A0A";
+      } else if (isMustardBg) {
+        // Mustard background -> Cursor becomes Crisp White
+        nextColor = "#FFFFFF";
+      } else if (lum > 0.65) {
+        // Light / White surface -> Cursor becomes Brand Primary or Deep Black
+        nextColor = "var(--primary, #0A0A0A)";
       } else {
-        nextTone = "dark";
+        // Dark / Black surface -> Cursor becomes Brand Primary or White
+        nextColor = "var(--primary, #FFFFFF)";
       }
 
-      if (nextTone !== bgToneRef.current) {
-        bgToneRef.current = nextTone;
-        setBgTone(nextTone);
+      if (nextColor !== colorRef.current) {
+        colorRef.current = nextColor;
+        setCursorColor(nextColor);
       }
 
-      // Detect cursor interactive state
+      // Interactive state
       let nextState: CursorState = "default";
       if (el.closest("[data-cursor='drag']")) {
         nextState = "drag";
@@ -82,33 +102,17 @@ export default function CustomCursor() {
     };
 
     window.addEventListener("mousemove", onMove, { passive: true });
-    document.addEventListener("mouseover", onOver as EventListener, { passive: true });
 
     return () => {
       window.removeEventListener("mousemove", onMove);
-      document.removeEventListener("mouseover", onOver as EventListener);
     };
   }, [mx, my]);
 
   if (!mounted || isTouch) return null;
 
-  // ── Monochromatic Contrast Color Inversion ──────────────────────────────
-  // 1. Over Primary-colored background -> Invert to pure White (#FFFFFF)
-  // 2. Over Light/White background -> Invert to Brand Primary Accent or Dark Charcoal (#0A0A0A)
-  // 3. Over Dark background -> Brand Primary Accent (var(--primary))
-  let cursorColor = "var(--primary, #FFFFFF)";
-  let ringHoverBg = "rgba(255, 255, 255, 0.12)";
-
-  if (bgTone === "primary") {
-    cursorColor = "#FFFFFF";
-    ringHoverBg = "rgba(255, 255, 255, 0.20)";
-  } else if (bgTone === "light") {
-    cursorColor = "var(--primary, #0A0A0A)";
-    ringHoverBg = "rgba(198, 138, 20, 0.15)";
-  } else {
-    cursorColor = "var(--primary, #FFFFFF)";
-    ringHoverBg = "rgba(255, 255, 255, 0.10)";
-  }
+  const ringHoverBg = cursorColor === "#0A0A0A"
+    ? "rgba(10, 10, 10, 0.15)"
+    : "rgba(255, 255, 255, 0.15)";
 
   return (
     <>
@@ -141,21 +145,21 @@ export default function CustomCursor() {
             rotate: state === "hover" ? 45 : 0,
           }}
           transition={{ duration: 0.24, ease: [0.16, 1, 0.3, 1] }}
-          className="border-2 relative flex items-center justify-center transition-colors duration-200"
+          className="border-2 relative flex items-center justify-center transition-colors duration-150"
           style={{
             borderStyle: "solid",
             imageRendering: "pixelated",
           }}
         >
           {/* Corner pixels */}
-          <div className="absolute -top-1 -left-1 w-1 h-1 transition-colors duration-200" style={{ backgroundColor: cursorColor }} />
-          <div className="absolute -top-1 -right-1 w-1 h-1 transition-colors duration-200" style={{ backgroundColor: cursorColor }} />
-          <div className="absolute -bottom-1 -left-1 w-1 h-1 transition-colors duration-200" style={{ backgroundColor: cursorColor }} />
-          <div className="absolute -bottom-1 -right-1 w-1 h-1 transition-colors duration-200" style={{ backgroundColor: cursorColor }} />
+          <div className="absolute -top-1 -left-1 w-1 h-1 transition-colors duration-150" style={{ backgroundColor: cursorColor }} />
+          <div className="absolute -top-1 -right-1 w-1 h-1 transition-colors duration-150" style={{ backgroundColor: cursorColor }} />
+          <div className="absolute -bottom-1 -left-1 w-1 h-1 transition-colors duration-150" style={{ backgroundColor: cursorColor }} />
+          <div className="absolute -bottom-1 -right-1 w-1 h-1 transition-colors duration-150" style={{ backgroundColor: cursorColor }} />
 
           {state === "drag" && (
             <span
-              className="uppercase select-none font-sans font-extrabold tracking-widest text-[6px] transition-colors duration-200"
+              className="uppercase select-none font-sans font-extrabold tracking-widest text-[6px] transition-colors duration-150"
               style={{ transform: "rotate(-45deg)", color: cursorColor }}
             >
               DRAG
@@ -167,7 +171,7 @@ export default function CustomCursor() {
       {/* ── Inner Dot: Pixelated Solid Square ───────────────────────────────── */}
       <motion.div
         aria-hidden="true"
-        className="fixed top-0 left-0 pointer-events-none transition-colors duration-200"
+        className="fixed top-0 left-0 pointer-events-none transition-colors duration-150"
         style={{
           x: dx,
           y: dy,
@@ -183,7 +187,7 @@ export default function CustomCursor() {
             opacity: state === "drag" ? 0 : 1,
           }}
           transition={{ duration: 0.15 }}
-          className="rounded-none shadow-sm transition-colors duration-200"
+          className="rounded-none shadow-sm transition-colors duration-150"
           style={{ backgroundColor: cursorColor }}
         />
       </motion.div>

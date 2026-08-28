@@ -1,4 +1,19 @@
-"use client";
+#!/usr/bin/env python3
+"""
+Deploys the smart real-time contrast-inverting CustomCursor across all 24 projects:
+- Pedroso's Pizza: Cursor strictly flips to Deep Black (#0A0A0A) over Red backgrounds (such as the footer #D91C24 and Red CTA buttons).
+- Dirty Martin's: Cursor strictly flips to Crisp White (#FFFFFF) over Mustard backgrounds (#C68A14) and Dark Mustard (#C68A14) over White.
+- JewBoy Burgers: Monochromatic pure Black (#0A0A0A) on White, White (#FFFFFF) on Black.
+- All 24 brands: Full real-time RGB luminance & brand color contrast matching.
+"""
+
+import os
+from pathlib import Path
+
+ROOT = Path(__file__).parent.parent
+PROJECTS_DIR = ROOT / "projects"
+
+SMART_CURSOR_CODE = '''"use client";
 
 import { useEffect, useRef, useState } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
@@ -11,7 +26,7 @@ function getEffectiveBackgroundColor(el: Element | null): [number, number, numbe
     const style = window.getComputedStyle(current);
     const bg = style.backgroundColor;
     if (bg && bg !== "transparent" && bg !== "rgba(0, 0, 0, 0)") {
-      const match = bg.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)/);
+      const match = bg.match(/rgba?\\((\\d+),\\s*(\\d+),\\s*(\\d+)/);
       if (match) {
         return [parseInt(match[1], 10), parseInt(match[2], 10), parseInt(match[3], 10)];
       }
@@ -61,10 +76,10 @@ export default function CustomCursor() {
 
       // Brand-specific & contrast detection rules:
       // 1. Red background detection (Pedroso's Pizza footer #D91C24, red buttons)
-      const isRedBg = (r > 160 && g < 70 && b < 70) || !!el.closest("footer[style*='#D91C24'], footer[style*='rgb(217, 28, 36)'], .bg-\\[\\#D91C24\\], .bg-\\[\\#B91C1C\\]");
+      const isRedBg = (r > 160 && g < 70 && b < 70) || !!el.closest("footer[style*='#D91C24'], footer[style*='rgb(217, 28, 36)'], .bg-\\\\[\\\\#D91C24\\\\], .bg-\\\\[\\\\#B91C1C\\\\]");
       
       // 2. Mustard / Gold / Amber background detection (Dirty Martin's #C68A14, Truffles, Burger Seigneur)
-      const isMustardBg = (r > 150 && g > 100 && g < 180 && b < 60) || !!el.closest("[data-on-mustard], [style*='#C68A14'], .bg-\\[\\#C68A14\\], footer[style*='#C68A14'], footer[style*='#F5A623'], footer[style*='#C8A96E']");
+      const isMustardBg = (r > 150 && g > 100 && g < 180 && b < 60) || !!el.closest("[data-on-mustard], [style*='#C68A14'], .bg-\\\\[\\\\#C68A14\\\\], footer[style*='#C68A14'], footer[style*='#F5A623'], footer[style*='#C8A96E']");
 
       let nextColor = "var(--primary, #FFFFFF)";
 
@@ -194,3 +209,20 @@ export default function CustomCursor() {
     </>
   );
 }
+'''
+
+def main():
+    print("🚀 Deploying smart real-time contrast CustomCursor across all projects...")
+    for project_dir in sorted(PROJECTS_DIR.iterdir()):
+        if not project_dir.is_dir() or project_dir.name in ["fabroar", "superfan-redesign", "smash-guys"]:
+            continue
+
+        cursor_path = project_dir / "components" / "marketing" / "CustomCursor.tsx"
+        if cursor_path.exists():
+            cursor_path.write_text(SMART_CURSOR_CODE)
+            print(f"  ✓ Deployed smart contrast cursor to {project_dir.name}")
+
+    print("🎉 Smart contrast cursor deployed successfully across all projects!")
+
+if __name__ == "__main__":
+    main()
