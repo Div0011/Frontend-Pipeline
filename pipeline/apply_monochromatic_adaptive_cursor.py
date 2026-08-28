@@ -1,4 +1,19 @@
-"use client";
+#!/usr/bin/env python3
+"""
+Upgrades CustomCursor.tsx across all 24 projects with monochromatic contrast inversion:
+- When hovering over a primary-colored background (e.g. Mustard, Red, Yellow button or ticker strip),
+  the cursor automatically flips to pure White (#FFFFFF) or high-contrast secondary color.
+- When hovering over a dark surface (#0A0A0A, canvas, dark frame), cursor shows the Primary Brand Color.
+- When hovering over a white/light surface, cursor shows the Brand Color / Deep Black.
+"""
+
+import os
+from pathlib import Path
+
+ROOT = Path(__file__).parent.parent
+PROJECTS_DIR = ROOT / "projects"
+
+CURSOR_CODE = '''"use client";
 
 import { useEffect, useRef, useState } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
@@ -45,7 +60,7 @@ export default function CustomCursor() {
 
       // 1. Detect if hovering over a primary-colored background / button / ticker
       const isOverPrimary = !!el.closest(
-        ".btn-primary, [data-on-mustard], [style*='backgroundColor: #C68A14'], [style*='background-color: #C68A14'], [style*='background-color: rgb(198, 138, 20)'], [style*='background-color: #D91C24'], [style*='background-color: rgb(217, 28, 36)'], .bg-\\[\\#C68A14\\], .bg-\\[\\#D91C24\\], .bg-primary"
+        ".btn-primary, [data-on-mustard], [style*='backgroundColor: #C68A14'], [style*='background-color: #C68A14'], [style*='background-color: rgb(198, 138, 20)'], [style*='background-color: #D91C24'], [style*='background-color: rgb(217, 28, 36)'], .bg-\\\\[\\\\#C68A14\\\\], .bg-\\\\[\\\\#D91C24\\\\], .bg-primary"
       );
 
       // 2. Detect if hovering over a light / white surface
@@ -190,3 +205,20 @@ export default function CustomCursor() {
     </>
   );
 }
+'''
+
+def main():
+    print("🚀 Rolling out monochromatic contrast-inverting CustomCursor across all projects...")
+    for project_dir in sorted(PROJECTS_DIR.iterdir()):
+        if not project_dir.is_dir() or project_dir.name in ["fabroar", "superfan-redesign", "smash-guys"]:
+            continue
+
+        cursor_path = project_dir / "components" / "marketing" / "CustomCursor.tsx"
+        if cursor_path.exists():
+            cursor_path.write_text(CURSOR_CODE)
+            print(f"  ✓ Updated CustomCursor.tsx in {project_dir.name}")
+
+    print("🎉 Monochromatic contrast-inverting cursor deployed successfully across all projects!")
+
+if __name__ == "__main__":
+    main()
