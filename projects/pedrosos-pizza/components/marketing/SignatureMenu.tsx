@@ -80,12 +80,16 @@ export default function SignatureMenu() {
           <div className="space-y-2">
             <div className="flex items-center gap-2.5">
               <span className="w-2.5 h-2.5 rounded-full animate-ping" style={{ backgroundColor: "#B91C1C" }} />
-              
+              <span className="font-mono text-xs tracking-widest uppercase font-bold" style={{ color: "#B91C1C" }}>
+                PEDROSO'S PIZZA // CULINARY BOARD
+              </span>
             </div>
             <h2 className="type-display text-4xl sm:text-6xl text-white font-extrabold tracking-tight">
               SIGNATURE SELECTIONS
             </h2>
-            
+            <p className="font-mono text-xs text-stone-400 max-w-xl">
+              Handcrafted with fresh premium cuts, signature seasonings, and bespoke artisanal buns.
+            </p>
           </div>
 
           <div className="flex items-center gap-4 flex-wrap">
@@ -258,7 +262,9 @@ export default function SignatureMenu() {
               </button>
 
               <div className="space-y-3">
-                
+                <span className="font-mono text-xs tracking-widest uppercase font-bold" style={{ color: "#B91C1C" }}>
+                  CULINARY PROFILE
+                </span>
                 <h3 className="type-display text-3xl sm:text-4xl text-white font-extrabold">
                   {activePreviewItem.name}
                 </h3>

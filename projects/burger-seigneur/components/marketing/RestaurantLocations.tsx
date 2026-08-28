@@ -21,7 +21,9 @@ export default function RestaurantLocations() {
       <div className="max-w-7xl mx-auto space-y-12">
         <div className="flex flex-col md:flex-row justify-between md:items-end gap-6 border-b border-white/10 pb-8">
           <div className="space-y-2">
-            
+            <span className="font-mono text-xs tracking-widest uppercase block font-bold" style={{ color: "#C8A96E" }}>
+              BURGER SEIGNEUR // PHYSICAL OUTPOSTS
+            </span>
             <h2 className="type-display text-4xl sm:text-6xl text-white font-extrabold tracking-tight">
               BENGALURU KITCHENS
             </h2>

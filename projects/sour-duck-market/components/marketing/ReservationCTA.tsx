@@ -41,11 +41,15 @@ export default function ReservationCTA() {
     >
       <div className="max-w-4xl mx-auto space-y-12">
         <div className="text-center space-y-3">
-          
+          <span className="font-mono text-xs tracking-widest uppercase font-bold block" style={{ color: "#EA580C" }}>
+            SOUR DUCK MARKET // TABLE RESERVATIONS
+          </span>
           <h2 className="type-display text-4xl sm:text-6xl text-white font-extrabold tracking-tight">
             BOOK YOUR EXPERIENCE
           </h2>
-          
+          <p className="text-stone-300 text-sm max-w-xl mx-auto font-body">
+            Reserve front-row seats for fresh sizzling craft dining in Austin.
+          </p>
         </div>
 
         {confirmed ? (
