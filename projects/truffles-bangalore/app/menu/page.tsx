@@ -3,7 +3,6 @@
 import { useState } from "react";
 import Nav from "@/components/marketing/Nav";
 import Footer from "@/components/marketing/Footer";
-import { motion, AnimatePresence } from "framer-motion";
 
 interface MenuItem {
   name: string;
@@ -13,15 +12,15 @@ interface MenuItem {
 }
 
 interface MenuSection {
-  title: string;
-  subtitle: string;
+  category: string;
+  badge: string;
   items: MenuItem[];
 }
 
 const MENU_DATA: MenuSection[] = [
   {
-    "title": "\ud83c\udf54 Burgers & Smashes",
-    "subtitle": "Fresh griddled patties with homemade sauces and soft brioche buns",
+    "category": "Burgers & Smashes",
+    "badge": "\ud83c\udf54 GOURMET SMASH",
     "items": [
       {
         "name": "All American Cheese Burger",
@@ -39,6 +38,14 @@ const MENU_DATA: MenuSection[] = [
         "tags": [
           "Spicy \ud83c\udf36\ufe0f",
           "Signature"
+        ]
+      },
+      {
+        "name": "Truffles Sloppy Joe",
+        "price": "340",
+        "desc": "Rich minced meat simmered in signature savory sweet barbecue sauce with molten cheese",
+        "tags": [
+          "Crowd Favorite"
         ]
       },
       {
@@ -68,15 +75,23 @@ const MENU_DATA: MenuSection[] = [
     ]
   },
   {
-    "title": "\ud83c\udf5f Loaded Sides & Starters",
-    "subtitle": "Golden fries, truffle crunches, and spicy wings",
+    "category": "Loaded Sides & Grills",
+    "badge": "\ud83c\udf5f SIDES & CRISP",
     "items": [
       {
         "name": "Truffle Parmesan Fries",
         "price": "240",
         "desc": "Hand-cut crispy Idaho fries tossed in aromatic truffle oil, fresh parsley, and grated parmesan",
         "tags": [
-          "House Specialty"
+          "House Specialty \u2b50"
+        ]
+      },
+      {
+        "name": "Peri Peri Chicken Steak",
+        "price": "390",
+        "desc": "Char-grilled chicken breast glazed in spicy peri peri sauce with mashed potato and herb butter",
+        "tags": [
+          "House Special"
         ]
       },
       {
@@ -94,20 +109,12 @@ const MENU_DATA: MenuSection[] = [
         "tags": [
           "Vegetarian"
         ]
-      },
-      {
-        "name": "Crispy Onion Rings",
-        "price": "190",
-        "desc": "Beer-battered sweet onion rings served with spicy chipotle mayo",
-        "tags": [
-          "Classic"
-        ]
       }
     ]
   },
   {
-    "title": "\ud83e\udd64 Hand-Spun Shakes & Desserts",
-    "subtitle": "Classic ice cream shakes and iconic dessert jars",
+    "category": "Desserts & Shakes",
+    "badge": "\ud83e\udd64 SWEET & FOUNTAIN",
     "items": [
       {
         "name": "Deep Fried Oreos",
@@ -126,19 +133,19 @@ const MENU_DATA: MenuSection[] = [
         ]
       },
       {
-        "name": "French Vanilla Biscuit Shake",
-        "price": "240",
-        "desc": "Hand-dipped vanilla ice cream churned with rich butter biscuits and salted caramel",
+        "name": "Dutch Truffle Cake Slice",
+        "price": "220",
+        "desc": "Layers of dense chocolate sponge with rich dark chocolate ganache",
         "tags": [
-          "Thick Shake"
+          "Classic"
         ]
       },
       {
-        "name": "Belgian Dark Chocolate Shake",
-        "price": "250",
-        "desc": "Pure Belgian dark chocolate ganache blended with premium cream",
+        "name": "Ferrero Rocher Shake",
+        "price": "260",
+        "desc": "Hand-dipped ice cream spun with crushed Ferrero chocolates and hazelnut fudge",
         "tags": [
-          "Indulgent"
+          "Thick Shake"
         ]
       }
     ]
@@ -146,14 +153,21 @@ const MENU_DATA: MenuSection[] = [
 ];
 
 export default function MenuPage() {
-  const [activeTab, setActiveTab] = useState(0);
+  const [selectedCategory, setSelectedCategory] = useState<string>("All");
+
+  const categories = ["All", ...Array.from(new Set(MENU_DATA.map((sec) => sec.category)))];
+
+  const visibleSections =
+    selectedCategory === "All"
+      ? MENU_DATA
+      : MENU_DATA.filter((sec) => sec.category === selectedCategory);
 
   return (
     <>
       <Nav />
-      <main className="pt-24 min-h-screen bg-[#0A0A0A] text-white relative z-10 select-none">
+      <main className="pt-24 min-h-screen relative z-10 select-none pb-20">
         {/* Banner Section */}
-        <section className="py-20 lg:py-24 border-b border-white/10 bg-gradient-to-b from-[#141414] to-[#0A0A0A]">
+        <section className="py-16 lg:py-24 border-b border-black/10 dark:border-white/10">
           <div className="mx-auto max-w-7xl px-6 lg:px-8 space-y-4">
             <span
               className="text-xs uppercase tracking-widest font-extrabold inline-block px-3.5 py-1.5 rounded-full border shadow-sm"
@@ -167,95 +181,83 @@ export default function MenuPage() {
             </span>
 
             <h1
-              className="type-display text-5xl sm:text-7xl md:text-8xl leading-none font-black tracking-tight"
-              style={{
-                color: "#FFE500",
-                textShadow: "0 4px 24px rgba(0,0,0,0.9), 0 0 30px #FFE50050",
-              }}
+              className="type-display text-5xl sm:text-7xl md:text-8xl leading-none font-black tracking-tight text-black dark:text-white"
             >
               TRUFFLES <br />
-              <span className="text-white">CULINARY MENU</span>
+              <span style={{ color: "#FFE500" }}>CULINARY MENU</span>
             </h1>
 
-            <p className="type-serif text-base sm:text-xl text-white/80 max-w-2xl leading-relaxed">
+            <p className="type-serif text-base sm:text-xl text-stone-700 dark:text-stone-300 max-w-2xl leading-relaxed">
               Handcrafted gourmet burgers, deep-fried Oreos, signature Old Monk mousse, artisan matchas, and cold brews.
             </p>
           </div>
         </section>
 
-        {/* Category Tabs Sticky Bar */}
-        <section className="sticky top-18 lg:top-20 z-30 py-4 bg-[#0A0A0A]/95 backdrop-blur-xl border-b border-white/10 shadow-2xl">
+        {/* Category Tabs Sticky Filter Bar */}
+        <section className="sticky top-18 lg:top-20 z-30 py-4 backdrop-blur-xl bg-white/90 dark:bg-[#0A0A0A]/90 border-b border-black/10 dark:border-white/10 shadow-lg">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <div className="flex gap-3 overflow-x-auto pb-1 scrollbar-none">
-              {MENU_DATA.map((sec, idx) => (
-                <button
-                  key={sec.title}
-                  onClick={() => {
-                    if ((window as any).playPopSound) (window as any).playPopSound();
-                    setActiveTab(idx);
-                  }}
-                  className={`px-6 py-3 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-300 whitespace-nowrap ${
-                    activeTab === idx
-                      ? "shadow-2xl scale-105"
-                      : "text-white/60 hover:text-white border border-white/10 hover:border-white/30"
-                  }`}
-                  style={{
-                    backgroundColor: activeTab === idx ? "#FFE500" : "transparent",
-                    color: activeTab === idx ? "#000000" : undefined,
-                  }}
-                >
-                  {sec.title}
-                </button>
-              ))}
+            <div className="flex gap-2.5 overflow-x-auto pb-1 scrollbar-none">
+              {categories.map((cat) => {
+                const isActive = selectedCategory === cat;
+                return (
+                  <button
+                    key={cat}
+                    onClick={() => {
+                      if ((window as any).playPopSound) (window as any).playPopSound();
+                      setSelectedCategory(cat);
+                    }}
+                    className={`px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-200 whitespace-nowrap ${
+                      isActive
+                        ? "shadow-xl scale-105"
+                        : "bg-black/5 dark:bg-white/5 text-stone-700 dark:text-stone-300 border border-black/10 dark:border-white/10 hover:border-black/30 dark:hover:border-white/30"
+                    }`}
+                    style={{
+                      backgroundColor: isActive ? "#FFE500" : undefined,
+                      color: isActive ? "#000000" : undefined,
+                    }}
+                  >
+                    {cat}
+                  </button>
+                );
+              })}
             </div>
           </div>
         </section>
 
-        {/* High-Contrast Menu Slabs Grid */}
-        <section className="py-16 lg:py-24">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={activeTab}
-                initial={{ opacity: 0, y: 15 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -15 }}
-                transition={{ duration: 0.3 }}
-                className="space-y-12"
-              >
-                <div>
-                  <h2
-                    className="type-display text-3xl sm:text-5xl font-black mb-2"
+        {/* Menu Slabs Container - Fully Visible & Hydrated */}
+        <section className="py-12 lg:py-16">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8 space-y-16">
+            {visibleSections.map((section) => (
+              <div key={section.category} className="space-y-6">
+                <div className="flex items-center gap-3 border-b border-black/10 dark:border-white/10 pb-4">
+                  <h2 className="type-display text-3xl sm:text-4xl font-extrabold text-black dark:text-white">
+                    {section.category}
+                  </h2>
+                  <span
+                    className="text-[10px] font-mono font-bold uppercase px-2.5 py-1 rounded-full border"
                     style={{
+                      backgroundColor: "#FFE50015",
+                      borderColor: "#FFE50035",
                       color: "#FFE500",
-                      textShadow: "0 2px 16px #FFE50040",
                     }}
                   >
-                    {MENU_DATA[activeTab].title}
-                  </h2>
-                  <p className="type-serif text-base sm:text-lg text-white/70">
-                    {MENU_DATA[activeTab].subtitle}
-                  </p>
+                    {section.badge}
+                  </span>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-                  {MENU_DATA[activeTab].items.map((item) => (
+                  {section.items.map((item) => (
                     <div
                       key={item.name}
-                      className="p-6 sm:p-8 rounded-3xl bg-[#141414] border border-white/15 hover:border-white/40 shadow-2xl hover:scale-[1.02] transition-all duration-300 flex flex-col justify-between space-y-4 group"
+                      className="p-6 sm:p-8 rounded-3xl bg-white dark:bg-[#141414] border-2 border-black/10 dark:border-white/15 shadow-xl hover:shadow-2xl hover:scale-[1.01] transition-all duration-200 flex flex-col justify-between space-y-5"
                     >
                       <div className="space-y-3">
                         <div className="flex justify-between items-start gap-4">
-                          <h3
-                            className="type-display text-2xl sm:text-3xl font-bold leading-tight text-white group-hover:transition-colors"
-                            style={{
-                              textShadow: "0 2px 10px rgba(0,0,0,0.8)",
-                            }}
-                          >
+                          <h3 className="type-display text-2xl sm:text-3xl font-black text-black dark:text-white leading-tight">
                             {item.name}
                           </h3>
                           <span
-                            className="font-mono font-extrabold text-sm sm:text-base px-3.5 py-1.5 rounded-full flex-shrink-0 shadow-lg"
+                            className="font-mono font-extrabold text-sm sm:text-base px-3.5 py-1.5 rounded-full flex-shrink-0 shadow"
                             style={{
                               backgroundColor: "#FFE500",
                               color: "#000000",
@@ -266,24 +268,19 @@ export default function MenuPage() {
                         </div>
 
                         {item.desc && (
-                          <p className="type-serif text-sm sm:text-base text-white/80 leading-relaxed">
+                          <p className="type-serif text-sm sm:text-base text-stone-700 dark:text-stone-300 leading-relaxed">
                             {item.desc}
                           </p>
                         )}
                       </div>
 
-                      <div className="flex items-center justify-between gap-4 pt-3 border-t border-white/10">
+                      <div className="flex items-center justify-between gap-4 pt-3 border-t border-black/5 dark:border-white/10">
                         {item.tags && item.tags.length > 0 ? (
-                          <div className="flex flex-wrap gap-2">
+                          <div className="flex flex-wrap gap-1.5">
                             {item.tags.map((tag) => (
                               <span
                                 key={tag}
-                                className="text-[10px] font-mono uppercase font-bold px-2.5 py-1 rounded-full border"
-                                style={{
-                                  backgroundColor: "#FFE50015",
-                                  borderColor: "#FFE50030",
-                                  color: "#FFE500",
-                                }}
+                                className="text-[10px] font-mono uppercase font-bold px-2.5 py-1 rounded-full border bg-black/5 dark:bg-white/5 border-black/10 dark:border-white/15 text-stone-800 dark:text-stone-200"
                               >
                                 {tag}
                               </span>
@@ -299,20 +296,20 @@ export default function MenuPage() {
                             if ((window as any).playSizzleSound) (window as any).playSizzleSound();
                             alert(`Added ${item.name} to your order!`);
                           }}
-                          className="px-4 py-1.5 rounded-full text-xs font-extrabold uppercase tracking-wider transition-all shadow-md hover:scale-105 active:scale-95 flex-shrink-0"
+                          className="px-4 py-2 rounded-full text-xs font-black uppercase tracking-wider transition-all shadow-md hover:scale-105 active:scale-95 flex-shrink-0"
                           style={{
                             backgroundColor: "#FFE500",
                             color: "#000000",
                           }}
                         >
-                          Add +
+                          Order +
                         </button>
                       </div>
                     </div>
                   ))}
                 </div>
-              </motion.div>
-            </AnimatePresence>
+              </div>
+            ))}
           </div>
         </section>
       </main>
