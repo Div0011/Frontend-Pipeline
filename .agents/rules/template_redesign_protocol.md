@@ -65,7 +65,19 @@ Whenever a request asks to redesign, rebrand, or create a client website:
 
 ---
 
-## 5. Build & Quality Assurance
+## 5. Vercel Deployment Target (MANDATORY)
+
+- **Team Account**: **`cinematic-websites`** ([https://vercel.com/cinematic-websites](https://vercel.com/cinematic-websites))
+- **FORBIDDEN**: Never deploy websites or templates to the `div0011` account.
+- **Deployment Command**:
+
+  ```bash
+  npx vercel --prod --scope cinematic-websites --yes
+  ```
+
+---
+
+## 6. Build & Quality Assurance
 
 - Always place `"use client";` at line 1 of client component files.
 - Resilient font imports: use `@import` in `globals.css` with instant fallback stacks.

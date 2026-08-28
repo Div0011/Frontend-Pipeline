@@ -14,3 +14,10 @@ Whenever a request asks to redesign, rebrand, or create a client website clone:
 3. **Install Dependencies**: Run `npm install` in `projects/<client-slug>/`.
 4. **Overlay Assets & Content**: Update **only** the target website's assets, branding, colors, typography, menu/data, components, copy, images, contact info, and metadata **inside `projects/<client-slug>/`**. Do not redesign from scratch.
 5. **Verify**: Run `npm run typecheck` and `npm run build` in `projects/<client-slug>/`. Confirm `templates/` is 100% clean.
+
+## 3. Mandatory Vercel Deployment Target
+
+- **CRITICAL**: Deploy **all** websites and templates exclusively to the Vercel team/account:
+  - **Account / Scope**: **`cinematic-websites`** ([https://vercel.com/cinematic-websites](https://vercel.com/cinematic-websites))
+  - **DO NOT** deploy under personal `div0011` account.
+  - When using the Vercel CLI, always pass `--scope cinematic-websites` (e.g. `npx vercel --prod --scope cinematic-websites --yes`).

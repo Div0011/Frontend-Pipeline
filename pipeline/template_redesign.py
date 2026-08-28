@@ -67,12 +67,33 @@ def verify_build(project_dir: str) -> bool:
         return False
 
 
+def deploy_to_vercel(project_dir: str, scope: str = "cinematic-websites") -> bool:
+    """Deploys production build to Vercel targeting the mandatory cinematic-websites team scope."""
+    print(f"Deploying {project_dir} to Vercel scope '{scope}'...")
+    res = subprocess.run(
+        ["npx", "vercel", "--prod", "--scope", scope, "--yes"],
+        cwd=project_dir,
+        capture_output=True,
+        text=True,
+    )
+    if res.returncode == 0:
+        print(f"🎉 Successfully deployed to Vercel under scope '{scope}'!")
+        print(res.stdout)
+        return True
+    else:
+        print(f"✗ Deployment failed:")
+        print(res.stderr or res.stdout)
+        return False
+
+
 def main():
     parser = argparse.ArgumentParser(description="Automate template-based client website redesigns")
     parser.add_argument("--template", default="smashguys", help="Base template name in templates/")
     parser.add_argument("--slug", required=True, help="Target client project slug (e.g. beyondburg-inc)")
     parser.add_argument("--install", action="store_true", help="Run npm install after cloning")
     parser.add_argument("--verify", action="store_true", help="Run npm run build after overlay")
+    parser.add_argument("--deploy", action="store_true", help="Deploy to Vercel under scope cinematic-websites")
+    parser.add_argument("--scope", default="cinematic-websites", help="Vercel scope (default: cinematic-websites)")
     args = parser.parse_args()
 
     project_dir = clone_template(args.template, args.slug)
@@ -81,7 +102,11 @@ def main():
         install_dependencies(project_dir)
 
     if args.verify:
-        verify_build(project_dir)
+        passed = verify_build(project_dir)
+        if passed and args.deploy:
+            deploy_to_vercel(project_dir, scope=args.scope)
+    elif args.deploy:
+        deploy_to_vercel(project_dir, scope=args.scope)
 
 
 if __name__ == "__main__":

@@ -94,6 +94,11 @@ class Settings(BaseSettings):
     stitch_api_key: str = ""
     stitch_mcp_url: str = "https://stitch.googleapis.com/mcp"
 
+    # ── Deployment ──────────────────────────────────────────────────
+    vercel_scope: str = "cinematic-websites"
+    vercel_org_id: str | None = None
+    vercel_project_id: str | None = None
+
     # ── Server ──────────────────────────────────────────────────────
     api_host: str = "0.0.0.0"
     api_port: int = 8000
