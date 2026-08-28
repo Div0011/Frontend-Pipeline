@@ -10,7 +10,7 @@ export default function HowWeSmash() {
     <section className="py-24 px-6 sm:px-12 md:px-20 bg-transparent text-white border-b border-white/10 relative z-10 font-sans">
       <div className="max-w-7xl mx-auto space-y-12">
         <div>
-          <h2 className="type-display text-4xl sm:text-6xl text-white font-black tracking-tight">
+          <h2 className="type-display text-4xl sm:text-6xl text-[#F2C777] font-black tracking-tight">
             WOOD-FIRED PIZZA CRAFT
           </h2>
         </div>
@@ -38,7 +38,7 @@ export default function HowWeSmash() {
             <span className="text-xs uppercase font-bold tracking-widest block" style={{ color: "#D91C24" }}>
               72-HR SLOW FERMENTED CRUST
             </span>
-            <h3 className="type-display text-2xl sm:text-3xl text-white font-extrabold">
+            <h3 className="type-display text-2xl sm:text-3xl text-[#F2C777] font-extrabold">
               MAXIMUM CARAMELIZED MAILLARD REACTION
             </h3>
           </div>

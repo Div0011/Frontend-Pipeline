@@ -22,14 +22,14 @@ export default function ReservationCTA() {
     <section id="reservation-section" className="py-24 px-6 sm:px-12 md:px-20 bg-transparent text-white border-b border-white/10 relative z-10 font-sans">
       <div className="max-w-7xl mx-auto space-y-12">
         <div>
-          <h2 className="type-display text-4xl sm:text-6xl text-white font-black tracking-tight">
+          <h2 className="type-display text-4xl sm:text-6xl text-[#F2C777] font-black tracking-tight">
             BOOK YOUR EXPERIENCE
           </h2>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           <div className="lg:col-span-7 space-y-6">
-            <h3 className="type-display text-3xl sm:text-4xl text-white font-extrabold leading-tight">
+            <h3 className="type-display text-3xl sm:text-4xl text-[#F2C777] font-extrabold leading-tight">
               TABLE RESERVATIONS AT PEDROSO'S PIZZA
             </h3>
           </div>

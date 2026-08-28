@@ -48,7 +48,7 @@ export default function CinematicHero() {
               </span>
             </div>
 
-            <h1 className="type-display text-6xl sm:text-8xl md:text-9xl lg:text-[9.5rem] text-white leading-none font-black tracking-tight drop-shadow-[0_10px_30px_rgba(0,0,0,0.8)]">
+            <h1 className="type-display text-6xl sm:text-8xl md:text-9xl lg:text-[9.5rem] text-[#F2C777] leading-none font-black tracking-tight drop-shadow-[0_10px_30px_rgba(0,0,0,0.8)]">
               PEDROSOS PIZZA
             </h1>
 
@@ -84,7 +84,7 @@ export default function CinematicHero() {
               PHASE 01 / CRAFT KINETICS
             </span>
 
-            <h2 className="type-display text-5xl sm:text-7xl md:text-8xl text-white leading-none font-black tracking-tight drop-shadow-[0_10px_30px_rgba(0,0,0,0.8)]">
+            <h2 className="type-display text-5xl sm:text-7xl md:text-8xl text-[#F2C777] leading-none font-black tracking-tight drop-shadow-[0_10px_30px_rgba(0,0,0,0.8)]">
               PRECISION CAST IRON SEAR
             </h2>
 
@@ -115,7 +115,7 @@ export default function CinematicHero() {
               PHASE 02 / CULINARY SIGNATURE
             </span>
 
-            <h2 className="type-display text-5xl sm:text-7xl md:text-8xl text-white leading-none font-black tracking-tight drop-shadow-[0_10px_30px_rgba(0,0,0,0.8)]">
+            <h2 className="type-display text-5xl sm:text-7xl md:text-8xl text-[#F2C777] leading-none font-black tracking-tight drop-shadow-[0_10px_30px_rgba(0,0,0,0.8)]">
               CRAFTED FOR PERFECTION
             </h2>
 

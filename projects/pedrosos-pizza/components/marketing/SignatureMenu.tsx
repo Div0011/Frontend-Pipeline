@@ -40,7 +40,7 @@ export default function SignatureMenu() {
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div>
-            <h2 className="type-display text-4xl sm:text-6xl text-white font-black tracking-tight">
+            <h2 className="type-display text-4xl sm:text-6xl text-[#F2C777] font-black tracking-tight">
               SIGNATURE SELECTIONS
             </h2>
           </div>
@@ -104,7 +104,7 @@ export default function SignatureMenu() {
 
               {/* Clean Card Header: Title + Price Pill + Add */}
               <div className="flex items-center justify-between gap-3 pt-1">
-                <h3 className="type-display text-xl sm:text-2xl text-white font-bold leading-tight group-hover:text-[#D91C24] transition-colors">
+                <h3 className="type-display text-xl sm:text-2xl text-[#F2C777] font-bold leading-tight group-hover:text-[#D91C24] transition-colors">
                   {item.name}
                 </h3>
 
@@ -162,13 +162,13 @@ export default function SignatureMenu() {
                 <span className="text-xs uppercase font-bold tracking-widest block" style={{ color: "#D91C24" }}>
                   {activeItemModal.category}
                 </span>
-                <h3 className="type-display text-3xl font-black text-white">
+                <h3 className="type-display text-3xl font-black text-[#F2C777]">
                   {activeItemModal.name}
                 </h3>
               </div>
 
               <div className="flex items-center justify-between pt-4 border-t border-white/10">
-                <span className="type-display text-2xl font-bold text-white">
+                <span className="type-display text-2xl font-bold text-[#F2C777]">
                   ${activeItemModal.price}
                 </span>
 

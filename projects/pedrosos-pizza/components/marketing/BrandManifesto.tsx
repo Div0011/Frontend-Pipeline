@@ -83,7 +83,7 @@ export default function BrandManifesto() {
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-4 border-b border-white/10">
           <div>
-            <h2 className="type-display text-4xl sm:text-6xl md:text-7xl text-white [html.light_&]:text-stone-950 font-black leading-tight tracking-tight">
+            <h2 className="type-display text-4xl sm:text-6xl md:text-7xl text-[#F2C777] [html.light_&]:text-stone-950 font-black leading-tight tracking-tight">
               THE 450°F STEEL SMASH STANDARD.
             </h2>
           </div>
@@ -207,7 +207,7 @@ export default function BrandManifesto() {
 
                 {/* Right: Metrics & Sear Test */}
                 <div className="lg:col-span-5 space-y-6">
-                  <h3 className="type-display text-3xl text-white [html.light_&]:text-stone-950 font-extrabold">
+                  <h3 className="type-display text-3xl text-[#F2C777] [html.light_&]:text-stone-950 font-extrabold">
                     {current.title}
                   </h3>
 
@@ -252,7 +252,7 @@ export default function BrandManifesto() {
               <span className="text-xs uppercase font-extrabold [html.light_&]:text-stone-950 block" style={{ color: "#D91C24" }}>
                 OUR CAST-IRON SMASH
               </span>
-              <h3 className="type-display text-2xl text-white [html.light_&]:text-stone-950 font-bold">
+              <h3 className="type-display text-2xl text-[#F2C777] [html.light_&]:text-stone-950 font-bold">
                 450°F STEEL HIGH-HEAT PRESS
               </h3>
               <p className="text-xs text-stone-300 [html.light_&]:text-stone-700 leading-relaxed font-body">

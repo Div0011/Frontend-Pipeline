@@ -66,7 +66,7 @@ export default function Nav() {
               priority
             />
           </div>
-          <span className="type-display text-lg sm:text-xl md:text-2xl font-black text-white dark:text-white light:text-black tracking-tight group-hover:opacity-90 transition-opacity">
+          <span className="type-display text-lg sm:text-xl md:text-2xl font-black text-white dark:text-[#F2C777] light:text-[#F2C777] tracking-tight group-hover:opacity-90 transition-opacity">
             PEDROSOS PIZZA
           </span>
         </Link>

@@ -38,7 +38,7 @@ export default function RestaurantLocations() {
       <div className="max-w-7xl mx-auto space-y-10">
         <div className="flex flex-col md:flex-row justify-between md:items-end gap-6 border-b border-white/10 pb-6">
           <div>
-            <h2 className="type-display text-4xl sm:text-6xl text-white font-extrabold tracking-tight">
+            <h2 className="type-display text-4xl sm:text-6xl text-[#F2C777] font-extrabold tracking-tight">
               BURNET RD AUSTIN
             </h2>
           </div>
@@ -99,7 +99,7 @@ export default function RestaurantLocations() {
                   <span className="text-[10px] uppercase tracking-widest font-bold block" style={{ color: "#D91C24" }}>
                     {currentLoc.badge}
                   </span>
-                  <h3 className="type-display text-2xl sm:text-3xl text-white font-extrabold drop-shadow-md">
+                  <h3 className="type-display text-2xl sm:text-3xl text-[#F2C777] font-extrabold drop-shadow-md">
                     {currentLoc.name}
                   </h3>
                 </div>
