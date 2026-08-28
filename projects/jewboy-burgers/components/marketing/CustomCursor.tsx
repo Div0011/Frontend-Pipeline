@@ -60,6 +60,7 @@ export default function CustomCursor() {
       const lum = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
 
       // Detect background color characteristics
+      const isWhiteFooter = !!el.closest("footer, footer *");
       const isRed = (r > 150 && g < 80 && b < 80) || !!el.closest("footer[style*='#D91C24'], footer[style*='#E52421'], footer[style*='#DC2626'], .bg-red-600, .bg-\\[\\#D91C24\\], .bg-\\[\\#E52421\\]");
       const isGreen = (g > 55 && g > r * 1.05 && b < 100) || !!el.closest("footer[style*='#122B1E'], footer[style*='#418043'], footer[style*='#15803D'], .bg-\\[\\#122B1E\\], .bg-\\[\\#418043\\]");
       const isBlue = (b > 140 && r < 100) || !!el.closest("footer[style*='#2563EB'], .bg-\\[\\#2563EB\\]");
@@ -69,7 +70,9 @@ export default function CustomCursor() {
 
       let nextColor = "var(--primary, #FFFFFF)";
 
-      if (isRed) {
+      if (isWhiteFooter) {
+        nextColor = "#0A0A0A";
+      } else if (isRed) {
         // Red surface -> Deep Black for maximum contrast
         nextColor = "#0A0A0A";
       } else if (isGreen || isBlue || isMustard) {

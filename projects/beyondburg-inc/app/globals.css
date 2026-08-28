@@ -71,7 +71,8 @@ h1, h2, h3, h4, .type-display {
   text-transform: uppercase;
   letter-spacing: -0.02em;
   line-height: 0.9;
-  color: #122B1E;
+  color: #22C55E !important;
+  text-shadow: 0 0 15px rgba(34, 197, 94, 0.4), 0 0 30px rgba(255, 255, 255, 0.3);
 }
 
 /* Subtexts / Paragraphs on Light Surfaces */
