@@ -9,7 +9,7 @@ interface InteractiveBackgroundProps {
 }
 
 export default function InteractiveBackground({
-  primaryColor = "#06B6D4",
+  primaryColor = "#FFFFFF",
   themeBase = "#050c10",
 }: InteractiveBackgroundProps) {
   const mouseX = useMotionValue(0.5);

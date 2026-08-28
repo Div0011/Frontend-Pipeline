@@ -10,7 +10,7 @@ interface AtmosphereControlsProps {
 }
 
 export default function AtmosphereControls({
-  primaryColor = "#F5C418",
+  primaryColor = "#FFFFFF",
   darkBg = "#070709",
   lightBg = "#FAF7F2",
 }: AtmosphereControlsProps) {
@@ -245,7 +245,7 @@ export default function AtmosphereControls({
   // Exact Color Theory:
   // Dark Mode: Black background button + Yellow icon
   // Light Mode: Yellow background button + Black icon
-  const buttonBg = isDark ? "bg-[#070709]/85 backdrop-blur-xl border border-white/20" : "bg-[#F5C418] shadow-2xl border border-black/10";
+  const buttonBg = isDark ? "bg-[#070709]/85 backdrop-blur-xl border border-white/20" : "bg-[#FFFFFF] shadow-2xl border border-black/10";
   const iconColor = isDark ? primaryColor : "#18181B";
 
   return (

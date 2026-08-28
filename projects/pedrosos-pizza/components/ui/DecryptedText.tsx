@@ -23,7 +23,7 @@ export default function DecryptedText({
   characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*",
   className = "",
   parentClassName = "",
-  encryptedClassName = "text-[#B91C1C] opacity-70",
+  encryptedClassName = "text-[#D91C24] opacity-70",
   animateOn = "view",
   revealDirection = "start",
   sequential = true,

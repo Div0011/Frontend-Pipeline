@@ -27,7 +27,7 @@ export default function CartDrawer({
   items,
   onUpdateQuantity,
   currency = "$",
-  primaryColor = "#B91C1C",
+  primaryColor = "#D91C24",
   textOnPrimary = "#FFFFFF",
 }: CartDrawerProps) {
   const subtotal = items.reduce((sum, item) => sum + item.price * item.quantity, 0);

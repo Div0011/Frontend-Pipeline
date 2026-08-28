@@ -104,7 +104,7 @@ export default function ReservationCTA() {
                     type="submit"
                     className="w-full py-4 rounded-2xl font-sans text-xs font-bold uppercase tracking-wider transition-all shadow-xl hover:brightness-110 active:scale-95"
                     style={{
-                      backgroundColor: "#B91C1C",
+                      backgroundColor: "#D91C24",
                       color: "#000000",
                     }}
                   >

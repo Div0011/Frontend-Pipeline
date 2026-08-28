@@ -1,6 +1,28 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
-  <circle cx="50" cy="50" r="46" stroke="#06B6D4" stroke-width="3" fill="#0A0A0A" />
-  <!-- Lucha Mask / Star Badge -->
-  <polygon points="50,22 54,34 66,34 56,42 60,54 50,46 40,54 44,42 34,34 46,34" fill="#06B6D4" />
-  <text x="50" y="76" fill="#06B6D4" font-family="'Space Grotesk', 'Impact', sans-serif" font-size="20" font-weight="900" text-anchor="middle" letter-spacing="1">JB</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 200" fill="none">
+  <!-- JEWBOY in Heavy Bold Block with Star of David in O -->
+  <g fill="#FFFFFF">
+    <!-- J -->
+    <path d="M 30 20 H 68 V 82 C 68 96 58 106 44 106 C 30 106 20 98 18 84 L 38 80 C 39 88 43 90 48 90 C 51 90 53 87 53 82 V 36 H 30 V 20 Z" />
+    
+    <!-- E -->
+    <path d="M 78 20 H 122 V 36 H 96 V 54 H 118 V 70 H 96 V 90 H 124 V 106 H 78 V 20 Z" />
+    
+    <!-- W -->
+    <path d="M 130 20 H 148 L 158 68 L 168 20 H 186 L 196 68 L 206 20 H 224 L 206 106 H 188 L 177 56 L 166 106 H 148 L 130 20 Z" />
+    
+    <!-- B -->
+    <path d="M 234 20 H 268 C 282 20 290 28 290 40 C 290 48 285 54 278 58 C 287 62 292 70 292 82 C 292 96 282 106 266 106 H 234 V 20 Z M 252 36 V 54 H 264 C 270 54 273 51 273 45 C 273 39 270 36 264 36 H 252 Z M 252 70 V 90 H 266 C 272 90 275 86 275 80 C 275 74 272 70 266 70 H 252 Z" />
+    
+    <!-- O with Star of David cutout -->
+    <path fill-rule="evenodd" d="M 346 20 C 372 20 392 39 392 63 C 392 87 372 106 346 106 C 320 106 300 87 300 63 C 300 39 320 20 346 20 Z M 346 36 L 354 50 H 368 L 358 60 L 362 74 L 346 64 L 330 74 L 334 60 L 324 50 H 338 L 346 36 Z M 346 76 L 338 62 H 324 L 334 52 L 330 38 L 346 48 L 362 38 L 358 52 L 368 62 H 354 L 346 76 Z" />
+    
+    <!-- Y -->
+    <path d="M 400 20 H 420 L 434 58 L 448 20 H 468 L 444 68 V 106 H 424 V 68 L 400 20 Z" />
+  </g>
+
+  <!-- Old English Blackletter "burgers" -->
+  <text x="250" y="152" fill="#FFFFFF" font-family="'UnifrakturMaguntia', 'Old English Text MT', 'Cloister Black', 'Georgia', serif" font-size="44" font-weight="bold" text-anchor="middle" letter-spacing="2">burgers</text>
+  
+  <!-- Typewriter "Austin, TX" -->
+  <text x="250" y="184" fill="#FFFFFF" font-family="'Courier New', 'JetBrains Mono', monospace" font-size="17" font-weight="bold" text-anchor="middle" letter-spacing="4">Austin, TX</text>
 </svg>

@@ -82,9 +82,9 @@ export default function MenuPage() {
         <section className="py-20 bg-char text-ink relative overflow-hidden">
           <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#FAF8F2_1px,transparent_1px)] [background-size:24px_24px]" />
           <div className="mx-auto max-w-[88rem] px-6 lg:px-8 relative z-10">
-            <p className="type-caption text-[#06B6D4] mb-3 font-bold">5111 Airport Blvd · Shalom Y&apos;all!</p>
+            <p className="type-caption text-[#FFFFFF] mb-3 font-bold">5111 Airport Blvd · Shalom Y&apos;all!</p>
             <h1 className="type-display text-5xl md:text-7xl lg:text-8xl leading-none text-ink">
-              JEWBOY BURGERS<br /><span className="text-[#06B6D4]">BORDER MENU</span>
+              JEWBOY BURGERS<br /><span className="text-[#FFFFFF]">BORDER MENU</span>
             </h1>
             <p className="type-serif text-lg md:text-xl text-stone mt-6 max-w-xl">
               Home of The Oy Vey Goy, crispy potato latkes with Hatch green chile queso, Mexican chocolate churro shakes, and flat-top Angus burgers smashed into onions.
@@ -164,7 +164,7 @@ export default function MenuPage() {
                                 {item.tags.map((tag) => (
                                   <span
                                     key={tag}
-                                    className="text-[8px] font-mono uppercase bg-char text-[#06B6D4] px-2 py-0.5"
+                                    className="text-[8px] font-mono uppercase bg-char text-[#FFFFFF] px-2 py-0.5"
                                   >
                                     {tag}
                                   </span>

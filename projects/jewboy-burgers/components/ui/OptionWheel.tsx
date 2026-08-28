@@ -28,7 +28,7 @@ export default function OptionWheel({
   items,
   defaultSelected = 0,
   textColor = "#a6a6a6",
-  activeColor = "#F5C418",
+  activeColor = "#FFFFFF",
   side = "left",
   fontSize = 2.8,
   spacing = 1.4,
@@ -201,7 +201,7 @@ export default function OptionWheel({
               {isLeft && (
                 <div
                   className={`h-0.5 transition-all duration-300 ${
-                    isSelected ? "w-8 bg-[#06B6D4] shadow-glow" : "w-0 bg-transparent group-hover:w-3 group-hover:bg-white/40"
+                    isSelected ? "w-8 bg-[#FFFFFF] shadow-glow" : "w-0 bg-transparent group-hover:w-3 group-hover:bg-white/40"
                   }`}
                   style={{
                     backgroundColor: isSelected ? activeColor : undefined,
@@ -228,7 +228,7 @@ export default function OptionWheel({
               {!isLeft && (
                 <div
                   className={`h-0.5 transition-all duration-300 ${
-                    isSelected ? "w-8 bg-[#06B6D4] shadow-glow" : "w-0 bg-transparent group-hover:w-3 group-hover:bg-white/40"
+                    isSelected ? "w-8 bg-[#FFFFFF] shadow-glow" : "w-0 bg-transparent group-hover:w-3 group-hover:bg-white/40"
                   }`}
                   style={{
                     backgroundColor: isSelected ? activeColor : undefined,

@@ -92,7 +92,7 @@ export default function Nav() {
           <Link
             href="/menu"
             className="px-5 py-2.5 rounded-full font-sans text-xs font-bold uppercase tracking-wider hover:opacity-90 active:scale-95 transition-all shadow-md"
-            style={{ backgroundColor: "#06B6D4", color: "#000000" }}
+            style={{ backgroundColor: "#FFFFFF", color: "#000000" }}
           >
             Full Menu →
           </Link>

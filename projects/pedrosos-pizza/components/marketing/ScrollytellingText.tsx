@@ -13,7 +13,7 @@ const tickerItems = [
 
 export default function ScrollytellingText() {
   return (
-    <section className="py-12 select-none overflow-hidden border-b border-char-mute shadow-2xl" style={{ backgroundColor: "#B91C1C" }}>
+    <section className="py-12 select-none overflow-hidden border-b border-char-mute shadow-2xl" style={{ backgroundColor: "#D91C24" }}>
       <div className="flex whitespace-nowrap overflow-hidden">
         <motion.div
           animate={{ x: [0, -1200] }}

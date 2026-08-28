@@ -59,7 +59,7 @@ export default function RestaurantLocations() {
                       : "text-stone-400 hover:text-white"
                   }`}
                   style={{
-                    backgroundColor: selectedLocation === idx ? "#B91C1C" : undefined,
+                    backgroundColor: selectedLocation === idx ? "#D91C24" : undefined,
                     color: selectedLocation === idx ? "#000000" : undefined,
                   }}
                 >
@@ -96,7 +96,7 @@ export default function RestaurantLocations() {
               {/* Text Over Image — always white regardless of theme */}
               <div data-image-overlay className="absolute bottom-6 left-6 right-6 flex items-end justify-between gap-4 z-10">
                 <div className="space-y-1 text-white">
-                  <span className="text-[10px] uppercase tracking-widest font-bold block" style={{ color: "#B91C1C" }}>
+                  <span className="text-[10px] uppercase tracking-widest font-bold block" style={{ color: "#D91C24" }}>
                     {currentLoc.badge}
                   </span>
                   <h3 className="type-display text-2xl sm:text-3xl text-white font-extrabold drop-shadow-md">
@@ -112,7 +112,7 @@ export default function RestaurantLocations() {
                         onClick={() => setActiveImageIndex(imgIdx)}
                         className={`w-2 h-2 rounded-full transition-all ${
                           activeImageIndex === imgIdx
-                            ? "w-5 bg-[#B91C1C]"
+                            ? "w-5 bg-[#D91C24]"
                             : "bg-white/40 hover:bg-white/70"
                         }`}
                       />
@@ -169,7 +169,7 @@ export default function RestaurantLocations() {
                   rel="noopener noreferrer"
                   className="py-3.5 px-4 rounded-2xl font-sans text-xs font-bold uppercase tracking-wider text-center transition-all shadow-lg hover:brightness-110 active:scale-95"
                   style={{
-                    backgroundColor: "#B91C1C",
+                    backgroundColor: "#D91C24",
                     color: "#000000",
                   }}
                 >

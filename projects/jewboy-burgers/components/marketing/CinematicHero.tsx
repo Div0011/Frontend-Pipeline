@@ -42,7 +42,7 @@ export default function CinematicHero() {
           <div className="max-w-4xl space-y-6">
             {/* Live Status Pill */}
             <div className="flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/[0.05] border border-white/10 backdrop-blur-xl w-fit shadow-lg">
-              <span className="w-2 h-2 rounded-full animate-pulse" style={{ backgroundColor: "#06B6D4" }} />
+              <span className="w-2 h-2 rounded-full animate-pulse" style={{ backgroundColor: "#FFFFFF" }} />
               <span className="font-sans text-xs font-semibold uppercase tracking-wider text-stone-200">
                 Austin Cult Smash & Potato Latke Burgers
               </span>
@@ -56,7 +56,7 @@ export default function CinematicHero() {
               <Link
                 href="/menu"
                 className="px-8 py-4 rounded-full transition-all shadow-2xl hover:brightness-110 hover:scale-105 active:scale-95 flex items-center gap-2"
-                style={{ backgroundColor: "#06B6D4", color: "#000000" }}
+                style={{ backgroundColor: "#FFFFFF", color: "#000000" }}
               >
                 <span>Explore Menu</span>
                 <span>→</span>
@@ -81,7 +81,7 @@ export default function CinematicHero() {
           }}
         >
           <div className="max-w-3xl space-y-6">
-            <span className="font-mono text-xs uppercase tracking-widest px-3 py-1 bg-white/10 backdrop-blur-md rounded-full border border-white/20 inline-block font-bold" style={{ color: "#06B6D4" }}>
+            <span className="font-mono text-xs uppercase tracking-widest px-3 py-1 bg-white/10 backdrop-blur-md rounded-full border border-white/20 inline-block font-bold" style={{ color: "#FFFFFF" }}>
               PHASE 01 / CRAFT KINETICS
             </span>
 
@@ -94,7 +94,7 @@ export default function CinematicHero() {
             </p>
 
             <div className="flex items-center gap-4 text-xs font-mono text-stone-300">
-              <span className="font-bold px-3 py-1 bg-black/50 backdrop-blur-md rounded-full border border-white/15" style={{ color: "#06B6D4" }}>
+              <span className="font-bold px-3 py-1 bg-black/50 backdrop-blur-md rounded-full border border-white/15" style={{ color: "#FFFFFF" }}>
                 FRAME {currentFrame.toString().padStart(3, "0")} / {FRAME_COUNT}
               </span>
               <span className="text-stone-400">PRECISION SIZZLE SEQUENCE</span>
@@ -112,7 +112,7 @@ export default function CinematicHero() {
           }}
         >
           <div className="max-w-2xl space-y-6">
-            <span className="font-mono text-xs uppercase tracking-widest px-3 py-1 bg-white/10 backdrop-blur-md rounded-full border border-white/20 inline-block font-bold" style={{ color: "#06B6D4" }}>
+            <span className="font-mono text-xs uppercase tracking-widest px-3 py-1 bg-white/10 backdrop-blur-md rounded-full border border-white/20 inline-block font-bold" style={{ color: "#FFFFFF" }}>
               PHASE 02 / CULINARY SIGNATURE
             </span>
 
@@ -128,7 +128,7 @@ export default function CinematicHero() {
               <Link
                 href="/menu"
                 className="px-8 py-4 rounded-full transition-all shadow-2xl hover:brightness-110 hover:scale-105 active:scale-95 flex items-center gap-2"
-                style={{ backgroundColor: "#06B6D4", color: "#000000" }}
+                style={{ backgroundColor: "#FFFFFF", color: "#000000" }}
               >
                 <span>Order Signature Dish</span>
                 <span>→</span>

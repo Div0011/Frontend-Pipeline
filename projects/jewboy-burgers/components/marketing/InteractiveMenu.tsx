@@ -14,14 +14,14 @@ const CATEGORIES = [
 ] as const;
 
 const TAG_COLORS: Record<string, string> = {
-  signature: "bg-char text-[#06B6D4]",
-  premium:   "bg-[#06B6D4] text-char",
+  signature: "bg-char text-[#FFFFFF]",
+  premium:   "bg-[#FFFFFF] text-char",
   spicy:     "bg-ember text-bone",
-  popular:   "bg-[#06B6D4] text-char",
+  popular:   "bg-[#FFFFFF] text-char",
   smoky:     "bg-char-soft text-ink",
   seasonal:  "bg-bone-warm text-smoke",
   classic:   "bg-bone-dark text-char",
-  loaded:    "bg-char text-[#06B6D4]",
+  loaded:    "bg-char text-[#FFFFFF]",
 };
 
 export default function InteractiveMenu() {
@@ -59,7 +59,7 @@ export default function InteractiveMenu() {
                       <motion.h3
                         layout
                         className={`type-display text-3xl lg:text-4xl leading-[0.9] transition-colors duration-300 ${
-                          isHovered ? "text-[#06B6D4]" : "text-char"
+                          isHovered ? "text-[#FFFFFF]" : "text-char"
                         }`}
                       >
                         {cat.label}
@@ -68,7 +68,7 @@ export default function InteractiveMenu() {
                     <motion.span
                       layout
                       className={`text-lg transition-colors duration-300 ${
-                        isHovered ? "text-[#06B6D4]" : "text-smoke"
+                        isHovered ? "text-[#FFFFFF]" : "text-smoke"
                       }`}
                     >
                       {isHovered ? "→" : "+"}
@@ -91,7 +91,7 @@ export default function InteractiveMenu() {
                     <div className="space-y-3">
                       {cat.items.slice(0, 2).map((item: MenuItem) => (
                         <div key={item.id} className="flex items-baseline justify-between">
-                          <span className="type-body text-char text-sm group-hover:text-[#06B6D4] transition-colors duration-300">
+                          <span className="type-body text-char text-sm group-hover:text-[#FFFFFF] transition-colors duration-300">
                             {item.name}
                           </span>
                           <span className="type-label text-smoke text-[9px]">
@@ -100,7 +100,7 @@ export default function InteractiveMenu() {
                         </div>
                       ))}
                       {cat.items.length > 2 && (
-                        <p className="type-label text-[#06B6D4] text-[9px]">
+                        <p className="type-label text-[#FFFFFF] text-[9px]">
                           +{cat.items.length - 2} more items
                         </p>
                       )}
@@ -120,7 +120,7 @@ export default function InteractiveMenu() {
             onClick={() => setMenuOpen(true)}
           >
             <div className="text-center">
-              <p className="type-caption text-[#06B6D4] text-[9px] mb-3">Complete Selection</p>
+              <p className="type-caption text-[#FFFFFF] text-[9px] mb-3">Complete Selection</p>
               <motion.h3
                 layout
                 className="type-display text-4xl lg:text-5xl text-ink leading-[0.9] mb-4"
@@ -129,7 +129,7 @@ export default function InteractiveMenu() {
               </motion.h3>
               <motion.div
                 layout
-                className="inline-flex items-center gap-2 bg-ink text-[#06B6D4] px-5 py-3 type-caption text-[10px]"
+                className="inline-flex items-center gap-2 bg-ink text-[#FFFFFF] px-5 py-3 type-caption text-[10px]"
               >
                 VIEW ALL →
               </motion.div>
@@ -146,7 +146,7 @@ export default function InteractiveMenu() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-            className="fixed inset-0 z-50 bg-[#06B6D4] flex flex-col"
+            className="fixed inset-0 z-50 bg-[#FFFFFF] flex flex-col"
             role="dialog"
             aria-modal="true"
             aria-label="Full menu"
@@ -224,7 +224,7 @@ export default function InteractiveMenu() {
                   <Link
                     href="/reservations"
                     onClick={() => setMenuOpen(false)}
-                    className="inline-flex items-center gap-3 bg-char text-[#06B6D4] px-8 py-4 type-caption text-[11px] hover:bg-char-soft transition-colors duration-300"
+                    className="inline-flex items-center gap-3 bg-char text-[#FFFFFF] px-8 py-4 type-caption text-[11px] hover:bg-char-soft transition-colors duration-300"
                   >
                     Book a Table →
                   </Link>

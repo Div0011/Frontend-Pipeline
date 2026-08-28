@@ -20,7 +20,7 @@ export default function HowWeSmash() {
             <div className="p-6 rounded-3xl bg-white/[0.04] border border-white/10 space-y-4">
               <div className="flex justify-between items-center text-xs font-bold uppercase tracking-wider">
                 <span className="text-stone-300">Sear Temperature & Pressure</span>
-                <span style={{ color: "#B91C1C" }}>{searPressure} lbs / 450°F</span>
+                <span style={{ color: "#D91C24" }}>{searPressure} lbs / 450°F</span>
               </div>
               <input
                 type="range"
@@ -29,13 +29,13 @@ export default function HowWeSmash() {
                 value={searPressure}
                 onChange={(e) => setSearPressure(Number(e.target.value))}
                 className="w-full h-2 rounded-lg appearance-none cursor-pointer"
-                style={{ accentColor: "#B91C1C" }}
+                style={{ accentColor: "#D91C24" }}
               />
             </div>
           </div>
 
           <div className="lg:col-span-6 p-8 rounded-3xl bg-white/[0.04] border border-white/10 space-y-4">
-            <span className="text-xs uppercase font-bold tracking-widest block" style={{ color: "#B91C1C" }}>
+            <span className="text-xs uppercase font-bold tracking-widest block" style={{ color: "#D91C24" }}>
               72-HR SLOW FERMENTED CRUST
             </span>
             <h3 className="type-display text-2xl sm:text-3xl text-white font-extrabold">

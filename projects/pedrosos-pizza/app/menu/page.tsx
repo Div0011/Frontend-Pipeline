@@ -201,9 +201,9 @@ export default function MenuPage() {
         <section className="py-20 bg-char text-ink relative overflow-hidden">
           <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#FAF9F4_1px,transparent_1px)] [background-size:24px_24px]" />
           <div className="mx-auto max-w-[88rem] px-6 lg:px-8 relative z-10">
-            <p className="type-caption text-[#B91C1C] mb-3">Atelier Menu Board</p>
+            <p className="type-caption text-[#D91C24] mb-3">Atelier Menu Board</p>
             <h1 className="type-display text-5xl md:text-7xl lg:text-8xl leading-none text-ink">
-              THE COMPLETE<br /><span className="text-[#B91C1C]">KITCHEN BOARD</span>
+              THE COMPLETE<br /><span className="text-[#D91C24]">KITCHEN BOARD</span>
             </h1>
             <p className="type-serif text-lg md:text-xl text-stone mt-6 max-w-xl">
               100% hand-pressed patties seared at 230°C. Cold-brewed Matchas, artisan milkshakes, and signature Old Monk desserts.
@@ -221,7 +221,7 @@ export default function MenuPage() {
                   onClick={() => setActiveTab(idx)}
                   className={`px-6 py-3 type-caption text-[10px] border whitespace-nowrap transition-all duration-300 ${
                     activeTab === idx
-                      ? "bg-char text-[#B91C1C] border-char"
+                      ? "bg-char text-[#D91C24] border-char"
                       : "bg-transparent text-smoke border-bone-dark hover:border-char"
                   }`}
                 >
@@ -257,7 +257,7 @@ export default function MenuPage() {
                   {MENU_DATA[activeTab].subsections.map((subsec) => (
                     <div key={subsec.title} className="space-y-8">
                       <div className="border-b border-bone-dark pb-2">
-                        <h3 className="type-display text-2xl text-[#B91C1C]-dark">
+                        <h3 className="type-display text-2xl text-[#D91C24]-dark">
                           {subsec.title}
                         </h3>
                       </div>
@@ -266,7 +266,7 @@ export default function MenuPage() {
                         {subsec.items.map((item) => (
                           <div key={item.name} className="group border-b border-bone-dark/40 pb-4">
                             <div className="flex justify-between items-baseline mb-2 gap-4">
-                              <h4 className="type-display text-xl text-char group-hover:text-[#B91C1C]-dark transition-colors duration-300">
+                              <h4 className="type-display text-xl text-char group-hover:text-[#D91C24]-dark transition-colors duration-300">
                                 {item.name}
                               </h4>
                               <span className="type-label text-char font-bold text-sm whitespace-nowrap">
@@ -283,7 +283,7 @@ export default function MenuPage() {
                                 {item.tags.map((tag) => (
                                   <span
                                     key={tag}
-                                    className="text-[8px] font-mono uppercase bg-char-soft text-[#B91C1C] px-2 py-0.5"
+                                    className="text-[8px] font-mono uppercase bg-char-soft text-[#D91C24] px-2 py-0.5"
                                   >
                                     {tag}
                                   </span>

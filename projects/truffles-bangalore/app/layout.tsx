@@ -22,7 +22,7 @@ export default function RootLayout({
           <InteractiveBackground primaryColor="#F5A623" themeBase="#100a06" />
           <CustomCursor />
           {children}
-          <AtmosphereControls primaryColor="#F5A623" darkBg="#100a06" lightBg="#FAF8F2" />
+          <AtmosphereControls primaryColor="#F5A623" darkBg="#0A0A0A" lightBg="#FAF8F2" />
         </LenisProvider>
       </body>
     </html>
