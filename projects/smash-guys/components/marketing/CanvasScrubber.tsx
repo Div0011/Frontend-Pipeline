@@ -66,7 +66,9 @@ export default function CanvasScrubber({
   const [firstFrameReady, setFirstFrameReady] = useState(false);
 
   const extraVh   = parseExtraVh(scrollDistance);  // e.g. 300
-  const totalVh   = 100 + extraVh;                 // e.g. 400. ── Frame loading ──────────────────────────────────────────────────────────
+  const totalVh   = 100 + extraVh;                 // e.g. 400
+
+  // ── Frame loading ──────────────────────────────────────────────────────────
   const loadFrame = useCallback(
     (i: number): Promise<HTMLImageElement> =>
       new Promise((res, rej) => {
@@ -197,7 +199,7 @@ export default function CanvasScrubber({
        * while the wrapper is in view. Zero JS layout mutation.
        */}
       <div
-        className="sticky top-0 h-[100svh] w-full overflow-hidden bg-transparent"
+        className="sticky top-0 h-[100svh] w-full overflow-hidden bg-char"
         data-cursor="drag"
       >
         {/* Full-bleed canvas */}
@@ -212,7 +214,7 @@ export default function CanvasScrubber({
 
         {/* Dark fallback while frame 0 loads */}
         {!firstFrameReady && (
-          <div className="absolute inset-0 bg-transparent" />
+          <div className="absolute inset-0 bg-char" />
         )}
 
         {/* Text-legibility gradients */}

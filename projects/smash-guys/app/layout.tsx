@@ -1,30 +1,80 @@
-import InteractiveBackground from "@/components/ui/InteractiveBackground";
-import AtmosphereControls from "@/components/ui/AtmosphereControls";
 import type { Metadata } from "next";
-import LenisProvider from "@/components/providers/LenisProvider";
-import CustomCursor from "@/components/marketing/CustomCursor";
+import { Bebas_Neue, Lora, DM_Sans, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import CustomCursor from "@/components/marketing/CustomCursor";
+
+const bebasNeue = Bebas_Neue({
+  subsets: ["latin"],
+  weight: ["400"],
+  variable: "--font-display",
+  display: "swap",
+});
+
+const lora = Lora({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  style: ["normal", "italic"],
+  variable: "--font-serif",
+  display: "swap",
+});
+
+const dmSans = DM_Sans({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600"],
+  variable: "--font-body",
+  display: "swap",
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  weight: ["400"],
+  variable: "--font-mono",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
-  title: "Smash Guys | BENGALURU",
-  description: "Smash Guys — Culinary craft atelier in Bengaluru.",
+  title: {
+    default: "Smash Guys — Bangalore's Premier Smash Burger Kitchen",
+    template: "%s | Smash Guys",
+  },
+  description:
+    "Smash Guys — Bangalore's iconic smash burger kitchen. Double-smashed patties, cast-iron caramelized crust, and artisan drinks. Locations in Indiranagar, Bellandur, RMV & Whitefield.",
+  keywords: [
+    "smash burgers", "bangalore", "best burger bangalore",
+    "smashguys", "indiranagar restaurant", "gourmet burgers",
+  ],
+  authors: [{ name: "Popo Ventures" }],
+  openGraph: {
+    title: "Smash Guys — Bangalore's Premier Smash Burger Kitchen",
+    description: "Double-smashed patties, 230°C cast-iron sear, artisan drinks. Bangalore's favourite burger kitchen.",
+    type: "website",
+    locale: "en_IN",
+    url: "https://www.smashguys.in",
+    siteName: "Smash Guys",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Smash Guys — Bangalore's Premier Smash Burger Kitchen",
+    description: "Double-smashed patties, 230°C cast-iron sear, artisan drinks.",
+  },
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="en" className="dark">
-      <body className="antialiased overflow-x-hidden transition-colors duration-500">
-        <LenisProvider>
-          <InteractiveBackground primaryColor="#F5C418" themeBase="#071009" />
-          <CustomCursor />
-          {children}
-          <AtmosphereControls primaryColor="#F5C418" darkBg="#071009" lightBg="#FAF8F2" />
-        </LenisProvider>
+    <html
+      lang="en"
+      className={`${bebasNeue.variable} ${lora.variable} ${dmSans.variable} ${jetbrainsMono.variable} antialiased`}
+    >
+      <body className="bg-bone text-char font-body antialiased relative min-h-screen">
+        <CustomCursor />
+        <div className="grain-overlay" />
+        {children}
       </body>
     </html>
   );
 }
+

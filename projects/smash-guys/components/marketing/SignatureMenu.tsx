@@ -1,202 +1,390 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
+import { menuItems } from "@/lib/data";
 
-const menuItems = [
+const CATEGORIES = [
   {
-    "id": "double-smash",
-    "name": "Lacy Double Smash",
-    "category": "Smash Burgers",
-    "price": "350",
-    "badge": "Signature",
-    "image": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800&q=80"
+    id: "burgers",
+    label: "Burgers",
+    tagline: "Double patties, custom sear",
+    image: "/hero-burger.png",
+    items: menuItems.filter((i) => i.category === "burgers"),
   },
   {
-    "id": "jalapeno-popper",
-    "name": "Jalapeno Popper Smash",
-    "category": "Smash Burgers",
-    "price": "390",
-    "badge": "Spicy Gold",
-    "image": "https://images.unsplash.com/photo-1586190848861-99aa4a171e90?w=800&q=80"
+    id: "sides",
+    label: "Sides",
+    tagline: "Crisp & seasoned sides",
+    image: "/truffle-fries.png",
+    items: menuItems.filter((i) => i.category === "sides"),
   },
   {
-    "id": "crinkle-tots",
-    "name": "Smashed Cheese Tots",
-    "category": "Sides",
-    "price": "190",
-    "badge": "Loaded",
-    "image": "https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=800&q=80"
-  }
+    id: "shakes",
+    label: "Drinks",
+    tagline: "Artisan milkshakes & elixirs",
+    image: "/matcha-special.png",
+    items: menuItems.filter((i) => i.category === "shakes" || i.category === "specials"),
+  },
+  {
+    id: "specials",
+    label: "Desserts",
+    tagline: "Sweet finishes",
+    image: "/old-monk-mousse.png",
+    items: [
+      {
+        id: "old-monk-mousse",
+        name: "Old Monk Mousse",
+        description: "Dark chocolate infused with local Old Monk rum",
+        price: 199,
+        category: "specials",
+        tags: ["signature"],
+        image: "/old-monk-mousse.png",
+      }
+    ],
+  },
 ];
 
 export default function SignatureMenu() {
-  const [selectedCategory, setSelectedCategory] = useState("All");
-  const [activeItemModal, setActiveItemModal] = useState<any | null>(null);
+  const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
+  const [showFullMenu, setShowFullMenu] = useState(false);
 
-  const categories = ["All", ...Array.from(new Set(menuItems.map((item: any) => item.category)))];
+  // Group all items for full screen menu
+  const burgerItems = menuItems.filter((i) => i.category === "burgers");
+  const sideItems = menuItems.filter((i) => i.category === "sides");
+  const drinkItems = menuItems.filter((i) => i.category === "shakes");
+  const dessertItems = [
+    {
+      id: "old-monk-mousse",
+      name: "Old Monk Mousse",
+      description: "Dark chocolate infused with local Old Monk rum, cocoa crumble",
+      price: 199,
+      category: "specials",
+      tags: ["signature"],
+      image: "/old-monk-mousse.png",
+    }
+  ];
 
-  const filteredItems =
-    selectedCategory === "All"
-      ? menuItems
-      : menuItems.filter((item: any) => item.category === selectedCategory);
+  const handleCardClick = (idx: number) => {
+    // On mobile devices, click toggles expansion state
+    if (typeof window !== "undefined" && window.innerWidth < 768) {
+      setHoveredIdx((prev) => (prev === idx ? null : idx));
+    }
+  };
 
   return (
-    <section id="menu-section" className="py-24 px-6 sm:px-12 md:px-20 bg-transparent text-white border-b border-white/10 relative z-10 font-sans">
-      <div className="max-w-7xl mx-auto space-y-10">
-        {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
-          <div>
-            <h2 className="type-display text-4xl sm:text-6xl text-white font-black tracking-tight">
-              SIGNATURE SELECTIONS
+    <>
+      <section className="bg-bone border-y border-bone-dark overflow-hidden relative">
+        <div className="w-full mx-auto">
+          {/* Header Area */}
+          <div className="max-w-[88rem] mx-auto px-6 lg:px-8 pt-20 pb-10">
+            <p className="type-caption text-yolk-dark mb-3">Our Selection</p>
+            <h2 className="type-display text-5xl sm:text-7xl lg:text-8xl text-char leading-[0.9]">
+              EXPLORE THE KITCHEN
             </h2>
+            <p className="type-serif text-smoke text-lg mt-4 max-w-xl">
+              Tap (on mobile) or hover over a category card to see popular offerings. Click &quot;Full Menu&quot; on the right to view our entire menu board.
+            </p>
           </div>
 
-          {/* Category Filter Pills */}
-          <div className="flex flex-wrap items-center gap-2 bg-white/5 p-1.5 rounded-full border border-white/10">
-            {categories.map((cat: any) => (
-              <button
-                key={cat}
-                onClick={() => {
-                  if ((window as any).playPopSound) (window as any).playPopSound();
-                  setSelectedCategory(cat);
-                }}
-                className={`px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all ${
-                  selectedCategory === cat
-                    ? "shadow-lg text-black"
-                    : "text-stone-300 hover:text-white"
-                }`}
-                style={{
-                  backgroundColor: selectedCategory === cat ? "#F5C418" : "transparent",
-                }}
-              >
-                {cat}
-              </button>
-            ))}
-          </div>
-        </div>
+          {/* Main Grid: 80% Horizontal Tiles + 20% persistent Button */}
+          <div className="flex flex-col lg:flex-row w-full border-t border-char/10 min-h-[580px] bg-char">
+            
+            {/* 4 Horizontal Tiles (80% total width) */}
+            <div className="w-full lg:w-[80%] flex flex-col sm:flex-row">
+              {CATEGORIES.map((cat, idx) => {
+                const isHovered = hoveredIdx === idx;
+                const isAnyHovered = hoveredIdx !== null;
+                
+                // Determine width style dynamically based on hover
+                let flexStyle = "flex-1";
+                if (isAnyHovered) {
+                  flexStyle = isHovered ? "flex-[1.8]" : "flex-[0.7]";
+                }
 
-        {/* Minimalist Clean Dish Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredItems.map((item: any) => (
-            <motion.div
-              key={item.id}
-              layout
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.3 }}
-              onClick={() => {
-                if ((window as any).playPopSound) (window as any).playPopSound();
-                setActiveItemModal(item);
-              }}
-              className="group cursor-pointer rounded-3xl bg-white/[0.04] border border-white/10 hover:border-white/30 p-4 transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl flex flex-col justify-between"
-            >
-              {/* Dish Photo */}
-              <div className="relative w-full h-52 rounded-2xl overflow-hidden mb-4 bg-black/40">
-                <Image
-                  src={item.image}
-                  alt={item.name}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-                {item.badge && (
-                  <span
-                    className="absolute top-3 left-3 text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full shadow-md"
-                    style={{ backgroundColor: "#F5C418", color: "#000000" }}
+                return (
+                  <div
+                    key={cat.id}
+                    onMouseEnter={() => setHoveredIdx(idx)}
+                    onMouseLeave={() => setHoveredIdx(null)}
+                    onClick={() => handleCardClick(idx)}
+                    className={`relative min-h-[380px] sm:min-h-[580px] overflow-hidden border-b sm:border-b-0 sm:border-r border-char-mute/40 transition-all duration-500 ease-out cursor-pointer group ${flexStyle}`}
                   >
-                    {item.badge}
-                  </span>
-                )}
+                    {/* Background image with brightness scale */}
+                    <div className="absolute inset-0 bg-char">
+                      <Image
+                        src={cat.image}
+                        alt={cat.label}
+                        fill
+                        className="object-cover opacity-20 group-hover:opacity-30 group-hover:scale-105 transition-all duration-700"
+                        sizes="(max-width: 640px) 100vw, 25vw"
+                      />
+                    </div>
+
+                    {/* Dark gradient overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-char via-char/40 to-transparent pointer-events-none" />
+
+                    {/* Content container */}
+                    <div className="absolute inset-0 p-8 flex flex-col justify-between z-10">
+                      <div>
+                        <span className="type-caption text-yolk text-[9px] block mb-2">
+                          CATEGORY
+                        </span>
+                        <h3 className="type-display text-4xl sm:text-5xl text-ink group-hover:text-yolk transition-colors duration-300">
+                          {cat.label}
+                        </h3>
+                        <p className="type-serif text-sm text-stone mt-1 italic opacity-80">
+                          {cat.tagline}
+                        </p>
+                      </div>
+
+                      {/* Featured Food Image container inside each card (reveals and pops on hover) */}
+                      <div className="my-4 h-36 relative overflow-hidden flex items-center justify-center">
+                        <motion.div
+                          animate={{
+                            scale: isHovered ? 1.05 : 0.8,
+                            opacity: isHovered ? 1 : 0.4,
+                            y: isHovered ? 0 : 20,
+                          }}
+                          transition={{ type: "spring", stiffness: 200, damping: 18 }}
+                          className="w-32 h-32 relative rounded-full border-2 border-yolk/30 overflow-hidden shadow-2xl bg-char-soft"
+                        >
+                          <Image
+                            src={cat.image}
+                            alt={`${cat.label} Close Up`}
+                            fill
+                            className="object-cover"
+                            sizes="128px"
+                          />
+                        </motion.div>
+                      </div>
+
+                      {/* Expandable info list */}
+                      <div className="space-y-4 overflow-hidden">
+                        <motion.div
+                          initial={false}
+                          animate={{
+                            opacity: isHovered ? 1 : 0,
+                            y: isHovered ? 0 : 20,
+                            height: isHovered ? "auto" : 0
+                          }}
+                          transition={{ duration: 0.35 }}
+                          className="space-y-3"
+                        >
+                          <div className="border-t border-char-mute/60 pt-4">
+                            <p className="type-caption text-stone text-[8px] mb-2">FEATURED ITEMS</p>
+                            {cat.items.slice(0, 3).map((item) => (
+                              <div key={item.id} className="flex justify-between items-center py-1">
+                                <span className="type-body text-ink text-sm font-medium">{item.name}</span>
+                                <span className="type-label text-yolk text-xs">₹{item.price}</span>
+                              </div>
+                            ))}
+                          </div>
+                          <p className="type-label text-yolk text-[9px] hover:underline pt-2">
+                            EXPLORE {cat.label.toUpperCase()} →
+                          </p>
+                        </motion.div>
+                        
+                        {!isHovered && (
+                          <span className="type-label text-stone text-[9px] group-hover:text-ink transition-colors duration-300 block">
+                            TAP TO REVEAL →
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* Persistent Full Menu Button (20% width) */}
+            <div 
+              onClick={() => setShowFullMenu(true)}
+              className="w-full lg:w-[20%] min-h-[160px] sm:min-h-[580px] bg-yolk hover:bg-yolk-light transition-all duration-500 ease-out cursor-pointer flex flex-col justify-between p-8 relative overflow-hidden group select-none"
+            >
+              {/* Animated hover pattern background */}
+              <div className="absolute inset-0 opacity-5 group-hover:opacity-10 transition-opacity duration-300 bg-[radial-gradient(#141413_2px,transparent_1px)] [background-size:16px_16px]" />
+              
+              <div className="z-10">
+                <span className="type-caption text-char/60 text-[9px] block mb-2">COMPLETE BOARD</span>
+                <h3 className="type-display text-4xl sm:text-5xl text-char leading-[0.9] group-hover:translate-y-[-2px] transition-transform duration-300">
+                  FULL<br className="hidden lg:block" /> MENU
+                </h3>
               </div>
 
-              {/* Clean Card Header: Title + Price Pill + Add */}
-              <div className="flex items-center justify-between gap-3 pt-1">
-                <h3 className="type-display text-xl sm:text-2xl text-white font-bold leading-tight group-hover:text-[#F5C418] transition-colors">
-                  {item.name}
-                </h3>
-
-                <div className="flex items-center gap-2 flex-shrink-0">
-                  <span className="font-mono font-bold text-xs px-2.5 py-1 rounded-full bg-white/10 border border-white/15 text-white">
-                    ₹{item.price}
-                  </span>
-                  <button
-                    type="button"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      if ((window as any).playSizzleSound) (window as any).playSizzleSound();
-                      alert(`Added ${item.name} to your order!`);
-                    }}
-                    className="px-3 py-1 rounded-full font-bold text-xs uppercase tracking-wider transition-all shadow hover:scale-105 active:scale-95"
-                    style={{ backgroundColor: "#F5C418", color: "#000000" }}
-                  >
-                    ADD +
-                  </button>
+              <div className="z-10 flex lg:flex-col items-start justify-between gap-4 mt-8 lg:mt-0">
+                <p className="type-serif text-sm text-char/80 max-w-[150px] leading-snug">
+                  Click to launch the full-screen interactive kitchen board.
+                </p>
+                <div className="w-10 h-10 rounded-full border border-char flex items-center justify-center group-hover:bg-char group-hover:text-yolk transition-all duration-300">
+                  <span className="text-xl font-bold">↗</span>
                 </div>
               </div>
-            </motion.div>
-          ))}
-        </div>
-      </div>
+            </div>
 
-      {/* Quick View Modal on Card Click */}
-      <AnimatePresence>
-        {activeItemModal && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.9 }}
-              className="relative w-full max-w-lg rounded-3xl bg-[#0e0f14] border border-white/20 p-6 sm:p-8 space-y-6 shadow-2xl text-white"
-            >
-              <button
-                type="button"
-                onClick={() => setActiveItemModal(null)}
-                className="absolute top-4 right-4 w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white"
-              >
-                ✕
-              </button>
-
-              <div className="relative w-full h-64 rounded-2xl overflow-hidden bg-black/60">
-                <Image
-                  src={activeItemModal.image}
-                  alt={activeItemModal.name}
-                  fill
-                  className="object-cover"
-                />
-              </div>
-
-              <div className="space-y-3">
-                <span className="text-xs uppercase font-bold tracking-widest block" style={{ color: "#F5C418" }}>
-                  {activeItemModal.category}
-                </span>
-                <h3 className="type-display text-3xl font-black text-white">
-                  {activeItemModal.name}
-                </h3>
-              </div>
-
-              <div className="flex items-center justify-between pt-4 border-t border-white/10">
-                <span className="type-display text-2xl font-bold text-white">
-                  ₹{activeItemModal.price}
-                </span>
-
-                <button
-                  type="button"
-                  onClick={() => {
-                    if ((window as any).playSizzleSound) (window as any).playSizzleSound();
-                    alert(`Added ${activeItemModal.name} to order!`);
-                    setActiveItemModal(null);
-                  }}
-                  className="px-6 py-3 rounded-full font-bold text-xs uppercase tracking-wider transition-all shadow-xl hover:brightness-110 active:scale-95"
-                  style={{ backgroundColor: "#F5C418", color: "#000000" }}
-                >
-                  Add to Table Order →
-                </button>
-              </div>
-            </motion.div>
           </div>
+        </div>
+      </section>
+
+      {/* Full-Screen Yellow Menu Transition & Overlay */}
+      <AnimatePresence>
+        {showFullMenu && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.4 }}
+            className="fixed inset-0 z-50 overflow-y-auto bg-yolk"
+          >
+            {/* Topbar */}
+            <div className="max-w-[88rem] mx-auto px-6 lg:px-8 py-6 flex justify-between items-center border-b border-char/10">
+              <div className="flex items-center gap-2">
+                <span className="w-6 h-6 bg-char rounded-sm" />
+                <span className="type-display text-2xl text-char">Smash Guys Menu</span>
+              </div>
+              <button
+                onClick={() => setShowFullMenu(false)}
+                className="type-caption text-char border border-char px-5 py-2.5 hover:bg-char hover:text-yolk transition-all duration-300 font-bold"
+              >
+                ✕ CLOSE MENU
+              </button>
+            </div>
+
+            {/* Menu Content */}
+            <div className="max-w-[88rem] mx-auto px-6 lg:px-8 py-16">
+              
+              {/* Big Header */}
+              <div className="mb-16 text-center">
+                <p className="type-caption text-char/60 mb-2">Bangalore Born · Pressed Fresh</p>
+                <h2 className="type-display text-6xl sm:text-8xl lg:text-[8rem] text-char leading-[0.9]">
+                  THE KITCHEN BOARD
+                </h2>
+              </div>
+
+              {/* Entire Menu Columns (All Categories) */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                {/* 1. Burgers */}
+                <div className="space-y-6">
+                  <div className="border-b-2 border-char pb-3">
+                    <h3 className="type-display text-4xl text-char">BURGERS</h3>
+                    <p className="type-caption text-char/60 text-[9px]">Double Patty Smashes</p>
+                  </div>
+                  <div className="space-y-6">
+                    {burgerItems.map((item) => (
+                      <div key={item.id} className="group">
+                        <div className="flex justify-between items-baseline mb-1">
+                          <h4 className="type-display text-2xl text-char group-hover:text-char/70 transition-colors">{item.name}</h4>
+                          <span className="type-label text-char font-bold text-sm">₹{item.price}</span>
+                        </div>
+                        <p className="type-serif text-sm text-char/80 leading-relaxed">{item.description}</p>
+                        <div className="flex gap-2 mt-2">
+                          {item.tags.map((tag) => (
+                            <span key={tag} className="text-[8px] font-mono uppercase bg-char text-yolk px-2 py-0.5 rounded-sm">
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* 2. Sides */}
+                <div className="space-y-6">
+                  <div className="border-b-2 border-char pb-3">
+                    <h3 className="type-display text-4xl text-char">SIDES</h3>
+                    <p className="type-caption text-char/60 text-[9px]">Crisp Accompaniments</p>
+                  </div>
+                  <div className="space-y-6">
+                    {sideItems.map((item) => (
+                      <div key={item.id} className="group">
+                        <div className="flex justify-between items-baseline mb-1">
+                          <h4 className="type-display text-2xl text-char group-hover:text-char/70 transition-colors">{item.name}</h4>
+                          <span className="type-label text-char font-bold text-sm">₹{item.price}</span>
+                        </div>
+                        <p className="type-serif text-sm text-char/80 leading-relaxed">{item.description}</p>
+                        <div className="flex gap-2 mt-2">
+                          {item.tags.map((tag) => (
+                            <span key={tag} className="text-[8px] font-mono uppercase bg-char text-yolk px-2 py-0.5 rounded-sm">
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* 3. Drinks */}
+                <div className="space-y-6">
+                  <div className="border-b-2 border-char pb-3">
+                    <h3 className="type-display text-4xl text-char">DRINKS</h3>
+                    <p className="type-caption text-char/60 text-[9px]">Shakes &amp; Elixirs</p>
+                  </div>
+                  <div className="space-y-6">
+                    {drinkItems.map((item) => (
+                      <div key={item.id} className="group">
+                        <div className="flex justify-between items-baseline mb-1">
+                          <h4 className="type-display text-2xl text-char group-hover:text-char/70 transition-colors">{item.name}</h4>
+                          <span className="type-label text-char font-bold text-sm">₹{item.price}</span>
+                        </div>
+                        <p className="type-serif text-sm text-char/80 leading-relaxed">{item.description}</p>
+                        <div className="flex gap-2 mt-2">
+                          {item.tags.map((tag) => (
+                            <span key={tag} className="text-[8px] font-mono uppercase bg-char text-yolk px-2 py-0.5 rounded-sm">
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* 4. Desserts & Specials */}
+                <div className="space-y-6">
+                  <div className="border-b-2 border-char pb-3">
+                    <h3 className="type-display text-4xl text-char">DESSERTS</h3>
+                    <p className="type-caption text-char/60 text-[9px]">Sweet Finishes</p>
+                  </div>
+                  <div className="space-y-6">
+                    {dessertItems.map((item) => (
+                      <div key={item.id} className="group">
+                        <div className="flex justify-between items-baseline mb-1">
+                          <h4 className="type-display text-2xl text-char group-hover:text-char/70 transition-colors">{item.name}</h4>
+                          <span className="type-label text-char font-bold text-sm">₹{item.price}</span>
+                        </div>
+                        <p className="type-serif text-sm text-char/80 leading-relaxed">{item.description}</p>
+                        <div className="flex gap-2 mt-2">
+                          {item.tags.map((tag) => (
+                            <span key={tag} className="text-[8px] font-mono uppercase bg-char text-yolk px-2 py-0.5 rounded-sm">
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+              </div>
+
+              {/* Bottom footer notice inside full menu overlay */}
+              <div className="border-t border-char/10 mt-20 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+                <p className="type-serif text-char/80 text-sm italic">
+                  * All prices are exclusive of applicable taxes. Please notify our staff of any allergies before ordering.
+                </p>
+                <div className="flex gap-4">
+                  <a href="tel:+918045678900" className="type-label text-char font-bold hover:underline">CALL US: +91 80 4567 8900</a>
+                </div>
+              </div>
+
+            </div>
+          </motion.div>
         )}
       </AnimatePresence>
-    </section>
+    </>
   );
 }

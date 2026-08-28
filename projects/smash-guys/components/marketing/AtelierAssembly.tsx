@@ -1,79 +1,253 @@
 "use client";
 
-import React from "react";
-import MorphSlider, { MorphSliderItem } from "@/components/ui/MorphSlider";
+import { useLayoutEffect, useRef, useState, useEffect } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { motion, AnimatePresence } from "framer-motion";
 
-const morphSlides: MorphSliderItem[] = [
+if (typeof window !== "undefined") gsap.registerPlugin(ScrollTrigger);
+
+interface IngredientLayer {
+  id: string;
+  name: string;
+  desc: string;
+  color: string;
+  // Scroll range where it animates/lands
+  startPct: number;
+  endPct: number;
+  // SVG drawing representation of the layer
+  svg: React.ReactNode;
+}
+
+const INGREDIENTS: IngredientLayer[] = [
   {
-    "image": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=1200&auto=format&fit=crop",
-    "title": "Signature Double Smasher",
-    "tag": "HOUSE SIGNATURE",
-    "caption": "Fresh ground patties smashed ultra-thin on cast iron with melted cheese, grilled onions, and house sauce."
+    id: "crown",
+    name: "TOASTED CROWN",
+    desc: "Glazed brioche bun, toasted on buttered griddle, smeared with sweet-smoky house sauce.",
+    color: "#E5A93C",
+    startPct: 0.70,
+    endPct: 0.85,
+    svg: (
+      <svg className="w-48 h-24 sm:w-56 sm:h-28 drop-shadow-2xl" viewBox="0 0 200 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10 90C10 40 50 10 100 10C150 10 190 40 190 90H10Z" fill="#E5A93C" stroke="#141413" strokeWidth="4" />
+        <ellipse cx="100" cy="90" rx="90" ry="8" fill="#D39223" stroke="#141413" strokeWidth="3" />
+        {/* Sesame seeds */}
+        <circle cx="50" cy="45" r="2.5" fill="#FAF9F4" />
+        <circle cx="80" cy="30" r="2.5" fill="#FAF9F4" />
+        <circle cx="105" cy="25" r="2.5" fill="#FAF9F4" />
+        <circle cx="130" cy="35" r="2.5" fill="#FAF9F4" />
+        <circle cx="160" cy="55" r="2.5" fill="#FAF9F4" />
+      </svg>
+    ),
   },
   {
-    "image": "https://images.unsplash.com/photo-1586190848861-99aa4a171e90?q=80&w=1200&auto=format&fit=crop",
-    "title": "Gourmet Truffle Melt",
-    "tag": "CHEF SPECIAL",
-    "caption": "Wild sauteed mushrooms, Swiss Gruyere melt, and black truffle aioli on toasted brioche."
+    id: "pickles",
+    name: "DILL PICKLES",
+    desc: "Crinkle-cut dill cucumbers brined in vinegar, dill seed, and garlic for a sour crunch.",
+    color: "#7BA84F",
+    startPct: 0.58,
+    endPct: 0.70,
+    svg: (
+      <div className="flex gap-3 sm:gap-4">
+        <svg className="w-12 h-6 sm:w-16 sm:h-8 drop-shadow-md" viewBox="0 0 60 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="30" cy="15" rx="25" ry="12" fill="#7BA84F" stroke="#141413" strokeWidth="3" />
+          <ellipse cx="30" cy="15" rx="15" ry="7" fill="#5F883B" />
+        </svg>
+        <svg className="w-12 h-6 sm:w-16 sm:h-8 drop-shadow-md" viewBox="0 0 60 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="30" cy="15" rx="25" ry="12" fill="#7BA84F" stroke="#141413" strokeWidth="3" />
+          <ellipse cx="30" cy="15" rx="15" ry="7" fill="#5F883B" />
+        </svg>
+      </div>
+    ),
   },
   {
-    "image": "https://images.unsplash.com/photo-1625813506062-0aeb1d7a094b?q=80&w=1200&auto=format&fit=crop",
-    "title": "Crispy Buttermilk Poultry",
-    "tag": "CRISPY FRIED",
-    "caption": "24-hr brined fried chicken thigh tossed in spice glaze with vinegar slaw and dill pickles."
+    id: "patty2",
+    name: "SMASHED PATTY 2",
+    desc: "Second 90g hand-pressed griddled beef patty with a crunchy seared edge.",
+    color: "#4A271C",
+    startPct: 0.44,
+    endPct: 0.58,
+    svg: (
+      <svg className="w-52 h-14 sm:w-60 sm:h-16 drop-shadow-xl" viewBox="0 0 220 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10 25C10 10 30 5 110 5C190 5 210 10 210 25C210 40 190 45 110 45C30 45 10 40 10 25Z" fill="#3D2016" stroke="#141413" strokeWidth="4" />
+        <path d="M15 28C25 38 45 28 65 35C85 28 105 38 125 32C145 38 175 28 195 38" stroke="#F5C418" strokeWidth="2.5" strokeLinecap="round" />
+      </svg>
+    ),
   },
   {
-    "image": "https://images.unsplash.com/photo-1576107232684-1279f3908594?q=80&w=1200&auto=format&fit=crop",
-    "title": "Artisanal Gelato Shake",
-    "tag": "HAND-SPUN SHAKES",
-    "caption": "Slow-churned Madagascar vanilla gelato whipped with salted caramel crunch and whole cream."
+    id: "cheese",
+    name: "MELTED CHEDDAR",
+    desc: "Aged American cheddar slice, melted directly on the griddle for a gooey wrap.",
+    color: "#F5C418",
+    startPct: 0.30,
+    endPct: 0.44,
+    svg: (
+      <svg className="w-50 h-10 sm:w-58 sm:h-12 drop-shadow-lg" viewBox="0 0 210 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M5 10C25 5 185 5 205 10C205 10 190 28 170 28C150 28 135 15 105 35C75 15 60 28 40 28C20 28 5 10 5 10Z" fill="#F5C418" stroke="#141413" strokeWidth="3.5" />
+      </svg>
+    ),
   },
   {
-    "image": "https://images.unsplash.com/photo-1573080496219-bb080dd4f877?q=80&w=1200&auto=format&fit=crop",
-    "title": "Seasoned Crinkle Cut Fries",
-    "tag": "GOLDEN SIDES",
-    "caption": "Crispy Idaho crinkle fries dusted with house rosemary sea salt and served with garlic dip."
-  }
+    id: "patty1",
+    name: "SMASHED PATTY 1",
+    desc: "90g beef patty pressed flat on 230°C cast iron, locking in all fats and juices.",
+    color: "#4A271C",
+    startPct: 0.15,
+    endPct: 0.30,
+    svg: (
+      <svg className="w-52 h-14 sm:w-60 sm:h-16 drop-shadow-xl" viewBox="0 0 220 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10 25C10 10 30 5 110 5C190 5 210 10 210 25C210 40 190 45 110 45C30 45 10 40 10 25Z" fill="#3D2016" stroke="#141413" strokeWidth="4" />
+        <path d="M20 25C30 35 60 25 90 35C120 25 150 35 180 25" stroke="#F5C418" strokeWidth="2.5" strokeLinecap="round" />
+      </svg>
+    ),
+  },
+  {
+    id: "heel",
+    name: "GRIDDLED HEEL",
+    desc: "Buttered brioche bun bottom, soft but structured to support the stack.",
+    color: "#E5A93C",
+    startPct: 0.0,
+    endPct: 0.15,
+    svg: (
+      <svg className="w-48 h-10 sm:w-56 sm:h-12 drop-shadow-lg" viewBox="0 0 200 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10 10C10 10 40 5 100 5C160 5 190 10 190 10V25C190 35 160 38 100 38C40 38 10 35 10 25V10Z" fill="#D39223" stroke="#141413" strokeWidth="4" />
+        <ellipse cx="100" cy="10" rx="90" ry="6" fill="#E5A93C" stroke="#141413" strokeWidth="3" />
+      </svg>
+    ),
+  },
 ];
 
 export default function AtelierAssembly() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const stickyRef  = useRef<HTMLDivElement>(null);
+  const [progress, setProgress] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Responsive device resize handler
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useLayoutEffect(() => {
+    if (typeof window === "undefined") return;
+
+    const section = sectionRef.current;
+    if (!section) return;
+
+    const st = ScrollTrigger.create({
+      trigger: section,
+      start: "top top",
+      end: "bottom bottom",
+      scrub: 0.2,
+      onUpdate: (self) => {
+        setProgress(self.progress);
+      },
+    });
+
+    return () => st.kill();
+  }, []);
+
+  // Sourced details
+  const activeIng = INGREDIENTS.find(
+    (ing) => progress >= ing.startPct && progress <= ing.endPct
+  ) || (progress > 0.85 ? INGREDIENTS[0] : INGREDIENTS[INGREDIENTS.length - 1]);
+
   return (
-    <section className="py-24 px-6 sm:px-12 md:px-20 bg-transparent text-white border-b border-white/10 relative z-10">
-      <div className="max-w-7xl mx-auto space-y-12">
-        <div className="flex flex-col sm:flex-row justify-between sm:items-end gap-4">
+    <section
+      ref={sectionRef}
+      className="relative bg-char"
+      style={{ height: "250vh" }}
+    >
+      {/* Sticky viewport (using mobile-friendly svh) */}
+      <div
+        ref={stickyRef}
+        className="sticky top-0 h-[100svh] w-full overflow-hidden flex flex-col lg:flex-row items-center justify-between px-6 lg:px-16 py-8 lg:py-12 gap-6 lg:gap-8 z-10"
+      >
+        {/* Background Grid */}
+        <div className="absolute inset-0 opacity-5 bg-[linear-gradient(to_right,#F5C418_1px,transparent_1px),linear-gradient(to_bottom,#F5C418_1px,transparent_1px)] [background-size:40px_40px] pointer-events-none" />
+
+        {/* Left Side: Sourcing details */}
+        <div className="w-full lg:w-[40%] space-y-4 lg:space-y-6 z-10 flex flex-col justify-center min-h-[160px] lg:min-h-[220px] text-center lg:text-left mt-8 lg:mt-0">
           <div>
-            <div className="flex items-center gap-2 mb-2">
-              <span className="w-2 h-2 rounded-full" style={{ backgroundColor: "#F5C418" }} />
-              <span className="font-sans text-xs tracking-widest uppercase font-bold" style={{ color: "#F5C418" }}>
-                THE CRAFT
-              </span>
-            </div>
-            <h2 className="type-display text-4xl sm:text-6xl text-bone">
-              THE CULINARY CRAFT MORPHER
+            <span className="type-caption text-yolk text-[8px] sm:text-[9px] tracking-widest block mb-1">
+              EXHIBITION STACK ASSEMBLY
+            </span>
+            <h2 className="type-display text-3xl sm:text-5xl lg:text-6xl text-ink leading-none">
+              ATELIER<br className="hidden lg:block" /> INGREDIENTS
             </h2>
           </div>
-          
+
+          <div className="border-l-2 lg:border-l-2 border-yolk pl-4 lg:pl-5 py-1.5 space-y-1 lg:space-y-2 text-left mx-auto lg:mx-0 max-w-sm">
+            <h3 className="type-display text-xl sm:text-2xl text-yolk">
+              {activeIng.name}
+            </h3>
+            <p className="type-serif text-stone text-xs sm:text-base leading-relaxed">
+              {activeIng.desc}
+            </p>
+          </div>
+
+          <div className="flex items-center justify-center lg:justify-start gap-3 font-mono text-[8px] sm:text-[9px] text-smoke">
+            <span className="text-yolk font-bold">ASSEMBLING STACK</span>
+            <span className="h-3 w-px bg-char-mute" />
+            <span>{Math.round(progress * 100)}% COMPLETED</span>
+          </div>
         </div>
 
-        <div className="w-full relative shadow-2xl" style={{ height: "540px" }}>
-          <MorphSlider
-            items={morphSlides}
-            transition="melt"
-            intensity={0.6}
-            aberration={0.4}
-            drift={0.35}
-            autoplay={false}
-            overlayColor="#05060a"
-            duration={1.2}
-            ease="power2.inOut"
-            scale={2.2}
-            loop={true}
-            radius={18}
-            showCaptions={true}
-            showControls={true}
-            showIndicators={true}
-          />
+        {/* Center: Burger Visualizer */}
+        <div className="w-full lg:w-[50%] h-[45vh] lg:h-full relative flex items-center justify-center z-10 mb-8 lg:mb-0">
+          <div className="relative flex flex-col items-center justify-center h-72 lg:h-96 w-full">
+            {INGREDIENTS.map((ing, idx) => {
+              // Spacing scale: tighter on mobile (22px) vs desktop (42px)
+              const spacing = isMobile ? 22 : 42;
+              const targetY = (idx - 2.5) * spacing;
+
+              let y = -500;
+              let opacity = 0;
+              let scale = isMobile ? 0.75 : 0.8;
+
+              if (progress >= ing.endPct) {
+                y = targetY;
+                opacity = 1;
+                scale = isMobile ? 0.85 : 1;
+              } else if (progress >= ing.startPct) {
+                const sliceProgress = (progress - ing.startPct) / (ing.endPct - ing.startPct);
+                const easeIn = Math.pow(sliceProgress, 3);
+                y = -500 + (targetY - (-500)) * easeIn;
+                opacity = sliceProgress;
+                scale = (isMobile ? 0.75 : 0.8) + (0.1 * sliceProgress);
+              }
+
+              return (
+                <div
+                  key={ing.id}
+                  className="absolute transition-transform duration-75"
+                  style={{
+                    transform: `translateY(${y}px) scale(${scale})`,
+                    opacity: opacity,
+                    zIndex: INGREDIENTS.length - idx,
+                  }}
+                >
+                  {ing.svg}
+                </div>
+              );
+            })}
+
+            {/* Assembled plate highlight shadow */}
+            <div 
+              className="absolute bottom-6 w-48 sm:w-64 h-2.5 bg-char-mute/40 rounded-full blur-sm transition-all duration-300 pointer-events-none"
+              style={{
+                opacity: progress > 0.15 ? 0.8 : 0,
+                transform: `scale(${0.5 + progress * 0.5})`,
+              }}
+            />
+          </div>
         </div>
+
       </div>
     </section>
   );

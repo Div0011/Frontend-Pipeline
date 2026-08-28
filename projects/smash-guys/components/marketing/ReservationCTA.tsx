@@ -1,129 +1,177 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
+const LOCATIONS = ["Indiranagar", "Bellandur", "RMV Extension", "Whitefield"];
+
 export default function ReservationCTA() {
-  const [selectedLocation, setSelectedLocation] = useState("Church Street Sizzle Hub");
-  const [selectedDate, setSelectedDate] = useState("Today, 7:30 PM");
-  const [guests, setGuests] = useState("2 Guests");
+  const [submitted, setSubmitted] = useState(false);
+  const [guests, setGuests] = useState(2);
+  const [selectedLoc, setSelectedLoc] = useState("Indiranagar");
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
-  const [isBooked, setIsBooked] = useState(false);
 
-  const handleBooking = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!name || !phone) return;
-    if ((window as any).playSizzleSound) (window as any).playSizzleSound();
-    setIsBooked(true);
-  };
+  const handleIncrement = () => setGuests((prev) => Math.min(12, prev + 1));
+  const handleDecrement = () => setGuests((prev) => Math.max(1, prev - 1));
 
   return (
-    <section id="reservation-section" className="py-24 px-6 sm:px-12 md:px-20 bg-transparent text-white border-b border-white/10 relative z-10 font-sans">
-      <div className="max-w-7xl mx-auto space-y-12">
-        <div>
-          <h2 className="type-display text-4xl sm:text-6xl text-white font-black tracking-tight">
-            BOOK YOUR EXPERIENCE
-          </h2>
-        </div>
+    <section className="bg-bone-warm section-cinematic border-b border-bone-dark/50">
+      <div className="max-w-[88rem] mx-auto px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          <div className="lg:col-span-7 space-y-6">
-            <h3 className="type-display text-3xl sm:text-4xl text-white font-extrabold leading-tight">
-              TABLE RESERVATIONS AT SMASH GUYS
-            </h3>
+          {/* Left — headline */}
+          <div>
+            <p className="type-caption text-yolk-dark mb-4">Reservations</p>
+            <h2 className="type-display text-6xl sm:text-8xl lg:text-[8rem] text-char leading-[0.9] mb-8">
+              GRAB<br />YOUR<br />TABLE
+            </h2>
+            <p className="type-serif text-xl text-smoke leading-relaxed max-w-md mb-10">
+              Walk-ins are welcome, but if you&apos;ve got the crew, we&apos;ve got the table.
+              Reserve in under 30 seconds.
+            </p>
+            <div className="flex flex-col gap-3 font-mono text-xs text-smoke">
+              <div className="flex items-center gap-3">
+                <span className="w-5 h-5 bg-yolk rounded-sm flex items-center justify-center text-char font-bold text-[10px]">✓</span>
+                No credit card required
+              </div>
+              <div className="flex items-center gap-3">
+                <span className="w-5 h-5 bg-yolk rounded-sm flex items-center justify-center text-char font-bold text-[10px]">✓</span>
+                Instant SMS confirmation
+              </div>
+              <div className="flex items-center gap-3">
+                <span className="w-5 h-5 bg-yolk rounded-sm flex items-center justify-center text-char font-bold text-[10px]">✓</span>
+                Free cancellation anytime
+              </div>
+            </div>
           </div>
 
-          {/* High Contrast Crisp Booking Card */}
-          <div className="lg:col-span-5 p-8 rounded-3xl bg-[#FAF7F2] text-black shadow-2xl border border-black/10">
+          {/* Right — quick form */}
+          <div className="bg-char p-8 lg:p-10 border border-char-mute/40">
             <AnimatePresence mode="wait">
-              {!isBooked ? (
-                <form onSubmit={handleBooking} className="space-y-4 text-black">
-                  <div className="space-y-1">
-                    <label className="text-[11px] uppercase font-bold tracking-wider text-black block">Select Outpost</label>
-                    <select
-                      value={selectedLocation}
-                      onChange={(e) => setSelectedLocation(e.target.value)}
-                      className="w-full px-4 py-3 rounded-2xl bg-black/5 border border-black/15 text-black font-semibold text-xs outline-none"
-                    >
-                    <option value="Church Street Sizzle Hub">Church Street Sizzle Hub</option>
-                    </select>
+              {!submitted ? (
+                <motion.form
+                  key="form"
+                  initial={{ opacity: 1 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  onSubmit={(e) => { e.preventDefault(); setSubmitted(true); }}
+                  className="space-y-5"
+                >
+                  <div>
+                    <p className="type-caption text-yolk mb-1">Quick Reservation</p>
+                    <h3 className="type-display text-3xl text-ink">Book in 30 Seconds</h3>
                   </div>
 
-                  <div className="grid grid-cols-2 gap-3">
-                    <div className="space-y-1">
-                      <label className="text-[11px] uppercase font-bold tracking-wider text-black block">Guests</label>
-                      <select
-                        value={guests}
-                        onChange={(e) => setGuests(e.target.value)}
-                        className="w-full px-4 py-3 rounded-2xl bg-black/5 border border-black/15 text-black font-semibold text-xs outline-none"
-                      >
-                        <option value="1 Guest">1 Guest</option>
-                        <option value="2 Guests">2 Guests</option>
-                        <option value="4 Guests">4 Guests</option>
-                        <option value="6+ Guests">6+ Guests</option>
-                      </select>
-                    </div>
-
-                    <div className="space-y-1">
-                      <label className="text-[11px] uppercase font-bold tracking-wider text-black block">Date & Time</label>
-                      <input
-                        type="text"
-                        value={selectedDate}
-                        onChange={(e) => setSelectedDate(e.target.value)}
-                        className="w-full px-4 py-3 rounded-2xl bg-black/5 border border-black/15 text-black font-semibold text-xs outline-none"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="space-y-1">
-                    <label className="text-[11px] uppercase font-bold tracking-wider text-black block">Your Name</label>
+                  {/* Name */}
+                  <div>
+                    <label className="type-label text-smoke text-[9px] block mb-1.5">YOUR NAME</label>
                     <input
+                      required
                       type="text"
-                      placeholder="Alex Parker"
                       value={name}
                       onChange={(e) => setName(e.target.value)}
-                      required
-                      className="w-full px-4 py-3 rounded-2xl bg-black/5 border border-black/15 text-black font-semibold text-xs outline-none"
+                      placeholder="Alex Kumar"
+                      className="w-full bg-char-soft border border-char-mute px-4 py-3 text-ink type-body text-sm focus:outline-none focus:border-yolk transition-colors duration-200 placeholder:text-smoke hover:border-char-mute/80"
                     />
                   </div>
 
-                  <div className="space-y-1">
-                    <label className="text-[11px] uppercase font-bold tracking-wider text-black block">Phone Number</label>
+                  {/* Two-col: Interactive Guest Stepper + Location Picker */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    
+                    {/* Guest Stepper */}
+                    <div>
+                      <label className="type-label text-smoke text-[9px] block mb-1.5">GUESTS</label>
+                      <div className="flex items-center justify-between bg-char-soft border border-char-mute px-3 py-2 text-ink">
+                        <button
+                          type="button"
+                          onClick={handleDecrement}
+                          className="w-8 h-8 rounded-full border border-char-mute text-smoke hover:text-yolk hover:border-yolk transition-colors font-bold flex items-center justify-center"
+                        >
+                          -
+                        </button>
+                        <span className="type-display text-xl text-ink px-2">{guests} {guests === 1 ? "Guest" : "Guests"}</span>
+                        <button
+                          type="button"
+                          onClick={handleIncrement}
+                          className="w-8 h-8 rounded-full border border-char-mute text-smoke hover:text-yolk hover:border-yolk transition-colors font-bold flex items-center justify-center"
+                        >
+                          +
+                        </button>
+                      </div>
+                    </div>
+
+                    {/* Location Selector */}
+                    <div>
+                      <label className="type-label text-smoke text-[9px] block mb-1.5">LOCATION</label>
+                      <div className="relative">
+                        <select
+                          value={selectedLoc}
+                          onChange={(e) => setSelectedLoc(e.target.value)}
+                          className="w-full bg-char-soft border border-char-mute px-4 py-3.5 text-ink type-body text-sm focus:outline-none focus:border-yolk transition-colors duration-200 appearance-none cursor-pointer hover:border-char-mute/80"
+                        >
+                          {LOCATIONS.map((opt) => (
+                            <option key={opt} value={opt} className="bg-char">{opt}</option>
+                          ))}
+                        </select>
+                        <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-smoke text-xs">
+                          ▼
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+
+                  {/* Phone */}
+                  <div>
+                    <label className="type-label text-smoke text-[9px] block mb-1.5">PHONE (for SMS confirmation)</label>
                     <input
+                      required
                       type="tel"
-                      placeholder="+91 98450 12345"
                       value={phone}
                       onChange={(e) => setPhone(e.target.value)}
-                      required
-                      className="w-full px-4 py-3 rounded-2xl bg-black/5 border border-black/15 text-black font-semibold text-xs outline-none"
+                      placeholder="+91 98765 43210"
+                      className="w-full bg-char-soft border border-char-mute px-4 py-3 text-ink type-body text-sm focus:outline-none focus:border-yolk transition-colors duration-200 placeholder:text-smoke hover:border-char-mute/80"
                     />
                   </div>
 
                   <button
                     type="submit"
-                    className="w-full py-4 rounded-2xl font-sans text-xs font-bold uppercase tracking-wider transition-all shadow-xl hover:brightness-110 active:scale-95"
-                    style={{
-                      backgroundColor: "#F5C418",
-                      color: "#000000",
-                    }}
+                    className="w-full btn-yolk justify-center py-4 text-[11px]"
                   >
-                    Confirm Table Reservation →
+                    Confirm Reservation →
                   </button>
-                </form>
+
+                  <p className="type-label text-smoke text-center text-[9px]">
+                    Or call us:{" "}
+                    <a href="tel:+918045678900" className="text-yolk hover:underline">+91 80 4567 8900</a>
+                  </p>
+                </motion.form>
               ) : (
                 <motion.div
-                  initial={{ opacity: 0, scale: 0.9 }}
+                  key="success"
+                  initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  className="text-center py-8 space-y-4 text-black"
+                  className="py-12 text-center space-y-5"
                 >
-                  <div className="w-12 h-12 rounded-full bg-emerald-500 text-white flex items-center justify-center mx-auto text-xl font-bold">
-                    ✓
+                  <div className="w-14 h-14 bg-yolk rounded-sm flex items-center justify-center mx-auto">
+                    <span className="text-char text-2xl font-bold">✓</span>
                   </div>
-                  <h4 className="type-display text-2xl font-bold">RESERVATION CONFIRMED</h4>
-                  <p className="text-xs font-semibold text-stone-700">
-                    We look forward to welcoming you, {name} at {selectedLocation} for {guests}.
+                  <p className="type-caption text-yolk">Reservation Confirmed</p>
+                  <h3 className="type-display text-4xl text-ink">See You Soon!</h3>
+                  <p className="type-serif text-stone">
+                    We&apos;ll send an SMS confirmation shortly. We are holding a table for <b>{guests} people</b> at our <b>{selectedLoc} atelier</b>.
                   </p>
+                  <button
+                    onClick={() => {
+                      setSubmitted(false);
+                      setName("");
+                      setPhone("");
+                      setGuests(2);
+                    }}
+                    className="type-label text-smoke text-[9px] hover:text-yolk transition-colors duration-300 border border-char-mute px-4 py-2 mt-4 inline-block"
+                  >
+                    Make another reservation →
+                  </button>
                 </motion.div>
               )}
             </AnimatePresence>

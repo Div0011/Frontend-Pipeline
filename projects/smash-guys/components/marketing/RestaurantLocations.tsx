@@ -1,191 +1,195 @@
 "use client";
 
-import React, { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { motion, AnimatePresence } from "framer-motion";
+import { locations, Location } from "@/lib/data";
 
-const outposts = [
-  {
-    "id": "church-st",
-    "name": "Church Street Sizzle Hub",
-    "badge": "FLAGSHIP SMASH LAB",
-    "address": "42 Church St, Shanthala Nagar",
-    "city": "Bengaluru 560001",
-    "hours": "12:00 PM \u2013 12:00 AM",
-    "phone": "+91 98450 12345",
-    "status": "Griddles Firing Non-Stop",
-    "seating": "Open Counter & Neon Patio",
-    "heroImage": "https://images.unsplash.com/photo-1550547660-d9450f859349?w=1200&q=80",
-    "gallery": [
-      "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800&q=80"
-    ],
-    "mapUrl": "https://maps.google.com/?q=Smash+Guys+Church+Street+Bangalore"
-  }
-];
+if (typeof window !== "undefined") gsap.registerPlugin(ScrollTrigger);
+
+// Custom static location stats to add high-fidelity interactivity
+const LOCATION_METRICS: Record<string, { busy: string; pct: number; wait: string; quadrant: string; cx: string; cy: string }> = {
+  indiranagar: { busy: "Moderate", pct: 60, wait: "10 mins", quadrant: "East Bangalore", cx: "65%", cy: "50%" },
+  bellandur:   { busy: "Very Busy", pct: 90, wait: "25 mins", quadrant: "South-East", cx: "75%", cy: "75%" },
+  rmv:         { busy: "Quiet", pct: 25, wait: "0 mins", quadrant: "North Bangalore", cx: "35%", cy: "25%" },
+  whitefield:  { busy: "Moderate", pct: 55, wait: "5 mins", quadrant: "Far East", cx: "90%", cy: "45%" },
+};
 
 export default function RestaurantLocations() {
-  const [selectedLocation, setSelectedLocation] = useState(0);
-  const [activeImageIndex, setActiveImageIndex] = useState(0);
+  const sectionRef = useRef<HTMLElement>(null);
+  const [copiedId, setCopiedId] = useState<string | null>(null);
+  const [hoveredLocId, setHoveredLocId] = useState<string | null>(null);
 
-  const currentLoc = outposts[selectedLocation] || outposts[0];
-  const allImages = currentLoc ? [currentLoc.heroImage, ...(currentLoc.gallery || [])] : [];
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const ctx = gsap.context(() => {
+      gsap.fromTo(".loc-card",
+        { opacity: 0, y: 40 },
+        {
+          opacity: 1,
+          y: 0,
+          stagger: 0.15,
+          duration: 0.8,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top 70%",
+          },
+        }
+      );
+    }, sectionRef);
+    return () => ctx.revert();
+  }, []);
+
+  const handleCopyInfo = (e: React.MouseEvent, loc: Location) => {
+    e.preventDefault();
+    e.stopPropagation();
+    const text = `${loc.name}: ${loc.address}, Tel: ${loc.phone}`;
+    navigator.clipboard.writeText(text).then(() => {
+      setCopiedId(loc.id);
+      setTimeout(() => setCopiedId(null), 2000);
+    });
+  };
 
   return (
-    <section
-      id="locations-section"
-      className="py-24 px-6 sm:px-12 md:px-20 bg-transparent text-[#FAF8F2] border-b border-white/10 relative z-10 font-sans"
-    >
-      <div className="max-w-7xl mx-auto space-y-10">
-        <div className="flex flex-col md:flex-row justify-between md:items-end gap-6 border-b border-white/10 pb-6">
+    <section ref={sectionRef} className="bg-char section-cinematic border-b border-char-mute/30">
+      <div className="max-w-[88rem] mx-auto px-6 lg:px-8">
+
+        {/* Header */}
+        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-14 gap-6">
           <div>
-            <h2 className="type-display text-4xl sm:text-6xl text-white font-extrabold tracking-tight">
-              BENGALURU KITCHENS
+            <p className="type-caption text-yolk mb-3">Find Us</p>
+            <h2 className="type-display text-6xl sm:text-8xl lg:text-[7rem] text-ink leading-[0.9]">
+              OUR<br />ATELIERS
             </h2>
           </div>
-
-          {outposts.length > 1 && (
-            <div className="flex items-center gap-2 bg-white/5 p-1.5 rounded-full border border-white/10">
-              {outposts.map((loc: any, idx: number) => (
-                <button
-                  key={loc.id || idx}
-                  onClick={() => {
-                    if ((window as any).playPopSound) (window as any).playPopSound();
-                    setSelectedLocation(idx);
-                    setActiveImageIndex(0);
-                  }}
-                  className={`px-5 py-2 rounded-full font-sans text-xs uppercase tracking-wider transition-all font-bold ${
-                    selectedLocation === idx
-                      ? "shadow-lg"
-                      : "text-stone-400 hover:text-white"
-                  }`}
-                  style={{
-                    backgroundColor: selectedLocation === idx ? "#F5C418" : undefined,
-                    color: selectedLocation === idx ? "#000000" : undefined,
-                  }}
-                >
-                  {loc.name.split(" ")[0]}
-                </button>
-              ))}
-            </div>
-          )}
+          <div className="max-w-xs">
+            <p className="type-serif text-stone text-lg leading-relaxed">
+              Four locations across Bangalore. Walk in anytime between 11am–11pm.
+            </p>
+            <Link href="/locations" className="inline-block mt-4 type-caption text-yolk text-xs hover:text-yolk-light transition-colors duration-300">
+              All Locations →
+            </Link>
+          </div>
         </div>
 
-        {currentLoc && (
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-            {/* Visual Photography Carousel */}
-            <div className="lg:col-span-7 relative min-h-[420px] rounded-3xl overflow-hidden border border-white/15 shadow-2xl bg-black/50 group">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={`${currentLoc.id}-${activeImageIndex}`}
-                  initial={{ opacity: 0, scale: 1.05 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.5 }}
-                  className="absolute inset-0"
-                >
+        {/* Location grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {locations.map((loc: Location) => {
+            const metrics = LOCATION_METRICS[loc.id] ?? { busy: "Quiet", pct: 30, wait: "0 mins", quadrant: "Central", cx: "50%", cy: "50%" };
+            const isHovered = hoveredLocId === loc.id;
+
+            return (
+              <div
+                key={loc.id}
+                onMouseEnter={() => setHoveredLocId(loc.id)}
+                onMouseLeave={() => setHoveredLocId(null)}
+                className="loc-card group relative block opacity-0 border border-char-mute hover:border-yolk/40 transition-all duration-400 overflow-hidden bg-char-soft"
+              >
+                {/* Image */}
+                <div className="aspect-[3/2] relative overflow-hidden">
                   <Image
-                    src={allImages[activeImageIndex] || currentLoc.heroImage}
-                    alt={currentLoc.name}
+                    src={loc.image}
+                    alt={loc.name}
                     fill
-                    className="object-cover"
+                    className="object-cover brightness-50 group-hover:brightness-60 group-hover:scale-105 transition-all duration-700"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 25vw"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
-                </motion.div>
-              </AnimatePresence>
+                  
+                  {/* Flagship Badge */}
+                  {loc.featured && (
+                    <div className="absolute top-3 left-3 bg-yolk text-char type-caption text-[8px] px-2.5 py-1 z-10">
+                      FLAGSHIP
+                    </div>
+                  )}
 
-              {/* Text Over Image — always white regardless of theme */}
-              <div data-image-overlay className="absolute bottom-6 left-6 right-6 flex items-end justify-between gap-4 z-10">
-                <div className="space-y-1 text-white">
-                  <span className="text-[10px] uppercase tracking-widest font-bold block" style={{ color: "#F5C418" }}>
-                    {currentLoc.badge}
-                  </span>
-                  <h3 className="type-display text-2xl sm:text-3xl text-white font-extrabold drop-shadow-md">
-                    {currentLoc.name}
-                  </h3>
+                  {/* Interactive Mini Bangalore Map Radar (Revealed on hover) */}
+                  <AnimatePresence>
+                    {isHovered && (
+                      <motion.div
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0, scale: 0.95 }}
+                        className="absolute inset-0 bg-char/80 backdrop-blur-sm z-10 flex flex-col justify-between p-4"
+                      >
+                        <div className="flex justify-between items-center border-b border-char-mute pb-2">
+                          <span className="type-caption text-yolk text-[8px]">RADAR SEARCH</span>
+                          <span className="type-label text-ink text-[7px]">{metrics.quadrant}</span>
+                        </div>
+
+                        {/* Interactive Radar SVG Grid */}
+                        <div className="w-full h-24 relative flex items-center justify-center">
+                          <svg className="w-20 h-20 text-smoke/30" viewBox="0 0 100 100" fill="none" stroke="currentColor">
+                            <circle cx="50" cy="50" r="45" strokeWidth="1" strokeDasharray="3 3" />
+                            <circle cx="50" cy="50" r="28" strokeWidth="1" />
+                            <line x1="50" y1="5" x2="50" y2="95" strokeWidth="1" strokeDasharray="2 2" />
+                            <line x1="5" y1="50" x2="95" y2="50" strokeWidth="1" strokeDasharray="2 2" />
+                            {/* Blinking hotspot dot */}
+                            <circle cx={metrics.cx} cy={metrics.cy} r="4" fill="#F5C418" className="animate-ping" style={{ transformOrigin: "center" }} />
+                            <circle cx={metrics.cx} cy={metrics.cy} r="3" fill="#F5C418" />
+                          </svg>
+                        </div>
+
+                        <div className="text-center">
+                          <p className="type-label text-smoke text-[8px]">WAIT TIME</p>
+                          <p className="type-display text-2xl text-yolk">{metrics.wait}</p>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
                 </div>
 
-                {allImages.length > 1 && (
-                  <div className="flex items-center gap-1.5 bg-black/60 backdrop-blur-md p-1.5 rounded-full border border-white/10">
-                    {allImages.map((_, imgIdx) => (
-                      <button
-                        key={imgIdx}
-                        onClick={() => setActiveImageIndex(imgIdx)}
-                        className={`w-2 h-2 rounded-full transition-all ${
-                          activeImageIndex === imgIdx
-                            ? "w-5 bg-[#F5C418]"
-                            : "bg-white/40 hover:bg-white/70"
-                        }`}
-                      />
-                    ))}
+                {/* Info */}
+                <div className="p-5 space-y-3 relative">
+                  <div className="flex items-start justify-between">
+                    <h3 className="type-display text-2xl text-ink group-hover:text-yolk transition-colors duration-300">
+                      {loc.name.toUpperCase()}
+                    </h3>
+                    <button
+                      onClick={(e) => handleCopyInfo(e, loc)}
+                      className="text-smoke hover:text-yolk transition-colors duration-300 text-xs font-mono uppercase tracking-wider"
+                      title="Copy details to clipboard"
+                    >
+                      {copiedId === loc.id ? "✓ Copied" : "Copy"}
+                    </button>
                   </div>
-                )}
-              </div>
-            </div>
-
-            {/* Location Specs & Quick Actions Card */}
-            <div className="lg:col-span-5 p-8 rounded-3xl bg-white/[0.04] backdrop-blur-md border border-white/10 flex flex-col justify-between space-y-6 shadow-2xl">
-              <div className="space-y-6">
-                <div className="flex items-center gap-2">
-                  <span className="w-2.5 h-2.5 rounded-full animate-pulse bg-emerald-400" />
-                  <span className="text-xs uppercase font-bold tracking-wider text-emerald-400">
-                    {currentLoc.status}
-                  </span>
-                </div>
-
-                <div className="space-y-4 text-xs font-sans">
-                  <div className="p-4 rounded-2xl bg-black/40 border border-white/5 space-y-1">
-                    <span className="text-[10px] uppercase font-bold text-stone-400 block">
-                      Address
+                  
+                  <p className="type-body text-smoke text-sm">{loc.address}</p>
+                  
+                  {/* Dynamic wait/busy details visible on non-hover */}
+                  <div className="flex items-center justify-between border-t border-char-mute/30 pt-3">
+                    <div className="flex items-center gap-3">
+                      <div className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${
+                        metrics.busy === "Very Busy" ? "bg-ember" : metrics.busy === "Moderate" ? "bg-yolk" : "bg-green-500"
+                      }`} />
+                      <span className="type-label text-smoke text-[9px]">
+                        {metrics.busy}
+                      </span>
+                    </div>
+                    <span className="type-label text-smoke text-[8px]">
+                      {metrics.wait} WAIT
                     </span>
-                    <p className="text-white font-semibold text-sm">{currentLoc.address}</p>
-                    <p className="text-stone-400">{currentLoc.city}</p>
                   </div>
 
-                  <div className="grid grid-cols-2 gap-3">
-                    <div className="p-4 rounded-2xl bg-black/40 border border-white/5 space-y-1">
-                      <span className="text-[10px] uppercase font-bold text-stone-400 block">
-                        Hours
-                      </span>
-                      <p className="text-white font-bold">{currentLoc.hours}</p>
-                    </div>
-
-                    <div className="p-4 rounded-2xl bg-black/40 border border-white/5 space-y-1">
-                      <span className="text-[10px] uppercase font-bold text-stone-400 block">
-                        Seating
-                      </span>
-                      <p className="text-white font-bold text-[11px] leading-tight">
-                        {currentLoc.seating}
-                      </p>
-                    </div>
+                  <div className="flex items-center gap-3 pt-1">
+                    <svg className="w-3 h-3 text-smoke flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+                    </svg>
+                    <a
+                      href={`tel:${loc.phone.replace(/\s/g, "")}`}
+                      className="type-label text-smoke text-[9px] hover:text-yolk transition-colors duration-300"
+                    >
+                      {loc.phone}
+                    </a>
                   </div>
                 </div>
               </div>
-
-              {/* Action Buttons */}
-              <div className="grid grid-cols-2 gap-3 pt-4 border-t border-white/10">
-                <a
-                  href={currentLoc.mapUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="py-3.5 px-4 rounded-2xl font-sans text-xs font-bold uppercase tracking-wider text-center transition-all shadow-lg hover:brightness-110 active:scale-95"
-                  style={{
-                    backgroundColor: "#F5C418",
-                    color: "#000000",
-                  }}
-                >
-                  Directions ↗
-                </a>
-
-                <a
-                  href={`tel:${currentLoc.phone.replace(/[^0-9+]/g, "")}`}
-                  className="py-3.5 px-4 rounded-2xl font-sans text-xs font-bold uppercase tracking-wider text-center bg-white/10 hover:bg-white/20 text-white transition-all border border-white/15"
-                >
-                  Call Outpost
-                </a>
-              </div>
-            </div>
-          </div>
-        )}
+            );
+          })}
+        </div>
       </div>
     </section>
   );

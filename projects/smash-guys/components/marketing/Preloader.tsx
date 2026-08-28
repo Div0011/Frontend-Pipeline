@@ -1,107 +1,155 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { useEffect, useState, useCallback } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 interface PreloaderProps {
   onComplete: () => void;
 }
 
+interface AssetItem {
+  src: string;
+}
+
+// Key assets needed for a clean first load
+const CRITICAL_ASSETS: AssetItem[] = [
+  { src: "/hero-burger.png" },
+  { src: "/truffle-fries.png" },
+  { src: "/matcha-special.png" },
+  { src: "/old-monk-mousse.png" },
+];
+
+function generateFrames(prefix: string, count: number): string[] {
+  return Array.from({ length: count }, (_, i) =>
+    `/frames/${prefix}/frame_${String(i).padStart(6, "0")}.webp`
+  );
+}
+
+const BURGER_FRAMES = generateFrames("burger", 248);
+const SMOOTHIE_FRAMES = generateFrames("smoothie", 248);
+
 export default function Preloader({ onComplete }: PreloaderProps) {
   const [progress, setProgress] = useState(0);
   const [isVisible, setIsVisible] = useState(true);
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setProgress((prev) => {
-        if (prev >= 100) {
-          clearInterval(timer);
-          setTimeout(() => {
-            setIsVisible(false);
-            setTimeout(onComplete, 400);
-          }, 300);
-          return 100;
-        }
-        return prev + 2;
-      });
-    }, 20);
+  const loadAsset = useCallback((src: string): Promise<void> => {
+    return new Promise((resolve) => {
+      const img = new Image();
+      img.onload = () => resolve();
+      img.onerror = () => resolve();
+      img.src = src;
+    });
+  }, []);
 
-    return () => clearInterval(timer);
-  }, [onComplete]);
+  useEffect(() => {
+    let cancelled = false;
+    const assetsToLoad: string[] = [];
+
+    // Push critical structural assets
+    CRITICAL_ASSETS.forEach((asset) => assetsToLoad.push(asset.src));
+    
+    // Load the first 30 frames of both sequences eagerly so that the hero scrubbers
+    // look perfect the instant the user begins to scroll.
+    for (let i = 0; i < 30; i++) {
+      assetsToLoad.push(BURGER_FRAMES[i]);
+      assetsToLoad.push(SMOOTHIE_FRAMES[i]);
+    }
+
+    let completed = 0;
+    const total = assetsToLoad.length;
+
+    const updateProgress = () => {
+      completed++;
+      if (cancelled) return;
+      setProgress(Math.min(completed / total, 1));
+    };
+
+    const loadAll = async () => {
+      const promises = assetsToLoad.map((src) =>
+        loadAsset(src).then(updateProgress)
+      );
+      await Promise.all(promises);
+    };
+
+    loadAll().then(() => {
+      if (cancelled) return;
+      // Slight delay to appreciate the zoom animation loop
+      setTimeout(() => {
+        setIsVisible(false);
+        setTimeout(onComplete, 600); // Trigger page load state
+      }, 500);
+    });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [onComplete, loadAsset]);
 
   if (!isVisible) return null;
 
-  return (
-    <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-[#08080a] text-[#f5f5f5] overflow-hidden select-none">
-      {/* Dynamic Ambient Glow */}
-      <div
-        className="absolute w-[600px] h-[600px] rounded-full blur-[140px] pointer-events-none opacity-20 animate-pulse"
-        style={{ backgroundColor: "#F5C418" }}
-      />
+  const displayProgress = Math.round(progress * 100);
 
-      {/* Concentric Pulse Rings */}
+  return (
+    <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-char overflow-hidden select-none">
+      {/* ── Continuous Zooming Out Concentric Rings ── */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
-        {[0, 1, 2].map((i) => (
+        {[0, 1, 2, 3].map((i) => (
           <motion.div
             key={i}
-            initial={{ scale: 0.2, opacity: 0.5 }}
+            initial={{ scale: 0.1, opacity: 0.6 }}
             animate={{
-              scale: [0.2, 3.8],
-              opacity: [0.5, 0.2, 0],
+              scale: [0.1, 4.5],
+              opacity: [0.6, 0.4, 0.15, 0],
             }}
             transition={{
-              duration: 3,
+              duration: 3.5,
               repeat: Infinity,
               ease: "easeOut",
               delay: i * 0.9,
             }}
-            className="absolute rounded-full border"
+            className={`absolute rounded-full border-4 ${
+              i % 2 === 0 ? "border-yolk" : "border-char-mute"
+            }`}
             style={{
-              borderColor: "#F5C418",
-              width: "300px",
-              height: "300px",
+              width: "350px",
+              height: "350px",
+              boxShadow: "0 0 40px rgba(0, 0, 0, 0.3)",
             }}
           />
         ))}
       </div>
 
-      {/* Centered Brand Content */}
-      <div className="relative z-10 flex flex-col items-center gap-6 max-w-xl px-6 text-center">
-        {/* Loading Counter */}
-        <div
-          className="w-24 h-24 rounded-full bg-[#121214] border flex items-center justify-center relative shadow-2xl"
-          style={{ borderColor: "#F5C41840" }}
-        >
-          <div
-            className="absolute inset-0 rounded-full border-2 border-transparent animate-spin"
-            style={{ borderTopColor: "#F5C418" }}
-          />
-          <span className="font-sans text-xl font-bold" style={{ color: "#F5C418" }}>
-            {progress}%
+      {/* ── Centered Content ── */}
+      <div className="relative z-10 flex flex-col items-center gap-8">
+        
+        {/* Loading percentage with circular frame */}
+        <div className="w-24 h-24 rounded-full bg-char-soft border-2 border-yolk/30 flex items-center justify-center relative shadow-2xl">
+          {/* Subtle spinning loader ring */}
+          <div className="absolute inset-0 rounded-full border-2 border-transparent border-t-yolk animate-spin" />
+          
+          <span className="type-display text-2xl text-yolk font-bold">
+            {displayProgress}%
           </span>
         </div>
 
-        {/* Brand Identity & Craft Subtitle */}
-        <div className="space-y-2">
-          <h2 className="type-display text-4xl sm:text-5xl text-white tracking-wider font-extrabold">
+        {/* Brand label & Status text */}
+        <div className="flex flex-col items-center gap-3 text-center">
+          <h2 className="type-display text-4xl text-ink leading-none">
             SMASH GUYS
           </h2>
-          <p className="font-sans text-xs uppercase tracking-widest text-stone-400">
-            MAXIMUM CRUNCH MAILLARD CRUST
+          
+          <div className="w-36 h-0.5 bg-char-mute relative overflow-hidden">
+            <div
+              className="absolute inset-y-0 left-0 bg-yolk transition-all duration-300"
+              style={{ width: `${displayProgress}%` }}
+            />
+          </div>
+          
+          <p className="type-caption text-smoke text-[9px] tracking-widest uppercase">
+            EST. 2024 · LOADING KITCHEN BOARD
           </p>
         </div>
 
-        {/* Progress Bar */}
-        <div className="w-56 h-1 bg-white/10 rounded-full overflow-hidden relative">
-          <motion.div
-            className="h-full rounded-full"
-            style={{ width: `${progress}%`, backgroundColor: "#F5C418" }}
-          />
-        </div>
-
-        <p className="font-sans text-[10px] uppercase tracking-widest text-stone-500 pt-2">
-          450°F CAST-IRON SMASHED BURGERS · BANGALORE
-        </p>
       </div>
     </div>
   );
