@@ -80,10 +80,7 @@ export default function SignatureMenu() {
           <div className="space-y-2">
             <div className="flex items-center gap-2.5">
               <span className="w-2.5 h-2.5 rounded-full animate-ping" style={{ backgroundColor: "#06B6D4" }} />
-              <span className="font-mono text-xs tracking-widest uppercase font-bold" style={{ color: "#06B6D4" }}>
-                JEWBOY BURGERS // CULINARY BOARD
-              </span>
-            </div>
+                          </div>
             <h2 className="type-display text-4xl sm:text-6xl text-white font-extrabold tracking-tight">
               SIGNATURE SELECTIONS
             </h2>
@@ -172,10 +169,7 @@ export default function SignatureMenu() {
                 <div className="space-y-4">
                   <div className="flex items-start justify-between gap-4">
                     <div className="space-y-1">
-                      <span className="font-mono text-[9px] uppercase tracking-widest font-bold" style={{ color: "#06B6D4" }}>
-                        JEWBOY BURGERS // #0{idx + 1}
-                      </span>
-                      <h3 className="type-display text-2xl sm:text-3xl text-white transition-colors leading-tight font-extrabold">
+                                            <h3 className="type-display text-2xl sm:text-3xl text-white transition-colors leading-tight font-extrabold">
                         {item.name}
                       </h3>
                     </div>

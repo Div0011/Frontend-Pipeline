@@ -41,10 +41,7 @@ export default function ReservationCTA() {
     >
       <div className="max-w-4xl mx-auto space-y-12">
         <div className="text-center space-y-3">
-          <span className="font-mono text-xs tracking-widest uppercase font-bold block" style={{ color: "#2563EB" }}>
-            ORIGINAL BURGER CO. // TABLE RESERVATIONS
-          </span>
-          <h2 className="type-display text-4xl sm:text-6xl text-white font-extrabold tracking-tight">
+                    <h2 className="type-display text-4xl sm:text-6xl text-white font-extrabold tracking-tight">
             BOOK YOUR EXPERIENCE
           </h2>
           <p className="text-stone-300 text-sm max-w-xl mx-auto font-body">
@@ -71,10 +68,7 @@ export default function ReservationCTA() {
             </div>
 
             <div className="space-y-1">
-              <span className="font-mono text-xs uppercase tracking-widest font-bold" style={{ color: "#2563EB" }}>
-                RESERVATION CONFIRMED // VIP PASS
-              </span>
-              <h3 className="type-display text-3xl font-extrabold text-white">
+                            <h3 className="type-display text-3xl font-extrabold text-white">
                 SEE YOU SOON, {name.toUpperCase()}!
               </h3>
               <p className="font-mono text-xs text-stone-300">

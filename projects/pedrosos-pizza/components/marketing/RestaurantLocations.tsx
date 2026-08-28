@@ -21,10 +21,7 @@ export default function RestaurantLocations() {
       <div className="max-w-7xl mx-auto space-y-12">
         <div className="flex flex-col md:flex-row justify-between md:items-end gap-6 border-b border-white/10 pb-8">
           <div className="space-y-2">
-            <span className="font-mono text-xs tracking-widest uppercase block font-bold" style={{ color: "#B91C1C" }}>
-              PEDROSO'S PIZZA // PHYSICAL OUTPOSTS
-            </span>
-            <h2 className="type-display text-4xl sm:text-6xl text-white font-extrabold tracking-tight">
+                        <h2 className="type-display text-4xl sm:text-6xl text-white font-extrabold tracking-tight">
               AUSTIN KITCHENS
             </h2>
           </div>
