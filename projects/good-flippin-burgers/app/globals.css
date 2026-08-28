@@ -40,44 +40,60 @@ body {
   line-height: 0.9;
 }
 
-/* Day & Night Responsive Contrast Overrides */
+/* Day Mode Global Surface */
 html.light body {
-  background-color: #F6F4EE !important;
+  background-color: #FAF8F2 !important;
   color: #18181B !important;
 }
 
-html.light .text-white,
-html.light .text-bone,
-html.light .text-\[\#FAF8F2\] {
+/* Day Mode Text on Light Background / Tiles ONLY */
+html.light .theme-adaptive-title,
+html.light #manifesto-section h2,
+html.light #manifesto-section h3,
+html.light #menu-section h2,
+html.light #menu-section h3,
+html.light #pairing-section h2,
+html.light #pairing-section h3,
+html.light #locations-section h2,
+html.light #reservation-section h2 {
   color: #18181B !important;
 }
 
-html.light .text-stone-300,
-html.light .text-stone-400,
-html.light .text-smoke {
-  color: #52525B !important;
-}
-
-html.light .bg-white\/\[0\.03\],
-html.light .bg-white\/\[0\.04\],
-html.light .bg-white\/\[0\.08\],
-html.light .bg-white\/5 {
+html.light .theme-adaptive-card,
+html.light #manifesto-section .bg-white\[0\.03\],
+html.light #manifesto-section .bg-white\[0\.04\],
+html.light #menu-section .bg-white\[0\.04\],
+html.light #pairing-section .bg-white\[0\.04\],
+html.light #reservation-section .bg-white\[0\.04\] {
   background-color: rgba(255, 255, 255, 0.85) !important;
   border-color: rgba(0, 0, 0, 0.08) !important;
   color: #18181B !important;
-  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.06) !important;
+  box-shadow: 0 12px 32px -4px rgba(0, 0, 0, 0.06) !important;
 }
 
-html.light .border-white\/10,
-html.light .border-white\/15,
-html.light .border-white\/20 {
-  border-color: rgba(0, 0, 0, 0.08) !important;
+html.light #manifesto-section .text-stone-400,
+html.light #menu-section .text-stone-400,
+html.light #pairing-section .text-stone-400 {
+  color: #52525B !important;
 }
 
-html.light .text-\[#BE123C\] {
-  color: #BE123C !important;
+/* Ensure Dark Media Frames, Heros, Smoothies, and Image Cards ALWAYS stay crisp White */
+.dark-frame,
+.hero-media,
+.gallery-image-card,
+.smoothie-container,
+.video-overlay,
+[data-theme-preserve="dark"] {
+  color: #FAF8F2 !important;
 }
 
-html.light .border-\[#BE123C\] {
-  border-color: #BE123C !important;
+.dark-frame h1,
+.dark-frame h2,
+.dark-frame h3,
+.dark-frame p,
+.hero-media h1,
+.hero-media h2,
+.smoothie-container h2,
+.gallery-image-card h3 {
+  color: #FAF8F2 !important;
 }

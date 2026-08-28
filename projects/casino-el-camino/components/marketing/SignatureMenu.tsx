@@ -72,15 +72,24 @@ export default function SignatureMenu() {
   return (
     <section
       id="menu-section"
-      className="py-24 px-6 sm:px-12 md:px-20 bg-transparent text-[#FAF8F2] relative z-10 border-b border-white/10 select-none font-sans"
+      className="py-28 px-6 sm:px-12 md:px-20 bg-transparent text-[#FAF8F2] relative z-10 border-b border-white/10"
     >
-      <div className="max-w-7xl mx-auto space-y-10">
-        {/* Section Header - Clean display headline only */}
-        <div className="flex flex-col md:flex-row justify-between md:items-end gap-6 pb-6 border-b border-white/10">
-          <div>
-            <h2 className="type-display text-4xl sm:text-6xl md:text-7xl text-white font-extrabold tracking-tight">
+      <div className="max-w-7xl mx-auto space-y-12">
+        {/* Section Header */}
+        <div className="flex flex-col md:flex-row justify-between md:items-end gap-8 pb-8 border-b border-white/10">
+          <div className="space-y-2">
+            <div className="flex items-center gap-2.5">
+              <span className="w-2.5 h-2.5 rounded-full animate-ping" style={{ backgroundColor: "#DC2626" }} />
+              <span className="font-mono text-xs tracking-widest uppercase font-bold" style={{ color: "#DC2626" }}>
+                CASINO EL CAMINO // CULINARY BOARD
+              </span>
+            </div>
+            <h2 className="type-display text-4xl sm:text-6xl text-white font-extrabold tracking-tight">
               SIGNATURE SELECTIONS
             </h2>
+            <p className="font-mono text-xs text-stone-400 max-w-xl">
+              Handcrafted with fresh premium cuts, signature seasonings, and bespoke artisanal buns.
+            </p>
           </div>
 
           <div className="flex items-center gap-4 flex-wrap">
@@ -90,37 +99,52 @@ export default function SignatureMenu() {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search menu..."
-                className="px-4 py-2.5 pl-9 rounded-full bg-white/5 border border-white/15 text-xs text-white placeholder-stone-400 focus:outline-none transition-colors w-52 sm:w-64 font-medium"
+                className="px-4 py-2 pl-9 rounded-full bg-white/5 border border-white/15 text-xs font-mono text-white placeholder-stone-400 focus:outline-none transition-colors w-56 sm:w-64"
+                style={{ borderColor: searchQuery ? "#DC2626" : undefined }}
               />
-              <svg className="w-3.5 h-3.5 absolute left-3.5 top-3 text-stone-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-              </svg>
+              <span className="absolute left-3 top-2.5 text-stone-400 text-xs">🔍</span>
+              {searchQuery && (
+                <button
+                  onClick={() => setSearchQuery("")}
+                  className="absolute right-3 top-2 text-stone-400 hover:text-white text-xs font-mono"
+                >
+                  ✕
+                </button>
+              )}
             </div>
 
             <button
-              type="button"
               onClick={() => setCartOpen(true)}
-              className="px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider bg-[#DC2626] text-black hover:brightness-110 active:scale-95 transition-all shadow-xl"
+              className="px-5 py-2 rounded-full font-mono text-xs font-bold uppercase tracking-wider flex items-center gap-2 hover:opacity-90 active:scale-95 transition-all shadow-xl"
+              style={{
+                backgroundColor: "#DC2626",
+                color: "#FFFFFF",
+              }}
             >
-              Bag ({cartItems.reduce((a, b) => a + b.quantity, 0)})
+              <span>🛒</span>
+              <span>Bag ({cartItems.reduce((a, b) => a + b.quantity, 0)})</span>
             </button>
           </div>
         </div>
 
-        {/* Category Pills */}
-        <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none">
+        {/* Category Pills Bar */}
+        <div className="flex items-center gap-3 overflow-x-auto pb-2 scrollbar-none">
           {categories.map((cat) => {
             const isSelected = selectedCat === cat.id;
             return (
               <button
                 key={cat.id}
-                type="button"
                 onClick={() => setSelectedCat(cat.id)}
-                className={`px-5 py-2.5 rounded-full text-xs uppercase tracking-wider font-bold transition-all whitespace-nowrap border ${
+                className={`px-5 py-2.5 rounded-full font-mono text-xs uppercase tracking-wider transition-all whitespace-nowrap border font-bold ${
                   isSelected
-                    ? "bg-[#DC2626] text-black border-[#DC2626] shadow-lg scale-105"
-                    : "bg-white/5 text-stone-300 border-white/10 hover:bg-white/10 hover:text-white"
+                    ? "shadow-lg scale-105"
+                    : "bg-white/5 text-stone-400 hover:bg-white/10 hover:text-white border-white/10"
                 }`}
+                style={{
+                  backgroundColor: isSelected ? "#DC2626" : undefined,
+                  color: isSelected ? "#FFFFFF" : undefined,
+                  borderColor: isSelected ? "#DC2626" : undefined,
+                }}
               >
                 {cat.label}
               </button>
@@ -128,8 +152,8 @@ export default function SignatureMenu() {
           })}
         </div>
 
-        {/* Menu Grid - Order names, prices, tags, and Add button only */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Menu Grid with Interactive 3D Hover Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <AnimatePresence mode="popLayout">
             {filteredItems.map((item, idx) => (
               <motion.div
@@ -138,28 +162,56 @@ export default function SignatureMenu() {
                 initial={{ opacity: 0, scale: 0.95, y: 15 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.95, y: -10 }}
-                transition={{ duration: 0.3, delay: idx * 0.03 }}
+                transition={{ duration: 0.3, delay: idx * 0.04 }}
                 onClick={() => setActivePreviewItem(item)}
-                className="group relative p-6 rounded-2xl bg-white/[0.04] backdrop-blur-md border border-white/10 hover:border-white/20 transition-all duration-300 flex flex-col justify-between shadow-xl cursor-pointer hover:-translate-y-1"
+                className="group relative p-7 rounded-2xl bg-white/[0.04] backdrop-blur-md border border-white/10 transition-all duration-300 flex flex-col justify-between shadow-2xl cursor-pointer hover:-translate-y-1.5"
+                style={{
+                  borderColor: undefined,
+                }}
               >
                 <div className="space-y-4">
                   <div className="flex items-start justify-between gap-4">
-                    <h3 className="type-display text-2xl sm:text-3xl text-white transition-colors leading-tight font-extrabold">
-                      {item.name}
-                    </h3>
-                    <span className="text-sm font-extrabold px-3 py-1 rounded-full border border-[#DC2626]/40 text-[#DC2626] bg-[#DC2626]/10 whitespace-nowrap shadow-sm">
-                      ₹{item.price}
+                    <div className="space-y-1">
+                      <span className="font-mono text-[9px] uppercase tracking-widest font-bold" style={{ color: "#DC2626" }}>
+                        CASINO EL CAMINO // #0{idx + 1}
+                      </span>
+                      <h3 className="type-display text-2xl sm:text-3xl text-white transition-colors leading-tight font-extrabold">
+                        {item.name}
+                      </h3>
+                    </div>
+                    <span
+                      className="font-mono text-sm font-extrabold px-3 py-1 rounded-md border whitespace-nowrap shadow"
+                      style={{
+                        backgroundColor: "#DC262615",
+                        color: "#DC2626",
+                        borderColor: "#DC262640",
+                      }}
+                    >
+                      ${item.price}
+                    </span>
+                  </div>
+
+                  <p className="type-serif text-xs text-stone-300 leading-relaxed line-clamp-3">
+                    {item.description}
+                  </p>
+
+                  <div className="flex items-center gap-2 flex-wrap pt-1">
+                    <span className="text-[9px] font-mono uppercase px-2 py-0.5 rounded bg-black/40 text-stone-400 border border-white/5">
+                      🔥 Fresh Sizzle
+                    </span>
+                    <span className="text-[9px] font-mono uppercase px-2 py-0.5 rounded bg-black/40 text-stone-400 border border-white/5">
+                      ⚡ Quick View
                     </span>
                   </div>
                 </div>
 
-                <div className="flex items-center justify-between pt-5 mt-4 border-t border-white/10">
+                <div className="flex items-center justify-between pt-6 mt-6 border-t border-white/10">
                   <div className="flex items-center gap-1.5 flex-wrap">
                     {Array.isArray(item.tags) &&
                       item.tags.slice(0, 2).map((tag: string, tIdx: number) => (
                         <span
                           key={tIdx}
-                          className="text-[10px] uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-white/5 text-stone-300 border border-white/10 font-semibold"
+                          className="font-mono text-[9px] uppercase tracking-wider px-2 py-0.5 rounded bg-white/5 text-stone-400 border border-white/5"
                         >
                           {tag}
                         </span>
@@ -167,12 +219,15 @@ export default function SignatureMenu() {
                   </div>
 
                   <button
-                    type="button"
                     onClick={(e) => handleAddToCart(item, e)}
-                    className="px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider bg-[#DC2626] text-black hover:brightness-110 active:scale-95 transition-all shadow-md flex items-center gap-1 ml-auto"
+                    className="px-4 py-2 rounded-md font-mono text-xs font-bold uppercase tracking-wider hover:opacity-90 active:scale-95 transition-all shadow-md flex items-center gap-1.5"
+                    style={{
+                      backgroundColor: "#DC2626",
+                      color: "#FFFFFF",
+                    }}
                   >
                     <span>Add</span>
-                    <span>+</span>
+                    <span className="text-base leading-none">+</span>
                   </button>
                 </div>
               </motion.div>
@@ -181,54 +236,68 @@ export default function SignatureMenu() {
         </div>
       </div>
 
-      {/* Quick View Modal */}
+      {/* Interactive Dish Quick-View Modal */}
       <AnimatePresence>
         {activePreviewItem && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setActivePreviewItem(null)}
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-xl"
+          >
             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.9 }}
-              className="relative max-w-lg w-full p-8 rounded-2xl bg-[#0c1410] border border-white/20 shadow-2xl space-y-6 text-white"
+              initial={{ scale: 0.9, y: 20 }}
+              animate={{ scale: 1, y: 0 }}
+              exit={{ scale: 0.9, y: 20 }}
+              onClick={(e) => e.stopPropagation()}
+              className="relative max-w-xl w-full bg-[#0e0e12] border rounded-2xl p-8 text-white shadow-2xl space-y-6 overflow-hidden"
+              style={{ borderColor: "#DC262660" }}
             >
-              <div className="flex justify-between items-start">
-                <div className="space-y-1">
-                  <h3 className="type-display text-3xl font-extrabold">
-                    {activePreviewItem.name}
-                  </h3>
-                  <span className="text-xl font-black text-[#DC2626]">
-                    ₹{activePreviewItem.price}
-                  </span>
-                </div>
-                <button
-                  type="button"
-                  onClick={() => setActivePreviewItem(null)}
-                  className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-stone-400 hover:text-white"
-                >
-                  ✕
-                </button>
-              </div>
+              <button
+                onClick={() => setActivePreviewItem(null)}
+                className="absolute top-5 right-5 w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center text-sm font-mono transition-colors"
+              >
+                ✕
+              </button>
 
-              {activePreviewItem.description && (
-                <p className="text-sm text-stone-300 leading-relaxed font-body">
+              <div className="space-y-3">
+                <span className="font-mono text-xs tracking-widest uppercase font-bold" style={{ color: "#DC2626" }}>
+                  CULINARY PROFILE
+                </span>
+                <h3 className="type-display text-3xl sm:text-4xl text-white font-extrabold">
+                  {activePreviewItem.name}
+                </h3>
+                <p className="type-serif text-sm text-stone-300 leading-relaxed">
                   {activePreviewItem.description}
                 </p>
-              )}
+              </div>
 
-              <div className="flex gap-4 pt-4 border-t border-white/10">
+              <div className="flex items-center justify-between pt-4 border-t border-white/10">
+                <div>
+                  <span className="font-mono text-xs text-stone-400 block">Single Portion</span>
+                  <span className="font-mono text-2xl font-black" style={{ color: "#DC2626" }}>
+                    ${activePreviewItem.price}
+                  </span>
+                </div>
+
                 <button
-                  type="button"
                   onClick={() => {
                     handleAddToCart(activePreviewItem);
                     setActivePreviewItem(null);
                   }}
-                  className="w-full py-3 rounded-full text-xs font-bold uppercase tracking-widest bg-[#DC2626] text-black hover:brightness-110 active:scale-95 transition-all shadow-xl"
+                  className="px-6 py-3 rounded-lg font-mono text-xs font-extrabold uppercase tracking-wider hover:opacity-90 active:scale-95 transition-all shadow-xl flex items-center gap-2"
+                  style={{
+                    backgroundColor: "#DC2626",
+                    color: "#FFFFFF",
+                  }}
                 >
-                  Add to Bag (₹{activePreviewItem.price})
+                  <span>Add to Bag</span>
+                  <span>→</span>
                 </button>
               </div>
             </motion.div>
-          </div>
+          </motion.div>
         )}
       </AnimatePresence>
 
@@ -237,9 +306,9 @@ export default function SignatureMenu() {
         onClose={() => setCartOpen(false)}
         items={cartItems}
         onUpdateQuantity={handleUpdateQuantity}
-        currency="₹"
+        currency="$"
         primaryColor="#DC2626"
-        textOnPrimary="#000000"
+        textOnPrimary="#FFFFFF"
       />
     </section>
   );

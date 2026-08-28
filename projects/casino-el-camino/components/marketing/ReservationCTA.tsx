@@ -37,13 +37,19 @@ export default function ReservationCTA() {
   return (
     <section
       id="reservation-section"
-      className="py-24 px-6 sm:px-12 md:px-20 bg-transparent text-[#FAF8F2] border-b border-white/10 relative z-10 font-sans select-none"
+      className="py-28 px-6 sm:px-12 md:px-20 bg-transparent text-[#FAF8F2] border-b border-white/10 relative z-10"
     >
-      <div className="max-w-4xl mx-auto space-y-10">
-        <div className="text-center">
-          <h2 className="type-display text-4xl sm:text-6xl md:text-7xl text-white font-extrabold tracking-tight">
+      <div className="max-w-4xl mx-auto space-y-12">
+        <div className="text-center space-y-3">
+          <span className="font-mono text-xs tracking-widest uppercase font-bold block" style={{ color: "#DC2626" }}>
+            CASINO EL CAMINO // TABLE RESERVATIONS
+          </span>
+          <h2 className="type-display text-4xl sm:text-6xl text-white font-extrabold tracking-tight">
             BOOK YOUR EXPERIENCE
           </h2>
+          <p className="text-stone-300 text-sm max-w-xl mx-auto font-body">
+            Reserve front-row seats for fresh sizzling craft dining in Austin.
+          </p>
         </div>
 
         {confirmed ? (
@@ -53,60 +59,60 @@ export default function ReservationCTA() {
             className="p-10 rounded-2xl bg-white/[0.06] backdrop-blur-xl border-2 max-w-xl mx-auto shadow-2xl space-y-6 text-center"
             style={{ borderColor: "#DC2626" }}
           >
-            <div className="w-16 h-16 rounded-full mx-auto flex items-center justify-center text-black" style={{ backgroundColor: "#DC2626" }}>
-              <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 13l4 4L19 7" />
-              </svg>
+            <div
+              className="w-16 h-16 rounded-full border flex items-center justify-center mx-auto text-2xl"
+              style={{
+                backgroundColor: "#DC262620",
+                borderColor: "#DC2626",
+                color: "#DC2626",
+              }}
+            >
+              ✓
             </div>
+
             <div className="space-y-1">
-              <span className="text-xs uppercase tracking-widest font-bold block" style={{ color: "#DC2626" }}>
-                RESERVATION CONFIRMED
+              <span className="font-mono text-xs uppercase tracking-widest font-bold" style={{ color: "#DC2626" }}>
+                RESERVATION CONFIRMED // VIP PASS
               </span>
-              <h3 className="type-display text-3xl text-white font-extrabold">
-                FRONT-ROW SEATING RESERVED
+              <h3 className="type-display text-3xl font-extrabold text-white">
+                SEE YOU SOON, {name.toUpperCase()}!
               </h3>
-              <p className="text-stone-300 text-xs font-medium">
-                Ref Code: <span className="font-bold" style={{ color: "#DC2626" }}>{bookingRef}</span>
+              <p className="font-mono text-xs text-stone-300">
+                Booking Reference: <span className="font-bold" style={{ color: "#DC2626" }}>{bookingRef}</span>
               </p>
             </div>
 
-            <div className="p-4 rounded-xl bg-black/40 border border-white/10 space-y-2 text-left text-xs">
-              <div className="flex justify-between text-stone-300">
-                <span>Guest:</span>
-                <span className="text-white font-bold">{name || "VIP Guest"}</span>
+            <div className="p-4 rounded-xl bg-black/50 border border-white/10 text-left font-mono text-xs space-y-2 text-stone-300">
+              <div className="flex justify-between">
+                <span className="text-stone-400">Timing:</span>
+                <span className="text-white font-bold">{selectedTime}</span>
               </div>
-              <div className="flex justify-between text-stone-300">
-                <span>Time:</span>
-                <span className="font-bold" style={{ color: "#DC2626" }}>{selectedTime}</span>
-              </div>
-              <div className="flex justify-between text-stone-300">
-                <span>Party Size:</span>
+              <div className="flex justify-between">
+                <span className="text-stone-400">Guests:</span>
                 <span className="text-white font-bold">{guestCount} Guests</span>
               </div>
-              <div className="flex justify-between text-stone-300">
-                <span>Zone:</span>
-                <span className="text-white font-bold">
+              <div className="flex justify-between">
+                <span className="text-stone-400">Seating Zone:</span>
+                <span className="font-bold" style={{ color: "#DC2626" }}>
                   {seatingZones.find((z) => z.id === selectedZone)?.name}
                 </span>
               </div>
             </div>
 
             <button
-              type="button"
               onClick={() => setConfirmed(false)}
-              className="px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider bg-white/10 text-white hover:bg-white/20 transition-colors"
+              className="px-6 py-2.5 rounded-lg bg-white/10 hover:bg-white/20 text-white font-mono text-xs font-bold uppercase transition-colors"
             >
-              Modify Booking
+              Modify Reservation
             </button>
           </motion.div>
         ) : (
           <form
             onSubmit={handleBook}
-            className="p-8 sm:p-10 rounded-2xl bg-white/[0.04] backdrop-blur-xl border border-white/15 shadow-2xl space-y-8"
+            className="p-8 sm:p-10 rounded-2xl bg-white/[0.04] backdrop-blur-md border border-white/15 shadow-2xl space-y-8"
           >
-            {/* 1. Time Slot Selector */}
             <div className="space-y-3">
-              <label className="text-xs uppercase tracking-wider text-stone-300 font-bold block">
+              <label className="font-mono text-xs uppercase tracking-wider text-stone-300 font-bold block">
                 1. Select Time Slot
               </label>
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
@@ -117,46 +123,50 @@ export default function ReservationCTA() {
                       key={slot.time}
                       type="button"
                       onClick={() => setSelectedTime(slot.time)}
-                      className={`p-3 rounded-xl border text-left transition-all ${
+                      className={`p-3 rounded-xl border text-center transition-all ${
                         isSelected
-                          ? "shadow-lg scale-105"
-                          : "bg-white/5 border-white/10 hover:border-white/20 text-stone-300"
+                          ? "font-black shadow-md"
+                          : "bg-white/5 border-white/10 text-stone-300 hover:border-white/20"
                       }`}
                       style={{
                         backgroundColor: isSelected ? "#DC2626" : undefined,
-                        color: isSelected ? "#000000" : undefined,
+                        color: isSelected ? "#FFFFFF" : undefined,
                         borderColor: isSelected ? "#DC2626" : undefined,
                       }}
                     >
-                      <div className="text-xs font-bold">{slot.time}</div>
-                      <div className="text-[10px] opacity-75">{slot.status}</div>
+                      <span className="font-mono text-xs block">{slot.time}</span>
+                      <span className={`text-[9px] font-mono block ${isSelected ? "opacity-90" : "text-stone-400"}`}>
+                        {slot.status}
+                      </span>
                     </button>
                   );
                 })}
               </div>
             </div>
 
-            {/* 2. Party Size & Seating Zone */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div className="space-y-3">
-                <label className="text-xs uppercase tracking-wider text-stone-300 font-bold block">
+                <label className="font-mono text-xs uppercase tracking-wider text-stone-300 font-bold block">
                   2. Party Size
                 </label>
-                <div className="flex items-center justify-between p-2 rounded-xl bg-white/5 border border-white/10">
+                <div className="flex items-center gap-4 bg-white/5 p-3 rounded-xl border border-white/10 justify-between">
                   <button
                     type="button"
-                    onClick={() => setGuestCount(Math.max(1, guestCount - 1))}
-                    className="w-10 h-10 rounded-lg bg-white/10 text-white font-bold hover:bg-white/20 flex items-center justify-center transition-colors text-lg"
+                    onClick={() => setGuestCount((g) => Math.max(1, g - 1))}
+                    className="w-10 h-10 rounded-lg bg-white/10 hover:bg-white/20 text-white font-mono text-lg font-bold flex items-center justify-center transition-colors"
                   >
                     -
                   </button>
-                  <span className="text-sm font-black text-white">
-                    {guestCount} {guestCount === 1 ? "Guest" : "Guests"}
-                  </span>
+                  <div className="text-center font-mono">
+                    <span className="text-2xl font-bold" style={{ color: "#DC2626" }}>{guestCount}</span>
+                    <span className="text-xs text-stone-400 block">
+                      {guestCount === 1 ? "Solo Diner" : `${guestCount} Guests`}
+                    </span>
+                  </div>
                   <button
                     type="button"
-                    onClick={() => setGuestCount(Math.min(12, guestCount + 1))}
-                    className="w-10 h-10 rounded-lg bg-white/10 text-white font-bold hover:bg-white/20 flex items-center justify-center transition-colors text-lg"
+                    onClick={() => setGuestCount((g) => Math.min(12, g + 1))}
+                    className="w-10 h-10 rounded-lg bg-white/10 hover:bg-white/20 text-white font-mono text-lg font-bold flex items-center justify-center transition-colors"
                   >
                     +
                   </button>
@@ -164,16 +174,16 @@ export default function ReservationCTA() {
               </div>
 
               <div className="space-y-3">
-                <label className="text-xs uppercase tracking-wider text-stone-300 font-bold block">
+                <label className="font-mono text-xs uppercase tracking-wider text-stone-300 font-bold block">
                   3. Preferred Seating Zone
                 </label>
                 <select
                   value={selectedZone}
                   onChange={(e) => setSelectedZone(e.target.value)}
-                  className="w-full h-14 px-4 rounded-xl bg-white/5 border border-white/10 text-xs text-white focus:outline-none transition-colors"
+                  className="w-full p-3.5 rounded-xl bg-white/5 border border-white/10 text-xs font-mono text-white focus:outline-none transition-colors"
                 >
                   {seatingZones.map((z) => (
-                    <option key={z.id} value={z.id} className="bg-stone-900 text-white">
+                    <option key={z.id} value={z.id} className="bg-[#0e0e12] text-white">
                       {z.name} — {z.note}
                     </option>
                   ))}
@@ -181,15 +191,14 @@ export default function ReservationCTA() {
               </div>
             </div>
 
-            {/* 3. Guest Details */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
               <input
                 type="text"
                 required
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 placeholder="Your Full Name"
-                className="w-full px-4 py-3.5 rounded-xl bg-white/5 border border-white/10 text-xs text-white placeholder-stone-400 focus:outline-none transition-colors"
+                className="w-full p-3.5 rounded-xl bg-white/5 border border-white/10 text-xs font-mono text-white placeholder-stone-400 focus:outline-none transition-colors"
               />
               <input
                 type="tel"
@@ -197,14 +206,17 @@ export default function ReservationCTA() {
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
                 placeholder="Phone Number"
-                className="w-full px-4 py-3.5 rounded-xl bg-white/5 border border-white/10 text-xs text-white placeholder-stone-400 focus:outline-none transition-colors"
+                className="w-full p-3.5 rounded-xl bg-white/5 border border-white/10 text-xs font-mono text-white placeholder-stone-400 focus:outline-none transition-colors"
               />
             </div>
 
-            {/* Submit Action */}
             <button
               type="submit"
-              className="w-full py-4 rounded-xl text-xs font-bold uppercase tracking-widest bg-[#DC2626] text-black hover:brightness-110 active:scale-95 transition-all shadow-2xl flex items-center justify-center gap-2"
+              className="w-full py-4 font-mono text-xs font-black uppercase tracking-widest rounded-xl hover:opacity-90 active:scale-98 transition-all shadow-2xl flex items-center justify-center gap-2"
+              style={{
+                backgroundColor: "#DC2626",
+                color: "#FFFFFF",
+              }}
             >
               <span>Confirm Table Reservation</span>
               <span>→</span>

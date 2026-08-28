@@ -3,7 +3,6 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import ShinyText from "@/components/ui/ShinyText";
 
 interface PillarSpec {
   id: string;
@@ -25,14 +24,14 @@ export default function BrandManifesto() {
     {
       id: "pillar-1",
       number: "01",
-      title: "72-HR FERMENTED DOUGH",
-      badge: "900°F WOOD FIRE",
+      title: "HEAVY STEEL SMASH",
+      badge: "450°F CAST IRON",
       stats: [
-        { label: "Deck Temp", value: "900°F", progress: 95 },
-        { label: "Fermentation", value: "72 Hours", progress: 98 },
-        { label: "Hydration", value: "78% Double Zero", progress: 90 },
+        { label: "Sear Heat", value: "450°F", progress: 95 },
+        { label: "Maillard Crust Index", value: "98.6%", progress: 98 },
+        { label: "Lace Thickness", value: "1.2 mm", progress: 90 },
       ],
-      image: "https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=1200&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=1200&auto=format&fit=crop",
       hotspots: [
         { x: 35, y: 48, label: "Lacy Caramelized Crust" },
         { x: 62, y: 38, label: "Dual Prime Coarse Grind" },
@@ -42,14 +41,14 @@ export default function BrandManifesto() {
     {
       id: "pillar-2",
       number: "02",
-      title: "SAN MARZANO D.O.P.",
-      badge: "RAW CRUSH",
+      title: "SQUISHY POTATO ROLLS",
+      badge: "CULTURED BUTTER",
       stats: [
-        { label: "Origin", value: "Campania D.O.P.", progress: 85 },
-        { label: "Sweetness", value: "Natural 14.2°", progress: 99 },
-        { label: "Purity", value: "100% Uncooked", progress: 92 },
+        { label: "Toasting Temp", value: "380°F", progress: 85 },
+        { label: "Pillow Softness", value: "99.4%", progress: 99 },
+        { label: "Lamination", value: "Sweet Cream Butter", progress: 92 },
       ],
-      image: "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?q=80&w=1200&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1550547660-d9450f859349?q=80&w=1200&auto=format&fit=crop",
       hotspots: [
         { x: 50, y: 25, label: "Golden Butter Toast" },
         { x: 50, y: 80, label: "Cloud Soft Crumb" }
@@ -58,17 +57,17 @@ export default function BrandManifesto() {
     {
       id: "pillar-3",
       number: "03",
-      title: "FIOR DI LATTE",
-      badge: "ARTISANAL",
+      title: "CRAFT MALTS & SIDES",
+      badge: "HAND-SPUN",
       stats: [
-        { label: "Viscosity", value: "Liquid Cream", progress: 90 },
-        { label: "Melt Index", value: "Zero Soggy Base", progress: 96 },
-        { label: "Char Score", value: "99.1%", progress: 88 },
+        { label: "Spin Viscosity", value: "100% Velvet", progress: 96 },
+        { label: "Reduction Density", value: "Double Puree", progress: 94 },
+        { label: "Gelato Base", value: "Madagascar Vanilla", progress: 90 },
       ],
-      image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=1200&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1551782450-a2132b4ba21d?q=80&w=1200&auto=format&fit=crop",
       hotspots: [
-        { x: 42, y: 35, label: "Artisanal Emulsion" },
-        { x: 55, y: 65, label: "Rich Dairy Base" }
+        { x: 50, y: 20, label: "Caramelized Cookie Dust" },
+        { x: 50, y: 55, label: "Double Cream Reduction" }
       ]
     }
   ];
@@ -76,24 +75,27 @@ export default function BrandManifesto() {
   const current = pillars[activePillar];
 
   return (
-    <section className="py-24 px-6 sm:px-12 md:px-20 bg-transparent text-[#FAF8F2] border-b border-white/10 relative z-10 select-none overflow-hidden">
+    <section
+      id="manifesto-section"
+      className="py-24 px-6 sm:px-12 md:px-20 bg-transparent text-[#FAF8F2] relative z-10 border-b border-white/10 select-none font-sans"
+    >
       <div className="max-w-7xl mx-auto space-y-12">
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-4 border-b border-white/10">
           <div>
-            <h2 className="type-display text-4xl sm:text-6xl md:text-7xl text-white font-black leading-tight tracking-tight">
-              <ShinyText text="WOOD-FIRED PIZZA CRAFT." speed={3} shimmerColor="#B91C1C" className="font-black" />
+            <h2 className="type-display text-4xl sm:text-6xl md:text-7xl text-white [html.light_&]:text-stone-950 font-black leading-tight tracking-tight">
+              THE 450°F STEEL SMASH STANDARD.
             </h2>
           </div>
 
-          <div className="flex items-center gap-2 p-1.5 rounded-full bg-white/5 border border-white/15 backdrop-blur-xl self-start md:self-end shadow-xl">
+          <div className="flex items-center gap-2 p-1.5 rounded-full bg-white/5 [html.light_&]:bg-black/5 border border-white/15 [html.light_&]:border-black/10 backdrop-blur-xl self-start md:self-end shadow-xl">
             <button
               type="button"
               onClick={() => setViewMode("spec")}
               className="px-5 py-2 rounded-full font-sans text-xs font-bold uppercase tracking-wider transition-all shadow-md"
               style={{
                 backgroundColor: viewMode === "spec" ? "#B91C1C" : "transparent",
-                color: viewMode === "spec" ? "#FFFFFF" : "#FAF8F2",
+                color: viewMode === "spec" ? "#000000" : undefined,
               }}
             >
               Specimen
@@ -104,7 +106,7 @@ export default function BrandManifesto() {
               className="px-5 py-2 rounded-full font-sans text-xs font-bold uppercase tracking-wider transition-all shadow-md"
               style={{
                 backgroundColor: viewMode === "compare" ? "#B91C1C" : "transparent",
-                color: viewMode === "compare" ? "#FFFFFF" : "#FAF8F2",
+                color: viewMode === "compare" ? "#000000" : undefined,
               }}
             >
               Duel
@@ -126,15 +128,18 @@ export default function BrandManifesto() {
                       setActiveHotspot(0);
                     }}
                     whileHover={{ y: -2 }}
-                    className="p-5 rounded-2xl cursor-pointer transition-all backdrop-blur-xl border flex items-center justify-between shadow-xl"
-                    style={{
-                      backgroundColor: isSelected ? "rgba(255,255,255,0.08)" : "rgba(255,255,255,0.03)",
-                      borderColor: isSelected ? "#B91C1C" : "rgba(255,255,255,0.1)",
-                    }}
+                    className={`p-5 rounded-2xl cursor-pointer transition-all backdrop-blur-xl border flex items-center justify-between shadow-xl ${
+                      isSelected
+                        ? "border-[#B91C1C] bg-white/[0.08] [html.light_&]:bg-white [html.light_&]:border-[#B91C1C]"
+                        : "border-white/10 [html.light_&]:border-black/10 bg-white/[0.03] [html.light_&]:bg-white/60"
+                    }`}
                   >
                     <span
-                      className="font-sans text-xs font-extrabold tracking-wider"
-                      style={{ color: isSelected ? "#B91C1C" : "#FAF8F2" }}
+                      className={`font-sans text-xs font-extrabold tracking-wider ${
+                        isSelected
+                          ? "text-[#B91C1C] [html.light_&]:text-stone-950"
+                          : "text-[#FAF8F2] [html.light_&]:text-stone-700"
+                      }`}
                     >
                       {p.number}. {p.title}
                     </span>
@@ -142,7 +147,7 @@ export default function BrandManifesto() {
                       className="text-[10px] font-sans px-2.5 py-0.5 rounded-full border font-semibold"
                       style={{
                         backgroundColor: isSelected ? "#B91C1C20" : "rgba(255,255,255,0.05)",
-                        color: isSelected ? "#B91C1C" : "#A8A29E",
+                        color: isSelected ? "#B91C1C" : undefined,
                         borderColor: isSelected ? "#B91C1C40" : "rgba(255,255,255,0.1)",
                       }}
                     >
@@ -161,10 +166,10 @@ export default function BrandManifesto() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
                 transition={{ duration: 0.25 }}
-                className="grid grid-cols-1 lg:grid-cols-12 gap-8 p-6 sm:p-8 rounded-3xl bg-white/[0.03] backdrop-blur-2xl border border-white/15 shadow-2xl items-center"
+                className="grid grid-cols-1 lg:grid-cols-12 gap-8 p-6 sm:p-8 rounded-3xl bg-white/[0.03] [html.light_&]:bg-white/80 backdrop-blur-2xl border border-white/15 [html.light_&]:border-black/10 shadow-2xl items-center"
               >
                 {/* Left: Image with Hotspots */}
-                <div className="lg:col-span-7 relative min-h-[340px] sm:min-h-[380px] rounded-2xl overflow-hidden border border-white/15 bg-black/60 group shadow-2xl">
+                <div className="lg:col-span-7 relative min-h-[340px] sm:min-h-[380px] rounded-2xl overflow-hidden border border-white/15 bg-black/60 group shadow-2xl dark-frame">
                   <Image
                     src={current.image}
                     alt={current.title}
@@ -202,7 +207,7 @@ export default function BrandManifesto() {
 
                 {/* Right: Metrics & Sear Test */}
                 <div className="lg:col-span-5 space-y-6">
-                  <h3 className="type-display text-3xl text-white font-extrabold">
+                  <h3 className="type-display text-3xl text-white [html.light_&]:text-stone-950 font-extrabold">
                     {current.title}
                   </h3>
 
@@ -210,10 +215,10 @@ export default function BrandManifesto() {
                     {current.stats.map((st, sIdx) => (
                       <div key={sIdx} className="space-y-1">
                         <div className="flex justify-between text-xs font-semibold">
-                          <span className="text-stone-400">{st.label}</span>
-                          <span className="font-bold" style={{ color: "#B91C1C" }}>{st.value}</span>
+                          <span className="text-stone-400 [html.light_&]:text-stone-600">{st.label}</span>
+                          <span className="font-bold [html.light_&]:text-stone-950" style={{ color: "#B91C1C" }}>{st.value}</span>
                         </div>
-                        <div className="w-full h-1.5 rounded-full bg-white/10 overflow-hidden">
+                        <div className="w-full h-1.5 rounded-full bg-white/10 [html.light_&]:bg-black/10 overflow-hidden">
                           <div
                             className="h-full rounded-full transition-all duration-500"
                             style={{ width: `${st.progress}%`, backgroundColor: "#B91C1C" }}
@@ -229,10 +234,10 @@ export default function BrandManifesto() {
                       setIsSizzling(true);
                       setTimeout(() => setIsSizzling(false), 1500);
                     }}
-                    className="w-full py-4 rounded-xl font-sans text-xs font-bold uppercase tracking-wider transition-all shadow-xl active:scale-95 hover:brightness-110 hover:scale-[1.02]"
-                    style={{ backgroundColor: "#B91C1C", color: "#FFFFFF" }}
+                    className="w-full py-4 rounded-xl font-sans text-xs font-bold uppercase tracking-wider transition-all shadow-xl active:scale-95 hover:brightness-110 hover:scale-[1.02] text-black"
+                    style={{ backgroundColor: "#B91C1C" }}
                   >
-                    {isSizzling ? "FIRING 900°F..." : "TEST 900°F FIRE"}
+                    {isSizzling ? "SEARING 450°F..." : "TEST FLAT-TOP SEAR"}
                   </button>
                 </div>
               </motion.div>
@@ -242,30 +247,29 @@ export default function BrandManifesto() {
 
         {/* Duel View */}
         {viewMode === "compare" && (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 font-sans">
-            <div className="p-8 rounded-3xl bg-red-500/[0.04] border border-red-500/20 backdrop-blur-2xl space-y-4 shadow-xl">
-              <span className="font-sans text-xs font-bold text-red-400 uppercase tracking-wider block">
-                MASS PRODUCTION
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="p-8 rounded-3xl bg-white/[0.04] [html.light_&]:bg-white/80 border border-white/15 [html.light_&]:border-black/10 backdrop-blur-xl shadow-2xl space-y-4">
+              <span className="text-xs uppercase font-extrabold [html.light_&]:text-stone-950 block" style={{ color: "#B91C1C" }}>
+                OUR CAST-IRON SMASH
               </span>
-              <ul className="space-y-2.5 text-xs text-stone-300 font-medium">
-                • Dense, under-proofed heavy dough
-                • Canned sugary tomato paste
-                • Artificial rubbery cheese
-              </ul>
+              <h3 className="type-display text-2xl text-white [html.light_&]:text-stone-950 font-bold">
+                450°F STEEL HIGH-HEAT PRESS
+              </h3>
+              <p className="text-xs text-stone-300 [html.light_&]:text-stone-700 leading-relaxed font-body">
+                Smashed ultra-thin on screaming hot steel for complete Maillard caramelization and crunchy lace edges.
+              </p>
             </div>
 
-            <div
-              className="p-8 rounded-3xl bg-white/[0.04] border backdrop-blur-2xl space-y-4 shadow-xl"
-              style={{ borderColor: "#B91C1C40" }}
-            >
-              <span className="font-sans text-xs font-bold uppercase tracking-wider block" style={{ color: "#B91C1C" }}>
-                OUR CRAFT SPEC
+            <div className="p-8 rounded-3xl bg-white/[0.02] [html.light_&]:bg-stone-100 border border-white/5 [html.light_&]:border-black/5 opacity-75 space-y-4">
+              <span className="text-xs uppercase font-extrabold text-stone-500 block">
+                STANDARD THICK BURGER
               </span>
-              <ul className="space-y-2.5 text-xs text-stone-200 font-medium">
-                • 72-hour naturally leavened dough
-                • 100% raw San Marzano D.O.P. tomatoes
-                • Artisan Fior di Latte on 900°F deck
-              </ul>
+              <h3 className="type-display text-2xl text-stone-400 [html.light_&]:text-stone-700 font-bold">
+                MILD-HEAT STEAM COOK
+              </h3>
+              <p className="text-xs text-stone-400 [html.light_&]:text-stone-600 leading-relaxed font-body">
+                Thick dense patty with minimal surface caramelization and soft steamed exterior.
+              </p>
             </div>
           </div>
         )}
