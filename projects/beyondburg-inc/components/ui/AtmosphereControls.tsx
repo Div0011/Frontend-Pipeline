@@ -215,11 +215,23 @@ export default function AtmosphereControls({
     if (nextDark) {
       root.classList.add("dark");
       root.classList.remove("light");
+      // Set CSS variables on html so color:var(--fg) cascades everywhere
+      root.style.setProperty("--bg",       "#070709");
+      root.style.setProperty("--fg",       "#FAF8F2");
+      root.style.setProperty("--fg-muted", "rgba(250,248,242,0.55)");
+      root.style.setProperty("--fg-sub",   "rgba(250,248,242,0.35)");
+      root.style.setProperty("--border",   "rgba(255,255,255,0.10)");
       body.style.backgroundColor = darkBg;
       body.style.color = "#FAF8F2";
     } else {
       root.classList.remove("dark");
       root.classList.add("light");
+      // Set CSS variables on html so color:var(--fg) cascades everywhere
+      root.style.setProperty("--bg",       "#F6F4EE");
+      root.style.setProperty("--fg",       "#18181B");
+      root.style.setProperty("--fg-muted", "rgba(24,24,27,0.65)");
+      root.style.setProperty("--fg-sub",   "rgba(24,24,27,0.40)");
+      root.style.setProperty("--border",   "rgba(0,0,0,0.10)");
       body.style.backgroundColor = lightBg;
       body.style.color = "#18181B";
     }

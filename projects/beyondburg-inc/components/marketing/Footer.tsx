@@ -1,9 +1,12 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import Link from "next/link";
+import PixelText from "@/components/ui/PixelText";
 
 export default function Footer() {
+  const footerRef = useRef<HTMLElement>(null);
+
   const scrollToTop = () => {
     if (typeof window !== "undefined") {
       window.scrollTo({ top: 0, behavior: "smooth" });
@@ -12,6 +15,7 @@ export default function Footer() {
 
   return (
     <footer
+      ref={footerRef}
       style={{ backgroundColor: "#F5C418", color: "#000000" }}
       className="h-[100svh] min-h-[100svh] w-full flex flex-col justify-between p-8 sm:p-12 md:p-16 lg:p-20 relative z-10 select-none overflow-hidden"
     >
@@ -46,11 +50,24 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Center: Grand Monumental Brand Typography */}
-      <div className="my-auto py-8">
-        <h2 className="type-display text-[13vw] leading-none font-black uppercase tracking-tight select-none">
-          BEYONDBURG INC.
-        </h2>
+      {/* Center: Interactive Pixel-Dot Brand Name */}
+      <div className="my-auto py-8 flex items-center overflow-x-auto">
+        {/*
+          PixelText renders the brand name as a field of dots.
+          Each dot is repelled by the cursor and springs back to form the word.
+          On mobile it responds to touch.
+        */}
+        <div className="scale-[clamp(0.4,4vw,1)] sm:scale-[clamp(0.5,5vw,1)] md:scale-100 origin-left transition-transform duration-200">
+          <PixelText
+            text="BEYONDBURG INC."
+            dotSize={7}
+            gap={4}
+            color="#000000"
+            explodeRadius={90}
+            explodeForce={22}
+            returnStiffness={0.10}
+          />
+        </div>
       </div>
 
       {/* Bottom Bar: Contact Info & Back to Top */}
@@ -70,12 +87,12 @@ export default function Footer() {
         {/* Copyright & Scroll to Top */}
         <div className="flex items-center justify-between sm:justify-end gap-8">
           <p className="font-medium" style={{ color: "rgba(0,0,0,0.5)" }}>
-            © {new Date().getFullYear()} Beyondburg Inc..
+            © {new Date().getFullYear()} Beyondburg Inc.
           </p>
           <button
             type="button"
             onClick={scrollToTop}
-            className="px-5 py-2.5 rounded-full border border-black/30 hover:bg-black hover:text-white transition-all uppercase tracking-wider font-extrabold flex items-center gap-2 active:scale-95 shadow-lg"
+            className="px-5 py-2.5 rounded-full border border-black/30 hover:bg-black hover:text-[#F5C418] transition-all uppercase tracking-wider font-extrabold flex items-center gap-2 active:scale-95 shadow-lg"
           >
             <span>Top</span>
             <span>↑</span>

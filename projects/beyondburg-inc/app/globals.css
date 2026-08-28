@@ -20,14 +20,32 @@
   --font-mono: 'JetBrains Mono', monospace;
 }
 
+/* ─────────────────────────────────────────────────────────────────
+   CSS Variables — controlled by AtmosphereControls.tsx
+   These drive color for all standard text outside of image frames.
+───────────────────────────────────────────────────────────────── */
 :root {
-  --background: #070709;
-  --foreground: #FAF8F2;
+  --bg:        #070709;
+  --fg:        #FAF8F2;
+  --fg-muted:  rgba(250, 248, 242, 0.55);
+  --fg-sub:    rgba(250, 248, 242, 0.35);
+  --border:    rgba(255, 255, 255, 0.10);
 }
 
+html.light {
+  --bg:        #F6F4EE;
+  --fg:        #18181B;
+  --fg-muted:  rgba(24, 24, 27, 0.65);
+  --fg-sub:    rgba(24, 24, 27, 0.40);
+  --border:    rgba(0, 0, 0, 0.10);
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   Base styles
+───────────────────────────────────────────────────────────────── */
 body {
-  background-color: var(--background);
-  color: var(--foreground);
+  background-color: var(--bg);
+  color: var(--fg);
   font-family: var(--font-body), sans-serif;
   overflow-x: hidden;
   transition: background-color 0.4s ease, color 0.4s ease;
@@ -40,25 +58,100 @@ body {
   line-height: 0.9;
 }
 
-/* Light / Day Theme Clean Body */
-html.light body {
-  background-color: #FAF7F2 !important;
+/* ─────────────────────────────────────────────────────────────────
+   Theme-aware text overrides for elements that sit on the page 
+   background (not on images/dark frames/canvas overlays).
+   
+   Rule: override Tailwind's text-white / text-stone-* on standard
+   layout elements. We DO NOT touch:
+     - [data-media-text]  → text on images/canvas scrubbers
+     - [data-dark-frame]  → text on dark-panel cards
+     - .cinematic-overlay → text on video/film overlays
+   ────────────────────────────────────────────────────────────── */
+
+/* Section headings & body outside protected zones */
+html.light section:not([data-media-text]):not([data-dark-frame]) h1,
+html.light section:not([data-media-text]):not([data-dark-frame]) h2,
+html.light section:not([data-media-text]):not([data-dark-frame]) h3,
+html.light section:not([data-media-text]):not([data-dark-frame]) h4,
+html.light section:not([data-media-text]):not([data-dark-frame]) p:not([data-media-text]),
+html.light section:not([data-media-text]):not([data-dark-frame]) span:not([data-media-text]):not(.media-label) {
+  color: var(--fg);
+}
+
+/* Nav text */
+html.light header nav a {
+  color: var(--fg-muted) !important;
+}
+html.light header nav a:hover {
+  color: var(--fg) !important;
+}
+
+/* Stone-400 / stone-300 muted text in sections */
+html.light section:not([data-dark-frame]) .text-stone-300,
+html.light section:not([data-dark-frame]) .text-stone-400,
+html.light section:not([data-dark-frame]) .text-stone-500 {
+  color: var(--fg-muted) !important;
+}
+
+/* Border colors */
+html.light section .border-white\/10,
+html.light header .border-white\/10 {
+  border-color: var(--border) !important;
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   PROTECTED zones — text inside these areas NEVER changes colour
+   These are dark image frames, canvas overlays, and video panels
+───────────────────────────────────────────────────────────────── */
+[data-media-text],
+[data-dark-frame],
+.cinematic-overlay,
+.canvas-text-overlay {
+  color: #FAF8F2 !important;
+}
+
+.canvas-hero-text,
+.canvas-hero-text * {
+  color: #FAF8F2 !important;
+}
+
+html.light .photo-card-overlay,
+html.light .photo-card-overlay * {
+  color: #FAF8F2 !important;
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   BROAD LIGHT THEME TEXT OVERRIDE
+   Since Tailwind utilities like text-white have specificity, we use 
+   a high-specificity rule on html.light body to cascade the --fg var.
+   Protected zones override this with !important above.
+───────────────────────────────────────────────────────────────── */
+html.light body section h1:not([data-media-text]):not([data-dark-frame]),
+html.light body section h2:not([data-media-text]):not([data-dark-frame]),
+html.light body section h3:not([data-media-text]):not([data-dark-frame]),
+html.light body section h4:not([data-media-text]):not([data-dark-frame]) {
+  color: var(--fg) !important;
+}
+
+/* Muted text in non-protected sections */
+html.light body section p:not([data-media-text]):not([data-dark-frame]),
+html.light body section li:not([data-media-text]):not([data-dark-frame]) {
+  color: var(--fg-muted) !important;
+}
+
+/* Navigation */
+html.light body header {
+  background-color: rgba(246,244,238,0.92) !important;
+  border-bottom-color: rgba(0,0,0,0.10) !important;
+}
+
+html.light body header a,
+html.light body header nav a {
+  color: rgba(24,24,27,0.70) !important;
+}
+html.light body header a:hover,
+html.light body header nav a:hover {
   color: #18181B !important;
 }
 
-/* Standard Section Headers in Light Mode (outside image frames) */
-html.light .section-heading {
-  color: #18181B !important;
-}
-
-html.light .section-subtext {
-  color: #52525B !important;
-}
-
-/* Glass Card styling in light mode */
-html.light .glass-card {
-  background-color: rgba(255, 255, 255, 0.85) !important;
-  border-color: rgba(0, 0, 0, 0.08) !important;
-  color: #18181B !important;
-  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.06) !important;
-}
