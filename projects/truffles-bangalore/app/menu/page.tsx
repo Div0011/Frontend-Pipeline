@@ -13,19 +13,19 @@ interface MenuItem {
 
 interface MenuSection {
   category: string;
-  badge: string;
+  badge?: string;
   items: MenuItem[];
 }
 
 const MENU_DATA: MenuSection[] = [
   {
     "category": "Burgers & Smashes",
-    "badge": "\ud83c\udf54 GOURMET SMASH",
+    "badge": "01",
     "items": [
       {
         "name": "All American Cheese Burger",
         "price": "290",
-        "desc": "Classic grilled beef patty, double melted American cheese, gherkins, and house mustard mayo",
+        "desc": "Classic grilled beef patty, double melted American cheese, gherkins, and house mustard mayo.",
         "tags": [
           "Legendary \u2b50",
           "Best Seller"
@@ -34,7 +34,7 @@ const MENU_DATA: MenuSection[] = [
       {
         "name": "Lamb Chilli Cheese Smash",
         "price": "380",
-        "desc": "Double smashed spiced lamb, chilli sofrito, melted cheddar, and jalape\u00f1o relish",
+        "desc": "Double smashed spiced lamb, chilli sofrito, melted cheddar, and jalape\u00f1o relish.",
         "tags": [
           "Spicy \ud83c\udf36\ufe0f",
           "Signature"
@@ -43,7 +43,7 @@ const MENU_DATA: MenuSection[] = [
       {
         "name": "Truffles Sloppy Joe",
         "price": "340",
-        "desc": "Rich minced meat simmered in signature savory sweet barbecue sauce with molten cheese",
+        "desc": "Rich minced meat simmered in signature savory sweet barbecue sauce with molten cheese.",
         "tags": [
           "Crowd Favorite"
         ]
@@ -51,15 +51,15 @@ const MENU_DATA: MenuSection[] = [
       {
         "name": "Crispy Buffalo Chicken",
         "price": "320",
-        "desc": "Fried buttermilk chicken tossed in spicy buffalo glaze, garlic aioli, and crispy slaw",
+        "desc": "Fried buttermilk chicken tossed in spicy buffalo glaze, garlic aioli, and purple cabbage slaw.",
         "tags": [
-          "Crispy Favorite"
+          "Crispy"
         ]
       },
       {
         "name": "Magic Mushroom & Swiss",
         "price": "310",
-        "desc": "Multigrain-crusted portobello patty, saut\u00e9ed garlic mushrooms, Swiss cheese, and truffle mayo",
+        "desc": "Multigrain-crusted portobello patty, saut\u00e9ed garlic mushrooms, Swiss cheese, and truffle mayo.",
         "tags": [
           "Veg Star \u2b50"
         ]
@@ -67,7 +67,7 @@ const MENU_DATA: MenuSection[] = [
       {
         "name": "Korean Gochujang Paneer",
         "price": "310",
-        "desc": "Crispy paneer steak dunked in sweet & spicy gochujang glaze with kimchi slaw",
+        "desc": "Crispy paneer steak dunked in sweet & spicy gochujang glaze with kimchi slaw.",
         "tags": [
           "Chef Pick"
         ]
@@ -76,12 +76,12 @@ const MENU_DATA: MenuSection[] = [
   },
   {
     "category": "Loaded Sides & Grills",
-    "badge": "\ud83c\udf5f SIDES & CRISP",
+    "badge": "02",
     "items": [
       {
         "name": "Truffle Parmesan Fries",
         "price": "240",
-        "desc": "Hand-cut crispy Idaho fries tossed in aromatic truffle oil, fresh parsley, and grated parmesan",
+        "desc": "Hand-cut crispy Idaho fries tossed in aromatic truffle oil, fresh parsley, and 24-month aged parmesan.",
         "tags": [
           "House Specialty \u2b50"
         ]
@@ -89,7 +89,7 @@ const MENU_DATA: MenuSection[] = [
       {
         "name": "Peri Peri Chicken Steak",
         "price": "390",
-        "desc": "Char-grilled chicken breast glazed in spicy peri peri sauce with mashed potato and herb butter",
+        "desc": "Char-grilled chicken breast glazed in spicy peri peri sauce with herb butter mashed potatoes.",
         "tags": [
           "House Special"
         ]
@@ -97,7 +97,7 @@ const MENU_DATA: MenuSection[] = [
       {
         "name": "BBQ Glazed Chicken Wings",
         "price": "290",
-        "desc": "6 jumbo wings slow-smoked and glazed in smoky hickory BBQ sauce with ranch dip",
+        "desc": "6 jumbo wings slow-smoked and glazed in smoky hickory BBQ sauce with buttermilk ranch.",
         "tags": [
           "Smoky \ud83c\udf56"
         ]
@@ -105,7 +105,7 @@ const MENU_DATA: MenuSection[] = [
       {
         "name": "Jalape\u00f1o Cheese Poppers",
         "price": "230",
-        "desc": "Crispy golden crumbed poppers filled with molten cheddar and spicy jalape\u00f1os",
+        "desc": "Crispy golden crumbed poppers filled with molten cheddar and spicy jalape\u00f1os.",
         "tags": [
           "Vegetarian"
         ]
@@ -113,13 +113,13 @@ const MENU_DATA: MenuSection[] = [
     ]
   },
   {
-    "category": "Desserts & Shakes",
-    "badge": "\ud83e\udd64 SWEET & FOUNTAIN",
+    "category": "Desserts & Thick Shakes",
+    "badge": "03",
     "items": [
       {
         "name": "Deep Fried Oreos",
         "price": "260",
-        "desc": "Golden battered Oreos dusted in powdered sugar, served warm with vanilla custard and chocolate dip",
+        "desc": "Golden battered Oreos dusted in powdered sugar, served warm with vanilla custard and chocolate dip.",
         "tags": [
           "Cult Favorite \u2b50"
         ]
@@ -127,7 +127,7 @@ const MENU_DATA: MenuSection[] = [
       {
         "name": "Old Monk Chocolate Mousse",
         "price": "270",
-        "desc": "Velvety dark chocolate mousse infused with Old Monk dark rum and cocoa nibs",
+        "desc": "Velvety dark chocolate mousse infused with Old Monk dark rum and cocoa nibs.",
         "tags": [
           "Signature \ud83c\udf1f"
         ]
@@ -135,7 +135,7 @@ const MENU_DATA: MenuSection[] = [
       {
         "name": "Dutch Truffle Cake Slice",
         "price": "220",
-        "desc": "Layers of dense chocolate sponge with rich dark chocolate ganache",
+        "desc": "Layers of dense chocolate sponge with rich dark chocolate ganache glaze.",
         "tags": [
           "Classic"
         ]
@@ -143,7 +143,7 @@ const MENU_DATA: MenuSection[] = [
       {
         "name": "Ferrero Rocher Shake",
         "price": "260",
-        "desc": "Hand-dipped ice cream spun with crushed Ferrero chocolates and hazelnut fudge",
+        "desc": "Hand-dipped ice cream spun with crushed Ferrero chocolates and hazelnut fudge.",
         "tags": [
           "Thick Shake"
         ]
@@ -165,42 +165,35 @@ export default function MenuPage() {
   return (
     <>
       <Nav />
-      <main className="pt-24 min-h-screen relative z-10 select-none pb-20">
-        {/* Banner Section */}
-        <section className="py-16 lg:py-20 border-b border-black/10 dark:border-white/10">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8 space-y-4">
-            <span
-              className="text-xs uppercase tracking-widest font-black inline-block px-4 py-1.5 rounded-full shadow-md"
-              style={{
-                backgroundColor: "#FFE500",
-                color: "#000000",
-              }}
-            >
-              St. Marks Rd & Koramangala · Bengaluru
-            </span>
+      <main className="pt-24 min-h-screen relative z-10 select-none pb-24 font-sans">
+        
+        {/* ── Editorial Menu Header ── */}
+        <section className="py-16 sm:py-20 border-b border-black/10 dark:border-white/15">
+          <div className="mx-auto max-w-4xl px-6 lg:px-8 text-center space-y-4">
+            <div className="flex items-center justify-center gap-4 text-xs font-mono font-bold tracking-widest uppercase text-stone-500 dark:text-stone-400">
+              <span>EST. 1986</span>
+              <span>·</span>
+              <span style={{ color: "#FFE500" }}>St. Marks Rd · Koramangala · Bengaluru</span>
+            </div>
 
             <h1 className="type-display text-5xl sm:text-7xl md:text-8xl leading-none font-black tracking-tight text-black dark:text-white">
-              TRUFFLES <br />
-              <span
-                style={{
-                  color: "#FFE500",
-                  textShadow: "0 0 20px #FFE50040",
-                }}
-              >
-                CULINARY MENU
-              </span>
+              TRUFFLES
             </h1>
 
-            <p className="type-serif text-base sm:text-xl text-stone-800 dark:text-stone-200 max-w-2xl leading-relaxed font-medium">
+            <p className="text-xs uppercase font-mono tracking-[0.25em] text-stone-600 dark:text-stone-300">
+              DAILY CULINARY SELECTIONS & PROVISIONS
+            </p>
+
+            <p className="type-serif text-sm sm:text-base text-stone-700 dark:text-stone-300 max-w-xl mx-auto leading-relaxed pt-2">
               Handcrafted gourmet burgers, deep-fried Oreos, signature Old Monk mousse, artisan matchas, and cold brews.
             </p>
           </div>
         </section>
 
-        {/* Sticky Filter Bar */}
-        <section className="sticky top-18 lg:top-20 z-30 py-4 backdrop-blur-2xl bg-white/95 dark:bg-[#0A0A0A]/95 border-b border-black/10 dark:border-white/10 shadow-xl">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <div className="flex gap-2.5 overflow-x-auto pb-1 scrollbar-none">
+        {/* ── Category Filter Strip ── */}
+        <section className="sticky top-18 lg:top-20 z-30 py-3.5 backdrop-blur-2xl bg-white/95 dark:bg-[#0A0A0A]/95 border-b border-black/10 dark:border-white/15 shadow-sm">
+          <div className="mx-auto max-w-4xl px-6 lg:px-8">
+            <div className="flex items-center justify-center gap-2 overflow-x-auto pb-0.5 scrollbar-none">
               {categories.map((cat) => {
                 const isActive = selectedCategory === cat;
                 return (
@@ -210,13 +203,13 @@ export default function MenuPage() {
                       if ((window as any).playPopSound) (window as any).playPopSound();
                       setSelectedCategory(cat);
                     }}
-                    className={`px-5 py-2.5 rounded-full text-xs font-black uppercase tracking-wider transition-all duration-200 whitespace-nowrap shadow-sm ${
+                    className={`px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-200 whitespace-nowrap ${
                       isActive
-                        ? "shadow-xl scale-105 ring-2 ring-offset-2 ring-black dark:ring-white"
-                        : "bg-black/5 dark:bg-white/10 text-stone-800 dark:text-stone-100 hover:bg-black/10 dark:hover:bg-white/20 border border-black/10 dark:border-white/20"
+                        ? "shadow-sm"
+                        : "text-stone-600 dark:text-stone-400 hover:text-black dark:hover:text-white"
                     }`}
                     style={{
-                      backgroundColor: isActive ? "#FFE500" : undefined,
+                      backgroundColor: isActive ? "#FFE500" : "transparent",
                       color: isActive ? "#000000" : undefined,
                     }}
                   >
@@ -228,99 +221,110 @@ export default function MenuPage() {
           </div>
         </section>
 
-        {/* High-Contrast Menu Slabs */}
-        <section className="py-12 lg:py-16">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8 space-y-16">
-            {visibleSections.map((section) => (
-              <div key={section.category} className="space-y-6">
-                <div className="flex items-center gap-3 border-b border-black/10 dark:border-white/10 pb-4">
-                  <h2
-                    className="type-display text-3xl sm:text-4xl font-black text-black dark:text-white"
-                  >
-                    {section.category}
-                  </h2>
-                  <span
-                    className="text-xs font-mono font-extrabold uppercase px-3 py-1 rounded-full shadow"
-                    style={{
-                      backgroundColor: "#FFE500",
-                      color: "#000000",
-                    }}
-                  >
-                    {section.badge}
-                  </span>
-                </div>
+        {/* ── Classic Editorial Menu Card Sheet ── */}
+        <section className="py-14 sm:py-20">
+          <div className="mx-auto max-w-4xl px-6 lg:px-8">
+            
+            {/* The Physical Menu Sheet Frame */}
+            <div className="space-y-16">
+              {visibleSections.map((section, sIdx) => (
+                <div key={section.category} className="space-y-6">
+                  
+                  {/* Category Title with Fine Minimalist Rule */}
+                  <div className="flex items-baseline justify-between border-b-2 border-black dark:border-white/20 pb-2.5">
+                    <div className="flex items-baseline gap-3">
+                      <span className="font-mono text-xs font-black text-stone-400 dark:text-stone-500">
+                        {String(sIdx + 1).padStart(2, "0")}.
+                      </span>
+                      <h2 className="type-display text-2xl sm:text-3xl font-black text-black dark:text-white tracking-tight uppercase">
+                        {section.category}
+                      </h2>
+                    </div>
+                    <span className="text-[11px] font-mono uppercase tracking-widest text-stone-500 dark:text-stone-400 font-semibold">
+                      FRESH TO ORDER
+                    </span>
+                  </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-                  {section.items.map((item) => (
-                    <div
-                      key={item.name}
-                      className="p-6 sm:p-8 rounded-3xl bg-[#121212] border-2 border-white/15 hover:border-white/40 shadow-2xl hover:scale-[1.01] transition-all duration-200 flex flex-col justify-between space-y-5 group"
-                    >
-                      <div className="space-y-3">
-                        <div className="flex justify-between items-start gap-4">
-                          <h3
-                            className="type-display text-2xl sm:text-3xl font-black leading-tight group-hover:scale-[1.01] transition-transform"
-                            style={{
-                              color: "#FFE500",
-                              textShadow: "0 0 15px #FFE50050",
-                            }}
-                          >
-                            {item.name}
-                          </h3>
-                          <span
-                            className="font-mono font-black text-sm sm:text-base px-3.5 py-1.5 rounded-full flex-shrink-0 shadow-lg"
-                            style={{
-                              backgroundColor: "#FFE500",
-                              color: "#000000",
-                            }}
-                          >
-                            ₹{item.price}
-                          </span>
+                  {/* Minimalist Line Items (NO Tiles, Pure Typography) */}
+                  <div className="divide-y divide-black/10 dark:divide-white/10">
+                    {section.items.map((item) => (
+                      <div
+                        key={item.name}
+                        className="py-5 sm:py-6 group transition-colors px-3 -mx-3 rounded-xl hover:bg-black/[0.03] dark:hover:bg-white/[0.03]"
+                      >
+                        <div className="flex items-baseline justify-between gap-4">
+                          <div className="flex items-baseline gap-3 flex-wrap">
+                            <h3 className="font-sans font-bold text-lg sm:text-xl text-black dark:text-white group-hover:transition-colors" style={{ color: undefined }}>
+                              {item.name}
+                            </h3>
+                            {item.tags && item.tags.length > 0 && (
+                              <div className="flex items-center gap-1.5">
+                                {item.tags.map((tag) => (
+                                  <span
+                                    key={tag}
+                                    className="text-[10px] font-mono uppercase font-bold px-2 py-0.5 rounded border border-black/15 dark:border-white/20 text-stone-700 dark:text-stone-300 bg-black/5 dark:bg-white/5"
+                                  >
+                                    {tag}
+                                  </span>
+                                ))}
+                              </div>
+                            )}
+                          </div>
+
+                          {/* Leader Line + Price + Discreet Order Action */}
+                          <div className="flex items-center gap-3.5 flex-shrink-0">
+                            <span
+                              className="font-mono font-extrabold text-base sm:text-lg text-black dark:text-white"
+                              style={{ color: "#FFE500" }}
+                            >
+                              ₹{item.price}
+                            </span>
+                            <button
+                              type="button"
+                              onClick={() => {
+                                if ((window as any).playSizzleSound) (window as any).playSizzleSound();
+                                alert(`Added ${item.name} to your order!`);
+                              }}
+                              title="Add to order"
+                              className="w-7 h-7 rounded-full border border-black/20 dark:border-white/25 text-black dark:text-white flex items-center justify-center text-xs font-black transition-all hover:scale-110 active:scale-95 shadow-sm"
+                              style={{
+                                backgroundColor: undefined,
+                              }}
+                              onMouseEnter={(e) => {
+                                e.currentTarget.style.backgroundColor = "#FFE500";
+                                e.currentTarget.style.color = "#000000";
+                                e.currentTarget.style.borderColor = "#FFE500";
+                              }}
+                              onMouseLeave={(e) => {
+                                e.currentTarget.style.backgroundColor = "";
+                                e.currentTarget.style.color = "";
+                                e.currentTarget.style.borderColor = "";
+                              }}
+                            >
+                              +
+                            </button>
+                          </div>
                         </div>
 
                         {item.desc && (
-                          <p className="type-serif text-sm sm:text-base text-stone-200 leading-relaxed font-normal">
+                          <p className="type-serif text-sm sm:text-base text-stone-600 dark:text-stone-400 mt-1.5 max-w-2xl leading-relaxed">
                             {item.desc}
                           </p>
                         )}
                       </div>
+                    ))}
+                  </div>
 
-                      <div className="flex items-center justify-between gap-4 pt-4 border-t border-white/15">
-                        {item.tags && item.tags.length > 0 ? (
-                          <div className="flex flex-wrap gap-1.5">
-                            {item.tags.map((tag) => (
-                              <span
-                                key={tag}
-                                className="text-[11px] font-mono uppercase font-bold px-3 py-1 rounded-full bg-white/10 text-stone-100 border border-white/20 shadow-sm"
-                              >
-                                {tag}
-                              </span>
-                            ))}
-                          </div>
-                        ) : (
-                          <div />
-                        )}
-
-                        <button
-                          type="button"
-                          onClick={() => {
-                            if ((window as any).playSizzleSound) (window as any).playSizzleSound();
-                            alert(`Added ${item.name} to your order!`);
-                          }}
-                          className="px-4 py-2 rounded-full text-xs font-black uppercase tracking-wider transition-all shadow-lg hover:scale-105 active:scale-95 flex-shrink-0"
-                          style={{
-                            backgroundColor: "#FFE500",
-                            color: "#000000",
-                          }}
-                        >
-                          Order +
-                        </button>
-                      </div>
-                    </div>
-                  ))}
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
+
+            {/* Editorial Footer Notes */}
+            <div className="mt-20 pt-8 border-t border-black/15 dark:border-white/15 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-stone-500 dark:text-stone-400">
+              <span>* ALL MEATS FRESH GROUND DAILY & SEARED TO ORDER</span>
+              <span>PLEASE NOTIFY OUR STAFF OF ANY DIETARY RESTRICTIONS</span>
+            </div>
+
           </div>
         </section>
       </main>
