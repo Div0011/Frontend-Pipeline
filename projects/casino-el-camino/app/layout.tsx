@@ -1,12 +1,13 @@
 import InteractiveBackground from "@/components/ui/InteractiveBackground";
+import AtmosphereControls from "@/components/ui/AtmosphereControls";
 import type { Metadata } from "next";
 import LenisProvider from "@/components/providers/LenisProvider";
 import CustomCursor from "@/components/marketing/CustomCursor";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Casino El Camino | 6TH STREET CULT ROCK BURGERS · AUSTIN",
-  description: "Casino El Camino — CHARBROILED VERDE CHILI SEAR. Serving Austin.",
+  title: "Casino El Camino | AUSTIN",
+  description: "Casino El Camino — Culinary craft atelier in Austin.",
 };
 
 export default function RootLayout({
@@ -16,11 +17,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <body className="antialiased bg-[#070709] text-[#FAF8F2] overflow-x-hidden">
+      <body className="antialiased bg-[#070709] text-[#FAF8F2] overflow-x-hidden transition-colors duration-500">
         <LenisProvider>
-          <InteractiveBackground />
+          <InteractiveBackground primaryColor="#DC2626" themeBase="#0e0505" />
           <CustomCursor />
           {children}
+          <AtmosphereControls primaryColor="#DC2626" darkBg="#0e0505" lightBg="#F7F5F0" />
         </LenisProvider>
       </body>
     </html>

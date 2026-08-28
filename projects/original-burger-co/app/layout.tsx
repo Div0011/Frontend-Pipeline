@@ -1,12 +1,13 @@
 import InteractiveBackground from "@/components/ui/InteractiveBackground";
+import AtmosphereControls from "@/components/ui/AtmosphereControls";
 import type { Metadata } from "next";
 import LenisProvider from "@/components/providers/LenisProvider";
 import CustomCursor from "@/components/marketing/CustomCursor";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Original Burger Co. (OBC) | DOUBLE SMASH & BACON JAM DINER · BANGALORE",
-  description: "Original Burger Co. (OBC) — DOUBLE SMASHED BACON JAM CRUST. Serving Bangalore.",
+  title: "Original Burger Co. (OBC) | BENGALURU",
+  description: "Original Burger Co. (OBC) — Culinary craft atelier in Bengaluru.",
 };
 
 export default function RootLayout({
@@ -16,11 +17,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <body className="antialiased bg-[#070709] text-[#FAF8F2] overflow-x-hidden">
+      <body className="antialiased bg-[#070709] text-[#FAF8F2] overflow-x-hidden transition-colors duration-500">
         <LenisProvider>
-          <InteractiveBackground />
+          <InteractiveBackground primaryColor="#2563EB" themeBase="#060a12" />
           <CustomCursor />
           {children}
+          <AtmosphereControls primaryColor="#2563EB" darkBg="#060a12" lightBg="#F7F5F0" />
         </LenisProvider>
       </body>
     </html>

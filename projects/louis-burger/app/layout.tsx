@@ -1,12 +1,13 @@
 import InteractiveBackground from "@/components/ui/InteractiveBackground";
+import AtmosphereControls from "@/components/ui/AtmosphereControls";
 import type { Metadata } from "next";
 import LenisProvider from "@/components/providers/LenisProvider";
 import CustomCursor from "@/components/marketing/CustomCursor";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Louis Burger | CHEF ZORAWAR KALRA · CRAFT GOURMET BURGERS",
-  description: "Louis Burger — 24K GOLD WAGYU & TRUFFLE MELT. Serving Bangalore.",
+  title: "Louis Burger | BENGALURU",
+  description: "Louis Burger — Culinary craft atelier in Bengaluru.",
 };
 
 export default function RootLayout({
@@ -16,11 +17,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <body className="antialiased bg-[#070709] text-[#FAF8F2] overflow-x-hidden">
+      <body className="antialiased bg-[#070709] text-[#FAF8F2] overflow-x-hidden transition-colors duration-500">
         <LenisProvider>
-          <InteractiveBackground />
+          <InteractiveBackground primaryColor="#D4AF37" themeBase="#0d0b06" />
           <CustomCursor />
           {children}
+          <AtmosphereControls primaryColor="#D4AF37" darkBg="#0d0b06" lightBg="#F6F4EE" />
         </LenisProvider>
       </body>
     </html>
