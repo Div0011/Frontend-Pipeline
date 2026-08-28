@@ -1,4 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 54" fill="none">
-  <text x="0" y="30" fill="#F26522" font-family="'Space Grotesk', 'Impact', sans-serif" font-size="28" font-weight="900" letter-spacing="2">BIGGIES BURGER</text>
-  <text x="0" y="48" fill="#A8A29E" font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="700" letter-spacing="2">ORIGINAL GRILLED BURGERS · BANGALORE</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <rect x="8" y="8" width="84" height="84" rx="20" stroke="#F26522" stroke-width="3" fill="#0A0A0A" />
+  <!-- Bold Grilled Double B -->
+  <text x="50" y="66" fill="#F26522" font-family="'Space Grotesk', 'Impact', sans-serif" font-size="44" font-weight="900" text-anchor="middle">B</text>
+  <rect x="30" y="74" width="40" height="4" rx="2" fill="#F26522" />
 </svg>

@@ -7,12 +7,12 @@ type CursorState = "default" | "hover" | "drag";
 
 export default function CustomCursor() {
   const [state, setState]             = useState<CursorState>("default");
-  const [isDarkBg, setIsDarkBg]       = useState(false);
+  const [isDarkBg, setIsDarkBg]       = useState(true);
   const [mounted, setMounted]         = useState(false);
   const [isTouch, setIsTouch]         = useState(true);
   
   const stateRef = useRef<CursorState>("default");
-  const darkBgRef = useRef(false);
+  const darkBgRef = useRef(true);
 
   // Raw mouse position
   const mx = useMotionValue(-300);
@@ -27,7 +27,6 @@ export default function CustomCursor() {
   const ry = useSpring(my, { stiffness: 250, damping: 28, mass: 0.8 });
 
   useEffect(() => {
-    // Hide on touch devices
     const isCoarse = window.matchMedia("(pointer: coarse)").matches;
     setIsTouch(isCoarse);
     setMounted(true);
@@ -43,18 +42,19 @@ export default function CustomCursor() {
       const el = e.target as Element;
       if (!el) return;
 
-      // Detect background theme
-      const hasDarkParent = !!el.closest(".bg-char, .bg-char-soft, .bg-char-mute, [data-theme='dark'], canvas");
-      if (hasDarkParent !== darkBgRef.current) {
-        darkBgRef.current = hasDarkParent;
-        setIsDarkBg(hasDarkParent);
+      // Detect background theme: dark background vs light/colored background
+      const hasLightParent = !!el.closest("footer, .bg-[#FAF7F2], .bg-white, html.light body section:not([data-image-frame])");
+      const isDark = !hasLightParent;
+
+      if (isDark !== darkBgRef.current) {
+        darkBgRef.current = isDark;
+        setIsDarkBg(isDark);
       }
 
-      // Detect cursor state
       let next: CursorState = "default";
       if (el.closest("[data-cursor='drag']")) {
         next = "drag";
-      } else if (el.closest("a, button, [data-cursor='hover'], [role='button'], select, input")) {
+      } else if (el.closest("a, button, [data-cursor='hover'], [role='button'], select, input, .cursor-pointer")) {
         next = "hover";
       }
 
@@ -71,19 +71,19 @@ export default function CustomCursor() {
       window.removeEventListener("mousemove", onMove);
       document.removeEventListener("mouseover", onOver as EventListener);
     };
-  }, []);
+  }, [mx, my]);
 
   if (!mounted || isTouch) return null;
 
-  // Colors based on background contrast:
-  // Over Dark -> Yellow (#F5C418)
-  // Over Light / Yellow -> Black (#141413)
-  const cursorColor = isDarkBg ? "#F5C418" : "#141413";
-  const ringHoverBg = isDarkBg ? "rgba(245,196,24,0.12)" : "rgba(20,20,19,0.14)";
+  // Strict Brand Color Palette:
+  // Over Dark -> Brand Primary Accent (var(--primary))
+  // Over Light / Footer -> Deep Black (#0A0A0A)
+  const cursorColor = isDarkBg ? "var(--primary, #FAF8F2)" : "#0A0A0A";
+  const ringHoverBg = isDarkBg ? "rgba(255,255,255,0.08)" : "rgba(10,10,10,0.12)";
 
   return (
     <>
-      {/* ── Outer Ring: Retro 8-bit Pixelated Targeting Frame ────────────────── */}
+      {/* ── Outer Ring: Retro Pixelated Targeting Frame ────────────────── */}
       <motion.div
         aria-hidden="true"
         className="fixed top-0 left-0 pointer-events-none"
@@ -98,46 +98,39 @@ export default function CustomCursor() {
         <motion.div
           animate={{
             width:
-              state === "drag"  ? 68
-              : state === "hover" ? 48
-              : 28,
+              state === "drag"  ? 64
+              : state === "hover" ? 44
+              : 26,
             height:
-              state === "drag"  ? 68
-              : state === "hover" ? 48
-              : 28,
+              state === "drag"  ? 64
+              : state === "hover" ? 44
+              : 26,
             backgroundColor:
               state === "hover" ? ringHoverBg
               : "transparent",
             borderColor: cursorColor,
-            rotate: state === "hover" ? 45 : 0, // Rotates to a diamond lock on hover
+            rotate: state === "hover" ? 45 : 0,
           }}
           transition={{ duration: 0.28, ease: [0.16, 1, 0.3, 1] }}
           className="border-2 relative flex items-center justify-center transition-colors duration-200"
           style={{
-            // Double-border style for pixel effect + crisp rendering
             borderStyle: "solid",
             imageRendering: "pixelated",
-            boxShadow: `0 0 0 2px ${isDarkBg ? "#141413" : "#FAF9F4"}`,
           }}
         >
-          {/* Pixelated Corner blocks */}
-          <div className="absolute -top-1 -left-1 w-1.5 h-1.5 transition-colors duration-200" style={{ backgroundColor: cursorColor }} />
-          <div className="absolute -top-1 -right-1 w-1.5 h-1.5 transition-colors duration-200" style={{ backgroundColor: cursorColor }} />
-          <div className="absolute -bottom-1 -left-1 w-1.5 h-1.5 transition-colors duration-200" style={{ backgroundColor: cursorColor }} />
-          <div className="absolute -bottom-1 -right-1 w-1.5 h-1.5 transition-colors duration-200" style={{ backgroundColor: cursorColor }} />
+          {/* Corner pixels */}
+          <div className="absolute -top-1 -left-1 w-1 h-1" style={{ backgroundColor: cursorColor }} />
+          <div className="absolute -top-1 -right-1 w-1 h-1" style={{ backgroundColor: cursorColor }} />
+          <div className="absolute -bottom-1 -left-1 w-1 h-1" style={{ backgroundColor: cursorColor }} />
+          <div className="absolute -bottom-1 -right-1 w-1 h-1" style={{ backgroundColor: cursorColor }} />
 
           {state === "drag" && (
-            <motion.span
-              key="drag-label"
-              initial={{ opacity: 0, scale: 0.6 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.6 }}
-              transition={{ duration: 0.2 }}
-              className={`uppercase select-none font-sans font-bold tracking-widest text-[6px] ${isDarkBg ? "text-[#2563EB]" : "text-char"}`}
-              style={{ transform: "rotate(-45deg)" }}
+            <span
+              className="uppercase select-none font-sans font-extrabold tracking-widest text-[6px]"
+              style={{ transform: "rotate(-45deg)", color: cursorColor }}
             >
               DRAG
-            </motion.span>
+            </span>
           )}
         </motion.div>
       </motion.div>
@@ -152,18 +145,19 @@ export default function CustomCursor() {
           translateX: "-50%",
           translateY: "-50%",
           zIndex: 99999,
-          width: 8,
-          height: 8,
-          backgroundColor: cursorColor,
-          imageRendering: "pixelated",
-          boxShadow: `0 0 0 1px ${isDarkBg ? "#141413" : "#FAF9F4"}`,
         }}
-        animate={{
-          scale:   state === "hover" ? 0 : state === "drag" ? 0.6 : 1,
-          rotate:  state === "drag" ? 45 : 0,
-        }}
-        transition={{ duration: 0.18, ease: "easeInOut" }}
-      />
+      >
+        <motion.div
+          animate={{
+            width:  state === "hover" ? 6 : 4,
+            height: state === "hover" ? 6 : 4,
+            opacity: state === "drag" ? 0 : 1,
+          }}
+          transition={{ duration: 0.15 }}
+          className="rounded-none shadow-sm"
+          style={{ backgroundColor: cursorColor }}
+        />
+      </motion.div>
     </>
   );
 }

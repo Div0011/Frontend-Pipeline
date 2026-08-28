@@ -1,4 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 54" fill="none">
-  <text x="0" y="30" fill="#DC2626" font-family="'Space Grotesk', 'Impact', sans-serif" font-size="28" font-weight="900" letter-spacing="2">CASINO EL CAMINO</text>
-  <text x="0" y="48" fill="#A8A29E" font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="700" letter-spacing="2">6TH STREET CULT ROCK BURGERS · AUSTIN</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <circle cx="50" cy="50" r="46" stroke="#DC2626" stroke-width="3" fill="#0A0A0A" />
+  <!-- Lucky Dice & Rock Skull Crest -->
+  <rect x="28" y="28" width="20" height="20" rx="4" stroke="#DC2626" stroke-width="2" fill="none" transform="rotate(15 38 38)" />
+  <circle cx="38" cy="38" r="2" fill="#DC2626" />
+  <rect x="52" y="32" width="20" height="20" rx="4" stroke="#DC2626" stroke-width="2" fill="none" transform="rotate(-15 62 42)" />
+  <circle cx="58" cy="38" r="1.5" fill="#DC2626" />
+  <circle cx="66" cy="46" r="1.5" fill="#DC2626" />
+  <!-- 6TH ST Banner -->
+  <text x="50" y="76" fill="#DC2626" font-family="'Space Grotesk', 'Impact', sans-serif" font-size="16" font-weight="900" text-anchor="middle" letter-spacing="2">6TH ST</text>
 </svg>

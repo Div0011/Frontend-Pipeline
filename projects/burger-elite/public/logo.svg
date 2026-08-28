@@ -1,4 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 54" fill="none">
-  <text x="0" y="30" fill="#7C3AED" font-family="'Space Grotesk', 'Impact', sans-serif" font-size="28" font-weight="900" letter-spacing="2">BURGER ELITE</text>
-  <text x="0" y="48" fill="#A8A29E" font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="700" letter-spacing="2">STREET SMASH ROYALE · INDIRANAGAR</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <circle cx="50" cy="50" r="46" stroke="#7C3AED" stroke-width="3" fill="#0A0A0A" />
+  <!-- Diamond Monogram BE -->
+  <polygon points="50,22 74,44 50,72 26,44" stroke="#7C3AED" stroke-width="3" fill="#7C3AED" fill-opacity="0.15" />
+  <text x="50" y="52" fill="#7C3AED" font-family="'Space Grotesk', 'Impact', sans-serif" font-size="18" font-weight="900" text-anchor="middle">BE</text>
 </svg>

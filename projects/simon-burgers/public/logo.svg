@@ -1,4 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 54" fill="none">
-  <text x="0" y="30" fill="#DC2626" font-family="'Space Grotesk', 'Impact', sans-serif" font-size="28" font-weight="900" letter-spacing="2">SIMON BURGERS</text>
-  <text x="0" y="48" fill="#A8A29E" font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="700" letter-spacing="2">LATE-NIGHT SMASH BURGERS & FRIES · KAMMANAHALLI</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <circle cx="50" cy="50" r="46" stroke="#DC2626" stroke-width="3" fill="#0A0A0A" />
+  <text x="50" y="62" fill="#DC2626" font-family="'Space Grotesk', 'Impact', sans-serif" font-size="34" font-weight="900" text-anchor="middle">S</text>
+  <text x="50" y="80" fill="#DC2626" font-family="'JetBrains Mono', monospace" font-size="8" font-weight="700" text-anchor="middle" letter-spacing="1">SIMON</text>
 </svg>

@@ -1,4 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 54" fill="none">
-  <text x="0" y="30" fill="#BF5700" font-family="'Space Grotesk', 'Impact', sans-serif" font-size="28" font-weight="900" letter-spacing="2">DIRTY MARTIN'S KUM-BAK</text>
-  <text x="0" y="48" fill="#A8A29E" font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="700" letter-spacing="2">SINCE 1926 · 100 YEARS ON THE DRAG · AUSTIN</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <circle cx="50" cy="50" r="46" stroke="#BF5700" stroke-width="3" fill="#0A0A0A" />
+  <!-- 1926 Kum-Bak Seal -->
+  <text x="50" y="44" fill="#BF5700" font-family="'Space Grotesk', 'Impact', sans-serif" font-size="14" font-weight="900" text-anchor="middle" letter-spacing="2">KUM-BAK</text>
+  <text x="50" y="68" fill="#BF5700" font-family="'Space Grotesk', 'Impact', sans-serif" font-size="24" font-weight="900" text-anchor="middle">1926</text>
+  <text x="50" y="82" fill="#BF5700" font-family="'JetBrains Mono', monospace" font-size="8" font-weight="700" text-anchor="middle" letter-spacing="1">AUSTIN, TX</text>
 </svg>

@@ -1,4 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 54" fill="none">
-  <text x="0" y="30" fill="#E67E22" font-family="'Space Grotesk', 'Impact', sans-serif" font-size="28" font-weight="900" letter-spacing="2">BACKYARD BURGERS</text>
-  <text x="0" y="48" fill="#A8A29E" font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="700" letter-spacing="2">OPEN-AIR SMOKEHOUSE & GRILL · KORAMANGALA</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <circle cx="50" cy="50" r="46" stroke="#E67E22" stroke-width="3" fill="#0A0A0A" />
+  <path d="M34 36 L66 64 M66 36 L34 64" stroke="#E67E22" stroke-width="4" stroke-linecap="round" />
+  <circle cx="50" cy="50" r="8" fill="#E67E22" />
+  <text x="50" y="84" fill="#E67E22" font-family="'Space Grotesk', 'Impact', sans-serif" font-size="12" font-weight="900" text-anchor="middle" letter-spacing="1">BACKYARD</text>
 </svg>

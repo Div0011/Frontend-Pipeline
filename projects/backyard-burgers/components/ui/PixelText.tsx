@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useEffect, useRef, useMemo } from "react";
+import React, { useEffect, useRef, useState, useMemo } from "react";
 
-// 5×7 pixel font bitmap for uppercase letters and space
+// 5×7 pixel font bitmap for uppercase letters and symbols
 const FONT: Record<string, number[][]> = {
   A: [
     [0,1,1,1,0],
@@ -399,24 +399,26 @@ export interface PixelTextProps {
 
 export default function PixelText({
   text = "BEYONDBURG INC.",
-  dotSize = 5,
-  gap = 2,
+  dotSize = 7,
+  gap = 3,
   color = "#000000",
-  explodeRadius = 120,
-  explodeForce = 32,
-  returnStiffness = 0.08,
+  explodeRadius = 110,
+  explodeForce = 28,
+  returnStiffness = 0.09,
   className = "",
 }: PixelTextProps) {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+  const canvasRef = useRef<HTMLCanvasElement>(null);
   const animFrameRef = useRef<number | null>(null);
   const dotsRef = useRef<Dot[]>([]);
   const mouseRef = useRef<{ x: number; y: number }>({ x: -9999, y: -9999 });
 
+  const [containerWidth, setContainerWidth] = useState<number>(1200);
+
   const step = dotSize + gap;
 
   // Build the pixel grid points with 3 pairs of lines of dots for maximum thickness
-  const { dots: initialDots, totalWidth, totalHeight } = useMemo(() => {
+  const { dots: initialDots, naturalWidth, naturalHeight } = useMemo(() => {
     const chars = text.toUpperCase().split("");
     const rows = 7;
     const charWidth = 5;
@@ -443,7 +445,6 @@ export default function PixelText({
       for (let row = 0; row < rows; row++) {
         for (let col = 0; col < charWidth; col++) {
           if (bitmap[row]?.[col]) {
-            // Write each pixel with 3 lines of dots for thick, bold, tactile typography
             for (const sub of subOffsets) {
               allDots.push({
                 col: cursorX + col,
@@ -457,26 +458,53 @@ export default function PixelText({
       cursorX += charWidth + charSpacing;
     }
 
-    const totalWidth  = (cursorX + 1) * step;
-    const totalHeight = (rows + 1) * step;
+    const naturalWidth  = (cursorX + 1) * step;
+    const naturalHeight = (rows + 1) * step;
 
-    return { dots: allDots, totalWidth, totalHeight };
+    return { dots: allDots, naturalWidth, naturalHeight };
   }, [text, step]);
+
+  // Responsive container width tracking to guarantee the brand name fits 100% within screen
+  useEffect(() => {
+    const updateSize = () => {
+      if (containerRef.current) {
+        setContainerWidth(containerRef.current.clientWidth || window.innerWidth);
+      }
+    };
+
+    updateSize();
+
+    const ro = new ResizeObserver(updateSize);
+    if (containerRef.current) ro.observe(containerRef.current);
+    window.addEventListener("resize", updateSize);
+
+    return () => {
+      ro.disconnect();
+      window.removeEventListener("resize", updateSize);
+    };
+  }, []);
+
+  // Compute auto-scale factor so long names (e.g. BURGER SEIGNEUR, GOOD FLIPPIN' BURGERS) fit screen width
+  const maxAvailableWidth = Math.max(260, containerWidth - 32);
+  const autoScale = Math.min(1, maxAvailableWidth / naturalWidth);
+
+  const displayWidth = Math.round(naturalWidth * autoScale);
+  const displayHeight = Math.round(naturalHeight * autoScale);
 
   useEffect(() => {
     const canvas = canvasRef.current;
     const container = containerRef.current;
-    if (!canvas || !container) return;
+    if (!canvas || !container || naturalWidth <= 0 || naturalHeight <= 0) return;
 
     const dpr = window.devicePixelRatio || 1;
-    canvas.width  = totalWidth  * dpr;
-    canvas.height = totalHeight * dpr;
-    canvas.style.width  = `${totalWidth}px`;
-    canvas.style.height = `${totalHeight}px`;
+    canvas.width  = displayWidth * dpr;
+    canvas.height = displayHeight * dpr;
+    canvas.style.width  = `${displayWidth}px`;
+    canvas.style.height = `${displayHeight}px`;
 
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
-    ctx.scale(dpr, dpr);
+    ctx.scale(dpr * autoScale, dpr * autoScale);
 
     // Create dot objects with 3-line thick origins
     dotsRef.current = initialDots.map((d) => {
@@ -490,16 +518,16 @@ export default function PixelText({
         vx: 0,
         vy: 0,
         color,
-        size: dotSize * 0.48, // Balanced radius for smooth dense clusters
+        size: dotSize * 0.46,
       };
     });
 
-    // Mouse tracking relative to the canvas
+    // Mouse tracking relative to the unscaled canvas coordinate space
     const handleMouseMove = (e: MouseEvent) => {
       const rect = canvas.getBoundingClientRect();
       mouseRef.current = {
-        x: e.clientX - rect.left,
-        y: e.clientY - rect.top,
+        x: (e.clientX - rect.left) / autoScale,
+        y: (e.clientY - rect.top) / autoScale,
       };
     };
     const handleMouseLeave = () => {
@@ -515,15 +543,15 @@ export default function PixelText({
       if (!touch) return;
       const rect = canvas.getBoundingClientRect();
       mouseRef.current = {
-        x: touch.clientX - rect.left,
-        y: touch.clientY - rect.top,
+        x: (touch.clientX - rect.left) / autoScale,
+        y: (touch.clientY - rect.top) / autoScale,
       };
     };
     container.addEventListener("touchmove", handleTouchMove, { passive: true });
     container.addEventListener("touchend", handleMouseLeave);
 
     const render = () => {
-      ctx.clearRect(0, 0, totalWidth, totalHeight);
+      ctx.clearRect(0, 0, naturalWidth, naturalHeight);
 
       const mx = mouseRef.current.x;
       const my = mouseRef.current.y;
@@ -533,34 +561,29 @@ export default function PixelText({
       for (let i = 0; i < len; i++) {
         const dot = dots[i];
 
-        // Vector from cursor to dot
         const dx = dot.x - mx;
         const dy = dot.y - my;
         const dist = Math.sqrt(dx * dx + dy * dy);
 
         if (dist < explodeRadius && dist > 0) {
-          // Repel force inversely proportional to distance
           const force = (1 - dist / explodeRadius) * explodeForce;
           const angle = Math.atan2(dy, dx);
           dot.vx += Math.cos(angle) * force * 0.6;
           dot.vy += Math.sin(angle) * force * 0.6;
         }
 
-        // Spring force returning dot to origin (ox, oy)
         const springX = (dot.ox - dot.x) * returnStiffness;
         const springY = (dot.oy - dot.y) * returnStiffness;
 
         dot.vx += springX;
         dot.vy += springY;
 
-        // Damping / friction to stabilize
         dot.vx *= 0.82;
         dot.vy *= 0.82;
 
         dot.x += dot.vx;
         dot.y += dot.vy;
 
-        // Draw dot
         ctx.fillStyle = dot.color;
         ctx.beginPath();
         ctx.arc(dot.x, dot.y, dot.size, 0, Math.PI * 2);
@@ -579,15 +602,13 @@ export default function PixelText({
       container.removeEventListener("touchmove", handleTouchMove);
       container.removeEventListener("touchend", handleMouseLeave);
     };
-  }, [initialDots, totalWidth, totalHeight, dotSize, step, color, explodeRadius, explodeForce, returnStiffness]);
+  }, [initialDots, displayWidth, displayHeight, naturalWidth, naturalHeight, autoScale, dotSize, step, color, explodeRadius, explodeForce, returnStiffness]);
 
   return (
     <div
       ref={containerRef}
-      className={`inline-block select-none ${className}`}
+      className={`w-full flex items-center justify-center select-none overflow-hidden ${className}`}
       style={{
-        width: `${totalWidth}px`,
-        height: `${totalHeight}px`,
         cursor: "none",
       }}
     >

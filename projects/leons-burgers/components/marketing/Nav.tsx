@@ -53,16 +53,17 @@ export default function Nav() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 h-12 flex items-center justify-between">
-        {/* Brand Logo and Name displayed side by side */}
-        <Link href="/" className="flex items-center gap-3 group">
-          <div className="relative w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white/10 border border-white/15 p-1 flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform duration-200">
+        {/* Authentic Brand Emblem Badge + Brand Title */}
+        <Link href="/" className="flex items-center gap-3.5 group">
+          <div className="relative w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-black/40 border border-white/15 p-1 flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform duration-200 shadow-md">
             <Image
               src="/logo.svg"
-              alt="LEON'S BURGERS Logo"
-              width={26}
-              height={26}
+              alt="LEON'S BURGERS Emblem"
+              width={32}
+              height={32}
               unoptimized
               className="object-contain"
+              priority
             />
           </div>
           <span className="type-display text-lg sm:text-xl md:text-2xl font-black text-white dark:text-white light:text-black tracking-tight group-hover:opacity-90 transition-opacity">
@@ -86,7 +87,7 @@ export default function Nav() {
           </Link>
         </nav>
 
-        {/* Primary CTA Button — inverts with theme */}
+        {/* Primary CTA Button */}
         <div className="flex items-center gap-4">
           <Link
             href="/menu"

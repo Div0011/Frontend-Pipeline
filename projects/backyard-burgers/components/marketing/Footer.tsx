@@ -14,11 +14,11 @@ export default function Footer() {
   return (
     <footer
       style={{ backgroundColor: "#E67E22", color: "#000000" }}
-      className="h-[100svh] min-h-[100svh] w-full flex flex-col justify-between p-8 sm:p-12 md:p-16 lg:p-20 relative z-10 select-none overflow-hidden"
+      className="h-[100svh] min-h-[100svh] w-full flex flex-col justify-between p-6 sm:p-10 md:p-14 lg:p-16 relative z-10 select-none overflow-hidden"
     >
       {/* Top Bar: Navigation & Info */}
       <div
-        className="flex flex-col sm:flex-row justify-between sm:items-start gap-8 pb-8"
+        className="flex flex-col sm:flex-row justify-between sm:items-start gap-6 pb-6"
         style={{ borderBottom: "1px solid rgba(128,128,128,0.25)" }}
       >
         <nav className="flex flex-wrap gap-6 sm:gap-10 font-sans text-sm font-bold uppercase tracking-wider">
@@ -45,24 +45,22 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Center: Interactive Pixel-Dot Brand Name */}
-      <div className="my-auto py-8 flex items-center overflow-x-auto">
-        <div className="scale-[clamp(0.3,3vw,0.8)] sm:scale-[clamp(0.4,4.5vw,0.9)] md:scale-100 origin-left transition-transform duration-200">
-          <PixelText
-            text="BACKYARD BURGERS"
-            dotSize={11}
-            gap={3}
-            color="#000000"
-            explodeRadius={110}
-            explodeForce={28}
-            returnStiffness={0.09}
-          />
-        </div>
+      {/* Center: Auto-Fitting Responsive Pixel-Dot Brand Name (Always 100% visible) */}
+      <div className="my-auto py-6 sm:py-8 w-full flex items-center justify-center overflow-hidden">
+        <PixelText
+          text="BACKYARD BURGERS"
+          dotSize={8}
+          gap={3}
+          color="#000000"
+          explodeRadius={120}
+          explodeForce={30}
+          returnStiffness={0.09}
+        />
       </div>
 
       {/* Bottom Bar: Contact & Back to Top */}
       <div
-        className="flex flex-col sm:flex-row justify-between sm:items-end gap-6 pt-8 font-sans text-xs font-bold"
+        className="flex flex-col sm:flex-row justify-between sm:items-end gap-6 pt-6 font-sans text-xs font-bold"
         style={{ borderTop: "1px solid rgba(128,128,128,0.25)" }}
       >
         <div className="space-y-1" style={{ color: "#00000099" }}>
