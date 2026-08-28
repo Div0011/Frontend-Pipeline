@@ -86,8 +86,8 @@ h1, h2, h3, h4, .type-display {
 .img-overlay-text h1,
 .img-overlay-text h2,
 .img-overlay-text h3 {
-  color: #C68A14 !important;
-  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.95), 0 2px 8px rgba(0, 0, 0, 0.90);
+  color: #FFFFFF !important;
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.95), 0 0 25px rgba(255, 255, 255, 0.3) !important;
 }
 
 [data-image-overlay] p,

@@ -82,7 +82,7 @@ export default function SignatureMenu() {
                 if ((window as any).playPopSound) (window as any).playPopSound();
                 setActiveItemModal(item);
               }}
-              className="group cursor-pointer rounded-3xl bg-white/[0.04] border border-[#C68A14]/25 hover:border-white/30 p-4 transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl flex flex-col justify-between"
+              className="group cursor-pointer rounded-3xl bg-[#141414] border border-white/15 hover:border-white/40 p-5 transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl flex flex-col justify-between"
             >
               {/* Dish Photo */}
               <div className="relative w-full h-52 rounded-2xl overflow-hidden mb-4 bg-white/40">

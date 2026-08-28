@@ -87,8 +87,8 @@ body p, body .type-serif, body .type-body, body .desc, body .subtext {
 .img-overlay-text h1,
 .img-overlay-text h2,
 .img-overlay-text h3 {
-  color: #2A2A2A !important;
-  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.95), 0 2px 8px rgba(0, 0, 0, 0.90);
+  color: #FFE500 !important;
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.95), 0 0 35px rgba(255, 229, 0, 0.7), 0 0 10px rgba(255, 255, 255, 0.4) !important;
 }
 
 [data-image-overlay] p,
