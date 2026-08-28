@@ -57,15 +57,15 @@ export default function Footer() {
           Each dot is repelled by the cursor and springs back to form the word.
           On mobile it responds to touch.
         */}
-        <div className="scale-[clamp(0.4,4vw,1)] sm:scale-[clamp(0.5,5vw,1)] md:scale-100 origin-left transition-transform duration-200">
+        <div className="scale-[clamp(0.3,3vw,0.8)] sm:scale-[clamp(0.4,4.5vw,0.9)] md:scale-100 origin-left transition-transform duration-200">
           <PixelText
             text="BEYONDBURG INC."
-            dotSize={7}
-            gap={4}
+            dotSize={11}
+            gap={3}
             color="#000000"
-            explodeRadius={90}
-            explodeForce={22}
-            returnStiffness={0.10}
+            explodeRadius={110}
+            explodeForce={28}
+            returnStiffness={0.09}
           />
         </div>
       </div>

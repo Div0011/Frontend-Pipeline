@@ -11,7 +11,7 @@ const frames = Array.from(
 export default function CinematicHero() {
   return (
     <CanvasScrubber frames={frames} scrollDistance="+=350%">
-      <div className="h-full w-full flex flex-col justify-center p-8 sm:p-12 md:p-20 relative pointer-events-none select-none">
+      <div data-image-overlay className="h-full w-full flex flex-col justify-center p-8 sm:p-12 md:p-20 relative pointer-events-none select-none">
         <div className="max-w-4xl space-y-6">
           {/* Live Status Pill */}
           <div className="flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/[0.05] border border-white/10 backdrop-blur-xl w-fit shadow-lg">

@@ -111,8 +111,8 @@ export default function RestaurantLocations() {
                 </motion.div>
               </AnimatePresence>
 
-              {/* Text Over Image - STRICTLY WHITE */}
-              <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between gap-4 z-10">
+              {/* Text Over Image — always white regardless of theme */}
+              <div data-image-overlay className="absolute bottom-6 left-6 right-6 flex items-end justify-between gap-4 z-10">
                 <div className="space-y-1 text-white">
                   <span className="text-[10px] uppercase tracking-widest font-bold block" style={{ color: "#F5C418" }}>
                     {currentLoc.badge}
