@@ -20,61 +20,45 @@ interface MenuSection {
 
 const MENU_DATA: MenuSection[] = [
   {
-    "title": "\ud83c\udf54 Gourmet French Burgers",
-    "subtitle": "Crafted with imported cheeses, house sauces, and artisan brioche",
+    "title": "\ud83c\udf54 Signature Smashes",
+    "subtitle": "Fresh daily seared patties with house sauces",
     "items": [
       {
-        "name": "The Lucien Burger",
-        "price": "495",
-        "desc": "Prime Angus patty, French brie cheese, caramelized balsamic onions, and garlic butter glaze",
+        "name": "The Classic Double Smash",
+        "price": "9.99",
+        "desc": "Double seared patties, melted American cheese, pickles, and house sauce",
         "tags": [
-          "French Classic \u2b50"
+          "House Favorite \u2b50"
         ]
       },
       {
-        "name": "Dynamite Beef Burger",
-        "price": "525",
-        "desc": "Two smashed beef patties, spicy dynamite sauce, smoked cheddar, and pickled jalape\u00f1os",
+        "name": "Spicy Bacon Smash",
+        "price": "10.49",
+        "desc": "Smoked bacon, melted pepper jack, pickled jalape\u00f1os, and chipotle mayo",
         "tags": [
-          "Spicy Pick \ud83c\udf36\ufe0f"
-        ]
-      },
-      {
-        "name": "Parisian Truffle Chicken",
-        "price": "475",
-        "desc": "Panko-crusted chicken breast, white truffle butter, gruy\u00e8re cheese, and baby spinach",
-        "tags": [
-          "Truffle Specialty"
-        ]
-      },
-      {
-        "name": "The Seigneur Veggie",
-        "price": "425",
-        "desc": "Herbed halloumi steak, roasted red pepper coulis, arugula, and pesto mayo",
-        "tags": [
-          "Gourmet Veg"
+          "Spicy \ud83c\udf36\ufe0f"
         ]
       }
     ]
   },
   {
-    "title": "\ud83c\udf5f Sides & Artisanal Shakes",
-    "subtitle": "Truffle parmesan fries and Belgian chocolate shakes",
+    "title": "\ud83c\udf5f Sides & Fries",
+    "subtitle": "Crispy golden sides",
     "items": [
       {
-        "name": "Truffle Parmesan French Fries",
-        "price": "295",
-        "desc": "Golden fried potatoes tossed in Italian black truffle oil and 24-month aged parmesan",
+        "name": "Seasoned French Fries",
+        "price": "4.49",
+        "desc": "Golden fried potatoes with house seasoning",
         "tags": [
-          "Best Seller \u2b50"
+          "Classic"
         ]
       },
       {
-        "name": "French Salted Caramel Shake",
-        "price": "325",
-        "desc": "Handcrafted vanilla gelato blended with fleur de sel caramel sauce",
+        "name": "Crispy Onion Rings",
+        "price": "4.99",
+        "desc": "Beer-battered onion rings with dipping sauce",
         "tags": [
-          "Dessert Shake"
+          "Crispy"
         ]
       }
     ]
@@ -87,35 +71,42 @@ export default function MenuPage() {
   return (
     <>
       <Nav />
-      <main className="pt-24 min-h-screen bg-[#FFFFFF] text-[#1A1A1A] select-none">
+      <main className="pt-24 min-h-screen bg-[#0A0A0A] text-white relative z-10 select-none">
         {/* Banner Section */}
-        <section className="py-20 lg:py-28 relative overflow-hidden border-b border-black/10">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-10 space-y-4">
+        <section className="py-20 lg:py-24 border-b border-white/10 bg-gradient-to-b from-[#141414] to-[#0A0A0A]">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8 space-y-4">
             <span
-              className="text-xs uppercase tracking-widest font-extrabold inline-block px-3 py-1 rounded-full border border-black/10 shadow-sm"
-              style={{ color: "#418043" }}
+              className="text-xs uppercase tracking-widest font-extrabold inline-block px-3.5 py-1.5 rounded-full border shadow-sm"
+              style={{
+                backgroundColor: "#F59E0B15",
+                borderColor: "#F59E0B40",
+                color: "#F59E0B",
+              }}
             >
-              Indiranagar & Forum Rex · Gourmet French Craft
+              Handcrafted Culinary Discipline
             </span>
 
             <h1
               className="type-display text-5xl sm:text-7xl md:text-8xl leading-none font-black tracking-tight"
-              style={{ color: "#418043" }}
+              style={{
+                color: "#F59E0B",
+                textShadow: "0 4px 24px rgba(0,0,0,0.9), 0 0 30px #F59E0B50",
+              }}
             >
               BURGER SEIGNEUR <br />
-              <span style={{ color: "#418043" }}>CULINARY MENU</span>
+              <span className="text-white">CULINARY MENU</span>
             </h1>
 
-            <p className="type-serif text-base sm:text-xl text-[#4B5563] max-w-2xl leading-relaxed">
-              Artisanal gourmet burgers, brioche buns baked fresh daily, and signature crafted milkshakes.
+            <p className="type-serif text-base sm:text-xl text-white/80 max-w-2xl leading-relaxed">
+              Fresh premium smash burgers, loaded sides, and fountain drinks.
             </p>
           </div>
         </section>
 
-        {/* Category Tabs */}
-        <section className="sticky top-18 lg:top-20 z-30 py-4 backdrop-blur-md border-b border-black/10 bg-[#FFFFFF]/90">
+        {/* Category Tabs Sticky Bar */}
+        <section className="sticky top-18 lg:top-20 z-30 py-4 bg-[#0A0A0A]/95 backdrop-blur-xl border-b border-white/10 shadow-2xl">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <div className="flex gap-3 overflow-x-auto pb-2 scrollbar-none">
+            <div className="flex gap-3 overflow-x-auto pb-1 scrollbar-none">
               {MENU_DATA.map((sec, idx) => (
                 <button
                   key={sec.title}
@@ -125,12 +116,12 @@ export default function MenuPage() {
                   }}
                   className={`px-6 py-3 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-300 whitespace-nowrap ${
                     activeTab === idx
-                      ? "shadow-lg scale-105"
-                      : "text-[#4B5563] hover:text-[#0A0A0A] border border-black/10"
+                      ? "shadow-2xl scale-105"
+                      : "text-white/60 hover:text-white border border-white/10 hover:border-white/30"
                   }`}
                   style={{
-                    backgroundColor: activeTab === idx ? "#418043" : "transparent",
-                    color: activeTab === idx ? "#FFFFFF" : undefined,
+                    backgroundColor: activeTab === idx ? "#F59E0B" : "transparent",
+                    color: activeTab === idx ? "#000000" : undefined,
                   }}
                 >
                   {sec.title}
@@ -140,7 +131,7 @@ export default function MenuPage() {
           </div>
         </section>
 
-        {/* Tab Content Display */}
+        {/* High-Contrast Menu Slabs Grid */}
         <section className="py-16 lg:py-24">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <AnimatePresence mode="wait">
@@ -155,11 +146,14 @@ export default function MenuPage() {
                 <div>
                   <h2
                     className="type-display text-3xl sm:text-5xl font-black mb-2"
-                    style={{ color: "#418043" }}
+                    style={{
+                      color: "#F59E0B",
+                      textShadow: "0 2px 16px #F59E0B40",
+                    }}
                   >
                     {MENU_DATA[activeTab].title}
                   </h2>
-                  <p className="type-serif text-base sm:text-lg text-[#4B5563]">
+                  <p className="type-serif text-base sm:text-lg text-white/70">
                     {MENU_DATA[activeTab].subtitle}
                   </p>
                 </div>
@@ -168,44 +162,72 @@ export default function MenuPage() {
                   {MENU_DATA[activeTab].items.map((item) => (
                     <div
                       key={item.name}
-                      className="p-6 sm:p-8 rounded-3xl bg-white border border-black/10 shadow-lg text-[#1A1A1A] hover:scale-[1.01] transition-transform duration-300 flex flex-col justify-between space-y-4"
+                      className="p-6 sm:p-8 rounded-3xl bg-[#141414] border border-white/15 hover:border-white/40 shadow-2xl hover:scale-[1.02] transition-all duration-300 flex flex-col justify-between space-y-4 group"
                     >
-                      <div className="space-y-2">
-                        <div className="flex justify-between items-baseline gap-4">
+                      <div className="space-y-3">
+                        <div className="flex justify-between items-start gap-4">
                           <h3
-                            className="type-display text-xl sm:text-2xl font-bold leading-tight"
-                            style={{ color: "#418043" }}
+                            className="type-display text-2xl sm:text-3xl font-bold leading-tight text-white group-hover:transition-colors"
+                            style={{
+                              textShadow: "0 2px 10px rgba(0,0,0,0.8)",
+                            }}
                           >
                             {item.name}
                           </h3>
-                          <span className="font-mono font-extrabold text-base sm:text-lg text-black px-3 py-1 rounded-full bg-black/5 flex-shrink-0">
-                            ₹{item.price}
+                          <span
+                            className="font-mono font-extrabold text-sm sm:text-base px-3.5 py-1.5 rounded-full flex-shrink-0 shadow-lg"
+                            style={{
+                              backgroundColor: "#F59E0B",
+                              color: "#000000",
+                            }}
+                          >
+                            ${item.price}
                           </span>
                         </div>
 
                         {item.desc && (
-                          <p className="type-serif text-sm text-[#4B5563] leading-relaxed">
+                          <p className="type-serif text-sm sm:text-base text-white/80 leading-relaxed">
                             {item.desc}
                           </p>
                         )}
                       </div>
 
-                      {item.tags && item.tags.length > 0 && (
-                        <div className="flex flex-wrap gap-2 pt-2">
-                          {item.tags.map((tag) => (
-                            <span
-                              key={tag}
-                              className="text-[9px] font-mono uppercase font-bold px-2.5 py-1 rounded-full border border-black/10"
-                              style={{
-                                backgroundColor: "#41804315",
-                                color: "#418043",
-                              }}
-                            >
-                              {tag}
-                            </span>
-                          ))}
-                        </div>
-                      )}
+                      <div className="flex items-center justify-between gap-4 pt-3 border-t border-white/10">
+                        {item.tags && item.tags.length > 0 ? (
+                          <div className="flex flex-wrap gap-2">
+                            {item.tags.map((tag) => (
+                              <span
+                                key={tag}
+                                className="text-[10px] font-mono uppercase font-bold px-2.5 py-1 rounded-full border"
+                                style={{
+                                  backgroundColor: "#F59E0B15",
+                                  borderColor: "#F59E0B30",
+                                  color: "#F59E0B",
+                                }}
+                              >
+                                {tag}
+                              </span>
+                            ))}
+                          </div>
+                        ) : (
+                          <div />
+                        )}
+
+                        <button
+                          type="button"
+                          onClick={() => {
+                            if ((window as any).playSizzleSound) (window as any).playSizzleSound();
+                            alert(`Added ${item.name} to your order!`);
+                          }}
+                          className="px-4 py-1.5 rounded-full text-xs font-extrabold uppercase tracking-wider transition-all shadow-md hover:scale-105 active:scale-95 flex-shrink-0"
+                          style={{
+                            backgroundColor: "#F59E0B",
+                            color: "#000000",
+                          }}
+                        >
+                          Add +
+                        </button>
+                      </div>
                     </div>
                   ))}
                 </div>
