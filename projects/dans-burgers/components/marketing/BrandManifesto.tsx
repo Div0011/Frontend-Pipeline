@@ -255,7 +255,7 @@ export default function BrandManifesto() {
               <h3 className="type-display text-2xl text-white [html.light_&]:text-stone-950 font-bold">
                 450°F STEEL HIGH-HEAT PRESS
               </h3>
-              <p className="text-xs text-stone-300 [html.light_&]:text-stone-700 leading-relaxed font-body">
+              <p className="text-xs text-stone-300 [html.light_&]:text-[#2A2A2A] leading-relaxed font-body">
                 Smashed ultra-thin on screaming hot steel for complete Maillard caramelization and crunchy lace edges.
               </p>
             </div>
@@ -264,7 +264,7 @@ export default function BrandManifesto() {
               <span className="text-xs uppercase font-extrabold text-stone-500 block">
                 STANDARD THICK BURGER
               </span>
-              <h3 className="type-display text-2xl text-stone-400 [html.light_&]:text-stone-700 font-bold">
+              <h3 className="type-display text-2xl text-stone-400 [html.light_&]:text-[#2A2A2A] font-bold">
                 MILD-HEAT STEAM COOK
               </h3>
               <p className="text-xs text-stone-400 [html.light_&]:text-stone-600 leading-relaxed font-body">

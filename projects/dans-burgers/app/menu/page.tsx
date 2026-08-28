@@ -184,7 +184,7 @@ export default function MenuPage() {
                   <h2 className="type-display text-4xl sm:text-5xl text-char border-b-2 border-ember pb-4 mb-2">
                     {MENU_DATA[activeTab].title}
                   </h2>
-                  <p className="type-serif text-smoke italic text-lg">
+                  <p className="type-serif text-[#4B5563] italic text-lg">
                     {MENU_DATA[activeTab].subtitle}
                   </p>
                 </div>
@@ -210,7 +210,7 @@ export default function MenuPage() {
                               </span>
                             </div>
                             {item.desc && (
-                              <p className="type-serif text-smoke text-sm leading-relaxed mb-2">
+                              <p className="type-serif text-[#4B5563] text-sm leading-relaxed mb-2">
                                 {item.desc}
                               </p>
                             )}
@@ -240,19 +240,19 @@ export default function MenuPage() {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div>
                   <h5 className="type-caption text-char text-[9px] mb-2 font-bold">🍔 Made To Order</h5>
-                  <p className="type-serif text-smoke text-xs leading-relaxed">
+                  <p className="type-serif text-[#4B5563] text-xs leading-relaxed">
                     We never pre-cook our patties. Every burger is seared on hot cast iron right after you order for peak juiciness and flavor.
                   </p>
                 </div>
                 <div>
                   <h5 className="type-caption text-char text-[9px] mb-2 font-bold">📞 Phone-In Orders</h5>
-                  <p className="type-serif text-smoke text-xs leading-relaxed">
+                  <p className="type-serif text-[#4B5563] text-xs leading-relaxed">
                     Short on time? Call any of our 4 Austin/Buda locations ahead of time and your order will be bagged hot and ready for counter pickup.
                   </p>
                 </div>
                 <div>
                   <h5 className="type-caption text-char text-[9px] mb-2 font-bold">🍳 Breakfast Hours</h5>
-                  <p className="type-serif text-smoke text-xs leading-relaxed">
+                  <p className="type-serif text-[#4B5563] text-xs leading-relaxed">
                     Homemade biscuits &amp; sausage gravy, breakfast tacos, and hot pancake stacks are served from opening until 10:30 AM daily.
                   </p>
                 </div>

@@ -215,7 +215,7 @@ export default function MorphSlider({
               </h3>
             )}
             {currentItem.caption && (
-              <p className="type-serif text-sm sm:text-base text-stone-700 leading-relaxed max-w-xl drop-shadow">
+              <p className="type-serif text-sm sm:text-base text-[#2A2A2A] leading-relaxed max-w-xl drop-shadow">
                 {currentItem.caption}
               </p>
             )}
@@ -258,7 +258,7 @@ export default function MorphSlider({
               aria-label={`Go to slide ${idx + 1}`}
             />
           ))}
-          <span className="font-mono text-[10px] text-stone-700 ml-2 font-bold">
+          <span className="font-mono text-[10px] text-[#2A2A2A] ml-2 font-bold">
             {(currentIndex + 1).toString().padStart(2, "0")} / {items.length.toString().padStart(2, "0")}
           </span>
         </div>

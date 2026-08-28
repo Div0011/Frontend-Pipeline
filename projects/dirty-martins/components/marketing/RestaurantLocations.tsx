@@ -134,23 +134,23 @@ export default function RestaurantLocations() {
 
                 <div className="space-y-4 text-xs font-sans">
                   <div className="p-4 rounded-2xl bg-white/40 border border-white/5 space-y-1">
-                    <span className="text-[10px] uppercase font-bold text-stone-700 block">
+                    <span className="text-[10px] uppercase font-bold text-[#2A2A2A] block">
                       Address
                     </span>
                     <p className="text-black font-semibold text-sm">{currentLoc.address}</p>
-                    <p className="text-stone-700">{currentLoc.city}</p>
+                    <p className="text-[#2A2A2A]">{currentLoc.city}</p>
                   </div>
 
                   <div className="grid grid-cols-2 gap-3">
                     <div className="p-4 rounded-2xl bg-white/40 border border-white/5 space-y-1">
-                      <span className="text-[10px] uppercase font-bold text-stone-700 block">
+                      <span className="text-[10px] uppercase font-bold text-[#2A2A2A] block">
                         Hours
                       </span>
                       <p className="text-black font-bold">{currentLoc.hours}</p>
                     </div>
 
                     <div className="p-4 rounded-2xl bg-white/40 border border-white/5 space-y-1">
-                      <span className="text-[10px] uppercase font-bold text-stone-700 block">
+                      <span className="text-[10px] uppercase font-bold text-[#2A2A2A] block">
                         Seating
                       </span>
                       <p className="text-black font-bold text-[11px] leading-tight">

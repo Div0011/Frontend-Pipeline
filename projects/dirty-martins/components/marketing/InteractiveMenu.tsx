@@ -55,7 +55,7 @@ export default function InteractiveMenu() {
                 >
                   <div className="flex items-start justify-between mb-6">
                     <div>
-                      <p className="type-caption text-smoke text-[9px] mb-2">0{CATEGORIES.indexOf(cat) + 1}</p>
+                      <p className="type-caption text-[#4B5563] text-[9px] mb-2">0{CATEGORIES.indexOf(cat) + 1}</p>
                       <motion.h3
                         layout
                         className={`type-display text-3xl lg:text-4xl leading-[0.9] transition-colors duration-300 ${
@@ -85,7 +85,7 @@ export default function InteractiveMenu() {
                     transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
                     className="overflow-hidden"
                   >
-                    <p className="type-serif text-smoke text-sm leading-relaxed mb-6">
+                    <p className="type-serif text-[#4B5563] text-sm leading-relaxed mb-6">
                       {cat.sub}
                     </p>
                     <div className="space-y-3">
@@ -94,7 +94,7 @@ export default function InteractiveMenu() {
                           <span className="type-body text-char text-sm group-hover:text-[#C68A14] transition-colors duration-300">
                             {item.name}
                           </span>
-                          <span className="type-label text-smoke text-[9px]">
+                          <span className="type-label text-[#4B5563] text-[9px]">
                             ₹{item.price}
                           </span>
                         </div>

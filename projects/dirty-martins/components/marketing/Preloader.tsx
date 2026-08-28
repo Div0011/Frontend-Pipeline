@@ -86,7 +86,7 @@ export default function Preloader({ onComplete }: PreloaderProps) {
           <h2 className="type-display text-4xl sm:text-5xl text-black tracking-wider font-extrabold">
             DIRTY MARTIN'S KUM-BAK
           </h2>
-          <p className="font-sans text-xs uppercase tracking-widest text-stone-700">
+          <p className="font-sans text-xs uppercase tracking-widest text-[#2A2A2A]">
             CENTENNIAL KUM-BAK CHILI CRUST
           </p>
         </div>

@@ -127,7 +127,7 @@ export default function ArchetypeShowcase() {
                     style={{ backgroundColor: isSelected ? "#C68A14" : "rgba(255,255,255,0.2)" }}
                   />
                 </div>
-                <span className="text-[10px] text-stone-700 font-semibold uppercase tracking-wider">
+                <span className="text-[10px] text-[#2A2A2A] font-semibold uppercase tracking-wider">
                   {p.tag}
                 </span>
               </motion.button>
@@ -191,7 +191,7 @@ export default function ArchetypeShowcase() {
                 {current.flavorProfile.map((fp, fIdx) => (
                   <div key={fIdx} className="space-y-1">
                     <div className="flex justify-between text-xs font-semibold">
-                      <span className="text-stone-700">{fp.label}</span>
+                      <span className="text-[#2A2A2A]">{fp.label}</span>
                       <span className="font-bold" style={{ color: "#C68A14" }}>{fp.value}%</span>
                     </div>
                     <div className="w-full h-1.5 rounded-full bg-[#FAF8F2] overflow-hidden">

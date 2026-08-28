@@ -1,60 +1,52 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;700&family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;700&family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@500;700;900&family=Syne:wght@700;800&family=Staatliches&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --color-char: #122B1E;
-  --color-char-soft: #1B3B2B;
-  --color-char-mute: #284F3B;
-  --color-smoke: #8FAEA0;
-  --color-stone: #C5D9CE;
+  --color-char: #0A0A0A;
   --color-bone: #FAF8F2;
-  --color-bone-warm: #F4EFE6;
-  --color-bone-dark: #E4DCCF;
-  --color-ember: #DE3B2B;
-  --color-ember-glow: #F04F3F;
-  --color-yolk: #EAA824;
-  --color-yolk-light: #FBC85B;
+  --color-ember: #FFE500;
   
-  --font-display: 'Bebas Neue', 'Space Grotesk', Impact, sans-serif;
+  --font-display: 'Bebas Neue', 'Space Grotesk', 'Syne', 'Staatliches', Impact, sans-serif;
   --font-body: 'DM Sans', system-ui, -apple-system, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 }
 
-/* ─── Strict Brand Theme & Inverting Button Engine ────────────────────── */
+/* ─── Authentic Theme & Contrast Typography ────────────────────────── */
 :root {
-  --bg:                  #0A0A0A;
-  --fg:                  #FFFFFF;
-  --fg-muted:            rgba(255, 255, 255, 0.65);
-  --fg-sub:              rgba(255, 255, 255, 0.40);
-  --border:              rgba(255, 255, 255, 0.12);
-  --primary:             #FFE500;
-  
-  /* Buttons in Dark Theme: Brand Color / High Contrast with Black text */
-  --btn-primary-bg:      #FFE500;
-  --btn-primary-fg:      #000000;
-  --btn-secondary-bg:    rgba(255, 255, 255, 0.08);
-  --btn-secondary-fg:    #FFFFFF;
-  --btn-secondary-border:rgba(255, 255, 255, 0.20);
-  --btn-invert-bg:       #0A0A0A;
-  --btn-invert-fg:       #FFFFFF;
-}
-
-html.light {
-  --bg:                  #FAF8F2;
+  --bg:                  #FFFFFF;
   --fg:                  #0A0A0A;
-  --fg-muted:            rgba(10, 10, 10, 0.70);
-  --fg-sub:              rgba(10, 10, 10, 0.45);
+  --fg-muted:            rgba(10, 10, 10, 0.75);
+  --fg-sub:              rgba(10, 10, 10, 0.50);
   --border:              rgba(0, 0, 0, 0.12);
   --primary:             #FFE500;
   
-  /* Buttons in Light Theme: Inverts to Deep Black with Crisp White text */
-  --btn-primary-bg:      #0A0A0A;
-  --btn-primary-fg:      #FFFFFF;
-  --btn-secondary-bg:    rgba(10, 10, 10, 0.06);
+  --btn-primary-bg:      #FFE500;
+  --btn-primary-fg:      #000000;
+  --btn-secondary-bg:    #FFFFFF;
   --btn-secondary-fg:    #0A0A0A;
   --btn-secondary-border:rgba(0, 0, 0, 0.20);
-  --btn-invert-bg:       #FFE500;
-  --btn-invert-fg:       #000000;
+}
+
+html.light {
+  --bg:                  #FFFFFF;
+  --fg:                  #0A0A0A;
+  --fg-muted:            rgba(10, 10, 10, 0.75);
+  --fg-sub:              rgba(10, 10, 10, 0.50);
+  --border:              rgba(0, 0, 0, 0.12);
+  --primary:             #FFE500;
+  --btn-primary-bg:      #FFE500;
+  --btn-primary-fg:      #000000;
+}
+
+html.dark {
+  --bg:                  #0A0A0A;
+  --fg:                  #FFFFFF;
+  --fg-muted:            rgba(255, 255, 255, 0.70);
+  --fg-sub:              rgba(255, 255, 255, 0.45);
+  --border:              rgba(255, 255, 255, 0.15);
+  --primary:             #FFE500;
+  --btn-primary-bg:      #FFE500;
+  --btn-primary-fg:      #000000;
 }
 
 /* ─── Base ─────────────────────────────────────────────────────────── */
@@ -67,21 +59,57 @@ input, textarea, select, [contenteditable] {
 }
 
 body {
-  background-color: var(--bg);
+  background-color: var(--bg) !important;
   color: var(--fg);
   font-family: var(--font-body), sans-serif;
   overflow-x: hidden;
-  transition: background-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), color 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.type-display {
+/* Headings on Page Background */
+h1, h2, h3, h4, .type-display {
   font-family: var(--font-display), sans-serif;
   text-transform: uppercase;
   letter-spacing: -0.02em;
   line-height: 0.9;
+  color: #2A2A2A;
 }
 
-/* ─── BUTTONS: Theme-Inverting Engine ──────────────────────────────── */
+/* Subtexts / Paragraphs on Light Surfaces */
+body p, body .type-serif, body .type-body, body .desc, body .subtext {
+  color: #1A1A1A;
+}
+
+/* ─── ALL TEXTS OVER IMAGES / VIDEO CANVAS FRAMES (Crisp White + Shadows) ─── */
+[data-image-overlay] h1,
+[data-image-overlay] h2,
+[data-image-overlay] h3,
+.img-overlay-text h1,
+.img-overlay-text h2,
+.img-overlay-text h3 {
+  color: #2A2A2A !important;
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.95), 0 2px 8px rgba(0, 0, 0, 0.90);
+}
+
+[data-image-overlay] p,
+[data-image-overlay] .subtext-overlay,
+[data-image-overlay] span:not([data-brand-pill]),
+.img-overlay-text p,
+.img-overlay-text .subtext-overlay {
+  color: #FFFFFF !important;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.95), 0 1px 4px rgba(0, 0, 0, 0.90);
+}
+
+/* ─── TEXTS ON PRIMARY COLORED CONTAINERS ──────────────────────────── */
+[data-on-primary],
+[data-on-primary] *,
+[data-on-mustard],
+[data-on-mustard] *,
+.btn-primary,
+.btn-primary * {
+  color: #000000 !important;
+}
+
+/* ─── BUTTONS ──────────────────────────────────────────────────────── */
 .btn-primary {
   background-color: var(--btn-primary-bg) !important;
   color: var(--btn-primary-fg) !important;
@@ -101,48 +129,5 @@ body {
 }
 
 .btn-secondary:hover {
-  background-color: rgba(255, 255, 255, 0.15) !important;
-  transform: scale(1.03);
-}
-
-html.light .btn-secondary:hover {
-  background-color: rgba(0, 0, 0, 0.12) !important;
-}
-
-/* ─── PROTECTED IMAGE ZONES ────────────────────────────────────────── */
-[data-image-overlay],
-[data-image-overlay] * {
-  color: #FFFFFF !important;
-}
-
-.img-overlay-text,
-.img-overlay-text * {
-  color: #FFFFFF !important;
-}
-
-/* ─── LIGHT THEME Adaptations ─────────────────────────────────────── */
-html.light body section:not([data-image-frame]) > div > h1,
-html.light body section:not([data-image-frame]) > div > h2,
-html.light body section:not([data-image-frame]) > div > div > h1,
-html.light body section:not([data-image-frame]) > div > div > h2,
-html.light body section:not([data-image-frame]) > div > div > div > h2 {
-  color: var(--fg) !important;
-}
-
-html.light body section:not([data-image-frame]) > div > p,
-html.light body section:not([data-image-frame]) > div > div > p {
-  color: var(--fg-muted) !important;
-}
-
-html.light body header {
-  background-color: #FAF8F2EE !important;
-  border-bottom-color: rgba(0, 0, 0, 0.10) !important;
-}
-
-html.light body header a {
-  color: rgba(10, 10, 10, 0.75) !important;
-}
-
-html.light body header a:hover {
-  color: #0A0A0A !important;
+  filter: brightness(1.05);
 }

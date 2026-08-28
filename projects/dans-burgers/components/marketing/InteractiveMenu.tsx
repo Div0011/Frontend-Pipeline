@@ -51,7 +51,7 @@ export default function InteractiveMenu() {
                 >
                   <div className="flex items-start justify-between mb-6">
                     <div>
-                      <p className="type-caption text-smoke text-[9px] mb-2 font-sans">0{CATEGORIES.indexOf(cat) + 1}</p>
+                      <p className="type-caption text-[#4B5563] text-[9px] mb-2 font-sans">0{CATEGORIES.indexOf(cat) + 1}</p>
                       <motion.h3
                         layout
                         className={`type-display text-3xl lg:text-4xl leading-[0.9] transition-colors duration-300 ${
@@ -81,7 +81,7 @@ export default function InteractiveMenu() {
                     transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
                     className="overflow-hidden"
                   >
-                    <p className="type-serif text-smoke text-sm leading-relaxed mb-6">
+                    <p className="type-serif text-[#4B5563] text-sm leading-relaxed mb-6">
                       {cat.sub}
                     </p>
                     <div className="space-y-3">
@@ -90,7 +90,7 @@ export default function InteractiveMenu() {
                           <span className="type-body text-char text-sm group-hover:text-ember transition-colors duration-300 font-medium">
                             {item.name}
                           </span>
-                          <span className="type-label text-smoke text-[9px] font-bold">
+                          <span className="type-label text-[#4B5563] text-[9px] font-bold">
                             ${item.price.toFixed(2)}
                           </span>
                         </div>
@@ -151,7 +151,7 @@ export default function InteractiveMenu() {
               <span className="type-display text-2xl text-char">Dan&apos;s Hamburgers Menu</span>
               <button
                 onClick={() => setMenuOpen(false)}
-                className="type-caption text-[10px] tracking-widest text-smoke hover:text-ember transition-colors duration-300 font-bold"
+                className="type-caption text-[10px] tracking-widest text-[#4B5563] hover:text-ember transition-colors duration-300 font-bold"
               >
                 CLOSE ✕
               </button>
@@ -171,7 +171,7 @@ export default function InteractiveMenu() {
                     <div key={cat.id}>
                       <div className="flex items-baseline justify-between mb-8 border-b border-char/15 pb-4">
                         <h3 className="type-display text-3xl text-char">{cat.label}</h3>
-                        <span className="type-caption text-smoke text-[9px] font-sans">
+                        <span className="type-caption text-[#4B5563] text-[9px] font-sans">
                           {cat.items.length} ITEMS
                         </span>
                       </div>
@@ -186,7 +186,7 @@ export default function InteractiveMenu() {
                                 ${item.price.toFixed(2)}
                               </span>
                             </div>
-                            <p className="type-serif text-smoke text-sm leading-relaxed">
+                            <p className="type-serif text-[#4B5563] text-sm leading-relaxed">
                               {item.description}
                             </p>
                             {item.tags.length > 0 && (
@@ -213,7 +213,7 @@ export default function InteractiveMenu() {
                 <div className="mt-20 pt-10 border-t border-char/15 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
                   <div>
                     <p className="type-caption text-ember text-[9px] mb-2 font-bold">Made to Order</p>
-                    <p className="type-serif text-smoke text-sm max-w-lg">
+                    <p className="type-serif text-[#4B5563] text-sm max-w-lg">
                       Every patty is Certified Angus chuck seared fresh on our griddles. Call ahead to any of our 4 locations for pickup.
                     </p>
                   </div>

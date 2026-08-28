@@ -262,7 +262,7 @@ function Locations() {
                 <div className="flex justify-between items-start">
                   <div>
                     <p className="type-body text-char font-medium">{location.address}</p>
-                    <p className="type-caption text-smoke text-xs mt-1 font-sans">{location.hours}</p>
+                    <p className="type-caption text-[#4B5563] text-xs mt-1 font-sans">{location.hours}</p>
                   </div>
                   <span className="type-caption text-ember text-xs group-hover:translate-x-1 transition-transform duration-500 font-sans font-bold">
                     Details →
@@ -333,7 +333,7 @@ function CTA() {
             >
               <button
                 onClick={() => setIsReserveModalOpen(false)}
-                className="absolute top-4 right-4 text-xs font-sans text-smoke hover:text-char"
+                className="absolute top-4 right-4 text-xs font-sans text-[#4B5563] hover:text-char"
               >
                 ✕ CLOSE
               </button>

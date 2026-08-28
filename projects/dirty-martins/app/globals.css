@@ -1,39 +1,52 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;700&family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;700&family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@500;700;900&family=Syne:wght@700;800&family=Staatliches&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --color-char: #122B1E;
-  --color-char-soft: #1B3B2B;
-  --color-char-mute: #284F3B;
-  --color-smoke: #8FAEA0;
-  --color-stone: #C5D9CE;
+  --color-char: #0A0A0A;
   --color-bone: #FAF8F2;
-  --color-bone-warm: #F4EFE6;
-  --color-bone-dark: #E4DCCF;
-  --color-ember: #DE3B2B;
-  --color-ember-glow: #F04F3F;
-  --color-yolk: #C68A14;
-  --color-yolk-light: #E5A93C;
+  --color-ember: #C68A14;
   
-  --font-display: 'Bebas Neue', 'Space Grotesk', Impact, sans-serif;
+  --font-display: 'Bebas Neue', 'Space Grotesk', 'Syne', 'Staatliches', Impact, sans-serif;
   --font-body: 'DM Sans', system-ui, -apple-system, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 }
 
-/* ─── Dirty Martin's: Pure White Background & Dark Mustard Headings ─── */
-:root, html.light, html.dark {
+/* ─── Authentic Theme & Contrast Typography ────────────────────────── */
+:root {
   --bg:                  #FFFFFF;
   --fg:                  #0A0A0A;
-  --fg-muted:            rgba(10, 10, 10, 0.70);
-  --fg-sub:              rgba(10, 10, 10, 0.45);
-  --border:              rgba(198, 138, 20, 0.25);
+  --fg-muted:            rgba(10, 10, 10, 0.75);
+  --fg-sub:              rgba(10, 10, 10, 0.50);
+  --border:              rgba(0, 0, 0, 0.12);
   --primary:             #C68A14;
   
   --btn-primary-bg:      #C68A14;
   --btn-primary-fg:      #FFFFFF;
   --btn-secondary-bg:    #FFFFFF;
   --btn-secondary-fg:    #0A0A0A;
-  --btn-secondary-border:rgba(198, 138, 20, 0.40);
+  --btn-secondary-border:rgba(0, 0, 0, 0.20);
+}
+
+html.light {
+  --bg:                  #FFFFFF;
+  --fg:                  #0A0A0A;
+  --fg-muted:            rgba(10, 10, 10, 0.75);
+  --fg-sub:              rgba(10, 10, 10, 0.50);
+  --border:              rgba(0, 0, 0, 0.12);
+  --primary:             #C68A14;
+  --btn-primary-bg:      #C68A14;
+  --btn-primary-fg:      #FFFFFF;
+}
+
+html.dark {
+  --bg:                  #0A0A0A;
+  --fg:                  #FFFFFF;
+  --fg-muted:            rgba(255, 255, 255, 0.70);
+  --fg-sub:              rgba(255, 255, 255, 0.45);
+  --border:              rgba(255, 255, 255, 0.15);
+  --primary:             #C68A14;
+  --btn-primary-bg:      #C68A14;
+  --btn-primary-fg:      #FFFFFF;
 }
 
 /* ─── Base ─────────────────────────────────────────────────────────── */
@@ -46,13 +59,13 @@ input, textarea, select, [contenteditable] {
 }
 
 body {
-  background-color: #FFFFFF !important;
+  background-color: var(--bg) !important;
   color: var(--fg);
   font-family: var(--font-body), sans-serif;
   overflow-x: hidden;
 }
 
-/* Headings on White/Light surfaces are Dark Mustard */
+/* Headings on Page Background */
 h1, h2, h3, h4, .type-display {
   font-family: var(--font-display), sans-serif;
   text-transform: uppercase;
@@ -61,7 +74,12 @@ h1, h2, h3, h4, .type-display {
   color: #C68A14;
 }
 
-/* Headings over image frames & video canvas */
+/* Subtexts / Paragraphs on Light Surfaces */
+body p, body .type-serif, body .type-body, body .desc, body .subtext {
+  color: #1A1A1A;
+}
+
+/* ─── ALL TEXTS OVER IMAGES / VIDEO CANVAS FRAMES (Crisp White + Shadows) ─── */
 [data-image-overlay] h1,
 [data-image-overlay] h2,
 [data-image-overlay] h3,
@@ -69,54 +87,47 @@ h1, h2, h3, h4, .type-display {
 .img-overlay-text h2,
 .img-overlay-text h3 {
   color: #C68A14 !important;
-  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.9), 0 2px 8px rgba(0, 0, 0, 0.8);
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.95), 0 2px 8px rgba(0, 0, 0, 0.90);
 }
 
-/* ─── ALL SUBTEXTS OVER IMAGES / FRAMES MUST BE CRISP WHITE ─────────── */
 [data-image-overlay] p,
 [data-image-overlay] .subtext-overlay,
+[data-image-overlay] span:not([data-brand-pill]),
 .img-overlay-text p,
 .img-overlay-text .subtext-overlay {
   color: #FFFFFF !important;
-  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.9), 0 1px 4px rgba(0, 0, 0, 0.8);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.95), 0 1px 4px rgba(0, 0, 0, 0.90);
 }
 
-/* ─── ON MUSTARD BACKGROUNDS, TEXT MUST ALWAYS BE CRISP WHITE ───────── */
+/* ─── TEXTS ON PRIMARY COLORED CONTAINERS ──────────────────────────── */
+[data-on-primary],
+[data-on-primary] *,
 [data-on-mustard],
 [data-on-mustard] *,
-.bg-\[\#C68A14\],
-.bg-\[\#C68A14\] *,
 .btn-primary,
-.btn-primary *,
-.text-white,
-[style*="background-color: #C68A14"],
-[style*="background-color: #C68A14"] *,
-[style*="background-color: rgb(198, 138, 20)"],
-[style*="background-color: rgb(198, 138, 20)"] * {
+.btn-primary * {
   color: #FFFFFF !important;
 }
 
 /* ─── BUTTONS ──────────────────────────────────────────────────────── */
 .btn-primary {
-  background-color: #C68A14 !important;
-  color: #FFFFFF !important;
+  background-color: var(--btn-primary-bg) !important;
+  color: var(--btn-primary-fg) !important;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .btn-primary:hover {
-  background-color: #B37B0F !important;
+  filter: brightness(1.1);
   transform: scale(1.03);
 }
 
 .btn-secondary {
-  background-color: #FFFFFF !important;
-  color: #0A0A0A !important;
-  border: 1px solid rgba(198, 138, 20, 0.40) !important;
+  background-color: var(--btn-secondary-bg) !important;
+  color: var(--btn-secondary-fg) !important;
+  border: 1px solid var(--btn-secondary-border) !important;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .btn-secondary:hover {
-  background-color: #FAF8F2 !important;
-  border-color: #C68A14 !important;
-  transform: scale(1.03);
+  filter: brightness(1.05);
 }

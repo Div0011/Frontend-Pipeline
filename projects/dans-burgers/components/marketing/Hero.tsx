@@ -90,7 +90,7 @@ export default function Hero() {
 
       <div
         ref={sidebarLeftRef}
-        className="absolute left-6 bottom-12 hidden xl:block space-y-2 font-sans text-[9px] text-smoke tracking-widest leading-relaxed z-20"
+        className="absolute left-6 bottom-12 hidden xl:block space-y-2 font-sans text-[9px] text-[#4B5563] tracking-widest leading-relaxed z-20"
       >
         <p><span className="text-stone">SPECIMEN:</span> DAN&apos;S SPECIAL BURGER</p>
         <p><span className="text-stone">FOUNDED:</span> DAN &amp; FRANCES JUNK</p>
@@ -99,7 +99,7 @@ export default function Hero() {
 
       <div
         ref={sidebarRightRef}
-        className="absolute right-6 bottom-12 hidden xl:block space-y-2 font-sans text-[9px] text-smoke tracking-widest text-right leading-relaxed z-20"
+        className="absolute right-6 bottom-12 hidden xl:block space-y-2 font-sans text-[9px] text-[#4B5563] tracking-widest text-right leading-relaxed z-20"
       >
         <p><span className="text-stone">COORDINATES:</span> 30.2672° N, 97.7431° W</p>
         <p><span className="text-stone">ORIGIN:</span> AUSTIN, TEXAS</p>

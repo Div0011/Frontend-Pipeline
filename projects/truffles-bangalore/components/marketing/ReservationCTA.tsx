@@ -122,7 +122,7 @@ export default function ReservationCTA() {
                     ✓
                   </div>
                   <h4 className="type-display text-2xl font-bold">RESERVATION CONFIRMED</h4>
-                  <p className="text-xs font-semibold text-stone-700">
+                  <p className="text-xs font-semibold text-[#2A2A2A]">
                     We look forward to welcoming you, {name} at {selectedLocation} for {guests}.
                   </p>
                 </motion.div>

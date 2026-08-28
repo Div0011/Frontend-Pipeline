@@ -206,7 +206,7 @@ export default function AccordionGallery({
               <div className="space-y-3">
                 <div className="flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full animate-pulse" style={{ backgroundColor: accentColor }} />
-                  <span className="font-mono text-xs uppercase tracking-widest text-stone-700 font-bold">
+                  <span className="font-mono text-xs uppercase tracking-widest text-[#2A2A2A] font-bold">
                     FEATURED SPECIMEN
                   </span>
                 </div>
@@ -216,7 +216,7 @@ export default function AccordionGallery({
                 </h3>
 
                 {item.caption && (
-                  <p className="text-stone-700 text-xs sm:text-sm font-sans line-clamp-2 max-w-lg leading-relaxed drop-shadow-sm">
+                  <p className="text-[#2A2A2A] text-xs sm:text-sm font-sans line-clamp-2 max-w-lg leading-relaxed drop-shadow-sm">
                     {item.caption}
                   </p>
                 )}

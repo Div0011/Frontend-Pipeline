@@ -18,7 +18,7 @@ export default function AboutPage() {
             <h1 className="type-display text-5xl sm:text-7xl md:text-8xl font-black text-black leading-none">
               BUILT ON CAST IRON.
             </h1>
-            <p className="text-base sm:text-lg text-stone-700 leading-relaxed max-w-2xl font-body">
+            <p className="text-base sm:text-lg text-[#2A2A2A] leading-relaxed max-w-2xl font-body">
               Dirty Martin's Kum-Bak brings genuine, handcrafted culinary discipline to Austin with fresh daily prime ingredients, custom artisanal recipes, and uncompromising craft.
             </p>
           </div>

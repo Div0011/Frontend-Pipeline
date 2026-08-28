@@ -136,7 +136,7 @@ export default function TypeTester() {
 
         {/* Specimen display area */}
         <div className="border border-bone-dark bg-bone-warm min-h-[300px] flex flex-col justify-between p-8 md:p-12 relative group rounded-sm overflow-hidden shadow-md">
-          <div className="flex flex-wrap justify-between gap-4 border-b border-bone-dark pb-6 text-smoke text-[10px] uppercase font-sans tracking-widest">
+          <div className="flex flex-wrap justify-between gap-4 border-b border-bone-dark pb-6 text-[#4B5563] text-[10px] uppercase font-sans tracking-widest">
             <div>
               <span className="text-stone">Typeface: </span>
               <span className="text-char font-bold">{selectedFont.name}</span>

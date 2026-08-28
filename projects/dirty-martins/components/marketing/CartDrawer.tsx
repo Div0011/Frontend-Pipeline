@@ -60,13 +60,13 @@ export default function CartDrawer({
                   <h2 className="type-display text-2xl font-bold tracking-wide">
                     YOUR ORDER SELECTIONS
                   </h2>
-                  <p className="font-sans text-[10px] text-stone-700 uppercase tracking-widest mt-0.5">
+                  <p className="font-sans text-[10px] text-[#2A2A2A] uppercase tracking-widest mt-0.5">
                     {items.reduce((acc, i) => acc + i.quantity, 0)} Items Added
                   </p>
                 </div>
                 <button
                   onClick={onClose}
-                  className="w-8 h-8 rounded-full bg-[#FAF8F2] border border-[#C68A14]/25 flex items-center justify-center text-stone-700 hover:text-black transition-colors"
+                  className="w-8 h-8 rounded-full bg-[#FAF8F2] border border-[#C68A14]/25 flex items-center justify-center text-[#2A2A2A] hover:text-black transition-colors"
                 >
                   ✕
                 </button>
@@ -75,7 +75,7 @@ export default function CartDrawer({
               {/* Items List */}
               <div className="flex-1 overflow-y-auto p-6 space-y-4">
                 {items.length === 0 ? (
-                  <div className="h-full flex flex-col items-center justify-center text-center text-stone-700 space-y-3">
+                  <div className="h-full flex flex-col items-center justify-center text-center text-[#2A2A2A] space-y-3">
                     <span className="text-4xl">🛍️</span>
                     <p className="font-sans text-xs uppercase tracking-wider">
                       Your order drawer is currently empty
@@ -129,7 +129,7 @@ export default function CartDrawer({
               {items.length > 0 && (
                 <div className="p-6 border-t border-[#C68A14]/25 bg-[#070709] space-y-4">
                   <div className="flex justify-between items-center font-sans">
-                    <span className="text-xs text-stone-700 uppercase tracking-wider">
+                    <span className="text-xs text-[#2A2A2A] uppercase tracking-wider">
                       Estimated Subtotal
                     </span>
                     <span className="text-xl font-bold" style={{ color: primaryColor }}>

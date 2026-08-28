@@ -215,7 +215,7 @@ export default function BrandManifesto() {
                     {current.stats.map((st, sIdx) => (
                       <div key={sIdx} className="space-y-1">
                         <div className="flex justify-between text-xs font-semibold">
-                          <span className="text-stone-700 [html.light_&]:text-stone-600">{st.label}</span>
+                          <span className="text-[#2A2A2A] [html.light_&]:text-stone-600">{st.label}</span>
                           <span className="font-bold [html.light_&]:text-stone-950" style={{ color: "#C68A14" }}>{st.value}</span>
                         </div>
                         <div className="w-full h-1.5 rounded-full bg-[#FAF8F2] [html.light_&]:bg-white/10 overflow-hidden">
@@ -255,7 +255,7 @@ export default function BrandManifesto() {
               <h3 className="type-display text-2xl text-[#C68A14] [html.light_&]:text-stone-950 font-bold">
                 450°F STEEL HIGH-HEAT PRESS
               </h3>
-              <p className="text-xs text-stone-700 [html.light_&]:text-stone-700 leading-relaxed font-body">
+              <p className="text-xs text-stone-700 [html.light_&]:text-[#2A2A2A] leading-relaxed font-body">
                 Smashed ultra-thin on screaming hot steel for complete Maillard caramelization and crunchy lace edges.
               </p>
             </div>
@@ -264,10 +264,10 @@ export default function BrandManifesto() {
               <span className="text-xs uppercase font-extrabold text-stone-500 block">
                 STANDARD THICK BURGER
               </span>
-              <h3 className="type-display text-2xl text-stone-700 [html.light_&]:text-stone-700 font-bold">
+              <h3 className="type-display text-2xl text-stone-700 [html.light_&]:text-[#2A2A2A] font-bold">
                 MILD-HEAT STEAM COOK
               </h3>
-              <p className="text-xs text-stone-700 [html.light_&]:text-stone-600 leading-relaxed font-body">
+              <p className="text-xs text-[#2A2A2A] [html.light_&]:text-stone-600 leading-relaxed font-body">
                 Thick dense patty with minimal surface caramelization and soft steamed exterior.
               </p>
             </div>

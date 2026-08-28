@@ -19,7 +19,7 @@ export default function HowWeSmash() {
           <div className="lg:col-span-6 space-y-6">
             <div className="p-6 rounded-3xl bg-white/[0.04] border border-[#C68A14]/25 space-y-4">
               <div className="flex justify-between items-center text-xs font-bold uppercase tracking-wider">
-                <span className="text-stone-700">Sear Temperature & Pressure</span>
+                <span className="text-[#2A2A2A]">Sear Temperature & Pressure</span>
                 <span style={{ color: "#C68A14" }}>{searPressure} lbs / 450°F</span>
               </div>
               <input
