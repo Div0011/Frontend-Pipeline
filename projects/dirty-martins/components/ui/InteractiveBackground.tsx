@@ -10,26 +10,15 @@ interface InteractiveBackgroundProps {
 
 export default function InteractiveBackground({
   primaryColor = "#C68A14",
-  themeBase = "#100804",
+  themeBase = "#FFFFFF",
 }: InteractiveBackgroundProps) {
   const mouseX = useMotionValue(0.5);
   const mouseY = useMotionValue(0.5);
-  const [isDarkMode, setIsDarkMode] = useState<boolean>(true);
 
   const springX = useSpring(mouseX, { stiffness: 45, damping: 25 });
   const springY = useSpring(mouseY, { stiffness: 45, damping: 25 });
 
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
-
-  useEffect(() => {
-    const handleThemeChange = (e: any) => {
-      const dark = e.detail?.isDark !== undefined ? e.detail.isDark : true;
-      setIsDarkMode(dark);
-    };
-
-    window.addEventListener("themechange", handleThemeChange);
-    return () => window.removeEventListener("themechange", handleThemeChange);
-  }, []);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -114,21 +103,6 @@ export default function InteractiveBackground({
       c.stroke();
     };
 
-    const drawPizza = (c: CanvasRenderingContext2D, size: number) => {
-      const s = size * 0.5;
-      c.beginPath();
-      c.moveTo(0, -s * 1.2);
-      c.lineTo(s * 0.9, s * 0.9);
-      c.quadraticCurveTo(0, s * 1.1, -s * 0.9, s * 0.9);
-      c.closePath();
-      c.stroke();
-      c.beginPath();
-      c.arc(-s * 0.2, 0, 2.5, 0, Math.PI * 2);
-      c.arc(s * 0.25, s * 0.2, 2.5, 0, Math.PI * 2);
-      c.arc(0, s * 0.5, 2.5, 0, Math.PI * 2);
-      c.fill();
-    };
-
     const drawSpatula = (c: CanvasRenderingContext2D, size: number) => {
       const s = size * 0.5;
       c.beginPath();
@@ -143,61 +117,54 @@ export default function InteractiveBackground({
       c.lineTo(s * 0.3, -s * 0.3);
       c.stroke();
       c.beginPath();
-      c.moveTo(0, -s * 0.1);
-      c.lineTo(0, s * 0.9);
+      c.moveTo(0, -0.1);
+      c.lineTo(0, s * 1.1);
+      c.lineWidth = 2.4;
       c.stroke();
+      c.lineWidth = 1.6;
     };
 
     const drawFlame = (c: CanvasRenderingContext2D, size: number) => {
       const s = size * 0.5;
       c.beginPath();
-      c.moveTo(0, -s);
-      c.quadraticCurveTo(s * 0.8, -s * 0.2, s * 0.5, s * 0.7);
-      c.quadraticCurveTo(0, s, -s * 0.5, s * 0.7);
-      c.quadraticCurveTo(-s * 0.8, -s * 0.2, 0, -s);
+      c.moveTo(0, -s * 1.1);
+      c.bezierCurveTo(s * 0.8, -s * 0.4, s * 0.9, s * 0.8, 0, s * 1.1);
+      c.bezierCurveTo(-s * 0.9, s * 0.8, -s * 0.8, -s * 0.4, 0, -s * 1.1);
       c.stroke();
     };
 
     const drawStar = (c: CanvasRenderingContext2D, size: number) => {
       const s = size * 0.4;
       c.beginPath();
-      c.moveTo(0, -s * 1.2);
-      c.lineTo(s * 0.3, -s * 0.3);
-      c.lineTo(s * 1.2, 0);
-      c.lineTo(s * 0.3, s * 0.3);
-      c.lineTo(0, s * 1.2);
-      c.lineTo(-s * 0.3, s * 0.3);
-      c.lineTo(-s * 1.2, 0);
-      c.lineTo(-s * 0.3, -s * 0.3);
-      c.closePath();
+      for (let i = 0; i < 4; i++) {
+        const a = (i * Math.PI) / 2;
+        c.moveTo(0, 0);
+        c.lineTo(Math.cos(a) * s * 1.2, Math.sin(a) * s * 1.2);
+      }
       c.stroke();
     };
 
-    const drawSparkle = (c: CanvasRenderingContext2D, size: number) => {
-      const s = size * 0.35;
-      c.beginPath();
-      c.moveTo(0, -s);
-      c.lineTo(0, s);
-      c.moveTo(-s, 0);
-      c.lineTo(s, 0);
-      c.stroke();
-    };
+    const drawDoodle = (c: CanvasRenderingContext2D, d: any) => {
+      c.save();
+      c.translate(d.x, d.y);
+      c.rotate(d.rotation);
+      c.globalAlpha = Math.max(0, Math.min(1, d.alpha));
 
-    const drawSteam = (c: CanvasRenderingContext2D, size: number) => {
-      const s = size * 0.5;
-      c.beginPath();
-      c.moveTo(-s * 0.3, s * 0.6);
-      c.quadraticCurveTo(-s * 0.6, 0, -s * 0.2, -s * 0.6);
-      c.moveTo(s * 0.3, s * 0.6);
-      c.quadraticCurveTo(s * 0.6, 0, s * 0.2, -s * 0.6);
-      c.stroke();
-    };
-
-    const drawSwirl = (c: CanvasRenderingContext2D, size: number) => {
-      const s = size * 0.4;
-      c.beginPath();
-      c.arc(0, 0, s, 0, Math.PI * 1.5, false);
-      c.stroke();
+      switch (d.type) {
+        case "burger":
+          drawBurger(c, d.size);
+          break;
+        case "spatula":
+          drawSpatula(c, d.size);
+          break;
+        case "flame":
+          drawFlame(c, d.size);
+          break;
+        default:
+          drawStar(c, d.size);
+          break;
+      }
+      c.restore();
     };
 
     const render = () => {
@@ -260,40 +227,7 @@ export default function InteractiveBackground({
         if (d.x < -50) d.x = width + 50;
         if (d.x > width + 50) d.x = -50;
 
-        ctx.save();
-        ctx.translate(d.x, d.y);
-        ctx.rotate(d.rotation);
-        ctx.globalAlpha = Math.max(0, Math.min(1, d.alpha));
-
-        switch (d.type) {
-          case "burger":
-            drawBurger(ctx, d.size);
-            break;
-          case "pizza":
-          case "slice":
-            drawPizza(ctx, d.size);
-            break;
-          case "spatula":
-            drawSpatula(ctx, d.size);
-            break;
-          case "flame":
-            drawFlame(ctx, d.size);
-            break;
-          case "star":
-            drawStar(ctx, d.size);
-            break;
-          case "sparkle":
-            drawSparkle(ctx, d.size);
-            break;
-          case "steam":
-            drawSteam(ctx, d.size);
-            break;
-          case "swirl":
-            drawSwirl(ctx, d.size);
-            break;
-        }
-
-        ctx.restore();
+        drawDoodle(ctx, d);
       }
 
       animationFrameId = requestAnimationFrame(render);
@@ -305,21 +239,21 @@ export default function InteractiveBackground({
       window.removeEventListener("resize", handleResize);
       cancelAnimationFrame(animationFrameId);
     };
-  }, [primaryColor]);
+  }, [primaryColor, springX, springY]);
 
   return (
     <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden select-none transition-colors duration-500">
+      {/* 100% Crisp White to Warm Cream Background (Zero Black) */}
       <div
-        className="absolute inset-0 transition-colors duration-500"
+        className="absolute inset-0"
         style={{
-          background: isDarkMode
-            ? `radial-gradient(circle at 50% 30%, ${themeBase} 0%, #050806 100%)`
-            : `radial-gradient(circle at 50% 30%, #FAF7F2 0%, #EBE5DB 100%)`,
+          background: "radial-gradient(circle at 50% 30%, #FFFFFF 0%, #FAF8F2 100%)",
         }}
       />
 
+      {/* Subtle Mustard Ambient Glow */}
       <motion.div
-        className="absolute w-[900px] h-[900px] rounded-full blur-[180px] opacity-20 pointer-events-none transform -translate-x-1/2 -translate-y-1/2"
+        className="absolute w-[900px] h-[900px] rounded-full blur-[180px] opacity-10 pointer-events-none transform -translate-x-1/2 -translate-y-1/2"
         style={{
           backgroundColor: primaryColor,
           left: springX ? `${springX.get() * 100}%` : "50%",
@@ -328,16 +262,16 @@ export default function InteractiveBackground({
       />
 
       <div
-        className="absolute -top-32 right-0 w-[700px] h-[700px] rounded-full blur-[200px] opacity-15 pointer-events-none"
+        className="absolute -top-32 right-0 w-[700px] h-[700px] rounded-full blur-[200px] opacity-10 pointer-events-none"
         style={{ backgroundColor: primaryColor }}
       />
       <div
-        className="absolute bottom-0 left-10 w-[800px] h-[800px] rounded-full blur-[220px] opacity-12 pointer-events-none"
+        className="absolute bottom-0 left-10 w-[800px] h-[800px] rounded-full blur-[220px] opacity-10 pointer-events-none"
         style={{ backgroundColor: primaryColor }}
       />
 
       <div
-        className="absolute inset-0 pointer-events-none opacity-[0.08]"
+        className="absolute inset-0 pointer-events-none opacity-[0.06]"
         style={{
           backgroundImage: `radial-gradient(circle at 1px 1px, ${primaryColor} 1px, transparent 0)`,
           backgroundSize: "36px 36px",
