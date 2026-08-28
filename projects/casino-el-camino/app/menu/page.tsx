@@ -79,34 +79,38 @@ export default function MenuPage() {
       <Nav />
       <main className="pt-24 min-h-screen relative z-10 select-none pb-20">
         {/* Banner Section */}
-        <section className="py-16 lg:py-24 border-b border-black/10 dark:border-white/10">
+        <section className="py-16 lg:py-20 border-b border-black/10 dark:border-white/10">
           <div className="mx-auto max-w-7xl px-6 lg:px-8 space-y-4">
             <span
-              className="text-xs uppercase tracking-widest font-extrabold inline-block px-3.5 py-1.5 rounded-full border shadow-sm"
+              className="text-xs uppercase tracking-widest font-black inline-block px-4 py-1.5 rounded-full shadow-md"
               style={{
-                backgroundColor: "#C68A1415",
-                borderColor: "#C68A1440",
-                color: "#C68A14",
+                backgroundColor: "#FFE500",
+                color: "#000000",
               }}
             >
               Handcrafted Culinary Discipline
             </span>
 
-            <h1
-              className="type-display text-5xl sm:text-7xl md:text-8xl leading-none font-black tracking-tight text-black dark:text-white"
-            >
+            <h1 className="type-display text-5xl sm:text-7xl md:text-8xl leading-none font-black tracking-tight text-black dark:text-white">
               CASINO EL CAMINO <br />
-              <span style={{ color: "#C68A14" }}>CULINARY MENU</span>
+              <span
+                style={{
+                  color: "#FFE500",
+                  textShadow: "0 0 20px #FFE50040",
+                }}
+              >
+                CULINARY MENU
+              </span>
             </h1>
 
-            <p className="type-serif text-base sm:text-xl text-stone-700 dark:text-stone-300 max-w-2xl leading-relaxed">
+            <p className="type-serif text-base sm:text-xl text-stone-800 dark:text-stone-200 max-w-2xl leading-relaxed font-medium">
               Fresh premium smash burgers, loaded sides, and fountain drinks.
             </p>
           </div>
         </section>
 
-        {/* Category Tabs Sticky Filter Bar */}
-        <section className="sticky top-18 lg:top-20 z-30 py-4 backdrop-blur-xl bg-white/90 dark:bg-[#0A0A0A]/90 border-b border-black/10 dark:border-white/10 shadow-lg">
+        {/* Sticky Filter Bar */}
+        <section className="sticky top-18 lg:top-20 z-30 py-4 backdrop-blur-2xl bg-white/95 dark:bg-[#0A0A0A]/95 border-b border-black/10 dark:border-white/10 shadow-xl">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="flex gap-2.5 overflow-x-auto pb-1 scrollbar-none">
               {categories.map((cat) => {
@@ -118,14 +122,14 @@ export default function MenuPage() {
                       if ((window as any).playPopSound) (window as any).playPopSound();
                       setSelectedCategory(cat);
                     }}
-                    className={`px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-200 whitespace-nowrap ${
+                    className={`px-5 py-2.5 rounded-full text-xs font-black uppercase tracking-wider transition-all duration-200 whitespace-nowrap shadow-sm ${
                       isActive
-                        ? "shadow-xl scale-105"
-                        : "bg-black/5 dark:bg-white/5 text-stone-700 dark:text-stone-300 border border-black/10 dark:border-white/10 hover:border-black/30 dark:hover:border-white/30"
+                        ? "shadow-xl scale-105 ring-2 ring-offset-2 ring-black dark:ring-white"
+                        : "bg-black/5 dark:bg-white/10 text-stone-800 dark:text-stone-100 hover:bg-black/10 dark:hover:bg-white/20 border border-black/10 dark:border-white/20"
                     }`}
                     style={{
-                      backgroundColor: isActive ? "#C68A14" : undefined,
-                      color: isActive ? "#FFFFFF" : undefined,
+                      backgroundColor: isActive ? "#FFE500" : undefined,
+                      color: isActive ? "#000000" : undefined,
                     }}
                   >
                     {cat}
@@ -136,21 +140,22 @@ export default function MenuPage() {
           </div>
         </section>
 
-        {/* Menu Slabs Container - Fully Visible & Hydrated */}
+        {/* High-Contrast Menu Slabs */}
         <section className="py-12 lg:py-16">
           <div className="mx-auto max-w-7xl px-6 lg:px-8 space-y-16">
             {visibleSections.map((section) => (
               <div key={section.category} className="space-y-6">
                 <div className="flex items-center gap-3 border-b border-black/10 dark:border-white/10 pb-4">
-                  <h2 className="type-display text-3xl sm:text-4xl font-extrabold text-black dark:text-white">
+                  <h2
+                    className="type-display text-3xl sm:text-4xl font-black text-black dark:text-white"
+                  >
                     {section.category}
                   </h2>
                   <span
-                    className="text-[10px] font-mono font-bold uppercase px-2.5 py-1 rounded-full border"
+                    className="text-xs font-mono font-extrabold uppercase px-3 py-1 rounded-full shadow"
                     style={{
-                      backgroundColor: "#C68A1415",
-                      borderColor: "#C68A1435",
-                      color: "#C68A14",
+                      backgroundColor: "#FFE500",
+                      color: "#000000",
                     }}
                   >
                     {section.badge}
@@ -161,18 +166,24 @@ export default function MenuPage() {
                   {section.items.map((item) => (
                     <div
                       key={item.name}
-                      className="p-6 sm:p-8 rounded-3xl bg-white dark:bg-[#141414] border-2 border-black/10 dark:border-white/15 shadow-xl hover:shadow-2xl hover:scale-[1.01] transition-all duration-200 flex flex-col justify-between space-y-5"
+                      className="p-6 sm:p-8 rounded-3xl bg-[#121212] border-2 border-white/15 hover:border-white/40 shadow-2xl hover:scale-[1.01] transition-all duration-200 flex flex-col justify-between space-y-5 group"
                     >
                       <div className="space-y-3">
                         <div className="flex justify-between items-start gap-4">
-                          <h3 className="type-display text-2xl sm:text-3xl font-black text-black dark:text-white leading-tight">
+                          <h3
+                            className="type-display text-2xl sm:text-3xl font-black leading-tight group-hover:scale-[1.01] transition-transform"
+                            style={{
+                              color: "#FFE500",
+                              textShadow: "0 0 15px #FFE50050",
+                            }}
+                          >
                             {item.name}
                           </h3>
                           <span
-                            className="font-mono font-extrabold text-sm sm:text-base px-3.5 py-1.5 rounded-full flex-shrink-0 shadow"
+                            className="font-mono font-black text-sm sm:text-base px-3.5 py-1.5 rounded-full flex-shrink-0 shadow-lg"
                             style={{
-                              backgroundColor: "#C68A14",
-                              color: "#FFFFFF",
+                              backgroundColor: "#FFE500",
+                              color: "#000000",
                             }}
                           >
                             ${item.price}
@@ -180,19 +191,19 @@ export default function MenuPage() {
                         </div>
 
                         {item.desc && (
-                          <p className="type-serif text-sm sm:text-base text-stone-700 dark:text-stone-300 leading-relaxed">
+                          <p className="type-serif text-sm sm:text-base text-stone-200 leading-relaxed font-normal">
                             {item.desc}
                           </p>
                         )}
                       </div>
 
-                      <div className="flex items-center justify-between gap-4 pt-3 border-t border-black/5 dark:border-white/10">
+                      <div className="flex items-center justify-between gap-4 pt-4 border-t border-white/15">
                         {item.tags && item.tags.length > 0 ? (
                           <div className="flex flex-wrap gap-1.5">
                             {item.tags.map((tag) => (
                               <span
                                 key={tag}
-                                className="text-[10px] font-mono uppercase font-bold px-2.5 py-1 rounded-full border bg-black/5 dark:bg-white/5 border-black/10 dark:border-white/15 text-stone-800 dark:text-stone-200"
+                                className="text-[11px] font-mono uppercase font-bold px-3 py-1 rounded-full bg-white/10 text-stone-100 border border-white/20 shadow-sm"
                               >
                                 {tag}
                               </span>
@@ -208,10 +219,10 @@ export default function MenuPage() {
                             if ((window as any).playSizzleSound) (window as any).playSizzleSound();
                             alert(`Added ${item.name} to your order!`);
                           }}
-                          className="px-4 py-2 rounded-full text-xs font-black uppercase tracking-wider transition-all shadow-md hover:scale-105 active:scale-95 flex-shrink-0"
+                          className="px-4 py-2 rounded-full text-xs font-black uppercase tracking-wider transition-all shadow-lg hover:scale-105 active:scale-95 flex-shrink-0"
                           style={{
-                            backgroundColor: "#C68A14",
-                            color: "#FFFFFF",
+                            backgroundColor: "#FFE500",
+                            color: "#000000",
                           }}
                         >
                           Order +
