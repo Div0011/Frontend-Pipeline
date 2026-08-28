@@ -25,7 +25,7 @@ export default function CinematicHero() {
       frames={BURGER_FRAMES}
       scrollDistance="+=350%"
       onProgress={setProgress}
-      overlayGradient
+      overlayGradient={false}
       preloadCount={60}
     >
       <div data-image-overlay className="h-full max-w-7xl mx-auto px-6 sm:px-12 md:px-20 relative select-none">
@@ -48,7 +48,7 @@ export default function CinematicHero() {
               </span>
             </div>
 
-            <h1 className="type-display text-6xl sm:text-8xl md:text-9xl lg:text-[9.5rem] text-[#C68A14] leading-none font-black tracking-tight drop-shadow-sm">
+            <h1 className="type-display text-6xl sm:text-8xl md:text-9xl lg:text-[9.5rem] text-[#C68A14] leading-none font-black tracking-tight drop-shadow-[0_10px_30px_rgba(0,0,0,0.8)]">
               DIRTY MARTIN&apos;S
             </h1>
 
@@ -84,19 +84,21 @@ export default function CinematicHero() {
               PHASE 01 / CRAFT KINETICS
             </span>
 
-            <h2 className="type-display text-5xl sm:text-7xl md:text-8xl text-[#C68A14] leading-none font-black tracking-tight drop-shadow-sm">
+            <h2 className="type-display text-5xl sm:text-7xl md:text-8xl text-[#C68A14] leading-none font-black tracking-tight drop-shadow-[0_10px_30px_rgba(0,0,0,0.8)]">
               CENTURY-OLD GRIDDLE SEAR
             </h2>
 
-            <p className="type-serif text-base sm:text-xl text-stone-800 max-w-xl leading-relaxed font-medium">
+            <p className="type-serif text-base sm:text-xl text-white max-w-xl leading-relaxed font-medium drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
               ORIGINAL 1926 CAST IRON TECHNIQUE
             </p>
 
-            <div className="flex items-center gap-4 text-xs font-mono text-stone-700">
+            <div className="flex items-center gap-4 text-xs font-mono">
               <span className="font-bold px-3 py-1 bg-white/90 backdrop-blur-md rounded-full border border-[#C68A14]/30 text-[#C68A14] shadow-sm">
                 FRAME {currentFrame.toString().padStart(3, "0")} / {FRAME_COUNT}
               </span>
-              <span className="text-stone-600 font-bold">PRECISION SIZZLE SEQUENCE</span>
+              <span className="text-white font-bold drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
+                PRECISION SIZZLE SEQUENCE
+              </span>
             </div>
           </div>
         </div>
@@ -115,11 +117,11 @@ export default function CinematicHero() {
               PHASE 02 / CULINARY SIGNATURE
             </span>
 
-            <h2 className="type-display text-5xl sm:text-7xl md:text-8xl text-[#C68A14] leading-none font-black tracking-tight drop-shadow-sm">
+            <h2 className="type-display text-5xl sm:text-7xl md:text-8xl text-[#C68A14] leading-none font-black tracking-tight drop-shadow-[0_10px_30px_rgba(0,0,0,0.8)]">
               THE 1926 DH SPECIAL
             </h2>
 
-            <p className="type-serif text-base sm:text-xl text-stone-800 max-w-xl leading-relaxed font-medium">
+            <p className="type-serif text-base sm:text-xl text-white max-w-xl leading-relaxed font-medium drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
               Fresh daily Texas beef seared to perfection with house mustard and grilled onions on a toasted bun.
             </p>
 
@@ -128,7 +130,7 @@ export default function CinematicHero() {
                 href="/menu"
                 className="px-8 py-4 rounded-full bg-[#C68A14] text-white hover:bg-[#B37B0F] shadow-xl flex items-center gap-2 transition-transform hover:scale-105 active:scale-95"
               >
-                <span>Order 1926 Special</span>
+                <span>Order Signature Dish</span>
                 <span>→</span>
               </Link>
             </div>

@@ -24,7 +24,7 @@ export default function CinematicSmoothie() {
       frames={SMOOTHIE_FRAMES}
       scrollDistance="+=250%"
       onProgress={setProgress}
-      overlayGradient
+      overlayGradient={false}
       preloadCount={60}
     >
       <div data-image-overlay className="h-full max-w-7xl mx-auto px-6 sm:px-12 md:px-20 relative select-none">
@@ -39,7 +39,7 @@ export default function CinematicSmoothie() {
           }}
         >
           <div className="max-w-3xl space-y-4">
-            <span className="font-mono text-xs uppercase tracking-widest px-3 py-1 bg-[#FAF8F2] backdrop-blur-md rounded-full border border-[#C68A14]/25 inline-block font-bold" style={{ color: "#C68A14" }}>
+            <span className="font-mono text-xs uppercase tracking-widest px-3 py-1 bg-white/90 backdrop-blur-md rounded-full border border-[#C68A14]/30 inline-block font-extrabold text-[#C68A14] shadow-sm">
               HOUSE SIGNATURE CRAVING
             </span>
 
@@ -48,7 +48,7 @@ export default function CinematicSmoothie() {
               <span style={{ color: "#C68A14" }}>TEXAS CHOCOLATE SHAKE</span>
             </h2>
 
-            <p className="type-serif text-base sm:text-xl text-stone-700 max-w-xl leading-relaxed drop-shadow">
+            <p className="type-serif text-base sm:text-xl text-white max-w-xl leading-relaxed drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
               Hand-spun gelato, pure cream infusions, and real malt crumbles.
             </p>
           </div>
@@ -63,27 +63,25 @@ export default function CinematicSmoothie() {
             pointerEvents: stage === 2 ? "auto" : "none",
           }}
         >
-          <div className="max-w-2xl space-y-6">
-            <span className="font-mono text-xs uppercase tracking-widest px-3 py-1 bg-[#FAF8F2] backdrop-blur-md rounded-full border border-[#C68A14]/25 inline-block font-bold" style={{ color: "#C68A14" }}>
-              CHILL & EMULSION SPECIFICATION
+          <div className="max-w-2xl space-y-4">
+            <span className="font-mono text-xs uppercase tracking-widest px-3 py-1 bg-white/90 backdrop-blur-md rounded-full border border-[#C68A14]/30 inline-block font-extrabold text-[#C68A14] shadow-sm">
+              VELVET MALT BALANCE
             </span>
 
             <h2 className="type-display text-5xl sm:text-7xl md:text-8xl text-[#C68A14] leading-none font-black tracking-tight drop-shadow-[0_10px_30px_rgba(0,0,0,0.8)]">
-              VELVET TEXTURE & BALANCE
+              PERFECT THICK DENSITY
             </h2>
 
-            <p className="type-serif text-base sm:text-xl text-stone-700 max-w-xl leading-relaxed drop-shadow">
-              Slow-churned to ultra-dense consistency with balanced sweetness and creamy velvet mouthfeel.
+            <p className="type-serif text-base sm:text-xl text-white max-w-xl leading-relaxed drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
+              Rich velvety texture crafted daily with farm-fresh dairy and Belgian cocoa.
             </p>
 
-            <div className="pt-2 flex items-center gap-4">
+            <div className="pt-2">
               <Link
                 href="/menu"
-                className="px-8 py-4 rounded-full font-sans text-xs font-bold uppercase tracking-wider transition-all shadow-2xl hover:brightness-110 hover:scale-105 active:scale-95 flex items-center gap-2"
-                style={{ backgroundColor: "#C68A14", color: "#FFFFFF" }}
+                className="px-6 py-3 rounded-full font-sans text-xs font-bold uppercase tracking-wider bg-[#C68A14] text-white hover:bg-[#B37B0F] transition-all shadow-xl inline-block"
               >
-                <span>Explore Shakes & Beverages</span>
-                <span>→</span>
+                Order Shake →
               </Link>
             </div>
           </div>

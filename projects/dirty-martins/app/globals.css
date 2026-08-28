@@ -61,7 +61,27 @@ h1, h2, h3, h4, .type-display {
   color: #C68A14;
 }
 
-/* ─── CRITICAL: ON MUSTARD BACKGROUNDS, TEXT MUST ALWAYS BE CRISP WHITE ─── */
+/* Headings over image frames & video canvas */
+[data-image-overlay] h1,
+[data-image-overlay] h2,
+[data-image-overlay] h3,
+.img-overlay-text h1,
+.img-overlay-text h2,
+.img-overlay-text h3 {
+  color: #C68A14 !important;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.9), 0 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+/* ─── ALL SUBTEXTS OVER IMAGES / FRAMES MUST BE CRISP WHITE ─────────── */
+[data-image-overlay] p,
+[data-image-overlay] .subtext-overlay,
+.img-overlay-text p,
+.img-overlay-text .subtext-overlay {
+  color: #FFFFFF !important;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.9), 0 1px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* ─── ON MUSTARD BACKGROUNDS, TEXT MUST ALWAYS BE CRISP WHITE ───────── */
 [data-on-mustard],
 [data-on-mustard] *,
 .bg-\[\#C68A14\],
