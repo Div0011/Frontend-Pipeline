@@ -42,7 +42,7 @@ export default function ReservationCTA() {
       <div className="max-w-4xl mx-auto space-y-12">
         <div className="text-center space-y-3">
           <span className="font-mono text-xs tracking-widest uppercase font-bold block" style={{ color: "#DC2626" }}>
-            CASINO EL CAMINO // TABLE RESERVATIONS
+            CASINO EL CAMINO TABLE RESERVATIONS
           </span>
           <h2 className="type-display text-4xl sm:text-6xl text-white font-extrabold tracking-tight">
             BOOK YOUR EXPERIENCE
@@ -72,7 +72,7 @@ export default function ReservationCTA() {
 
             <div className="space-y-1">
               <span className="font-mono text-xs uppercase tracking-widest font-bold" style={{ color: "#DC2626" }}>
-                RESERVATION CONFIRMED // VIP PASS
+                RESERVATION CONFIRMED 
               </span>
               <h3 className="type-display text-3xl font-extrabold text-white">
                 SEE YOU SOON, {name.toUpperCase()}!

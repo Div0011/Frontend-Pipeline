@@ -2,252 +2,82 @@
 @import "tailwindcss";
 
 @theme {
-  /* ─── Smash Guys 2.0 — Warm Yellow Edition ─── */
-
-  /* Core palette */
-  --color-yolk:        #F5C418;   /* Primary brand yellow */
-  --color-yolk-light:  #FFD95A;   /* Lighter/hover yellow  */
-  --color-yolk-dark:   #D9A812;   /* Pressed/active yellow */
-  --color-char:        #141413;   /* Near-black charcoal   */
-  --color-char-soft:   #1C1C1A;   /* Card background dark  */
-  --color-char-mute:   #2C2C28;   /* Subtle border on dark  */
-  --color-bone:        #FAF9F4;   /* Page light background  */
-  --color-bone-warm:   #F5F0E4;   /* Section warm off-white */
-  --color-bone-dark:   #EDEAE0;   /* Divider / card bg      */
-  --color-smoke:       #6B6A64;   /* Mid-gray text          */
-  --color-ash:         #9C9B95;   /* Placeholder text       */
-  --color-ember:       #C44820;   /* Warm red accent        */
-
-  /* Backward-compat aliases (used by CanvasScrubber, VideoScrubber etc.) */
-  --color-cream:       #141413;
-  --color-cream-dark:  #1C1C1A;
-  --color-cream-warm:  #2C2C28;
-  --color-ink:         #FAF9F4;
-  --color-ink-light:   #EDEAE0;
-  --color-charcoal:    #9C9B95;
-  --color-stone:       #6B6A64;
-  --color-mist:        #9C9B95;
-  --color-fog:         #6B6A64;
-  --color-pearl:       #2C2C28;
-  --color-gold:        #F5C418;   /* maps to yolk */
-  --color-gold-light:  #FFD95A;
-  --color-gold-dark:   #D9A812;
-  --color-sage:        #6B7A5D;
-  --color-terracotta:  #C44820;
-  --color-burgundy:    #4B2A2A;
-
-  /* ─── Typography ─── */
-  --font-display: "Bebas Neue", sans-serif;    /* Impact display headings */
-  --font-serif:   "Lora", serif;               /* Warm body serif          */
-  --font-body:    "DM Sans", sans-serif;       /* Clean UI / body copy     */
-  --font-mono:    "JetBrains Mono", monospace;
-
-  /* Layout */
-  --section-padding:  8rem;
-  --container-width:  88rem;
-  --gutter:           2rem;
-
-  /* Motion easings */
-  --ease-out-expo:    cubic-bezier(0.16, 1, 0.3, 1);
-  --ease-in-out-quart: cubic-bezier(0.76, 0, 0.24, 1);
-  --ease-snap:        cubic-bezier(0.22, 1, 0.36, 1);
+  --color-char: #122B1E;
+  --color-char-soft: #1B3B2B;
+  --color-char-mute: #284F3B;
+  --color-smoke: #8FAEA0;
+  --color-stone: #C5D9CE;
+  --color-bone: #FAF8F2;
+  --color-bone-warm: #F4EFE6;
+  --color-bone-dark: #E4DCCF;
+  --color-ember: #DE3B2B;
+  --color-ember-glow: #F04F3F;
+  --color-yolk: #EAA824;
+  --color-yolk-light: #FBC85B;
+  
+  --font-display: 'Bebas Neue', 'Space Grotesk', Impact, sans-serif;
+  --font-body: 'DM Sans', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
 }
 
-/* ─── Base ─── */
-html {
-  scroll-behavior: auto;
-  cursor: none;
+:root {
+  --background: #070709;
+  --foreground: #FAF8F2;
 }
 
 body {
-  background-color: #FAF9F4;
-  color: #141413;
-  font-family: var(--font-body);
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body), sans-serif;
   overflow-x: hidden;
-  cursor: none;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.4s ease, color 0.4s ease;
 }
 
-@media (pointer: fine) {
-  *, *:hover, *:active, *:focus, a, button, select, input, label {
-    cursor: none !important;
-  }
-}
-
-::selection {
-  background-color: #F5C418;
-  color: #141413;
-}
-
-/* ─── Typography tokens ─── */
 .type-display {
-  font-family: var(--font-display);
-  font-weight: 400;
-  line-height: 0.95;
-  letter-spacing: 0.01em;
+  font-family: var(--font-display), sans-serif;
   text-transform: uppercase;
+  letter-spacing: -0.02em;
+  line-height: 0.9;
 }
 
-.type-serif {
-  font-family: var(--font-serif);
-  font-weight: 400;
-  line-height: 1.45;
-  letter-spacing: 0.01em;
-  text-wrap: pretty;
+/* Day & Night Responsive Contrast Overrides */
+html.light body {
+  background-color: #F6F4EE !important;
+  color: #18181B !important;
 }
 
-.type-body {
-  font-family: var(--font-body);
-  font-weight: 300;
-  line-height: 1.7;
-  letter-spacing: 0.01em;
-  text-wrap: pretty;
+html.light .text-white,
+html.light .text-bone,
+html.light .text-\[\#FAF8F2\] {
+  color: #18181B !important;
 }
 
-.type-caption {
-  font-family: var(--font-body);
-  font-weight: 600;
-  font-size: 0.7rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
+html.light .text-stone-300,
+html.light .text-stone-400,
+html.light .text-smoke {
+  color: #52525B !important;
 }
 
-.type-label {
-  font-family: var(--font-mono);
-  font-weight: 400;
-  font-size: 0.7rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+html.light .bg-white\/\[0\.03\],
+html.light .bg-white\/\[0\.04\],
+html.light .bg-white\/\[0\.08\],
+html.light .bg-white\/5 {
+  background-color: rgba(255, 255, 255, 0.85) !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+  color: #18181B !important;
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.06) !important;
 }
 
-/* ─── Section spacing ─── */
-.section-cinematic {
-  padding: var(--section-padding) 0;
+html.light .border-white\/10,
+html.light .border-white\/15,
+html.light .border-white\/20 {
+  border-color: rgba(0, 0, 0, 0.08) !important;
 }
 
-.section-tight {
-  padding: 4rem 0;
+html.light .text-\[#7C3AED\] {
+  color: #7C3AED !important;
 }
 
-/* ─── Glass primitives ─── */
-.glass-panel {
-  background: rgba(255, 255, 255, 0.05);
-  -webkit-backdrop-filter: blur(12px);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.glass-card {
-  background: rgba(255, 255, 255, 0.04);
-  -webkit-backdrop-filter: blur(8px);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  transition: all 0.5s var(--ease-out-expo);
-}
-
-.glass-card:hover {
-  border-color: rgba(245, 196, 24, 0.25);
-}
-
-/* ─── Yolk button ─── */
-.btn-yolk {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.75rem;
-  background: #F5C418;
-  color: #141413;
-  padding: 1rem 2rem;
-  font-family: var(--font-body);
-  font-weight: 600;
-  font-size: 0.75rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  transition: background 0.3s ease, transform 0.2s ease;
-}
-
-.btn-yolk:hover {
-  background: #FFD95A;
-  transform: translateY(-1px);
-}
-
-.btn-char {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.75rem;
-  background: #141413;
-  color: #FAF9F4;
-  padding: 1rem 2rem;
-  font-family: var(--font-body);
-  font-weight: 600;
-  font-size: 0.75rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  transition: background 0.3s ease;
-}
-
-.btn-char:hover {
-  background: #2C2C28;
-}
-
-.btn-outline {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.75rem;
-  border: 1.5px solid #141413;
-  color: #141413;
-  padding: 1rem 2rem;
-  font-family: var(--font-body);
-  font-weight: 600;
-  font-size: 0.75rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  transition: all 0.3s ease;
-}
-
-.btn-outline:hover {
-  background: #141413;
-  color: #FAF9F4;
-}
-
-/* ─── Menu card ─── */
-.menu-card {
-  background: #FAF9F4;
-  border: 1px solid #EDEAE0;
-  transition: all 0.4s var(--ease-out-expo);
-}
-
-.menu-card:hover {
-  border-color: #F5C418;
-  box-shadow: 0 0 0 1px #F5C418, 0 8px 30px rgba(0,0,0,0.06);
-}
-
-/* ─── Custom scrollbar ─── */
-::-webkit-scrollbar { width: 4px; }
-::-webkit-scrollbar-track { background: #FAF9F4; }
-::-webkit-scrollbar-thumb { background: rgba(245, 196, 24, 0.35); border-radius: 2px; }
-::-webkit-scrollbar-thumb:hover { background: rgba(245, 196, 24, 0.7); }
-
-/* ─── Noise grain overlay ─── */
-.grain-overlay {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 9999;
-  opacity: 0.025;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-  background-repeat: repeat;
-  background-size: 200px;
-}
-
-/* ─── Responsive ─── */
-@media (max-width: 768px) {
-  :root {
-    --section-padding: 4rem;
-    --gutter: 1rem;
-  }
-}
-
-@media (pointer: coarse) {
-  html, body { cursor: auto; }
+html.light .border-\[#7C3AED\] {
+  border-color: #7C3AED !important;
 }

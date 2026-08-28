@@ -81,7 +81,7 @@ export default function SignatureMenu() {
             <div className="flex items-center gap-2.5">
               <span className="w-2.5 h-2.5 rounded-full animate-ping" style={{ backgroundColor: "#166534" }} />
               <span className="font-mono text-xs tracking-widest uppercase font-bold" style={{ color: "#166534" }}>
-                LITTLE DELI & PIZZERIA // CULINARY BOARD
+                LITTLE DELI & PIZZERIA SIGNATURE MENU
               </span>
             </div>
             <h2 className="type-display text-4xl sm:text-6xl text-white font-extrabold tracking-tight">

@@ -1,168 +1,83 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;700&family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@500;700;900&display=swap');
 @import "tailwindcss";
 
-@layer base {
-  :root {
-    /* Dirty Martin's Kum-Bak 1926 Centennial Palette */
-    --ink: #F7F4EA;              /* Vintage Parchment / Cream */
-    --ink-light: #ECE7D8;
-    --paper: #1A1615;            /* Cast Iron / Smoked Charcoal */
-    --char: #1A1615;
-    --char-soft: #26211F;
-    --char-mute: #3D3532;
-    --bone: #F7F4EA;
-    --bone-warm: #EFEAD9;
-    --bone-dark: #DDD6C2;
-    --cream: #F7F4EA;
-    --cream-warm: #EFEAD9;
-    --smoke: #7A726D;
-    --stone: #9C948D;
-    --mist: #C7C0B5;
-
-    /* Centennial Crimson & Varsity Gold */
-    --ember: #8B0000;            /* Dirty's Crimson */
-    --ember-light: #A31212;
-    --ember-dark: #6D0000;
-    --yolk: #E5A823;             /* Varsity Gold */
-    --yolk-light: #F0BC42;
-    --gold: #E5A823;
-    --burnt-orange: #C05A11;     /* Longhorn Burnt Orange */
-
-    --font-display: "Bebas Neue", "Impact", "Arial Black", sans-serif;
-    --font-serif: "Instrument Serif", "Georgia", "Times New Roman", serif;
-    --font-body: "DM Sans", "Helvetica Neue", "Arial", sans-serif;
-    --font-mono: "Space Mono", "Courier New", monospace;
-  }
-
-  body {
-    background-color: var(--bone);
-    color: var(--char);
-    font-family: var(--font-body);
-    overflow-x: hidden;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-
-  ::selection {
-    background-color: var(--ember);
-    color: var(--bone);
-  }
+@theme {
+  --color-char: #122B1E;
+  --color-char-soft: #1B3B2B;
+  --color-char-mute: #284F3B;
+  --color-smoke: #8FAEA0;
+  --color-stone: #C5D9CE;
+  --color-bone: #FAF8F2;
+  --color-bone-warm: #F4EFE6;
+  --color-bone-dark: #E4DCCF;
+  --color-ember: #DE3B2B;
+  --color-ember-glow: #F04F3F;
+  --color-yolk: #EAA824;
+  --color-yolk-light: #FBC85B;
+  
+  --font-display: 'Bebas Neue', 'Space Grotesk', Impact, sans-serif;
+  --font-body: 'DM Sans', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
 }
 
-/* Custom Scrollbar */
-::-webkit-scrollbar {
-  width: 6px;
-}
-::-webkit-scrollbar-track {
-  background: #1A1615;
-}
-::-webkit-scrollbar-thumb {
-  background: #8B0000;
-  border-radius: 3px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #E5A823;
+:root {
+  --background: #070709;
+  --foreground: #FAF8F2;
 }
 
-/* Kinetic Typography & Utility Tokens */
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body), sans-serif;
+  overflow-x: hidden;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
 .type-display {
-  font-family: var(--font-display);
-  font-weight: 700;
+  font-family: var(--font-display), sans-serif;
+  text-transform: uppercase;
   letter-spacing: -0.02em;
-  line-height: 0.92;
-  text-transform: uppercase;
+  line-height: 0.9;
 }
 
-.type-serif {
-  font-family: var(--font-serif);
-  font-weight: 400;
+/* Day & Night Responsive Contrast Overrides */
+html.light body {
+  background-color: #F6F4EE !important;
+  color: #18181B !important;
 }
 
-.type-caption {
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
+html.light .text-white,
+html.light .text-bone,
+html.light .text-\[\#FAF8F2\] {
+  color: #18181B !important;
 }
 
-.type-label {
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  letter-spacing: 0.1em;
+html.light .text-stone-300,
+html.light .text-stone-400,
+html.light .text-smoke {
+  color: #52525B !important;
 }
 
-/* Custom Buttons */
-.btn-red {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.75rem;
-  background-color: var(--ember);
-  color: var(--bone);
-  padding: 1rem 2rem;
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.btn-red:hover {
-  background-color: var(--ember-light);
-  transform: translateY(-2px);
-  box-shadow: 0 10px 25px -5px rgba(139, 0, 0, 0.4);
+html.light .bg-white\/\[0\.03\],
+html.light .bg-white\/\[0\.04\],
+html.light .bg-white\/\[0\.08\],
+html.light .bg-white\/5 {
+  background-color: rgba(255, 255, 255, 0.85) !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+  color: #18181B !important;
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.06) !important;
 }
 
-.btn-yolk {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.75rem;
-  background-color: var(--yolk);
-  color: var(--char);
-  padding: 1rem 2rem;
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.btn-yolk:hover {
-  background-color: var(--yolk-light);
-  transform: translateY(-2px);
-  box-shadow: 0 10px 25px -5px rgba(229, 168, 35, 0.4);
+html.light .border-white\/10,
+html.light .border-white\/15,
+html.light .border-white\/20 {
+  border-color: rgba(0, 0, 0, 0.08) !important;
 }
 
-.btn-char {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.75rem;
-  background-color: var(--char);
-  color: var(--bone);
-  padding: 1rem 2rem;
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.btn-char:hover {
-  background-color: var(--char-soft);
-  transform: translateY(-2px);
+html.light .text-\[#BF5700\] {
+  color: #BF5700 !important;
 }
 
-.btn-outline {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.75rem;
-  border: 1px solid currentColor;
-  padding: 1rem 2rem;
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.btn-outline:hover {
-  background-color: var(--ember);
-  border-color: var(--ember);
-  color: var(--bone);
+html.light .border-\[#BF5700\] {
+  border-color: #BF5700 !important;
 }

@@ -1,75 +1,72 @@
-import type { Metadata } from "next";
+"use client";
+
 import Nav from "@/components/marketing/Nav";
 import Footer from "@/components/marketing/Footer";
 import Image from "next/image";
-
-export const metadata: Metadata = {
-  title: "Our Story | POOL BURGER",
-  description: "The story behind POOL BURGER — from humble beginnings to Bangalore's most iconic burger kitchen.",
-};
+import HowWeSmash from "@/components/marketing/HowWeSmash";
 
 export default function AboutPage() {
   return (
     <>
       <Nav />
-      <main className="pt-24">
-        <section className="py-24 lg:py-32">
-          <div className="mx-auto max-w-[88rem] px-6 lg:px-8">
-            <div className="max-w-3xl">
-              <p className="type-caption text-gold mb-4">Our Story</p>
-              <h1 className="type-display text-5xl md:text-6xl lg:text-7xl leading-[1.05] mb-8">
-                Built in
-                <br />
-                <span className="text-gold">public</span>
-              </h1>
-              <p className="type-serif text-xl text-stone leading-relaxed mb-6">
-                POOL BURGER started with a simple idea: to bring world-class smashburgers to Bangalore. But we didn&apos;t just want to open a restaurant — we wanted to build a brand in full view of our community.
-              </p>
-              <p className="type-body text-stone leading-relaxed">
-                Our journey has been documented every step of the way, from the first prototype burger to the opening of our flagship location in Indiranagar. This isn&apos;t just a restaurant — it&apos;s a story we&apos;ve shared with our community from day one.
-              </p>
-            </div>
+      <main className="pt-24 min-h-screen bg-transparent text-[#FAF8F2] relative z-10 font-sans">
+        <section className="py-20 lg:py-28 border-b border-white/10">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8 space-y-6">
+            <span className="text-xs uppercase tracking-widest font-bold block" style={{ color: "#F43F5E" }}>
+              CULINARY HERITAGE
+            </span>
+            <h1 className="type-display text-5xl sm:text-7xl md:text-8xl font-black text-white leading-none">
+              BUILT ON CAST IRON.
+            </h1>
+            <p className="text-base sm:text-lg text-stone-300 leading-relaxed max-w-2xl font-body">
+              Pool Burger brings genuine, handcrafted culinary discipline to Austin with fresh daily prime ingredients, custom artisanal recipes, and uncompromising craft.
+            </p>
           </div>
         </section>
 
-        <section className="py-16">
-          <div className="mx-auto max-w-[88rem] px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              <div className="aspect-[4/5] relative overflow-hidden">
-              <Image
-                src="/hero-burger.png"
-                alt="POOL BURGER Story"
-                fill
-                className="editorial-image object-cover"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-              />
-            </div>
-            <div className="aspect-[4/5] relative overflow-hidden">
-              <Image
-                src="/truffle-fries.png"
-                alt="POOL BURGER Kitchen"
-                fill
-                className="editorial-image object-cover"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-              />
+        <section className="py-16 border-b border-white/10">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="relative h-96 rounded-2xl overflow-hidden border border-white/15 shadow-2xl group">
+                <Image
+                  src="https://images.unsplash.com/photo-1550547660-d9450f859349?w=1000&q=80"
+                  alt="Pool Burger Craft Discipline"
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
+                <div className="absolute bottom-6 left-6 space-y-1">
+                  <span className="text-[10px] uppercase tracking-widest font-bold block" style={{ color: "#F43F5E" }}>
+                    THE HEAT DISCIPLINE
+                  </span>
+                  <h3 className="type-display text-2xl text-white font-bold">
+                    High-Heat Precision Sear
+                  </h3>
+                </div>
+              </div>
+
+              <div className="relative h-96 rounded-2xl overflow-hidden border border-white/15 shadow-2xl group">
+                <Image
+                  src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=1000&q=80"
+                  alt="Pool Burger Fresh Ingredients"
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
+                <div className="absolute bottom-6 left-6 space-y-1">
+                  <span className="text-[10px] uppercase tracking-widest font-bold block" style={{ color: "#F43F5E" }}>
+                    BESPOKE FLAVORS
+                  </span>
+                  <h3 className="type-display text-2xl text-white font-bold">
+                    Signature Compositions
+                  </h3>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
-        <section className="py-24 lg:py-32 bg-cream-dark/30">
-          <div className="mx-auto max-w-[88rem] px-6 lg:px-8">
-            <div className="max-w-3xl mx-auto text-center">
-              <p className="type-caption text-gold mb-6">Philosophy</p>
-              <h2 className="type-display text-3xl md:text-4xl mb-8">
-                Precision, passion, and the perfect patty
-              </h2>
-              <p className="type-serif text-xl text-stone leading-relaxed">
-                Every POOL BURGER burger is a testament to our obsession with quality. We source the finest ingredients, perfect our techniques through countless iterations, and never compromise on the final product.
-              </p>
-            </div>
-          </div>
-        </section>
+        <HowWeSmash />
       </main>
       <Footer />
     </>

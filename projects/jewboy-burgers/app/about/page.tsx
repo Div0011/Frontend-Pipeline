@@ -1,91 +1,72 @@
-import type { Metadata } from "next";
+"use client";
+
 import Nav from "@/components/marketing/Nav";
 import Footer from "@/components/marketing/Footer";
 import Image from "next/image";
-
-export const metadata: Metadata = {
-  title: "Mo's Story | JewBoy Burgers",
-  description: "How Mo Pittle combined El Paso border cuisine with Jewish home cooking to create JewBoy Burgers in Austin, Texas.",
-};
+import HowWeSmash from "@/components/marketing/HowWeSmash";
 
 export default function AboutPage() {
   return (
     <>
       <Nav />
-      <main className="pt-24 min-h-screen bg-bone text-char">
-        <section className="py-24 lg:py-32">
-          <div className="mx-auto max-w-[88rem] px-6 lg:px-8">
-            <div className="max-w-3xl">
-              <p className="type-caption text-ember mb-4 font-bold">El Paso Roots · Austin Soul</p>
-              <h1 className="type-display text-5xl md:text-6xl lg:text-7xl leading-[1.05] mb-8 text-char">
-                Shalom Y&apos;all,
-                <br />
-                <span className="text-ember">Mucho Gusto!</span>
-              </h1>
-              <p className="type-serif text-xl text-stone leading-relaxed mb-6">
-                Mo Pittle grew up in El Paso, Texas, in a Jewish family where border Mexican cooking and traditional Jewish comfort food lived side by side on the table.
-              </p>
-              <p className="type-body text-stone leading-relaxed mb-6">
-                After moving to Austin and running a successful advertising career, Mo missed the hearty, genuine warmth of the border. In 2016, he parked a food truck on 29th Street and started serving smashed Angus chuck pressed into onions, scratch potato latkes, and Hatch green chile queso.
-              </p>
-              <p className="type-body text-stone leading-relaxed">
-                When he created <strong className="text-char">&quot;The Oy Vey Goy&quot;</strong> — crowning an onion-smashed patty with a hot crispy potato latke, bacon, and melted cheddar — burger enthusiasts went wild. Today, the Airport Boulevard flagship is a thriving hub of warmth, great humor, and unforgettable food.
-              </p>
+      <main className="pt-24 min-h-screen bg-transparent text-[#FAF8F2] relative z-10 font-sans">
+        <section className="py-20 lg:py-28 border-b border-white/10">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8 space-y-6">
+            <span className="text-xs uppercase tracking-widest font-bold block" style={{ color: "#06B6D4" }}>
+              CULINARY HERITAGE
+            </span>
+            <h1 className="type-display text-5xl sm:text-7xl md:text-8xl font-black text-white leading-none">
+              BUILT ON CAST IRON.
+            </h1>
+            <p className="text-base sm:text-lg text-stone-300 leading-relaxed max-w-2xl font-body">
+              JewBoy Burgers brings genuine, handcrafted culinary discipline to Austin with fresh daily prime ingredients, custom artisanal recipes, and uncompromising craft.
+            </p>
+          </div>
+        </section>
+
+        <section className="py-16 border-b border-white/10">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="relative h-96 rounded-2xl overflow-hidden border border-white/15 shadow-2xl group">
+                <Image
+                  src="https://images.unsplash.com/photo-1550547660-d9450f859349?w=1000&q=80"
+                  alt="JewBoy Burgers Craft Discipline"
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
+                <div className="absolute bottom-6 left-6 space-y-1">
+                  <span className="text-[10px] uppercase tracking-widest font-bold block" style={{ color: "#06B6D4" }}>
+                    THE HEAT DISCIPLINE
+                  </span>
+                  <h3 className="type-display text-2xl text-white font-bold">
+                    High-Heat Precision Sear
+                  </h3>
+                </div>
+              </div>
+
+              <div className="relative h-96 rounded-2xl overflow-hidden border border-white/15 shadow-2xl group">
+                <Image
+                  src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=1000&q=80"
+                  alt="JewBoy Burgers Fresh Ingredients"
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
+                <div className="absolute bottom-6 left-6 space-y-1">
+                  <span className="text-[10px] uppercase tracking-widest font-bold block" style={{ color: "#06B6D4" }}>
+                    BESPOKE FLAVORS
+                  </span>
+                  <h3 className="type-display text-2xl text-white font-bold">
+                    Signature Compositions
+                  </h3>
+                </div>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* Visual Images */}
-        <section className="py-16">
-          <div className="mx-auto max-w-[88rem] px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              <div className="aspect-[4/5] relative overflow-hidden rounded-sm border border-char/10 shadow-xl">
-                <Image
-                  src="/images/locations/jewboy-burgers.jpg"
-                  alt="JewBoy Burgers Airport Blvd"
-                  fill
-                  className="editorial-image object-cover"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                />
-                <div className="absolute bottom-6 left-6 bg-char/80 backdrop-blur-sm p-4 border border-char-mute text-bone">
-                  <p className="type-caption text-yolk text-[9px]">5111 Airport Blvd</p>
-                  <p className="type-display text-lg text-ink">Airport Blvd Flagship</p>
-                </div>
-              </div>
-              <div className="aspect-[4/5] relative overflow-hidden rounded-sm border border-char/10 shadow-xl">
-                <Image
-                  src="/hero-burger.png"
-                  alt="The Legendary Oy Vey Goy"
-                  fill
-                  className="editorial-image object-cover"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                />
-                <div className="absolute bottom-6 left-6 bg-char/80 backdrop-blur-sm p-4 border border-char-mute text-bone">
-                  <p className="type-caption text-yolk text-[9px]">The Oy Vey Goy</p>
-                  <p className="type-display text-lg text-ink">Latke Smash Burger</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Philosophy */}
-        <section className="py-24 lg:py-32 bg-bone-warm border-y border-bone-dark">
-          <div className="mx-auto max-w-[88rem] px-6 lg:px-8">
-            <div className="max-w-3xl mx-auto text-center">
-              <p className="type-caption text-ember mb-6 font-bold">The JewBoy Philosophy</p>
-              <h2 className="type-display text-3xl md:text-4xl lg:text-5xl mb-8 text-char">
-                Food Made with Heart, Humor &amp; Heritage.
-              </h2>
-              <p className="type-serif text-xl text-stone leading-relaxed mb-6">
-                We believe food should bring people together from every background, culture, and corner of Texas. Come as you are, eat with your hands, and leave with a smile.
-              </p>
-              <p className="type-caption text-char text-[10px] font-mono tracking-widest">
-                AIRPORT BLVD · SHALOM Y&apos;ALL · MUCHO GUSTO · AUSTIN TEXAS
-              </p>
-            </div>
-          </div>
-        </section>
+        <HowWeSmash />
       </main>
       <Footer />
     </>

@@ -81,7 +81,7 @@ export default function SignatureMenu() {
             <div className="flex items-center gap-2.5">
               <span className="w-2.5 h-2.5 rounded-full animate-ping" style={{ backgroundColor: "#BF5700" }} />
               <span className="font-mono text-xs tracking-widest uppercase font-bold" style={{ color: "#BF5700" }}>
-                DIRTY MARTIN'S KUM-BAK // CULINARY BOARD
+                DIRTY MARTIN'S KUM-BAK SIGNATURE MENU
               </span>
             </div>
             <h2 className="type-display text-4xl sm:text-6xl text-white font-extrabold tracking-tight">

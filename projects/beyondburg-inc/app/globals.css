@@ -21,7 +21,7 @@
 }
 
 :root {
-  --background: #122B1E;
+  --background: #070709;
   --foreground: #FAF8F2;
 }
 
@@ -30,6 +30,7 @@ body {
   color: var(--foreground);
   font-family: var(--font-body), sans-serif;
   overflow-x: hidden;
+  transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 .type-display {
@@ -39,11 +40,44 @@ body {
   line-height: 0.9;
 }
 
-.clip-slanted {
-  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+/* Day & Night Responsive Contrast Overrides */
+html.light body {
+  background-color: #F6F4EE !important;
+  color: #18181B !important;
 }
 
-.text-stroke-gold {
-  -webkit-text-stroke: 1.5px #EAA824;
-  color: transparent;
+html.light .text-white,
+html.light .text-bone,
+html.light .text-\[\#FAF8F2\] {
+  color: #18181B !important;
+}
+
+html.light .text-stone-300,
+html.light .text-stone-400,
+html.light .text-smoke {
+  color: #52525B !important;
+}
+
+html.light .bg-white\/\[0\.03\],
+html.light .bg-white\/\[0\.04\],
+html.light .bg-white\/\[0\.08\],
+html.light .bg-white\/5 {
+  background-color: rgba(255, 255, 255, 0.85) !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+  color: #18181B !important;
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.06) !important;
+}
+
+html.light .border-white\/10,
+html.light .border-white\/15,
+html.light .border-white\/20 {
+  border-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+html.light .text-\[#F5C418\] {
+  color: #B45309 !important;
+}
+
+html.light .border-\[#F5C418\] {
+  border-color: #B45309 !important;
 }

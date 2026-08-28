@@ -1,35 +1,31 @@
-import type { Metadata } from "next";
+"use client";
+
 import Nav from "@/components/marketing/Nav";
 import Footer from "@/components/marketing/Footer";
 import CinematicFrame from "@/components/marketing/CinematicFrame";
 
-export const metadata: Metadata = {
-  title: "Visual Archive | Casino El Camino",
-  description: "A visual archive celebrating 30 years of rock and roll culture, 3/4 lb flame-chargrilled burgers, and 6th Street dive bar heritage at Casino El Camino.",
-};
-
 const frames = [
   {
-    image: "/images/locations/casino-el-camino.jpg",
-    title: "517 E 6th St Dive Sanctuary",
+    image: "https://images.unsplash.com/photo-1550547660-d9450f859349?w=1200&q=80",
+    title: "The Searing 450°F Horizon",
     maskType: "organic" as const,
     textPosition: "top-right" as const,
   },
   {
-    image: "/hero-burger.png",
-    title: "3/4 lb Amarillo Burger Flame Grill",
+    image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=1200&q=80",
+    title: "Double Butter Cloche Steam",
     maskType: "parallelogram" as const,
     textPosition: "bottom-left" as const,
   },
   {
-    image: "/truffle-fries.png",
-    title: "Pork Verde Chili Cheese Fries",
+    image: "https://images.unsplash.com/photo-1551782450-a2132b4ba21d?w=1200&q=80",
+    title: "Artisanal Reduction Craft",
     maskType: "circle" as const,
     textPosition: "center-below" as const,
   },
   {
-    image: "/matcha-special.png",
-    title: "World-Famous Loaded Bloody Mary",
+    image: "https://images.unsplash.com/photo-1586190848861-99aa4a171e90?w=1200&q=80",
+    title: "Crisp Golden Companion",
     maskType: "pill" as const,
     textPosition: "bottom-right" as const,
   },
@@ -39,25 +35,20 @@ export default function FilmsPage() {
   return (
     <>
       <Nav />
-      <main className="pt-24 min-h-screen bg-char text-ink">
-        <section className="py-24 lg:py-32">
-          <div className="mx-auto max-w-[88rem] px-6 lg:px-8">
-            <div className="max-w-3xl">
-              <p className="type-caption text-ember mb-4 font-bold">Austin, TX · Est. 1994</p>
-              <h1 className="type-display text-5xl md:text-6xl lg:text-7xl leading-[1.05] mb-8 text-ink">
-                6th Street
-                <br />
-                <span className="text-ember">Rock-n-Roll Archive</span>
-              </h1>
-              <p className="type-serif text-xl text-stone leading-relaxed max-w-xl">
-                A visual tribute to Paul Eighmey, 3/4 lb chargrilled monster burgers, and 30 continuous years of authentic Austin dive bar history.
-              </p>
-            </div>
+      <main className="pt-24 min-h-screen bg-transparent text-[#FAF8F2] relative z-10 font-sans">
+        <section className="py-20 lg:py-28 border-b border-white/10">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8 space-y-4">
+            <span className="text-xs uppercase tracking-widest font-bold block" style={{ color: "#DC2626" }}>
+              CINEMATIC GALLERY
+            </span>
+            <h1 className="type-display text-5xl sm:text-7xl md:text-8xl font-black text-white">
+              CRAFT CHRONICLES
+            </h1>
           </div>
         </section>
 
-        <section className="py-16 bg-char-soft border-y border-char-mute">
-          <div className="mx-auto max-w-[88rem] px-6 lg:px-8">
+        <section className="py-16">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="flex flex-col gap-24">
               {frames.map((frame, i) => (
                 <div key={frame.title}>

@@ -19,13 +19,13 @@ const frames = [
   },
   {
     image: "https://images.unsplash.com/photo-1551782450-a2132b4ba21d?w=1200&q=80",
-    title: "Lotus Biscoff Velvet Reduction",
+    title: "Artisanal Reduction Craft",
     maskType: "circle" as const,
     textPosition: "center-below" as const,
   },
   {
     image: "https://images.unsplash.com/photo-1586190848861-99aa4a171e90?w=1200&q=80",
-    title: "Animal Crinkle Gold Dust",
+    title: "Crisp Golden Companion",
     maskType: "pill" as const,
     textPosition: "bottom-right" as const,
   },
@@ -35,22 +35,19 @@ export default function FilmsPage() {
   return (
     <>
       <Nav />
-      <main className="pt-24 min-h-screen bg-transparent text-[#FAF8F2] relative z-10">
-        <section className="py-24 lg:py-32">
+      <main className="pt-24 min-h-screen bg-transparent text-[#FAF8F2] relative z-10 font-sans">
+        <section className="py-20 lg:py-28 border-b border-white/10">
           <div className="mx-auto max-w-7xl px-6 lg:px-8 space-y-4">
-            <span className="font-mono text-xs text-[#F5C418] uppercase tracking-widest font-bold block">
-              BEYONDBURG INC. // CINEMATIC SERIES
+            <span className="text-xs uppercase tracking-widest font-bold block" style={{ color: "#F5C418" }}>
+              CINEMATIC GALLERY
             </span>
-            <h1 className="type-display text-5xl md:text-7xl font-extrabold text-white">
-              THE SMASH CHRONICLES
+            <h1 className="type-display text-5xl sm:text-7xl md:text-8xl font-black text-white">
+              CRAFT CHRONICLES
             </h1>
-            <p className="font-mono text-xs text-stone-300 max-w-xl">
-              A curated series where craft, cuisine, and cinema converge — each frame capturing the intense craft of our Bangalore kitchens.
-            </p>
           </div>
         </section>
 
-        <section className="py-16 border-t border-white/10">
+        <section className="py-16">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="flex flex-col gap-24">
               {frames.map((frame, i) => (

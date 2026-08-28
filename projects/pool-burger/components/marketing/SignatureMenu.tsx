@@ -81,7 +81,7 @@ export default function SignatureMenu() {
             <div className="flex items-center gap-2.5">
               <span className="w-2.5 h-2.5 rounded-full animate-ping" style={{ backgroundColor: "#F43F5E" }} />
               <span className="font-mono text-xs tracking-widest uppercase font-bold" style={{ color: "#F43F5E" }}>
-                POOL BURGER // CULINARY BOARD
+                POOL BURGER SIGNATURE MENU
               </span>
             </div>
             <h2 className="type-display text-4xl sm:text-6xl text-white font-extrabold tracking-tight">

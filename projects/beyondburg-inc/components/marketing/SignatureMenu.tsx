@@ -81,7 +81,7 @@ export default function SignatureMenu() {
             <div className="flex items-center gap-2.5">
               <span className="w-2.5 h-2.5 rounded-full animate-ping" style={{ backgroundColor: "#F5C418" }} />
               <span className="font-mono text-xs tracking-widest uppercase font-bold" style={{ color: "#F5C418" }}>
-                BEYONDBURG INC. // CULINARY BOARD
+                BEYONDBURG INC. SIGNATURE MENU
               </span>
             </div>
             <h2 className="type-display text-4xl sm:text-6xl text-white font-extrabold tracking-tight">

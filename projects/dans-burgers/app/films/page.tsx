@@ -1,35 +1,31 @@
-import type { Metadata } from "next";
+"use client";
+
 import Nav from "@/components/marketing/Nav";
 import Footer from "@/components/marketing/Footer";
 import CinematicFrame from "@/components/marketing/CinematicFrame";
 
-export const metadata: Metadata = {
-  title: "Heritage Visuals | Dan's Hamburgers",
-  description: "A visual archive capturing the 50+ year craft, culture, and diner legacy of Dan's Hamburgers in Austin, Texas.",
-};
-
 const frames = [
   {
-    image: "/hero-burger.png",
-    title: "South Congress Roots (1973)",
+    image: "https://images.unsplash.com/photo-1550547660-d9450f859349?w=1200&q=80",
+    title: "The Searing 450°F Horizon",
     maskType: "organic" as const,
     textPosition: "top-right" as const,
   },
   {
-    image: "/truffle-fries.png",
-    title: "The $50 Onion Ring Craft",
+    image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=1200&q=80",
+    title: "Double Butter Cloche Steam",
     maskType: "parallelogram" as const,
     textPosition: "bottom-left" as const,
   },
   {
-    image: "/matcha-special.png",
-    title: "Texas Breakfast Biscuits & Gravy",
+    image: "https://images.unsplash.com/photo-1551782450-a2132b4ba21d?w=1200&q=80",
+    title: "Artisanal Reduction Craft",
     maskType: "circle" as const,
     textPosition: "center-below" as const,
   },
   {
-    image: "/old-monk-mousse.png",
-    title: "Hand-Dipped Texas Malts",
+    image: "https://images.unsplash.com/photo-1586190848861-99aa4a171e90?w=1200&q=80",
+    title: "Crisp Golden Companion",
     maskType: "pill" as const,
     textPosition: "bottom-right" as const,
   },
@@ -39,25 +35,20 @@ export default function FilmsPage() {
   return (
     <>
       <Nav />
-      <main className="pt-24 min-h-screen bg-bone">
-        <section className="py-24 lg:py-32">
-          <div className="mx-auto max-w-[88rem] px-6 lg:px-8">
-            <div className="max-w-3xl">
-              <p className="type-caption text-ember mb-4 font-bold">In Frames</p>
-              <h1 className="type-display text-5xl md:text-6xl lg:text-7xl leading-[1.05] mb-8 text-char">
-                Austin Diner
-                <br />
-                <span className="text-ember">Heritage</span>
-              </h1>
-              <p className="type-serif text-xl text-stone leading-relaxed max-w-xl">
-                A visual tribute to 50+ years of Austin food culture — where honest ingredients, cast-iron searing, and family values converge.
-              </p>
-            </div>
+      <main className="pt-24 min-h-screen bg-transparent text-[#FAF8F2] relative z-10 font-sans">
+        <section className="py-20 lg:py-28 border-b border-white/10">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8 space-y-4">
+            <span className="text-xs uppercase tracking-widest font-bold block" style={{ color: "#D97706" }}>
+              CINEMATIC GALLERY
+            </span>
+            <h1 className="type-display text-5xl sm:text-7xl md:text-8xl font-black text-white">
+              CRAFT CHRONICLES
+            </h1>
           </div>
         </section>
 
-        <section className="py-16 bg-bone-warm border-y border-bone-dark">
-          <div className="mx-auto max-w-[88rem] px-6 lg:px-8">
+        <section className="py-16">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="flex flex-col gap-24">
               {frames.map((frame, i) => (
                 <div key={frame.title}>
@@ -71,18 +62,6 @@ export default function FilmsPage() {
                 </div>
               ))}
             </div>
-          </div>
-        </section>
-
-        <section className="py-24 lg:py-32">
-          <div className="mx-auto max-w-[88rem] px-6 lg:px-8 text-center">
-            <p className="type-caption text-ember mb-4 font-bold">50 Years Strong</p>
-            <h2 className="type-display text-3xl md:text-4xl lg:text-5xl mb-8 text-char">
-              Four Stores. One Family Tradition.
-            </h2>
-            <p className="type-serif text-xl text-stone max-w-2xl mx-auto leading-relaxed">
-              Every burger, every hand-breaded onion ring, and every scratch buttermilk biscuit carries forward Dan &amp; Frances Junk&apos;s proud Texas legacy.
-            </p>
           </div>
         </section>
       </main>
