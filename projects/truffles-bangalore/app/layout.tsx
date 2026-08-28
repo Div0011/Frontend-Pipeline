@@ -17,12 +17,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <body className="antialiased bg-[#070709] text-[#FAF8F2] overflow-x-hidden transition-colors duration-500">
+      <body className="antialiased overflow-x-hidden transition-colors duration-500">
         <LenisProvider>
           <InteractiveBackground primaryColor="#F5A623" themeBase="#100a06" />
           <CustomCursor />
           {children}
-          <AtmosphereControls primaryColor="#F5A623" darkBg="#100a06" lightBg="#F6F4EE" />
+          <AtmosphereControls primaryColor="#F5A623" darkBg="#100a06" lightBg="#FAF8F2" />
         </LenisProvider>
       </body>
     </html>

@@ -16,40 +16,35 @@ export default function AtmosphereControls({
 }: AtmosphereControlsProps) {
   const [isDark, setIsDark] = useState<boolean>(true);
   const [isPlayingMusic, setIsPlayingMusic] = useState<boolean>(false);
-  const audioCtxRef = useRef<AudioContext | null>(null);
-  const musicNodesRef = useRef<{ masterGain: GainNode; intervalId: any } | null>(null);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+  const synthCtxRef = useRef<AudioContext | null>(null);
+  const synthIntervalRef = useRef<any>(null);
 
-  // Initialize Global Click Sounds & Audio Context
+  // Initialize Audio & Click Sounds
   useEffect(() => {
-    const initAudio = () => {
-      if (!audioCtxRef.current) {
-        const AudioContextClass = window.AudioContext || (window as any).webkitAudioContext;
-        if (AudioContextClass) {
-          audioCtxRef.current = new AudioContextClass();
-        }
-      }
-      if (audioCtxRef.current && audioCtxRef.current.state === "suspended") {
-        audioCtxRef.current.resume();
-      }
-    };
+    // 1. Create native HTML5 Audio Element for rich restaurant jazz
+    const audio = new Audio("https://assets.mixkit.co/music/preview/mixkit-chill-bro-494.mp3");
+    audio.loop = true;
+    audio.volume = 1.0; // 100% volume
+    audioRef.current = audio;
 
     // Pop Click Sound
     const playPop = () => {
-      initAudio();
-      const ctx = audioCtxRef.current;
-      if (!ctx) return;
       try {
+        const AudioCtx = window.AudioContext || (window as any).webkitAudioContext;
+        if (!AudioCtx) return;
+        const ctx = new AudioCtx();
         const osc = ctx.createOscillator();
         const gain = ctx.createGain();
         osc.type = "sine";
         osc.frequency.setValueAtTime(480, ctx.currentTime);
-        osc.frequency.exponentialRampToValueAtTime(120, ctx.currentTime + 0.06);
-        gain.gain.setValueAtTime(0.2, ctx.currentTime);
-        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.06);
+        osc.frequency.exponentialRampToValueAtTime(120, ctx.currentTime + 0.05);
+        gain.gain.setValueAtTime(0.3, ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.05);
         osc.connect(gain);
         gain.connect(ctx.destination);
         osc.start();
-        osc.stop(ctx.currentTime + 0.06);
+        osc.stop(ctx.currentTime + 0.05);
       } catch (err) {
         // silent fallback
       }
@@ -57,15 +52,15 @@ export default function AtmosphereControls({
 
     // Sizzle Sound for Sear / Fire buttons
     const playSizzle = () => {
-      initAudio();
-      const ctx = audioCtxRef.current;
-      if (!ctx) return;
       try {
-        const bufferSize = ctx.sampleRate * 0.8;
+        const AudioCtx = window.AudioContext || (window as any).webkitAudioContext;
+        if (!AudioCtx) return;
+        const ctx = new AudioCtx();
+        const bufferSize = ctx.sampleRate * 0.7;
         const buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
         const data = buffer.getChannelData(0);
         for (let i = 0; i < bufferSize; i++) {
-          data[i] = (Math.random() * 2 - 1) * Math.exp(-i / (ctx.sampleRate * 0.4));
+          data[i] = (Math.random() * 2 - 1) * Math.exp(-i / (ctx.sampleRate * 0.35));
         }
         const noise = ctx.createBufferSource();
         noise.buffer = buffer;
@@ -76,8 +71,8 @@ export default function AtmosphereControls({
         filter.Q.setValueAtTime(1.5, ctx.currentTime);
 
         const gain = ctx.createGain();
-        gain.gain.setValueAtTime(0.4, ctx.currentTime);
-        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.8);
+        gain.gain.setValueAtTime(0.5, ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.7);
 
         noise.connect(filter);
         filter.connect(gain);
@@ -104,166 +99,89 @@ export default function AtmosphereControls({
     };
 
     window.addEventListener("click", handleGlobalClick);
-    return () => window.removeEventListener("click", handleGlobalClick);
+
+    return () => {
+      window.removeEventListener("click", handleGlobalClick);
+      if (audioRef.current) {
+        audioRef.current.pause();
+        audioRef.current = null;
+      }
+      if (synthIntervalRef.current) clearInterval(synthIntervalRef.current);
+    };
   }, []);
 
-  // Classic Live Restaurant Jazz Ambient Synthesizer at 100% Volume
+  // Live Restaurant Jazz Audio Toggle (100% Volume)
   const toggleMusic = () => {
-    const AudioContextClass = window.AudioContext || (window as any).webkitAudioContext;
-    if (!audioCtxRef.current && AudioContextClass) {
-      audioCtxRef.current = new AudioContextClass();
-    }
-    const ctx = audioCtxRef.current;
-    if (!ctx) return;
-    if (ctx.state === "suspended") ctx.resume();
+    const audio = audioRef.current;
 
     if (isPlayingMusic) {
-      if (musicNodesRef.current) {
-        const { masterGain, intervalId } = musicNodesRef.current;
-        clearInterval(intervalId);
-        masterGain.gain.linearRampToValueAtTime(0.001, ctx.currentTime + 0.5);
-        setTimeout(() => {
-          musicNodesRef.current = null;
-        }, 500);
+      // Pause
+      if (audio) {
+        audio.pause();
+      }
+      if (synthIntervalRef.current) {
+        clearInterval(synthIntervalRef.current);
+        synthIntervalRef.current = null;
       }
       setIsPlayingMusic(false);
     } else {
-      // Full 100% Master Volume (1.0)
-      const masterGain = ctx.createGain();
-      masterGain.gain.setValueAtTime(0.001, ctx.currentTime);
-      masterGain.gain.linearRampToValueAtTime(1.0, ctx.currentTime + 0.8);
-      masterGain.connect(ctx.destination);
+      // Play at 100% Volume
+      setIsPlayingMusic(true);
 
-      // Classic Live Dining Jazz Chords (Fender Rhodes + Upright Bass voicings)
-      const jazzProgression = [
-        {
-          bass: 87.31, // F2
-          chord: [174.61, 220.0, 261.63, 329.63, 392.0], // Fmaj9 (F A C E G)
-        },
-        {
-          bass: 73.42, // D2
-          chord: [146.83, 220.0, 261.63, 329.63, 349.23], // Dm9 (D A C E F)
-        },
-        {
-          bass: 98.0, // G2
-          chord: [196.0, 233.08, 293.66, 349.23, 440.0], // Gm9 (G Bb D F A)
-        },
-        {
-          bass: 65.41, // C2
-          chord: [130.81, 196.0, 246.94, 293.66, 369.99], // C13 (C G B D F#)
-        },
-        {
-          bass: 110.0, // A2
-          chord: [220.0, 261.63, 329.63, 392.0, 493.88], // Am9 (A C E G B)
-        },
-        {
-          bass: 73.42, // D2
-          chord: [146.83, 220.0, 277.18, 349.23, 415.3], // D7b9 (D A C# F G#)
-        },
-        {
-          bass: 98.0, // G2
-          chord: [196.0, 246.94, 293.66, 349.23, 440.0], // G9 (G B D F A)
-        },
-        {
-          bass: 65.41, // C2
-          chord: [130.81, 185.0, 233.08, 293.66, 329.63], // C7alt (C F# Bb D E)
-        },
+      if (audio) {
+        audio.volume = 1.0;
+        audio
+          .play()
+          .catch(() => {
+            // Web Audio fallback if MP3 stream is blocked
+            startSynthFallback();
+          });
+      } else {
+        startSynthFallback();
+      }
+    }
+  };
+
+  const startSynthFallback = () => {
+    try {
+      const AudioCtx = window.AudioContext || (window as any).webkitAudioContext;
+      if (!AudioCtx) return;
+      const ctx = synthCtxRef.current || new AudioCtx();
+      synthCtxRef.current = ctx;
+      if (ctx.state === "suspended") ctx.resume();
+
+      const chords = [
+        [174.61, 220.0, 261.63, 329.63], // Fmaj7
+        [146.83, 220.0, 261.63, 349.23], // Dm9
+        [196.0, 233.08, 293.66, 349.23], // Gm7
+        [130.81, 196.0, 246.94, 293.66], // C9
       ];
+      let chordIdx = 0;
 
-      let step = 0;
-
-      const playJazzStep = () => {
-        const currentJazz = jazzProgression[step % jazzProgression.length];
-        step++;
-
+      const playChord = () => {
+        const c = chords[chordIdx % chords.length];
+        chordIdx++;
         const now = ctx.currentTime;
 
-        // 1. Warm Acoustic Upright Bass
-        const bassOsc = ctx.createOscillator();
-        const bassGain = ctx.createGain();
-        const bassFilter = ctx.createBiquadFilter();
-
-        bassOsc.type = "triangle";
-        bassOsc.frequency.setValueAtTime(currentJazz.bass, now);
-
-        bassFilter.type = "lowpass";
-        bassFilter.frequency.setValueAtTime(220, now);
-
-        bassGain.gain.setValueAtTime(0.001, now);
-        bassGain.gain.linearRampToValueAtTime(0.35, now + 0.05);
-        bassGain.gain.exponentialRampToValueAtTime(0.001, now + 2.2);
-
-        bassOsc.connect(bassFilter);
-        bassFilter.connect(bassGain);
-        bassGain.connect(masterGain);
-
-        bassOsc.start(now);
-        bassOsc.stop(now + 2.3);
-
-        // 2. Lush Rhodes / Piano Chord Voicings
-        currentJazz.chord.forEach((freq, idx) => {
+        c.forEach((freq) => {
           const osc = ctx.createOscillator();
-          const osc2 = ctx.createOscillator();
-          const noteGain = ctx.createGain();
-          const filter = ctx.createBiquadFilter();
-
+          const gain = ctx.createGain();
           osc.type = "sine";
-          osc.frequency.setValueAtTime(freq, now + idx * 0.02);
-
-          osc2.type = "triangle";
-          osc2.frequency.setValueAtTime(freq * 1.002, now + idx * 0.02);
-
-          filter.type = "lowpass";
-          filter.frequency.setValueAtTime(800 + idx * 100, now);
-
-          noteGain.gain.setValueAtTime(0.001, now + idx * 0.02);
-          noteGain.gain.linearRampToValueAtTime(0.12 / currentJazz.chord.length, now + 0.08 + idx * 0.02);
-          noteGain.gain.exponentialRampToValueAtTime(0.001, now + 2.6);
-
-          osc.connect(filter);
-          osc2.connect(filter);
-          filter.connect(noteGain);
-          noteGain.connect(masterGain);
-
-          osc.start(now + idx * 0.02);
-          osc2.start(now + idx * 0.02);
-          osc.stop(now + 2.8);
-          osc2.stop(now + 2.8);
+          osc.frequency.setValueAtTime(freq, now);
+          gain.gain.setValueAtTime(0.001, now);
+          gain.gain.linearRampToValueAtTime(0.25 / c.length, now + 0.1);
+          gain.gain.exponentialRampToValueAtTime(0.001, now + 2.4);
+          osc.connect(gain);
+          gain.connect(ctx.destination);
+          osc.start(now);
+          osc.stop(now + 2.5);
         });
-
-        // 3. Subtle Live Brushed Ride Cymbal Tap
-        try {
-          const bufSize = Math.floor(ctx.sampleRate * 0.15);
-          const buf = ctx.createBuffer(1, bufSize, ctx.sampleRate);
-          const d = buf.getChannelData(0);
-          for (let i = 0; i < bufSize; i++) {
-            d[i] = (Math.random() * 2 - 1) * Math.exp(-i / (ctx.sampleRate * 0.04));
-          }
-          const brush = ctx.createBufferSource();
-          brush.buffer = buf;
-
-          const brushFilter = ctx.createBiquadFilter();
-          brushFilter.type = "highpass";
-          brushFilter.frequency.setValueAtTime(6000, now);
-
-          const brushGain = ctx.createGain();
-          brushGain.gain.setValueAtTime(0.04, now);
-          brushGain.gain.exponentialRampToValueAtTime(0.001, now + 0.14);
-
-          brush.connect(brushFilter);
-          brushFilter.connect(brushGain);
-          brushGain.connect(masterGain);
-
-          brush.start(now + 0.02);
-        } catch (e) {
-          // ignore
-        }
       };
 
-      playJazzStep();
-      const intervalId = setInterval(playJazzStep, 2400);
-      musicNodesRef.current = { masterGain, intervalId };
-      setIsPlayingMusic(true);
+      playChord();
+      synthIntervalRef.current = setInterval(playChord, 2200);
+    } catch (e) {
+      // ignore
     }
   };
 
@@ -278,13 +196,17 @@ export default function AtmosphereControls({
     if (nextDark) {
       root.classList.add("dark");
       root.classList.remove("light");
-      body.style.backgroundColor = darkBg;
-      body.style.color = "#FAF8F2";
+      body.classList.add("dark");
+      body.classList.remove("light");
+      body.style.setProperty("background-color", darkBg, "important");
+      body.style.setProperty("color", "#FAF8F2", "important");
     } else {
       root.classList.remove("dark");
       root.classList.add("light");
-      body.style.backgroundColor = lightBg;
-      body.style.color = "#18181B";
+      body.classList.remove("dark");
+      body.classList.add("light");
+      body.style.setProperty("background-color", lightBg, "important");
+      body.style.setProperty("color", "#18181B", "important");
     }
 
     window.dispatchEvent(
