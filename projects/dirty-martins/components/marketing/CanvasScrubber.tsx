@@ -208,14 +208,6 @@ export default function CanvasScrubber({
           <div className="absolute inset-0 bg-transparent" />
         )}
 
-        {/* Text-legibility gradients */}
-        {overlayGradient && (
-          <>
-            <div className="absolute inset-0 bg-gradient-to-t from-white/80 via-transparent to-white/30 pointer-events-none z-10" />
-            <div className="absolute inset-0 bg-gradient-to-r from-white/70 via-transparent to-transparent pointer-events-none z-10" />
-          </>
-        )}
-
         {/* Content overlay */}
         <div className="absolute inset-0 z-20">{children}</div>
       </div>
