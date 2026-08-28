@@ -12,41 +12,42 @@ export default function CinematicHero() {
   return (
     <CanvasScrubber frames={frames} scrollDistance="+=350%">
       <div className="h-full w-full flex flex-col justify-between p-8 sm:p-12 md:p-20 relative pointer-events-none">
-        <div className="flex justify-between text-[11px] font-mono tracking-widest text-smoke uppercase">
-          <span className="text-[#C8A96E] font-bold">HAUTE GASTRONOMIE</span>
-          <span className="text-ember font-bold">FRENCH BRIOCHE &amp; WINTER TRUFFLE</span>
+        <div className="flex justify-between text-[11px] font-mono tracking-widest text-stone-400 uppercase">
+          <span className="font-bold" style={{ color: "#C8A96E" }}>STEEL SMASH CRAFT</span>
+          <span className="font-bold text-stone-300">450°F CAST IRON CARAMELIZATION</span>
         </div>
 
         <div className="my-auto max-w-3xl space-y-4">
-          <span className="px-3 py-1 bg-char-soft/80 backdrop-blur-md rounded-full text-[#C8A96E] font-mono text-[10px] tracking-wider uppercase border border-[#C8A96E]/30 inline-block">
-            INDIRANAGAR 80 FEET ROAD · BENGALURU
+          <span className="px-3 py-1 bg-white/[0.06] backdrop-blur-md rounded-full font-mono text-[10px] tracking-wider uppercase border border-white/15 inline-block" style={{ color: "#C8A96E" }}>
+            BENGALURU OUTPOSTS
           </span>
-          <h1 className="type-display text-5xl sm:text-7xl md:text-8xl lg:text-9xl text-bone leading-none">
-            REDEFINING <br />
-            <span className="text-[#C8A96E]">GOURMET BURGERS</span>
+          <h1 className="type-display text-5xl sm:text-7xl md:text-8xl lg:text-9xl text-white leading-none font-black tracking-tight">
+            BURGER SEIGNEUR
           </h1>
-          <p className="text-stone font-body text-base sm:text-lg max-w-xl leading-relaxed">
-            Whole roasted Portobello caps, New Zealand lamb, aged Parmigiano-Reggiano, and handcrafted French brioche buns curated with European culinary precision.
+          <p className="text-stone-300 font-body text-base sm:text-lg max-w-lg leading-relaxed">
+            Dual fresh patties smashed paper-thin on 450°F cast iron for crispy lace edges.
           </p>
           <div className="pt-4 pointer-events-auto flex flex-wrap gap-4">
             <Link
               href="/menu"
-              className="px-8 py-4 bg-[#C8A96E] text-char font-mono text-xs font-bold uppercase tracking-wider rounded-sm hover:bg-bone transition-colors shadow-2xl"
+              className="px-8 py-3.5 font-mono text-xs font-bold uppercase tracking-wider rounded-xl transition-all shadow-2xl hover:brightness-110 active:scale-95 flex items-center gap-2"
+              style={{ backgroundColor: "#C8A96E", color: "#000000" }}
             >
-              Explore La Carte
+              <span>Explore Menu</span>
+              <span>→</span>
             </Link>
             <Link
-              href="/reservations"
-              className="px-8 py-4 bg-char/80 backdrop-blur-md border border-char-mute text-bone font-mono text-xs font-bold uppercase tracking-wider rounded-sm hover:border-[#C8A96E] transition-colors"
+              href="/locations"
+              className="px-8 py-3.5 bg-white/5 backdrop-blur-md border border-white/20 text-white font-mono text-xs font-bold uppercase tracking-wider rounded-xl hover:border-white/40 active:scale-95 transition-all"
             >
-              Reserve Salon
+              Outposts
             </Link>
           </div>
         </div>
 
-        <div className="flex justify-between text-[10px] font-mono text-smoke uppercase">
-          <span>80 FEET RD · INDIRANAGAR</span>
-          <span className="text-[#C8A96E]">SCROLL TO INSPECT CULINARY ANATOMY</span>
+        <div className="flex justify-between text-[10px] font-mono text-stone-400 uppercase">
+          <span>BENGALURU</span>
+          <span style={{ color: "#C8A96E" }}>SCROLL TO EXPLORE</span>
         </div>
       </div>
     </CanvasScrubber>

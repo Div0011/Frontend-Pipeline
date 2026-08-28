@@ -45,7 +45,7 @@ export default function AtelierAssembly() {
             <div className="flex items-center gap-2 mb-2">
               <span className="w-2 h-2 rounded-full" style={{ backgroundColor: "#C8A96E" }} />
               <span className="font-mono text-xs tracking-widest uppercase font-bold" style={{ color: "#C8A96E" }}>
-                LIQUID MORPH SCROLLYTELLING
+                ANATOMICAL BUILD
               </span>
             </div>
             <h2 className="type-display text-4xl sm:text-6xl text-bone">

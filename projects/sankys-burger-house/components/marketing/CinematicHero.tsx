@@ -12,41 +12,42 @@ export default function CinematicHero() {
   return (
     <CanvasScrubber frames={frames} scrollDistance="+=350%">
       <div className="h-full w-full flex flex-col justify-between p-8 sm:p-12 md:p-20 relative pointer-events-none">
-        <div className="flex justify-between text-[11px] font-mono tracking-widest text-smoke uppercase">
-          <span className="text-yolk font-bold">LATE-NIGHT CULT BURGER GARAGE</span>
-          <span className="text-ember font-bold">THE MONSTER DOUBLE BEAST</span>
+        <div className="flex justify-between text-[11px] font-mono tracking-widest text-stone-400 uppercase">
+          <span className="font-bold" style={{ color: "#FFE500" }}>STEEL SMASH CRAFT</span>
+          <span className="font-bold text-stone-300">450°F CAST IRON CARAMELIZATION</span>
         </div>
 
         <div className="my-auto max-w-3xl space-y-4">
-          <span className="px-3 py-1 bg-char-soft/80 backdrop-blur-md rounded-full text-yolk font-mono text-[10px] tracking-wider uppercase border border-yolk/30 inline-block">
-            50 HENNUR MAIN ROAD · OPEN TILL 1:30 AM
+          <span className="px-3 py-1 bg-white/[0.06] backdrop-blur-md rounded-full font-mono text-[10px] tracking-wider uppercase border border-white/15 inline-block" style={{ color: "#FFE500" }}>
+            BENGALURU OUTPOSTS
           </span>
-          <h1 className="type-display text-5xl sm:text-7xl md:text-8xl lg:text-9xl text-bone leading-none">
-            BANGALORE&apos;S <br />
-            <span className="text-yolk">CULT BURGER HOUSE</span>
+          <h1 className="type-display text-5xl sm:text-7xl md:text-8xl lg:text-9xl text-white leading-none font-black tracking-tight">
+            SANKY'S BURGER HOUSE
           </h1>
-          <p className="text-stone font-body text-base sm:text-lg max-w-xl leading-relaxed">
-            No fancy reservations. Just sizzling cast-iron griddles, giant double patties dripping with melted cheddar and fried egg, and thick Nutella brownie shakes under the night sky.
+          <p className="text-stone-300 font-body text-base sm:text-lg max-w-lg leading-relaxed">
+            Dual fresh patties smashed paper-thin on 450°F cast iron for crispy lace edges.
           </p>
           <div className="pt-4 pointer-events-auto flex flex-wrap gap-4">
             <Link
               href="/menu"
-              className="px-8 py-4 bg-yolk text-char font-mono text-xs font-bold uppercase tracking-wider rounded-sm hover:bg-white transition-colors shadow-2xl"
+              className="px-8 py-3.5 font-mono text-xs font-bold uppercase tracking-wider rounded-xl transition-all shadow-2xl hover:brightness-110 active:scale-95 flex items-center gap-2"
+              style={{ backgroundColor: "#FFE500", color: "#000000" }}
             >
-              See Monster Burgers
+              <span>Explore Menu</span>
+              <span>→</span>
             </Link>
             <Link
               href="/locations"
-              className="px-8 py-4 bg-char/80 backdrop-blur-md border border-char-mute text-bone font-mono text-xs font-bold uppercase tracking-wider rounded-sm hover:border-yolk transition-colors"
+              className="px-8 py-3.5 bg-white/5 backdrop-blur-md border border-white/20 text-white font-mono text-xs font-bold uppercase tracking-wider rounded-xl hover:border-white/40 active:scale-95 transition-all"
             >
-              Hennur Garage Location
+              Outposts
             </Link>
           </div>
         </div>
 
-        <div className="flex justify-between text-[10px] font-mono text-smoke uppercase">
-          <span>HENNUR · ST. THOMAS TOWN · FRAZER TOWN</span>
-          <span className="text-yolk">SCROLL TO INSPECT THE BEAST</span>
+        <div className="flex justify-between text-[10px] font-mono text-stone-400 uppercase">
+          <span>BENGALURU</span>
+          <span style={{ color: "#FFE500" }}>SCROLL TO EXPLORE</span>
         </div>
       </div>
     </CanvasScrubber>

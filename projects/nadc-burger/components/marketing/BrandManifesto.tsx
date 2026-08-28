@@ -126,7 +126,7 @@ export default function BrandManifesto() {
                 color: viewMode === "spec" ? "#000000" : "#FAF8F2",
               }}
             >
-              🔬 Specimen Lab
+              Specimen Lab
             </button>
             <button
               type="button"
@@ -137,7 +137,7 @@ export default function BrandManifesto() {
                 color: viewMode === "compare" ? "#000000" : "#FAF8F2",
               }}
             >
-              ⚡ Craft vs Mass Duel
+              Craft vs Mass Duel
             </button>
           </div>
         </div>
@@ -309,7 +309,7 @@ export default function BrandManifesto() {
                         HEAT &amp; SEAR SIMULATOR
                       </span>
                       <span className="font-mono text-[10px] text-stone-400 block">
-                        {isSizzling ? "🔥 High-heat contact engaged..." : "Tap to simulate flat-top sear contact"}
+                        {isSizzling ? "High-heat contact engaged..." : "High-heat sear contact test"}
                       </span>
                     </div>
                     <button
@@ -344,7 +344,7 @@ export default function BrandManifesto() {
             <div className="p-8 rounded-3xl bg-red-500/[0.04] border border-red-500/20 backdrop-blur-xl space-y-6 shadow-2xl">
               <div className="flex items-center justify-between">
                 <span className="font-mono text-xs font-bold text-red-400 uppercase tracking-wider">
-                  ❌ BLAND & UNEVEN
+                  BLAND & UNEVEN
                 </span>
                 <span className="font-mono text-[10px] text-red-400 bg-red-500/10 px-2 py-0.5 rounded border border-red-500/30">
                   BLAND &amp; UNEVEN
@@ -383,7 +383,7 @@ export default function BrandManifesto() {
               <div className="flex items-center justify-between">
                 <span className="font-mono text-xs font-bold uppercase tracking-wider flex items-center gap-2" style={{ color: "#FFFFFF" }}>
                   <span className="w-2 h-2 rounded-full animate-pulse" style={{ backgroundColor: "#FFFFFF" }} />
-                  ✅ NADC BURGER STANDARD
+                  NADC BURGER STANDARD
                 </span>
                 <span className="font-mono text-[10px] font-bold px-2 py-0.5 rounded" style={{ backgroundColor: "#FFFFFF", color: "#000000" }}>
                   CRAFT SPEC

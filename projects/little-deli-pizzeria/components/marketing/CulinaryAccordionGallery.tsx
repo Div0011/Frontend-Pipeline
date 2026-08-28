@@ -56,7 +56,7 @@ export default function CulinaryAccordionGallery() {
             <div className="flex items-center gap-2 mb-3">
               <span className="w-2.5 h-2.5 rounded-full animate-ping" style={{ backgroundColor: "#166534" }} />
               <span className="font-mono text-xs tracking-widest uppercase font-bold" style={{ color: "#166534" }}>
-                INTERACTIVE SPECIMEN ACCORDION
+                SIGNATURE SPECIMENS
               </span>
             </div>
             <h2 className="type-display text-4xl sm:text-6xl text-bone tracking-tight font-bold">
@@ -64,7 +64,7 @@ export default function CulinaryAccordionGallery() {
             </h2>
           </div>
           <p className="text-smoke text-xs sm:text-sm font-mono max-w-md leading-relaxed">
-            Hover or click to expand each culinary specimen. Experience fluid parallax depth, tilt physics, and ingredient breakdowns.
+            Curated signature culinary selections.
           </p>
         </div>
 

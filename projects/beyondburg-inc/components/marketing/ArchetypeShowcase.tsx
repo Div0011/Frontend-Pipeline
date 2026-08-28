@@ -12,21 +12,21 @@ export default function ArchetypeShowcase() {
       tag: "HAUTE FOREST MUSHROOM",
       note: "Simmered 4 hours with Porcini mushrooms & cultured Normandy butter over 80/20 double smashed patties.",
       stats: "Black Truffle D.O.P. · 4-Hour Simmer",
-      icon: "🍄",
+      icon: "01",
     },
     {
       title: "24K Gold Wagyu Lamination",
       tag: "AKAUSHI RESERVE",
       note: "Artisanal Martin's potato brioche toasted in sweet cream butter with ultra-marbled Akaushi prime cuts.",
       stats: "24K Edible Gold · Akaushi Prime",
-      icon: "✨",
+      icon: "02",
     },
     {
       title: "Aged Belgian Speculoos Malt",
       tag: "SIGNATURE BISCOFF REDUCTION",
       note: "Handcrafted dairy cream thickshake blended with spiced caramelized Biscoff biscuit puree and sea salt.",
       stats: "Belgian Speculoos · Double Spun Malt",
-      icon: "🥤",
+      icon: "03",
     },
   ];
 
@@ -36,7 +36,7 @@ export default function ArchetypeShowcase() {
         <div className="flex flex-col sm:flex-row justify-between sm:items-end gap-4 border-b border-white/10 pb-6">
           <div>
             <span className="font-mono text-xs tracking-widest uppercase font-bold text-[#F5C418]">
-              HAUTE ATELIER GASTRONOMY // CURATED PAIRINGS
+              CURATED PAIRINGS
             </span>
             <h2 className="type-display text-4xl sm:text-5xl text-white font-extrabold mt-1">
               THE PAIRING SELECTOR
