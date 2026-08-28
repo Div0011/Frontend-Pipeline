@@ -40,8 +40,8 @@ export default function Footer() {
           className="font-sans text-xs sm:text-right space-y-1"
           style={{ color: "#00000099" }}
         >
-          <p className="font-bold">OPEN DAILY: 11:30 AM – 11:30 PM</p>
-          <p>BENGALURU OUTPOSTS</p>
+          <p className="font-bold">OPEN DAILY: 6:00 AM – 9:00 PM</p>
+          <p>SOUTH AUSTIN TRADITION</p>
         </div>
       </div>
 
@@ -67,9 +67,10 @@ export default function Footer() {
       >
         <div className="space-y-1" style={{ color: "#00000099" }}>
           <p className="font-extrabold text-sm" style={{ color: "#000000" }}>
-            +91 90729 64242
+            +1 512-443-1883
           </p>
-          <p>contact@restaurant.com</p>
+          <p>4301 S Congress Ave, Austin, TX 78745</p>
+          <p>contact@dans-hamburgers.com</p>
         </div>
 
         <div className="flex items-center justify-between sm:justify-end gap-8">

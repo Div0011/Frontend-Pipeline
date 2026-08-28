@@ -1,280 +1,218 @@
 "use client";
 
 import React, { useState } from "react";
-import { menuItems } from "@/lib/data";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import CartDrawer, { CartItem } from "@/components/marketing/CartDrawer";
 
-const categories = [
-  { id: "all", label: "Full Lineup" },
-  { id: "smash", label: "Signature Smashes" },
-  { id: "chicken", label: "Crispy Fried Chicken" },
-  { id: "sides", label: "Loaded Sides & Fries" },
-  { id: "shakes", label: "Hand-Spun Malts" },
+const menuItems = [
+  {
+    "id": "all-american",
+    "name": "All American Cheese Burger",
+    "category": "Signature Burgers",
+    "price": "340",
+    "badge": "Legendary",
+    "image": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800&q=80"
+  },
+  {
+    "id": "truffles-special",
+    "name": "Truffles Sloppy Joe",
+    "category": "Signature Burgers",
+    "price": "370",
+    "badge": "Crowd Favorite",
+    "image": "https://images.unsplash.com/photo-1586190848861-99aa4a171e90?w=800&q=80"
+  },
+  {
+    "id": "peri-peri-chicken",
+    "name": "Peri Peri Chicken Steak",
+    "category": "Mains & Grills",
+    "price": "390",
+    "badge": "House Special",
+    "image": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&q=80"
+  },
+  {
+    "id": "dutch-truffle",
+    "name": "Dutch Truffle Cake Slice",
+    "category": "Desserts",
+    "price": "220",
+    "badge": "Iconic",
+    "image": "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=800&q=80"
+  },
+  {
+    "id": "ferrero-shake",
+    "name": "Ferrero Rocher Shake",
+    "category": "Thick Shakes",
+    "price": "260",
+    "badge": "Bestseller",
+    "image": "https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=800&q=80"
+  }
 ];
 
 export default function SignatureMenu() {
-  const [selectedCat, setSelectedCat] = useState("all");
-  const [searchQuery, setSearchQuery] = useState("");
-  const [cartOpen, setCartOpen] = useState(false);
-  const [cartItems, setCartItems] = useState<CartItem[]>([]);
-  const [activePreviewItem, setActivePreviewItem] = useState<any | null>(null);
+  const [selectedCategory, setSelectedCategory] = useState("All");
+  const [activeItemModal, setActiveItemModal] = useState<any | null>(null);
 
-  const handleAddToCart = (item: any, e?: React.MouseEvent) => {
-    if (e) e.stopPropagation();
-    if ((window as any).playPopSound) (window as any).playPopSound();
-    setCartItems((prev) => {
-      const existing = prev.find((i) => i.name === item.name);
-      if (existing) {
-        return prev.map((i) =>
-          i.name === item.name ? { ...i, quantity: i.quantity + 1 } : i
-        );
-      }
-      return [
-        ...prev,
-        {
-          name: item.name,
-          price: item.price,
-          quantity: 1,
-          description: item.description,
-        },
-      ];
-    });
-    setCartOpen(true);
-  };
+  const categories = ["All", ...Array.from(new Set(menuItems.map((item: any) => item.category)))];
 
-  const handleUpdateQuantity = (name: string, delta: number) => {
-    setCartItems((prev) => {
-      return prev
-        .map((i) =>
-          i.name === name ? { ...i, quantity: i.quantity + delta } : i
-        )
-        .filter((i) => i.quantity > 0);
-    });
-  };
-
-  const filteredItems = menuItems.filter((item) => {
-    const cat = String(item.category || "").toLowerCase();
-    const name = String(item.name || "").toLowerCase();
-    const q = searchQuery.toLowerCase();
-
-    const matchesSearch = !q || name.includes(q);
-
-    if (!matchesSearch) return false;
-    if (selectedCat === "all") return true;
-    if (selectedCat === "smash") return cat.includes("burger") || cat.includes("pizza") || cat.includes("special") || cat === "mains";
-    if (selectedCat === "chicken") return cat.includes("chicken") || cat.includes("wing") || cat.includes("tender");
-    if (selectedCat === "sides") return cat.includes("side") || cat.includes("fry") || cat.includes("salad");
-    if (selectedCat === "shakes") return cat.includes("shake") || cat.includes("drink") || cat.includes("dessert");
-    return true;
-  });
+  const filteredItems =
+    selectedCategory === "All"
+      ? menuItems
+      : menuItems.filter((item: any) => item.category === selectedCategory);
 
   return (
-    <section
-      id="menu-section"
-      className="py-24 px-6 sm:px-12 md:px-20 bg-transparent text-[#FAF8F2] relative z-10 border-b border-white/10"
-    >
+    <section id="menu-section" className="py-24 px-6 sm:px-12 md:px-20 bg-transparent text-white border-b border-white/10 relative z-10 font-sans">
       <div className="max-w-7xl mx-auto space-y-10">
-        {/* Section Header */}
-        <div className="flex flex-col md:flex-row justify-between md:items-end gap-6 pb-6 border-b border-white/10">
+        {/* Header */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div>
-            <h2 className="type-display text-4xl sm:text-6xl text-white font-extrabold tracking-tight">
+            <h2 className="type-display text-4xl sm:text-6xl text-white font-black tracking-tight">
               SIGNATURE SELECTIONS
             </h2>
           </div>
 
-          <div className="flex items-center gap-4 flex-wrap">
-            <div className="relative">
-              <input
-                type="text"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Search menu..."
-                className="px-4 py-2.5 pl-9 rounded-full bg-white/5 border border-white/15 text-xs font-sans text-white placeholder-stone-400 focus:outline-none transition-colors w-56 sm:w-64"
-                style={{ borderColor: searchQuery ? "#F5A623" : undefined }}
-              />
-              <svg className="w-3.5 h-3.5 absolute left-3.5 top-3 text-stone-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-              </svg>
-              {searchQuery && (
-                <button
-                  onClick={() => setSearchQuery("")}
-                  className="absolute right-3.5 top-2.5 text-stone-400 hover:text-white text-xs font-sans"
-                >
-                  ✕
-                </button>
-              )}
-            </div>
-
-            <button
-              onClick={() => setCartOpen(true)}
-              className="px-6 py-2.5 rounded-full font-sans text-xs font-bold uppercase tracking-wider flex items-center gap-2 hover:opacity-90 active:scale-95 transition-all shadow-xl"
-              style={{
-                backgroundColor: "#F5A623",
-                color: "#000000",
-              }}
-            >
-              <span>Bag ({cartItems.reduce((a, b) => a + b.quantity, 0)})</span>
-            </button>
+          {/* Category Filter Pills */}
+          <div className="flex flex-wrap items-center gap-2 bg-white/5 p-1.5 rounded-full border border-white/10">
+            {categories.map((cat: any) => (
+              <button
+                key={cat}
+                onClick={() => {
+                  if ((window as any).playPopSound) (window as any).playPopSound();
+                  setSelectedCategory(cat);
+                }}
+                className={`px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all ${
+                  selectedCategory === cat
+                    ? "shadow-lg text-black"
+                    : "text-stone-300 hover:text-white"
+                }`}
+                style={{
+                  backgroundColor: selectedCategory === cat ? "#F5A623" : "transparent",
+                }}
+              >
+                {cat}
+              </button>
+            ))}
           </div>
         </div>
 
-        {/* Category Pills Bar */}
-        <div className="flex items-center gap-2.5 overflow-x-auto pb-2 scrollbar-none">
-          {categories.map((cat) => {
-            const isSelected = selectedCat === cat.id;
-            return (
-              <button
-                key={cat.id}
-                onClick={() => {
-                  if ((window as any).playPopSound) (window as any).playPopSound();
-                  setSelectedCat(cat.id);
-                }}
-                className={`px-5 py-2.5 rounded-full font-sans text-xs uppercase tracking-wider transition-all whitespace-nowrap border font-bold ${
-                  isSelected
-                    ? "shadow-lg scale-105"
-                    : "bg-white/5 text-stone-400 hover:bg-white/10 hover:text-white border-white/10"
-                }`}
-                style={{
-                  backgroundColor: isSelected ? "#F5A623" : undefined,
-                  color: isSelected ? "#000000" : undefined,
-                  borderColor: isSelected ? "#F5A623" : undefined,
-                }}
-              >
-                {cat.label}
-              </button>
-            );
-          })}
-        </div>
-
-        {/* Clean Menu Grid - Pure Titles, Price Badge & Quick Add Button */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <AnimatePresence mode="popLayout">
-            {filteredItems.map((item, idx) => (
-              <motion.div
-                key={item.name || idx}
-                layout
-                initial={{ opacity: 0, scale: 0.95, y: 15 }}
-                animate={{ opacity: 1, scale: 1, y: 0 }}
-                exit={{ opacity: 0, scale: 0.95, y: -10 }}
-                transition={{ duration: 0.25, delay: idx * 0.03 }}
-                onClick={() => setActivePreviewItem(item)}
-                className="group relative p-6 rounded-2xl bg-white/[0.04] backdrop-blur-md border border-white/10 hover:border-white/25 transition-all duration-300 flex flex-col justify-between shadow-2xl cursor-pointer hover:-translate-y-1 min-h-[140px]"
-              >
-                <div className="flex items-start justify-between gap-4">
-                  <h3 className="type-display text-2xl sm:text-3xl text-white transition-colors leading-tight font-extrabold">
-                    {item.name}
-                  </h3>
+        {/* Minimalist Clean Dish Cards Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {filteredItems.map((item: any) => (
+            <motion.div
+              key={item.id}
+              layout
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.3 }}
+              onClick={() => {
+                if ((window as any).playPopSound) (window as any).playPopSound();
+                setActiveItemModal(item);
+              }}
+              className="group cursor-pointer rounded-3xl bg-white/[0.04] border border-white/10 hover:border-white/30 p-4 transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl flex flex-col justify-between"
+            >
+              {/* Dish Photo */}
+              <div className="relative w-full h-52 rounded-2xl overflow-hidden mb-4 bg-black/40">
+                <Image
+                  src={item.image}
+                  alt={item.name}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                {item.badge && (
                   <span
-                    className="font-sans text-sm font-extrabold px-3 py-1 rounded-full border whitespace-nowrap shadow"
-                    style={{
-                      backgroundColor: "#F5A62315",
-                      color: "#F5A623",
-                      borderColor: "#F5A62340",
-                    }}
+                    className="absolute top-3 left-3 text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full shadow-md"
+                    style={{ backgroundColor: "#F5A623", color: "#000000" }}
                   >
+                    {item.badge}
+                  </span>
+                )}
+              </div>
+
+              {/* Clean Card Header: Title + Price Pill + Add */}
+              <div className="flex items-center justify-between gap-3 pt-1">
+                <h3 className="type-display text-xl sm:text-2xl text-white font-bold leading-tight group-hover:text-[#F5A623] transition-colors">
+                  {item.name}
+                </h3>
+
+                <div className="flex items-center gap-2 flex-shrink-0">
+                  <span className="font-mono font-bold text-xs px-2.5 py-1 rounded-full bg-white/10 border border-white/15 text-white">
                     ₹{item.price}
                   </span>
-                </div>
-
-                <div className="flex items-center justify-end pt-4 mt-4 border-t border-white/10">
                   <button
                     type="button"
-                    onClick={(e) => handleAddToCart(item, e)}
-                    className="px-6 py-2 rounded-full font-sans text-xs font-bold uppercase tracking-wider flex items-center gap-1 hover:brightness-110 active:scale-95 transition-all shadow-md"
-                    style={{
-                      backgroundColor: "#F5A623",
-                      color: "#000000",
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      if ((window as any).playSizzleSound) (window as any).playSizzleSound();
+                      alert(`Added ${item.name} to your order!`);
                     }}
+                    className="px-3 py-1 rounded-full font-bold text-xs uppercase tracking-wider transition-all shadow hover:scale-105 active:scale-95"
+                    style={{ backgroundColor: "#F5A623", color: "#000000" }}
                   >
-                    <span>Add</span>
-                    <span>+</span>
+                    ADD +
                   </button>
                 </div>
-              </motion.div>
-            ))}
-          </AnimatePresence>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
 
-      {/* Quick View Modal */}
+      {/* Quick View Modal on Card Click */}
       <AnimatePresence>
-        {activePreviewItem && (
-          <div
-            role="dialog"
-            aria-modal="true"
-            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-xl"
-            onClick={() => setActivePreviewItem(null)}
-          >
+        {activeItemModal && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
             <motion.div
-              initial={{ opacity: 0, scale: 0.95, y: 20 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.95, y: 20 }}
-              onClick={(e) => e.stopPropagation()}
-              className="relative w-full max-w-lg p-8 rounded-3xl bg-[#0F0F12] border border-white/20 shadow-2xl space-y-6"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.9 }}
+              className="relative w-full max-w-lg rounded-3xl bg-[#0e0f14] border border-white/20 p-6 sm:p-8 space-y-6 shadow-2xl text-white"
             >
               <button
                 type="button"
-                onClick={() => setActivePreviewItem(null)}
-                className="absolute top-6 right-6 w-8 h-8 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-white/20 transition-all font-sans text-sm"
+                onClick={() => setActiveItemModal(null)}
+                className="absolute top-4 right-4 w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white"
               >
                 ✕
               </button>
 
-              <div className="space-y-3 pt-2">
-                <div className="flex items-center justify-between gap-4">
-                  <h3 className="type-display text-3xl sm:text-4xl text-white font-extrabold">
-                    {activePreviewItem.name}
-                  </h3>
-                  <span
-                    className="font-sans text-base font-extrabold px-3 py-1 rounded-full border shadow"
-                    style={{
-                      backgroundColor: "#F5A62320",
-                      color: "#F5A623",
-                      borderColor: "#F5A623",
-                    }}
-                  >
-                    ₹{activePreviewItem.price}
-                  </span>
-                </div>
-
-                {activePreviewItem.description && (
-                  <p className="text-sm text-stone-300 leading-relaxed font-sans pt-2">
-                    {activePreviewItem.description}
-                  </p>
-                )}
+              <div className="relative w-full h-64 rounded-2xl overflow-hidden bg-black/60">
+                <Image
+                  src={activeItemModal.image}
+                  alt={activeItemModal.name}
+                  fill
+                  className="object-cover"
+                />
               </div>
 
-              <div className="pt-4 border-t border-white/10 flex items-center justify-between gap-4">
+              <div className="space-y-3">
+                <span className="text-xs uppercase font-bold tracking-widest block" style={{ color: "#F5A623" }}>
+                  {activeItemModal.category}
+                </span>
+                <h3 className="type-display text-3xl font-black text-white">
+                  {activeItemModal.name}
+                </h3>
+              </div>
+
+              <div className="flex items-center justify-between pt-4 border-t border-white/10">
+                <span className="type-display text-2xl font-bold text-white">
+                  ₹{activeItemModal.price}
+                </span>
+
                 <button
                   type="button"
                   onClick={() => {
-                    handleAddToCart(activePreviewItem);
-                    setActivePreviewItem(null);
+                    if ((window as any).playSizzleSound) (window as any).playSizzleSound();
+                    alert(`Added ${activeItemModal.name} to order!`);
+                    setActiveItemModal(null);
                   }}
-                  className="w-full py-3.5 rounded-full font-sans text-xs font-bold uppercase tracking-wider hover:brightness-110 active:scale-95 transition-all shadow-xl text-center"
-                  style={{
-                    backgroundColor: "#F5A623",
-                    color: "#000000",
-                  }}
+                  className="px-6 py-3 rounded-full font-bold text-xs uppercase tracking-wider transition-all shadow-xl hover:brightness-110 active:scale-95"
+                  style={{ backgroundColor: "#F5A623", color: "#000000" }}
                 >
-                  Add to Bag (₹{activePreviewItem.price})
+                  Add to Table Order →
                 </button>
               </div>
             </motion.div>
           </div>
         )}
       </AnimatePresence>
-
-      <CartDrawer
-        isOpen={cartOpen}
-        onClose={() => setCartOpen(false)}
-        items={cartItems}
-        onUpdateQuantity={handleUpdateQuantity}
-        currency="₹"
-        primaryColor="#F5A623"
-        textOnPrimary="#000000"
-      />
     </section>
   );
 }

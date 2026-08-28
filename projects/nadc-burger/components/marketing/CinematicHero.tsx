@@ -17,12 +17,12 @@ export default function CinematicHero() {
           <div className="flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/[0.05] border border-white/10 backdrop-blur-xl w-fit shadow-lg">
             <span className="w-2 h-2 rounded-full animate-pulse" style={{ backgroundColor: "#F5C418" }} />
             <span className="font-sans text-xs font-semibold uppercase tracking-wider text-stone-200">
-              Craft Smash Atelier · Bengaluru
+              Not A Damn Chance · 100% Texas Wagyu Smashes
             </span>
           </div>
 
           <h1 className="type-display text-6xl sm:text-8xl md:text-9xl lg:text-[9.5rem] text-white leading-none font-black tracking-tight drop-shadow-[0_10px_30px_rgba(0,0,0,0.8)]">
-            BEYONDBURG INC.
+            NADC BURGER
           </h1>
 
           <div className="pt-2 pointer-events-auto flex flex-wrap gap-4 font-sans font-bold text-xs uppercase tracking-wider">

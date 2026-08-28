@@ -6,39 +6,21 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const outposts = [
   {
-    id: "st-marks",
-    name: "St. Mark's Road Flagship",
-    badge: "ORIGINAL SMASH ATELIER",
-    address: "Opp. Bowring Institute, St. Mark's Rd",
-    city: "Bengaluru 560001",
-    hours: "11:30 AM – 11:30 PM",
-    phone: "+91 90729 64242",
-    status: "Kitchen Active · 10 min table wait",
-    seating: "Chef's Sizzle Counter & Shaded Patio",
-    heroImage: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1200&q=80",
-    gallery: [
-      "https://images.unsplash.com/photo-1550547660-d9450f859349?w=800&q=80",
-      "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800&q=80",
+    "id": "church-st",
+    "name": "Church Street Sizzle Hub",
+    "badge": "FLAGSHIP SMASH LAB",
+    "address": "42 Church St, Shanthala Nagar",
+    "city": "Bengaluru 560001",
+    "hours": "12:00 PM \u2013 12:00 AM",
+    "phone": "+91 98450 12345",
+    "status": "Griddles Firing Non-Stop",
+    "seating": "Open Counter & Neon Patio",
+    "heroImage": "https://images.unsplash.com/photo-1550547660-d9450f859349?w=1200&q=80",
+    "gallery": [
+      "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800&q=80"
     ],
-    mapUrl: "https://maps.google.com/?q=Beyondburg+Inc+Bangalore",
-  },
-  {
-    id: "indiranagar",
-    name: "Indiranagar Craft Kitchen",
-    badge: "100FT ROAD OUTPOST",
-    address: "100 Feet Rd, HAL 2nd Stage",
-    city: "Bengaluru 560038",
-    hours: "12:00 PM – 1:00 AM",
-    phone: "+91 90729 64243",
-    status: "Kitchen Active · Open till 1:00 AM",
-    seating: "Neon Lounge & Outdoor Deck",
-    heroImage: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1200&q=80",
-    gallery: [
-      "https://images.unsplash.com/photo-1586190848861-99aa4a171e90?w=800&q=80",
-      "https://images.unsplash.com/photo-1551782450-a2132b4ba21d?w=800&q=80",
-    ],
-    mapUrl: "https://maps.google.com/?q=Beyondburg+Inc+Indiranagar",
-  },
+    "mapUrl": "https://maps.google.com/?q=Smash+Guys+Church+Street+Bangalore"
+  }
 ];
 
 export default function RestaurantLocations() {

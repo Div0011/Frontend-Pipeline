@@ -15,21 +15,21 @@ export default function CinematicHero() {
         <div className="max-w-4xl space-y-6">
           {/* Live Status Pill */}
           <div className="flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/[0.05] border border-white/10 backdrop-blur-xl w-fit shadow-lg">
-            <span className="w-2 h-2 rounded-full animate-pulse" style={{ backgroundColor: "#F5C418" }} />
+            <span className="w-2 h-2 rounded-full animate-pulse" style={{ backgroundColor: "#DC2626" }} />
             <span className="font-sans text-xs font-semibold uppercase tracking-wider text-stone-200">
-              Craft Smash Atelier · Bengaluru
+              Legendary 3/4 lb Burgers & Dive Bar · 6th St Austin
             </span>
           </div>
 
           <h1 className="type-display text-6xl sm:text-8xl md:text-9xl lg:text-[9.5rem] text-white leading-none font-black tracking-tight drop-shadow-[0_10px_30px_rgba(0,0,0,0.8)]">
-            BEYONDBURG INC.
+            CASINO EL CAMINO
           </h1>
 
           <div className="pt-2 pointer-events-auto flex flex-wrap gap-4 font-sans font-bold text-xs uppercase tracking-wider">
             <Link
               href="/menu"
               className="px-8 py-4 rounded-full transition-all shadow-2xl hover:brightness-110 hover:scale-105 active:scale-95 flex items-center gap-2"
-              style={{ backgroundColor: "#F5C418", color: "#000000" }}
+              style={{ backgroundColor: "#DC2626", color: "#000000" }}
             >
               <span>Explore Menu</span>
               <span>→</span>

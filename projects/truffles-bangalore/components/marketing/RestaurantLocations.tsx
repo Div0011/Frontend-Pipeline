@@ -6,39 +6,39 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const outposts = [
   {
-    id: "st-marks",
-    name: "St. Mark's Road Flagship",
-    badge: "ORIGINAL SMASH ATELIER",
-    address: "Opp. Bowring Institute, St. Mark's Rd",
-    city: "Bengaluru 560001",
-    hours: "11:30 AM – 11:30 PM",
-    phone: "+91 90729 64242",
-    status: "Kitchen Active · 10 min table wait",
-    seating: "Chef's Sizzle Counter & Shaded Patio",
-    heroImage: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1200&q=80",
-    gallery: [
-      "https://images.unsplash.com/photo-1550547660-d9450f859349?w=800&q=80",
-      "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800&q=80",
+    "id": "st-marks",
+    "name": "St. Mark's Flagship",
+    "badge": "THE ORIGINAL ICON",
+    "address": "Apex Rialto, St. Mark's Rd",
+    "city": "Bengaluru 560001",
+    "hours": "11:00 AM \u2013 11:00 PM",
+    "phone": "+91 80 4146 6565",
+    "status": "Seating Active \u00b7 Fast Queue",
+    "seating": "Bistro Dining & Verandah",
+    "heroImage": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1200&q=80",
+    "gallery": [
+      "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&q=80",
+      "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800&q=80"
     ],
-    mapUrl: "https://maps.google.com/?q=Beyondburg+Inc+Bangalore",
+    "mapUrl": "https://maps.google.com/?q=Truffles+St+Marks+Road+Bangalore"
   },
   {
-    id: "indiranagar",
-    name: "Indiranagar Craft Kitchen",
-    badge: "100FT ROAD OUTPOST",
-    address: "100 Feet Rd, HAL 2nd Stage",
-    city: "Bengaluru 560038",
-    hours: "12:00 PM – 1:00 AM",
-    phone: "+91 90729 64243",
-    status: "Kitchen Active · Open till 1:00 AM",
-    seating: "Neon Lounge & Outdoor Deck",
-    heroImage: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1200&q=80",
-    gallery: [
+    "id": "koramangala",
+    "name": "Koramangala 5th Block",
+    "badge": "STUDENT & FOODIE HUB",
+    "address": "93/A, 4th B Cross, 5th Block, Koramangala",
+    "city": "Bengaluru 560095",
+    "hours": "11:00 AM \u2013 11:30 PM",
+    "phone": "+91 80 4153 6565",
+    "status": "High Demand \u00b7 15 min wait",
+    "seating": "Two-Story Classic Diner",
+    "heroImage": "https://images.unsplash.com/photo-1550547660-d9450f859349?w=1200&q=80",
+    "gallery": [
       "https://images.unsplash.com/photo-1586190848861-99aa4a171e90?w=800&q=80",
-      "https://images.unsplash.com/photo-1551782450-a2132b4ba21d?w=800&q=80",
+      "https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=800&q=80"
     ],
-    mapUrl: "https://maps.google.com/?q=Beyondburg+Inc+Indiranagar",
-  },
+    "mapUrl": "https://maps.google.com/?q=Truffles+Koramangala+Bangalore"
+  }
 ];
 
 export default function RestaurantLocations() {
@@ -77,7 +77,7 @@ export default function RestaurantLocations() {
                       : "text-stone-400 hover:text-white"
                   }`}
                   style={{
-                    backgroundColor: selectedLocation === idx ? "#F5C418" : undefined,
+                    backgroundColor: selectedLocation === idx ? "#F5A623" : undefined,
                     color: selectedLocation === idx ? "#000000" : undefined,
                   }}
                 >
@@ -114,7 +114,7 @@ export default function RestaurantLocations() {
               {/* Text Over Image — always white regardless of theme */}
               <div data-image-overlay className="absolute bottom-6 left-6 right-6 flex items-end justify-between gap-4 z-10">
                 <div className="space-y-1 text-white">
-                  <span className="text-[10px] uppercase tracking-widest font-bold block" style={{ color: "#F5C418" }}>
+                  <span className="text-[10px] uppercase tracking-widest font-bold block" style={{ color: "#F5A623" }}>
                     {currentLoc.badge}
                   </span>
                   <h3 className="type-display text-2xl sm:text-3xl text-white font-extrabold drop-shadow-md">
@@ -130,7 +130,7 @@ export default function RestaurantLocations() {
                         onClick={() => setActiveImageIndex(imgIdx)}
                         className={`w-2 h-2 rounded-full transition-all ${
                           activeImageIndex === imgIdx
-                            ? "w-5 bg-[#F5C418]"
+                            ? "w-5 bg-[#F5A623]"
                             : "bg-white/40 hover:bg-white/70"
                         }`}
                       />
@@ -187,7 +187,7 @@ export default function RestaurantLocations() {
                   rel="noopener noreferrer"
                   className="py-3.5 px-4 rounded-2xl font-sans text-xs font-bold uppercase tracking-wider text-center transition-all shadow-lg hover:brightness-110 active:scale-95"
                   style={{
-                    backgroundColor: "#F5C418",
+                    backgroundColor: "#F5A623",
                     color: "#000000",
                   }}
                 >

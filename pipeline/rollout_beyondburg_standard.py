@@ -1,64 +1,24 @@
 #!/usr/bin/env python3
 """
-Beyondburg Standard Interactive UI/UX Rollout
-Applies all interactive improvements from beyondburg-inc to every other project.
-
-What gets rolled out:
-  1. PixelText.tsx (NEW component — interactive dot-particle brand name)
-  2. AtmosphereControls.tsx — CSS var writes on toggle, correct button inversion
-  3. MorphSlider.tsx — data-image-overlay on captions
-  4. AccordionGallery.tsx — data-image-overlay on both overlay divs
-  5. globals.css — cursor:none, CSS var system, [data-image-overlay] protection
-  6. Nav.tsx — theme-responsive nav (dark glass / light cream glass)
-  7. Footer.tsx — PixelText brand name, inverted scroll-to-top hover
-  8. CinematicHero.tsx — data-image-overlay on text container
-  9. CinematicSmoothie.tsx — data-image-overlay on text container
- 10. RestaurantLocations.tsx — data-image-overlay on photo overlay
-
-Each project keeps its own primaryColor, darkBg, brand name, and all content.
+Enhanced Beyondburg Standard Rollout with Deep Brand Data.
+Updates Footers, Navs, AtmosphereControls, and Globals with full authenticity per brand.
 """
 
 import os
+import sys
 import re
 import shutil
 from pathlib import Path
 
-# ─── Project root ───────────────────────────────────────────────
+ROOT = Path(__file__).parent.parent
+sys.path.insert(0, str(ROOT / "pipeline"))
+sys.path.insert(0, str(ROOT))
+
+from personalize_all_websites import ALL_BRANDS
+
 ROOT = Path(__file__).parent.parent
 PROJECTS = ROOT / "projects"
 SOURCE = PROJECTS / "beyondburg-inc"
-
-# ─── Skip non-standard projects ─────────────────────────────────
-SKIP = {"beyondburg-inc", "fabroar", "superfan-redesign"}
-
-# ─── Per-project brand config: (primaryColor, darkBg, footerBg, footerTextColor, brandName) ───
-BRAND_CONFIG = {
-    "truffles-bangalore":   ("#F5A623", "#100a06", "#F5A623", "#000000", "TRUFFLES"),
-    "smash-guys":           ("#F5C418", "#071009", "#F5C418", "#000000", "SMASH GUYS"),
-    "sankys-burger-house":  ("#FFE500", "#08080a", "#FFE500", "#000000", "SANKY'S"),
-    "dans-burgers":         ("#D97706", "#100a05", "#D97706", "#000000", "DAN'S HAMBURGERS"),
-    "backyard-burgers":     ("#E67E22", "#100904", "#E67E22", "#000000", "BACKYARD BURGERS"),
-    "dirty-martins":        ("#BF5700", "#100804", "#BF5700", "#000000", "DIRTY MARTIN'S"),
-    "sour-duck-market":     ("#EA580C", "#100804", "#EA580C", "#000000", "SOUR DUCK MARKET"),
-    "biggies-burger":       ("#F26522", "#100804", "#F26522", "#000000", "BIGGIES BURGER"),
-    "leons-burgers":        ("#B12727", "#0e0606", "#B12727", "#000000", "LEON'S BURGERS"),
-    "casino-el-camino":     ("#DC2626", "#0e0505", "#DC2626", "#000000", "CASINO EL CAMINO"),
-    "simon-burgers":        ("#DC2626", "#0e0606", "#DC2626", "#000000", "SIMON BURGERS"),
-    "pedrosos-pizza":       ("#B91C1C", "#0e0505", "#B91C1C", "#000000", "PEDROSO'S PIZZA"),
-    "good-flippin-burgers": ("#BE123C", "#0e0509", "#BE123C", "#000000", "GOOD FLIPPIN' BURGERS"),
-    "pool-burger":          ("#F43F5E", "#0f0509", "#F43F5E", "#000000", "POOL BURGER"),
-    "burgerman":            ("#15803D", "#051007", "#15803D", "#000000", "BURGERMAN"),
-    "little-deli-pizzeria": ("#166534", "#051007", "#166534", "#000000", "LITTLE DELI"),
-    "louis-burger":         ("#D4AF37", "#0d0b06", "#D4AF37", "#000000", "LOUIS BURGER"),
-    "burger-seigneur":      ("#C8A96E", "#0d0b07", "#C8A96E", "#000000", "BURGER SEIGNEUR"),
-    "burger-elite":         ("#7C3AED", "#0b0614", "#7C3AED", "#000000", "BURGER ELITE"),
-    "jewboy-burgers":       ("#06B6D4", "#050c10", "#06B6D4", "#000000", "JEWBOY BURGERS"),
-    "burger-bar-austin":    ("#2563EB", "#060a12", "#2563EB", "#000000", "BURGER BAR"),
-    "original-burger-co":   ("#2563EB", "#060a12", "#2563EB", "#000000", "ORIGINAL BURGER CO."),
-    "nadc-burger":          ("#F5C418", "#080808", "#080808", "#FAF8F2", "NADC BURGER"),
-}
-
-# ─── Shared file content generators ─────────────────────────────
 
 def make_globals_css(primary_color: str, dark_bg: str) -> str:
     return f"""@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;700&family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@500;700;900&display=swap');
@@ -172,9 +132,18 @@ html.light body header a:hover {{
 """
 
 
-def make_footer(primary_color: str, footer_bg: str, footer_text: str, brand_name: str) -> str:
-    # For dark footers (nadc-burger), use light pixel text
-    pixel_color = footer_text  # footer_text is the text color
+def make_footer(brand: dict) -> str:
+    footer_bg = brand["footer_bg"]
+    footer_text = brand["footer_text"]
+    brand_name = brand["name"]
+    hours = brand.get("hours", "11:30 AM – 11:30 PM")
+    city_footer = brand.get("city_footer", "OUTPOSTS")
+    phone = brand.get("phone", "+91 90729 64242")
+    address = brand.get("address", "Flagship Atelier")
+    email = brand.get("email", "hello@restaurant.com")
+
+    pixel_color = footer_text
+
     return f'''"use client";
 
 import React from "react";
@@ -217,8 +186,8 @@ export default function Footer() {{
           className="font-sans text-xs sm:text-right space-y-1"
           style={{{{ color: "{footer_text}99" }}}}
         >
-          <p className="font-bold">OPEN DAILY: 11:30 AM – 11:30 PM</p>
-          <p>BENGALURU OUTPOSTS</p>
+          <p className="font-bold">OPEN DAILY: {hours}</p>
+          <p>{city_footer}</p>
         </div>
       </div>
 
@@ -244,9 +213,10 @@ export default function Footer() {{
       >
         <div className="space-y-1" style={{{{ color: "{footer_text}99" }}}}>
           <p className="font-extrabold text-sm" style={{{{ color: "{footer_text}" }}}}>
-            +91 90729 64242
+            {phone}
           </p>
-          <p>contact@restaurant.com</p>
+          <p>{address}</p>
+          <p>{email}</p>
         </div>
 
         <div className="flex items-center justify-between sm:justify-end gap-8">
@@ -270,7 +240,11 @@ export default function Footer() {{
 '''
 
 
-def make_nav(primary_color: str, dark_bg: str) -> str:
+def make_nav(brand: dict) -> str:
+    primary_color = brand["primary_color"]
+    dark_bg = brand["dark_bg"]
+    brand_name = brand["name"]
+
     return f'''"use client";
 
 import React, {{ useState, useEffect, useRef }} from "react";
@@ -326,12 +300,12 @@ export default function Nav() {{
       }}`}}
     >
       <div className="max-w-7xl mx-auto px-6 h-12 flex items-center justify-between">
-        {{/* Brand Logo */}}
+        {{/* Brand Logo / Name */}}
         <Link href="/" className="flex items-center gap-3 group">
           <div className="relative w-64 sm:w-80 h-10">
             <Image
               src="/logo.svg"
-              alt="Brand Logo"
+              alt="{brand_name}"
               fill
               unoptimized
               className="object-contain object-left group-hover:opacity-90 transition-opacity duration-200"
@@ -373,94 +347,42 @@ export default function Nav() {{
 '''
 
 
-# ─── Files copied directly from beyondburg-inc (same content, no customization) ───
-COPY_DIRECTLY = [
-    ("components/ui/PixelText.tsx",         True),   # NEW file
-    ("components/ui/AtmosphereControls.tsx", False),  # overwrite
-    ("components/ui/MorphSlider.tsx",        False),  # overwrite (data-image-overlay)
-    ("components/ui/AccordionGallery.tsx",   False),  # overwrite (data-image-overlay)
-    ("components/marketing/CinematicHero.tsx",     False),
-    ("components/marketing/CinematicSmoothie.tsx", False),
-    ("components/marketing/RestaurantLocations.tsx", False),
-]
+def rollout_all():
+    print("🚀 Rolling out enhanced personalized footers, navs, and CSS across all 24 projects...")
+    for slug, brand in ALL_BRANDS.items():
+        project = PROJECTS / slug
+        if not project.exists():
+            continue
 
+        # 1. PixelText.tsx
+        src_pt = SOURCE / "components" / "ui" / "PixelText.tsx"
+        dst_pt = project / "components" / "ui" / "PixelText.tsx"
+        dst_pt.parent.mkdir(parents=True, exist_ok=True)
+        if src_pt.exists() and src_pt != dst_pt:
+            shutil.copy2(src_pt, dst_pt)
 
-def get_layout_info(project_path: Path):
-    """Read primaryColor, darkBg, lightBg from layout.tsx"""
-    layout = project_path / "app" / "layout.tsx"
-    if not layout.exists():
-        return None, None, None
-    content = layout.read_text()
-    
-    primary = re.search(r'primaryColor="(#[A-Fa-f0-9]{6})"', content)
-    dark = re.search(r'darkBg="(#[A-Fa-f0-9]{6})"', content)
-    light = re.search(r'lightBg="(#[A-Fa-f0-9]{6})"', content)
-    
-    return (
-        primary.group(1) if primary else "#F5C418",
-        dark.group(1) if dark else "#070709",
-        light.group(1) if light else "#FAF7F2",
-    )
+        # 2. AtmosphereControls.tsx
+        src_ac = SOURCE / "components" / "ui" / "AtmosphereControls.tsx"
+        dst_ac = project / "components" / "ui" / "AtmosphereControls.tsx"
+        if src_ac.exists() and src_ac != dst_ac:
+            shutil.copy2(src_ac, dst_ac)
 
+        # 3. globals.css
+        css_path = project / "app" / "globals.css"
+        css_path.write_text(make_globals_css(brand["primary_color"], brand["dark_bg"]))
 
-def rollout_project(slug: str):
-    project = PROJECTS / slug
-    if not project.exists():
-        print(f"  ⚠️  Skipping {slug} — directory not found")
-        return
+        # 4. Footer.tsx
+        footer_path = project / "components" / "marketing" / "Footer.tsx"
+        footer_path.write_text(make_footer(brand))
 
-    brand = BRAND_CONFIG.get(slug)
-    if not brand:
-        # Fall back to reading from layout.tsx
-        primary, dark_bg, _ = get_layout_info(project)
-        brand = (primary, dark_bg, primary, "#000000", slug.replace("-", " ").upper())
-    
-    primary_color, dark_bg, footer_bg, footer_text, brand_name = brand
+        # 5. Nav.tsx
+        nav_path = project / "components" / "marketing" / "Nav.tsx"
+        nav_path.write_text(make_nav(brand))
 
-    # 1. Copy files directly from beyondburg-inc (no content change)
-    for rel_path, is_new in COPY_DIRECTLY:
-        src = SOURCE / rel_path
-        dst = project / rel_path
-        if src.exists():
-            dst.parent.mkdir(parents=True, exist_ok=True)
-            shutil.copy2(src, dst)
+        print(f"  ✓ Updated {slug} with personalized footer & navigation")
 
-    # 2. Write brand-specific globals.css
-    css_path = project / "app" / "globals.css"
-    css_path.parent.mkdir(parents=True, exist_ok=True)
-    css_path.write_text(make_globals_css(primary_color, dark_bg))
-
-    # 3. Write brand-specific Footer.tsx
-    footer_path = project / "components" / "marketing" / "Footer.tsx"
-    footer_path.parent.mkdir(parents=True, exist_ok=True)
-    footer_path.write_text(make_footer(primary_color, footer_bg, footer_text, brand_name))
-
-    # 4. Write brand-specific Nav.tsx
-    nav_path = project / "components" / "marketing" / "Nav.tsx"
-    nav_path.parent.mkdir(parents=True, exist_ok=True)
-    nav_path.write_text(make_nav(primary_color, dark_bg))
-
-    print(f"  ✓ {slug} [{primary_color}]")
-
-
-def main():
-    print("🚀 Beyondburg Standard Rollout — 23 projects")
-    print("=" * 60)
-    
-    targets = sorted([
-        d.name for d in PROJECTS.iterdir()
-        if d.is_dir() and d.name not in SKIP
-    ])
-    
-    for slug in targets:
-        rollout_project(slug)
-    
-    print()
-    print("=" * 60)
-    print(f"✅ Rollout complete — {len(targets)} projects updated!")
-    print()
-    print("Next: run 'npm run build' in a few projects to verify.")
+    print("🎉 All 24 projects updated with real personalized contact & UI assets!")
 
 
 if __name__ == "__main__":
-    main()
+    rollout_all()

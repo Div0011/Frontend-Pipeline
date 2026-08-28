@@ -53,12 +53,12 @@ export default function Nav() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 h-12 flex items-center justify-between">
-        {/* Brand Logo */}
+        {/* Brand Logo / Name */}
         <Link href="/" className="flex items-center gap-3 group">
           <div className="relative w-64 sm:w-80 h-10">
             <Image
               src="/logo.svg"
-              alt="Brand Logo"
+              alt="BIGGIES BURGER"
               fill
               unoptimized
               className="object-contain object-left group-hover:opacity-90 transition-opacity duration-200"

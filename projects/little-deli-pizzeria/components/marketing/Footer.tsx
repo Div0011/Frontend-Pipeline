@@ -40,8 +40,8 @@ export default function Footer() {
           className="font-sans text-xs sm:text-right space-y-1"
           style={{ color: "#00000099" }}
         >
-          <p className="font-bold">OPEN DAILY: 11:30 AM – 11:30 PM</p>
-          <p>BENGALURU OUTPOSTS</p>
+          <p className="font-bold">OPEN DAILY: 11:00 AM – 9:00 PM</p>
+          <p>CRESTVIEW NEIGHBORHOOD</p>
         </div>
       </div>
 
@@ -49,7 +49,7 @@ export default function Footer() {
       <div className="my-auto py-8 flex items-center overflow-x-auto">
         <div className="scale-[clamp(0.3,3vw,0.8)] sm:scale-[clamp(0.4,4.5vw,0.9)] md:scale-100 origin-left transition-transform duration-200">
           <PixelText
-            text="LITTLE DELI"
+            text="LITTLE DELI & PIZZERIA"
             dotSize={11}
             gap={3}
             color="#000000"
@@ -67,14 +67,15 @@ export default function Footer() {
       >
         <div className="space-y-1" style={{ color: "#00000099" }}>
           <p className="font-extrabold text-sm" style={{ color: "#000000" }}>
-            +91 90729 64242
+            +1 512-467-7402
           </p>
-          <p>contact@restaurant.com</p>
+          <p>7101 Woodrow Ave, Austin, TX 78757</p>
+          <p>info@littledeliandpizza.com</p>
         </div>
 
         <div className="flex items-center justify-between sm:justify-end gap-8">
           <p className="font-medium" style={{ color: "#00000066" }}>
-            © {new Date().getFullYear()} LITTLE DELI
+            © {new Date().getFullYear()} LITTLE DELI & PIZZERIA
           </p>
           <button
             type="button"

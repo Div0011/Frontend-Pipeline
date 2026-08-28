@@ -48,17 +48,17 @@ export default function Nav() {
         isVisible ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0 pointer-events-none"
       } ${
         isScrolled
-          ? "bg-[#070709]/85 dark:bg-[#070709]/85 light:bg-[#FAF7F2]/90 backdrop-blur-xl border-b border-white/10 dark:border-white/10 light:border-black/10 py-3 shadow-2xl"
+          ? "backdrop-blur-xl border-b py-3 shadow-2xl bg-[#070709]/88 border-white/10"
           : "bg-transparent py-4"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 h-12 flex items-center justify-between">
-        {/* Brand Logo */}
+        {/* Brand Logo / Name */}
         <Link href="/" className="flex items-center gap-3 group">
           <div className="relative w-64 sm:w-80 h-10">
             <Image
               src="/logo.svg"
-              alt="Beyondburg Inc."
+              alt="BEYONDBURG INC."
               fill
               unoptimized
               className="object-contain object-left group-hover:opacity-90 transition-opacity duration-200"
@@ -83,11 +83,12 @@ export default function Nav() {
           </Link>
         </nav>
 
-        {/* Primary CTA Button */}
+        {/* Primary CTA Button — inverts with theme */}
         <div className="flex items-center gap-4">
           <Link
             href="/menu"
-            className="px-5 py-2.5 rounded-full font-sans text-xs font-bold uppercase tracking-wider hover:opacity-90 active:scale-95 transition-all shadow-md bg-[#F5C418] text-black dark:bg-[#F5C418] dark:text-black light:bg-black light:text-white"
+            className="px-5 py-2.5 rounded-full font-sans text-xs font-bold uppercase tracking-wider hover:opacity-90 active:scale-95 transition-all shadow-md"
+            style={{ backgroundColor: "#F5C418", color: "#000000" }}
           >
             Full Menu →
           </Link>

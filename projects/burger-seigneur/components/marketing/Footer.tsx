@@ -67,9 +67,10 @@ export default function Footer() {
       >
         <div className="space-y-1" style={{ color: "#00000099" }}>
           <p className="font-extrabold text-sm" style={{ color: "#000000" }}>
-            +91 90729 64242
+            +91 80 4965 3111
           </p>
-          <p>contact@restaurant.com</p>
+          <p>80 Feet Rd, Indiranagar, Bengaluru</p>
+          <p>reservations@burgerseigneur.com</p>
         </div>
 
         <div className="flex items-center justify-between sm:justify-end gap-8">

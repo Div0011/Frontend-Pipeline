@@ -41,7 +41,7 @@ export default function Footer() {
           style={{ color: "#00000099" }}
         >
           <p className="font-bold">OPEN DAILY: 11:30 AM – 11:30 PM</p>
-          <p>BENGALURU OUTPOSTS</p>
+          <p>BENGALURU ATELIER</p>
         </div>
       </div>
 
@@ -67,9 +67,10 @@ export default function Footer() {
       >
         <div className="space-y-1" style={{ color: "#00000099" }}>
           <p className="font-extrabold text-sm" style={{ color: "#000000" }}>
-            +91 90729 64242
+            +91 80 4748 3000
           </p>
-          <p>contact@restaurant.com</p>
+          <p>Lavelle Road & Indiranagar, Bengaluru</p>
+          <p>contact@louisburger.in</p>
         </div>
 
         <div className="flex items-center justify-between sm:justify-end gap-8">

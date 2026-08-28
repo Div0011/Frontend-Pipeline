@@ -27,6 +27,7 @@
   --fg-muted:  rgba(250, 248, 242, 0.55);
   --fg-sub:    rgba(250, 248, 242, 0.35);
   --border:    rgba(255, 255, 255, 0.10);
+  --primary:   #F5C418;
 }
 
 html.light {
@@ -39,11 +40,10 @@ html.light {
 
 /* ─── Base ─────────────────────────────────────────────────────────── */
 *, *::before, *::after {
-  /* Hide default OS cursor on all elements — custom cursor replaces it */
+  /* Hide default OS cursor — custom cursor replaces it */
   cursor: none !important;
 }
 
-/* Keep default cursor on input fields for usability */
 input, textarea, select, [contenteditable] {
   cursor: text !important;
 }
@@ -64,27 +64,21 @@ body {
 }
 
 /* ─── PROTECTED IMAGE ZONES ────────────────────────────────────────── 
-   Any element with [data-image-overlay] or inside [data-image-frame] 
-   will ALWAYS show white text, in BOTH dark and light themes.
-   This covers: MorphSlider captions, AccordionGallery labels,
-   RestaurantLocations photo overlay, CinematicHero, CinematicSmoothie.
+   Any element with [data-image-overlay] always shows white text,
+   in BOTH dark and light themes. Theme toggle never touches these.
 ─────────────────────────────────────────────────────────────────── */
 [data-image-overlay],
-[data-image-overlay] *,
-[data-image-frame] [data-image-overlay],
-[data-image-frame] [data-image-overlay] * {
+[data-image-overlay] * {
   color: #FAF8F2 !important;
 }
 
-/* Specific style classes used in image-overlay text */
 .img-overlay-text,
 .img-overlay-text * {
   color: #FAF8F2 !important;
 }
 
-/* ─── LIGHT THEME: Section-level text shift ─────────────────────────
-   Only targets h1/h2/h3 and paragraph text directly inside sections 
-   that are NOT image-overlay zones. This avoids bleeding into image components.
+/* ─── LIGHT THEME: Section-level text ───────────────────────────────
+   Only targets non-image-overlay section text.
 ─────────────────────────────────────────────────────────────────── */
 html.light body section:not([data-image-frame]) > div > h1,
 html.light body section:not([data-image-frame]) > div > h2,

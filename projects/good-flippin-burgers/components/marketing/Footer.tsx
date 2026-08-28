@@ -40,7 +40,7 @@ export default function Footer() {
           className="font-sans text-xs sm:text-right space-y-1"
           style={{ color: "#00000099" }}
         >
-          <p className="font-bold">OPEN DAILY: 11:30 AM – 11:30 PM</p>
+          <p className="font-bold">OPEN DAILY: 11:30 AM – 1:00 AM</p>
           <p>BENGALURU OUTPOSTS</p>
         </div>
       </div>
@@ -67,9 +67,10 @@ export default function Footer() {
       >
         <div className="space-y-1" style={{ color: "#00000099" }}>
           <p className="font-extrabold text-sm" style={{ color: "#000000" }}>
-            +91 90729 64242
+            +91 80 4999 7788
           </p>
-          <p>contact@restaurant.com</p>
+          <p>Koramangala 4th Block & Indiranagar, Bengaluru</p>
+          <p>orders@goodflippinburgers.com</p>
         </div>
 
         <div className="flex items-center justify-between sm:justify-end gap-8">

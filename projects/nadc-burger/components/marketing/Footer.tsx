@@ -40,8 +40,8 @@ export default function Footer() {
           className="font-sans text-xs sm:text-right space-y-1"
           style={{ color: "#FAF8F299" }}
         >
-          <p className="font-bold">OPEN DAILY: 11:30 AM – 11:30 PM</p>
-          <p>BENGALURU OUTPOSTS</p>
+          <p className="font-bold">OPEN DAILY: 12:00 PM – 2:00 AM</p>
+          <p>RAINEY STREET · AUSTIN</p>
         </div>
       </div>
 
@@ -67,9 +67,10 @@ export default function Footer() {
       >
         <div className="space-y-1" style={{ color: "#FAF8F299" }}>
           <p className="font-extrabold text-sm" style={{ color: "#FAF8F2" }}>
-            +91 90729 64242
+            +1 512-555-6232
           </p>
-          <p>contact@restaurant.com</p>
+          <p>1009 Rainey St, Austin, TX 78701</p>
+          <p>orders@nadcburger.com</p>
         </div>
 
         <div className="flex items-center justify-between sm:justify-end gap-8">

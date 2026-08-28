@@ -40,8 +40,8 @@ export default function Footer() {
           className="font-sans text-xs sm:text-right space-y-1"
           style={{ color: "#00000099" }}
         >
-          <p className="font-bold">OPEN DAILY: 11:30 AM – 11:30 PM</p>
-          <p>BENGALURU OUTPOSTS</p>
+          <p className="font-bold">OPEN DAILY: 11:00 AM – 11:00 PM</p>
+          <p>THE DRAG · AUSTIN</p>
         </div>
       </div>
 
@@ -67,9 +67,10 @@ export default function Footer() {
       >
         <div className="space-y-1" style={{ color: "#00000099" }}>
           <p className="font-extrabold text-sm" style={{ color: "#000000" }}>
-            +91 90729 64242
+            +1 512-477-3173
           </p>
-          <p>contact@restaurant.com</p>
+          <p>2808 Guadalupe St, Austin, TX 78705</p>
+          <p>kum-bak@dirtymartins.com</p>
         </div>
 
         <div className="flex items-center justify-between sm:justify-end gap-8">
