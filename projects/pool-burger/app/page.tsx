@@ -12,6 +12,7 @@ import AtelierAssembly from "@/components/marketing/AtelierAssembly";
 import CinematicSmoothie from "@/components/marketing/CinematicSmoothie";
 import ArchetypeShowcase from "@/components/marketing/ArchetypeShowcase";
 import SignatureMenu from "@/components/marketing/SignatureMenu";
+import OriginTimeSlip from "@/components/marketing/OriginTimeSlip";
 import HowWeSmash from "@/components/marketing/HowWeSmash";
 import RestaurantLocations from "@/components/marketing/RestaurantLocations";
 import ReservationCTA from "@/components/marketing/ReservationCTA";
@@ -35,6 +36,7 @@ export default function Home() {
         <AtelierAssembly />
         <CinematicSmoothie />
         <ArchetypeShowcase />
+        <OriginTimeSlip primaryColor="#38BDF8" foundingYear="2017" />
         <SignatureMenu />
         <HowWeSmash />
         <RestaurantLocations />
