@@ -39,13 +39,13 @@ export default function CinematicSmoothie() {
           }}
         >
           <div className="max-w-3xl space-y-4">
-            <span className="font-mono text-xs uppercase tracking-widest px-3 py-1 bg-white/10 backdrop-blur-md rounded-full border border-white/20 inline-block font-bold" style={{ color: "#BF5700" }}>
+            <span className="font-mono text-xs uppercase tracking-widest px-3 py-1 bg-white/10 backdrop-blur-md rounded-full border border-white/20 inline-block font-bold" style={{ color: "#C68A14" }}>
               HOUSE SIGNATURE CRAVING
             </span>
 
             <h2 className="type-display text-5xl sm:text-7xl md:text-8xl lg:text-9xl text-white leading-none font-black tracking-tight drop-shadow-[0_10px_30px_rgba(0,0,0,0.8)]">
               1926 SPECIAL <br />
-              <span style={{ color: "#BF5700" }}>TEXAS CHOCOLATE SHAKE</span>
+              <span style={{ color: "#C68A14" }}>TEXAS CHOCOLATE SHAKE</span>
             </h2>
 
             <p className="type-serif text-base sm:text-xl text-stone-200 max-w-xl leading-relaxed drop-shadow">
@@ -64,7 +64,7 @@ export default function CinematicSmoothie() {
           }}
         >
           <div className="max-w-2xl space-y-6">
-            <span className="font-mono text-xs uppercase tracking-widest px-3 py-1 bg-white/10 backdrop-blur-md rounded-full border border-white/20 inline-block font-bold" style={{ color: "#BF5700" }}>
+            <span className="font-mono text-xs uppercase tracking-widest px-3 py-1 bg-white/10 backdrop-blur-md rounded-full border border-white/20 inline-block font-bold" style={{ color: "#C68A14" }}>
               CHILL & EMULSION SPECIFICATION
             </span>
 
@@ -80,7 +80,7 @@ export default function CinematicSmoothie() {
               <Link
                 href="/menu"
                 className="px-8 py-4 rounded-full font-sans text-xs font-bold uppercase tracking-wider transition-all shadow-2xl hover:brightness-110 hover:scale-105 active:scale-95 flex items-center gap-2"
-                style={{ backgroundColor: "#BF5700", color: "#000000" }}
+                style={{ backgroundColor: "#C68A14", color: "#000000" }}
               >
                 <span>Explore Shakes & Beverages</span>
                 <span>→</span>

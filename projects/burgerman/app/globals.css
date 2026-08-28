@@ -20,27 +20,45 @@
   --font-mono: 'JetBrains Mono', monospace;
 }
 
-/* ─── CSS Variables — written by AtmosphereControls.tsx toggleTheme() ── */
+/* ─── Strict Brand Theme & Inverting Button Engine ────────────────────── */
 :root {
-  --bg:        #051007;
-  --fg:        #FAF8F2;
-  --fg-muted:  rgba(250, 248, 242, 0.55);
-  --fg-sub:    rgba(250, 248, 242, 0.35);
-  --border:    rgba(255, 255, 255, 0.10);
-  --primary:   #15803D;
+  --bg:                  #051007;
+  --fg:                  #FFFFFF;
+  --fg-muted:            rgba(255, 255, 255, 0.65);
+  --fg-sub:              rgba(255, 255, 255, 0.40);
+  --border:              rgba(255, 255, 255, 0.12);
+  --primary:             #15803D;
+  
+  /* Buttons in Dark Theme: Brand Color / High Contrast with Black text */
+  --btn-primary-bg:      #15803D;
+  --btn-primary-fg:      #000000;
+  --btn-secondary-bg:    rgba(255, 255, 255, 0.08);
+  --btn-secondary-fg:    #FFFFFF;
+  --btn-secondary-border:rgba(255, 255, 255, 0.20);
+  --btn-invert-bg:       #0A0A0A;
+  --btn-invert-fg:       #FFFFFF;
 }
 
 html.light {
-  --bg:        #F6F4EE;
-  --fg:        #18181B;
-  --fg-muted:  rgba(24, 24, 27, 0.65);
-  --fg-sub:    rgba(24, 24, 27, 0.40);
-  --border:    rgba(0, 0, 0, 0.10);
+  --bg:                  #FAF8F2;
+  --fg:                  #0A0A0A;
+  --fg-muted:            rgba(10, 10, 10, 0.70);
+  --fg-sub:              rgba(10, 10, 10, 0.45);
+  --border:              rgba(0, 0, 0, 0.12);
+  --primary:             #15803D;
+  
+  /* Buttons in Light Theme: Inverts to Deep Black with Crisp White text */
+  --btn-primary-bg:      #0A0A0A;
+  --btn-primary-fg:      #FFFFFF;
+  --btn-secondary-bg:    rgba(10, 10, 10, 0.06);
+  --btn-secondary-fg:    #0A0A0A;
+  --btn-secondary-border:rgba(0, 0, 0, 0.20);
+  --btn-invert-bg:       #15803D;
+  --btn-invert-fg:       #000000;
 }
 
 /* ─── Base ─────────────────────────────────────────────────────────── */
 *, *::before, *::after {
-  /* Hide default OS cursor — custom cursor replaces it */
   cursor: none !important;
 }
 
@@ -53,7 +71,7 @@ body {
   color: var(--fg);
   font-family: var(--font-body), sans-serif;
   overflow-x: hidden;
-  transition: background-color 0.4s ease, color 0.4s ease;
+  transition: background-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), color 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .type-display {
@@ -63,23 +81,46 @@ body {
   line-height: 0.9;
 }
 
-/* ─── PROTECTED IMAGE ZONES ────────────────────────────────────────── 
-   Any element with [data-image-overlay] always shows white text,
-   in BOTH dark and light themes. Theme toggle never touches these.
-─────────────────────────────────────────────────────────────────── */
+/* ─── BUTTONS: Theme-Inverting Engine ──────────────────────────────── */
+.btn-primary {
+  background-color: var(--btn-primary-bg) !important;
+  color: var(--btn-primary-fg) !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-primary:hover {
+  filter: brightness(1.1);
+  transform: scale(1.03);
+}
+
+.btn-secondary {
+  background-color: var(--btn-secondary-bg) !important;
+  color: var(--btn-secondary-fg) !important;
+  border: 1px solid var(--btn-secondary-border) !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.15) !important;
+  transform: scale(1.03);
+}
+
+html.light .btn-secondary:hover {
+  background-color: rgba(0, 0, 0, 0.12) !important;
+}
+
+/* ─── PROTECTED IMAGE ZONES ────────────────────────────────────────── */
 [data-image-overlay],
 [data-image-overlay] * {
-  color: #FAF8F2 !important;
+  color: #FFFFFF !important;
 }
 
 .img-overlay-text,
 .img-overlay-text * {
-  color: #FAF8F2 !important;
+  color: #FFFFFF !important;
 }
 
-/* ─── LIGHT THEME: Section-level text ───────────────────────────────
-   Only targets non-image-overlay section text.
-─────────────────────────────────────────────────────────────────── */
+/* ─── LIGHT THEME Adaptations ─────────────────────────────────────── */
 html.light body section:not([data-image-frame]) > div > h1,
 html.light body section:not([data-image-frame]) > div > h2,
 html.light body section:not([data-image-frame]) > div > div > h1,
@@ -93,16 +134,15 @@ html.light body section:not([data-image-frame]) > div > div > p {
   color: var(--fg-muted) !important;
 }
 
-/* ─── LIGHT THEME: Nav header ───────────────────────────────────── */
 html.light body header {
-  background-color: rgba(246, 244, 238, 0.93) !important;
-  border-bottom-color: rgba(0, 0, 0, 0.08) !important;
+  background-color: #FAF8F2EE !important;
+  border-bottom-color: rgba(0, 0, 0, 0.10) !important;
 }
 
 html.light body header a {
-  color: rgba(24, 24, 27, 0.72) !important;
+  color: rgba(10, 10, 10, 0.75) !important;
 }
 
 html.light body header a:hover {
-  color: #18181B !important;
+  color: #0A0A0A !important;
 }

@@ -54,8 +54,8 @@ export default function CulinaryAccordionGallery() {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div>
             <div className="flex items-center gap-2 mb-3">
-              <span className="w-2.5 h-2.5 rounded-full animate-ping" style={{ backgroundColor: "#BF5700" }} />
-              <span className="font-sans text-xs tracking-widest uppercase font-bold" style={{ color: "#BF5700" }}>
+              <span className="w-2.5 h-2.5 rounded-full animate-ping" style={{ backgroundColor: "#C68A14" }} />
+              <span className="font-sans text-xs tracking-widest uppercase font-bold" style={{ color: "#C68A14" }}>
                 GALLERY
               </span>
             </div>
@@ -72,7 +72,7 @@ export default function CulinaryAccordionGallery() {
           defaultIndex={0}
           expandRatio={0.48}
           trigger="hover"
-          accentColor="#BF5700"
+          accentColor="#C68A14"
           textColor="#ffffff"
           grayscale={false}
           showLabels={true}

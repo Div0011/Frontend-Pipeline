@@ -42,9 +42,9 @@ export default function CinematicHero() {
           <div className="max-w-4xl space-y-6">
             {/* Live Status Pill */}
             <div className="flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/[0.05] border border-white/10 backdrop-blur-xl w-fit shadow-lg">
-              <span className="w-2 h-2 rounded-full animate-pulse" style={{ backgroundColor: "#F5C418" }} />
+              <span className="w-2 h-2 rounded-full animate-pulse" style={{ backgroundColor: "#FFFFFF" }} />
               <span className="font-sans text-xs font-semibold uppercase tracking-wider text-stone-200">
-                Not A Damn Chance · 100% Texas Wagyu Smashes
+                Craft Atelier
               </span>
             </div>
 
@@ -55,15 +55,14 @@ export default function CinematicHero() {
             <div className="pt-2 flex flex-wrap gap-4 font-sans font-bold text-xs uppercase tracking-wider">
               <Link
                 href="/menu"
-                className="px-8 py-4 rounded-full transition-all shadow-2xl hover:brightness-110 hover:scale-105 active:scale-95 flex items-center gap-2"
-                style={{ backgroundColor: "#F5C418", color: "#000000" }}
+                className="btn-primary px-8 py-4 rounded-full shadow-2xl flex items-center gap-2"
               >
                 <span>Explore Menu</span>
                 <span>→</span>
               </Link>
               <Link
                 href="/locations"
-                className="px-8 py-4 bg-white/5 backdrop-blur-xl border border-white/20 text-white rounded-full hover:bg-white/10 hover:border-white/40 hover:scale-105 active:scale-95 transition-all shadow-xl"
+                className="btn-secondary px-8 py-4 rounded-full backdrop-blur-xl shadow-xl"
               >
                 Outposts
               </Link>
@@ -81,20 +80,20 @@ export default function CinematicHero() {
           }}
         >
           <div className="max-w-3xl space-y-6">
-            <span className="font-mono text-xs uppercase tracking-widest px-3 py-1 bg-white/10 backdrop-blur-md rounded-full border border-white/20 inline-block font-bold" style={{ color: "#F5C418" }}>
+            <span className="font-mono text-xs uppercase tracking-widest px-3 py-1 bg-white/10 backdrop-blur-md rounded-full border border-white/20 inline-block font-bold" style={{ color: "#FFFFFF" }}>
               PHASE 01 / CRAFT KINETICS
             </span>
 
             <h2 className="type-display text-5xl sm:text-7xl md:text-8xl text-white leading-none font-black tracking-tight drop-shadow-[0_10px_30px_rgba(0,0,0,0.8)]">
-              100% TEXAS WAGYU SMASH
+              PRECISION CAST IRON SEAR
             </h2>
 
             <p className="type-serif text-base sm:text-xl text-stone-200 max-w-xl leading-relaxed drop-shadow">
-              ONE BURGER DONE PERFECT
+              450°F CARAMELIZED MAILLARD REACTION
             </p>
 
             <div className="flex items-center gap-4 text-xs font-mono text-stone-300">
-              <span className="font-bold px-3 py-1 bg-black/50 backdrop-blur-md rounded-full border border-white/15" style={{ color: "#F5C418" }}>
+              <span className="font-bold px-3 py-1 bg-black/50 backdrop-blur-md rounded-full border border-white/15" style={{ color: "#FFFFFF" }}>
                 FRAME {currentFrame.toString().padStart(3, "0")} / {FRAME_COUNT}
               </span>
               <span className="text-stone-400">PRECISION SIZZLE SEQUENCE</span>
@@ -112,7 +111,7 @@ export default function CinematicHero() {
           }}
         >
           <div className="max-w-2xl space-y-6">
-            <span className="font-mono text-xs uppercase tracking-widest px-3 py-1 bg-white/10 backdrop-blur-md rounded-full border border-white/20 inline-block font-bold" style={{ color: "#F5C418" }}>
+            <span className="font-mono text-xs uppercase tracking-widest px-3 py-1 bg-white/10 backdrop-blur-md rounded-full border border-white/20 inline-block font-bold" style={{ color: "#FFFFFF" }}>
               PHASE 02 / CULINARY SIGNATURE
             </span>
 
@@ -127,8 +126,7 @@ export default function CinematicHero() {
             <div className="pt-2 flex flex-wrap gap-4 font-sans font-bold text-xs uppercase tracking-wider">
               <Link
                 href="/menu"
-                className="px-8 py-4 rounded-full transition-all shadow-2xl hover:brightness-110 hover:scale-105 active:scale-95 flex items-center gap-2"
-                style={{ backgroundColor: "#F5C418", color: "#000000" }}
+                className="btn-primary px-8 py-4 rounded-full shadow-2xl flex items-center gap-2"
               >
                 <span>Order Signature Dish</span>
                 <span>→</span>

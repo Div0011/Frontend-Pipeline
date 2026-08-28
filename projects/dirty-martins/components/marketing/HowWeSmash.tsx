@@ -20,7 +20,7 @@ export default function HowWeSmash() {
             <div className="p-6 rounded-3xl bg-white/[0.04] border border-white/10 space-y-4">
               <div className="flex justify-between items-center text-xs font-bold uppercase tracking-wider">
                 <span className="text-stone-300">Sear Temperature & Pressure</span>
-                <span style={{ color: "#BF5700" }}>{searPressure} lbs / 450°F</span>
+                <span style={{ color: "#C68A14" }}>{searPressure} lbs / 450°F</span>
               </div>
               <input
                 type="range"
@@ -29,13 +29,13 @@ export default function HowWeSmash() {
                 value={searPressure}
                 onChange={(e) => setSearPressure(Number(e.target.value))}
                 className="w-full h-2 rounded-lg appearance-none cursor-pointer"
-                style={{ accentColor: "#BF5700" }}
+                style={{ accentColor: "#C68A14" }}
               />
             </div>
           </div>
 
           <div className="lg:col-span-6 p-8 rounded-3xl bg-white/[0.04] border border-white/10 space-y-4">
-            <span className="text-xs uppercase font-bold tracking-widest block" style={{ color: "#BF5700" }}>
+            <span className="text-xs uppercase font-bold tracking-widest block" style={{ color: "#C68A14" }}>
               ORIGINAL 1926 CAST IRON
             </span>
             <h3 className="type-display text-2xl sm:text-3xl text-white font-extrabold">

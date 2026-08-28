@@ -44,7 +44,7 @@ export default function CinematicHero() {
             <div className="flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/[0.05] border border-white/10 backdrop-blur-xl w-fit shadow-lg">
               <span className="w-2 h-2 rounded-full animate-pulse" style={{ backgroundColor: "#FFFFFF" }} />
               <span className="font-sans text-xs font-semibold uppercase tracking-wider text-stone-200">
-                Austin Cult Smash & Potato Latke Burgers
+                Craft Atelier
               </span>
             </div>
 
@@ -55,15 +55,14 @@ export default function CinematicHero() {
             <div className="pt-2 flex flex-wrap gap-4 font-sans font-bold text-xs uppercase tracking-wider">
               <Link
                 href="/menu"
-                className="px-8 py-4 rounded-full transition-all shadow-2xl hover:brightness-110 hover:scale-105 active:scale-95 flex items-center gap-2"
-                style={{ backgroundColor: "#FFFFFF", color: "#000000" }}
+                className="btn-primary px-8 py-4 rounded-full shadow-2xl flex items-center gap-2"
               >
                 <span>Explore Menu</span>
                 <span>→</span>
               </Link>
               <Link
                 href="/locations"
-                className="px-8 py-4 bg-white/5 backdrop-blur-xl border border-white/20 text-white rounded-full hover:bg-white/10 hover:border-white/40 hover:scale-105 active:scale-95 transition-all shadow-xl"
+                className="btn-secondary px-8 py-4 rounded-full backdrop-blur-xl shadow-xl"
               >
                 Outposts
               </Link>
@@ -86,11 +85,11 @@ export default function CinematicHero() {
             </span>
 
             <h2 className="type-display text-5xl sm:text-7xl md:text-8xl text-white leading-none font-black tracking-tight drop-shadow-[0_10px_30px_rgba(0,0,0,0.8)]">
-              BORDER STYLE SMASH PATTY
+              PRECISION CAST IRON SEAR
             </h2>
 
             <p className="type-serif text-base sm:text-xl text-stone-200 max-w-xl leading-relaxed drop-shadow">
-              STEAMED ONIONS & GRILLED CHEESE
+              450°F CARAMELIZED MAILLARD REACTION
             </p>
 
             <div className="flex items-center gap-4 text-xs font-mono text-stone-300">
@@ -127,8 +126,7 @@ export default function CinematicHero() {
             <div className="pt-2 flex flex-wrap gap-4 font-sans font-bold text-xs uppercase tracking-wider">
               <Link
                 href="/menu"
-                className="px-8 py-4 rounded-full transition-all shadow-2xl hover:brightness-110 hover:scale-105 active:scale-95 flex items-center gap-2"
-                style={{ backgroundColor: "#FFFFFF", color: "#000000" }}
+                className="btn-primary px-8 py-4 rounded-full shadow-2xl flex items-center gap-2"
               >
                 <span>Order Signature Dish</span>
                 <span>→</span>

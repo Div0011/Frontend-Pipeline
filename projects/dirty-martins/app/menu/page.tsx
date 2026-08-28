@@ -82,7 +82,7 @@ export default function MenuPage() {
         <section className="py-20 bg-char text-ink relative overflow-hidden">
           <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#F7F4EA_1px,transparent_1px)] [background-size:24px_24px]" />
           <div className="mx-auto max-w-[88rem] px-6 lg:px-8 relative z-10">
-            <p className="type-caption text-[#BF5700] mb-3 font-bold">2808 Guadalupe St · Est. 1926</p>
+            <p className="type-caption text-[#C68A14] mb-3 font-bold">2808 Guadalupe St · Est. 1926</p>
             <h1 className="type-display text-5xl md:text-7xl lg:text-8xl leading-none text-ink">
               DIRTY MARTIN&apos;S<br /><span className="text-ember">CENTENNIAL MENU</span>
             </h1>
@@ -164,7 +164,7 @@ export default function MenuPage() {
                                 {item.tags.map((tag) => (
                                   <span
                                     key={tag}
-                                    className="text-[8px] font-mono uppercase bg-char text-[#BF5700] px-2 py-0.5"
+                                    className="text-[8px] font-mono uppercase bg-char text-[#C68A14] px-2 py-0.5"
                                   >
                                     {tag}
                                   </span>
