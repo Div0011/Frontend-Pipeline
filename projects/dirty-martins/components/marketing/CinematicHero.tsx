@@ -41,28 +41,28 @@ export default function CinematicHero() {
         >
           <div className="max-w-4xl space-y-6">
             {/* Live Status Pill */}
-            <div className="flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/[0.05] border border-white/10 backdrop-blur-xl w-fit shadow-lg">
-              <span className="w-2 h-2 rounded-full animate-pulse" style={{ backgroundColor: "#C68A14" }} />
-              <span className="font-sans text-xs font-semibold uppercase tracking-wider text-stone-200">
-                Craft Atelier
+            <div className="flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/90 border border-[#C68A14]/30 backdrop-blur-xl w-fit shadow-md">
+              <span className="w-2.5 h-2.5 rounded-full animate-pulse bg-[#C68A14]" />
+              <span className="font-sans text-xs font-bold uppercase tracking-wider text-black">
+                1926 Texas Kum-Bak Burger Legend · Austin, TX
               </span>
             </div>
 
-            <h1 className="type-display text-6xl sm:text-8xl md:text-9xl lg:text-[9.5rem] text-white leading-none font-black tracking-tight drop-shadow-[0_10px_30px_rgba(0,0,0,0.8)]">
-              DIRTY MARTINS
+            <h1 className="type-display text-6xl sm:text-8xl md:text-9xl lg:text-[9.5rem] text-black leading-none font-black tracking-tight drop-shadow-sm">
+              DIRTY MARTIN&apos;S
             </h1>
 
             <div className="pt-2 flex flex-wrap gap-4 font-sans font-bold text-xs uppercase tracking-wider">
               <Link
                 href="/menu"
-                className="btn-primary px-8 py-4 rounded-full shadow-2xl flex items-center gap-2"
+                className="px-8 py-4 rounded-full bg-[#C68A14] text-white hover:bg-[#B37B0F] shadow-xl flex items-center gap-2 transition-transform hover:scale-105 active:scale-95"
               >
                 <span>Explore Menu</span>
                 <span>→</span>
               </Link>
               <Link
                 href="/locations"
-                className="btn-secondary px-8 py-4 rounded-full backdrop-blur-xl shadow-xl"
+                className="px-8 py-4 rounded-full bg-white text-black border border-[#C68A14]/40 hover:bg-[#FAF8F2] shadow-md transition-transform hover:scale-105 active:scale-95"
               >
                 Outposts
               </Link>
@@ -80,28 +80,28 @@ export default function CinematicHero() {
           }}
         >
           <div className="max-w-3xl space-y-6">
-            <span className="font-mono text-xs uppercase tracking-widest px-3 py-1 bg-white/10 backdrop-blur-md rounded-full border border-white/20 inline-block font-bold" style={{ color: "#C68A14" }}>
+            <span className="font-mono text-xs uppercase tracking-widest px-3 py-1 bg-white/90 backdrop-blur-md rounded-full border border-[#C68A14]/30 inline-block font-extrabold text-[#C68A14] shadow-sm">
               PHASE 01 / CRAFT KINETICS
             </span>
 
-            <h2 className="type-display text-5xl sm:text-7xl md:text-8xl text-white leading-none font-black tracking-tight drop-shadow-[0_10px_30px_rgba(0,0,0,0.8)]">
-              PRECISION CAST IRON SEAR
+            <h2 className="type-display text-5xl sm:text-7xl md:text-8xl text-black leading-none font-black tracking-tight drop-shadow-sm">
+              CENTURY-OLD GRIDDLE SEAR
             </h2>
 
-            <p className="type-serif text-base sm:text-xl text-stone-200 max-w-xl leading-relaxed drop-shadow">
-              450°F CARAMELIZED MAILLARD REACTION
+            <p className="type-serif text-base sm:text-xl text-stone-800 max-w-xl leading-relaxed font-medium">
+              ORIGINAL 1926 CAST IRON TECHNIQUE
             </p>
 
-            <div className="flex items-center gap-4 text-xs font-mono text-stone-300">
-              <span className="font-bold px-3 py-1 bg-black/50 backdrop-blur-md rounded-full border border-white/15" style={{ color: "#C68A14" }}>
+            <div className="flex items-center gap-4 text-xs font-mono text-stone-700">
+              <span className="font-bold px-3 py-1 bg-white/90 backdrop-blur-md rounded-full border border-[#C68A14]/30 text-[#C68A14] shadow-sm">
                 FRAME {currentFrame.toString().padStart(3, "0")} / {FRAME_COUNT}
               </span>
-              <span className="text-stone-400">PRECISION SIZZLE SEQUENCE</span>
+              <span className="text-stone-600 font-bold">PRECISION SIZZLE SEQUENCE</span>
             </div>
           </div>
         </div>
 
-        {/* ── Stage 3: The Signature Masterpiece (68–100% Scroll) ── */}
+        {/* ── Stage 3: Masterpiece (68–100% Scroll) ── */}
         <div
           className="absolute inset-0 flex flex-col justify-center transition-all duration-700 ease-out"
           style={{
@@ -111,24 +111,24 @@ export default function CinematicHero() {
           }}
         >
           <div className="max-w-2xl space-y-6">
-            <span className="font-mono text-xs uppercase tracking-widest px-3 py-1 bg-white/10 backdrop-blur-md rounded-full border border-white/20 inline-block font-bold" style={{ color: "#C68A14" }}>
+            <span className="font-mono text-xs uppercase tracking-widest px-3 py-1 bg-white/90 backdrop-blur-md rounded-full border border-[#C68A14]/30 inline-block font-extrabold text-[#C68A14] shadow-sm">
               PHASE 02 / CULINARY SIGNATURE
             </span>
 
-            <h2 className="type-display text-5xl sm:text-7xl md:text-8xl text-white leading-none font-black tracking-tight drop-shadow-[0_10px_30px_rgba(0,0,0,0.8)]">
-              CRAFTED FOR PERFECTION
+            <h2 className="type-display text-5xl sm:text-7xl md:text-8xl text-black leading-none font-black tracking-tight drop-shadow-sm">
+              THE 1926 DH SPECIAL
             </h2>
 
-            <p className="type-serif text-base sm:text-xl text-stone-200 max-w-xl leading-relaxed drop-shadow">
-              Fresh daily ingredients seared to order with house sauces on toasted artisanal rolls.
+            <p className="type-serif text-base sm:text-xl text-stone-800 max-w-xl leading-relaxed font-medium">
+              Fresh daily Texas beef seared to perfection with house mustard and grilled onions on a toasted bun.
             </p>
 
             <div className="pt-2 flex flex-wrap gap-4 font-sans font-bold text-xs uppercase tracking-wider">
               <Link
                 href="/menu"
-                className="btn-primary px-8 py-4 rounded-full shadow-2xl flex items-center gap-2"
+                className="px-8 py-4 rounded-full bg-[#C68A14] text-white hover:bg-[#B37B0F] shadow-xl flex items-center gap-2 transition-transform hover:scale-105 active:scale-95"
               >
-                <span>Order Signature Dish</span>
+                <span>Order 1926 Special</span>
                 <span>→</span>
               </Link>
             </div>

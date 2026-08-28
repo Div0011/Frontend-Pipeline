@@ -205,17 +205,17 @@ export default function MorphSlider({
         <div data-image-overlay className="absolute inset-x-0 bottom-0 p-8 sm:p-12 z-20 flex flex-col justify-end">
           <div className="max-w-2xl space-y-3">
             {currentItem.tag && (
-              <span className="font-mono text-xs uppercase tracking-widest px-3 py-1 bg-white/10 backdrop-blur-md rounded-full text-yolk border border-white/20 inline-block">
+              <span className="font-mono text-xs uppercase tracking-widest px-3 py-1 bg-[#FAF8F2] backdrop-blur-md rounded-full text-yolk border border-[#C68A14]/25 inline-block">
                 {currentItem.tag}
               </span>
             )}
             {currentItem.title && (
-              <h3 className="type-display text-4xl sm:text-5xl lg:text-6xl text-white font-bold leading-tight drop-shadow-lg">
+              <h3 className="type-display text-4xl sm:text-5xl lg:text-6xl text-black font-bold leading-tight drop-shadow-lg">
                 {currentItem.title}
               </h3>
             )}
             {currentItem.caption && (
-              <p className="type-serif text-sm sm:text-base text-stone-200 leading-relaxed max-w-xl drop-shadow">
+              <p className="type-serif text-sm sm:text-base text-stone-700 leading-relaxed max-w-xl drop-shadow">
                 {currentItem.caption}
               </p>
             )}
@@ -229,7 +229,7 @@ export default function MorphSlider({
           <button
             onClick={prevSlide}
             disabled={isMorphing}
-            className="w-12 h-12 rounded-full bg-black/40 hover:bg-white hover:text-black text-white border border-white/20 backdrop-blur-md flex items-center justify-center transition-all duration-300 pointer-events-auto shadow-2xl hover:scale-110 active:scale-95 disabled:opacity-40"
+            className="w-12 h-12 rounded-full bg-white/40 hover:bg-white hover:text-black text-black border border-[#C68A14]/25 backdrop-blur-md flex items-center justify-center transition-all duration-300 pointer-events-auto shadow-2xl hover:scale-110 active:scale-95 disabled:opacity-40"
             aria-label="Previous Slide"
           >
             ←
@@ -237,7 +237,7 @@ export default function MorphSlider({
           <button
             onClick={nextSlide}
             disabled={isMorphing}
-            className="w-12 h-12 rounded-full bg-black/40 hover:bg-white hover:text-black text-white border border-white/20 backdrop-blur-md flex items-center justify-center transition-all duration-300 pointer-events-auto shadow-2xl hover:scale-110 active:scale-95 disabled:opacity-40"
+            className="w-12 h-12 rounded-full bg-white/40 hover:bg-white hover:text-black text-black border border-[#C68A14]/25 backdrop-blur-md flex items-center justify-center transition-all duration-300 pointer-events-auto shadow-2xl hover:scale-110 active:scale-95 disabled:opacity-40"
             aria-label="Next Slide"
           >
             →
@@ -247,7 +247,7 @@ export default function MorphSlider({
 
       {/* Indicators / Progress Pills */}
       {showIndicators && (
-        <div className="absolute top-6 right-6 z-30 flex items-center gap-2 bg-black/40 backdrop-blur-md px-4 py-2 rounded-full border border-white/10">
+        <div className="absolute top-6 right-6 z-30 flex items-center gap-2 bg-white/40 backdrop-blur-md px-4 py-2 rounded-full border border-[#C68A14]/25">
           {items.map((_, idx) => (
             <button
               key={idx}
@@ -258,7 +258,7 @@ export default function MorphSlider({
               aria-label={`Go to slide ${idx + 1}`}
             />
           ))}
-          <span className="font-mono text-[10px] text-stone-300 ml-2 font-bold">
+          <span className="font-mono text-[10px] text-stone-700 ml-2 font-bold">
             {(currentIndex + 1).toString().padStart(2, "0")} / {items.length.toString().padStart(2, "0")}
           </span>
         </div>

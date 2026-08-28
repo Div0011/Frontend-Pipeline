@@ -7,7 +7,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Dirty Martin's Kum-Bak | AUSTIN",
-  description: "Dirty Martin's Kum-Bak — Culinary craft atelier in Austin.",
+  description: "Dirty Martin's Kum-Bak — Historic 1926 Culinary Craft in Austin.",
 };
 
 export default function RootLayout({
@@ -16,13 +16,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
-      <body className="antialiased overflow-x-hidden transition-colors duration-500">
+    <html lang="en" className="light">
+      <body className="antialiased overflow-x-hidden bg-white text-black transition-colors duration-500">
         <LenisProvider>
-          <InteractiveBackground primaryColor="#C68A14" themeBase="#100804" />
+          <InteractiveBackground primaryColor="#C68A14" themeBase="#FFFFFF" />
           <CustomCursor />
           {children}
-          <AtmosphereControls primaryColor="#C68A14" darkBg="#100804" lightBg="#FAF8F2" />
+          <AtmosphereControls primaryColor="#C68A14" darkBg="#FFFFFF" lightBg="#FAF8F2" />
         </LenisProvider>
       </body>
     </html>

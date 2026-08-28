@@ -48,7 +48,7 @@ const galleryItems: AccordionGalleryItem[] = [
 
 export default function CulinaryAccordionGallery() {
   return (
-    <section className="py-24 px-6 sm:px-12 md:px-20 bg-transparent text-white border-b border-white/10 overflow-hidden relative z-10">
+    <section className="py-24 px-6 sm:px-12 md:px-20 bg-transparent text-black border-b border-[#C68A14]/25 overflow-hidden relative z-10">
       <div className="max-w-7xl mx-auto space-y-10">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">

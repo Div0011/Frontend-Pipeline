@@ -9,9 +9,9 @@ export default function ReservationsPage() {
     <>
       <Nav />
       <main className="pt-24 min-h-screen bg-transparent text-[#FAF8F2] relative z-10 font-sans">
-        <section className="py-16 sm:py-20 bg-transparent text-white border-b border-white/10 relative">
+        <section className="py-16 sm:py-20 bg-transparent text-black border-b border-[#C68A14]/25 relative">
           <div className="mx-auto max-w-7xl px-6 lg:px-8 space-y-3">
-            <h1 className="type-display text-5xl sm:text-7xl md:text-8xl font-black text-white">
+            <h1 className="type-display text-5xl sm:text-7xl md:text-8xl font-black text-black">
               BOOK YOUR TABLE
             </h1>
           </div>

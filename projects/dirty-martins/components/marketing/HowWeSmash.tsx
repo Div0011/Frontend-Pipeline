@@ -7,19 +7,19 @@ export default function HowWeSmash() {
   const [searPressure, setSearPressure] = useState<number>(200);
 
   return (
-    <section className="py-24 px-6 sm:px-12 md:px-20 bg-transparent text-white border-b border-white/10 relative z-10 font-sans">
+    <section className="py-24 px-6 sm:px-12 md:px-20 bg-transparent text-black border-b border-[#C68A14]/25 relative z-10 font-sans">
       <div className="max-w-7xl mx-auto space-y-12">
         <div>
-          <h2 className="type-display text-4xl sm:text-6xl text-white font-black tracking-tight">
+          <h2 className="type-display text-4xl sm:text-6xl text-black font-black tracking-tight">
             CENTURY-OLD GRIDDLE SEAR
           </h2>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           <div className="lg:col-span-6 space-y-6">
-            <div className="p-6 rounded-3xl bg-white/[0.04] border border-white/10 space-y-4">
+            <div className="p-6 rounded-3xl bg-white/[0.04] border border-[#C68A14]/25 space-y-4">
               <div className="flex justify-between items-center text-xs font-bold uppercase tracking-wider">
-                <span className="text-stone-300">Sear Temperature & Pressure</span>
+                <span className="text-stone-700">Sear Temperature & Pressure</span>
                 <span style={{ color: "#C68A14" }}>{searPressure} lbs / 450°F</span>
               </div>
               <input
@@ -34,11 +34,11 @@ export default function HowWeSmash() {
             </div>
           </div>
 
-          <div className="lg:col-span-6 p-8 rounded-3xl bg-white/[0.04] border border-white/10 space-y-4">
+          <div className="lg:col-span-6 p-8 rounded-3xl bg-white/[0.04] border border-[#C68A14]/25 space-y-4">
             <span className="text-xs uppercase font-bold tracking-widest block" style={{ color: "#C68A14" }}>
               ORIGINAL 1926 CAST IRON
             </span>
-            <h3 className="type-display text-2xl sm:text-3xl text-white font-extrabold">
+            <h3 className="type-display text-2xl sm:text-3xl text-black font-extrabold">
               MAXIMUM CARAMELIZED MAILLARD REACTION
             </h3>
           </div>

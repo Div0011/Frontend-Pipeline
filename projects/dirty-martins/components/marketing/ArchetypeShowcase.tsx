@@ -84,15 +84,15 @@ export default function ArchetypeShowcase() {
   };
 
   return (
-    <section className="py-24 px-6 sm:px-12 md:px-20 bg-transparent text-white border-b border-white/10 relative z-10 select-none overflow-hidden">
+    <section className="py-24 px-6 sm:px-12 md:px-20 bg-transparent text-black border-b border-[#C68A14]/25 relative z-10 select-none overflow-hidden">
       <div className="max-w-6xl mx-auto space-y-10">
         {/* Header */}
-        <div className="flex flex-col sm:flex-row justify-between sm:items-end gap-4 border-b border-white/10 pb-6">
+        <div className="flex flex-col sm:flex-row justify-between sm:items-end gap-4 border-b border-[#C68A14]/25 pb-6">
           <div>
             <span className="font-sans text-xs uppercase font-bold tracking-widest block" style={{ color: "#C68A14" }}>
               CURATED PAIRINGS
             </span>
-            <h2 className="type-display text-4xl sm:text-5xl text-white font-extrabold mt-1 tracking-tight">
+            <h2 className="type-display text-4xl sm:text-5xl text-black font-extrabold mt-1 tracking-tight">
               THE PAIRING SELECTOR
             </h2>
           </div>
@@ -127,7 +127,7 @@ export default function ArchetypeShowcase() {
                     style={{ backgroundColor: isSelected ? "#C68A14" : "rgba(255,255,255,0.2)" }}
                   />
                 </div>
-                <span className="text-[10px] text-stone-400 font-semibold uppercase tracking-wider">
+                <span className="text-[10px] text-stone-700 font-semibold uppercase tracking-wider">
                   {p.tag}
                 </span>
               </motion.button>
@@ -143,11 +143,11 @@ export default function ArchetypeShowcase() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -12 }}
             transition={{ duration: 0.25 }}
-            className="p-6 sm:p-8 rounded-3xl bg-white/[0.03] backdrop-blur-2xl border border-white/15 shadow-2xl grid grid-cols-1 lg:grid-cols-12 gap-8 items-center font-sans"
+            className="p-6 sm:p-8 rounded-3xl bg-white/[0.03] backdrop-blur-2xl border border-[#C68A14]/25 shadow-2xl grid grid-cols-1 lg:grid-cols-12 gap-8 items-center font-sans"
           >
             {/* Visual Side-by-Side Dual Imagery */}
             <div className="lg:col-span-7 grid grid-cols-2 gap-4">
-              <div className="relative h-64 sm:h-72 rounded-2xl overflow-hidden border border-white/15 bg-black/60 shadow-xl group">
+              <div className="relative h-64 sm:h-72 rounded-2xl overflow-hidden border border-[#C68A14]/25 bg-white shadow-xl group">
                 <Image
                   src={current.image}
                   alt={current.title}
@@ -156,12 +156,12 @@ export default function ArchetypeShowcase() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
                 <div className="absolute bottom-3 left-3 right-3 font-sans">
-                  <p className="text-white font-bold text-xs leading-tight">{current.title}</p>
+                  <p className="text-black font-bold text-xs leading-tight">{current.title}</p>
                   <p className="font-bold text-[11px]" style={{ color: "#C68A14" }}>₹{current.price}</p>
                 </div>
               </div>
 
-              <div className="relative h-64 sm:h-72 rounded-2xl overflow-hidden border border-white/15 bg-black/60 shadow-xl group">
+              <div className="relative h-64 sm:h-72 rounded-2xl overflow-hidden border border-[#C68A14]/25 bg-white shadow-xl group">
                 <Image
                   src={current.companionImage}
                   alt={current.companionName}
@@ -170,7 +170,7 @@ export default function ArchetypeShowcase() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
                 <div className="absolute bottom-3 left-3 right-3 font-sans">
-                  <p className="text-white font-bold text-xs leading-tight">{current.companionName}</p>
+                  <p className="text-black font-bold text-xs leading-tight">{current.companionName}</p>
                   <p className="font-bold text-[11px]" style={{ color: "#C68A14" }}>₹{current.companionPrice}</p>
                 </div>
               </div>
@@ -182,7 +182,7 @@ export default function ArchetypeShowcase() {
                 <span className="text-[10px] uppercase font-bold tracking-wider block" style={{ color: "#C68A14" }}>
                   {current.category}
                 </span>
-                <h3 className="type-display text-3xl text-white font-black leading-tight mt-1">
+                <h3 className="type-display text-3xl text-black font-black leading-tight mt-1">
                   {current.title}
                 </h3>
               </div>
@@ -191,10 +191,10 @@ export default function ArchetypeShowcase() {
                 {current.flavorProfile.map((fp, fIdx) => (
                   <div key={fIdx} className="space-y-1">
                     <div className="flex justify-between text-xs font-semibold">
-                      <span className="text-stone-300">{fp.label}</span>
+                      <span className="text-stone-700">{fp.label}</span>
                       <span className="font-bold" style={{ color: "#C68A14" }}>{fp.value}%</span>
                     </div>
-                    <div className="w-full h-1.5 rounded-full bg-white/10 overflow-hidden">
+                    <div className="w-full h-1.5 rounded-full bg-[#FAF8F2] overflow-hidden">
                       <div
                         className="h-full rounded-full transition-all duration-500"
                         style={{ width: `${fp.value}%`, backgroundColor: "#C68A14" }}

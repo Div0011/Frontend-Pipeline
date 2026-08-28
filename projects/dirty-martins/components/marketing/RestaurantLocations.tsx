@@ -33,18 +33,18 @@ export default function RestaurantLocations() {
   return (
     <section
       id="locations-section"
-      className="py-24 px-6 sm:px-12 md:px-20 bg-transparent text-[#FAF8F2] border-b border-white/10 relative z-10 font-sans"
+      className="py-24 px-6 sm:px-12 md:px-20 bg-transparent text-[#FAF8F2] border-b border-[#C68A14]/25 relative z-10 font-sans"
     >
       <div className="max-w-7xl mx-auto space-y-10">
-        <div className="flex flex-col md:flex-row justify-between md:items-end gap-6 border-b border-white/10 pb-6">
+        <div className="flex flex-col md:flex-row justify-between md:items-end gap-6 border-b border-[#C68A14]/25 pb-6">
           <div>
-            <h2 className="type-display text-4xl sm:text-6xl text-white font-extrabold tracking-tight">
+            <h2 className="type-display text-4xl sm:text-6xl text-black font-extrabold tracking-tight">
               UT CAMPUS LEGEND
             </h2>
           </div>
 
           {outposts.length > 1 && (
-            <div className="flex items-center gap-2 bg-white/5 p-1.5 rounded-full border border-white/10">
+            <div className="flex items-center gap-2 bg-[#FAF8F2] p-1.5 rounded-full border border-[#C68A14]/25">
               {outposts.map((loc: any, idx: number) => (
                 <button
                   key={loc.id || idx}
@@ -56,7 +56,7 @@ export default function RestaurantLocations() {
                   className={`px-5 py-2 rounded-full font-sans text-xs uppercase tracking-wider transition-all font-bold ${
                     selectedLocation === idx
                       ? "shadow-lg"
-                      : "text-stone-400 hover:text-white"
+                      : "text-stone-700 hover:text-black"
                   }`}
                   style={{
                     backgroundColor: selectedLocation === idx ? "#C68A14" : undefined,
@@ -73,7 +73,7 @@ export default function RestaurantLocations() {
         {currentLoc && (
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
             {/* Visual Photography Carousel */}
-            <div className="lg:col-span-7 relative min-h-[420px] rounded-3xl overflow-hidden border border-white/15 shadow-2xl bg-black/50 group">
+            <div className="lg:col-span-7 relative min-h-[420px] rounded-3xl overflow-hidden border border-[#C68A14]/25 shadow-2xl bg-white group">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={`${currentLoc.id}-${activeImageIndex}`}
@@ -95,17 +95,17 @@ export default function RestaurantLocations() {
 
               {/* Text Over Image — always white regardless of theme */}
               <div data-image-overlay className="absolute bottom-6 left-6 right-6 flex items-end justify-between gap-4 z-10">
-                <div className="space-y-1 text-white">
+                <div className="space-y-1 text-black">
                   <span className="text-[10px] uppercase tracking-widest font-bold block" style={{ color: "#C68A14" }}>
                     {currentLoc.badge}
                   </span>
-                  <h3 className="type-display text-2xl sm:text-3xl text-white font-extrabold drop-shadow-md">
+                  <h3 className="type-display text-2xl sm:text-3xl text-black font-extrabold drop-shadow-md">
                     {currentLoc.name}
                   </h3>
                 </div>
 
                 {allImages.length > 1 && (
-                  <div className="flex items-center gap-1.5 bg-black/60 backdrop-blur-md p-1.5 rounded-full border border-white/10">
+                  <div className="flex items-center gap-1.5 bg-white backdrop-blur-md p-1.5 rounded-full border border-[#C68A14]/25">
                     {allImages.map((_, imgIdx) => (
                       <button
                         key={imgIdx}
@@ -123,7 +123,7 @@ export default function RestaurantLocations() {
             </div>
 
             {/* Location Specs & Quick Actions Card */}
-            <div className="lg:col-span-5 p-8 rounded-3xl bg-white/[0.04] backdrop-blur-md border border-white/10 flex flex-col justify-between space-y-6 shadow-2xl">
+            <div className="lg:col-span-5 p-8 rounded-3xl bg-white/[0.04] backdrop-blur-md border border-[#C68A14]/25 flex flex-col justify-between space-y-6 shadow-2xl">
               <div className="space-y-6">
                 <div className="flex items-center gap-2">
                   <span className="w-2.5 h-2.5 rounded-full animate-pulse bg-emerald-400" />
@@ -133,27 +133,27 @@ export default function RestaurantLocations() {
                 </div>
 
                 <div className="space-y-4 text-xs font-sans">
-                  <div className="p-4 rounded-2xl bg-black/40 border border-white/5 space-y-1">
-                    <span className="text-[10px] uppercase font-bold text-stone-400 block">
+                  <div className="p-4 rounded-2xl bg-white/40 border border-white/5 space-y-1">
+                    <span className="text-[10px] uppercase font-bold text-stone-700 block">
                       Address
                     </span>
-                    <p className="text-white font-semibold text-sm">{currentLoc.address}</p>
-                    <p className="text-stone-400">{currentLoc.city}</p>
+                    <p className="text-black font-semibold text-sm">{currentLoc.address}</p>
+                    <p className="text-stone-700">{currentLoc.city}</p>
                   </div>
 
                   <div className="grid grid-cols-2 gap-3">
-                    <div className="p-4 rounded-2xl bg-black/40 border border-white/5 space-y-1">
-                      <span className="text-[10px] uppercase font-bold text-stone-400 block">
+                    <div className="p-4 rounded-2xl bg-white/40 border border-white/5 space-y-1">
+                      <span className="text-[10px] uppercase font-bold text-stone-700 block">
                         Hours
                       </span>
-                      <p className="text-white font-bold">{currentLoc.hours}</p>
+                      <p className="text-black font-bold">{currentLoc.hours}</p>
                     </div>
 
-                    <div className="p-4 rounded-2xl bg-black/40 border border-white/5 space-y-1">
-                      <span className="text-[10px] uppercase font-bold text-stone-400 block">
+                    <div className="p-4 rounded-2xl bg-white/40 border border-white/5 space-y-1">
+                      <span className="text-[10px] uppercase font-bold text-stone-700 block">
                         Seating
                       </span>
-                      <p className="text-white font-bold text-[11px] leading-tight">
+                      <p className="text-black font-bold text-[11px] leading-tight">
                         {currentLoc.seating}
                       </p>
                     </div>
@@ -162,7 +162,7 @@ export default function RestaurantLocations() {
               </div>
 
               {/* Action Buttons */}
-              <div className="grid grid-cols-2 gap-3 pt-4 border-t border-white/10">
+              <div className="grid grid-cols-2 gap-3 pt-4 border-t border-[#C68A14]/25">
                 <a
                   href={currentLoc.mapUrl}
                   target="_blank"
@@ -178,7 +178,7 @@ export default function RestaurantLocations() {
 
                 <a
                   href={`tel:${currentLoc.phone.replace(/[^0-9+]/g, "")}`}
-                  className="py-3.5 px-4 rounded-2xl font-sans text-xs font-bold uppercase tracking-wider text-center bg-white/10 hover:bg-white/20 text-white transition-all border border-white/15"
+                  className="py-3.5 px-4 rounded-2xl font-sans text-xs font-bold uppercase tracking-wider text-center bg-[#FAF8F2] hover:bg-white/20 text-black transition-all border border-[#C68A14]/25"
                 >
                   Call Outpost
                 </a>

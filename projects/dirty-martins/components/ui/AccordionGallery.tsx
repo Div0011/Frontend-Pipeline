@@ -164,7 +164,7 @@ export default function AccordionGallery({
             {!isActive && showLabels && isHorizontal && (
               <div data-image-overlay className="absolute inset-0 flex flex-col justify-end p-4 z-10 pointer-events-none">
                 <span
-                  className="font-mono text-xs uppercase tracking-widest text-white/90 transform -rotate-90 origin-bottom-left translate-x-4 mb-8 whitespace-nowrap group-hover:text-white transition-all duration-300 font-bold drop-shadow-md"
+                  className="font-mono text-xs uppercase tracking-widest text-black/90 transform -rotate-90 origin-bottom-left translate-x-4 mb-8 whitespace-nowrap group-hover:text-black transition-all duration-300 font-bold drop-shadow-md"
                 >
                   {item.label}
                 </span>
@@ -195,7 +195,7 @@ export default function AccordionGallery({
                 )}
                 {item.price && (
                   <span
-                    className="font-mono font-bold text-sm px-3.5 py-1 rounded-md bg-black/80 text-white border border-white/20 backdrop-blur-md shadow-lg"
+                    className="font-mono font-bold text-sm px-3.5 py-1 rounded-md bg-white text-black border border-[#C68A14]/25 backdrop-blur-md shadow-lg"
                   >
                     {item.price}
                   </span>
@@ -206,17 +206,17 @@ export default function AccordionGallery({
               <div className="space-y-3">
                 <div className="flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full animate-pulse" style={{ backgroundColor: accentColor }} />
-                  <span className="font-mono text-xs uppercase tracking-widest text-stone-300 font-bold">
+                  <span className="font-mono text-xs uppercase tracking-widest text-stone-700 font-bold">
                     FEATURED SPECIMEN
                   </span>
                 </div>
 
-                <h3 className="type-display text-3xl sm:text-4xl text-white font-bold tracking-tight drop-shadow-md">
+                <h3 className="type-display text-3xl sm:text-4xl text-black font-bold tracking-tight drop-shadow-md">
                   {item.label}
                 </h3>
 
                 {item.caption && (
-                  <p className="text-stone-300 text-xs sm:text-sm font-sans line-clamp-2 max-w-lg leading-relaxed drop-shadow-sm">
+                  <p className="text-stone-700 text-xs sm:text-sm font-sans line-clamp-2 max-w-lg leading-relaxed drop-shadow-sm">
                     {item.caption}
                   </p>
                 )}

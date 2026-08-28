@@ -36,12 +36,12 @@ export default function FilmsPage() {
     <>
       <Nav />
       <main className="pt-24 min-h-screen bg-transparent text-[#FAF8F2] relative z-10 font-sans">
-        <section className="py-20 lg:py-28 border-b border-white/10">
+        <section className="py-20 lg:py-28 border-b border-[#C68A14]/25">
           <div className="mx-auto max-w-7xl px-6 lg:px-8 space-y-4">
             <span className="text-xs uppercase tracking-widest font-bold block" style={{ color: "#C68A14" }}>
               CINEMATIC GALLERY
             </span>
-            <h1 className="type-display text-5xl sm:text-7xl md:text-8xl font-black text-white">
+            <h1 className="type-display text-5xl sm:text-7xl md:text-8xl font-black text-black">
               CRAFT CHRONICLES
             </h1>
           </div>

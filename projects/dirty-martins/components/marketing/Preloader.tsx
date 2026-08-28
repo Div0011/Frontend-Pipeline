@@ -83,16 +83,16 @@ export default function Preloader({ onComplete }: PreloaderProps) {
 
         {/* Brand Identity & Craft Subtitle */}
         <div className="space-y-2">
-          <h2 className="type-display text-4xl sm:text-5xl text-white tracking-wider font-extrabold">
+          <h2 className="type-display text-4xl sm:text-5xl text-black tracking-wider font-extrabold">
             DIRTY MARTIN'S KUM-BAK
           </h2>
-          <p className="font-sans text-xs uppercase tracking-widest text-stone-400">
+          <p className="font-sans text-xs uppercase tracking-widest text-stone-700">
             CENTENNIAL KUM-BAK CHILI CRUST
           </p>
         </div>
 
         {/* Progress Bar */}
-        <div className="w-56 h-1 bg-white/10 rounded-full overflow-hidden relative">
+        <div className="w-56 h-1 bg-[#FAF8F2] rounded-full overflow-hidden relative">
           <motion.div
             className="h-full rounded-full"
             style={{ width: `${progress}%`, backgroundColor: "#C68A14" }}

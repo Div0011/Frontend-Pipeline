@@ -77,18 +77,18 @@ export default function BrandManifesto() {
   return (
     <section
       id="manifesto-section"
-      className="py-24 px-6 sm:px-12 md:px-20 bg-transparent text-[#FAF8F2] relative z-10 border-b border-white/10 select-none font-sans"
+      className="py-24 px-6 sm:px-12 md:px-20 bg-transparent text-[#FAF8F2] relative z-10 border-b border-[#C68A14]/25 select-none font-sans"
     >
       <div className="max-w-7xl mx-auto space-y-12">
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-4 border-b border-white/10">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-4 border-b border-[#C68A14]/25">
           <div>
-            <h2 className="type-display text-4xl sm:text-6xl md:text-7xl text-white [html.light_&]:text-stone-950 font-black leading-tight tracking-tight">
+            <h2 className="type-display text-4xl sm:text-6xl md:text-7xl text-black [html.light_&]:text-stone-950 font-black leading-tight tracking-tight">
               THE 450°F STEEL SMASH STANDARD.
             </h2>
           </div>
 
-          <div className="flex items-center gap-2 p-1.5 rounded-full bg-white/5 [html.light_&]:bg-black/5 border border-white/15 [html.light_&]:border-black/10 backdrop-blur-xl self-start md:self-end shadow-xl">
+          <div className="flex items-center gap-2 p-1.5 rounded-full bg-[#FAF8F2] [html.light_&]:bg-white/5 border border-[#C68A14]/25 [html.light_&]:border-black/10 backdrop-blur-xl self-start md:self-end shadow-xl">
             <button
               type="button"
               onClick={() => setViewMode("spec")}
@@ -131,7 +131,7 @@ export default function BrandManifesto() {
                     className={`p-5 rounded-2xl cursor-pointer transition-all backdrop-blur-xl border flex items-center justify-between shadow-xl ${
                       isSelected
                         ? "border-[#C68A14] bg-white/[0.08] [html.light_&]:bg-white [html.light_&]:border-[#C68A14]"
-                        : "border-white/10 [html.light_&]:border-black/10 bg-white/[0.03] [html.light_&]:bg-white/60"
+                        : "border-[#C68A14]/25 [html.light_&]:border-black/10 bg-white/[0.03] [html.light_&]:bg-white/60"
                     }`}
                   >
                     <span
@@ -166,10 +166,10 @@ export default function BrandManifesto() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
                 transition={{ duration: 0.25 }}
-                className="grid grid-cols-1 lg:grid-cols-12 gap-8 p-6 sm:p-8 rounded-3xl bg-white/[0.03] [html.light_&]:bg-white/80 backdrop-blur-2xl border border-white/15 [html.light_&]:border-black/10 shadow-2xl items-center"
+                className="grid grid-cols-1 lg:grid-cols-12 gap-8 p-6 sm:p-8 rounded-3xl bg-white/[0.03] [html.light_&]:bg-white/80 backdrop-blur-2xl border border-[#C68A14]/25 [html.light_&]:border-black/10 shadow-2xl items-center"
               >
                 {/* Left: Image with Hotspots */}
-                <div className="lg:col-span-7 relative min-h-[340px] sm:min-h-[380px] rounded-2xl overflow-hidden border border-white/15 bg-black/60 group shadow-2xl dark-frame">
+                <div className="lg:col-span-7 relative min-h-[340px] sm:min-h-[380px] rounded-2xl overflow-hidden border border-[#C68A14]/25 bg-white group shadow-2xl dark-frame">
                   <Image
                     src={current.image}
                     alt={current.title}
@@ -187,7 +187,7 @@ export default function BrandManifesto() {
                       <button
                         type="button"
                         onClick={() => setActiveHotspot(hIdx)}
-                        className="flex items-center justify-center w-8 h-8 rounded-full bg-black/80 border text-xs font-sans font-bold hover:scale-110 transition-transform shadow-2xl"
+                        className="flex items-center justify-center w-8 h-8 rounded-full bg-white border text-xs font-sans font-bold hover:scale-110 transition-transform shadow-2xl"
                         style={{ borderColor: "#C68A14", color: "#C68A14" }}
                       >
                         {hIdx + 1}
@@ -197,7 +197,7 @@ export default function BrandManifesto() {
 
                   {activeHotspot !== null && current.hotspots[activeHotspot] && (
                     <div
-                      className="absolute bottom-4 left-4 right-4 p-3 rounded-xl bg-black/90 backdrop-blur-md border font-sans text-xs font-bold uppercase tracking-wider shadow-xl"
+                      className="absolute bottom-4 left-4 right-4 p-3 rounded-xl bg-white backdrop-blur-md border font-sans text-xs font-bold uppercase tracking-wider shadow-xl"
                       style={{ borderColor: "#C68A1440", color: "#C68A14" }}
                     >
                       Layer {activeHotspot + 1}: {current.hotspots[activeHotspot].label}
@@ -207,7 +207,7 @@ export default function BrandManifesto() {
 
                 {/* Right: Metrics & Sear Test */}
                 <div className="lg:col-span-5 space-y-6">
-                  <h3 className="type-display text-3xl text-white [html.light_&]:text-stone-950 font-extrabold">
+                  <h3 className="type-display text-3xl text-black [html.light_&]:text-stone-950 font-extrabold">
                     {current.title}
                   </h3>
 
@@ -215,10 +215,10 @@ export default function BrandManifesto() {
                     {current.stats.map((st, sIdx) => (
                       <div key={sIdx} className="space-y-1">
                         <div className="flex justify-between text-xs font-semibold">
-                          <span className="text-stone-400 [html.light_&]:text-stone-600">{st.label}</span>
+                          <span className="text-stone-700 [html.light_&]:text-stone-600">{st.label}</span>
                           <span className="font-bold [html.light_&]:text-stone-950" style={{ color: "#C68A14" }}>{st.value}</span>
                         </div>
-                        <div className="w-full h-1.5 rounded-full bg-white/10 [html.light_&]:bg-black/10 overflow-hidden">
+                        <div className="w-full h-1.5 rounded-full bg-[#FAF8F2] [html.light_&]:bg-white/10 overflow-hidden">
                           <div
                             className="h-full rounded-full transition-all duration-500"
                             style={{ width: `${st.progress}%`, backgroundColor: "#C68A14" }}
@@ -248,14 +248,14 @@ export default function BrandManifesto() {
         {/* Duel View */}
         {viewMode === "compare" && (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="p-8 rounded-3xl bg-white/[0.04] [html.light_&]:bg-white/80 border border-white/15 [html.light_&]:border-black/10 backdrop-blur-xl shadow-2xl space-y-4">
+            <div className="p-8 rounded-3xl bg-white/[0.04] [html.light_&]:bg-white/80 border border-[#C68A14]/25 [html.light_&]:border-black/10 backdrop-blur-xl shadow-2xl space-y-4">
               <span className="text-xs uppercase font-extrabold [html.light_&]:text-stone-950 block" style={{ color: "#C68A14" }}>
                 OUR CAST-IRON SMASH
               </span>
-              <h3 className="type-display text-2xl text-white [html.light_&]:text-stone-950 font-bold">
+              <h3 className="type-display text-2xl text-black [html.light_&]:text-stone-950 font-bold">
                 450°F STEEL HIGH-HEAT PRESS
               </h3>
-              <p className="text-xs text-stone-300 [html.light_&]:text-stone-700 leading-relaxed font-body">
+              <p className="text-xs text-stone-700 [html.light_&]:text-stone-700 leading-relaxed font-body">
                 Smashed ultra-thin on screaming hot steel for complete Maillard caramelization and crunchy lace edges.
               </p>
             </div>
@@ -264,10 +264,10 @@ export default function BrandManifesto() {
               <span className="text-xs uppercase font-extrabold text-stone-500 block">
                 STANDARD THICK BURGER
               </span>
-              <h3 className="type-display text-2xl text-stone-400 [html.light_&]:text-stone-700 font-bold">
+              <h3 className="type-display text-2xl text-stone-700 [html.light_&]:text-stone-700 font-bold">
                 MILD-HEAT STEAM COOK
               </h3>
-              <p className="text-xs text-stone-400 [html.light_&]:text-stone-600 leading-relaxed font-body">
+              <p className="text-xs text-stone-700 [html.light_&]:text-stone-600 leading-relaxed font-body">
                 Thick dense patty with minimal surface caramelization and soft steamed exterior.
               </p>
             </div>

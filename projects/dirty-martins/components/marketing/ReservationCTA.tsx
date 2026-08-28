@@ -19,17 +19,17 @@ export default function ReservationCTA() {
   };
 
   return (
-    <section id="reservation-section" className="py-24 px-6 sm:px-12 md:px-20 bg-transparent text-white border-b border-white/10 relative z-10 font-sans">
+    <section id="reservation-section" className="py-24 px-6 sm:px-12 md:px-20 bg-transparent text-black border-b border-[#C68A14]/25 relative z-10 font-sans">
       <div className="max-w-7xl mx-auto space-y-12">
         <div>
-          <h2 className="type-display text-4xl sm:text-6xl text-white font-black tracking-tight">
+          <h2 className="type-display text-4xl sm:text-6xl text-black font-black tracking-tight">
             BOOK YOUR EXPERIENCE
           </h2>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           <div className="lg:col-span-7 space-y-6">
-            <h3 className="type-display text-3xl sm:text-4xl text-white font-extrabold leading-tight">
+            <h3 className="type-display text-3xl sm:text-4xl text-black font-extrabold leading-tight">
               TABLE RESERVATIONS AT DIRTY MARTIN'S
             </h3>
           </div>
@@ -44,7 +44,7 @@ export default function ReservationCTA() {
                     <select
                       value={selectedLocation}
                       onChange={(e) => setSelectedLocation(e.target.value)}
-                      className="w-full px-4 py-3 rounded-2xl bg-black/5 border border-black/15 text-black font-semibold text-xs outline-none"
+                      className="w-full px-4 py-3 rounded-2xl bg-white/5 border border-black/15 text-black font-semibold text-xs outline-none"
                     >
                     <option value="Guadalupe St. Historic Outpost">Guadalupe St. Historic Outpost</option>
                     </select>
@@ -56,7 +56,7 @@ export default function ReservationCTA() {
                       <select
                         value={guests}
                         onChange={(e) => setGuests(e.target.value)}
-                        className="w-full px-4 py-3 rounded-2xl bg-black/5 border border-black/15 text-black font-semibold text-xs outline-none"
+                        className="w-full px-4 py-3 rounded-2xl bg-white/5 border border-black/15 text-black font-semibold text-xs outline-none"
                       >
                         <option value="1 Guest">1 Guest</option>
                         <option value="2 Guests">2 Guests</option>
@@ -71,7 +71,7 @@ export default function ReservationCTA() {
                         type="text"
                         value={selectedDate}
                         onChange={(e) => setSelectedDate(e.target.value)}
-                        className="w-full px-4 py-3 rounded-2xl bg-black/5 border border-black/15 text-black font-semibold text-xs outline-none"
+                        className="w-full px-4 py-3 rounded-2xl bg-white/5 border border-black/15 text-black font-semibold text-xs outline-none"
                       />
                     </div>
                   </div>
@@ -84,7 +84,7 @@ export default function ReservationCTA() {
                       value={name}
                       onChange={(e) => setName(e.target.value)}
                       required
-                      className="w-full px-4 py-3 rounded-2xl bg-black/5 border border-black/15 text-black font-semibold text-xs outline-none"
+                      className="w-full px-4 py-3 rounded-2xl bg-white/5 border border-black/15 text-black font-semibold text-xs outline-none"
                     />
                   </div>
 
@@ -96,7 +96,7 @@ export default function ReservationCTA() {
                       value={phone}
                       onChange={(e) => setPhone(e.target.value)}
                       required
-                      className="w-full px-4 py-3 rounded-2xl bg-black/5 border border-black/15 text-black font-semibold text-xs outline-none"
+                      className="w-full px-4 py-3 rounded-2xl bg-white/5 border border-black/15 text-black font-semibold text-xs outline-none"
                     />
                   </div>
 
@@ -117,7 +117,7 @@ export default function ReservationCTA() {
                   animate={{ opacity: 1, scale: 1 }}
                   className="text-center py-8 space-y-4 text-black"
                 >
-                  <div className="w-12 h-12 rounded-full bg-emerald-500 text-white flex items-center justify-center mx-auto text-xl font-bold">
+                  <div className="w-12 h-12 rounded-full bg-emerald-500 text-black flex items-center justify-center mx-auto text-xl font-bold">
                     ✓
                   </div>
                   <h4 className="type-display text-2xl font-bold">RESERVATION CONFIRMED</h4>

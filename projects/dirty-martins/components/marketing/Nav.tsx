@@ -48,17 +48,17 @@ export default function Nav() {
         isVisible ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0 pointer-events-none"
       } ${
         isScrolled
-          ? "backdrop-blur-xl border-b py-3 shadow-2xl bg-[#100804]/88 border-white/10"
-          : "bg-transparent py-4"
+          ? "backdrop-blur-xl border-b py-3 shadow-md bg-white/92 border-[#C68A14]/20"
+          : "bg-white/80 backdrop-blur-sm py-4 border-b border-black/5"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 h-12 flex items-center justify-between">
-        {/* Brand Emblem + Name */}
+        {/* Brand Emblem Badge + Brand Title */}
         <Link href="/" className="flex items-center gap-3.5 group">
-          <div className="relative w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-black/40 border border-white/15 p-1 flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform duration-200 shadow-md">
+          <div className="relative w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white border border-[#C68A14]/40 p-1 flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform duration-200 shadow-sm">
             <Image
               src="/logo.svg"
-              alt="DIRTY MARTINS Emblem"
+              alt="Dirty Martin's Emblem"
               width={32}
               height={32}
               unoptimized
@@ -66,32 +66,32 @@ export default function Nav() {
               priority
             />
           </div>
-          <span className="type-display text-lg sm:text-xl md:text-2xl font-black text-white dark:text-white light:text-black tracking-tight group-hover:opacity-90 transition-opacity">
-            DIRTY MARTINS
+          <span className="type-display text-lg sm:text-xl md:text-2xl font-black text-black tracking-tight group-hover:opacity-90 transition-opacity">
+            DIRTY MARTIN&apos;S
           </span>
         </Link>
 
         {/* Nav Links */}
-        <nav className="hidden md:flex items-center gap-8 text-xs font-sans font-semibold tracking-wider uppercase text-stone-300 dark:text-stone-300 light:text-stone-800">
-          <Link href="/menu" className="hover:text-white dark:hover:text-white light:hover:text-black transition-colors">
+        <nav className="hidden md:flex items-center gap-8 text-xs font-sans font-bold tracking-wider uppercase text-stone-800">
+          <Link href="/menu" className="hover:text-[#C68A14] transition-colors">
             Menu
           </Link>
-          <Link href="/about" className="hover:text-white dark:hover:text-white light:hover:text-black transition-colors">
+          <Link href="/about" className="hover:text-[#C68A14] transition-colors">
             Our Story
           </Link>
-          <Link href="/locations" className="hover:text-white dark:hover:text-white light:hover:text-black transition-colors">
+          <Link href="/locations" className="hover:text-[#C68A14] transition-colors">
             Locations
           </Link>
-          <Link href="/films" className="hover:text-white dark:hover:text-white light:hover:text-black transition-colors">
+          <Link href="/films" className="hover:text-[#C68A14] transition-colors">
             Films
           </Link>
         </nav>
 
-        {/* Inverting Action CTA Button */}
+        {/* Primary CTA Button */}
         <div className="flex items-center gap-4">
           <Link
             href="/menu"
-            className="btn-primary px-5 py-2.5 rounded-full font-sans text-xs font-bold uppercase tracking-wider shadow-md"
+            className="px-5 py-2.5 rounded-full font-sans text-xs font-bold uppercase tracking-wider bg-[#C68A14] text-white hover:bg-[#B37B0F] active:scale-95 transition-all shadow-md"
           >
             Full Menu →
           </Link>

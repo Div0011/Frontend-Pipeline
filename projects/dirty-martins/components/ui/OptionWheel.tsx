@@ -214,7 +214,7 @@ export default function OptionWheel({
                 className={`type-display tracking-tight transition-all duration-300 ${
                   isSelected
                     ? "font-extrabold drop-shadow-[0_0_20px_rgba(245,196,24,0.3)] scale-105"
-                    : "font-semibold hover:text-white"
+                    : "font-semibold hover:text-black"
                 }`}
                 style={{
                   fontSize: `${fontSize}rem`,

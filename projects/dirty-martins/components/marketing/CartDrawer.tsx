@@ -42,7 +42,7 @@ export default function CartDrawer({
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="absolute inset-0 bg-black/70 backdrop-blur-sm transition-opacity"
+            className="absolute inset-0 bg-white/70 backdrop-blur-sm transition-opacity"
           />
 
           {/* Drawer */}
@@ -52,21 +52,21 @@ export default function CartDrawer({
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", damping: 25, stiffness: 200 }}
-              className="w-screen max-w-md bg-[#0e0e11] border-l border-white/10 text-white shadow-2xl flex flex-col justify-between"
+              className="w-screen max-w-md bg-[#0e0e11] border-l border-[#C68A14]/25 text-black shadow-2xl flex flex-col justify-between"
             >
               {/* Header */}
-              <div className="p-6 border-b border-white/10 flex items-center justify-between">
+              <div className="p-6 border-b border-[#C68A14]/25 flex items-center justify-between">
                 <div>
                   <h2 className="type-display text-2xl font-bold tracking-wide">
                     YOUR ORDER SELECTIONS
                   </h2>
-                  <p className="font-sans text-[10px] text-stone-400 uppercase tracking-widest mt-0.5">
+                  <p className="font-sans text-[10px] text-stone-700 uppercase tracking-widest mt-0.5">
                     {items.reduce((acc, i) => acc + i.quantity, 0)} Items Added
                   </p>
                 </div>
                 <button
                   onClick={onClose}
-                  className="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-stone-400 hover:text-white transition-colors"
+                  className="w-8 h-8 rounded-full bg-[#FAF8F2] border border-[#C68A14]/25 flex items-center justify-center text-stone-700 hover:text-black transition-colors"
                 >
                   ✕
                 </button>
@@ -75,7 +75,7 @@ export default function CartDrawer({
               {/* Items List */}
               <div className="flex-1 overflow-y-auto p-6 space-y-4">
                 {items.length === 0 ? (
-                  <div className="h-full flex flex-col items-center justify-center text-center text-stone-400 space-y-3">
+                  <div className="h-full flex flex-col items-center justify-center text-center text-stone-700 space-y-3">
                     <span className="text-4xl">🛍️</span>
                     <p className="font-sans text-xs uppercase tracking-wider">
                       Your order drawer is currently empty
@@ -92,10 +92,10 @@ export default function CartDrawer({
                   items.map((item) => (
                     <div
                       key={item.name}
-                      className="p-4 rounded-xl bg-white/5 border border-white/10 flex items-center justify-between gap-4"
+                      className="p-4 rounded-xl bg-[#FAF8F2] border border-[#C68A14]/25 flex items-center justify-between gap-4"
                     >
                       <div className="space-y-1">
-                        <h4 className="font-sans font-bold text-sm text-white">
+                        <h4 className="font-sans font-bold text-sm text-black">
                           {item.name}
                         </h4>
                         <p className="font-sans text-xs" style={{ color: primaryColor }}>
@@ -106,7 +106,7 @@ export default function CartDrawer({
                       <div className="flex items-center gap-3">
                         <button
                           onClick={() => onUpdateQuantity(item.name, -1)}
-                          className="w-7 h-7 rounded bg-white/10 flex items-center justify-center text-sm hover:bg-white/20 transition-colors"
+                          className="w-7 h-7 rounded bg-[#FAF8F2] flex items-center justify-center text-sm hover:bg-white/20 transition-colors"
                         >
                           -
                         </button>
@@ -115,7 +115,7 @@ export default function CartDrawer({
                         </span>
                         <button
                           onClick={() => onUpdateQuantity(item.name, 1)}
-                          className="w-7 h-7 rounded bg-white/10 flex items-center justify-center text-sm hover:bg-white/20 transition-colors"
+                          className="w-7 h-7 rounded bg-[#FAF8F2] flex items-center justify-center text-sm hover:bg-white/20 transition-colors"
                         >
                           +
                         </button>
@@ -127,9 +127,9 @@ export default function CartDrawer({
 
               {/* Footer / Checkout */}
               {items.length > 0 && (
-                <div className="p-6 border-t border-white/10 bg-[#070709] space-y-4">
+                <div className="p-6 border-t border-[#C68A14]/25 bg-[#070709] space-y-4">
                   <div className="flex justify-between items-center font-sans">
-                    <span className="text-xs text-stone-400 uppercase tracking-wider">
+                    <span className="text-xs text-stone-700 uppercase tracking-wider">
                       Estimated Subtotal
                     </span>
                     <span className="text-xl font-bold" style={{ color: primaryColor }}>
