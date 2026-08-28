@@ -23,8 +23,8 @@ export default function InteractiveBackground({
 
   useEffect(() => {
     const handleThemeChange = (e: any) => {
-      const isDark = e.detail?.isDark !== undefined ? e.detail.isDark : true;
-      setIsDarkMode(isDark);
+      const dark = e.detail?.isDark !== undefined ? e.detail.isDark : true;
+      setIsDarkMode(dark);
     };
 
     window.addEventListener("themechange", handleThemeChange);
@@ -309,21 +309,17 @@ export default function InteractiveBackground({
 
   return (
     <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden select-none transition-colors duration-500">
-      {/* Dynamic Background Surface */}
       <div
-        className="absolute inset-0 transition-all duration-500"
+        className="absolute inset-0 transition-colors duration-500"
         style={{
           background: isDarkMode
             ? `radial-gradient(circle at 50% 30%, ${themeBase} 0%, #050806 100%)`
-            : `radial-gradient(circle at 50% 30%, #FAF8F2 0%, #EDE7DB 100%)`,
+            : `radial-gradient(circle at 50% 30%, #FAF7F2 0%, #EBE5DB 100%)`,
         }}
       />
 
-      {/* Atmospheric Ambient Glows */}
       <motion.div
-        className={`absolute w-[900px] h-[900px] rounded-full blur-[180px] pointer-events-none transform -translate-x-1/2 -translate-y-1/2 transition-opacity duration-500 ${
-          isDarkMode ? "opacity-20" : "opacity-10"
-        }`}
+        className="absolute w-[900px] h-[900px] rounded-full blur-[180px] opacity-20 pointer-events-none transform -translate-x-1/2 -translate-y-1/2"
         style={{
           backgroundColor: primaryColor,
           left: springX ? `${springX.get() * 100}%` : "50%",
@@ -332,16 +328,20 @@ export default function InteractiveBackground({
       />
 
       <div
-        className={`absolute -top-32 right-0 w-[700px] h-[700px] rounded-full blur-[200px] pointer-events-none transition-opacity duration-500 ${
-          isDarkMode ? "opacity-15" : "opacity-0"
-        }`}
+        className="absolute -top-32 right-0 w-[700px] h-[700px] rounded-full blur-[200px] opacity-15 pointer-events-none"
         style={{ backgroundColor: primaryColor }}
       />
       <div
-        className={`absolute bottom-0 left-10 w-[800px] h-[800px] rounded-full blur-[220px] pointer-events-none transition-opacity duration-500 ${
-          isDarkMode ? "opacity-12" : "opacity-0"
-        }`}
+        className="absolute bottom-0 left-10 w-[800px] h-[800px] rounded-full blur-[220px] opacity-12 pointer-events-none"
         style={{ backgroundColor: primaryColor }}
+      />
+
+      <div
+        className="absolute inset-0 pointer-events-none opacity-[0.08]"
+        style={{
+          backgroundImage: `radial-gradient(circle at 1px 1px, ${primaryColor} 1px, transparent 0)`,
+          backgroundSize: "36px 36px",
+        }}
       />
 
       <canvas

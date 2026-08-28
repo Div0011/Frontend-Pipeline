@@ -12,55 +12,60 @@ interface AtmosphereControlsProps {
 export default function AtmosphereControls({
   primaryColor = "#BF5700",
   darkBg = "#100804",
-  lightBg = "#FAF8F2",
+  lightBg = "#FAF7F2",
 }: AtmosphereControlsProps) {
   const [isDark, setIsDark] = useState<boolean>(true);
   const [isPlayingMusic, setIsPlayingMusic] = useState<boolean>(false);
-  const audioRef = useRef<HTMLAudioElement | null>(null);
-  const synthCtxRef = useRef<AudioContext | null>(null);
-  const synthIntervalRef = useRef<any>(null);
+  const audioCtxRef = useRef<AudioContext | null>(null);
+  const musicNodesRef = useRef<{ masterGain: GainNode; intervalId: any } | null>(null);
 
-  // Initialize Audio & Click Sounds
+  // Initialize Global Click Sounds & Audio Context
   useEffect(() => {
-    // 1. Create native HTML5 Audio Element for rich restaurant jazz
-    const audio = new Audio("https://assets.mixkit.co/music/preview/mixkit-chill-bro-494.mp3");
-    audio.loop = true;
-    audio.volume = 1.0; // 100% volume
-    audioRef.current = audio;
+    const initAudio = () => {
+      if (!audioCtxRef.current) {
+        const AudioContextClass = window.AudioContext || (window as any).webkitAudioContext;
+        if (AudioContextClass) {
+          audioCtxRef.current = new AudioContextClass();
+        }
+      }
+      if (audioCtxRef.current && audioCtxRef.current.state === "suspended") {
+        audioCtxRef.current.resume();
+      }
+    };
 
-    // Pop Click Sound
+    // Pop Click Sound (100% Volume)
     const playPop = () => {
+      initAudio();
+      const ctx = audioCtxRef.current;
+      if (!ctx) return;
       try {
-        const AudioCtx = window.AudioContext || (window as any).webkitAudioContext;
-        if (!AudioCtx) return;
-        const ctx = new AudioCtx();
         const osc = ctx.createOscillator();
         const gain = ctx.createGain();
         osc.type = "sine";
-        osc.frequency.setValueAtTime(480, ctx.currentTime);
-        osc.frequency.exponentialRampToValueAtTime(120, ctx.currentTime + 0.05);
-        gain.gain.setValueAtTime(0.3, ctx.currentTime);
-        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.05);
+        osc.frequency.setValueAtTime(520, ctx.currentTime);
+        osc.frequency.exponentialRampToValueAtTime(140, ctx.currentTime + 0.07);
+        gain.gain.setValueAtTime(0.35, ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.07);
         osc.connect(gain);
         gain.connect(ctx.destination);
         osc.start();
-        osc.stop(ctx.currentTime + 0.05);
+        osc.stop(ctx.currentTime + 0.07);
       } catch (err) {
         // silent fallback
       }
     };
 
-    // Sizzle Sound for Sear / Fire buttons
+    // Sizzle Sound for Sear / Fire buttons (100% Volume)
     const playSizzle = () => {
+      initAudio();
+      const ctx = audioCtxRef.current;
+      if (!ctx) return;
       try {
-        const AudioCtx = window.AudioContext || (window as any).webkitAudioContext;
-        if (!AudioCtx) return;
-        const ctx = new AudioCtx();
-        const bufferSize = ctx.sampleRate * 0.7;
+        const bufferSize = ctx.sampleRate * 0.9;
         const buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
         const data = buffer.getChannelData(0);
         for (let i = 0; i < bufferSize; i++) {
-          data[i] = (Math.random() * 2 - 1) * Math.exp(-i / (ctx.sampleRate * 0.35));
+          data[i] = (Math.random() * 2 - 1) * Math.exp(-i / (ctx.sampleRate * 0.45));
         }
         const noise = ctx.createBufferSource();
         noise.buffer = buffer;
@@ -68,11 +73,11 @@ export default function AtmosphereControls({
         const filter = ctx.createBiquadFilter();
         filter.type = "bandpass";
         filter.frequency.setValueAtTime(2400, ctx.currentTime);
-        filter.Q.setValueAtTime(1.5, ctx.currentTime);
+        filter.Q.setValueAtTime(1.4, ctx.currentTime);
 
         const gain = ctx.createGain();
         gain.gain.setValueAtTime(0.5, ctx.currentTime);
-        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.7);
+        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.9);
 
         noise.connect(filter);
         filter.connect(gain);
@@ -86,6 +91,7 @@ export default function AtmosphereControls({
     (window as any).playPopSound = playPop;
     (window as any).playSizzleSound = playSizzle;
 
+    // Attach subtle pop click to interactive elements
     const handleGlobalClick = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
       if (
@@ -99,89 +105,102 @@ export default function AtmosphereControls({
     };
 
     window.addEventListener("click", handleGlobalClick);
-
-    return () => {
-      window.removeEventListener("click", handleGlobalClick);
-      if (audioRef.current) {
-        audioRef.current.pause();
-        audioRef.current = null;
-      }
-      if (synthIntervalRef.current) clearInterval(synthIntervalRef.current);
-    };
+    return () => window.removeEventListener("click", handleGlobalClick);
   }, []);
 
-  // Live Restaurant Jazz Audio Toggle (100% Volume)
+  // Classic Live Restaurant Jazz Lounge Synthesizer (100% Volume)
   const toggleMusic = () => {
-    const audio = audioRef.current;
+    const AudioContextClass = window.AudioContext || (window as any).webkitAudioContext;
+    if (!audioCtxRef.current && AudioContextClass) {
+      audioCtxRef.current = new AudioContextClass();
+    }
+    const ctx = audioCtxRef.current;
+    if (!ctx) return;
+    if (ctx.state === "suspended") ctx.resume();
 
     if (isPlayingMusic) {
-      // Pause
-      if (audio) {
-        audio.pause();
-      }
-      if (synthIntervalRef.current) {
-        clearInterval(synthIntervalRef.current);
-        synthIntervalRef.current = null;
+      // Fade out and stop
+      if (musicNodesRef.current) {
+        const { masterGain, intervalId } = musicNodesRef.current;
+        clearInterval(intervalId);
+        masterGain.gain.linearRampToValueAtTime(0.001, ctx.currentTime + 0.6);
+        setTimeout(() => {
+          musicNodesRef.current = null;
+        }, 600);
       }
       setIsPlayingMusic(false);
     } else {
-      // Play at 100% Volume
-      setIsPlayingMusic(true);
+      // Start live restaurant jazz progression at full 100% volume
+      const masterGain = ctx.createGain();
+      masterGain.gain.setValueAtTime(0.001, ctx.currentTime);
+      masterGain.gain.linearRampToValueAtTime(0.45, ctx.currentTime + 1.0);
+      masterGain.connect(ctx.destination);
 
-      if (audio) {
-        audio.volume = 1.0;
-        audio
-          .play()
-          .catch(() => {
-            // Web Audio fallback if MP3 stream is blocked
-            startSynthFallback();
-          });
-      } else {
-        startSynthFallback();
-      }
-    }
-  };
-
-  const startSynthFallback = () => {
-    try {
-      const AudioCtx = window.AudioContext || (window as any).webkitAudioContext;
-      if (!AudioCtx) return;
-      const ctx = synthCtxRef.current || new AudioCtx();
-      synthCtxRef.current = ctx;
-      if (ctx.state === "suspended") ctx.resume();
-
-      const chords = [
-        [174.61, 220.0, 261.63, 329.63], // Fmaj7
-        [146.83, 220.0, 261.63, 349.23], // Dm9
-        [196.0, 233.08, 293.66, 349.23], // Gm7
-        [130.81, 196.0, 246.94, 293.66], // C9
+      // Authentic live jazz bistro chords with walking acoustic bass notes
+      const jazzChords = [
+        { bass: 87.31, chord: [261.63, 349.23, 440.0, 523.25] },   // Fmaj9
+        { bass: 73.42, chord: [293.66, 349.23, 440.0, 523.25] },   // Dm9
+        { bass: 98.00, chord: [293.66, 392.0, 466.16, 587.33] },   // Gm9
+        { bass: 65.41, chord: [261.63, 329.63, 466.16, 554.37] },  // C13b9
       ];
-      let chordIdx = 0;
+      let stepIndex = 0;
 
-      const playChord = () => {
-        const c = chords[chordIdx % chords.length];
-        chordIdx++;
-        const now = ctx.currentTime;
+      const playJazzBar = () => {
+        const current = jazzChords[stepIndex % jazzChords.length];
+        stepIndex++;
 
-        c.forEach((freq) => {
+        // 1. Acoustic Upright Bass Note
+        const bassOsc = ctx.createOscillator();
+        const bassGain = ctx.createGain();
+        const bassFilter = ctx.createBiquadFilter();
+
+        bassOsc.type = "triangle";
+        bassOsc.frequency.setValueAtTime(current.bass, ctx.currentTime);
+
+        bassFilter.type = "lowpass";
+        bassFilter.frequency.setValueAtTime(220, ctx.currentTime);
+
+        bassGain.gain.setValueAtTime(0.001, ctx.currentTime);
+        bassGain.gain.linearRampToValueAtTime(0.35, ctx.currentTime + 0.08);
+        bassGain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 2.8);
+
+        bassOsc.connect(bassFilter);
+        bassFilter.connect(bassGain);
+        bassGain.connect(masterGain);
+
+        bassOsc.start();
+        bassOsc.stop(ctx.currentTime + 2.9);
+
+        // 2. Warm Rhodes Piano Chord Voicings
+        current.chord.forEach((freq, i) => {
           const osc = ctx.createOscillator();
-          const gain = ctx.createGain();
-          osc.type = "sine";
-          osc.frequency.setValueAtTime(freq, now);
-          gain.gain.setValueAtTime(0.001, now);
-          gain.gain.linearRampToValueAtTime(0.25 / c.length, now + 0.1);
-          gain.gain.exponentialRampToValueAtTime(0.001, now + 2.4);
-          osc.connect(gain);
-          gain.connect(ctx.destination);
-          osc.start(now);
-          osc.stop(now + 2.5);
+          const noteGain = ctx.createGain();
+          const filter = ctx.createBiquadFilter();
+
+          osc.type = i % 2 === 0 ? "sine" : "triangle";
+          osc.frequency.setValueAtTime(freq, ctx.currentTime);
+
+          filter.type = "bandpass";
+          filter.frequency.setValueAtTime(800 + (i * 150), ctx.currentTime);
+          filter.Q.setValueAtTime(0.8, ctx.currentTime);
+
+          noteGain.gain.setValueAtTime(0.001, ctx.currentTime);
+          noteGain.gain.linearRampToValueAtTime(0.12, ctx.currentTime + 0.15 + (i * 0.03));
+          noteGain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 3.0);
+
+          osc.connect(filter);
+          filter.connect(noteGain);
+          noteGain.connect(masterGain);
+
+          osc.start();
+          osc.stop(ctx.currentTime + 3.2);
         });
       };
 
-      playChord();
-      synthIntervalRef.current = setInterval(playChord, 2200);
-    } catch (e) {
-      // ignore
+      playJazzBar();
+      const intervalId = setInterval(playJazzBar, 3000);
+      musicNodesRef.current = { masterGain, intervalId };
+      setIsPlayingMusic(true);
     }
   };
 
@@ -196,39 +215,34 @@ export default function AtmosphereControls({
     if (nextDark) {
       root.classList.add("dark");
       root.classList.remove("light");
-      body.classList.add("dark");
-      body.classList.remove("light");
-      body.style.setProperty("background-color", darkBg, "important");
-      body.style.setProperty("color", "#FAF8F2", "important");
+      body.style.backgroundColor = darkBg;
+      body.style.color = "#FAF8F2";
     } else {
       root.classList.remove("dark");
       root.classList.add("light");
-      body.classList.remove("dark");
-      body.classList.add("light");
-      body.style.setProperty("background-color", lightBg, "important");
-      body.style.setProperty("color", "#18181B", "important");
+      body.style.backgroundColor = lightBg;
+      body.style.color = "#18181B";
     }
 
+    // Inform window and interactive canvas for background update
     window.dispatchEvent(
       new CustomEvent("themechange", { detail: { isDark: nextDark } })
     );
   };
+
+  const iconColor = isDark ? primaryColor : "#18181B";
 
   return (
     <aside
       aria-label="Atmosphere Controls"
       className="fixed bottom-6 right-6 z-50 flex flex-col gap-3 select-none"
     >
-      {/* 1. Theme Button - Sun ☀️ / Moon 🌙 (Dark: Gold/Primary, Light: Crisp Black, NO Orange) */}
+      {/* 1. Separate Floating Circle: Day & Night Theme Toggle (Sun ☀️ / Moon 🌙) */}
       <button
         type="button"
         onClick={toggleTheme}
         title={isDark ? "Switch to Day Mode" : "Switch to Night Mode"}
-        className={`w-12 h-12 rounded-full flex items-center justify-center backdrop-blur-2xl border shadow-2xl transition-all duration-300 hover:scale-110 active:scale-95 ${
-          isDark
-            ? "bg-black/70 border-white/20 text-white hover:border-white/40"
-            : "bg-white/95 border-black/15 text-stone-900 hover:border-black/30"
-        }`}
+        className="w-12 h-12 rounded-full flex items-center justify-center bg-black/60 dark:bg-black/60 light:bg-white/90 backdrop-blur-2xl border border-white/20 dark:border-white/20 light:border-black/15 shadow-2xl transition-all duration-300 hover:scale-110 active:scale-95 text-white dark:text-white light:text-black hover:border-white/40"
       >
         <AnimatePresence mode="wait" initial={false}>
           {isDark ? (
@@ -238,7 +252,8 @@ export default function AtmosphereControls({
               animate={{ rotate: 0, scale: 1, opacity: 1 }}
               exit={{ rotate: 90, scale: 0.5, opacity: 0 }}
               transition={{ duration: 0.25 }}
-              className="w-5 h-5 text-[#BF5700]"
+              className="w-5 h-5"
+              style={{ color: iconColor }}
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -255,9 +270,9 @@ export default function AtmosphereControls({
               key="moon"
               initial={{ rotate: 90, scale: 0.5, opacity: 0 }}
               animate={{ rotate: 0, scale: 1, opacity: 1 }}
-              exit={{ rotate: 90, scale: 0.5, opacity: 0 }}
+              exit={{ rotate: -90, scale: 0.5, opacity: 0 }}
               transition={{ duration: 0.25 }}
-              className="w-5 h-5 text-stone-900"
+              className="w-5 h-5 text-black"
               fill="currentColor"
               viewBox="0 0 24 24"
             >
@@ -267,33 +282,35 @@ export default function AtmosphereControls({
         </AnimatePresence>
       </button>
 
-      {/* 2. Soothing Music Button - Soundwave Bars (Dark: Gold/Primary, Light: Clean Black, NO Orange) */}
+      {/* 2. Separate Floating Circle: Live Restaurant Jazz Music & Animated Soundwave Toggle */}
       <button
         type="button"
         onClick={toggleMusic}
-        title={isPlayingMusic ? "Mute Ambient Sound" : "Play Live Restaurant Jazz (100% Vol)"}
-        className={`w-12 h-12 rounded-full flex items-center justify-center backdrop-blur-2xl border shadow-2xl transition-all duration-300 hover:scale-110 active:scale-95 ${
-          isDark
-            ? "bg-black/70 border-white/20 text-white hover:border-white/40"
-            : "bg-white/95 border-black/15 text-stone-900 hover:border-black/30"
-        }`}
+        title={isPlayingMusic ? "Mute Restaurant Jazz" : "Play Live Restaurant Jazz"}
+        className="w-12 h-12 rounded-full flex items-center justify-center bg-black/60 dark:bg-black/60 light:bg-white/90 backdrop-blur-2xl border border-white/20 dark:border-white/20 light:border-black/15 shadow-2xl transition-all duration-300 hover:scale-110 active:scale-95 text-white dark:text-white light:text-black hover:border-white/40"
       >
         <div className="flex items-center justify-center gap-[3px] h-5 w-5">
           {[0.4, 0.9, 0.6, 0.3].map((heightRatio, i) => (
             <motion.span
               key={i}
               className="w-[2.5px] rounded-full"
-              style={{ backgroundColor: isDark ? primaryColor : "#18181B" }}
-              animate={{
-                height: isPlayingMusic
-                  ? ["4px", `${Math.round(heightRatio * 18)}px`, "4px"]
-                  : "4px",
-              }}
-              transition={{
-                duration: isPlayingMusic ? 0.8 + i * 0.2 : 0.3,
-                repeat: isPlayingMusic ? Infinity : 0,
-                ease: "easeInOut",
-              }}
+              style={{ backgroundColor: iconColor }}
+              animate={
+                isPlayingMusic
+                  ? {
+                      height: ["4px", `${Math.round(heightRatio * 18)}px`, "4px"],
+                    }
+                  : { height: "4px" }
+              }
+              transition={
+                isPlayingMusic
+                  ? {
+                      duration: 0.8 + i * 0.2,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                    }
+                  : { duration: 0.3 }
+              }
             />
           ))}
         </div>

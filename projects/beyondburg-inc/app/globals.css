@@ -40,60 +40,39 @@ body {
   line-height: 0.9;
 }
 
-/* Day Mode Global Surface */
+/* Light / Day Theme Responsive Rules */
 html.light body {
-  background-color: #FAF8F2 !important;
+  background-color: #FAF7F2 !important;
   color: #18181B !important;
 }
 
-/* Day Mode Text on Light Background / Tiles ONLY */
-html.light .theme-adaptive-title,
-html.light #manifesto-section h2,
-html.light #manifesto-section h3,
-html.light #menu-section h2,
-html.light #menu-section h3,
-html.light #pairing-section h2,
-html.light #pairing-section h3,
-html.light #locations-section h2,
-html.light #reservation-section h2 {
-  color: #18181B !important;
+html.light h1:not([data-dark-card] *):not(.stay-white),
+html.light h2:not([data-dark-card] *):not(.stay-white),
+html.light h3:not([data-dark-card] *):not(.stay-white),
+html.light .type-display:not([data-dark-card] *):not(.stay-white) {
+  color: #18181B;
 }
 
-html.light .theme-adaptive-card,
-html.light #manifesto-section .bg-white\[0\.03\],
-html.light #manifesto-section .bg-white\[0\.04\],
-html.light #menu-section .bg-white\[0\.04\],
-html.light #pairing-section .bg-white\[0\.04\],
-html.light #reservation-section .bg-white\[0\.04\] {
-  background-color: rgba(255, 255, 255, 0.85) !important;
-  border-color: rgba(0, 0, 0, 0.08) !important;
-  color: #18181B !important;
-  box-shadow: 0 12px 32px -4px rgba(0, 0, 0, 0.06) !important;
+html.light .text-white:not([data-dark-card] *):not(.stay-white):not([role="dialog"] *) {
+  color: #18181B;
 }
 
-html.light #manifesto-section .text-stone-400,
-html.light #menu-section .text-stone-400,
-html.light #pairing-section .text-stone-400 {
-  color: #52525B !important;
+html.light .text-stone-300:not([data-dark-card] *):not(.stay-white):not([role="dialog"] *),
+html.light .text-stone-400:not([data-dark-card] *):not(.stay-white):not([role="dialog"] *) {
+  color: #52525B;
 }
 
-/* Ensure Dark Media Frames, Heros, Smoothies, and Image Cards ALWAYS stay crisp White */
-.dark-frame,
-.hero-media,
-.gallery-image-card,
-.smoothie-container,
-.video-overlay,
-[data-theme-preserve="dark"] {
-  color: #FAF8F2 !important;
+html.light .bg-white\/\[0\.04\],
+html.light .bg-white\/\[0\.03\],
+html.light .bg-white\/5 {
+  background-color: rgba(255, 255, 255, 0.85);
+  border-color: rgba(0, 0, 0, 0.08);
+  color: #18181B;
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.06);
 }
 
-.dark-frame h1,
-.dark-frame h2,
-.dark-frame h3,
-.dark-frame p,
-.hero-media h1,
-.hero-media h2,
-.smoothie-container h2,
-.gallery-image-card h3 {
-  color: #FAF8F2 !important;
+html.light .border-white\/10,
+html.light .border-white\/15,
+html.light .border-white\/20 {
+  border-color: rgba(0, 0, 0, 0.08);
 }
