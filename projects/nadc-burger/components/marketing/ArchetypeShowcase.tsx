@@ -25,9 +25,7 @@ export default function ArchetypeShowcase() {
               THE PAIRING SELECTOR
             </h2>
           </div>
-          <span className="font-mono text-xs text-stone-400">
-            100% Texas Akaushi Wagyu & Duck Fat Tallow
-          </span>
+          
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

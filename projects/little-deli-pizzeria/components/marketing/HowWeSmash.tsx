@@ -13,9 +13,7 @@ export default function HowWeSmash() {
         {/* Section Header */}
         <div className="flex flex-col sm:flex-row justify-between sm:items-end gap-6 border-b border-white/10 pb-8">
           <div className="space-y-2">
-            <span className="font-mono text-xs tracking-widest uppercase block font-bold" style={{ color: "#166534" }}>
-              LITTLE DELI & PIZZERIA // CRAFT LAB &amp; SCIENCE
-            </span>
+            
             <h2 className="type-display text-4xl sm:text-6xl text-white font-extrabold tracking-tight">
               THE ARTISANAL SIZZLE CRAFT
             </h2>

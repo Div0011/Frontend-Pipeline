@@ -41,14 +41,11 @@ export default function ReservationCTA() {
     >
       <div className="max-w-4xl mx-auto space-y-12">
         <div className="text-center space-y-3">
-          <span className="font-mono text-xs tracking-widest uppercase font-bold block" style={{ color: "#2563EB" }}>TABLE RESERVATIONS
-          </span>
+          
           <h2 className="type-display text-4xl sm:text-6xl text-white font-extrabold tracking-tight">
-            TABLE RESERVATIONS
+            BOOK YOUR EXPERIENCE
           </h2>
-          <p className="text-stone-300 text-sm max-w-xl mx-auto font-body">
-            Select outpost, date, and party size.
-          </p>
+          
         </div>
 
         {confirmed ? (

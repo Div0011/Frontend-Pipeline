@@ -56,16 +56,14 @@ export default function CulinaryAccordionGallery() {
             <div className="flex items-center gap-2 mb-3">
               <span className="w-2.5 h-2.5 rounded-full animate-ping" style={{ backgroundColor: "#BE123C" }} />
               <span className="font-mono text-xs tracking-widest uppercase font-bold" style={{ color: "#BE123C" }}>
-                SIGNATURE SPECIMENS
+                GALLERY
               </span>
             </div>
             <h2 className="type-display text-4xl sm:text-6xl text-bone tracking-tight font-bold">
               THE SENSORY GALLERY
             </h2>
           </div>
-          <p className="text-smoke text-xs sm:text-sm font-mono max-w-md leading-relaxed">
-            Curated signature culinary selections.
-          </p>
+          
         </div>
 
         {/* Accordion Gallery Component */}

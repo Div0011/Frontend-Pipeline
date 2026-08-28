@@ -18,9 +18,7 @@ export default function ArchetypeShowcase() {
               THE ARTISANAL CRUST LAB
             </h2>
           </div>
-          <span className="font-mono text-xs text-stone-400">
-            72 Hours COLD FERMENT · 650°F BAKE
-          </span>
+          
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

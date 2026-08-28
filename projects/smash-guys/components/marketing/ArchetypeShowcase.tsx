@@ -25,9 +25,7 @@ export default function ArchetypeShowcase() {
               CHOOSE YOUR HEAT LEVEL
             </h2>
           </div>
-          <span className="font-mono text-xs text-stone-400">
-            DEFAULT: Maillard Original
-          </span>
+          
         </div>
 
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">

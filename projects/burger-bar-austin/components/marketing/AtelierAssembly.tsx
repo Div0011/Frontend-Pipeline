@@ -45,16 +45,14 @@ export default function AtelierAssembly() {
             <div className="flex items-center gap-2 mb-2">
               <span className="w-2 h-2 rounded-full" style={{ backgroundColor: "#F5C418" }} />
               <span className="font-mono text-xs tracking-widest uppercase font-bold" style={{ color: "#F5C418" }}>
-                ANATOMICAL BUILD
+                THE CRAFT
               </span>
             </div>
             <h2 className="type-display text-4xl sm:text-6xl text-bone">
               THE CULINARY CRAFT MORPHER
             </h2>
           </div>
-          <p className="text-smoke text-xs sm:text-sm font-mono max-w-sm leading-relaxed">
-            Step through the anatomical engineering and signature craft creations with chromatic liquid melt transitions.
-          </p>
+          
         </div>
 
         <div className="w-full relative shadow-2xl" style={{ height: "540px" }}>

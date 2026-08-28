@@ -36,15 +36,13 @@ export default function ArchetypeShowcase() {
         <div className="flex flex-col sm:flex-row justify-between sm:items-end gap-4 border-b border-white/10 pb-6">
           <div>
             <span className="font-mono text-xs tracking-widest uppercase font-bold text-[#F5C418]">
-              CURATED PAIRINGS
+              PAIRINGS
             </span>
             <h2 className="type-display text-4xl sm:text-5xl text-white font-extrabold mt-1">
               THE PAIRING SELECTOR
             </h2>
           </div>
-          <span className="font-mono text-xs text-stone-400">
-            Smashed Prime Cuts &amp; Biscoff Malts
-          </span>
+          
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

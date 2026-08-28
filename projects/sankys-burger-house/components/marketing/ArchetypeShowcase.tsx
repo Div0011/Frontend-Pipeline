@@ -19,9 +19,7 @@ export default function ArchetypeShowcase() {
               THE UNDERGROUND CULT KITCHEN
             </h2>
           </div>
-          <span className="font-mono text-xs text-stone-400">
-            OPEN UNTIL 3:00 AM · Hennur Garage
-          </span>
+          
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

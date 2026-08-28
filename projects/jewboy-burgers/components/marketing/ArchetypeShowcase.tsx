@@ -25,9 +25,7 @@ export default function ArchetypeShowcase() {
               HERITAGE &amp; TIMELESS CRAFT
             </h2>
           </div>
-          <span className="font-mono text-xs text-stone-400">
-            EST. 2016 · Airport Blvd, Austin
-          </span>
+          
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
