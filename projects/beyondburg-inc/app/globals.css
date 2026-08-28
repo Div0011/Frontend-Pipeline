@@ -26,7 +26,7 @@
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
   font-family: var(--font-body), sans-serif;
   overflow-x: hidden;
@@ -40,39 +40,25 @@ body {
   line-height: 0.9;
 }
 
-/* Light / Day Theme Responsive Rules */
+/* Light / Day Theme Clean Body */
 html.light body {
   background-color: #FAF7F2 !important;
   color: #18181B !important;
 }
 
-html.light h1:not([data-dark-card] *):not(.stay-white),
-html.light h2:not([data-dark-card] *):not(.stay-white),
-html.light h3:not([data-dark-card] *):not(.stay-white),
-html.light .type-display:not([data-dark-card] *):not(.stay-white) {
-  color: #18181B;
+/* Standard Section Headers in Light Mode (outside image frames) */
+html.light .section-heading {
+  color: #18181B !important;
 }
 
-html.light .text-white:not([data-dark-card] *):not(.stay-white):not([role="dialog"] *) {
-  color: #18181B;
+html.light .section-subtext {
+  color: #52525B !important;
 }
 
-html.light .text-stone-300:not([data-dark-card] *):not(.stay-white):not([role="dialog"] *),
-html.light .text-stone-400:not([data-dark-card] *):not(.stay-white):not([role="dialog"] *) {
-  color: #52525B;
-}
-
-html.light .bg-white\/\[0\.04\],
-html.light .bg-white\/\[0\.03\],
-html.light .bg-white\/5 {
-  background-color: rgba(255, 255, 255, 0.85);
-  border-color: rgba(0, 0, 0, 0.08);
-  color: #18181B;
-  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.06);
-}
-
-html.light .border-white\/10,
-html.light .border-white\/15,
-html.light .border-white\/20 {
-  border-color: rgba(0, 0, 0, 0.08);
+/* Glass Card styling in light mode */
+html.light .glass-card {
+  background-color: rgba(255, 255, 255, 0.85) !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+  color: #18181B !important;
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.06) !important;
 }
