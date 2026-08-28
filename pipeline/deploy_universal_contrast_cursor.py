@@ -1,4 +1,27 @@
-"use client";
+#!/usr/bin/env python3
+"""
+Master script deploying the Universal Real-Time Contrast-Inverting CustomCursor
+across all 24 projects in the pipeline.
+
+Features:
+- Real-time DOM element background color extraction & luminance calculation.
+- Specific color-range contrast handling:
+  * Red backgrounds (Pedroso's, Dan's, Casino, Good Flippin', Simon) -> Black (#0A0A0A)
+  * Green backgrounds (Beyondburg, Burger Seigneur, Burgerman, Little Deli) -> White (#FFFFFF)
+  * Blue backgrounds (Burger Bar, OBC) -> White (#FFFFFF)
+  * Yellow / Mustard backgrounds (Dirty Martin's, Truffles, Smash Guys, Sanky's) -> White (#FFFFFF) or Black (#0A0A0A)
+  * Black / Dark backgrounds -> Brand Primary Accent (var(--primary))
+  * White / Light backgrounds -> Brand Primary Accent or Deep Black (#0A0A0A)
+- Smooth 60fps spring physics with retro pixelated target frame & corner pixels.
+"""
+
+import os
+from pathlib import Path
+
+ROOT = Path(__file__).parent.parent
+PROJECTS_DIR = ROOT / "projects"
+
+UNIVERSAL_CURSOR_CODE = '''"use client";
 
 import { useEffect, useRef, useState } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
@@ -11,7 +34,7 @@ function getEffectiveBackgroundColor(el: Element | null): [number, number, numbe
     const style = window.getComputedStyle(current);
     const bg = style.backgroundColor;
     if (bg && bg !== "transparent" && bg !== "rgba(0, 0, 0, 0)") {
-      const match = bg.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)/);
+      const match = bg.match(/rgba?\\((\\d+),\\s*(\\d+),\\s*(\\d+)/);
       if (match) {
         return [parseInt(match[1], 10), parseInt(match[2], 10), parseInt(match[3], 10)];
       }
@@ -60,11 +83,11 @@ export default function CustomCursor() {
       const lum = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
 
       // Detect background color characteristics
-      const isRed = (r > 150 && g < 80 && b < 80) || !!el.closest("footer[style*='#D91C24'], footer[style*='#E52421'], footer[style*='#DC2626'], .bg-red-600, .bg-\\[\\#D91C24\\], .bg-\\[\\#E52421\\]");
-      const isGreen = (g > 55 && g > r * 1.05 && b < 100) || !!el.closest("footer[style*='#122B1E'], footer[style*='#418043'], footer[style*='#15803D'], .bg-\\[\\#122B1E\\], .bg-\\[\\#418043\\]");
-      const isBlue = (b > 140 && r < 100) || !!el.closest("footer[style*='#2563EB'], .bg-\\[\\#2563EB\\]");
-      const isMustard = (r > 150 && g > 100 && g < 185 && b < 60) || !!el.closest("[data-on-mustard], footer[style*='#C68A14'], .bg-\\[\\#C68A14\\]");
-      const isNeonYellow = (r > 200 && g > 200 && b < 80) || !!el.closest("footer[style*='#FFE500'], .bg-\\[\\#FFE500\\]");
+      const isRed = (r > 150 && g < 80 && b < 80) || !!el.closest("footer[style*='#D91C24'], footer[style*='#E52421'], footer[style*='#DC2626'], .bg-red-600, .bg-\\\\[\\\\#D91C24\\\\], .bg-\\\\[\\\\#E52421\\\\]");
+      const isGreen = (g > 55 && g > r * 1.05 && b < 100) || !!el.closest("footer[style*='#122B1E'], footer[style*='#418043'], footer[style*='#15803D'], .bg-\\\\[\\\\#122B1E\\\\], .bg-\\\\[\\\\#418043\\\\]");
+      const isBlue = (b > 140 && r < 100) || !!el.closest("footer[style*='#2563EB'], .bg-\\\\[\\\\#2563EB\\\\]");
+      const isMustard = (r > 150 && g > 100 && g < 185 && b < 60) || !!el.closest("[data-on-mustard], footer[style*='#C68A14'], .bg-\\\\[\\\\#C68A14\\\\]");
+      const isNeonYellow = (r > 200 && g > 200 && b < 80) || !!el.closest("footer[style*='#FFE500'], .bg-\\\\[\\\\#FFE500\\\\]");
       const isPrimaryBtn = !!el.closest(".btn-primary");
 
       let nextColor = "var(--primary, #FFFFFF)";
@@ -201,3 +224,20 @@ export default function CustomCursor() {
     </>
   );
 }
+'''
+
+def main():
+    print("🚀 Deploying Universal Real-Time Contrast-Inverting Cursor across all 24 projects...")
+    for project_dir in sorted(PROJECTS_DIR.iterdir()):
+        if not project_dir.is_dir() or project_dir.name in ["fabroar", "superfan-redesign", "smash-guys"]:
+            continue
+
+        cursor_path = project_dir / "components" / "marketing" / "CustomCursor.tsx"
+        if cursor_path.exists():
+            cursor_path.write_text(UNIVERSAL_CURSOR_CODE)
+            print(f"  ✓ Deployed universal contrast cursor to {project_dir.name}")
+
+    print("🎉 Universal contrast cursor successfully deployed to all projects!")
+
+if __name__ == "__main__":
+    main()

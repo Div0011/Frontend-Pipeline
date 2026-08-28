@@ -18,7 +18,7 @@ function getEffectiveBackgroundColor(el: Element | null): [number, number, numbe
     }
     current = current.parentElement;
   }
-  return [10, 10, 10]; // Default dark
+  return [10, 10, 10]; // Default dark tone
 }
 
 export default function CustomCursor() {
@@ -59,26 +59,33 @@ export default function CustomCursor() {
       const [r, g, b] = getEffectiveBackgroundColor(el);
       const lum = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
 
-      // Brand-specific & contrast detection rules:
-      // 1. Red background detection (Pedroso's Pizza footer #D91C24, red buttons)
-      const isRedBg = (r > 160 && g < 70 && b < 70) || !!el.closest("footer[style*='#D91C24'], footer[style*='rgb(217, 28, 36)'], .bg-\\[\\#D91C24\\], .bg-\\[\\#B91C1C\\]");
-      
-      // 2. Mustard / Gold / Amber background detection (Dirty Martin's #C68A14, Truffles, Burger Seigneur)
-      const isMustardBg = (r > 150 && g > 100 && g < 180 && b < 60) || !!el.closest("[data-on-mustard], [style*='#C68A14'], .bg-\\[\\#C68A14\\], footer[style*='#C68A14'], footer[style*='#FFE500'], footer[style*='#C8A96E']");
+      // Detect background color characteristics
+      const isRed = (r > 150 && g < 80 && b < 80) || !!el.closest("footer[style*='#D91C24'], footer[style*='#E52421'], footer[style*='#DC2626'], .bg-red-600, .bg-\\[\\#D91C24\\], .bg-\\[\\#E52421\\]");
+      const isGreen = (g > 55 && g > r * 1.05 && b < 100) || !!el.closest("footer[style*='#122B1E'], footer[style*='#418043'], footer[style*='#15803D'], .bg-\\[\\#122B1E\\], .bg-\\[\\#418043\\]");
+      const isBlue = (b > 140 && r < 100) || !!el.closest("footer[style*='#2563EB'], .bg-\\[\\#2563EB\\]");
+      const isMustard = (r > 150 && g > 100 && g < 185 && b < 60) || !!el.closest("[data-on-mustard], footer[style*='#C68A14'], .bg-\\[\\#C68A14\\]");
+      const isNeonYellow = (r > 200 && g > 200 && b < 80) || !!el.closest("footer[style*='#FFE500'], .bg-\\[\\#FFE500\\]");
+      const isPrimaryBtn = !!el.closest(".btn-primary");
 
       let nextColor = "var(--primary, #FFFFFF)";
 
-      if (isRedBg) {
-        // Red background -> Cursor becomes Deep Black for extreme contrast
+      if (isRed) {
+        // Red surface -> Deep Black for maximum contrast
         nextColor = "#0A0A0A";
-      } else if (isMustardBg) {
-        // Mustard background -> Cursor becomes Crisp White
+      } else if (isGreen || isBlue || isMustard) {
+        // Green, Blue, or Dark Mustard surface -> Crisp White
         nextColor = "#FFFFFF";
-      } else if (lum > 0.65) {
-        // Light / White surface -> Cursor becomes Brand Primary or Deep Black
+      } else if (isNeonYellow) {
+        // Bright Neon Yellow -> Deep Black
+        nextColor = "#0A0A0A";
+      } else if (isPrimaryBtn) {
+        // Over a primary button, invert to the button's contrasting text color
+        nextColor = isRed || isNeonYellow ? "#0A0A0A" : "#FFFFFF";
+      } else if (lum > 0.70) {
+        // Light / Pure White surface -> Brand Primary or Deep Black
         nextColor = "var(--primary, #0A0A0A)";
       } else {
-        // Dark / Black surface -> Cursor becomes Brand Primary or White
+        // Dark / Black surface -> Brand Primary Accent
         nextColor = "var(--primary, #FFFFFF)";
       }
 
@@ -144,7 +151,7 @@ export default function CustomCursor() {
             borderColor: cursorColor,
             rotate: state === "hover" ? 45 : 0,
           }}
-          transition={{ duration: 0.24, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
           className="border-2 relative flex items-center justify-center transition-colors duration-150"
           style={{
             borderStyle: "solid",
