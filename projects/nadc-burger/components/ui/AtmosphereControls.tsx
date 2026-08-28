@@ -91,7 +91,6 @@ export default function AtmosphereControls({
     (window as any).playPopSound = playPop;
     (window as any).playSizzleSound = playSizzle;
 
-    // Attach subtle pop click to interactive elements
     const handleGlobalClick = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
       if (
@@ -119,7 +118,6 @@ export default function AtmosphereControls({
     if (ctx.state === "suspended") ctx.resume();
 
     if (isPlayingMusic) {
-      // Fade out and stop
       if (musicNodesRef.current) {
         const { masterGain, intervalId } = musicNodesRef.current;
         clearInterval(intervalId);
@@ -130,13 +128,11 @@ export default function AtmosphereControls({
       }
       setIsPlayingMusic(false);
     } else {
-      // Start soothing chord generator
       const masterGain = ctx.createGain();
       masterGain.gain.setValueAtTime(0.001, ctx.currentTime);
       masterGain.gain.linearRampToValueAtTime(0.08, ctx.currentTime + 1.2);
       masterGain.connect(ctx.destination);
 
-      // Warm chord progression (Lo-fi chill neo-soul voicings)
       const chords = [
         [220.0, 261.63, 329.63, 392.0], // Am7
         [174.61, 220.0, 261.63, 329.63], // Fmaj7
@@ -200,7 +196,6 @@ export default function AtmosphereControls({
       body.style.color = "#18181B";
     }
 
-    // Inform window for canvas background update
     window.dispatchEvent(
       new CustomEvent("themechange", { detail: { isDark: nextDark } })
     );
@@ -211,12 +206,16 @@ export default function AtmosphereControls({
       aria-label="Atmosphere Controls"
       className="fixed bottom-6 right-6 z-50 flex flex-col gap-3 select-none"
     >
-      {/* 1. Separate Floating Circle: Day & Night Seamless Theme Toggle (Sun ☀️ / Moon 🌙) */}
+      {/* 1. Theme Button - Sun ☀️ / Moon 🌙 (Dark: Gold/Primary, Light: Crisp Black, NO Orange) */}
       <button
         type="button"
         onClick={toggleTheme}
         title={isDark ? "Switch to Day Mode" : "Switch to Night Mode"}
-        className="w-12 h-12 rounded-full flex items-center justify-center bg-black/60 dark:bg-black/60 light:bg-white/90 backdrop-blur-2xl border border-white/20 dark:border-white/20 light:border-black/15 shadow-2xl transition-all duration-300 hover:scale-110 active:scale-95 text-white dark:text-white light:text-black hover:border-white/40"
+        className={`w-12 h-12 rounded-full flex items-center justify-center backdrop-blur-2xl border shadow-2xl transition-all duration-300 hover:scale-110 active:scale-95 ${
+          isDark
+            ? "bg-black/70 border-white/20 text-white hover:border-white/40"
+            : "bg-white/95 border-black/15 text-stone-900 hover:border-black/30"
+        }`}
       >
         <AnimatePresence mode="wait" initial={false}>
           {isDark ? (
@@ -226,8 +225,7 @@ export default function AtmosphereControls({
               animate={{ rotate: 0, scale: 1, opacity: 1 }}
               exit={{ rotate: 90, scale: 0.5, opacity: 0 }}
               transition={{ duration: 0.25 }}
-              className="w-5 h-5"
-              style={{ color: primaryColor }}
+              className="w-5 h-5 text-[#FFFFFF]"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -246,7 +244,7 @@ export default function AtmosphereControls({
               animate={{ rotate: 0, scale: 1, opacity: 1 }}
               exit={{ rotate: -90, scale: 0.5, opacity: 0 }}
               transition={{ duration: 0.25 }}
-              className="w-5 h-5 text-amber-700 dark:text-[#F5C418]"
+              className="w-5 h-5 text-stone-900"
               fill="currentColor"
               viewBox="0 0 24 24"
             >
@@ -256,19 +254,23 @@ export default function AtmosphereControls({
         </AnimatePresence>
       </button>
 
-      {/* 2. Separate Floating Circle: Soothing Lo-Fi Music & Animated Soundwave Toggle */}
+      {/* 2. Soothing Music Button - Soundwave Bars (Dark: Gold/Primary, Light: Clean Black, NO Orange) */}
       <button
         type="button"
         onClick={toggleMusic}
         title={isPlayingMusic ? "Mute Ambient Sound" : "Play Soothing Ambient Sound"}
-        className="w-12 h-12 rounded-full flex items-center justify-center bg-black/60 dark:bg-black/60 light:bg-white/90 backdrop-blur-2xl border border-white/20 dark:border-white/20 light:border-black/15 shadow-2xl transition-all duration-300 hover:scale-110 active:scale-95 text-white dark:text-white light:text-black hover:border-white/40"
+        className={`w-12 h-12 rounded-full flex items-center justify-center backdrop-blur-2xl border shadow-2xl transition-all duration-300 hover:scale-110 active:scale-95 ${
+          isDark
+            ? "bg-black/70 border-white/20 text-white hover:border-white/40"
+            : "bg-white/95 border-black/15 text-stone-900 hover:border-black/30"
+        }`}
       >
         <div className="flex items-center justify-center gap-[3px] h-5 w-5">
           {[0.4, 0.9, 0.6, 0.3].map((heightRatio, i) => (
             <motion.span
               key={i}
               className="w-[2.5px] rounded-full"
-              style={{ backgroundColor: isDark ? primaryColor : "#B45309" }}
+              style={{ backgroundColor: isDark ? primaryColor : "#18181B" }}
               animate={{
                 height: isPlayingMusic
                   ? ["4px", `${Math.round(heightRatio * 18)}px`, "4px"]

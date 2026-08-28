@@ -8,15 +8,18 @@ export default function ReservationsPage() {
   return (
     <>
       <Nav />
-      <main className="pt-24 min-h-screen bg-transparent text-[#FAF8F2] relative z-10 font-sans">
-        <section className="py-16 sm:py-20 bg-transparent text-white border-b border-white/10 relative">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8 space-y-3">
-            <span className="text-xs uppercase tracking-widest font-bold block" style={{ color: "#BF5700" }}>
-              TABLE BOOKINGS
+      <main className="pt-24 min-h-screen bg-transparent text-[#FAF8F2] relative z-10">
+        <section className="py-20 bg-transparent text-white border-b border-white/10 relative">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8 space-y-4">
+            <span className="font-mono text-xs uppercase tracking-widest font-bold block" style={{ color: "#BF5700" }}>
+              DIRTY MARTIN'S KUM-BAK // VIP TABLE RESERVATIONS
             </span>
-            <h1 className="type-display text-5xl sm:text-7xl md:text-8xl font-black text-white">
+            <h1 className="type-display text-5xl md:text-7xl font-extrabold text-white">
               RESERVE YOUR TABLE
             </h1>
+            <p className="font-mono text-xs text-stone-300 max-w-xl">
+              Secure front-row seating and craft dining in Austin.
+            </p>
           </div>
         </section>
 
