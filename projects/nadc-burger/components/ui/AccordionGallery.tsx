@@ -160,9 +160,9 @@ export default function AccordionGallery({
               }}
             />
 
-            {/* Collapsed State Label */}
+            {/* Collapsed State Label — always white, on image */}
             {!isActive && showLabels && isHorizontal && (
-              <div className="absolute inset-0 flex flex-col justify-end p-4 z-10 pointer-events-none">
+              <div data-image-overlay className="absolute inset-0 flex flex-col justify-end p-4 z-10 pointer-events-none">
                 <span
                   className="font-mono text-xs uppercase tracking-widest text-white/90 transform -rotate-90 origin-bottom-left translate-x-4 mb-8 whitespace-nowrap group-hover:text-white transition-all duration-300 font-bold drop-shadow-md"
                 >
@@ -172,8 +172,9 @@ export default function AccordionGallery({
               </div>
             )}
 
-            {/* Expanded State Content Card */}
+            {/* Expanded State Content Card — always white, on image */}
             <div
+              data-image-overlay
               className={`absolute inset-0 p-6 sm:p-8 flex flex-col justify-between z-20 transition-all duration-400 ${
                 isActive ? "opacity-100 translate-y-0" : "opacity-0 pointer-events-none translate-y-4"
               }`}

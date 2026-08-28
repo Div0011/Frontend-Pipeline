@@ -200,9 +200,9 @@ export default function MorphSlider({
         }}
       />
 
-      {/* Captions Overlay */}
+      {/* Captions Overlay — always white text regardless of theme */}
       {showCaptions && (
-        <div className="absolute inset-x-0 bottom-0 p-8 sm:p-12 z-20 flex flex-col justify-end">
+        <div data-image-overlay className="absolute inset-x-0 bottom-0 p-8 sm:p-12 z-20 flex flex-col justify-end">
           <div className="max-w-2xl space-y-3">
             {currentItem.tag && (
               <span className="font-mono text-xs uppercase tracking-widest px-3 py-1 bg-white/10 backdrop-blur-md rounded-full text-yolk border border-white/20 inline-block">

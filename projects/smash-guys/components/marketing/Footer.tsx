@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import PixelText from "@/components/ui/PixelText";
 
 export default function Footer() {
   const scrollToTop = () => {
@@ -15,12 +16,11 @@ export default function Footer() {
       style={{ backgroundColor: "#F5C418", color: "#000000" }}
       className="h-[100svh] min-h-[100svh] w-full flex flex-col justify-between p-8 sm:p-12 md:p-16 lg:p-20 relative z-10 select-none overflow-hidden"
     >
-      {/* Top Bar: Navigation Options & Outpost City */}
+      {/* Top Bar: Navigation & Info */}
       <div
         className="flex flex-col sm:flex-row justify-between sm:items-start gap-8 pb-8"
-        style={{ borderBottom: "1px solid rgba(0,0,0,0.15)" }}
+        style={{ borderBottom: "1px solid rgba(128,128,128,0.25)" }}
       >
-        {/* Navigation Options */}
         <nav className="flex flex-wrap gap-6 sm:gap-10 font-sans text-sm font-bold uppercase tracking-wider">
           <Link href="/menu" className="hover:opacity-60 transition-opacity">
             Menu
@@ -36,46 +36,51 @@ export default function Footer() {
           </Link>
         </nav>
 
-        {/* Hours */}
         <div
           className="font-sans text-xs sm:text-right space-y-1"
-          style={{ color: "rgba(0,0,0,0.7)" }}
+          style={{ color: "#00000099" }}
         >
           <p className="font-bold">OPEN DAILY: 11:30 AM – 11:30 PM</p>
           <p>BENGALURU OUTPOSTS</p>
         </div>
       </div>
 
-      {/* Center: Grand Monumental Brand Typography */}
-      <div className="my-auto py-8">
-        <h2 className="type-display text-[13vw] leading-none font-black uppercase tracking-tight select-none">
-          SMASH GUYS
-        </h2>
+      {/* Center: Interactive Pixel-Dot Brand Name */}
+      <div className="my-auto py-8 flex items-center overflow-x-auto">
+        <div className="scale-[clamp(0.3,3vw,0.8)] sm:scale-[clamp(0.4,4.5vw,0.9)] md:scale-100 origin-left transition-transform duration-200">
+          <PixelText
+            text="SMASH GUYS"
+            dotSize={11}
+            gap={3}
+            color="#000000"
+            explodeRadius={110}
+            explodeForce={28}
+            returnStiffness={0.09}
+          />
+        </div>
       </div>
 
-      {/* Bottom Bar: Contact Info & Back to Top */}
+      {/* Bottom Bar: Contact & Back to Top */}
       <div
         className="flex flex-col sm:flex-row justify-between sm:items-end gap-6 pt-8 font-sans text-xs font-bold"
-        style={{ borderTop: "1px solid rgba(0,0,0,0.15)" }}
+        style={{ borderTop: "1px solid rgba(128,128,128,0.25)" }}
       >
-        {/* Contact Info */}
-        <div className="space-y-1" style={{ color: "rgba(0,0,0,0.7)" }}>
+        <div className="space-y-1" style={{ color: "#00000099" }}>
           <p className="font-extrabold text-sm" style={{ color: "#000000" }}>
-            +91 80 4911 2244
+            +91 90729 64242
           </p>
-          <p>100 Feet Rd, Indiranagar</p>
-          <p>contact@smashguys.com</p>
+          <p>contact@restaurant.com</p>
         </div>
 
-        {/* Copyright & Scroll to Top */}
         <div className="flex items-center justify-between sm:justify-end gap-8">
-          <p className="font-medium" style={{ color: "rgba(0,0,0,0.5)" }}>
-            © {new Date().getFullYear()} Smash Guys.
+          <p className="font-medium" style={{ color: "#00000066" }}>
+            © {new Date().getFullYear()} SMASH GUYS
           </p>
           <button
             type="button"
             onClick={scrollToTop}
-            className="px-5 py-2.5 rounded-full border border-black/30 hover:bg-black hover:text-white transition-all uppercase tracking-wider font-extrabold flex items-center gap-2 active:scale-95 shadow-lg"
+            className="px-5 py-2.5 rounded-full border hover:opacity-80 transition-all uppercase tracking-wider font-extrabold flex items-center gap-2 active:scale-95 shadow-lg"
+            style={{ borderColor: "#00000040" }}
           >
             <span>Top</span>
             <span>↑</span>

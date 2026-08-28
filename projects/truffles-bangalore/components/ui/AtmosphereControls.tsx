@@ -10,8 +10,8 @@ interface AtmosphereControlsProps {
 }
 
 export default function AtmosphereControls({
-  primaryColor = "#F5A623",
-  darkBg = "#100a06",
+  primaryColor = "#F5C418",
+  darkBg = "#070709",
   lightBg = "#FAF7F2",
 }: AtmosphereControlsProps) {
   const [isDark, setIsDark] = useState<boolean>(true);
@@ -215,11 +215,23 @@ export default function AtmosphereControls({
     if (nextDark) {
       root.classList.add("dark");
       root.classList.remove("light");
+      // Set CSS variables on html so color:var(--fg) cascades everywhere
+      root.style.setProperty("--bg",       "#070709");
+      root.style.setProperty("--fg",       "#FAF8F2");
+      root.style.setProperty("--fg-muted", "rgba(250,248,242,0.55)");
+      root.style.setProperty("--fg-sub",   "rgba(250,248,242,0.35)");
+      root.style.setProperty("--border",   "rgba(255,255,255,0.10)");
       body.style.backgroundColor = darkBg;
       body.style.color = "#FAF8F2";
     } else {
       root.classList.remove("dark");
       root.classList.add("light");
+      // Set CSS variables on html so color:var(--fg) cascades everywhere
+      root.style.setProperty("--bg",       "#F6F4EE");
+      root.style.setProperty("--fg",       "#18181B");
+      root.style.setProperty("--fg-muted", "rgba(24,24,27,0.65)");
+      root.style.setProperty("--fg-sub",   "rgba(24,24,27,0.40)");
+      root.style.setProperty("--border",   "rgba(0,0,0,0.10)");
       body.style.backgroundColor = lightBg;
       body.style.color = "#18181B";
     }
@@ -230,6 +242,10 @@ export default function AtmosphereControls({
     );
   };
 
+  // Exact Color Theory:
+  // Dark Mode: Black background button + Yellow icon
+  // Light Mode: Yellow background button + Black icon
+  const buttonBg = isDark ? "bg-[#070709]/85 backdrop-blur-xl border border-white/20" : "bg-[#F5C418] shadow-2xl border border-black/10";
   const iconColor = isDark ? primaryColor : "#18181B";
 
   return (
@@ -242,7 +258,7 @@ export default function AtmosphereControls({
         type="button"
         onClick={toggleTheme}
         title={isDark ? "Switch to Day Mode" : "Switch to Night Mode"}
-        className="w-12 h-12 rounded-full flex items-center justify-center bg-black/60 dark:bg-black/60 light:bg-white/90 backdrop-blur-2xl border border-white/20 dark:border-white/20 light:border-black/15 shadow-2xl transition-all duration-300 hover:scale-110 active:scale-95 text-white dark:text-white light:text-black hover:border-white/40"
+        className={`w-12 h-12 rounded-full flex items-center justify-center shadow-2xl transition-all duration-300 hover:scale-110 active:scale-95 ${buttonBg}`}
       >
         <AnimatePresence mode="wait" initial={false}>
           {isDark ? (
@@ -287,7 +303,7 @@ export default function AtmosphereControls({
         type="button"
         onClick={toggleMusic}
         title={isPlayingMusic ? "Mute Restaurant Jazz" : "Play Live Restaurant Jazz"}
-        className="w-12 h-12 rounded-full flex items-center justify-center bg-black/60 dark:bg-black/60 light:bg-white/90 backdrop-blur-2xl border border-white/20 dark:border-white/20 light:border-black/15 shadow-2xl transition-all duration-300 hover:scale-110 active:scale-95 text-white dark:text-white light:text-black hover:border-white/40"
+        className={`w-12 h-12 rounded-full flex items-center justify-center shadow-2xl transition-all duration-300 hover:scale-110 active:scale-95 ${buttonBg}`}
       >
         <div className="flex items-center justify-center gap-[3px] h-5 w-5">
           {[0.4, 0.9, 0.6, 0.3].map((heightRatio, i) => (

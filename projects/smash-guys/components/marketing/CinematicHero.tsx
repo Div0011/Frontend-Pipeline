@@ -11,7 +11,7 @@ const frames = Array.from(
 export default function CinematicHero() {
   return (
     <CanvasScrubber frames={frames} scrollDistance="+=350%">
-      <div className="h-full w-full flex flex-col justify-center p-8 sm:p-12 md:p-20 relative pointer-events-none select-none">
+      <div data-image-overlay className="h-full w-full flex flex-col justify-center p-8 sm:p-12 md:p-20 relative pointer-events-none select-none">
         <div className="max-w-4xl space-y-6">
           {/* Live Status Pill */}
           <div className="flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/[0.05] border border-white/10 backdrop-blur-xl w-fit shadow-lg">
@@ -22,7 +22,7 @@ export default function CinematicHero() {
           </div>
 
           <h1 className="type-display text-6xl sm:text-8xl md:text-9xl lg:text-[9.5rem] text-white leading-none font-black tracking-tight drop-shadow-[0_10px_30px_rgba(0,0,0,0.8)]">
-            SMASH GUYS
+            BEYONDBURG INC.
           </h1>
 
           <div className="pt-2 pointer-events-auto flex flex-wrap gap-4 font-sans font-bold text-xs uppercase tracking-wider">

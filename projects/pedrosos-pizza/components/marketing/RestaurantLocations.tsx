@@ -4,7 +4,42 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
-const outposts = [{"id": "justin", "name": "North Austin Justin Ln", "badge": "72-HR FERMENTATION LAB", "address": "8315 Justin Ln", "city": "Austin, TX 78757", "hours": "4:00 PM \u2013 10:00 PM", "phone": "(512) 861-5589", "status": "Active \u00b7 650\u00b0F Stone Deck", "seating": "Artisan Pizza Counter", "heroImage": "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=1200&q=80", "gallery": ["https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=800&q=80", "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=800&q=80"], "mapUrl": "https://maps.google.com/?q=Pedrosos+Pizza+Austin"}];
+const outposts = [
+  {
+    id: "st-marks",
+    name: "St. Mark's Road Flagship",
+    badge: "ORIGINAL SMASH ATELIER",
+    address: "Opp. Bowring Institute, St. Mark's Rd",
+    city: "Bengaluru 560001",
+    hours: "11:30 AM – 11:30 PM",
+    phone: "+91 90729 64242",
+    status: "Kitchen Active · 10 min table wait",
+    seating: "Chef's Sizzle Counter & Shaded Patio",
+    heroImage: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1200&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1550547660-d9450f859349?w=800&q=80",
+      "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800&q=80",
+    ],
+    mapUrl: "https://maps.google.com/?q=Beyondburg+Inc+Bangalore",
+  },
+  {
+    id: "indiranagar",
+    name: "Indiranagar Craft Kitchen",
+    badge: "100FT ROAD OUTPOST",
+    address: "100 Feet Rd, HAL 2nd Stage",
+    city: "Bengaluru 560038",
+    hours: "12:00 PM – 1:00 AM",
+    phone: "+91 90729 64243",
+    status: "Kitchen Active · Open till 1:00 AM",
+    seating: "Neon Lounge & Outdoor Deck",
+    heroImage: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1200&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1586190848861-99aa4a171e90?w=800&q=80",
+      "https://images.unsplash.com/photo-1551782450-a2132b4ba21d?w=800&q=80",
+    ],
+    mapUrl: "https://maps.google.com/?q=Beyondburg+Inc+Indiranagar",
+  },
+];
 
 export default function RestaurantLocations() {
   const [selectedLocation, setSelectedLocation] = useState(0);
@@ -16,36 +51,34 @@ export default function RestaurantLocations() {
   return (
     <section
       id="locations-section"
-      className="py-28 px-6 sm:px-12 md:px-20 bg-transparent text-[#FAF8F2] border-b border-white/10 relative z-10"
+      className="py-24 px-6 sm:px-12 md:px-20 bg-transparent text-[#FAF8F2] border-b border-white/10 relative z-10 font-sans"
     >
-      <div className="max-w-7xl mx-auto space-y-12">
-        <div className="flex flex-col md:flex-row justify-between md:items-end gap-6 border-b border-white/10 pb-8">
-          <div className="space-y-2">
-            <span className="font-mono text-xs tracking-widest uppercase block font-bold" style={{ color: "#B91C1C" }}>
-              PEDROSO'S PIZZA // PHYSICAL OUTPOSTS
-            </span>
+      <div className="max-w-7xl mx-auto space-y-10">
+        <div className="flex flex-col md:flex-row justify-between md:items-end gap-6 border-b border-white/10 pb-6">
+          <div>
             <h2 className="type-display text-4xl sm:text-6xl text-white font-extrabold tracking-tight">
-              AUSTIN KITCHENS
+              BENGALURU KITCHENS
             </h2>
           </div>
 
           {outposts.length > 1 && (
-            <div className="flex items-center gap-3 bg-white/5 p-1.5 rounded-full border border-white/10">
+            <div className="flex items-center gap-2 bg-white/5 p-1.5 rounded-full border border-white/10">
               {outposts.map((loc: any, idx: number) => (
                 <button
                   key={loc.id || idx}
                   onClick={() => {
+                    if ((window as any).playPopSound) (window as any).playPopSound();
                     setSelectedLocation(idx);
                     setActiveImageIndex(0);
                   }}
-                  className={`px-5 py-2 rounded-full font-mono text-xs uppercase tracking-wider transition-all font-bold ${
+                  className={`px-5 py-2 rounded-full font-sans text-xs uppercase tracking-wider transition-all font-bold ${
                     selectedLocation === idx
                       ? "shadow-lg"
                       : "text-stone-400 hover:text-white"
                   }`}
                   style={{
-                    backgroundColor: selectedLocation === idx ? "#B91C1C" : undefined,
-                    color: selectedLocation === idx ? "#FFFFFF" : undefined,
+                    backgroundColor: selectedLocation === idx ? "#F5C418" : undefined,
+                    color: selectedLocation === idx ? "#000000" : undefined,
                   }}
                 >
                   {loc.name.split(" ")[0]}
@@ -57,126 +90,115 @@ export default function RestaurantLocations() {
 
         {currentLoc && (
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-            <div className="lg:col-span-7 relative min-h-[420px] rounded-2xl overflow-hidden border border-white/15 shadow-2xl bg-black/50 group">
+            {/* Visual Photography Carousel */}
+            <div className="lg:col-span-7 relative min-h-[420px] rounded-3xl overflow-hidden border border-white/15 shadow-2xl bg-black/50 group">
               <AnimatePresence mode="wait">
                 <motion.div
-                  key={`${selectedLocation}-${activeImageIndex}`}
+                  key={`${currentLoc.id}-${activeImageIndex}`}
                   initial={{ opacity: 0, scale: 1.05 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.98 }}
-                  transition={{ duration: 0.5, ease: "easeOut" }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.5 }}
                   className="absolute inset-0"
                 >
                   <Image
-                    src={allImages[activeImageIndex] || "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1200&q=80"}
+                    src={allImages[activeImageIndex] || currentLoc.heroImage}
                     alt={currentLoc.name}
                     fill
                     className="object-cover"
-                    priority
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
                 </motion.div>
               </AnimatePresence>
 
-              <div className="absolute top-6 left-6 z-10">
-                <span
-                  className="px-4 py-1.5 rounded-full font-mono text-xs font-bold uppercase tracking-wider shadow-lg"
-                  style={{
-                    backgroundColor: "#B91C1C",
-                    color: "#FFFFFF",
-                  }}
-                >
-                  {currentLoc.badge || "FEATURED OUTPOST"}
-                </span>
-              </div>
-
-              {allImages.length > 1 && (
-                <div className="absolute bottom-6 left-6 right-6 z-10 flex items-center justify-between gap-4">
-                  <div className="flex items-center gap-2">
-                    {allImages.map((img: string, iIdx: number) => (
-                      <button
-                        key={iIdx}
-                        onClick={() => setActiveImageIndex(iIdx)}
-                        className={`relative w-16 h-12 rounded-lg overflow-hidden border-2 transition-all shadow ${
-                          activeImageIndex === iIdx
-                            ? "scale-110"
-                            : "border-white/30 opacity-70 hover:opacity-100"
-                        }`}
-                        style={{
-                          borderColor: activeImageIndex === iIdx ? "#B91C1C" : undefined,
-                        }}
-                      >
-                        <Image src={img} alt="Thumbnail" fill className="object-cover" />
-                      </button>
-                    ))}
-                  </div>
-
-                  <span className="font-mono text-xs text-white/80 bg-black/60 backdrop-blur-md px-3 py-1 rounded-full border border-white/10">
-                    View {activeImageIndex + 1} of {allImages.length}
+              {/* Text Over Image — always white regardless of theme */}
+              <div data-image-overlay className="absolute bottom-6 left-6 right-6 flex items-end justify-between gap-4 z-10">
+                <div className="space-y-1 text-white">
+                  <span className="text-[10px] uppercase tracking-widest font-bold block" style={{ color: "#F5C418" }}>
+                    {currentLoc.badge}
                   </span>
-                </div>
-              )}
-            </div>
-
-            <div className="lg:col-span-5 p-8 rounded-2xl bg-white/[0.04] backdrop-blur-md border border-white/15 flex flex-col justify-between shadow-2xl space-y-6">
-              <div className="space-y-5">
-                <div className="space-y-1.5">
-                  <span className="font-mono text-[10px] tracking-widest uppercase font-bold block" style={{ color: "#B91C1C" }}>
-                    OUTPOST DETAILS
-                  </span>
-                  <h3 className="type-display text-3xl sm:text-4xl text-white font-extrabold">
+                  <h3 className="type-display text-2xl sm:text-3xl text-white font-extrabold drop-shadow-md">
                     {currentLoc.name}
                   </h3>
-                  <p className="font-mono text-xs text-stone-300">
-                    {currentLoc.address}
-                  </p>
-                  <p className="font-mono text-xs font-bold" style={{ color: "#B91C1C" }}>
-                    {currentLoc.city}
-                  </p>
                 </div>
 
-                <div className="p-4 rounded-xl bg-black/40 border border-white/10 flex items-center gap-3">
-                  <span className="w-3 h-3 rounded-full bg-emerald-400 animate-pulse" />
-                  <div>
-                    <span className="font-mono text-xs text-white font-bold block">
-                      {currentLoc.status || "Kitchen Active"}
-                    </span>
-                    <span className="font-mono text-[10px] text-stone-400">
-                      Hours: {currentLoc.hours}
-                    </span>
+                {allImages.length > 1 && (
+                  <div className="flex items-center gap-1.5 bg-black/60 backdrop-blur-md p-1.5 rounded-full border border-white/10">
+                    {allImages.map((_, imgIdx) => (
+                      <button
+                        key={imgIdx}
+                        onClick={() => setActiveImageIndex(imgIdx)}
+                        className={`w-2 h-2 rounded-full transition-all ${
+                          activeImageIndex === imgIdx
+                            ? "w-5 bg-[#F5C418]"
+                            : "bg-white/40 hover:bg-white/70"
+                        }`}
+                      />
+                    ))}
                   </div>
+                )}
+              </div>
+            </div>
+
+            {/* Location Specs & Quick Actions Card */}
+            <div className="lg:col-span-5 p-8 rounded-3xl bg-white/[0.04] backdrop-blur-md border border-white/10 flex flex-col justify-between space-y-6 shadow-2xl">
+              <div className="space-y-6">
+                <div className="flex items-center gap-2">
+                  <span className="w-2.5 h-2.5 rounded-full animate-pulse bg-emerald-400" />
+                  <span className="text-xs uppercase font-bold tracking-wider text-emerald-400">
+                    {currentLoc.status}
+                  </span>
                 </div>
 
-                <div className="space-y-2 text-xs font-mono text-stone-300 pt-2 border-t border-white/10">
-                  <div className="flex justify-between">
-                    <span className="text-stone-400">Atmosphere:</span>
-                    <span className="text-white font-bold">{currentLoc.seating}</span>
+                <div className="space-y-4 text-xs font-sans">
+                  <div className="p-4 rounded-2xl bg-black/40 border border-white/5 space-y-1">
+                    <span className="text-[10px] uppercase font-bold text-stone-400 block">
+                      Address
+                    </span>
+                    <p className="text-white font-semibold text-sm">{currentLoc.address}</p>
+                    <p className="text-stone-400">{currentLoc.city}</p>
                   </div>
-                  <div className="flex justify-between">
-                    <span className="text-stone-400">Direct Line:</span>
-                    <span className="font-bold" style={{ color: "#B91C1C" }}>{currentLoc.phone}</span>
+
+                  <div className="grid grid-cols-2 gap-3">
+                    <div className="p-4 rounded-2xl bg-black/40 border border-white/5 space-y-1">
+                      <span className="text-[10px] uppercase font-bold text-stone-400 block">
+                        Hours
+                      </span>
+                      <p className="text-white font-bold">{currentLoc.hours}</p>
+                    </div>
+
+                    <div className="p-4 rounded-2xl bg-black/40 border border-white/5 space-y-1">
+                      <span className="text-[10px] uppercase font-bold text-stone-400 block">
+                        Seating
+                      </span>
+                      <p className="text-white font-bold text-[11px] leading-tight">
+                        {currentLoc.seating}
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
 
-              <div className="flex gap-4 pt-4 border-t border-white/10">
+              {/* Action Buttons */}
+              <div className="grid grid-cols-2 gap-3 pt-4 border-t border-white/10">
                 <a
-                  href={currentLoc.mapUrl || "https://maps.google.com"}
+                  href={currentLoc.mapUrl}
                   target="_blank"
-                  rel="noreferrer"
-                  className="flex-1 text-center py-3 rounded-lg font-mono text-xs font-extrabold uppercase tracking-wider hover:opacity-90 active:scale-95 transition-all shadow-xl"
+                  rel="noopener noreferrer"
+                  className="py-3.5 px-4 rounded-2xl font-sans text-xs font-bold uppercase tracking-wider text-center transition-all shadow-lg hover:brightness-110 active:scale-95"
                   style={{
-                    backgroundColor: "#B91C1C",
-                    color: "#FFFFFF",
+                    backgroundColor: "#F5C418",
+                    color: "#000000",
                   }}
                 >
                   Directions ↗
                 </a>
+
                 <a
-                  href={`tel:${String(currentLoc.phone || "").replace(/\D/g, "")}`}
-                  className="px-6 py-3 rounded-lg bg-white/5 border border-white/20 text-white font-mono text-xs font-bold uppercase tracking-wider hover:bg-white/10 active:scale-95 transition-all"
+                  href={`tel:${currentLoc.phone.replace(/[^0-9+]/g, "")}`}
+                  className="py-3.5 px-4 rounded-2xl font-sans text-xs font-bold uppercase tracking-wider text-center bg-white/10 hover:bg-white/20 text-white transition-all border border-white/15"
                 >
-                  Call
+                  Call Outpost
                 </a>
               </div>
             </div>

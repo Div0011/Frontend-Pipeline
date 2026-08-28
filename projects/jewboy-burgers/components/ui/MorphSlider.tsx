@@ -200,12 +200,12 @@ export default function MorphSlider({
         }}
       />
 
-      {/* Captions Overlay */}
+      {/* Captions Overlay — always white text regardless of theme */}
       {showCaptions && (
-        <div className="absolute inset-x-0 bottom-0 p-8 sm:p-12 z-20 flex flex-col justify-end">
+        <div data-image-overlay className="absolute inset-x-0 bottom-0 p-8 sm:p-12 z-20 flex flex-col justify-end">
           <div className="max-w-2xl space-y-3">
             {currentItem.tag && (
-              <span className="font-mono text-xs uppercase tracking-widest px-3 py-1 bg-white/10 backdrop-blur-md rounded-full text-[#06B6D4] border border-white/20 inline-block">
+              <span className="font-mono text-xs uppercase tracking-widest px-3 py-1 bg-white/10 backdrop-blur-md rounded-full text-yolk border border-white/20 inline-block">
                 {currentItem.tag}
               </span>
             )}
@@ -253,7 +253,7 @@ export default function MorphSlider({
               key={idx}
               onClick={() => goToSlide(idx)}
               className={`h-1.5 rounded-full transition-all duration-500 ${
-                currentIndex === idx ? "w-8 bg-[#06B6D4]" : "w-2 bg-white/40 hover:bg-white/70"
+                currentIndex === idx ? "w-8 bg-yolk" : "w-2 bg-white/40 hover:bg-white/70"
               }`}
               aria-label={`Go to slide ${idx + 1}`}
             />

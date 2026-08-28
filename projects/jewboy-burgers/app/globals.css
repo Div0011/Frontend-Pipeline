@@ -20,14 +20,37 @@
   --font-mono: 'JetBrains Mono', monospace;
 }
 
+/* ─── CSS Variables — written by AtmosphereControls.tsx toggleTheme() ── */
 :root {
-  --background: #070709;
-  --foreground: #FAF8F2;
+  --bg:        #050c10;
+  --fg:        #FAF8F2;
+  --fg-muted:  rgba(250, 248, 242, 0.55);
+  --fg-sub:    rgba(250, 248, 242, 0.35);
+  --border:    rgba(255, 255, 255, 0.10);
+  --primary:   #06B6D4;
+}
+
+html.light {
+  --bg:        #F6F4EE;
+  --fg:        #18181B;
+  --fg-muted:  rgba(24, 24, 27, 0.65);
+  --fg-sub:    rgba(24, 24, 27, 0.40);
+  --border:    rgba(0, 0, 0, 0.10);
+}
+
+/* ─── Base ─────────────────────────────────────────────────────────── */
+*, *::before, *::after {
+  /* Hide default OS cursor — custom cursor replaces it */
+  cursor: none !important;
+}
+
+input, textarea, select, [contenteditable] {
+  cursor: text !important;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background-color: var(--bg);
+  color: var(--fg);
   font-family: var(--font-body), sans-serif;
   overflow-x: hidden;
   transition: background-color 0.4s ease, color 0.4s ease;
@@ -40,60 +63,46 @@ body {
   line-height: 0.9;
 }
 
-/* Day Mode Global Surface */
-html.light body {
-  background-color: #FAF8F2 !important;
-  color: #18181B !important;
-}
-
-/* Day Mode Text on Light Background / Tiles ONLY */
-html.light .theme-adaptive-title,
-html.light #manifesto-section h2,
-html.light #manifesto-section h3,
-html.light #menu-section h2,
-html.light #menu-section h3,
-html.light #pairing-section h2,
-html.light #pairing-section h3,
-html.light #locations-section h2,
-html.light #reservation-section h2 {
-  color: #18181B !important;
-}
-
-html.light .theme-adaptive-card,
-html.light #manifesto-section .bg-white\[0\.03\],
-html.light #manifesto-section .bg-white\[0\.04\],
-html.light #menu-section .bg-white\[0\.04\],
-html.light #pairing-section .bg-white\[0\.04\],
-html.light #reservation-section .bg-white\[0\.04\] {
-  background-color: rgba(255, 255, 255, 0.85) !important;
-  border-color: rgba(0, 0, 0, 0.08) !important;
-  color: #18181B !important;
-  box-shadow: 0 12px 32px -4px rgba(0, 0, 0, 0.06) !important;
-}
-
-html.light #manifesto-section .text-stone-400,
-html.light #menu-section .text-stone-400,
-html.light #pairing-section .text-stone-400 {
-  color: #52525B !important;
-}
-
-/* Ensure Dark Media Frames, Heros, Smoothies, and Image Cards ALWAYS stay crisp White */
-.dark-frame,
-.hero-media,
-.gallery-image-card,
-.smoothie-container,
-.video-overlay,
-[data-theme-preserve="dark"] {
+/* ─── PROTECTED IMAGE ZONES ────────────────────────────────────────── 
+   Any element with [data-image-overlay] always shows white text,
+   in BOTH dark and light themes. Theme toggle never touches these.
+─────────────────────────────────────────────────────────────────── */
+[data-image-overlay],
+[data-image-overlay] * {
   color: #FAF8F2 !important;
 }
 
-.dark-frame h1,
-.dark-frame h2,
-.dark-frame h3,
-.dark-frame p,
-.hero-media h1,
-.hero-media h2,
-.smoothie-container h2,
-.gallery-image-card h3 {
+.img-overlay-text,
+.img-overlay-text * {
   color: #FAF8F2 !important;
+}
+
+/* ─── LIGHT THEME: Section-level text ───────────────────────────────
+   Only targets non-image-overlay section text.
+─────────────────────────────────────────────────────────────────── */
+html.light body section:not([data-image-frame]) > div > h1,
+html.light body section:not([data-image-frame]) > div > h2,
+html.light body section:not([data-image-frame]) > div > div > h1,
+html.light body section:not([data-image-frame]) > div > div > h2,
+html.light body section:not([data-image-frame]) > div > div > div > h2 {
+  color: var(--fg) !important;
+}
+
+html.light body section:not([data-image-frame]) > div > p,
+html.light body section:not([data-image-frame]) > div > div > p {
+  color: var(--fg-muted) !important;
+}
+
+/* ─── LIGHT THEME: Nav header ───────────────────────────────────── */
+html.light body header {
+  background-color: rgba(246, 244, 238, 0.93) !important;
+  border-bottom-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+html.light body header a {
+  color: rgba(24, 24, 27, 0.72) !important;
+}
+
+html.light body header a:hover {
+  color: #18181B !important;
 }

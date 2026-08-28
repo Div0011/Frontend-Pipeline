@@ -48,9 +48,9 @@ export default function Nav() {
         isVisible ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0 pointer-events-none"
       } ${
         isScrolled
-          ? "bg-[#0a0a0c]/90 backdrop-blur-lg border-b border-white/10 py-3 shadow-2xl"
+          ? "backdrop-blur-xl border-b py-3 shadow-2xl bg-[#0e0509]/88 border-white/10"
           : "bg-transparent py-4"
-      } text-white`}
+      }`}
     >
       <div className="max-w-7xl mx-auto px-6 h-12 flex items-center justify-between">
         {/* Brand Logo */}
@@ -58,7 +58,7 @@ export default function Nav() {
           <div className="relative w-64 sm:w-80 h-10">
             <Image
               src="/logo.svg"
-              alt="Good Flippin' Burgers"
+              alt="Brand Logo"
               fill
               unoptimized
               className="object-contain object-left group-hover:opacity-90 transition-opacity duration-200"
@@ -68,30 +68,27 @@ export default function Nav() {
         </Link>
 
         {/* Nav Links */}
-        <nav className="hidden md:flex items-center gap-8 text-xs font-sans font-semibold tracking-wider uppercase text-stone-300">
-          <Link href="/menu" className="hover:text-white transition-colors">
+        <nav className="hidden md:flex items-center gap-8 text-xs font-sans font-semibold tracking-wider uppercase text-stone-300 dark:text-stone-300 light:text-stone-800">
+          <Link href="/menu" className="hover:text-white dark:hover:text-white light:hover:text-black transition-colors">
             Menu
           </Link>
-          <Link href="/about" className="hover:text-white transition-colors">
+          <Link href="/about" className="hover:text-white dark:hover:text-white light:hover:text-black transition-colors">
             Our Story
           </Link>
-          <Link href="/locations" className="hover:text-white transition-colors">
+          <Link href="/locations" className="hover:text-white dark:hover:text-white light:hover:text-black transition-colors">
             Locations
           </Link>
-          <Link href="/films" className="hover:text-white transition-colors">
+          <Link href="/films" className="hover:text-white dark:hover:text-white light:hover:text-black transition-colors">
             Films
           </Link>
         </nav>
 
-        {/* Primary CTA Button */}
+        {/* Primary CTA Button — inverts with theme */}
         <div className="flex items-center gap-4">
           <Link
             href="/menu"
             className="px-5 py-2.5 rounded-full font-sans text-xs font-bold uppercase tracking-wider hover:opacity-90 active:scale-95 transition-all shadow-md"
-            style={{
-              backgroundColor: "#BE123C",
-              color: "#FFFFFF",
-            }}
+            style={{ backgroundColor: "#BE123C", color: "#000000" }}
           >
             Full Menu →
           </Link>
