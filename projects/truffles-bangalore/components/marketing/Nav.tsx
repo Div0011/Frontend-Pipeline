@@ -53,18 +53,21 @@ export default function Nav() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 h-12 flex items-center justify-between">
-        {/* Brand Logo / Name */}
+        {/* Brand Logo and Name displayed side by side */}
         <Link href="/" className="flex items-center gap-3 group">
-          <div className="relative w-64 sm:w-80 h-10">
+          <div className="relative w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white/10 border border-white/15 p-1 flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform duration-200">
             <Image
               src="/logo.svg"
-              alt="TRUFFLES"
-              fill
+              alt="TRUFFLES Logo"
+              width={26}
+              height={26}
               unoptimized
-              className="object-contain object-left group-hover:opacity-90 transition-opacity duration-200"
-              priority
+              className="object-contain"
             />
           </div>
+          <span className="type-display text-lg sm:text-xl md:text-2xl font-black text-white dark:text-white light:text-black tracking-tight group-hover:opacity-90 transition-opacity">
+            TRUFFLES
+          </span>
         </Link>
 
         {/* Nav Links */}

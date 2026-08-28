@@ -161,9 +161,9 @@ const FONT: Record<string, number[][]> = {
     [1,1,1,1,0],
     [1,0,0,0,1],
     [1,1,1,1,0],
-    [1,1,0,0,0],
     [1,0,1,0,0],
     [1,0,0,1,0],
+    [1,0,0,0,1],
     [0,0,0,0,0],
   ],
   S: [
@@ -197,7 +197,7 @@ const FONT: Record<string, number[][]> = {
     [1,0,0,0,1],
     [1,0,0,0,1],
     [1,0,0,0,1],
-    [0,1,0,1,0],
+    [1,0,0,0,1],
     [0,1,0,1,0],
     [0,0,1,0,0],
     [0,0,0,0,0],
@@ -205,7 +205,7 @@ const FONT: Record<string, number[][]> = {
   W: [
     [1,0,0,0,1],
     [1,0,0,0,1],
-    [1,0,1,0,1],
+    [1,0,0,0,1],
     [1,0,1,0,1],
     [1,1,0,1,1],
     [1,0,0,0,1],
@@ -238,15 +238,6 @@ const FONT: Record<string, number[][]> = {
     [1,1,1,1,1],
     [0,0,0,0,0],
   ],
-  ".": [
-    [0,0,0,0,0],
-    [0,0,0,0,0],
-    [0,0,0,0,0],
-    [0,0,0,0,0],
-    [0,0,0,0,0],
-    [0,1,0,0,0],
-    [0,0,0,0,0],
-  ],
   " ": [
     [0,0,0,0,0],
     [0,0,0,0,0],
@@ -256,46 +247,175 @@ const FONT: Record<string, number[][]> = {
     [0,0,0,0,0],
     [0,0,0,0,0],
   ],
+  ".": [
+    [0,0,0,0,0],
+    [0,0,0,0,0],
+    [0,0,0,0,0],
+    [0,0,0,0,0],
+    [0,0,0,0,0],
+    [0,1,1,0,0],
+    [0,1,1,0,0],
+  ],
+  "'": [
+    [0,0,1,0,0],
+    [0,0,1,0,0],
+    [0,1,0,0,0],
+    [0,0,0,0,0],
+    [0,0,0,0,0],
+    [0,0,0,0,0],
+    [0,0,0,0,0],
+  ],
+  "&": [
+    [0,1,1,0,0],
+    [1,0,0,1,0],
+    [0,1,1,0,0],
+    [1,0,0,1,0],
+    [1,0,0,1,0],
+    [0,1,1,0,1],
+    [0,0,0,0,0],
+  ],
+  "-": [
+    [0,0,0,0,0],
+    [0,0,0,0,0],
+    [0,0,0,0,0],
+    [1,1,1,1,1],
+    [0,0,0,0,0],
+    [0,0,0,0,0],
+    [0,0,0,0,0],
+  ],
+  "1": [
+    [0,0,1,0,0],
+    [0,1,1,0,0],
+    [0,0,1,0,0],
+    [0,0,1,0,0],
+    [0,0,1,0,0],
+    [0,1,1,1,0],
+    [0,0,0,0,0],
+  ],
+  "2": [
+    [0,1,1,1,0],
+    [1,0,0,0,1],
+    [0,0,0,1,0],
+    [0,0,1,0,0],
+    [0,1,0,0,0],
+    [1,1,1,1,1],
+    [0,0,0,0,0],
+  ],
+  "3": [
+    [1,1,1,1,0],
+    [0,0,0,0,1],
+    [0,1,1,1,0],
+    [0,0,0,0,1],
+    [0,0,0,0,1],
+    [1,1,1,1,0],
+    [0,0,0,0,0],
+  ],
+  "4": [
+    [1,0,0,1,0],
+    [1,0,0,1,0],
+    [1,1,1,1,1],
+    [0,0,0,1,0],
+    [0,0,0,1,0],
+    [0,0,0,1,0],
+    [0,0,0,0,0],
+  ],
+  "5": [
+    [1,1,1,1,1],
+    [1,0,0,0,0],
+    [1,1,1,1,0],
+    [0,0,0,0,1],
+    [0,0,0,0,1],
+    [1,1,1,1,0],
+    [0,0,0,0,0],
+  ],
+  "6": [
+    [0,1,1,1,0],
+    [1,0,0,0,0],
+    [1,1,1,1,0],
+    [1,0,0,0,1],
+    [1,0,0,0,1],
+    [0,1,1,1,0],
+    [0,0,0,0,0],
+  ],
+  "7": [
+    [1,1,1,1,1],
+    [0,0,0,0,1],
+    [0,0,0,1,0],
+    [0,0,1,0,0],
+    [0,1,0,0,0],
+    [0,1,0,0,0],
+    [0,0,0,0,0],
+  ],
+  "8": [
+    [0,1,1,1,0],
+    [1,0,0,0,1],
+    [0,1,1,1,0],
+    [1,0,0,0,1],
+    [1,0,0,0,1],
+    [0,1,1,1,0],
+    [0,0,0,0,0],
+  ],
+  "9": [
+    [0,1,1,1,0],
+    [1,0,0,0,1],
+    [1,0,0,0,1],
+    [0,1,1,1,1],
+    [0,0,0,0,1],
+    [0,1,1,1,0],
+    [0,0,0,0,0],
+  ],
+  "0": [
+    [0,1,1,1,0],
+    [1,0,0,1,1],
+    [1,0,1,0,1],
+    [1,1,0,0,1],
+    [1,0,0,0,1],
+    [0,1,1,1,0],
+    [0,0,0,0,0],
+  ],
 };
 
 interface Dot {
-  x: number;      // current x
-  y: number;      // current y
-  ox: number;     // origin x
-  oy: number;     // origin y
+  x: number;
+  y: number;
+  ox: number;
+  oy: number;
   vx: number;
   vy: number;
   color: string;
+  size: number;
 }
 
-interface PixelTextProps {
-  text?: string;
+export interface PixelTextProps {
+  text: string;
   dotSize?: number;
   gap?: number;
   color?: string;
   explodeRadius?: number;
   explodeForce?: number;
   returnStiffness?: number;
+  className?: string;
 }
 
 export default function PixelText({
   text = "BEYONDBURG INC.",
-  dotSize = 6,
-  gap = 4,
+  dotSize = 5,
+  gap = 2,
   color = "#000000",
-  explodeRadius = 80,
-  explodeForce = 18,
-  returnStiffness = 0.12,
+  explodeRadius = 120,
+  explodeForce = 32,
+  returnStiffness = 0.08,
+  className = "",
 }: PixelTextProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const animFrameRef = useRef<number | null>(null);
   const dotsRef = useRef<Dot[]>([]);
   const mouseRef = useRef<{ x: number; y: number }>({ x: -9999, y: -9999 });
-  const rafRef = useRef<number>(0);
-  const containerRef = useRef<HTMLDivElement>(null);
 
   const step = dotSize + gap;
 
-  // Build the dot grid from the text
+  // Build the pixel grid points with 3 pairs of lines of dots for maximum thickness
   const { dots: initialDots, totalWidth, totalHeight } = useMemo(() => {
     const chars = text.toUpperCase().split("");
     const rows = 7;
@@ -303,22 +423,42 @@ export default function PixelText({
     const charSpacing = 2;
 
     let cursorX = 0;
-    const allDots: { col: number; row: number }[] = [];
+    const allDots: { col: number; row: number; subOffset: { dx: number; dy: number } }[] = [];
+
+    // 3 pairs of lines (dense sub-grid offsets) for each active stroke pixel
+    const subOffsets = [
+      { dx: -0.32, dy: -0.32 },
+      { dx:  0.00, dy: -0.32 },
+      { dx:  0.32, dy: -0.32 },
+      { dx: -0.32, dy:  0.00 },
+      { dx:  0.00, dy:  0.00 },
+      { dx:  0.32, dy:  0.00 },
+      { dx: -0.32, dy:  0.32 },
+      { dx:  0.00, dy:  0.32 },
+      { dx:  0.32, dy:  0.32 },
+    ];
 
     for (const ch of chars) {
       const bitmap = FONT[ch] || FONT[" "];
       for (let row = 0; row < rows; row++) {
         for (let col = 0; col < charWidth; col++) {
           if (bitmap[row]?.[col]) {
-            allDots.push({ col: cursorX + col, row });
+            // Write each pixel with 3 lines of dots for thick, bold, tactile typography
+            for (const sub of subOffsets) {
+              allDots.push({
+                col: cursorX + col,
+                row,
+                subOffset: sub,
+              });
+            }
           }
         }
       }
       cursorX += charWidth + charSpacing;
     }
 
-    const totalWidth  = cursorX * step;
-    const totalHeight = rows * step;
+    const totalWidth  = (cursorX + 1) * step;
+    const totalHeight = (rows + 1) * step;
 
     return { dots: allDots, totalWidth, totalHeight };
   }, [text, step]);
@@ -338,16 +478,21 @@ export default function PixelText({
     if (!ctx) return;
     ctx.scale(dpr, dpr);
 
-    // Create dot objects with origin positions
-    dotsRef.current = initialDots.map((d) => ({
-      x:  d.col * step + dotSize / 2,
-      y:  d.row * step + dotSize / 2,
-      ox: d.col * step + dotSize / 2,
-      oy: d.row * step + dotSize / 2,
-      vx: 0,
-      vy: 0,
-      color,
-    }));
+    // Create dot objects with 3-line thick origins
+    dotsRef.current = initialDots.map((d) => {
+      const originX = (d.col + d.subOffset.dx) * step + dotSize / 2 + step / 2;
+      const originY = (d.row + d.subOffset.dy) * step + dotSize / 2 + step / 2;
+      return {
+        x:  originX,
+        y:  originY,
+        ox: originX,
+        oy: originY,
+        vx: 0,
+        vy: 0,
+        color,
+        size: dotSize * 0.48, // Balanced radius for smooth dense clusters
+      };
+    });
 
     // Mouse tracking relative to the canvas
     const handleMouseMove = (e: MouseEvent) => {
@@ -379,46 +524,56 @@ export default function PixelText({
 
     const render = () => {
       ctx.clearRect(0, 0, totalWidth, totalHeight);
+
       const mx = mouseRef.current.x;
       const my = mouseRef.current.y;
+      const dots = dotsRef.current;
+      const len = dots.length;
 
-      for (const dot of dotsRef.current) {
-        // Cursor repulsion
+      for (let i = 0; i < len; i++) {
+        const dot = dots[i];
+
+        // Vector from cursor to dot
         const dx = dot.x - mx;
         const dy = dot.y - my;
         const dist = Math.sqrt(dx * dx + dy * dy);
 
-        if (dist < explodeRadius) {
+        if (dist < explodeRadius && dist > 0) {
+          // Repel force inversely proportional to distance
           const force = (1 - dist / explodeRadius) * explodeForce;
-          dot.vx += (dx / dist) * force;
-          dot.vy += (dy / dist) * force;
+          const angle = Math.atan2(dy, dx);
+          dot.vx += Math.cos(angle) * force * 0.6;
+          dot.vy += Math.sin(angle) * force * 0.6;
         }
 
-        // Return spring toward origin
-        dot.vx += (dot.ox - dot.x) * returnStiffness;
-        dot.vy += (dot.oy - dot.y) * returnStiffness;
+        // Spring force returning dot to origin (ox, oy)
+        const springX = (dot.ox - dot.x) * returnStiffness;
+        const springY = (dot.oy - dot.y) * returnStiffness;
 
-        // Damping
-        dot.vx *= 0.75;
-        dot.vy *= 0.75;
+        dot.vx += springX;
+        dot.vy += springY;
+
+        // Damping / friction to stabilize
+        dot.vx *= 0.82;
+        dot.vy *= 0.82;
 
         dot.x += dot.vx;
         dot.y += dot.vy;
 
         // Draw dot
-        ctx.beginPath();
-        ctx.arc(dot.x, dot.y, dotSize / 2, 0, Math.PI * 2);
         ctx.fillStyle = dot.color;
+        ctx.beginPath();
+        ctx.arc(dot.x, dot.y, dot.size, 0, Math.PI * 2);
         ctx.fill();
       }
 
-      rafRef.current = requestAnimationFrame(render);
+      animFrameRef.current = requestAnimationFrame(render);
     };
 
     render();
 
     return () => {
-      cancelAnimationFrame(rafRef.current);
+      if (animFrameRef.current) cancelAnimationFrame(animFrameRef.current);
       container.removeEventListener("mousemove", handleMouseMove);
       container.removeEventListener("mouseleave", handleMouseLeave);
       container.removeEventListener("touchmove", handleTouchMove);
@@ -429,10 +584,20 @@ export default function PixelText({
   return (
     <div
       ref={containerRef}
-      className="cursor-none overflow-visible"
-      style={{ width: totalWidth, height: totalHeight }}
+      className={`inline-block select-none ${className}`}
+      style={{
+        width: `${totalWidth}px`,
+        height: `${totalHeight}px`,
+        cursor: "none",
+      }}
     >
-      <canvas ref={canvasRef} className="block" />
+      <canvas
+        ref={canvasRef}
+        style={{
+          display: "block",
+          imageRendering: "pixelated",
+        }}
+      />
     </div>
   );
 }
