@@ -14,10 +14,10 @@ const CATEGORIES = [
 
 const TAG_COLORS: Record<string, string> = {
   signature: "bg-ember text-bone",
-  popular:   "bg-[#D97706] text-char font-bold",
+  popular:   "bg-[#E52421] text-char font-bold",
   spicy:     "bg-ember text-bone",
   classic:   "bg-bone-dark text-char",
-  heritage:  "bg-char text-[#D97706]",
+  heritage:  "bg-char text-[#E52421]",
 };
 
 export default function InteractiveMenu() {

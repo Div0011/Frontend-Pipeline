@@ -84,7 +84,7 @@ export default function SignatureMenu() {
                     : "text-stone-300 hover:text-white"
                 }`}
                 style={{
-                  backgroundColor: selectedCategory === cat ? "#F5A623" : "transparent",
+                  backgroundColor: selectedCategory === cat ? "#FFE500" : "transparent",
                 }}
               >
                 {cat}
@@ -119,7 +119,7 @@ export default function SignatureMenu() {
                 {item.badge && (
                   <span
                     className="absolute top-3 left-3 text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full shadow-md"
-                    style={{ backgroundColor: "#F5A623", color: "#000000" }}
+                    style={{ backgroundColor: "#FFE500", color: "#000000" }}
                   >
                     {item.badge}
                   </span>
@@ -128,7 +128,7 @@ export default function SignatureMenu() {
 
               {/* Clean Card Header: Title + Price Pill + Add */}
               <div className="flex items-center justify-between gap-3 pt-1">
-                <h3 className="type-display text-xl sm:text-2xl text-white font-bold leading-tight group-hover:text-[#F5A623] transition-colors">
+                <h3 className="type-display text-xl sm:text-2xl text-white font-bold leading-tight group-hover:text-[#FFE500] transition-colors">
                   {item.name}
                 </h3>
 
@@ -144,7 +144,7 @@ export default function SignatureMenu() {
                       alert(`Added ${item.name} to your order!`);
                     }}
                     className="px-3 py-1 rounded-full font-bold text-xs uppercase tracking-wider transition-all shadow hover:scale-105 active:scale-95"
-                    style={{ backgroundColor: "#F5A623", color: "#000000" }}
+                    style={{ backgroundColor: "#FFE500", color: "#000000" }}
                   >
                     ADD +
                   </button>
@@ -183,7 +183,7 @@ export default function SignatureMenu() {
               </div>
 
               <div className="space-y-3">
-                <span className="text-xs uppercase font-bold tracking-widest block" style={{ color: "#F5A623" }}>
+                <span className="text-xs uppercase font-bold tracking-widest block" style={{ color: "#FFE500" }}>
                   {activeItemModal.category}
                 </span>
                 <h3 className="type-display text-3xl font-black text-white">
@@ -204,7 +204,7 @@ export default function SignatureMenu() {
                     setActiveItemModal(null);
                   }}
                   className="px-6 py-3 rounded-full font-bold text-xs uppercase tracking-wider transition-all shadow-xl hover:brightness-110 active:scale-95"
-                  style={{ backgroundColor: "#F5A623", color: "#000000" }}
+                  style={{ backgroundColor: "#FFE500", color: "#000000" }}
                 >
                   Add to Table Order →
                 </button>

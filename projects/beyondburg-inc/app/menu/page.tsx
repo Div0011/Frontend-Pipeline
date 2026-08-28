@@ -117,7 +117,7 @@ export default function MenuPage() {
         {/* Page Hero */}
         <section className="py-16 sm:py-20 border-b border-white/10">
           <div className="mx-auto max-w-7xl px-6 lg:px-8 space-y-6">
-            <span className="text-xs uppercase font-bold tracking-widest block text-[#F5C418]">
+            <span className="text-xs uppercase font-bold tracking-widest block text-[#1B4D36]">
               CULINARY CATALOGUE
             </span>
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
@@ -143,7 +143,7 @@ export default function MenuPage() {
                 <button
                   type="button"
                   onClick={() => setCartOpen(true)}
-                  className="px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider bg-[#F5C418] text-black hover:brightness-110 active:scale-95 transition-all shadow-xl"
+                  className="px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider bg-[#1B4D36] text-black hover:brightness-110 active:scale-95 transition-all shadow-xl"
                 >
                   Bag ({cartItems.reduce((a, b) => a + b.quantity, 0)})
                 </button>
@@ -161,7 +161,7 @@ export default function MenuPage() {
                     onClick={() => setSelectedCategory(cat.id)}
                     className={`px-4 py-2 rounded-full text-xs uppercase tracking-wider font-bold transition-all whitespace-nowrap border ${
                       selectedCategory === cat.id
-                        ? "bg-[#F5C418] text-black border-[#F5C418] shadow-md"
+                        ? "bg-[#1B4D36] text-black border-[#1B4D36] shadow-md"
                         : "bg-white/5 text-stone-300 border-white/10 hover:border-white/25"
                     }`}
                   >
@@ -236,7 +236,7 @@ export default function MenuPage() {
                           <h3 className="type-display text-2xl text-white font-bold leading-tight">
                             {item.name}
                           </h3>
-                          <span className="text-sm font-extrabold px-3 py-1 rounded-full border border-[#F5C418]/40 text-[#F5C418] bg-[#F5C418]/10 whitespace-nowrap">
+                          <span className="text-sm font-extrabold px-3 py-1 rounded-full border border-[#1B4D36]/40 text-[#1B4D36] bg-[#1B4D36]/10 whitespace-nowrap">
                             ₹{item.price}
                           </span>
                         </div>
@@ -258,7 +258,7 @@ export default function MenuPage() {
                         <button
                           type="button"
                           onClick={() => handleAddToCart(item)}
-                          className="px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider bg-[#F5C418] text-black hover:brightness-110 active:scale-95 transition-all shadow-md flex items-center gap-1 ml-auto"
+                          className="px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider bg-[#1B4D36] text-black hover:brightness-110 active:scale-95 transition-all shadow-md flex items-center gap-1 ml-auto"
                         >
                           <span>Add</span>
                           <span>+</span>
@@ -279,7 +279,7 @@ export default function MenuPage() {
         items={cartItems}
         onUpdateQuantity={handleUpdateQuantity}
         currency="₹"
-        primaryColor="#F5C418"
+        primaryColor="#1B4D36"
         textOnPrimary="#000000"
       />
       <Footer />

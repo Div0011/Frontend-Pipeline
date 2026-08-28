@@ -1,11 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
-  <circle cx="50" cy="50" r="46" stroke="#C8A96E" stroke-width="3" fill="#0A0A0A" />
-  <circle cx="50" cy="50" r="41" stroke="#C8A96E" stroke-width="1" stroke-dasharray="2 2" fill="none" opacity="0.6" />
-  <!-- French Crown -->
-  <path d="M30 38 L38 48 L50 32 L62 48 L70 38 L67 58 L33 58 Z" fill="#C8A96E" />
-  <circle cx="30" cy="36" r="2.5" fill="#C8A96E" />
-  <circle cx="50" cy="30" r="3" fill="#C8A96E" />
-  <circle cx="70" cy="36" r="2.5" fill="#C8A96E" />
-  <!-- Monogram BS -->
-  <text x="50" y="76" fill="#C8A96E" font-family="'Space Grotesk', 'Impact', sans-serif" font-size="20" font-weight="900" text-anchor="middle" letter-spacing="1">BS</text>
+  <circle cx="50" cy="50" r="46" stroke="#418043" stroke-width="3" fill="#0A0A0A" />
+  <circle cx="50" cy="50" r="41" stroke="#418043" stroke-width="1" stroke-dasharray="2 2" fill="none" opacity="0.6" />
+  <!-- French Crown in Forest Green -->
+  <path d="M30 38 L38 48 L50 32 L62 48 L70 38 L67 58 L33 58 Z" fill="#418043" />
+  <circle cx="30" cy="36" r="2.5" fill="#418043" />
+  <circle cx="50" cy="30" r="3" fill="#418043" />
+  <circle cx="70" cy="36" r="2.5" fill="#418043" />
+  <!-- Monogram BS in White -->
+  <text x="50" y="76" fill="#FFFFFF" font-family="'Space Grotesk', 'Impact', sans-serif" font-size="20" font-weight="900" text-anchor="middle" letter-spacing="1">BS</text>
 </svg>

@@ -28,7 +28,7 @@ export default function OptionWheel({
   items,
   defaultSelected = 0,
   textColor = "#a6a6a6",
-  activeColor = "#F5C418",
+  activeColor = "#1B4D36",
   side = "left",
   fontSize = 2.8,
   spacing = 1.4,

@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef, useState, useMemo } from "react";
 
-// 5×7 pixel font bitmap for uppercase letters and symbols
+// 5×7 pixel font bitmap for uppercase letters, numbers and symbols
 const FONT: Record<string, number[][]> = {
   A: [
     [0,1,1,1,0],
@@ -61,8 +61,8 @@ const FONT: Record<string, number[][]> = {
   G: [
     [0,1,1,1,1],
     [1,0,0,0,0],
+    [1,0,0,0,0],
     [1,0,1,1,1],
-    [1,0,0,0,1],
     [1,0,0,0,1],
     [0,1,1,1,0],
     [0,0,0,0,0],
@@ -86,7 +86,7 @@ const FONT: Record<string, number[][]> = {
     [0,0,0,0,0],
   ],
   J: [
-    [0,1,1,1,1],
+    [0,0,1,1,1],
     [0,0,0,1,0],
     [0,0,0,1,0],
     [0,0,0,1,0],
@@ -95,12 +95,12 @@ const FONT: Record<string, number[][]> = {
     [0,0,0,0,0],
   ],
   K: [
+    [1,0,0,0,1],
     [1,0,0,1,0],
-    [1,0,1,0,0],
-    [1,1,0,0,0],
-    [1,1,0,0,0],
-    [1,0,1,0,0],
+    [1,1,1,0,0],
     [1,0,0,1,0],
+    [1,0,0,0,1],
+    [1,0,0,0,1],
     [0,0,0,0,0],
   ],
   L: [
@@ -153,16 +153,16 @@ const FONT: Record<string, number[][]> = {
     [1,0,0,0,1],
     [1,0,0,0,1],
     [1,0,1,0,1],
-    [1,0,0,1,1],
-    [0,1,1,1,1],
+    [1,0,0,1,0],
+    [0,1,1,0,1],
     [0,0,0,0,0],
   ],
   R: [
     [1,1,1,1,0],
     [1,0,0,0,1],
     [1,1,1,1,0],
-    [1,0,1,0,0],
     [1,0,0,1,0],
+    [1,0,0,0,1],
     [1,0,0,0,1],
     [0,0,0,0,0],
   ],
@@ -215,8 +215,8 @@ const FONT: Record<string, number[][]> = {
     [1,0,0,0,1],
     [0,1,0,1,0],
     [0,0,1,0,0],
-    [0,0,1,0,0],
     [0,1,0,1,0],
+    [1,0,0,0,1],
     [1,0,0,0,1],
     [0,0,0,0,0],
   ],
@@ -254,12 +254,21 @@ const FONT: Record<string, number[][]> = {
     [0,0,0,0,0],
     [0,0,0,0,0],
     [0,1,1,0,0],
-    [0,1,1,0,0],
+    [0,0,0,0,0],
   ],
   "'": [
-    [0,0,1,0,0],
+    [0,1,1,0,0],
     [0,0,1,0,0],
     [0,1,0,0,0],
+    [0,0,0,0,0],
+    [0,0,0,0,0],
+    [0,0,0,0,0],
+    [0,0,0,0,0],
+  ],
+  "-": [
+    [0,0,0,0,0],
+    [0,0,0,0,0],
+    [1,1,1,1,1],
     [0,0,0,0,0],
     [0,0,0,0,0],
     [0,0,0,0,0],
@@ -270,109 +279,10 @@ const FONT: Record<string, number[][]> = {
     [1,0,0,1,0],
     [0,1,1,0,0],
     [1,0,0,1,0],
-    [1,0,0,1,0],
-    [0,1,1,0,1],
-    [0,0,0,0,0],
-  ],
-  "-": [
-    [0,0,0,0,0],
-    [0,0,0,0,0],
-    [0,0,0,0,0],
-    [1,1,1,1,1],
-    [0,0,0,0,0],
-    [0,0,0,0,0],
-    [0,0,0,0,0],
-  ],
-  "1": [
-    [0,0,1,0,0],
-    [0,1,1,0,0],
-    [0,0,1,0,0],
-    [0,0,1,0,0],
-    [0,0,1,0,0],
-    [0,1,1,1,0],
-    [0,0,0,0,0],
-  ],
-  "2": [
-    [0,1,1,1,0],
-    [1,0,0,0,1],
-    [0,0,0,1,0],
-    [0,0,1,0,0],
-    [0,1,0,0,0],
-    [1,1,1,1,1],
-    [0,0,0,0,0],
-  ],
-  "3": [
-    [1,1,1,1,0],
-    [0,0,0,0,1],
-    [0,1,1,1,0],
-    [0,0,0,0,1],
-    [0,0,0,0,1],
-    [1,1,1,1,0],
-    [0,0,0,0,0],
-  ],
-  "4": [
-    [1,0,0,1,0],
-    [1,0,0,1,0],
-    [1,1,1,1,1],
-    [0,0,0,1,0],
-    [0,0,0,1,0],
-    [0,0,0,1,0],
-    [0,0,0,0,0],
-  ],
-  "5": [
-    [1,1,1,1,1],
-    [1,0,0,0,0],
-    [1,1,1,1,0],
-    [0,0,0,0,1],
-    [0,0,0,0,1],
-    [1,1,1,1,0],
-    [0,0,0,0,0],
-  ],
-  "6": [
-    [0,1,1,1,0],
-    [1,0,0,0,0],
-    [1,1,1,1,0],
-    [1,0,0,0,1],
     [1,0,0,0,1],
     [0,1,1,1,0],
     [0,0,0,0,0],
-  ],
-  "7": [
-    [1,1,1,1,1],
-    [0,0,0,0,1],
-    [0,0,0,1,0],
-    [0,0,1,0,0],
-    [0,1,0,0,0],
-    [0,1,0,0,0],
-    [0,0,0,0,0],
-  ],
-  "8": [
-    [0,1,1,1,0],
-    [1,0,0,0,1],
-    [0,1,1,1,0],
-    [1,0,0,0,1],
-    [1,0,0,0,1],
-    [0,1,1,1,0],
-    [0,0,0,0,0],
-  ],
-  "9": [
-    [0,1,1,1,0],
-    [1,0,0,0,1],
-    [1,0,0,0,1],
-    [0,1,1,1,1],
-    [0,0,0,0,1],
-    [0,1,1,1,0],
-    [0,0,0,0,0],
-  ],
-  "0": [
-    [0,1,1,1,0],
-    [1,0,0,1,1],
-    [1,0,1,0,1],
-    [1,1,0,0,1],
-    [1,0,0,0,1],
-    [0,1,1,1,0],
-    [0,0,0,0,0],
-  ],
+  ]
 };
 
 interface Dot {
@@ -386,8 +296,8 @@ interface Dot {
   size: number;
 }
 
-export interface PixelTextProps {
-  text: string;
+interface PixelTextProps {
+  text?: string;
   dotSize?: number;
   gap?: number;
   color?: string;
@@ -398,36 +308,45 @@ export interface PixelTextProps {
 }
 
 export default function PixelText({
-  text = "BEYONDBURG INC.",
-  dotSize = 7,
+  text = "BRAND",
+  dotSize = 10,
   gap = 3,
-  color = "#000000",
-  explodeRadius = 110,
+  color = "#FFFFFF",
+  explodeRadius = 120,
   explodeForce = 28,
   returnStiffness = 0.09,
   className = "",
 }: PixelTextProps) {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-  const animFrameRef = useRef<number | null>(null);
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const dotsRef = useRef<Dot[]>([]);
   const mouseRef = useRef<{ x: number; y: number }>({ x: -9999, y: -9999 });
-
-  const [containerWidth, setContainerWidth] = useState<number>(1200);
+  const animFrameRef = useRef<number | null>(null);
+  const [containerWidth, setContainerWidth] = useState(1200);
 
   const step = dotSize + gap;
 
-  // Build the pixel grid points with 3 pairs of lines of dots for maximum thickness
+  // Compute multi-line dot grid with centered horizontal rows
   const { dots: initialDots, naturalWidth, naturalHeight } = useMemo(() => {
-    const chars = text.toUpperCase().split("");
-    const rows = 7;
+    const lines = text.split("\n");
     const charWidth = 5;
-    const charSpacing = 2;
+    const rows = 7;
+    const charSpacing = 1;
+    const lineSpacing = 3;
 
-    let cursorX = 0;
+    let maxLineCols = 0;
+    lines.forEach((line) => {
+      const chars = line.toUpperCase().split("");
+      let lineCols = 0;
+      chars.forEach(() => {
+        lineCols += charWidth + charSpacing;
+      });
+      if (lineCols > maxLineCols) maxLineCols = lineCols;
+    });
+
     const allDots: { col: number; row: number; subOffset: { dx: number; dy: number } }[] = [];
 
-    // 3 pairs of lines (dense sub-grid offsets) for each active stroke pixel
+    // Dense 3-line thick cluster
     const subOffsets = [
       { dx: -0.32, dy: -0.32 },
       { dx:  0.00, dy: -0.32 },
@@ -440,31 +359,41 @@ export default function PixelText({
       { dx:  0.32, dy:  0.32 },
     ];
 
-    for (const ch of chars) {
-      const bitmap = FONT[ch] || FONT[" "];
-      for (let row = 0; row < rows; row++) {
-        for (let col = 0; col < charWidth; col++) {
-          if (bitmap[row]?.[col]) {
-            for (const sub of subOffsets) {
-              allDots.push({
-                col: cursorX + col,
-                row,
-                subOffset: sub,
-              });
+    const totalGridRows = lines.length * rows + (lines.length - 1) * lineSpacing;
+
+    lines.forEach((line, lineIndex) => {
+      const chars = line.toUpperCase().split("");
+      const lineWidth = chars.length * (charWidth + charSpacing);
+      const startX = Math.floor((maxLineCols - lineWidth) / 2);
+      let cursorX = startX;
+      const startRow = lineIndex * (rows + lineSpacing);
+
+      for (const ch of chars) {
+        const bitmap = FONT[ch] || FONT[" "];
+        for (let r = 0; r < rows; r++) {
+          for (let c = 0; c < charWidth; c++) {
+            if (bitmap[r]?.[c]) {
+              for (const sub of subOffsets) {
+                allDots.push({
+                  col: cursorX + c,
+                  row: startRow + r,
+                  subOffset: sub,
+                });
+              }
             }
           }
         }
+        cursorX += charWidth + charSpacing;
       }
-      cursorX += charWidth + charSpacing;
-    }
+    });
 
-    const naturalWidth  = (cursorX + 1) * step;
-    const naturalHeight = (rows + 1) * step;
+    const natW = (maxLineCols + 1) * step;
+    const natH = (totalGridRows + 1) * step;
 
-    return { dots: allDots, naturalWidth, naturalHeight };
+    return { dots: allDots, naturalWidth: natW, naturalHeight: natH };
   }, [text, step]);
 
-  // Responsive container width tracking to guarantee the brand name fits 100% within screen
+  // Responsive tracking to auto-scale canvas to fit 100% inside container
   useEffect(() => {
     const updateSize = () => {
       if (containerRef.current) {
@@ -484,7 +413,6 @@ export default function PixelText({
     };
   }, []);
 
-  // Compute auto-scale factor so long names (e.g. BURGER SEIGNEUR, GOOD FLIPPIN' BURGERS) fit screen width
   const maxAvailableWidth = Math.max(260, containerWidth - 32);
   const autoScale = Math.min(1, maxAvailableWidth / naturalWidth);
 
@@ -506,7 +434,6 @@ export default function PixelText({
     if (!ctx) return;
     ctx.scale(dpr * autoScale, dpr * autoScale);
 
-    // Create dot objects with 3-line thick origins
     dotsRef.current = initialDots.map((d) => {
       const originX = (d.col + d.subOffset.dx) * step + dotSize / 2 + step / 2;
       const originY = (d.row + d.subOffset.dy) * step + dotSize / 2 + step / 2;
@@ -522,7 +449,6 @@ export default function PixelText({
       };
     });
 
-    // Mouse tracking relative to the unscaled canvas coordinate space
     const handleMouseMove = (e: MouseEvent) => {
       const rect = canvas.getBoundingClientRect();
       mouseRef.current = {
@@ -537,7 +463,6 @@ export default function PixelText({
     container.addEventListener("mousemove", handleMouseMove);
     container.addEventListener("mouseleave", handleMouseLeave);
 
-    // Touch support for mobile
     const handleTouchMove = (e: TouchEvent) => {
       const touch = e.touches[0];
       if (!touch) return;
@@ -608,9 +533,7 @@ export default function PixelText({
     <div
       ref={containerRef}
       className={`w-full flex items-center justify-center select-none overflow-hidden ${className}`}
-      style={{
-        cursor: "none",
-      }}
+      style={{ cursor: "none" }}
     >
       <canvas
         ref={canvasRef}

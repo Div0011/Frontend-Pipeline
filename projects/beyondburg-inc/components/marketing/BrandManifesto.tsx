@@ -82,7 +82,7 @@ export default function BrandManifesto() {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-4 border-b border-white/10">
           <div>
             <h2 className="type-display text-4xl sm:text-6xl md:text-7xl text-white font-black leading-tight tracking-tight">
-              <ShinyText text="THE 450°F STEEL SMASH STANDARD." speed={3} shimmerColor="#F5C418" className="font-black" />
+              <ShinyText text="THE 450°F STEEL SMASH STANDARD." speed={3} shimmerColor="#1B4D36" className="font-black" />
             </h2>
           </div>
 
@@ -92,7 +92,7 @@ export default function BrandManifesto() {
               onClick={() => setViewMode("spec")}
               className="px-5 py-2 rounded-full font-sans text-xs font-bold uppercase tracking-wider transition-all shadow-md"
               style={{
-                backgroundColor: viewMode === "spec" ? "#F5C418" : "transparent",
+                backgroundColor: viewMode === "spec" ? "#1B4D36" : "transparent",
                 color: viewMode === "spec" ? "#000000" : "#FAF8F2",
               }}
             >
@@ -103,7 +103,7 @@ export default function BrandManifesto() {
               onClick={() => setViewMode("compare")}
               className="px-5 py-2 rounded-full font-sans text-xs font-bold uppercase tracking-wider transition-all shadow-md"
               style={{
-                backgroundColor: viewMode === "compare" ? "#F5C418" : "transparent",
+                backgroundColor: viewMode === "compare" ? "#1B4D36" : "transparent",
                 color: viewMode === "compare" ? "#000000" : "#FAF8F2",
               }}
             >
@@ -129,21 +129,21 @@ export default function BrandManifesto() {
                     className="p-5 rounded-2xl cursor-pointer transition-all backdrop-blur-xl border flex items-center justify-between shadow-xl"
                     style={{
                       backgroundColor: isSelected ? "rgba(255,255,255,0.08)" : "rgba(255,255,255,0.03)",
-                      borderColor: isSelected ? "#F5C418" : "rgba(255,255,255,0.1)",
+                      borderColor: isSelected ? "#1B4D36" : "rgba(255,255,255,0.1)",
                     }}
                   >
                     <span
                       className="font-sans text-xs font-extrabold tracking-wider"
-                      style={{ color: isSelected ? "#F5C418" : "#FAF8F2" }}
+                      style={{ color: isSelected ? "#1B4D36" : "#FAF8F2" }}
                     >
                       {p.number}. {p.title}
                     </span>
                     <span
                       className="text-[10px] font-sans px-2.5 py-0.5 rounded-full border font-semibold"
                       style={{
-                        backgroundColor: isSelected ? "#F5C41820" : "rgba(255,255,255,0.05)",
-                        color: isSelected ? "#F5C418" : "#A8A29E",
-                        borderColor: isSelected ? "#F5C41840" : "rgba(255,255,255,0.1)",
+                        backgroundColor: isSelected ? "#1B4D3620" : "rgba(255,255,255,0.05)",
+                        color: isSelected ? "#1B4D36" : "#A8A29E",
+                        borderColor: isSelected ? "#1B4D3640" : "rgba(255,255,255,0.1)",
                       }}
                     >
                       {p.badge}
@@ -183,7 +183,7 @@ export default function BrandManifesto() {
                         type="button"
                         onClick={() => setActiveHotspot(hIdx)}
                         className="flex items-center justify-center w-8 h-8 rounded-full bg-black/80 border text-xs font-sans font-bold hover:scale-110 transition-transform shadow-2xl"
-                        style={{ borderColor: "#F5C418", color: "#F5C418" }}
+                        style={{ borderColor: "#1B4D36", color: "#1B4D36" }}
                       >
                         {hIdx + 1}
                       </button>
@@ -193,7 +193,7 @@ export default function BrandManifesto() {
                   {activeHotspot !== null && current.hotspots[activeHotspot] && (
                     <div
                       className="absolute bottom-4 left-4 right-4 p-3 rounded-xl bg-black/90 backdrop-blur-md border font-sans text-xs font-bold uppercase tracking-wider shadow-xl"
-                      style={{ borderColor: "#F5C41840", color: "#F5C418" }}
+                      style={{ borderColor: "#1B4D3640", color: "#1B4D36" }}
                     >
                       Layer {activeHotspot + 1}: {current.hotspots[activeHotspot].label}
                     </div>
@@ -211,12 +211,12 @@ export default function BrandManifesto() {
                       <div key={sIdx} className="space-y-1">
                         <div className="flex justify-between text-xs font-semibold">
                           <span className="text-stone-400">{st.label}</span>
-                          <span className="font-bold" style={{ color: "#F5C418" }}>{st.value}</span>
+                          <span className="font-bold" style={{ color: "#1B4D36" }}>{st.value}</span>
                         </div>
                         <div className="w-full h-1.5 rounded-full bg-white/10 overflow-hidden">
                           <div
                             className="h-full rounded-full transition-all duration-500"
-                            style={{ width: `${st.progress}%`, backgroundColor: "#F5C418" }}
+                            style={{ width: `${st.progress}%`, backgroundColor: "#1B4D36" }}
                           />
                         </div>
                       </div>
@@ -230,7 +230,7 @@ export default function BrandManifesto() {
                       setTimeout(() => setIsSizzling(false), 1500);
                     }}
                     className="w-full py-4 rounded-xl font-sans text-xs font-bold uppercase tracking-wider transition-all shadow-xl active:scale-95 hover:brightness-110 hover:scale-[1.02]"
-                    style={{ backgroundColor: "#F5C418", color: "#000000" }}
+                    style={{ backgroundColor: "#1B4D36", color: "#000000" }}
                   >
                     {isSizzling ? "SEARING 450°F..." : "TEST FLAT-TOP SEAR"}
                   </button>
@@ -256,9 +256,9 @@ export default function BrandManifesto() {
 
             <div
               className="p-8 rounded-3xl bg-white/[0.04] border backdrop-blur-2xl space-y-4 shadow-xl"
-              style={{ borderColor: "#F5C41840" }}
+              style={{ borderColor: "#1B4D3640" }}
             >
-              <span className="font-sans text-xs font-bold uppercase tracking-wider block" style={{ color: "#F5C418" }}>
+              <span className="font-sans text-xs font-bold uppercase tracking-wider block" style={{ color: "#1B4D36" }}>
                 OUR CRAFT SPEC
               </span>
               <ul className="space-y-2.5 text-xs text-stone-200 font-medium">

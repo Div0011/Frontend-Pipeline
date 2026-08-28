@@ -13,7 +13,7 @@ export default function Footer() {
 
   return (
     <footer
-      style={{ backgroundColor: "#D97706", color: "#000000" }}
+      style={{ backgroundColor: "#E52421", color: "#000000" }}
       className="h-[100svh] min-h-[100svh] w-full flex flex-col justify-between p-6 sm:p-10 md:p-14 lg:p-16 relative z-10 select-none overflow-hidden"
     >
       {/* Top Bar: Navigation & Info */}

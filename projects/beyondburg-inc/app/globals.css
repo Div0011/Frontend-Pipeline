@@ -12,7 +12,7 @@
   --color-bone-dark: #E4DCCF;
   --color-ember: #DE3B2B;
   --color-ember-glow: #F04F3F;
-  --color-yolk: #EAA824;
+  --color-yolk: #1B4D36;
   --color-yolk-light: #FBC85B;
   
   --font-display: 'Bebas Neue', 'Space Grotesk', Impact, sans-serif;
@@ -27,10 +27,10 @@
   --fg-muted:            rgba(255, 255, 255, 0.65);
   --fg-sub:              rgba(255, 255, 255, 0.40);
   --border:              rgba(255, 255, 255, 0.12);
-  --primary:             #F5C418;
+  --primary:             #1B4D36;
   
   /* Buttons in Dark Theme: Brand Color / High Contrast with Black text */
-  --btn-primary-bg:      #F5C418;
+  --btn-primary-bg:      #1B4D36;
   --btn-primary-fg:      #000000;
   --btn-secondary-bg:    rgba(255, 255, 255, 0.08);
   --btn-secondary-fg:    #FFFFFF;
@@ -45,7 +45,7 @@ html.light {
   --fg-muted:            rgba(10, 10, 10, 0.70);
   --fg-sub:              rgba(10, 10, 10, 0.45);
   --border:              rgba(0, 0, 0, 0.12);
-  --primary:             #F5C418;
+  --primary:             #1B4D36;
   
   /* Buttons in Light Theme: Inverts to Deep Black with Crisp White text */
   --btn-primary-bg:      #0A0A0A;
@@ -53,7 +53,7 @@ html.light {
   --btn-secondary-bg:    rgba(10, 10, 10, 0.06);
   --btn-secondary-fg:    #0A0A0A;
   --btn-secondary-border:rgba(0, 0, 0, 0.20);
-  --btn-invert-bg:       #F5C418;
+  --btn-invert-bg:       #1B4D36;
   --btn-invert-fg:       #000000;
 }
 

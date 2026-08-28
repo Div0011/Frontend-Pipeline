@@ -43,8 +43,8 @@ export default function AtelierAssembly() {
         <div className="flex flex-col sm:flex-row justify-between sm:items-end gap-4">
           <div>
             <div className="flex items-center gap-2 mb-2">
-              <span className="w-2 h-2 rounded-full" style={{ backgroundColor: "#C8A96E" }} />
-              <span className="font-sans text-xs tracking-widest uppercase font-bold" style={{ color: "#C8A96E" }}>
+              <span className="w-2 h-2 rounded-full" style={{ backgroundColor: "#418043" }} />
+              <span className="font-sans text-xs tracking-widest uppercase font-bold" style={{ color: "#418043" }}>
                 THE CRAFT
               </span>
             </div>

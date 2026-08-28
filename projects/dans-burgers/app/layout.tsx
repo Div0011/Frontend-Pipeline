@@ -19,10 +19,10 @@ export default function RootLayout({
     <html lang="en" className="dark">
       <body className="antialiased overflow-x-hidden transition-colors duration-500">
         <LenisProvider>
-          <InteractiveBackground primaryColor="#D97706" themeBase="#100a05" />
+          <InteractiveBackground primaryColor="#E52421" themeBase="#100a05" />
           <CustomCursor />
           {children}
-          <AtmosphereControls primaryColor="#D97706" darkBg="#100a05" lightBg="#FAF8F2" />
+          <AtmosphereControls primaryColor="#E52421" darkBg="#100a05" lightBg="#FAF8F2" />
         </LenisProvider>
       </body>
     </html>

@@ -94,7 +94,7 @@ export default function BrandManifesto() {
               onClick={() => setViewMode("spec")}
               className="px-5 py-2 rounded-full font-sans text-xs font-bold uppercase tracking-wider transition-all shadow-md"
               style={{
-                backgroundColor: viewMode === "spec" ? "#F5A623" : "transparent",
+                backgroundColor: viewMode === "spec" ? "#FFE500" : "transparent",
                 color: viewMode === "spec" ? "#000000" : undefined,
               }}
             >
@@ -105,7 +105,7 @@ export default function BrandManifesto() {
               onClick={() => setViewMode("compare")}
               className="px-5 py-2 rounded-full font-sans text-xs font-bold uppercase tracking-wider transition-all shadow-md"
               style={{
-                backgroundColor: viewMode === "compare" ? "#F5A623" : "transparent",
+                backgroundColor: viewMode === "compare" ? "#FFE500" : "transparent",
                 color: viewMode === "compare" ? "#000000" : undefined,
               }}
             >
@@ -130,14 +130,14 @@ export default function BrandManifesto() {
                     whileHover={{ y: -2 }}
                     className={`p-5 rounded-2xl cursor-pointer transition-all backdrop-blur-xl border flex items-center justify-between shadow-xl ${
                       isSelected
-                        ? "border-[#F5A623] bg-white/[0.08] [html.light_&]:bg-white [html.light_&]:border-[#F5A623]"
+                        ? "border-[#FFE500] bg-white/[0.08] [html.light_&]:bg-white [html.light_&]:border-[#FFE500]"
                         : "border-white/10 [html.light_&]:border-black/10 bg-white/[0.03] [html.light_&]:bg-white/60"
                     }`}
                   >
                     <span
                       className={`font-sans text-xs font-extrabold tracking-wider ${
                         isSelected
-                          ? "text-[#F5A623] [html.light_&]:text-stone-950"
+                          ? "text-[#FFE500] [html.light_&]:text-stone-950"
                           : "text-[#FAF8F2] [html.light_&]:text-stone-700"
                       }`}
                     >
@@ -146,9 +146,9 @@ export default function BrandManifesto() {
                     <span
                       className="text-[10px] font-sans px-2.5 py-0.5 rounded-full border font-semibold"
                       style={{
-                        backgroundColor: isSelected ? "#F5A62320" : "rgba(255,255,255,0.05)",
-                        color: isSelected ? "#F5A623" : undefined,
-                        borderColor: isSelected ? "#F5A62340" : "rgba(255,255,255,0.1)",
+                        backgroundColor: isSelected ? "#FFE50020" : "rgba(255,255,255,0.05)",
+                        color: isSelected ? "#FFE500" : undefined,
+                        borderColor: isSelected ? "#FFE50040" : "rgba(255,255,255,0.1)",
                       }}
                     >
                       {p.badge}
@@ -188,7 +188,7 @@ export default function BrandManifesto() {
                         type="button"
                         onClick={() => setActiveHotspot(hIdx)}
                         className="flex items-center justify-center w-8 h-8 rounded-full bg-black/80 border text-xs font-sans font-bold hover:scale-110 transition-transform shadow-2xl"
-                        style={{ borderColor: "#F5A623", color: "#F5A623" }}
+                        style={{ borderColor: "#FFE500", color: "#FFE500" }}
                       >
                         {hIdx + 1}
                       </button>
@@ -198,7 +198,7 @@ export default function BrandManifesto() {
                   {activeHotspot !== null && current.hotspots[activeHotspot] && (
                     <div
                       className="absolute bottom-4 left-4 right-4 p-3 rounded-xl bg-black/90 backdrop-blur-md border font-sans text-xs font-bold uppercase tracking-wider shadow-xl"
-                      style={{ borderColor: "#F5A62340", color: "#F5A623" }}
+                      style={{ borderColor: "#FFE50040", color: "#FFE500" }}
                     >
                       Layer {activeHotspot + 1}: {current.hotspots[activeHotspot].label}
                     </div>
@@ -216,12 +216,12 @@ export default function BrandManifesto() {
                       <div key={sIdx} className="space-y-1">
                         <div className="flex justify-between text-xs font-semibold">
                           <span className="text-stone-400 [html.light_&]:text-stone-600">{st.label}</span>
-                          <span className="font-bold [html.light_&]:text-stone-950" style={{ color: "#F5A623" }}>{st.value}</span>
+                          <span className="font-bold [html.light_&]:text-stone-950" style={{ color: "#FFE500" }}>{st.value}</span>
                         </div>
                         <div className="w-full h-1.5 rounded-full bg-white/10 [html.light_&]:bg-black/10 overflow-hidden">
                           <div
                             className="h-full rounded-full transition-all duration-500"
-                            style={{ width: `${st.progress}%`, backgroundColor: "#F5A623" }}
+                            style={{ width: `${st.progress}%`, backgroundColor: "#FFE500" }}
                           />
                         </div>
                       </div>
@@ -235,7 +235,7 @@ export default function BrandManifesto() {
                       setTimeout(() => setIsSizzling(false), 1500);
                     }}
                     className="w-full py-4 rounded-xl font-sans text-xs font-bold uppercase tracking-wider transition-all shadow-xl active:scale-95 hover:brightness-110 hover:scale-[1.02] text-black"
-                    style={{ backgroundColor: "#F5A623" }}
+                    style={{ backgroundColor: "#FFE500" }}
                   >
                     {isSizzling ? "SEARING 450°F..." : "TEST FLAT-TOP SEAR"}
                   </button>
@@ -249,7 +249,7 @@ export default function BrandManifesto() {
         {viewMode === "compare" && (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="p-8 rounded-3xl bg-white/[0.04] [html.light_&]:bg-white/80 border border-white/15 [html.light_&]:border-black/10 backdrop-blur-xl shadow-2xl space-y-4">
-              <span className="text-xs uppercase font-extrabold [html.light_&]:text-stone-950 block" style={{ color: "#F5A623" }}>
+              <span className="text-xs uppercase font-extrabold [html.light_&]:text-stone-950 block" style={{ color: "#FFE500" }}>
                 OUR CAST-IRON SMASH
               </span>
               <h3 className="type-display text-2xl text-white [html.light_&]:text-stone-950 font-bold">

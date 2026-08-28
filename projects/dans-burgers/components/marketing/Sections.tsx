@@ -193,7 +193,7 @@ function Films() {
           >
             <button
               onClick={() => setActiveVideo(null)}
-              className="absolute top-6 right-6 type-caption text-xs text-bone hover:text-[#D97706] border border-bone/20 hover:border-bone px-4 py-2 transition-all duration-300 z-60 font-sans"
+              className="absolute top-6 right-6 type-caption text-xs text-bone hover:text-[#E52421] border border-bone/20 hover:border-bone px-4 py-2 transition-all duration-300 z-60 font-sans"
             >
               Close Broadcast ✕
             </button>
@@ -255,7 +255,7 @@ function Locations() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-char/80 via-transparent to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 p-6">
-                    <p className="type-caption text-[#D97706] text-xs mb-1 font-sans">{location.city}</p>
+                    <p className="type-caption text-[#E52421] text-xs mb-1 font-sans">{location.city}</p>
                     <h3 className="type-display text-2xl text-bone">{location.name}</h3>
                   </div>
                 </div>

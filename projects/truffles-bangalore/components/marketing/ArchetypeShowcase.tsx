@@ -89,7 +89,7 @@ export default function ArchetypeShowcase() {
         {/* Header */}
         <div className="flex flex-col sm:flex-row justify-between sm:items-end gap-4 border-b border-white/10 pb-6">
           <div>
-            <span className="font-sans text-xs uppercase font-bold tracking-widest block" style={{ color: "#F5A623" }}>
+            <span className="font-sans text-xs uppercase font-bold tracking-widest block" style={{ color: "#FFE500" }}>
               CURATED PAIRINGS
             </span>
             <h2 className="type-display text-4xl sm:text-5xl text-white font-extrabold mt-1 tracking-tight">
@@ -112,19 +112,19 @@ export default function ArchetypeShowcase() {
                 className="p-5 rounded-2xl border text-left transition-all backdrop-blur-xl flex flex-col justify-between space-y-2 shadow-xl"
                 style={{
                   backgroundColor: isSelected ? "rgba(255,255,255,0.08)" : "rgba(255,255,255,0.03)",
-                  borderColor: isSelected ? "#F5A623" : "rgba(255,255,255,0.1)",
+                  borderColor: isSelected ? "#FFE500" : "rgba(255,255,255,0.1)",
                 }}
               >
                 <div className="flex items-center justify-between">
                   <span
                     className="font-bold text-xs uppercase tracking-wider"
-                    style={{ color: isSelected ? "#F5A623" : "#FAF8F2" }}
+                    style={{ color: isSelected ? "#FFE500" : "#FAF8F2" }}
                   >
                     {p.number}. {p.title}
                   </span>
                   <span
                     className="w-2.5 h-2.5 rounded-full"
-                    style={{ backgroundColor: isSelected ? "#F5A623" : "rgba(255,255,255,0.2)" }}
+                    style={{ backgroundColor: isSelected ? "#FFE500" : "rgba(255,255,255,0.2)" }}
                   />
                 </div>
                 <span className="text-[10px] text-stone-400 font-semibold uppercase tracking-wider">
@@ -157,7 +157,7 @@ export default function ArchetypeShowcase() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
                 <div className="absolute bottom-3 left-3 right-3 font-sans">
                   <p className="text-white font-bold text-xs leading-tight">{current.title}</p>
-                  <p className="font-bold text-[11px]" style={{ color: "#F5A623" }}>₹{current.price}</p>
+                  <p className="font-bold text-[11px]" style={{ color: "#FFE500" }}>₹{current.price}</p>
                 </div>
               </div>
 
@@ -171,7 +171,7 @@ export default function ArchetypeShowcase() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
                 <div className="absolute bottom-3 left-3 right-3 font-sans">
                   <p className="text-white font-bold text-xs leading-tight">{current.companionName}</p>
-                  <p className="font-bold text-[11px]" style={{ color: "#F5A623" }}>₹{current.companionPrice}</p>
+                  <p className="font-bold text-[11px]" style={{ color: "#FFE500" }}>₹{current.companionPrice}</p>
                 </div>
               </div>
             </div>
@@ -179,7 +179,7 @@ export default function ArchetypeShowcase() {
             {/* Flavor Metrics & Match Action */}
             <div className="lg:col-span-5 space-y-6">
               <div>
-                <span className="text-[10px] uppercase font-bold tracking-wider block" style={{ color: "#F5A623" }}>
+                <span className="text-[10px] uppercase font-bold tracking-wider block" style={{ color: "#FFE500" }}>
                   {current.category}
                 </span>
                 <h3 className="type-display text-3xl text-white font-black leading-tight mt-1">
@@ -192,12 +192,12 @@ export default function ArchetypeShowcase() {
                   <div key={fIdx} className="space-y-1">
                     <div className="flex justify-between text-xs font-semibold">
                       <span className="text-stone-300">{fp.label}</span>
-                      <span className="font-bold" style={{ color: "#F5A623" }}>{fp.value}%</span>
+                      <span className="font-bold" style={{ color: "#FFE500" }}>{fp.value}%</span>
                     </div>
                     <div className="w-full h-1.5 rounded-full bg-white/10 overflow-hidden">
                       <div
                         className="h-full rounded-full transition-all duration-500"
-                        style={{ width: `${fp.value}%`, backgroundColor: "#F5A623" }}
+                        style={{ width: `${fp.value}%`, backgroundColor: "#FFE500" }}
                       />
                     </div>
                   </div>
@@ -208,7 +208,7 @@ export default function ArchetypeShowcase() {
                 type="button"
                 onClick={handleMatch}
                 className="w-full py-4 rounded-full font-sans text-xs font-bold uppercase tracking-wider transition-all shadow-xl active:scale-95 hover:brightness-110 hover:scale-[1.02] flex items-center justify-center gap-2"
-                style={{ backgroundColor: "#F5A623", color: "#000000" }}
+                style={{ backgroundColor: "#FFE500", color: "#000000" }}
               >
                 <span>{isMatched ? "✓ Pairing Matched & Saved" : `Match Pairing (₹${current.price + current.companionPrice})`}</span>
               </button>

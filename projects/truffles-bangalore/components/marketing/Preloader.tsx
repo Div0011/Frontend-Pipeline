@@ -36,7 +36,7 @@ export default function Preloader({ onComplete }: PreloaderProps) {
       {/* Dynamic Ambient Glow */}
       <div
         className="absolute w-[600px] h-[600px] rounded-full blur-[140px] pointer-events-none opacity-20 animate-pulse"
-        style={{ backgroundColor: "#F5A623" }}
+        style={{ backgroundColor: "#FFE500" }}
       />
 
       {/* Concentric Pulse Rings */}
@@ -57,7 +57,7 @@ export default function Preloader({ onComplete }: PreloaderProps) {
             }}
             className="absolute rounded-full border"
             style={{
-              borderColor: "#F5A623",
+              borderColor: "#FFE500",
               width: "300px",
               height: "300px",
             }}
@@ -70,13 +70,13 @@ export default function Preloader({ onComplete }: PreloaderProps) {
         {/* Loading Counter */}
         <div
           className="w-24 h-24 rounded-full bg-[#121214] border flex items-center justify-center relative shadow-2xl"
-          style={{ borderColor: "#F5A62340" }}
+          style={{ borderColor: "#FFE50040" }}
         >
           <div
             className="absolute inset-0 rounded-full border-2 border-transparent animate-spin"
-            style={{ borderTopColor: "#F5A623" }}
+            style={{ borderTopColor: "#FFE500" }}
           />
-          <span className="font-sans text-xl font-bold" style={{ color: "#F5A623" }}>
+          <span className="font-sans text-xl font-bold" style={{ color: "#FFE500" }}>
             {progress}%
           </span>
         </div>
@@ -95,7 +95,7 @@ export default function Preloader({ onComplete }: PreloaderProps) {
         <div className="w-56 h-1 bg-white/10 rounded-full overflow-hidden relative">
           <motion.div
             className="h-full rounded-full"
-            style={{ width: `${progress}%`, backgroundColor: "#F5A623" }}
+            style={{ width: `${progress}%`, backgroundColor: "#FFE500" }}
           />
         </div>
 

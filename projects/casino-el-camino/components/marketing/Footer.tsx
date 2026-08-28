@@ -48,7 +48,7 @@ export default function Footer() {
       {/* Center: Auto-Fitting Responsive Pixel-Dot Brand Name (Always 100% visible) */}
       <div className="my-auto py-6 sm:py-8 w-full flex items-center justify-center overflow-hidden">
         <PixelText
-          text="CASINO EL CAMINO"
+          text="CASINO EL\nCAMINO"
           dotSize={8}
           gap={3}
           color="#000000"

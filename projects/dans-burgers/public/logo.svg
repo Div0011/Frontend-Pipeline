@@ -1,7 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
-  <circle cx="50" cy="50" r="46" stroke="#D97706" stroke-width="3" fill="#0A0A0A" />
-  <!-- 1973 Star Badge & Script D -->
-  <polygon points="50,18 53,26 61,26 55,31 57,39 50,34 43,39 45,31 39,26 47,26" fill="#D97706" />
-  <text x="50" y="68" fill="#D97706" font-family="'Space Grotesk', 'Impact', sans-serif" font-size="34" font-weight="900" text-anchor="middle">D</text>
-  <text x="50" y="84" fill="#D97706" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="700" text-anchor="middle" letter-spacing="1">EST 1973</text>
+  <circle cx="50" cy="50" r="46" stroke="#E52421" stroke-width="3" fill="#0A0A0A" />
+  <circle cx="50" cy="50" r="41" stroke="#E52421" stroke-width="1" stroke-dasharray="2 2" fill="none" opacity="0.6" />
+  <!-- White Star & Bold Script D in Red -->
+  <polygon points="50,16 53,24 61,24 55,29 57,37 50,32 43,37 45,29 39,24 47,24" fill="#FFFFFF" />
+  <text x="50" y="66" fill="#E52421" font-family="'Space Grotesk', 'Impact', sans-serif" font-size="34" font-weight="900" text-anchor="middle">D</text>
+  <text x="50" y="82" fill="#FFFFFF" font-family="'JetBrains Mono', monospace" font-size="8" font-weight="700" text-anchor="middle" letter-spacing="1">EST 1973</text>
 </svg>

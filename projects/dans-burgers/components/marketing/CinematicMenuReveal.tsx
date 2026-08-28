@@ -117,7 +117,7 @@ export default function CinematicMenuReveal() {
                   className="object-cover group-hover:scale-105 transition-transform duration-700"
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
                 />
-                <div className="absolute top-3 left-3 bg-char text-[#D97706] text-[9px] font-sans tracking-widest px-2 py-1 uppercase rounded-sm z-10 font-bold">
+                <div className="absolute top-3 left-3 bg-char text-[#E52421] text-[9px] font-sans tracking-widest px-2 py-1 uppercase rounded-sm z-10 font-bold">
                   {item.tags[0] ?? "FAVORITE"}
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-char/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />

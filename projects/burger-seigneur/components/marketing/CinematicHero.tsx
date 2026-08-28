@@ -42,7 +42,7 @@ export default function CinematicHero() {
           <div className="max-w-4xl space-y-6">
             {/* Live Status Pill */}
             <div className="flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/[0.05] border border-white/10 backdrop-blur-xl w-fit shadow-lg">
-              <span className="w-2 h-2 rounded-full animate-pulse" style={{ backgroundColor: "#C8A96E" }} />
+              <span className="w-2 h-2 rounded-full animate-pulse" style={{ backgroundColor: "#418043" }} />
               <span className="font-sans text-xs font-semibold uppercase tracking-wider text-stone-200">
                 Craft Atelier
               </span>
@@ -80,7 +80,7 @@ export default function CinematicHero() {
           }}
         >
           <div className="max-w-3xl space-y-6">
-            <span className="font-mono text-xs uppercase tracking-widest px-3 py-1 bg-white/10 backdrop-blur-md rounded-full border border-white/20 inline-block font-bold" style={{ color: "#C8A96E" }}>
+            <span className="font-mono text-xs uppercase tracking-widest px-3 py-1 bg-white/10 backdrop-blur-md rounded-full border border-white/20 inline-block font-bold" style={{ color: "#418043" }}>
               PHASE 01 / CRAFT KINETICS
             </span>
 
@@ -93,7 +93,7 @@ export default function CinematicHero() {
             </p>
 
             <div className="flex items-center gap-4 text-xs font-mono text-stone-300">
-              <span className="font-bold px-3 py-1 bg-black/50 backdrop-blur-md rounded-full border border-white/15" style={{ color: "#C8A96E" }}>
+              <span className="font-bold px-3 py-1 bg-black/50 backdrop-blur-md rounded-full border border-white/15" style={{ color: "#418043" }}>
                 FRAME {currentFrame.toString().padStart(3, "0")} / {FRAME_COUNT}
               </span>
               <span className="text-stone-400">PRECISION SIZZLE SEQUENCE</span>
@@ -111,7 +111,7 @@ export default function CinematicHero() {
           }}
         >
           <div className="max-w-2xl space-y-6">
-            <span className="font-mono text-xs uppercase tracking-widest px-3 py-1 bg-white/10 backdrop-blur-md rounded-full border border-white/20 inline-block font-bold" style={{ color: "#C8A96E" }}>
+            <span className="font-mono text-xs uppercase tracking-widest px-3 py-1 bg-white/10 backdrop-blur-md rounded-full border border-white/20 inline-block font-bold" style={{ color: "#418043" }}>
               PHASE 02 / CULINARY SIGNATURE
             </span>
 

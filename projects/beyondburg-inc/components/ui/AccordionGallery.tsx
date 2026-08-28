@@ -40,7 +40,7 @@ export default function AccordionGallery({
   defaultIndex = 0,
   expandRatio = 0.5,
   trigger = "hover",
-  accentColor = "#F5C418",
+  accentColor = "#1B4D36",
   textColor = "#ffffff",
   grayscale = false,
   showLabels = true,

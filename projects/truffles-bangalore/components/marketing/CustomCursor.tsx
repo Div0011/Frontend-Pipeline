@@ -64,7 +64,7 @@ export default function CustomCursor() {
       const isRedBg = (r > 160 && g < 70 && b < 70) || !!el.closest("footer[style*='#D91C24'], footer[style*='rgb(217, 28, 36)'], .bg-\\[\\#D91C24\\], .bg-\\[\\#B91C1C\\]");
       
       // 2. Mustard / Gold / Amber background detection (Dirty Martin's #C68A14, Truffles, Burger Seigneur)
-      const isMustardBg = (r > 150 && g > 100 && g < 180 && b < 60) || !!el.closest("[data-on-mustard], [style*='#C68A14'], .bg-\\[\\#C68A14\\], footer[style*='#C68A14'], footer[style*='#F5A623'], footer[style*='#C8A96E']");
+      const isMustardBg = (r > 150 && g > 100 && g < 180 && b < 60) || !!el.closest("[data-on-mustard], [style*='#C68A14'], .bg-\\[\\#C68A14\\], footer[style*='#C68A14'], footer[style*='#FFE500'], footer[style*='#C8A96E']");
 
       let nextColor = "var(--primary, #FFFFFF)";
 

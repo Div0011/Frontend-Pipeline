@@ -12,7 +12,7 @@ export default function AboutPage() {
       <main className="pt-24 min-h-screen bg-transparent text-[#FAF8F2] relative z-10 font-sans">
         <section className="py-20 lg:py-28 border-b border-white/10">
           <div className="mx-auto max-w-7xl px-6 lg:px-8 space-y-6">
-            <span className="text-xs uppercase tracking-widest font-bold block" style={{ color: "#F5C418" }}>
+            <span className="text-xs uppercase tracking-widest font-bold block" style={{ color: "#1B4D36" }}>
               CULINARY HERITAGE
             </span>
             <h1 className="type-display text-5xl sm:text-7xl md:text-8xl font-black text-white leading-none">
@@ -36,7 +36,7 @@ export default function AboutPage() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
                 <div className="absolute bottom-6 left-6 space-y-1">
-                  <span className="text-[10px] uppercase tracking-widest font-bold block" style={{ color: "#F5C418" }}>
+                  <span className="text-[10px] uppercase tracking-widest font-bold block" style={{ color: "#1B4D36" }}>
                     THE HEAT DISCIPLINE
                   </span>
                   <h3 className="type-display text-2xl text-white font-bold">
@@ -54,7 +54,7 @@ export default function AboutPage() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
                 <div className="absolute bottom-6 left-6 space-y-1">
-                  <span className="text-[10px] uppercase tracking-widest font-bold block" style={{ color: "#F5C418" }}>
+                  <span className="text-[10px] uppercase tracking-widest font-bold block" style={{ color: "#1B4D36" }}>
                     BESPOKE FLAVORS
                   </span>
                   <h3 className="type-display text-2xl text-white font-bold">
