@@ -35,7 +35,7 @@ export default function BrandManifesto() {
       image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=1200&auto=format&fit=crop",
       hotspots: [
         { x: 35, y: 48, label: "Lacy Caramelized Crust" },
-        { x: 62, y: 38, label: "Fresh Premium Grind" },
+        { x: 62, y: 38, label: "Dual Prime Coarse Grind" },
         { x: 48, y: 72, label: "Rendered Pan Jus" }
       ]
     },
@@ -86,11 +86,11 @@ export default function BrandManifesto() {
             </h2>
           </div>
 
-          <div className="flex items-center gap-2 p-1.5 rounded-full bg-white/5 border border-white/15 backdrop-blur-md self-start md:self-end">
+          <div className="flex items-center gap-2 p-1.5 rounded-full bg-white/5 border border-white/15 backdrop-blur-xl self-start md:self-end shadow-xl">
             <button
               type="button"
               onClick={() => setViewMode("spec")}
-              className="px-4 py-2 rounded-full font-sans text-xs font-bold uppercase tracking-wider transition-all shadow-lg"
+              className="px-5 py-2 rounded-full font-sans text-xs font-bold uppercase tracking-wider transition-all shadow-md"
               style={{
                 backgroundColor: viewMode === "spec" ? "#C8A96E" : "transparent",
                 color: viewMode === "spec" ? "#000000" : "#FAF8F2",
@@ -101,7 +101,7 @@ export default function BrandManifesto() {
             <button
               type="button"
               onClick={() => setViewMode("compare")}
-              className="px-4 py-2 rounded-full font-sans text-xs font-bold uppercase tracking-wider transition-all shadow-lg"
+              className="px-5 py-2 rounded-full font-sans text-xs font-bold uppercase tracking-wider transition-all shadow-md"
               style={{
                 backgroundColor: viewMode === "compare" ? "#C8A96E" : "transparent",
                 color: viewMode === "compare" ? "#000000" : "#FAF8F2",
@@ -126,7 +126,7 @@ export default function BrandManifesto() {
                       setActiveHotspot(0);
                     }}
                     whileHover={{ y: -2 }}
-                    className="p-5 rounded-2xl cursor-pointer transition-all backdrop-blur-md border flex items-center justify-between shadow-xl"
+                    className="p-5 rounded-2xl cursor-pointer transition-all backdrop-blur-xl border flex items-center justify-between shadow-xl"
                     style={{
                       backgroundColor: isSelected ? "rgba(255,255,255,0.08)" : "rgba(255,255,255,0.03)",
                       borderColor: isSelected ? "#C8A96E" : "rgba(255,255,255,0.1)",
@@ -136,10 +136,10 @@ export default function BrandManifesto() {
                       className="font-sans text-xs font-extrabold tracking-wider"
                       style={{ color: isSelected ? "#C8A96E" : "#FAF8F2" }}
                     >
-                      {p.number} // {p.title}
+                      {p.number}. {p.title}
                     </span>
                     <span
-                      className="text-[10px] font-sans px-2 py-0.5 rounded-full border"
+                      className="text-[10px] font-sans px-2.5 py-0.5 rounded-full border font-semibold"
                       style={{
                         backgroundColor: isSelected ? "#C8A96E20" : "rgba(255,255,255,0.05)",
                         color: isSelected ? "#C8A96E" : "#A8A29E",
@@ -161,15 +161,15 @@ export default function BrandManifesto() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
                 transition={{ duration: 0.25 }}
-                className="grid grid-cols-1 lg:grid-cols-12 gap-8 p-6 sm:p-8 rounded-3xl bg-white/[0.03] backdrop-blur-xl border border-white/15 shadow-2xl items-center"
+                className="grid grid-cols-1 lg:grid-cols-12 gap-8 p-6 sm:p-8 rounded-3xl bg-white/[0.03] backdrop-blur-2xl border border-white/15 shadow-2xl items-center"
               >
                 {/* Left: Image with Hotspots */}
-                <div className="lg:col-span-7 relative min-h-[340px] sm:min-h-[380px] rounded-2xl overflow-hidden border border-white/15 bg-black/60 group">
+                <div className="lg:col-span-7 relative min-h-[340px] sm:min-h-[380px] rounded-2xl overflow-hidden border border-white/15 bg-black/60 group shadow-2xl">
                   <Image
                     src={current.image}
                     alt={current.title}
                     fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
 
@@ -182,7 +182,7 @@ export default function BrandManifesto() {
                       <button
                         type="button"
                         onClick={() => setActiveHotspot(hIdx)}
-                        className="flex items-center justify-center w-7 h-7 rounded-full bg-black/80 border text-xs font-sans font-bold hover:scale-110 transition-transform shadow-2xl"
+                        className="flex items-center justify-center w-8 h-8 rounded-full bg-black/80 border text-xs font-sans font-bold hover:scale-110 transition-transform shadow-2xl"
                         style={{ borderColor: "#C8A96E", color: "#C8A96E" }}
                       >
                         {hIdx + 1}
@@ -192,7 +192,7 @@ export default function BrandManifesto() {
 
                   {activeHotspot !== null && current.hotspots[activeHotspot] && (
                     <div
-                      className="absolute bottom-4 left-4 right-4 p-3 rounded-xl bg-black/90 backdrop-blur-md border font-sans text-xs font-bold uppercase tracking-wider"
+                      className="absolute bottom-4 left-4 right-4 p-3 rounded-xl bg-black/90 backdrop-blur-md border font-sans text-xs font-bold uppercase tracking-wider shadow-xl"
                       style={{ borderColor: "#C8A96E40", color: "#C8A96E" }}
                     >
                       Layer {activeHotspot + 1}: {current.hotspots[activeHotspot].label}
@@ -206,10 +206,10 @@ export default function BrandManifesto() {
                     {current.title}
                   </h3>
 
-                  <div className="space-y-3">
+                  <div className="space-y-3 font-sans">
                     {current.stats.map((st, sIdx) => (
                       <div key={sIdx} className="space-y-1">
-                        <div className="flex justify-between text-xs font-sans">
+                        <div className="flex justify-between text-xs font-semibold">
                           <span className="text-stone-400">{st.label}</span>
                           <span className="font-bold" style={{ color: "#C8A96E" }}>{st.value}</span>
                         </div>
@@ -229,7 +229,7 @@ export default function BrandManifesto() {
                       setIsSizzling(true);
                       setTimeout(() => setIsSizzling(false), 1500);
                     }}
-                    className="w-full py-3.5 rounded-xl font-sans text-xs font-bold uppercase tracking-wider transition-all shadow-xl active:scale-95 hover:brightness-110"
+                    className="w-full py-4 rounded-xl font-sans text-xs font-bold uppercase tracking-wider transition-all shadow-xl active:scale-95 hover:brightness-110 hover:scale-[1.02]"
                     style={{ backgroundColor: "#C8A96E", color: "#000000" }}
                   >
                     {isSizzling ? "SEARING 450°F..." : "TEST FLAT-TOP SEAR"}
@@ -242,12 +242,12 @@ export default function BrandManifesto() {
 
         {/* Duel View */}
         {viewMode === "compare" && (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="p-6 rounded-2xl bg-red-500/[0.04] border border-red-500/20 backdrop-blur-xl space-y-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 font-sans">
+            <div className="p-8 rounded-3xl bg-red-500/[0.04] border border-red-500/20 backdrop-blur-2xl space-y-4 shadow-xl">
               <span className="font-sans text-xs font-bold text-red-400 uppercase tracking-wider block">
                 MASS PRODUCTION
               </span>
-              <ul className="space-y-2 font-sans text-xs text-stone-300">
+              <ul className="space-y-2.5 text-xs text-stone-300 font-medium">
                 • Steamed interior, zero Maillard crust
                 • Dense dry bun, collapses under sauce
                 • Cold unmelted cheese slice
@@ -255,13 +255,13 @@ export default function BrandManifesto() {
             </div>
 
             <div
-              className="p-6 rounded-2xl bg-white/[0.04] border backdrop-blur-xl space-y-4"
+              className="p-8 rounded-3xl bg-white/[0.04] border backdrop-blur-2xl space-y-4 shadow-xl"
               style={{ borderColor: "#C8A96E40" }}
             >
               <span className="font-sans text-xs font-bold uppercase tracking-wider block" style={{ color: "#C8A96E" }}>
                 OUR CRAFT SPEC
               </span>
-              <ul className="space-y-2 font-sans text-xs text-stone-200">
+              <ul className="space-y-2.5 text-xs text-stone-200 font-medium">
                 • 450°F cast iron crispy lace edges
                 • Sweet cream butter toasted potato roll
                 • Steam dome molten cheese melt

@@ -21,8 +21,8 @@ export default function RestaurantLocations() {
       <div className="max-w-7xl mx-auto space-y-12">
         <div className="flex flex-col md:flex-row justify-between md:items-end gap-6 border-b border-white/10 pb-8">
           <div className="space-y-2">
-            <span className="font-sans text-xs tracking-widest uppercase block font-bold" style={{ color: "#15803D" }}>
-              BURGERMAN
+            <span className="font-mono text-xs tracking-widest uppercase block font-bold" style={{ color: "#15803D" }}>
+              BURGERMAN // PHYSICAL OUTPOSTS
             </span>
             <h2 className="type-display text-4xl sm:text-6xl text-white font-extrabold tracking-tight">
               BENGALURU KITCHENS
@@ -38,7 +38,7 @@ export default function RestaurantLocations() {
                     setSelectedLocation(idx);
                     setActiveImageIndex(0);
                   }}
-                  className={`px-5 py-2 rounded-full font-sans text-xs uppercase tracking-wider transition-all font-bold ${
+                  className={`px-5 py-2 rounded-full font-mono text-xs uppercase tracking-wider transition-all font-bold ${
                     selectedLocation === idx
                       ? "shadow-lg"
                       : "text-stone-400 hover:text-white"
@@ -80,7 +80,7 @@ export default function RestaurantLocations() {
 
               <div className="absolute top-6 left-6 z-10">
                 <span
-                  className="px-4 py-1.5 rounded-full font-sans text-xs font-bold uppercase tracking-wider shadow-lg"
+                  className="px-4 py-1.5 rounded-full font-mono text-xs font-bold uppercase tracking-wider shadow-lg"
                   style={{
                     backgroundColor: "#15803D",
                     color: "#FFFFFF",
@@ -111,7 +111,7 @@ export default function RestaurantLocations() {
                     ))}
                   </div>
 
-                  <span className="font-sans text-xs text-white/80 bg-black/60 backdrop-blur-md px-3 py-1 rounded-full border border-white/10">
+                  <span className="font-mono text-xs text-white/80 bg-black/60 backdrop-blur-md px-3 py-1 rounded-full border border-white/10">
                     View {activeImageIndex + 1} of {allImages.length}
                   </span>
                 </div>
@@ -121,16 +121,16 @@ export default function RestaurantLocations() {
             <div className="lg:col-span-5 p-8 rounded-2xl bg-white/[0.04] backdrop-blur-md border border-white/15 flex flex-col justify-between shadow-2xl space-y-6">
               <div className="space-y-5">
                 <div className="space-y-1.5">
-                  <span className="font-sans text-[10px] tracking-widest uppercase font-bold block" style={{ color: "#15803D" }}>
+                  <span className="font-mono text-[10px] tracking-widest uppercase font-bold block" style={{ color: "#15803D" }}>
                     OUTPOST DETAILS
                   </span>
                   <h3 className="type-display text-3xl sm:text-4xl text-white font-extrabold">
                     {currentLoc.name}
                   </h3>
-                  <p className="font-sans text-xs text-stone-300">
+                  <p className="font-mono text-xs text-stone-300">
                     {currentLoc.address}
                   </p>
-                  <p className="font-sans text-xs font-bold" style={{ color: "#15803D" }}>
+                  <p className="font-mono text-xs font-bold" style={{ color: "#15803D" }}>
                     {currentLoc.city}
                   </p>
                 </div>
@@ -138,16 +138,16 @@ export default function RestaurantLocations() {
                 <div className="p-4 rounded-xl bg-black/40 border border-white/10 flex items-center gap-3">
                   <span className="w-3 h-3 rounded-full bg-emerald-400 animate-pulse" />
                   <div>
-                    <span className="font-sans text-xs text-white font-bold block">
+                    <span className="font-mono text-xs text-white font-bold block">
                       {currentLoc.status || "Kitchen Active"}
                     </span>
-                    <span className="font-sans text-[10px] text-stone-400">
+                    <span className="font-mono text-[10px] text-stone-400">
                       Hours: {currentLoc.hours}
                     </span>
                   </div>
                 </div>
 
-                <div className="space-y-2 text-xs font-sans text-stone-300 pt-2 border-t border-white/10">
+                <div className="space-y-2 text-xs font-mono text-stone-300 pt-2 border-t border-white/10">
                   <div className="flex justify-between">
                     <span className="text-stone-400">Atmosphere:</span>
                     <span className="text-white font-bold">{currentLoc.seating}</span>
@@ -164,7 +164,7 @@ export default function RestaurantLocations() {
                   href={currentLoc.mapUrl || "https://maps.google.com"}
                   target="_blank"
                   rel="noreferrer"
-                  className="flex-1 text-center py-3 rounded-lg font-sans text-xs font-extrabold uppercase tracking-wider hover:opacity-90 active:scale-95 transition-all shadow-xl"
+                  className="flex-1 text-center py-3 rounded-lg font-mono text-xs font-extrabold uppercase tracking-wider hover:opacity-90 active:scale-95 transition-all shadow-xl"
                   style={{
                     backgroundColor: "#15803D",
                     color: "#FFFFFF",
@@ -174,7 +174,7 @@ export default function RestaurantLocations() {
                 </a>
                 <a
                   href={`tel:${String(currentLoc.phone || "").replace(/\D/g, "")}`}
-                  className="px-6 py-3 rounded-lg bg-white/5 border border-white/20 text-white font-sans text-xs font-bold uppercase tracking-wider hover:bg-white/10 active:scale-95 transition-all"
+                  className="px-6 py-3 rounded-lg bg-white/5 border border-white/20 text-white font-mono text-xs font-bold uppercase tracking-wider hover:bg-white/10 active:scale-95 transition-all"
                 >
                   Call
                 </a>
