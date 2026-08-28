@@ -90,8 +90,19 @@ Every production redesign must feature the following interactive components:
 - Outpost location picker, live time-slot availability pills, party size stepper (1 to 12+ guests), and seating zone selector (*Chef's Sizzle Counter, Cozy Booth, Patio Deck*).
 - Digital VIP reservation pass generator with confirmation reference code.
 
-### 3.5 Bespoke Brand Archetype Showcases (`ArchetypeShowcase.tsx`)
-- Assigned to one of 5 archetypes (*Heritage Diners, Haute Gourmet, Cult Garages, Artisanal Fermentation, Fast-Casual Crunch*).
+### 3.5 The Three Signature Sequence Engines (Cinematic Architecture v2)
+Every brand is assigned one of three signature 3-beat sequence engines (**Establish $\rightarrow$ Interrogate $\rightarrow$ Invite**):
+- **Sequence A (Deconstruction & Reveal)**: `SignatureDeconstruct.tsx` — Interactive 3D exploded layer view with thermal telemetry (Beyondburg, Dirty Martin's, Pedroso's, Burger Seigneur).
+- **Sequence B (Temporal Time-Slip)**: `OriginTimeSlip.tsx` — Archival time dial ($1973 \rightarrow 1998 \rightarrow 2026$) shifting color grade to vintage sepia with period pricing (Dan's, Casino El Camino, Pool Burger, Sour Duck).
+- **Sequence C (Craft Matrix Builder)**: `CraftMatrixBuilder.tsx` — 4-step precision customizer (Bun $\rightarrow$ Patty $\rightarrow$ Cheese $\rightarrow$ Sauce) compiling live into an atelier spec receipt ticket (Truffles, JewBoy, Good Flippin', NADC, Burger Elite, Biggies).
+
+### 3.6 Editorial Minimalist Menu Card Sheet (`/menu/page.tsx`)
+- Structured like a fine-dining atelier physical menu card sheet without boxy tiles.
+- Clean category headers (`01. BURGERS & SMASHES`), leader spacing, currency pricing, and discreet `+` action.
+
+### 3.7 Mandatory Preservation Rules
+- **Footer.tsx**: Always keep the centered 2-line PixelText, hours, newsletter, typography, and monochromatic styling intact.
+- **CanvasScrubber.tsx / Frame Scrubbers**: Always preserve 60fps canvas scrubbing, frame caching, and scroll distance.
 
 ---
 
