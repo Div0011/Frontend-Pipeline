@@ -38,7 +38,7 @@ const morphSlides: MorphSliderItem[] = [
 
 export default function AtelierAssembly() {
   return (
-    <section className="py-24 px-6 sm:px-12 md:px-20 bg-char text-bone border-b border-char-mute">
+    <section className="py-24 px-6 sm:px-12 md:px-20 bg-transparent text-white border-b border-white/10 relative z-10">
       <div className="max-w-7xl mx-auto space-y-12">
         <div className="flex flex-col sm:flex-row justify-between sm:items-end gap-4">
           <div>

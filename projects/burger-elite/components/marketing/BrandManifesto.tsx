@@ -9,7 +9,7 @@ import FadeContent from "@/components/ui/FadeContent";
 
 export default function BrandManifesto() {
   return (
-    <section className="py-24 px-6 sm:px-12 md:px-20 bg-char text-bone border-b border-char-mute relative overflow-hidden">
+    <section className="py-24 px-6 sm:px-12 md:px-20 bg-transparent text-white border-b border-white/10 relative z-10">
       <div className="max-w-6xl mx-auto space-y-12">
         <div className="flex items-center gap-3">
           <span className="h-[1px] w-12" style={{ backgroundColor: "#A855F7" }} />

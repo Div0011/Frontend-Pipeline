@@ -191,7 +191,7 @@ export default function CanvasScrubber({
       className="relative"
     >
       <div
-        className="sticky top-0 h-[100svh] w-full overflow-hidden bg-char"
+        className="sticky top-0 h-[100svh] w-full overflow-hidden bg-transparent"
         data-cursor="drag"
       >
         {/* Full-bleed high-fps canvas */}
@@ -205,14 +205,14 @@ export default function CanvasScrubber({
         />
 
         {!firstFrameReady && (
-          <div className="absolute inset-0 bg-char" />
+          <div className="absolute inset-0 bg-transparent" />
         )}
 
         {/* Text-legibility gradients */}
         {overlayGradient && (
           <>
-            <div className="absolute inset-0 bg-gradient-to-t from-char/80 via-char/10 to-char/20 pointer-events-none z-10" />
-            <div className="absolute inset-0 bg-gradient-to-r from-char/30 via-transparent to-transparent pointer-events-none z-10" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30 pointer-events-none z-10" />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-transparent pointer-events-none z-10" />
           </>
         )}
 

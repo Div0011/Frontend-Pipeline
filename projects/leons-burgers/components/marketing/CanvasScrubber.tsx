@@ -199,7 +199,7 @@ export default function CanvasScrubber({
        * while the wrapper is in view. Zero JS layout mutation.
        */}
       <div
-        className="sticky top-0 h-[100svh] w-full overflow-hidden bg-char"
+        className="sticky top-0 h-[100svh] w-full overflow-hidden bg-transparent"
         data-cursor="drag"
       >
         {/* Full-bleed canvas */}
@@ -214,7 +214,7 @@ export default function CanvasScrubber({
 
         {/* Dark fallback while frame 0 loads */}
         {!firstFrameReady && (
-          <div className="absolute inset-0 bg-char" />
+          <div className="absolute inset-0 bg-transparent" />
         )}
 
         {/* Text-legibility gradients */}
