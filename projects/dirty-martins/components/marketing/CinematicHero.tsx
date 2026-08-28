@@ -48,7 +48,7 @@ export default function CinematicHero() {
               </span>
             </div>
 
-            <h1 className="type-display text-6xl sm:text-8xl md:text-9xl lg:text-[9.5rem] text-black leading-none font-black tracking-tight drop-shadow-sm">
+            <h1 className="type-display text-6xl sm:text-8xl md:text-9xl lg:text-[9.5rem] text-[#C68A14] leading-none font-black tracking-tight drop-shadow-sm">
               DIRTY MARTIN&apos;S
             </h1>
 
@@ -84,7 +84,7 @@ export default function CinematicHero() {
               PHASE 01 / CRAFT KINETICS
             </span>
 
-            <h2 className="type-display text-5xl sm:text-7xl md:text-8xl text-black leading-none font-black tracking-tight drop-shadow-sm">
+            <h2 className="type-display text-5xl sm:text-7xl md:text-8xl text-[#C68A14] leading-none font-black tracking-tight drop-shadow-sm">
               CENTURY-OLD GRIDDLE SEAR
             </h2>
 
@@ -115,7 +115,7 @@ export default function CinematicHero() {
               PHASE 02 / CULINARY SIGNATURE
             </span>
 
-            <h2 className="type-display text-5xl sm:text-7xl md:text-8xl text-black leading-none font-black tracking-tight drop-shadow-sm">
+            <h2 className="type-display text-5xl sm:text-7xl md:text-8xl text-[#C68A14] leading-none font-black tracking-tight drop-shadow-sm">
               THE 1926 DH SPECIAL
             </h2>
 

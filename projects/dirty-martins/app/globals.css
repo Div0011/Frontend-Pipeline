@@ -20,8 +20,8 @@
   --font-mono: 'JetBrains Mono', monospace;
 }
 
-/* ─── Dirty Martin's: Pure White Background, Mustard Accents, Black Text ─── */
-:root {
+/* ─── Dirty Martin's: Pure White Background & Dark Mustard Headings ─── */
+:root, html.light, html.dark {
   --bg:                  #FFFFFF;
   --fg:                  #0A0A0A;
   --fg-muted:            rgba(10, 10, 10, 0.70);
@@ -29,23 +29,6 @@
   --border:              rgba(198, 138, 20, 0.25);
   --primary:             #C68A14;
   
-  /* Action Buttons: Mustard background with Crisp White text */
-  --btn-primary-bg:      #C68A14;
-  --btn-primary-fg:      #FFFFFF;
-  --btn-secondary-bg:    #FFFFFF;
-  --btn-secondary-fg:    #0A0A0A;
-  --btn-secondary-border:rgba(198, 138, 20, 0.40);
-  --btn-invert-bg:       #0A0A0A;
-  --btn-invert-fg:       #FFFFFF;
-}
-
-html.light, html.dark {
-  --bg:                  #FFFFFF;
-  --fg:                  #0A0A0A;
-  --fg-muted:            rgba(10, 10, 10, 0.70);
-  --fg-sub:              rgba(10, 10, 10, 0.45);
-  --border:              rgba(198, 138, 20, 0.25);
-  --primary:             #C68A14;
   --btn-primary-bg:      #C68A14;
   --btn-primary-fg:      #FFFFFF;
   --btn-secondary-bg:    #FFFFFF;
@@ -63,18 +46,30 @@ input, textarea, select, [contenteditable] {
 }
 
 body {
-  background-color: var(--bg);
+  background-color: #FFFFFF !important;
   color: var(--fg);
   font-family: var(--font-body), sans-serif;
   overflow-x: hidden;
-  transition: background-color 0.4s ease, color 0.4s ease;
 }
 
-.type-display {
+/* All Headings & Display Titles in Dark Mustard */
+h1, h2, h3, h4, .type-display {
   font-family: var(--font-display), sans-serif;
   text-transform: uppercase;
   letter-spacing: -0.02em;
   line-height: 0.9;
+  color: #C68A14 !important;
+}
+
+/* Heading texts over image frames & overlays */
+[data-image-overlay] h1,
+[data-image-overlay] h2,
+[data-image-overlay] h3,
+.img-overlay-text h1,
+.img-overlay-text h2,
+.img-overlay-text h3 {
+  color: #C68A14 !important;
+  text-shadow: 0 4px 20px rgba(255, 255, 255, 0.8), 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* ─── BUTTONS ──────────────────────────────────────────────────────── */
@@ -100,15 +95,4 @@ body {
   background-color: #FAF8F2 !important;
   border-color: #C68A14 !important;
   transform: scale(1.03);
-}
-
-/* ─── PROTECTED HERO OVERLAY ZONES ─────────────────────────────────── */
-[data-image-overlay],
-[data-image-overlay] * {
-  color: #0A0A0A;
-}
-
-.img-overlay-text,
-.img-overlay-text * {
-  color: #0A0A0A;
 }

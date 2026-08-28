@@ -92,7 +92,7 @@ export default function ArchetypeShowcase() {
             <span className="font-sans text-xs uppercase font-bold tracking-widest block" style={{ color: "#C68A14" }}>
               CURATED PAIRINGS
             </span>
-            <h2 className="type-display text-4xl sm:text-5xl text-black font-extrabold mt-1 tracking-tight">
+            <h2 className="type-display text-4xl sm:text-5xl text-[#C68A14] font-extrabold mt-1 tracking-tight">
               THE PAIRING SELECTOR
             </h2>
           </div>
@@ -182,7 +182,7 @@ export default function ArchetypeShowcase() {
                 <span className="text-[10px] uppercase font-bold tracking-wider block" style={{ color: "#C68A14" }}>
                   {current.category}
                 </span>
-                <h3 className="type-display text-3xl text-black font-black leading-tight mt-1">
+                <h3 className="type-display text-3xl text-[#C68A14] font-black leading-tight mt-1">
                   {current.title}
                 </h3>
               </div>

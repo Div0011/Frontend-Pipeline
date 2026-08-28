@@ -10,7 +10,7 @@ export default function HowWeSmash() {
     <section className="py-24 px-6 sm:px-12 md:px-20 bg-transparent text-black border-b border-[#C68A14]/25 relative z-10 font-sans">
       <div className="max-w-7xl mx-auto space-y-12">
         <div>
-          <h2 className="type-display text-4xl sm:text-6xl text-black font-black tracking-tight">
+          <h2 className="type-display text-4xl sm:text-6xl text-[#C68A14] font-black tracking-tight">
             CENTURY-OLD GRIDDLE SEAR
           </h2>
         </div>
@@ -38,7 +38,7 @@ export default function HowWeSmash() {
             <span className="text-xs uppercase font-bold tracking-widest block" style={{ color: "#C68A14" }}>
               ORIGINAL 1926 CAST IRON
             </span>
-            <h3 className="type-display text-2xl sm:text-3xl text-black font-extrabold">
+            <h3 className="type-display text-2xl sm:text-3xl text-[#C68A14] font-extrabold">
               MAXIMUM CARAMELIZED MAILLARD REACTION
             </h3>
           </div>

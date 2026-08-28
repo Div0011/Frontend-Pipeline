@@ -22,14 +22,14 @@ export default function ReservationCTA() {
     <section id="reservation-section" className="py-24 px-6 sm:px-12 md:px-20 bg-transparent text-black border-b border-[#C68A14]/25 relative z-10 font-sans">
       <div className="max-w-7xl mx-auto space-y-12">
         <div>
-          <h2 className="type-display text-4xl sm:text-6xl text-black font-black tracking-tight">
+          <h2 className="type-display text-4xl sm:text-6xl text-[#C68A14] font-black tracking-tight">
             BOOK YOUR EXPERIENCE
           </h2>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           <div className="lg:col-span-7 space-y-6">
-            <h3 className="type-display text-3xl sm:text-4xl text-black font-extrabold leading-tight">
+            <h3 className="type-display text-3xl sm:text-4xl text-[#C68A14] font-extrabold leading-tight">
               TABLE RESERVATIONS AT DIRTY MARTIN'S
             </h3>
           </div>

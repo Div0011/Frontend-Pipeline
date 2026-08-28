@@ -43,7 +43,7 @@ export default function CinematicSmoothie() {
               HOUSE SIGNATURE CRAVING
             </span>
 
-            <h2 className="type-display text-5xl sm:text-7xl md:text-8xl lg:text-9xl text-black leading-none font-black tracking-tight drop-shadow-[0_10px_30px_rgba(0,0,0,0.8)]">
+            <h2 className="type-display text-5xl sm:text-7xl md:text-8xl lg:text-9xl text-[#C68A14] leading-none font-black tracking-tight drop-shadow-[0_10px_30px_rgba(0,0,0,0.8)]">
               1926 SPECIAL <br />
               <span style={{ color: "#C68A14" }}>TEXAS CHOCOLATE SHAKE</span>
             </h2>
@@ -68,7 +68,7 @@ export default function CinematicSmoothie() {
               CHILL & EMULSION SPECIFICATION
             </span>
 
-            <h2 className="type-display text-5xl sm:text-7xl md:text-8xl text-black leading-none font-black tracking-tight drop-shadow-[0_10px_30px_rgba(0,0,0,0.8)]">
+            <h2 className="type-display text-5xl sm:text-7xl md:text-8xl text-[#C68A14] leading-none font-black tracking-tight drop-shadow-[0_10px_30px_rgba(0,0,0,0.8)]">
               VELVET TEXTURE & BALANCE
             </h2>
 

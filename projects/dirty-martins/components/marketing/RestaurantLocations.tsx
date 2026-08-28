@@ -38,7 +38,7 @@ export default function RestaurantLocations() {
       <div className="max-w-7xl mx-auto space-y-10">
         <div className="flex flex-col md:flex-row justify-between md:items-end gap-6 border-b border-[#C68A14]/25 pb-6">
           <div>
-            <h2 className="type-display text-4xl sm:text-6xl text-black font-extrabold tracking-tight">
+            <h2 className="type-display text-4xl sm:text-6xl text-[#C68A14] font-extrabold tracking-tight">
               UT CAMPUS LEGEND
             </h2>
           </div>
@@ -99,7 +99,7 @@ export default function RestaurantLocations() {
                   <span className="text-[10px] uppercase tracking-widest font-bold block" style={{ color: "#C68A14" }}>
                     {currentLoc.badge}
                   </span>
-                  <h3 className="type-display text-2xl sm:text-3xl text-black font-extrabold drop-shadow-md">
+                  <h3 className="type-display text-2xl sm:text-3xl text-[#C68A14] font-extrabold drop-shadow-md">
                     {currentLoc.name}
                   </h3>
                 </div>

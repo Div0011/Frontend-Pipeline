@@ -66,7 +66,7 @@ export default function Nav() {
               priority
             />
           </div>
-          <span className="type-display text-lg sm:text-xl md:text-2xl font-black text-black tracking-tight group-hover:opacity-90 transition-opacity">
+          <span className="type-display text-lg sm:text-xl md:text-2xl font-black text-[#C68A14] tracking-tight group-hover:opacity-90 transition-opacity">
             DIRTY MARTIN&apos;S
           </span>
         </Link>
