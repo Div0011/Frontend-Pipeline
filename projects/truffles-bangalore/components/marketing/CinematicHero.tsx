@@ -17,10 +17,10 @@ export default function CinematicHero() {
             TRUFFLES
           </h1>
 
-          <div className="pt-2 pointer-events-auto flex flex-wrap gap-4">
+          <div className="pt-2 pointer-events-auto flex flex-wrap gap-4 font-sans font-bold text-xs uppercase tracking-wider">
             <Link
               href="/menu"
-              className="px-8 py-4 font-mono text-xs font-bold uppercase tracking-wider rounded-xl transition-all shadow-2xl hover:brightness-110 active:scale-95 flex items-center gap-2"
+              className="px-8 py-4 rounded-xl transition-all shadow-2xl hover:brightness-110 active:scale-95 flex items-center gap-2"
               style={{ backgroundColor: "#F5A623", color: "#000000" }}
             >
               <span>Explore Menu</span>
@@ -28,7 +28,7 @@ export default function CinematicHero() {
             </Link>
             <Link
               href="/locations"
-              className="px-8 py-4 bg-white/5 backdrop-blur-md border border-white/20 text-white font-mono text-xs font-bold uppercase tracking-wider rounded-xl hover:border-white/40 active:scale-95 transition-all"
+              className="px-8 py-4 bg-white/5 backdrop-blur-md border border-white/20 text-white rounded-xl hover:border-white/40 active:scale-95 transition-all"
             >
               Outposts
             </Link>

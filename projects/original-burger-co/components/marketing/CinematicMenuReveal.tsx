@@ -77,7 +77,7 @@ export default function CinematicMenuReveal() {
 
       {/* Header label visible through glass before dissolve */}
       <div className="absolute top-8 left-1/2 -translate-x-1/2 z-30 pointer-events-none">
-        <p className="type-caption text-gold font-mono tracking-widest">THE SPECIMEN SHEET</p>
+        <p className="type-caption text-gold font-sans tracking-widest">THE SPECIMEN SHEET</p>
       </div>
 
       {/* Content revealed below glass */}
@@ -92,7 +92,7 @@ export default function CinematicMenuReveal() {
           </h2>
 
           {/* Interactive Category Tabs */}
-          <div className="flex flex-wrap justify-center gap-2 sm:gap-3 font-mono text-xs">
+          <div className="flex flex-wrap justify-center gap-2 sm:gap-3 font-sans text-xs">
             {CATEGORIES.map((cat) => (
               <button
                 key={cat.id}
@@ -125,7 +125,7 @@ export default function CinematicMenuReveal() {
                   className="object-cover group-hover:scale-105 transition-transform duration-700"
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
                 />
-                <div className="absolute top-3 left-3 bg-ink text-cream text-[9px] font-mono tracking-widest px-2 py-1 uppercase rounded-sm z-10">
+                <div className="absolute top-3 left-3 bg-ink text-cream text-[9px] font-sans tracking-widest px-2 py-1 uppercase rounded-sm z-10">
                   {item.tags[0] ?? "SPECIMEN"}
                 </div>
                 {/* Hover shimmer */}
@@ -136,7 +136,7 @@ export default function CinematicMenuReveal() {
                   <h3 className="type-display text-xl group-hover:text-gold transition-colors duration-500 text-ink">
                     {item.name}
                   </h3>
-                  <span className="type-caption text-gold font-mono text-sm">₹{item.price}</span>
+                  <span className="type-caption text-gold font-sans text-sm">₹{item.price}</span>
                 </div>
                 <p className="type-body text-stone text-xs leading-relaxed line-clamp-2">
                   {item.description}

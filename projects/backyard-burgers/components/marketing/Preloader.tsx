@@ -76,7 +76,7 @@ export default function Preloader({ onComplete }: PreloaderProps) {
             className="absolute inset-0 rounded-full border-2 border-transparent animate-spin"
             style={{ borderTopColor: "#E67E22" }}
           />
-          <span className="font-mono text-xl font-bold" style={{ color: "#E67E22" }}>
+          <span className="font-sans text-xl font-bold" style={{ color: "#E67E22" }}>
             {progress}%
           </span>
         </div>
@@ -86,7 +86,7 @@ export default function Preloader({ onComplete }: PreloaderProps) {
           <h2 className="type-display text-4xl sm:text-5xl text-white tracking-wider font-extrabold">
             BACKYARD BURGERS
           </h2>
-          <p className="font-mono text-xs uppercase tracking-widest text-stone-400">
+          <p className="font-sans text-xs uppercase tracking-widest text-stone-400">
             SMOKEHOUSE BARK & CHARCOAL SMASH
           </p>
         </div>
@@ -99,7 +99,7 @@ export default function Preloader({ onComplete }: PreloaderProps) {
           />
         </div>
 
-        <p className="font-mono text-[10px] uppercase tracking-widest text-stone-500 pt-2">
+        <p className="font-sans text-[10px] uppercase tracking-widest text-stone-500 pt-2">
           OPEN-AIR SMOKEHOUSE & GRILL · KORAMANGALA
         </p>
       </div>

@@ -76,7 +76,7 @@ export default function Preloader({ onComplete }: PreloaderProps) {
             className="absolute inset-0 rounded-full border-2 border-transparent animate-spin"
             style={{ borderTopColor: "#2563EB" }}
           />
-          <span className="font-mono text-xl font-bold" style={{ color: "#2563EB" }}>
+          <span className="font-sans text-xl font-bold" style={{ color: "#2563EB" }}>
             {progress}%
           </span>
         </div>
@@ -86,7 +86,7 @@ export default function Preloader({ onComplete }: PreloaderProps) {
           <h2 className="type-display text-4xl sm:text-5xl text-white tracking-wider font-extrabold">
             BURGER BAR ON CONGRESS
           </h2>
-          <p className="font-mono text-xs uppercase tracking-widest text-stone-400">
+          <p className="font-sans text-xs uppercase tracking-widest text-stone-400">
             CONGRESS AVENUE STREET SMASH
           </p>
         </div>
@@ -99,7 +99,7 @@ export default function Preloader({ onComplete }: PreloaderProps) {
           />
         </div>
 
-        <p className="font-mono text-[10px] uppercase tracking-widest text-stone-500 pt-2">
+        <p className="font-sans text-[10px] uppercase tracking-widest text-stone-500 pt-2">
           DOWNTOWN AUSTIN WALK-UP FLAT TOP
         </p>
       </div>

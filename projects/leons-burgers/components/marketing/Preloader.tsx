@@ -76,7 +76,7 @@ export default function Preloader({ onComplete }: PreloaderProps) {
             className="absolute inset-0 rounded-full border-2 border-transparent animate-spin"
             style={{ borderTopColor: "#B12727" }}
           />
-          <span className="font-mono text-xl font-bold" style={{ color: "#B12727" }}>
+          <span className="font-sans text-xl font-bold" style={{ color: "#B12727" }}>
             {progress}%
           </span>
         </div>
@@ -86,7 +86,7 @@ export default function Preloader({ onComplete }: PreloaderProps) {
           <h2 className="type-display text-4xl sm:text-5xl text-white tracking-wider font-extrabold">
             LEON'S BURGERS & WINGS
           </h2>
-          <p className="font-mono text-xs uppercase tracking-widest text-stone-400">
+          <p className="font-sans text-xs uppercase tracking-widest text-stone-400">
             24-HR BUTTERMILK PERI-PERI CRUNCH
           </p>
         </div>
@@ -99,7 +99,7 @@ export default function Preloader({ onComplete }: PreloaderProps) {
           />
         </div>
 
-        <p className="font-mono text-[10px] uppercase tracking-widest text-stone-500 pt-2">
+        <p className="font-sans text-[10px] uppercase tracking-widest text-stone-500 pt-2">
           24-HR BUTTERMILK FRIED CHICKEN & BURGERS · INDIRANAGAR
         </p>
       </div>

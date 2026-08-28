@@ -60,7 +60,7 @@ export default function CartDrawer({
                   <h2 className="type-display text-2xl font-bold tracking-wide">
                     YOUR ORDER SELECTIONS
                   </h2>
-                  <p className="font-mono text-[10px] text-stone-400 uppercase tracking-widest mt-0.5">
+                  <p className="font-sans text-[10px] text-stone-400 uppercase tracking-widest mt-0.5">
                     {items.reduce((acc, i) => acc + i.quantity, 0)} Items Added
                   </p>
                 </div>
@@ -77,12 +77,12 @@ export default function CartDrawer({
                 {items.length === 0 ? (
                   <div className="h-full flex flex-col items-center justify-center text-center text-stone-400 space-y-3">
                     <span className="text-4xl">🛍️</span>
-                    <p className="font-mono text-xs uppercase tracking-wider">
+                    <p className="font-sans text-xs uppercase tracking-wider">
                       Your order drawer is currently empty
                     </p>
                     <button
                       onClick={onClose}
-                      className="px-4 py-2 rounded-sm font-mono text-xs font-bold uppercase tracking-wider border"
+                      className="px-4 py-2 rounded-sm font-sans text-xs font-bold uppercase tracking-wider border"
                       style={{ borderColor: `${primaryColor}40`, color: primaryColor }}
                     >
                       Browse Menu
@@ -95,10 +95,10 @@ export default function CartDrawer({
                       className="p-4 rounded-xl bg-white/5 border border-white/10 flex items-center justify-between gap-4"
                     >
                       <div className="space-y-1">
-                        <h4 className="font-mono font-bold text-sm text-white">
+                        <h4 className="font-sans font-bold text-sm text-white">
                           {item.name}
                         </h4>
-                        <p className="font-mono text-xs" style={{ color: primaryColor }}>
+                        <p className="font-sans text-xs" style={{ color: primaryColor }}>
                           {currency}{item.price} each
                         </p>
                       </div>
@@ -110,7 +110,7 @@ export default function CartDrawer({
                         >
                           -
                         </button>
-                        <span className="font-mono text-sm font-bold w-4 text-center">
+                        <span className="font-sans text-sm font-bold w-4 text-center">
                           {item.quantity}
                         </span>
                         <button
@@ -128,7 +128,7 @@ export default function CartDrawer({
               {/* Footer / Checkout */}
               {items.length > 0 && (
                 <div className="p-6 border-t border-white/10 bg-[#070709] space-y-4">
-                  <div className="flex justify-between items-center font-mono">
+                  <div className="flex justify-between items-center font-sans">
                     <span className="text-xs text-stone-400 uppercase tracking-wider">
                       Estimated Subtotal
                     </span>
@@ -141,7 +141,7 @@ export default function CartDrawer({
                     onClick={() => {
                       alert("Redirecting to online order checkout...");
                     }}
-                    className="w-full py-3.5 rounded-sm font-mono text-xs font-bold uppercase tracking-wider transition-all shadow-lg active:scale-98"
+                    className="w-full py-3.5 rounded-sm font-sans text-xs font-bold uppercase tracking-wider transition-all shadow-lg active:scale-98"
                     style={{
                       backgroundColor: primaryColor,
                       color: textOnPrimary,

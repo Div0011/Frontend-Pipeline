@@ -21,7 +21,7 @@ export default function Footer() {
         style={{ borderBottom: "1px solid rgba(255,255,255,0.2)" }}
       >
         {/* Navigation Options */}
-        <nav className="flex flex-wrap gap-6 sm:gap-10 font-mono text-sm font-bold uppercase tracking-wider">
+        <nav className="flex flex-wrap gap-6 sm:gap-10 font-sans text-sm font-bold uppercase tracking-wider">
           <Link href="/menu" className="hover:opacity-60 transition-opacity">
             Menu
           </Link>
@@ -38,7 +38,7 @@ export default function Footer() {
 
         {/* Hours */}
         <div
-          className="font-mono text-xs sm:text-right space-y-1"
+          className="font-sans text-xs sm:text-right space-y-1"
           style={{ color: "rgba(255,255,255,0.7)" }}
         >
           <p className="font-bold">OPEN DAILY: 11:30 AM – 11:30 PM</p>
@@ -55,7 +55,7 @@ export default function Footer() {
 
       {/* Bottom Bar: Contact Info & Back to Top */}
       <div
-        className="flex flex-col sm:flex-row justify-between sm:items-end gap-6 pt-8 font-mono text-xs font-bold"
+        className="flex flex-col sm:flex-row justify-between sm:items-end gap-6 pt-8 font-sans text-xs font-bold"
         style={{ borderTop: "1px solid rgba(255,255,255,0.2)" }}
       >
         {/* Contact Info */}

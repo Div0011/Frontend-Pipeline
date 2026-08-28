@@ -95,7 +95,7 @@ export default function Hero() {
       {/* Font Specimen Metadata Sidebars - ClaudeType styling */}
       <div
         ref={sidebarLeftRef}
-        className="absolute left-6 bottom-12 hidden xl:block space-y-2 font-mono text-[9px] text-mist tracking-widest leading-relaxed z-20"
+        className="absolute left-6 bottom-12 hidden xl:block space-y-2 font-sans text-[9px] text-mist tracking-widest leading-relaxed z-20"
       >
         <p><span className="text-stone">SPECIMEN:</span> SMASH DISPLAY v2.0</p>
         <p><span className="text-stone">DESIGNER:</span> ATELIER GUYS</p>
@@ -104,7 +104,7 @@ export default function Hero() {
 
       <div
         ref={sidebarRightRef}
-        className="absolute right-6 bottom-12 hidden xl:block space-y-2 font-mono text-[9px] text-mist tracking-widest text-right leading-relaxed z-20"
+        className="absolute right-6 bottom-12 hidden xl:block space-y-2 font-sans text-[9px] text-mist tracking-widest text-right leading-relaxed z-20"
       >
         <p><span className="text-stone">COORDINATES:</span> 12.9716° N, 77.5946° E</p>
         <p><span className="text-stone">LAB:</span> BANGALORE KINETICS</p>

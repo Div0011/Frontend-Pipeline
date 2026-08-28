@@ -116,7 +116,7 @@ function Philosophy() {
               />
             </div>
             <div className="absolute -bottom-6 -right-6 bg-cream p-6 border border-ink/5 rounded-sm shadow-lg">
-              <p className="type-display text-3xl text-gold font-mono">01</p>
+              <p className="type-display text-3xl text-gold font-sans">01</p>
             </div>
           </div>
         </div>
@@ -139,7 +139,7 @@ function Films() {
       <div className="mx-auto max-w-[88rem] px-6 lg:px-8">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-16">
           <div>
-            <p className="type-caption text-gold mb-4 font-mono">IN MOTION</p>
+            <p className="type-caption text-gold mb-4 font-sans">IN MOTION</p>
             <h2 className="type-display text-4xl md:text-5xl lg:text-6xl leading-[1.05] text-ink">
               Atelier Broadcasts
             </h2>
@@ -168,14 +168,14 @@ function Films() {
                 />
                 <div className="absolute inset-0 bg-ink/10 group-hover:bg-ink/0 transition-colors duration-700" />
                 <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-cream-dark/95 to-transparent">
-                  <p className="type-caption text-ink text-xs font-mono">{video.category}</p>
+                  <p className="type-caption text-ink text-xs font-sans">{video.category}</p>
                 </div>
               </div>
               <div>
                 <h3 className="type-display text-xl group-hover:text-gold transition-colors duration-500 text-ink">
                   {video.title}
                 </h3>
-                <p className="type-body text-stone text-sm mt-1 font-mono">
+                <p className="type-body text-stone text-sm mt-1 font-sans">
                   {video.director}
                 </p>
               </div>
@@ -195,7 +195,7 @@ function Films() {
           >
             <button
               onClick={() => setActiveVideo(null)}
-              className="absolute top-6 right-6 type-caption text-xs text-ink hover:text-gold border border-ink/20 hover:border-ink px-4 py-2 transition-all duration-300 z-60 font-mono"
+              className="absolute top-6 right-6 type-caption text-xs text-ink hover:text-gold border border-ink/20 hover:border-ink px-4 py-2 transition-all duration-300 z-60 font-sans"
             >
               Close Broadcast ✕
             </button>
@@ -234,7 +234,7 @@ function Locations() {
     <section ref={ref} className="section-cinematic bg-cream-dark/20 border-t border-ink/5">
       <div className="mx-auto max-w-[88rem] px-6 lg:px-8">
         <div className="text-center mb-16">
-          <p className="type-caption text-gold mb-4 font-mono">VISIT US</p>
+          <p className="type-caption text-gold mb-4 font-sans">VISIT US</p>
           <h2 className="type-display text-4xl md:text-5xl lg:text-6xl leading-[1.05] text-ink">
             Our Ateliers
           </h2>
@@ -258,16 +258,16 @@ function Locations() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-cream-dark/80 via-transparent to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 p-6">
-                    <p className="type-caption text-ink text-xs mb-2 font-mono">{location.city}</p>
+                    <p className="type-caption text-ink text-xs mb-2 font-sans">{location.city}</p>
                     <h3 className="type-display text-2xl text-ink">{location.name}</h3>
                   </div>
                 </div>
                 <div className="flex justify-between items-start">
                   <div>
                     <p className="type-body text-stone">{location.address}</p>
-                    <p className="type-caption text-mist text-xs mt-1 font-mono">{location.hours}</p>
+                    <p className="type-caption text-mist text-xs mt-1 font-sans">{location.hours}</p>
                   </div>
-                  <span className="type-caption text-gold text-xs group-hover:translate-x-1 transition-transform duration-500 font-mono">
+                  <span className="type-caption text-gold text-xs group-hover:translate-x-1 transition-transform duration-500 font-sans">
                     Map →
                   </span>
                 </div>
@@ -296,7 +296,7 @@ function CTA() {
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gold/20 to-transparent" />
       </div>
       <div className="relative z-10 mx-auto max-w-[88rem] px-6 lg:px-8 text-center">
-        <p className="type-caption text-gold mb-6 font-mono uppercase">ATELIER EXPERIENCE</p>
+        <p className="type-caption text-gold mb-6 font-sans uppercase">ATELIER EXPERIENCE</p>
         <h2 className="type-display text-4xl md:text-5xl lg:text-7xl leading-[1.05] mb-8 text-ink">
           Ready to taste
           <br />
@@ -308,14 +308,14 @@ function CTA() {
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <button
             onClick={() => setIsReserveModalOpen(true)}
-            className="group inline-flex items-center gap-3 bg-gold text-ink px-10 py-5 type-caption text-xs font-mono hover:bg-ink hover:text-cream transition-colors duration-500 shadow-xl"
+            className="group inline-flex items-center gap-3 bg-gold text-ink px-10 py-5 type-caption text-xs font-sans hover:bg-ink hover:text-cream transition-colors duration-500 shadow-xl"
           >
             Make a Reservation
             <span className="group-hover:translate-x-1 transition-transform duration-500">→</span>
           </button>
           <Link
             href="/menu"
-            className="inline-flex items-center gap-3 border border-ink/20 text-ink px-10 py-5 type-caption text-xs hover:border-ink hover:bg-ink hover:text-cream transition-all duration-500 font-mono"
+            className="inline-flex items-center gap-3 border border-ink/20 text-ink px-10 py-5 type-caption text-xs hover:border-ink hover:bg-ink hover:text-cream transition-all duration-500 font-sans"
           >
             Explore Menu
           </Link>
@@ -341,7 +341,7 @@ function CTA() {
             >
               <button
                 onClick={() => setIsReserveModalOpen(false)}
-                className="absolute top-4 right-4 text-xs font-mono text-mist hover:text-ink"
+                className="absolute top-4 right-4 text-xs font-sans text-mist hover:text-ink"
               >
                 ✕ CLOSE
               </button>
@@ -354,10 +354,10 @@ function CTA() {
                   }}
                   className="space-y-6"
                 >
-                  <p className="type-caption text-gold font-mono">TABLE RESERVATION</p>
+                  <p className="type-caption text-gold font-sans">TABLE RESERVATION</p>
                   <h3 className="type-display text-3xl text-ink">Reserve Your Atelier Specimen</h3>
                   
-                  <div className="space-y-4 font-mono text-xs text-stone">
+                  <div className="space-y-4 font-sans text-xs text-stone">
                     <div>
                       <label className="block mb-1">GUEST NAME</label>
                       <input
@@ -390,14 +390,14 @@ function CTA() {
 
                   <button
                     type="submit"
-                    className="w-full bg-ink text-cream py-4 type-caption text-xs font-mono hover:bg-gold hover:text-ink transition-colors duration-500"
+                    className="w-full bg-ink text-cream py-4 type-caption text-xs font-sans hover:bg-gold hover:text-ink transition-colors duration-500"
                   >
                     Confirm Reservation →
                   </button>
                 </form>
               ) : (
                 <div className="text-center py-8 space-y-4">
-                  <p className="type-caption text-gold font-mono">RESERVATION CONFIRMED</p>
+                  <p className="type-caption text-gold font-sans">RESERVATION CONFIRMED</p>
                   <h3 className="type-display text-4xl text-ink">See You Soon</h3>
                   <p className="type-serif text-stone">
                     Your table at SANKY'S BURGERS Atelier has been reserved. A confirmation SMS has been dispatched.
@@ -407,7 +407,7 @@ function CTA() {
                       setReserved(false);
                       setIsReserveModalOpen(false);
                     }}
-                    className="mt-4 bg-ink text-cream px-6 py-3 text-xs font-mono uppercase"
+                    className="mt-4 bg-ink text-cream px-6 py-3 text-xs font-sans uppercase"
                   >
                     Done
                   </button>

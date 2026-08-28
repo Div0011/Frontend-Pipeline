@@ -153,7 +153,7 @@ export default function TimelineSlider() {
                 transform: isDragging ? "scale(0.99)" : "scale(1)",
               }}
             >
-              <div className="flex justify-between items-center text-[10px] font-mono tracking-widest text-mist">
+              <div className="flex justify-between items-center text-[10px] font-sans tracking-widest text-mist">
                 <span>{event.chapter}</span>
                 <span className="text-gold font-bold text-lg">{event.year}</span>
               </div>
@@ -196,7 +196,7 @@ export default function TimelineSlider() {
               className="absolute top-0 left-0 w-24 h-full bg-gold rounded-full transition-transform duration-300"
             />
           </div>
-          <div className="font-mono text-[10px] text-mist tracking-widest flex-shrink-0">
+          <div className="font-sans text-[10px] text-mist tracking-widest flex-shrink-0">
             <span>{Math.round(progress * 100)}% EXPLORED</span>
           </div>
         </div>

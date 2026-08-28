@@ -73,7 +73,7 @@ export default function CinematicMenuReveal() {
       />
 
       <div className="absolute top-8 left-1/2 -translate-x-1/2 z-30 pointer-events-none">
-        <p className="type-caption text-ember font-mono tracking-widest font-bold">DAN&apos;S KITCHEN BOARD</p>
+        <p className="type-caption text-ember font-sans tracking-widest font-bold">DAN&apos;S KITCHEN BOARD</p>
       </div>
 
       <div
@@ -85,7 +85,7 @@ export default function CinematicMenuReveal() {
             Austin <span className="text-ember">Favorites</span>
           </h2>
 
-          <div className="flex flex-wrap justify-center gap-2 sm:gap-3 font-mono text-xs">
+          <div className="flex flex-wrap justify-center gap-2 sm:gap-3 font-sans text-xs">
             {CATEGORIES.map((cat) => (
               <button
                 key={cat.id}
@@ -117,7 +117,7 @@ export default function CinematicMenuReveal() {
                   className="object-cover group-hover:scale-105 transition-transform duration-700"
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
                 />
-                <div className="absolute top-3 left-3 bg-char text-[#D97706] text-[9px] font-mono tracking-widest px-2 py-1 uppercase rounded-sm z-10 font-bold">
+                <div className="absolute top-3 left-3 bg-char text-[#D97706] text-[9px] font-sans tracking-widest px-2 py-1 uppercase rounded-sm z-10 font-bold">
                   {item.tags[0] ?? "FAVORITE"}
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-char/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -127,7 +127,7 @@ export default function CinematicMenuReveal() {
                   <h3 className="type-display text-xl group-hover:text-ember transition-colors duration-500 text-char">
                     {item.name}
                   </h3>
-                  <span className="type-caption text-ember font-mono text-sm font-bold">${item.price.toFixed(2)}</span>
+                  <span className="type-caption text-ember font-sans text-sm font-bold">${item.price.toFixed(2)}</span>
                 </div>
                 <p className="type-body text-stone text-xs leading-relaxed line-clamp-2">
                   {item.description}

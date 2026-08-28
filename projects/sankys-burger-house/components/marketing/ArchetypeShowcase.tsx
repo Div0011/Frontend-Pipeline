@@ -11,7 +11,7 @@ export default function ArchetypeShowcase() {
           <div>
             <div className="flex items-center gap-2 mb-1">
               <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping" />
-              <span className="font-mono text-xs tracking-widest uppercase font-bold text-emerald-400">
+              <span className="font-sans text-xs tracking-widest uppercase font-bold text-emerald-400">
                 LIVE GARAGE STATUS · ACTIVE NOW
               </span>
             </div>
@@ -24,17 +24,17 @@ export default function ArchetypeShowcase() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="p-6 rounded-xl bg-white/5 border border-white/10 space-y-2">
-            <span className="font-mono text-[10px] uppercase text-stone-500">CAST-IRON TEMPERATURE</span>
+            <span className="font-sans text-[10px] uppercase text-stone-500">CAST-IRON TEMPERATURE</span>
             <p className="type-display text-3xl font-bold" style={{ color: "#FFE500" }}>485°F HIGH SEAR</p>
             <p className="text-xs text-stone-400">Continuous sizzling cast-iron surface for instant Maillard crust.</p>
           </div>
           <div className="p-6 rounded-xl bg-white/5 border border-white/10 space-y-2">
-            <span className="font-mono text-[10px] uppercase text-stone-500">LATE-NIGHT SERVICE</span>
+            <span className="font-sans text-[10px] uppercase text-stone-500">LATE-NIGHT SERVICE</span>
             <p className="type-display text-3xl font-bold" style={{ color: "#FFE500" }}>TILL 3:00 AM</p>
             <p className="text-xs text-stone-400">Serving midnight cravings across Hennur Garage every night.</p>
           </div>
           <div className="p-6 rounded-xl bg-white/5 border border-white/10 space-y-2">
-            <span className="font-mono text-[10px] uppercase text-stone-500">MONSTER PATTY WEIGHT</span>
+            <span className="font-sans text-[10px] uppercase text-stone-500">MONSTER PATTY WEIGHT</span>
             <p className="type-display text-3xl font-bold" style={{ color: "#FFE500" }}>100% PRIME CUTS</p>
             <p className="text-xs text-stone-400">Double thick patties layered with melted cheese and monster sauce.</p>
           </div>

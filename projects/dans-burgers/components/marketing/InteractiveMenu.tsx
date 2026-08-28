@@ -51,7 +51,7 @@ export default function InteractiveMenu() {
                 >
                   <div className="flex items-start justify-between mb-6">
                     <div>
-                      <p className="type-caption text-smoke text-[9px] mb-2 font-mono">0{CATEGORIES.indexOf(cat) + 1}</p>
+                      <p className="type-caption text-smoke text-[9px] mb-2 font-sans">0{CATEGORIES.indexOf(cat) + 1}</p>
                       <motion.h3
                         layout
                         className={`type-display text-3xl lg:text-4xl leading-[0.9] transition-colors duration-300 ${
@@ -116,7 +116,7 @@ export default function InteractiveMenu() {
             onClick={() => setMenuOpen(true)}
           >
             <div className="text-center">
-              <p className="type-caption text-bone/70 text-[9px] mb-3 font-mono">COMPLETE SELECTION</p>
+              <p className="type-caption text-bone/70 text-[9px] mb-3 font-sans">COMPLETE SELECTION</p>
               <motion.h3
                 layout
                 className="type-display text-4xl lg:text-5xl text-bone leading-[0.9] mb-4"
@@ -171,7 +171,7 @@ export default function InteractiveMenu() {
                     <div key={cat.id}>
                       <div className="flex items-baseline justify-between mb-8 border-b border-char/15 pb-4">
                         <h3 className="type-display text-3xl text-char">{cat.label}</h3>
-                        <span className="type-caption text-smoke text-[9px] font-mono">
+                        <span className="type-caption text-smoke text-[9px] font-sans">
                           {cat.items.length} ITEMS
                         </span>
                       </div>

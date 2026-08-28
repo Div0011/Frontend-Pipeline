@@ -18,7 +18,7 @@ export default function ArchetypeShowcase() {
       <div className="max-w-6xl mx-auto space-y-10">
         <div className="flex flex-col sm:flex-row justify-between sm:items-end gap-4 border-b border-white/10 pb-6">
           <div>
-            <span className="font-mono text-xs tracking-widest uppercase font-bold" style={{ color: "#7C3AED" }}>
+            <span className="font-sans text-xs tracking-widest uppercase font-bold" style={{ color: "#7C3AED" }}>
               INTERACTIVE SPICE HEAT METER
             </span>
             <h2 className="type-display text-4xl sm:text-5xl text-white font-bold mt-1">
@@ -37,10 +37,10 @@ export default function ArchetypeShowcase() {
                 heatLevel === idx ? "bg-white/10 border-white/40" : "bg-white/5 border-white/10 hover:border-white/20"
               }`}
             >
-              <span className="font-mono text-xs font-bold block mb-1" style={{ color: heatLevel === idx ? "#7C3AED" : "#888" }}>
+              <span className="font-sans text-xs font-bold block mb-1" style={{ color: heatLevel === idx ? "#7C3AED" : "#888" }}>
                 STAGE 0{idx + 1}
               </span>
-              <h4 className="font-mono font-bold text-sm uppercase text-white">
+              <h4 className="font-sans font-bold text-sm uppercase text-white">
                 {stage.name}
               </h4>
               <p className="text-xs text-stone-400 mt-2 line-clamp-2">

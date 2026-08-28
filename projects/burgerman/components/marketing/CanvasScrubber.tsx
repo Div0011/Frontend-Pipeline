@@ -66,9 +66,7 @@ export default function CanvasScrubber({
   const [firstFrameReady, setFirstFrameReady] = useState(false);
 
   const extraVh   = parseExtraVh(scrollDistance);  // e.g. 300
-  const totalVh   = 100 + extraVh;                 // e.g. 400
-
-  // ── Frame loading ──────────────────────────────────────────────────────────
+  const totalVh   = 100 + extraVh;                 // e.g. 400. ── Frame loading ──────────────────────────────────────────────────────────
   const loadFrame = useCallback(
     (i: number): Promise<HTMLImageElement> =>
       new Promise((res, rej) => {

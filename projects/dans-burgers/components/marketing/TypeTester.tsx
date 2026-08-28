@@ -24,7 +24,7 @@ const fonts = [
   {
     id: "kitchen-mono",
     name: "Kitchen Mono",
-    className: "font-mono uppercase",
+    className: "font-sans uppercase",
     designer: "Austin Griddle Station",
     weight: "400 (Regular)",
     description: "Technical monospace font used for griddle temperatures, order tracking, and store coordinates.",
@@ -136,7 +136,7 @@ export default function TypeTester() {
 
         {/* Specimen display area */}
         <div className="border border-bone-dark bg-bone-warm min-h-[300px] flex flex-col justify-between p-8 md:p-12 relative group rounded-sm overflow-hidden shadow-md">
-          <div className="flex flex-wrap justify-between gap-4 border-b border-bone-dark pb-6 text-smoke text-[10px] uppercase font-mono tracking-widest">
+          <div className="flex flex-wrap justify-between gap-4 border-b border-bone-dark pb-6 text-smoke text-[10px] uppercase font-sans tracking-widest">
             <div>
               <span className="text-stone">Typeface: </span>
               <span className="text-char font-bold">{selectedFont.name}</span>
@@ -172,7 +172,7 @@ export default function TypeTester() {
             <p className="max-w-xl font-body">
               {selectedFont.description}
             </p>
-            <div className="flex gap-6 font-mono text-[10px]">
+            <div className="flex gap-6 font-sans text-[10px]">
               <span>CHARACTERS: {text.length}</span>
               <span className="text-ember font-bold">© DAN&apos;S HAMBURGERS 1973</span>
             </div>

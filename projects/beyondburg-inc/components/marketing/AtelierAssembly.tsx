@@ -45,7 +45,7 @@ export default function AtelierAssembly() {
           <div>
             <div className="flex items-center gap-2 mb-2">
               <span className="w-2 h-2 rounded-full bg-yolk" />
-              <span className="text-yolk font-mono text-xs tracking-widest uppercase font-bold">
+              <span className="text-yolk font-sans text-xs tracking-widest uppercase font-bold">
                 THE CRAFT
               </span>
             </div>

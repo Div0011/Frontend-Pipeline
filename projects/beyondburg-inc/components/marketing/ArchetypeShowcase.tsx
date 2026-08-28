@@ -35,7 +35,7 @@ export default function ArchetypeShowcase() {
       <div className="max-w-6xl mx-auto space-y-12">
         <div className="flex flex-col sm:flex-row justify-between sm:items-end gap-4 border-b border-white/10 pb-6">
           <div>
-            <span className="font-mono text-xs tracking-widest uppercase font-bold text-[#F5C418]">
+            <span className="font-sans text-xs tracking-widest uppercase font-bold text-[#F5C418]">
               PAIRINGS
             </span>
             <h2 className="type-display text-4xl sm:text-5xl text-white font-extrabold mt-1">
@@ -68,11 +68,11 @@ export default function ArchetypeShowcase() {
                     />
                   </div>
 
-                  <span className="font-mono text-[9px] uppercase tracking-widest text-[#F5C418] font-bold block">
+                  <span className="font-sans text-[9px] uppercase tracking-widest text-[#F5C418] font-bold block">
                     {p.tag}
                   </span>
 
-                  <h4 className="font-mono font-bold text-base uppercase text-white">
+                  <h4 className="font-sans font-bold text-base uppercase text-white">
                     {p.title}
                   </h4>
 
@@ -81,7 +81,7 @@ export default function ArchetypeShowcase() {
                   </p>
                 </div>
 
-                <div className="pt-4 border-t border-white/10 font-mono text-[10px] uppercase text-[#F5C418] font-bold flex justify-between items-center">
+                <div className="pt-4 border-t border-white/10 font-sans text-[10px] uppercase text-[#F5C418] font-bold flex justify-between items-center">
                   <span>{p.stats}</span>
                   <span>{isSelected ? "● SELECTED" : "○ SELECT"}</span>
                 </div>

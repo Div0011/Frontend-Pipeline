@@ -90,7 +90,7 @@ export default function BrandManifesto() {
             <button
               type="button"
               onClick={() => setViewMode("spec")}
-              className="px-4 py-2 rounded-full font-mono text-xs font-bold uppercase tracking-wider transition-all shadow-lg"
+              className="px-4 py-2 rounded-full font-sans text-xs font-bold uppercase tracking-wider transition-all shadow-lg"
               style={{
                 backgroundColor: viewMode === "spec" ? "#BF5700" : "transparent",
                 color: viewMode === "spec" ? "#FFFFFF" : "#FAF8F2",
@@ -101,7 +101,7 @@ export default function BrandManifesto() {
             <button
               type="button"
               onClick={() => setViewMode("compare")}
-              className="px-4 py-2 rounded-full font-mono text-xs font-bold uppercase tracking-wider transition-all shadow-lg"
+              className="px-4 py-2 rounded-full font-sans text-xs font-bold uppercase tracking-wider transition-all shadow-lg"
               style={{
                 backgroundColor: viewMode === "compare" ? "#BF5700" : "transparent",
                 color: viewMode === "compare" ? "#FFFFFF" : "#FAF8F2",
@@ -133,13 +133,13 @@ export default function BrandManifesto() {
                     }}
                   >
                     <span
-                      className="font-mono text-xs font-extrabold tracking-wider"
+                      className="font-sans text-xs font-extrabold tracking-wider"
                       style={{ color: isSelected ? "#BF5700" : "#FAF8F2" }}
                     >
                       {p.number} // {p.title}
                     </span>
                     <span
-                      className="text-[10px] font-mono px-2 py-0.5 rounded-full border"
+                      className="text-[10px] font-sans px-2 py-0.5 rounded-full border"
                       style={{
                         backgroundColor: isSelected ? "#BF570020" : "rgba(255,255,255,0.05)",
                         color: isSelected ? "#BF5700" : "#A8A29E",
@@ -182,7 +182,7 @@ export default function BrandManifesto() {
                       <button
                         type="button"
                         onClick={() => setActiveHotspot(hIdx)}
-                        className="flex items-center justify-center w-7 h-7 rounded-full bg-black/80 border text-xs font-mono font-bold hover:scale-110 transition-transform shadow-2xl"
+                        className="flex items-center justify-center w-7 h-7 rounded-full bg-black/80 border text-xs font-sans font-bold hover:scale-110 transition-transform shadow-2xl"
                         style={{ borderColor: "#BF5700", color: "#BF5700" }}
                       >
                         {hIdx + 1}
@@ -192,10 +192,10 @@ export default function BrandManifesto() {
 
                   {activeHotspot !== null && current.hotspots[activeHotspot] && (
                     <div
-                      className="absolute bottom-4 left-4 right-4 p-3 rounded-xl bg-black/90 backdrop-blur-md border font-mono text-xs font-bold uppercase tracking-wider"
+                      className="absolute bottom-4 left-4 right-4 p-3 rounded-xl bg-black/90 backdrop-blur-md border font-sans text-xs font-bold uppercase tracking-wider"
                       style={{ borderColor: "#BF570040", color: "#BF5700" }}
                     >
-                      [LAYER {activeHotspot + 1}] {current.hotspots[activeHotspot].label}
+                      Layer {activeHotspot + 1}: {current.hotspots[activeHotspot].label}
                     </div>
                   )}
                 </div>
@@ -209,7 +209,7 @@ export default function BrandManifesto() {
                   <div className="space-y-3">
                     {current.stats.map((st, sIdx) => (
                       <div key={sIdx} className="space-y-1">
-                        <div className="flex justify-between text-xs font-mono">
+                        <div className="flex justify-between text-xs font-sans">
                           <span className="text-stone-400">{st.label}</span>
                           <span className="font-bold" style={{ color: "#BF5700" }}>{st.value}</span>
                         </div>
@@ -229,7 +229,7 @@ export default function BrandManifesto() {
                       setIsSizzling(true);
                       setTimeout(() => setIsSizzling(false), 1500);
                     }}
-                    className="w-full py-3.5 rounded-xl font-mono text-xs font-bold uppercase tracking-wider transition-all shadow-xl active:scale-95 hover:brightness-110"
+                    className="w-full py-3.5 rounded-xl font-sans text-xs font-bold uppercase tracking-wider transition-all shadow-xl active:scale-95 hover:brightness-110"
                     style={{ backgroundColor: "#BF5700", color: "#FFFFFF" }}
                   >
                     {isSizzling ? "SEARING 450°F..." : "TEST FLAT-TOP SEAR"}
@@ -244,10 +244,10 @@ export default function BrandManifesto() {
         {viewMode === "compare" && (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="p-6 rounded-2xl bg-red-500/[0.04] border border-red-500/20 backdrop-blur-xl space-y-4">
-              <span className="font-mono text-xs font-bold text-red-400 uppercase tracking-wider block">
+              <span className="font-sans text-xs font-bold text-red-400 uppercase tracking-wider block">
                 MASS PRODUCTION
               </span>
-              <ul className="space-y-2 font-mono text-xs text-stone-300">
+              <ul className="space-y-2 font-sans text-xs text-stone-300">
                 • Steamed interior, zero Maillard crust
                 • Dense dry bun, collapses under sauce
                 • Cold unmelted cheese slice
@@ -258,10 +258,10 @@ export default function BrandManifesto() {
               className="p-6 rounded-2xl bg-white/[0.04] border backdrop-blur-xl space-y-4"
               style={{ borderColor: "#BF570040" }}
             >
-              <span className="font-mono text-xs font-bold uppercase tracking-wider block" style={{ color: "#BF5700" }}>
+              <span className="font-sans text-xs font-bold uppercase tracking-wider block" style={{ color: "#BF5700" }}>
                 OUR CRAFT SPEC
               </span>
-              <ul className="space-y-2 font-mono text-xs text-stone-200">
+              <ul className="space-y-2 font-sans text-xs text-stone-200">
                 • 450°F cast iron crispy lace edges
                 • Sweet cream butter toasted potato roll
                 • Steam dome molten cheese melt

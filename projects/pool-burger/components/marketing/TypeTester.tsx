@@ -24,7 +24,7 @@ const fonts = [
   {
     id: "atelier-mono",
     name: "Atelier Mono",
-    className: "font-mono uppercase",
+    className: "font-sans uppercase",
     designer: "Bangalore Lab",
     weight: "400 (Regular)",
     description: "Technical, industrial monospaced face mapping the exact temperature, weight, and timing of our culinary griddle.",
@@ -137,7 +137,7 @@ export default function TypeTester() {
         {/* Specimen display area */}
         <div className="border border-ink/10 bg-cream-warm min-h-[300px] flex flex-col justify-between p-8 md:p-12 relative group rounded-sm overflow-hidden" data-cursor="test it">
           {/* Metadata overlay */}
-          <div className="flex flex-wrap justify-between gap-4 border-b border-ink/5 pb-6 text-mist text-[10px] uppercase font-mono tracking-widest">
+          <div className="flex flex-wrap justify-between gap-4 border-b border-ink/5 pb-6 text-mist text-[10px] uppercase font-sans tracking-widest">
             <div>
               <span className="text-stone">Atelier Font: </span>
               <span className="text-ink font-bold">{selectedFont.name}</span>
@@ -175,7 +175,7 @@ export default function TypeTester() {
             <p className="max-w-xl font-body">
               {selectedFont.description}
             </p>
-            <div className="flex gap-6 font-mono text-[10px]">
+            <div className="flex gap-6 font-sans text-[10px]">
               <span>CHARACTERS: {text.length}</span>
               <span className="text-gold">© EST 2024</span>
             </div>

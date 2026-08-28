@@ -18,7 +18,7 @@ export default function ArchetypeShowcase() {
       <div className="max-w-6xl mx-auto space-y-12">
         <div className="flex flex-col sm:flex-row justify-between sm:items-end gap-4 border-b border-white/10 pb-6">
           <div>
-            <span className="font-mono text-xs tracking-widest uppercase font-bold" style={{ color: "#C8A96E" }}>
+            <span className="font-sans text-xs tracking-widest uppercase font-bold" style={{ color: "#C8A96E" }}>
               HAUTE ATELIER GASTRONOMY
             </span>
             <h2 className="type-display text-4xl sm:text-5xl text-white font-bold mt-1">
@@ -38,7 +38,7 @@ export default function ArchetypeShowcase() {
               }`}
             >
               <div className="w-2.5 h-2.5 rounded-full mb-4" style={{ backgroundColor: selectedPairing === idx ? "#C8A96E" : "#555" }} />
-              <h4 className="font-mono font-bold text-sm uppercase text-white">
+              <h4 className="font-sans font-bold text-sm uppercase text-white">
                 {p.title}
               </h4>
               <p className="text-xs text-stone-400 font-body leading-relaxed mt-2">

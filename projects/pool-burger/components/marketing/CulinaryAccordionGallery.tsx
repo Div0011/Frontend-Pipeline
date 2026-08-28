@@ -55,7 +55,7 @@ export default function CulinaryAccordionGallery() {
           <div>
             <div className="flex items-center gap-2 mb-3">
               <span className="w-2.5 h-2.5 rounded-full animate-ping" style={{ backgroundColor: "#F43F5E" }} />
-              <span className="font-mono text-xs tracking-widest uppercase font-bold" style={{ color: "#F43F5E" }}>
+              <span className="font-sans text-xs tracking-widest uppercase font-bold" style={{ color: "#F43F5E" }}>
                 GALLERY
               </span>
             </div>

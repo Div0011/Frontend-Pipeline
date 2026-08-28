@@ -115,7 +115,7 @@ function Philosophy() {
               />
             </div>
             <div className="absolute -bottom-6 -right-6 bg-bone p-6 border border-bone-dark rounded-sm shadow-lg">
-              <p className="type-display text-3xl text-ember font-mono">1973</p>
+              <p className="type-display text-3xl text-ember font-sans">1973</p>
             </div>
           </div>
         </div>
@@ -138,7 +138,7 @@ function Films() {
       <div className="mx-auto max-w-[88rem] px-6 lg:px-8">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-16">
           <div>
-            <p className="type-caption text-ember mb-4 font-mono font-bold">IN MOTION</p>
+            <p className="type-caption text-ember mb-4 font-sans font-bold">IN MOTION</p>
             <h2 className="type-display text-4xl md:text-5xl lg:text-6xl leading-[1.05] text-char">
               Austin Kitchen Broadcasts
             </h2>
@@ -166,14 +166,14 @@ function Films() {
                 />
                 <div className="absolute inset-0 bg-char/10 group-hover:bg-transparent transition-colors duration-700" />
                 <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-char/90 to-transparent">
-                  <p className="type-caption text-bone text-xs font-mono">{video.category}</p>
+                  <p className="type-caption text-bone text-xs font-sans">{video.category}</p>
                 </div>
               </div>
               <div>
                 <h3 className="type-display text-xl group-hover:text-ember transition-colors duration-500 text-char">
                   {video.title}
                 </h3>
-                <p className="type-body text-stone text-sm mt-1 font-mono">
+                <p className="type-body text-stone text-sm mt-1 font-sans">
                   {video.director}
                 </p>
               </div>
@@ -193,7 +193,7 @@ function Films() {
           >
             <button
               onClick={() => setActiveVideo(null)}
-              className="absolute top-6 right-6 type-caption text-xs text-bone hover:text-[#D97706] border border-bone/20 hover:border-bone px-4 py-2 transition-all duration-300 z-60 font-mono"
+              className="absolute top-6 right-6 type-caption text-xs text-bone hover:text-[#D97706] border border-bone/20 hover:border-bone px-4 py-2 transition-all duration-300 z-60 font-sans"
             >
               Close Broadcast ✕
             </button>
@@ -232,7 +232,7 @@ function Locations() {
     <section ref={ref} className="section-cinematic bg-bone border-t border-bone-dark">
       <div className="mx-auto max-w-[88rem] px-6 lg:px-8">
         <div className="text-center mb-16">
-          <p className="type-caption text-ember mb-4 font-mono font-bold">AUSTIN &amp; BUDA</p>
+          <p className="type-caption text-ember mb-4 font-sans font-bold">AUSTIN &amp; BUDA</p>
           <h2 className="type-display text-4xl md:text-5xl lg:text-6xl leading-[1.05] text-char">
             Our 4 Locations
           </h2>
@@ -255,16 +255,16 @@ function Locations() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-char/80 via-transparent to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 p-6">
-                    <p className="type-caption text-[#D97706] text-xs mb-1 font-mono">{location.city}</p>
+                    <p className="type-caption text-[#D97706] text-xs mb-1 font-sans">{location.city}</p>
                     <h3 className="type-display text-2xl text-bone">{location.name}</h3>
                   </div>
                 </div>
                 <div className="flex justify-between items-start">
                   <div>
                     <p className="type-body text-char font-medium">{location.address}</p>
-                    <p className="type-caption text-smoke text-xs mt-1 font-mono">{location.hours}</p>
+                    <p className="type-caption text-smoke text-xs mt-1 font-sans">{location.hours}</p>
                   </div>
-                  <span className="type-caption text-ember text-xs group-hover:translate-x-1 transition-transform duration-500 font-mono font-bold">
+                  <span className="type-caption text-ember text-xs group-hover:translate-x-1 transition-transform duration-500 font-sans font-bold">
                     Details →
                   </span>
                 </div>
@@ -290,7 +290,7 @@ function CTA() {
   return (
     <section ref={ref} className="section-cinematic bg-bone-warm relative overflow-hidden border-t border-bone-dark">
       <div className="relative z-10 mx-auto max-w-[88rem] px-6 lg:px-8 text-center">
-        <p className="type-caption text-ember mb-6 font-mono uppercase font-bold">AUSTIN TRADITION SINCE 1973</p>
+        <p className="type-caption text-ember mb-6 font-sans uppercase font-bold">AUSTIN TRADITION SINCE 1973</p>
         <h2 className="type-display text-4xl md:text-5xl lg:text-7xl leading-[1.05] mb-8 text-char">
           Ready to taste
           <br />
@@ -302,13 +302,13 @@ function CTA() {
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <button
             onClick={() => setIsReserveModalOpen(true)}
-            className="btn-red px-10 py-5 text-xs font-mono font-bold shadow-xl"
+            className="btn-red px-10 py-5 text-xs font-sans font-bold shadow-xl"
           >
             Call Ahead or Reserve Table →
           </button>
           <Link
             href="/menu"
-            className="btn-outline px-10 py-5 text-xs font-mono font-bold"
+            className="btn-outline px-10 py-5 text-xs font-sans font-bold"
           >
             Explore Full Menu
           </Link>
@@ -333,7 +333,7 @@ function CTA() {
             >
               <button
                 onClick={() => setIsReserveModalOpen(false)}
-                className="absolute top-4 right-4 text-xs font-mono text-smoke hover:text-char"
+                className="absolute top-4 right-4 text-xs font-sans text-smoke hover:text-char"
               >
                 ✕ CLOSE
               </button>
@@ -346,10 +346,10 @@ function CTA() {
                   }}
                   className="space-y-6"
                 >
-                  <p className="type-caption text-ember font-mono font-bold">GROUP &amp; PICKUP ORDERS</p>
+                  <p className="type-caption text-ember font-sans font-bold">GROUP &amp; PICKUP ORDERS</p>
                   <h3 className="type-display text-3xl text-char">Reserve Your Table</h3>
                   
-                  <div className="space-y-4 font-mono text-xs text-stone">
+                  <div className="space-y-4 font-sans text-xs text-stone">
                     <div>
                       <label className="block mb-1 text-char font-bold">GUEST NAME</label>
                       <input
@@ -383,14 +383,14 @@ function CTA() {
 
                   <button
                     type="submit"
-                    className="w-full btn-red py-4 text-xs font-mono font-bold"
+                    className="w-full btn-red py-4 text-xs font-sans font-bold"
                   >
                     Confirm Table Request →
                   </button>
                 </form>
               ) : (
                 <div className="text-center py-8 space-y-4">
-                  <p className="type-caption text-ember font-mono font-bold">REQUEST RECEIVED</p>
+                  <p className="type-caption text-ember font-sans font-bold">REQUEST RECEIVED</p>
                   <h3 className="type-display text-4xl text-char">We&apos;ll See You Soon!</h3>
                   <p className="type-serif text-stone">
                     Your table request at Dan&apos;s Hamburgers has been submitted.
@@ -400,7 +400,7 @@ function CTA() {
                       setReserved(false);
                       setIsReserveModalOpen(false);
                     }}
-                    className="mt-4 btn-char px-6 py-3 text-xs font-mono uppercase"
+                    className="mt-4 btn-char px-6 py-3 text-xs font-sans uppercase"
                   >
                     Done
                   </button>

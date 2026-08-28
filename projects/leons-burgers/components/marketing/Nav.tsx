@@ -53,9 +53,9 @@ export default function Nav() {
       } text-white`}
     >
       <div className="max-w-7xl mx-auto px-6 h-12 flex items-center justify-between">
-        {/* Brand Logo / Pure Typographic Wordmark (Borderless, Zero Box/Rectangles) */}
+        {/* Brand Logo */}
         <Link href="/" className="flex items-center gap-3 group">
-          <div className="relative w-72 sm:w-96 h-10">
+          <div className="relative w-64 sm:w-80 h-10">
             <Image
               src="/logo.svg"
               alt="Leon's Burgers & Wings"
@@ -68,7 +68,7 @@ export default function Nav() {
         </Link>
 
         {/* Nav Links */}
-        <nav className="hidden md:flex items-center gap-8 text-xs font-mono tracking-widest uppercase text-stone-400">
+        <nav className="hidden md:flex items-center gap-8 text-xs font-sans font-semibold tracking-wider uppercase text-stone-300">
           <Link href="/menu" className="hover:text-white transition-colors">
             Menu
           </Link>
@@ -87,7 +87,7 @@ export default function Nav() {
         <div className="flex items-center gap-4">
           <Link
             href="/menu"
-            className="px-5 py-2 rounded-sm font-mono text-xs font-bold uppercase tracking-wider hover:opacity-90 active:scale-95 transition-all shadow-md"
+            className="px-5 py-2.5 rounded-full font-sans text-xs font-bold uppercase tracking-wider hover:opacity-90 active:scale-95 transition-all shadow-md"
             style={{
               backgroundColor: "#B12727",
               color: "#FFFFFF",

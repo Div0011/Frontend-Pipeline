@@ -44,7 +44,7 @@ export default function AtelierAssembly() {
           <div>
             <div className="flex items-center gap-2 mb-2">
               <span className="w-2 h-2 rounded-full" style={{ backgroundColor: "#F5A623" }} />
-              <span className="font-mono text-xs tracking-widest uppercase font-bold" style={{ color: "#F5A623" }}>
+              <span className="font-sans text-xs tracking-widest uppercase font-bold" style={{ color: "#F5A623" }}>
                 THE CRAFT
               </span>
             </div>
