@@ -52,24 +52,28 @@ body {
   overflow-x: hidden;
 }
 
-/* All Headings & Display Titles in Dark Mustard */
+/* Headings on White/Light surfaces are Dark Mustard */
 h1, h2, h3, h4, .type-display {
   font-family: var(--font-display), sans-serif;
   text-transform: uppercase;
   letter-spacing: -0.02em;
   line-height: 0.9;
-  color: #C68A14 !important;
+  color: #C68A14;
 }
 
-/* Heading texts over image frames & overlays */
-[data-image-overlay] h1,
-[data-image-overlay] h2,
-[data-image-overlay] h3,
-.img-overlay-text h1,
-.img-overlay-text h2,
-.img-overlay-text h3 {
-  color: #C68A14 !important;
-  text-shadow: 0 4px 20px rgba(255, 255, 255, 0.8), 0 2px 8px rgba(0, 0, 0, 0.1);
+/* ─── CRITICAL: ON MUSTARD BACKGROUNDS, TEXT MUST ALWAYS BE CRISP WHITE ─── */
+[data-on-mustard],
+[data-on-mustard] *,
+.bg-\[\#C68A14\],
+.bg-\[\#C68A14\] *,
+.btn-primary,
+.btn-primary *,
+.text-white,
+[style*="background-color: #C68A14"],
+[style*="background-color: #C68A14"] *,
+[style*="background-color: rgb(198, 138, 20)"],
+[style*="background-color: rgb(198, 138, 20)"] * {
+  color: #FFFFFF !important;
 }
 
 /* ─── BUTTONS ──────────────────────────────────────────────────────── */
